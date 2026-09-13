@@ -152,9 +152,20 @@
         radial-gradient(circle at 14% 18%, rgba(180, 50, 40, 0.18), transparent 18rem),
         linear-gradient(rgba(17, 19, 24, 0.94), rgba(17, 19, 24, 0.96)),
         repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 4px);
-      padding: 22px 18px 86px;
+      padding: 22px 18px 96px;
       position: relative;
-      overflow: hidden;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(240, 234, 223, 0.32) transparent;
+    }
+
+    .screen::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .screen::-webkit-scrollbar-thumb {
+      background: rgba(240, 234, 223, 0.28);
+      border-radius: 999px;
     }
 
     .screen.paper {
@@ -417,10 +428,11 @@
     }
 
     .tabs {
-      position: absolute;
+      position: sticky;
       left: 12px;
       right: 12px;
       bottom: 12px;
+      z-index: 6;
       height: 66px;
       border-radius: 24px;
       display: grid;
@@ -855,6 +867,15 @@
               <div class="title">Próximo lembrete: 18:30</div>
               <div class="meta">Apenas um aviso. Sem necessidade de confirmar presença.</div>
             </div>
+            <div class="section-title"><strong>Semana</strong><span>visão rápida</span></div>
+            <div class="card">
+              <div class="title">Próximos treinos</div>
+              <div class="meta">Qui: ombro e tríceps • Sáb: full body • Dom: descanso.</div>
+            </div>
+            <div class="card">
+              <div class="title">Nota do plano</div>
+              <div class="meta">Sem ajustes pendentes. O plano segue igual até você pedir mudança ou surgir padrão no histórico.</div>
+            </div>
             <div class="tabs">
               <div class="tab active">Hoje</div><div class="tab">Treino</div><div class="tab">Coach</div><div class="tab">Dieta</div><div class="tab">Conta</div>
             </div>
@@ -875,10 +896,18 @@
               <div class="icon-btn">i</div>
             </div>
             <div class="chat">
+              <div class="card">
+                <div class="title">Coach único</div>
+                <div class="meta">Aberto pela tela Hoje. Ele entende treino, dieta e rotina com o mesmo histórico.</div>
+              </div>
               <div class="bubble">Hoje está previsto costas e bíceps. Se quiser mudar a agenda, posso ajustar sem mexer no plano inteiro.</div>
               <div class="bubble me">Hoje não vai dar. Joga para amanhã.</div>
               <div class="bubble">Fechado. Vou mover costas para amanhã e empurrar perna para sexta sem alterar o plano inteiro.</div>
               <div class="bubble">Resumo: ajuste de agenda, não mudança de treino.</div>
+              <div class="card">
+                <div class="title">Atalhos de conversa</div>
+                <div class="meta">Trocar treino de dia • substituir alimento • reduzir treino de hoje • explicar plano.</div>
+              </div>
             </div>
             <div class="prompt-bar"><span>Fale com o Coach Evolv...</span><div class="send">→</div></div>
             <div class="tabs">
@@ -924,6 +953,16 @@
               <div class="title">Ajustes ficam no Coach</div>
               <div class="meta">Troca de dia, dor, falta de tempo ou foco em músculo específico.</div>
             </div>
+            <div class="section-title"><strong>Progressão</strong><span>próximo alvo</span></div>
+            <div class="card">
+              <div class="title">Puxada alta</div>
+              <div class="meta">Se completar 3 séries com 10 reps e boa execução, próxima meta: 44kg.</div>
+              <div class="progress"><i style="--w: 68%"></i></div>
+            </div>
+            <div class="card">
+              <div class="title">Observação da semana</div>
+              <div class="meta">Volume está estável. Não aumentar exercícios ainda; primeiro validar consistência.</div>
+            </div>
             <div class="tabs">
               <div class="tab">Hoje</div><div class="tab active">Treino</div><div class="tab">Coach</div><div class="tab">Dieta</div><div class="tab">Conta</div>
             </div>
@@ -962,6 +1001,15 @@
             <div class="card">
               <div class="title">Substituições pelo Coach</div>
               <div class="meta">Se faltar alimento ou enjoar de algo, peça troca sem refazer a dieta inteira.</div>
+            </div>
+            <div class="section-title"><strong>Base da semana</strong><span>simples</span></div>
+            <div class="card">
+              <div class="title">Alimentos principais</div>
+              <div class="meta">Arroz, feijão, ovos, frango, carne magra, aveia, frutas e iogurte.</div>
+            </div>
+            <div class="card">
+              <div class="title">Regra do MVP</div>
+              <div class="meta">A dieta prioriza aderência. Ajustes finos de macros entram depois que o fluxo principal estiver funcionando.</div>
             </div>
             <div class="tabs">
               <div class="tab">Hoje</div><div class="tab">Treino</div><div class="tab">Coach</div><div class="tab active">Dieta</div><div class="tab">Conta</div>
@@ -1036,6 +1084,15 @@
                 <div><div class="title">Integrações</div><div class="meta">Calendário e apps de saúde futuros</div></div>
                 <div class="chev">›</div>
               </div>
+              <div class="setting-row">
+                <div class="setting-icon">S</div>
+                <div><div class="title">Suporte e feedback</div><div class="meta">Enviar problema, sugestão ou dúvida</div></div>
+                <div class="chev">›</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="title">Versão do MVP</div>
+              <div class="meta">Planejamento inicial • Coach único • Progresso dentro de Conta.</div>
             </div>
             <div class="tabs">
               <div class="tab">Hoje</div><div class="tab">Treino</div><div class="tab">Coach</div><div class="tab">Dieta</div><div class="tab active">Conta</div>

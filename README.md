@@ -182,17 +182,18 @@ Completed so far:
 - Main screen structure.
 - Visual direction concept.
 - Documentation files.
+- Project base documentation.
+- Product and screen specification.
 
 Next steps:
 
-1. Finalize wireframes for the MVP screens.
-2. Model the initial database schema.
-3. Create the Expo mobile project.
-4. Create the NestJS backend project.
-5. Implement the Planner without AI.
-6. Integrate the AI assistant.
-7. Add notifications.
-8. Prepare a portfolio-ready demo.
+1. Model the initial database schema.
+2. Create the Expo mobile project.
+3. Create the NestJS backend project.
+4. Implement the Planner without AI.
+5. Integrate the AI assistant.
+6. Add notifications.
+7. Prepare a portfolio-ready demo.
 
 ## Repository Structure
 
@@ -202,6 +203,7 @@ Expected structure:
 evolv-app/
   docs/
     project documents, flow images, and visual concepts
+    product and screen specifications
   mobile/
     React Native / Expo app
   backend/
