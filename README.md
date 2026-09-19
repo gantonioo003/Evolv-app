@@ -19,6 +19,10 @@ The central idea is simple:
 - The user should not be forced to log everything every day.
 - Workout, diet, and routine should be connected through one assistant.
 - The app should support both light users and detailed users.
+- Workout, diet, Coach, reminders, and load tracking should work independently.
+- The app should not ask users to choose a usage mode or infer one from their behavior.
+- Every main feature remains available to every user.
+- Onboarding covers the complete setup, but optional steps can be skipped and completed later in profile settings.
 - The daily experience should be simple and low-friction.
 
 ## MVP Scope
@@ -28,16 +32,23 @@ The first version of Evolv will focus on validating the core experience.
 ### Included in the MVP
 
 - User account and authentication.
-- Short onboarding flow.
+- Complete onboarding flow with skippable optional steps.
 - Initial workout plan.
 - Simple nutrition plan.
 - Today screen with a daily summary.
 - Workout screen with weekly structure and exercises.
 - Diet screen with meals and substitutions.
+- Structured food catalog with calories, macros, portions, and expandable micronutrients.
+- Optional daily nutrition totals and estimated energy expenditure.
+- Exercise catalog covering machines, free weights, cables, bodyweight, calisthenics, and power training.
+- Optional training preferences that guide recommendations without hiding the full catalog.
 - Single AI assistant called Coach Evolv.
+- Coach Evolv for questions, explanations, learning, and routine adjustments.
+- Optional conversation memory to improve future guidance.
 - Basic planner rules for routine adjustments.
 - Notifications for workout and meal reminders.
 - Account screen with settings and progress access.
+- Standalone exercise load history and simple progression suggestions.
 
 ### Not included in the first MVP
 
@@ -76,6 +87,8 @@ It includes:
 - Active training plan.
 - Exercises, sets, reps, rest, and optional load.
 - Basic progression context.
+- Quick load editing and history for each exercise.
+- Clear suggestions showing when to increase and the next load to try.
 - Access to Coach Evolv for adjustments.
 
 ### Diet
@@ -91,7 +104,7 @@ It includes:
 
 ### Coach Evolv
 
-Coach Evolv is a single AI assistant used across the app.
+Coach Evolv is a single AI assistant used across the app. It is not limited to routine adjustments. The user can also use it to ask questions, understand training and nutrition concepts, learn why something is in the plan, and get practical explanations.
 
 It can be accessed from Today, Workout, or Diet. The assistant remains the same, but the initial context changes depending on where the user opens it.
 
@@ -100,6 +113,8 @@ Examples:
 - From Today: focus on the current day.
 - From Workout: focus on training, schedule, exercises, and loads.
 - From Diet: focus on meals, substitutions, and nutrition preferences.
+
+Coach Evolv may also keep optional conversation memory, if the user allows it. This memory can help the assistant remember preferences, recurring doubts, disliked foods, training limitations, and past adjustments. The user should be able to review or disable this behavior later.
 
 ### Account
 
@@ -115,6 +130,7 @@ It includes:
 - Food preferences.
 - Progress and history.
 - Privacy and data options.
+- Coach memory and conversation preferences.
 - Future integrations.
 
 Progress is not a main tab in the MVP. It is accessed through the Account screen.
@@ -148,6 +164,7 @@ The app will be divided into three main parts:
 - Mobile application: user interface and mobile experience.
 - Backend API: business rules, planner logic, authentication flow, and AI integration.
 - Database: user profile, goals, workout plans, diet plans, history, and preferences.
+- Optional Coach memory: relevant conversation context, user preferences, and recurring topics.
 
 The AI assistant should not directly change the database without rules. It should interpret the user's request and call internal backend actions. The Planner module will be responsible for applying changes safely.
 
@@ -169,10 +186,11 @@ In short:
 - Coach Evolv understands and communicates.
 - Planner applies rules and organizes the plan.
 - Database stores the user's history and preferences.
+- Optional memory stores useful context only when it improves the user experience and respects privacy settings.
 
 ## Current Project Status
 
-The project is currently in the planning and product definition phase.
+Product definition and the MVP database phase are complete. The Supabase project is deployed, seeded, secured, and tested. Mobile and backend implementation have not started yet.
 
 Completed so far:
 
@@ -184,12 +202,19 @@ Completed so far:
 - Documentation files.
 - Project base documentation.
 - Product and screen specification.
+- Initial database schema.
+- Supabase migration structure.
+- Database documentation.
+- Remote Supabase migrations and seed.
+- Row Level Security and cross-user ownership protection.
+- Transactional CRUD tests for workout, load, diet, Coach, and progress.
+- Generated TypeScript database types.
 
 Next steps:
 
-1. Model the initial database schema.
-2. Create the Expo mobile project.
-3. Create the NestJS backend project.
+1. Create the Expo mobile project.
+2. Create the NestJS backend project.
+3. Connect the application layers to Supabase.
 4. Implement the Planner without AI.
 5. Integrate the AI assistant.
 6. Add notifications.
@@ -204,6 +229,9 @@ evolv-app/
   docs/
     project documents, flow images, and visual concepts
     product and screen specifications
+    database specification
+  supabase/
+    database migrations, generated types, tests, and Supabase notes
   mobile/
     React Native / Expo app
   backend/

@@ -16,10 +16,18 @@ O app deve manter um plano de longo prazo, entregar a rotina semanal e ajustar a
 - O usuário não precisa justificar quando não seguir o plano.
 - O app não deve cobrar confirmação diária.
 - Ajustes acontecem via Coach Evolv.
+- O Coach Evolv também deve servir para dúvidas, explicações, aprendizado e consulta de conhecimento.
+- Memória de conversas deve ser opcional e controlável pelo usuário.
 - O Coach interpreta o pedido.
 - O Planner aplica regras e reorganiza apenas o necessário.
 - Treino, dieta e rotina compartilham o mesmo contexto.
 - Registro de carga, peso, medidas, alimentação e fotos deve ser opcional.
+- Treino, dieta, Coach, lembretes e registro de cargas devem funcionar de forma independente.
+- O app não pergunta para qual finalidade o usuário pretende utilizá-lo.
+- Todas as áreas ficam disponíveis desde o início.
+- O app não classifica o usuário nem tenta deduzir um modo de uso.
+- O onboarding é completo, mas permite pular etapas e campos opcionais.
+- Informações puladas podem ser adicionadas depois nas configurações do perfil.
 
 ## Abas principais
 
@@ -57,12 +65,22 @@ Conteúdo:
 - descanso;
 - carga opcional;
 - progressão sugerida;
+- histórico de cargas por exercício;
+- edição rápida da carga depois de cada treino;
+- biblioteca completa de exercícios com busca e filtros;
+- troca manual de qualquer exercício por alternativas compatíveis;
 - observação da semana.
 
 Comportamento:
 
 - ajustes de agenda, dor, foco muscular ou falta de tempo devem ir pelo Coach;
 - o treino não muda inteiro sem necessidade.
+- registrar carga não exige registrar o treino inteiro;
+- a sugestão de aumento deve mostrar carga atual, carga sugerida, quando tentar e um motivo curto;
+- o usuário decide aceitar, ignorar ou adiar uma sugestão.
+- preferências de modalidade e equipamento ajudam o Planner, mas não escondem exercícios da biblioteca;
+- o usuário pode combinar máquinas, pesos livres, cabos, calistenia, treino de força, potência e outras abordagens;
+- todas as preferências podem ser alteradas depois em Conta.
 
 ### Coach
 
@@ -73,6 +91,9 @@ Conteúdo:
 - contexto atual;
 - conversa com o usuário;
 - resposta explicando o ajuste;
+- respostas para dúvidas de treino, dieta, rotina e conceitos gerais;
+- explicações educativas sobre o plano;
+- memória opcional de preferências, dúvidas recorrentes e ajustes anteriores;
 - atalhos de intenção;
 - campo de mensagem.
 
@@ -82,6 +103,8 @@ Comportamento:
 - se aberto em Treino, prioriza treino;
 - se aberto em Dieta, prioriza alimentação;
 - continua sendo a mesma IA e o mesmo histórico.
+- não deve ser usado apenas para ajustes;
+- deve funcionar também como fonte de aprendizado dentro do app.
 
 ### Dieta
 
@@ -90,9 +113,13 @@ Função: mostrar alimentação simples e adaptável.
 Conteúdo:
 
 - meta aproximada de calorias;
-- meta de proteína;
+- metas de proteína, carboidrato e gordura;
+- calorias e macros consumidos e restantes no dia;
 - refeições do dia;
 - alimentos principais da semana;
+- busca de alimentos, produtos e porções;
+- prévia imediata de como uma adição, remoção ou troca altera calorias e macros;
+- gasto calórico estimado separado do consumo;
 - regra de substituição pelo Coach.
 
 Comportamento:
@@ -100,6 +127,9 @@ Comportamento:
 - dieta do MVP deve priorizar aderência;
 - substituições não devem refazer todo o plano;
 - cálculo avançado de macros fica para depois.
+- registro alimentar continua opcional;
+- valores vindos de usuários ou fontes colaborativas devem mostrar sua origem e qualidade;
+- gasto calórico deve aparecer como estimativa, nunca como valor exato.
 
 ### Conta
 
@@ -116,6 +146,7 @@ Conteúdo:
 - preferências alimentares;
 - progresso e histórico;
 - privacidade e dados;
+- memória do Coach e preferências de conversa;
 - integrações futuras;
 - suporte e feedback.
 
@@ -136,7 +167,9 @@ Entradas previstas:
 
 ### Onboarding
 
-Perguntas mínimas:
+O onboarding apresenta a configuração completa do Evolv para todos, mas não obriga o preenchimento de tudo. Etapas e campos opcionais podem ser pulados sem bloquear o acesso ao app.
+
+Exemplos de dados possíveis:
 
 - idade;
 - altura;
@@ -147,6 +180,19 @@ Perguntas mínimas:
 - restrições;
 - alimentos que não gosta;
 - horário preferido de treino.
+- modalidades e equipamentos preferidos, com seleção múltipla e opção de pular.
+
+Regras:
+
+- nenhum usuário precisa preencher o cadastro completo para entrar no app;
+- o app não exige que o usuário declare como pretende usá-lo;
+- qualquer área pode ser usada separadamente desde o início;
+- o app não tenta classificar o usuário pelo comportamento;
+- somente dados realmente obrigatórios para criar a conta devem impedir o avanço;
+- cada etapa deve ter uma ação clara para pular quando seus dados forem opcionais;
+- todos os dados pulados podem ser preenchidos ou editados depois em Conta > Perfil e preferências;
+- o onboarding pode ser reaberto pela Conta para quem quiser concluir a configuração guiada.
+- preferências escolhidas no onboarding orientam sugestões, mas não limitam o catálogo nem bloqueiam trocas manuais.
 
 ## Direção visual
 
@@ -171,4 +217,3 @@ Esta fase pode ser considerada encerrada quando:
 - progresso estiver decidido dentro de Conta;
 - o mockup visual estiver navegável e com rolagem;
 - o próximo passo for modelar o banco de dados.
-

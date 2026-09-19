@@ -44,7 +44,15 @@ evolv-app/
 - A tela Hoje será informativa, sem cobrança diária.
 - Não haverá botão obrigatório de "começar treino" ou "não vou treinar hoje".
 - O usuário só ajusta algo se quiser conversar com o Coach.
+- Treino, dieta, Coach, lembretes e registro de cargas poderao ser usados separadamente, sem escolher um modo de uso.
+- O onboarding apresentara a configuracao completa do Evolv para todos, com etapas e campos opcionais que podem ser pulados.
+- O app nao classificara nem tentara adivinhar como cada pessoa pretende usa-lo.
+- Dados pulados poderao ser preenchidos ou alterados depois nas configuracoes do perfil.
+- O usuario podera salvar e editar cargas por exercicio sem precisar registrar um treino completo.
+- Sugestoes de progressao mostrarao quando tentar aumentar, a carga sugerida e um motivo simples.
 - O app terá uma IA única: Coach Evolv.
+- O Coach Evolv também servirá para tirar dúvidas, ensinar conceitos e explicar treino, dieta e decisões do plano.
+- O Coach poderá ter memória opcional de conversas, preferências e dúvidas recorrentes, respeitando privacidade e controle do usuário.
 - O Planner será regra de backend, não uma segunda IA.
 - A stack planejada será Expo, NestJS, Supabase/PostgreSQL e OpenAI API ou Gemini API.
 
@@ -63,4 +71,3 @@ Esta fase pode ser considerada encerrada quando:
 - a pasta `docs` estiver versionada;
 - os documentos principais estiverem no GitHub;
 - o próximo passo estiver claro: modelar o banco de dados do MVP.
-
