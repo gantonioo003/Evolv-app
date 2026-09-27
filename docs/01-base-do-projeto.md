@@ -6,7 +6,7 @@ Organizar o repositório, consolidar a documentação inicial e deixar o projeto
 
 ## Status
 
-Fase praticamente concluída.
+Fase concluída.
 
 ## Entregas concluídas
 
@@ -32,6 +32,8 @@ evolv-app/
     app React Native / Expo
   backend/
     API NestJS
+  ml/
+    NLP, recuperação de conhecimento, treinamento, avaliação e serviço local do Coach
   README.md
 ```
 
@@ -54,13 +56,17 @@ evolv-app/
 - O Coach Evolv também servirá para tirar dúvidas, ensinar conceitos e explicar treino, dieta e decisões do plano.
 - O Coach poderá ter memória opcional de conversas, preferências e dúvidas recorrentes, respeitando privacidade e controle do usuário.
 - O Planner será regra de backend, não uma segunda IA.
-- A stack planejada será Expo, NestJS, Supabase/PostgreSQL e OpenAI API ou Gemini API.
+- O Coach será desenvolvido localmente, sem depender de API paga de modelo de linguagem.
+- A área técnica do Coach será NLP, combinando classificação de intenção, recuperação de conhecimento e um LM pequeno.
+- O LM usará uma arquitetura Transformer decoder-only e será treinado do zero com foco limitado no domínio do Evolv.
+- O modelo propõe respostas e ações; NestJS e Planner validam qualquer alteração antes de gravar no banco.
+- A stack planejada será Expo, NestJS, Supabase/PostgreSQL, Python, FastAPI, PyTorch e scikit-learn.
 
 ## Pendências curtas
 
-- Confirmar `git push` do commit inicial.
 - Criar `mobile/` quando o app Expo começar.
 - Criar `backend/` quando a API NestJS começar.
+- Criar `ml/` quando a implementação do Coach local começar.
 - Criar o board de tarefas no GitHub se for usar gestão visual.
 
 ## Critério para encerrar a fase
@@ -70,4 +76,4 @@ Esta fase pode ser considerada encerrada quando:
 - o README estiver atualizado;
 - a pasta `docs` estiver versionada;
 - os documentos principais estiverem no GitHub;
-- o próximo passo estiver claro: modelar o banco de dados do MVP.
+- o próximo passo estiver claro: criar a base do aplicativo mobile.

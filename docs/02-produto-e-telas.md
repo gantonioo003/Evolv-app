@@ -19,6 +19,8 @@ O app deve manter um plano de longo prazo, entregar a rotina semanal e ajustar a
 - O Coach Evolv também deve servir para dúvidas, explicações, aprendizado e consulta de conhecimento.
 - Memória de conversas deve ser opcional e controlável pelo usuário.
 - O Coach interpreta o pedido.
+- O Coach pede esclarecimento quando não entende o pedido com confiança.
+- Respostas educativas devem usar a base local de conhecimento sempre que possível.
 - O Planner aplica regras e reorganiza apenas o necessário.
 - Treino, dieta e rotina compartilham o mesmo contexto.
 - Registro de carga, peso, medidas, alimentação e fotos deve ser opcional.
@@ -104,7 +106,22 @@ Comportamento:
 - se aberto em Dieta, prioriza alimentação;
 - continua sendo a mesma IA e o mesmo histórico.
 - não deve ser usado apenas para ajustes;
-- deve funcionar também como fonte de aprendizado dentro do app.
+- deve funcionar também como fonte de aprendizado dentro do app;
+- deve informar quando não possui conhecimento suficiente para responder;
+- não pode alterar treino, dieta ou agenda sem validação do backend e do Planner.
+
+### Arquitetura local do Coach
+
+- Não haverá dependência de OpenAI, Gemini ou outra API paga de modelo de linguagem.
+- NLP é a área usada para interpretar e gerar linguagem no Coach.
+- A primeira referência será um classificador simples com TF-IDF e regressão logística.
+- A base de conhecimento local será consultada por busca textual antes da geração da resposta.
+- O LM principal será pequeno, usará Transformer decoder-only e terá pesos treinados do zero para o domínio do Evolv.
+- O Coach poderá gerar uma resposta educativa ou propor uma ação estruturada.
+- O Planner continua determinístico e decide se uma ação pode ser aplicada.
+- Pedidos com baixa confiança resultam em pergunta de esclarecimento, não em alteração automática.
+- O tamanho do modelo será definido depois de medir o hardware disponível.
+- O objetivo é aprendizado técnico e uma solução útil e limitada, não competir com assistentes comerciais.
 
 ### Dieta
 

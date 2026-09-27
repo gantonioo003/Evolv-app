@@ -45,6 +45,8 @@ The first version of Evolv will focus on validating the core experience.
 - Single AI assistant called Coach Evolv.
 - Coach Evolv for questions, explanations, learning, and routine adjustments.
 - Optional conversation memory to improve future guidance.
+- Local NLP pipeline with a small domain language model.
+- Retrieval from a curated training and nutrition knowledge base.
 - Basic planner rules for routine adjustments.
 - Notifications for workout and meal reminders.
 - Account screen with settings and progress access.
@@ -57,7 +59,8 @@ The first version of Evolv will focus on validating the core experience.
 - Wearable integrations.
 - Advanced charts.
 - Payment or subscriptions.
-- Custom-trained AI model.
+- General-purpose language model comparable to commercial assistants.
+- Dependence on paid or external language-model APIs.
 - Complex calendar integrations.
 - Fully advanced nutrition calculations.
 
@@ -151,7 +154,14 @@ Supabase with PostgreSQL.
 
 ### AI
 
-OpenAI API or Gemini API.
+Local NLP and machine learning service built with Python, PyTorch, scikit-learn, and FastAPI.
+
+The first version will combine:
+
+- A TF-IDF and logistic-regression baseline for intent classification.
+- Local retrieval from a curated knowledge base.
+- A small decoder-only Transformer language model trained from scratch for the Evolv domain.
+- Confidence rules that ask for clarification when a request is uncertain.
 
 ### Notifications
 
@@ -159,14 +169,17 @@ Expo Notifications.
 
 ## Planned Architecture
 
-The app will be divided into three main parts:
+The app will be divided into four main parts:
 
 - Mobile application: user interface and mobile experience.
-- Backend API: business rules, planner logic, authentication flow, and AI integration.
+- Backend API: business rules, planner logic, authentication flow, and orchestration.
 - Database: user profile, goals, workout plans, diet plans, history, and preferences.
+- Local ML service: NLP, knowledge retrieval, intent classification, and response generation.
 - Optional Coach memory: relevant conversation context, user preferences, and recurring topics.
 
-The AI assistant should not directly change the database without rules. It should interpret the user's request and call internal backend actions. The Planner module will be responsible for applying changes safely.
+The Coach should not directly change the database. It interprets the user's request, answers from the local knowledge base, and proposes structured actions. The NestJS backend validates those actions, and the Planner module applies allowed changes safely.
+
+The local model is intentionally limited. The goal is to build and evaluate a real NLP and language-model pipeline that can run with free tools on personal hardware, not to reproduce the quality of a commercial general-purpose assistant.
 
 ## Planner Concept
 
@@ -215,10 +228,12 @@ Next steps:
 1. Create the Expo mobile project.
 2. Create the NestJS backend project.
 3. Connect the application layers to Supabase.
-4. Implement the Planner without AI.
-5. Integrate the AI assistant.
-6. Add notifications.
-7. Prepare a portfolio-ready demo.
+4. Implement the Planner without the Coach model.
+5. Build the local NLP baseline and knowledge retrieval.
+6. Train and evaluate the small Transformer language model.
+7. Integrate the local Coach service.
+8. Add notifications.
+9. Prepare a portfolio-ready demo.
 
 ## Repository Structure
 
@@ -236,6 +251,8 @@ evolv-app/
     React Native / Expo app
   backend/
     NestJS API
+  ml/
+    local NLP, retrieval, training, evaluation, and model serving
   README.md
 ```
 
@@ -243,4 +260,4 @@ This structure may evolve as the implementation begins.
 
 ## Author
 
-Developed as a personal learning and portfolio project focused on mobile development, backend architecture, product design, and AI integration.
+Developed as a personal learning and portfolio project focused on mobile development, backend architecture, data engineering, NLP, machine learning, language models, and product design.
