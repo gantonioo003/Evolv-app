@@ -51,6 +51,15 @@ As migrations criam e protegem:
 
 Elas tambem concedem apenas as permissoes necessarias ao usuario autenticado e impedem referencias entre dados privados de usuarios diferentes.
 
+Duas migrations foram adicionadas e aplicadas durante a fase do backend:
+
+```txt
+supabase/migrations/202609300001_add_training_context.sql
+supabase/migrations/202609300002_create_profile_on_signup.sql
+```
+
+A primeira modela fases nutricionais, divisao de treino, RPE/RIR opcionais, check-ins de motivacao e recuperacao e preferencias de avisos silenciosos. A segunda cria automaticamente o perfil publico quando uma conta entra no Supabase Auth e corrige contas antigas sem perfil. Ambas foram aplicadas e validadas no projeto remoto.
+
 ## Seed inicial
 
 Arquivo:
@@ -106,6 +115,16 @@ npx supabase@latest db lint --linked --level warning
 ```
 
 Resultado verificado: `No schema errors found`.
+
+O teste da nova migration esta em:
+
+```txt
+supabase/tests/phase_5_training_context.sql
+```
+
+Resultado remoto verificado: `PASS`.
+
+A migration `202609300002_create_profile_on_signup.sql` cria automaticamente a linha de `profiles` quando uma conta entra no Supabase Auth. Ela tambem corrige contas antigas que ainda nao possuem perfil publico.
 
 ## Aplicar futuras migrations
 

@@ -1,21 +1,27 @@
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { AppThemeProvider, useAppTheme } from '@/context/theme-context';
-import { ImagePreferencesProvider } from '@/context/image-preferences-context';
-import { TrainingPreferencesProvider } from '@/context/training-preferences-context';
+import { AppThemeProvider, useAppTheme } from "@/context/theme-context";
+import { AuthProvider } from "@/context/auth-context";
+import { EvolvDataProvider } from "@/context/evolv-data-context";
+import { ImagePreferencesProvider } from "@/context/image-preferences-context";
+import { TrainingPreferencesProvider } from "@/context/training-preferences-context";
 
 export default function RootLayout() {
   return (
-    <AppThemeProvider>
-      <ImagePreferencesProvider>
-        <TrainingPreferencesProvider>
-          <ThemedRoot />
-        </TrainingPreferencesProvider>
-      </ImagePreferencesProvider>
-    </AppThemeProvider>
+    <AuthProvider>
+      <EvolvDataProvider>
+        <AppThemeProvider>
+          <ImagePreferencesProvider>
+            <TrainingPreferencesProvider>
+              <ThemedRoot />
+            </TrainingPreferencesProvider>
+          </ImagePreferencesProvider>
+        </AppThemeProvider>
+      </EvolvDataProvider>
+    </AuthProvider>
   );
 }
 
@@ -25,8 +31,13 @@ function ThemedRoot() {
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: palette.page }}>
       <SafeAreaProvider>
-        <StatusBar style={isDark ? 'light' : 'dark'} />
-        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: palette.page } }}>
+        <StatusBar style={isDark ? "light" : "dark"} />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: palette.page },
+          }}
+        >
           <Stack.Screen name="index" />
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="login" />

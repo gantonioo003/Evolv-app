@@ -30,6 +30,10 @@ O app deve manter um plano de longo prazo, entregar a rotina semanal e ajustar a
 - O app não classifica o usuário nem tenta deduzir um modo de uso.
 - O onboarding é completo, mas permite pular etapas e campos opcionais.
 - Informações puladas podem ser adicionadas depois nas configurações do perfil.
+- Fase nutricional, divisão de treino, recuperação e motivação devem formar um contexto único quando o usuário decidir registrar esses dados.
+- O app pode identificar sinais de progressão estagnada, mas não diagnostica a causa nem muda o plano sem confirmação.
+- O app fica atento em silêncio: reúne contexto sem transformar cada padrão em alerta ou notificação.
+- Sugestões proativas devem ser raras, explicáveis, adiáveis e controladas pelo usuário.
 
 ## Abas principais
 
@@ -80,9 +84,14 @@ Comportamento:
 - registrar carga não exige registrar o treino inteiro;
 - a sugestão de aumento deve mostrar carga atual, carga sugerida, quando tentar e um motivo curto;
 - o usuário decide aceitar, ignorar ou adiar uma sugestão.
+- ignorar ou dispensar uma sugestão impede que o mesmo aviso seja repetido constantemente;
 - preferências de modalidade e equipamento ajudam o Planner, mas não escondem exercícios da biblioteca;
 - o usuário pode combinar máquinas, pesos livres, cabos, calistenia, treino de força, potência e outras abordagens;
 - todas as preferências podem ser alteradas depois em Conta.
+- o plano aceita Full body, Upper/Lower, Push/Pull/Legs, divisão por grupos musculares, estruturas híbridas e divisões personalizadas;
+- ABC, ABCD e ABCDE funcionam como nomes de agenda; os músculos e exercícios de cada dia são a estrutura real armazenada;
+- dificuldade de progressão só pode ser sinalizada quando existirem registros opcionais suficientes e comparáveis;
+- fase de ganho de massa, perda de gordura, manutenção ou recomposição deve ser considerada antes de sugerir mudanças.
 
 ### Coach
 
@@ -138,6 +147,7 @@ Conteúdo:
 - prévia imediata de como uma adição, remoção ou troca altera calorias e macros;
 - gasto calórico estimado separado do consumo;
 - regra de substituição pelo Coach.
+- fase nutricional atual e duração, quando o usuário quiser acompanhar isso.
 
 Comportamento:
 
@@ -147,6 +157,7 @@ Comportamento:
 - registro alimentar continua opcional;
 - valores vindos de usuários ou fontes colaborativas devem mostrar sua origem e qualidade;
 - gasto calórico deve aparecer como estimativa, nunca como valor exato.
+- o app pode sugerir uma revisão quando uma fase de perda ou ganho estiver longa ou afetando aderência e desempenho, mas nunca troca a fase sozinho.
 
 ### Conta
 
@@ -164,8 +175,10 @@ Conteúdo:
 - progresso e histórico;
 - privacidade e dados;
 - memória do Coach e preferências de conversa;
+- controle de sugestões proativas, assuntos silenciados e frequência de avisos;
 - integrações futuras;
 - suporte e feedback.
+- check-ins opcionais de motivação, energia, sono e recuperação.
 
 Decisão:
 

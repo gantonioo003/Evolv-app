@@ -1,0 +1,7 @@
+import type { User } from '@supabase/supabase-js';
+import type { Request } from 'express';
+
+export interface AuthenticatedRequest extends Request {
+  accessToken: string;
+  user: User;
+}

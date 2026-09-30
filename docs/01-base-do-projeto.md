@@ -64,7 +64,7 @@ evolv-app/
 
 ## Pendências curtas
 
-- Criar `backend/` quando a API NestJS começar.
+- Continuar os modulos do `backend/`, cuja base NestJS ja foi criada.
 - Criar `ml/` quando a implementação do Coach local começar.
 - Criar o board de tarefas no GitHub se for usar gestão visual.
 

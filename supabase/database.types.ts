@@ -271,7 +271,9 @@ export type Database = {
           load_kg: number | null
           notes: string | null
           performed_at: string
+          reps_in_reserve: number | null
           reps_summary: string | null
+          rpe: number | null
           sets_completed: number | null
           user_id: string
           workout_log_id: string | null
@@ -283,7 +285,9 @@ export type Database = {
           load_kg?: number | null
           notes?: string | null
           performed_at?: string
+          reps_in_reserve?: number | null
           reps_summary?: string | null
+          rpe?: number | null
           sets_completed?: number | null
           user_id: string
           workout_log_id?: string | null
@@ -295,7 +299,9 @@ export type Database = {
           load_kg?: number | null
           notes?: string | null
           performed_at?: string
+          reps_in_reserve?: number | null
           reps_summary?: string | null
+          rpe?: number | null
           sets_completed?: number | null
           user_id?: string
           workout_log_id?: string | null
@@ -356,11 +362,13 @@ export type Database = {
           created_at: string
           current_load_kg: number
           dismissed_at: string | null
+          evidence: Json
           exercise_id: string
           id: string
           reason: string
           suggested_for: string | null
           suggested_load_kg: number
+          suggestion_type: string
           user_id: string
         }
         Insert: {
@@ -368,11 +376,13 @@ export type Database = {
           created_at?: string
           current_load_kg: number
           dismissed_at?: string | null
+          evidence?: Json
           exercise_id: string
           id?: string
           reason: string
           suggested_for?: string | null
           suggested_load_kg: number
+          suggestion_type?: string
           user_id: string
         }
         Update: {
@@ -380,11 +390,13 @@ export type Database = {
           created_at?: string
           current_load_kg?: number
           dismissed_at?: string | null
+          evidence?: Json
           exercise_id?: string
           id?: string
           reason?: string
           suggested_for?: string | null
           suggested_load_kg?: number
+          suggestion_type?: string
           user_id?: string
         }
         Relationships: [
@@ -815,6 +827,33 @@ export type Database = {
         }
         Relationships: []
       }
+      insight_preferences: {
+        Row: {
+          created_at: string
+          max_non_urgent_per_week: number
+          proactive_insights_enabled: boolean
+          repeated_topic_cooldown_days: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          max_non_urgent_per_week?: number
+          proactive_insights_enabled?: boolean
+          repeated_topic_cooldown_days?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          max_non_urgent_per_week?: number
+          proactive_insights_enabled?: boolean
+          repeated_topic_cooldown_days?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       meal_items: {
         Row: {
           amount: string | null
@@ -972,6 +1011,81 @@ export type Database = {
           unit?: string
         }
         Relationships: []
+      }
+      nutrition_phases: {
+        Row: {
+          calorie_target: number | null
+          created_at: string
+          ended_on: string | null
+          goal_id: string | null
+          id: string
+          label: string | null
+          notes: string | null
+          parent_phase_id: string | null
+          phase_type: string
+          planned_end_on: string | null
+          started_on: string
+          starting_weight_kg: number | null
+          status: string
+          target_rate_percent_per_week: number | null
+          target_weight_kg: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          calorie_target?: number | null
+          created_at?: string
+          ended_on?: string | null
+          goal_id?: string | null
+          id?: string
+          label?: string | null
+          notes?: string | null
+          parent_phase_id?: string | null
+          phase_type: string
+          planned_end_on?: string | null
+          started_on?: string
+          starting_weight_kg?: number | null
+          status?: string
+          target_rate_percent_per_week?: number | null
+          target_weight_kg?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          calorie_target?: number | null
+          created_at?: string
+          ended_on?: string | null
+          goal_id?: string | null
+          id?: string
+          label?: string | null
+          notes?: string | null
+          parent_phase_id?: string | null
+          phase_type?: string
+          planned_end_on?: string | null
+          started_on?: string
+          starting_weight_kg?: number | null
+          status?: string
+          target_rate_percent_per_week?: number | null
+          target_weight_kg?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "nutrition_phases_goal_id_fkey"
+            columns: ["goal_id"]
+            isOneToOne: false
+            referencedRelation: "goals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "nutrition_phases_parent_phase_id_fkey"
+            columns: ["parent_phase_id"]
+            isOneToOne: false
+            referencedRelation: "nutrition_phases"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       planner_adjustments: {
         Row: {
@@ -1150,6 +1264,51 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      readiness_check_ins: {
+        Row: {
+          created_at: string
+          energy: number | null
+          hunger: number | null
+          id: string
+          motivation: number | null
+          notes: string | null
+          recorded_on: string
+          recovery: number | null
+          sleep_quality: number | null
+          stress: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          energy?: number | null
+          hunger?: number | null
+          id?: string
+          motivation?: number | null
+          notes?: string | null
+          recorded_on?: string
+          recovery?: number | null
+          sleep_quality?: number | null
+          stress?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          energy?: number | null
+          hunger?: number | null
+          id?: string
+          motivation?: number | null
+          notes?: string | null
+          recorded_on?: string
+          recovery?: number | null
+          sleep_quality?: number | null
+          stress?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       training_preferences: {
         Row: {
@@ -1398,6 +1557,8 @@ export type Database = {
           id: string
           name: string
           notes: string | null
+          split_label: string | null
+          split_type: string | null
           start_date: string
           status: Database["public"]["Enums"]["plan_status"]
           updated_at: string
@@ -1411,6 +1572,8 @@ export type Database = {
           id?: string
           name: string
           notes?: string | null
+          split_label?: string | null
+          split_type?: string | null
           start_date: string
           status?: Database["public"]["Enums"]["plan_status"]
           updated_at?: string
@@ -1424,6 +1587,8 @@ export type Database = {
           id?: string
           name?: string
           notes?: string | null
+          split_label?: string | null
+          split_type?: string | null
           start_date?: string
           status?: Database["public"]["Enums"]["plan_status"]
           updated_at?: string

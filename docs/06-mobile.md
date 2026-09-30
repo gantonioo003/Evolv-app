@@ -4,7 +4,9 @@
 
 A base visual e navegável do aplicativo foi implementada com React Native, Expo, Expo Router e TypeScript.
 
-Nesta fase, as telas usam dados simulados. Elas ainda não consultam o Supabase nem o futuro backend NestJS. Essa separação permite validar primeiro a experiência e a navegação antes de conectar regras e dados reais.
+A fase esta quase concluida. Falta apenas validar a experiencia em um iPhone fisico; essa verificacao foi adiada sem bloquear o inicio do backend.
+
+As telas principais agora consultam o backend NestJS com uma sessão real do Supabase Auth. O Coach continua simulado até a fase de NLP, e estados vazios aparecem quando o usuário ainda não possui plano.
 
 ## O que foi implementado
 
@@ -20,9 +22,9 @@ Nesta fase, as telas usam dados simulados. Elas ainda não consultam o Supabase 
 - aparência em uma área interna de Configurações, somente com os modos claro e escuro;
 - preferência de aparência mantida até o usuário alterá-la novamente;
 - catálogo combinável de modalidades, recursos e focos de treino;
-- entrada com opções visuais de Google, Apple e e-mail;
+- entrada e cadastro reais por e-mail, com Google e Apple preparados visualmente para ativação futura no Supabase;
 - onboarding completo, opcional e pulável;
-- dados simulados separados das telas;
+- dados reais separados da camada visual por serviços e contextos;
 - interação de cargas com aumento e redução;
 - sugestão visual da próxima carga;
 - conversa simulada com o Coach;
@@ -106,10 +108,13 @@ mobile/
       training-preferences.tsx  modalidades e focos combináveis
     components/       componentes visuais reutilizáveis
     constants/        cores, espaçamentos e tipografia
-    data/             dados simulados da fase visual
+    config/           leitura das variaveis publicas de ambiente
+    data/             catalogos visuais e conversao dos dados da API
       image-library.ts catálogo e rotação semanal de imagens
-    context/          tema e preferências persistentes do usuário
-    types/            tipos do domínio usados pelo app
+    context/          sessao, dados reais, tema e preferencias
+    lib/              cliente Supabase do aplicativo
+    services/         comunicacao tipada com o backend NestJS
+    types/            tipos visuais e contratos da API
   assets/             ícones e imagens do aplicativo
   package.json        dependências e comandos
   app.json            configuração do Expo
@@ -130,6 +135,16 @@ Para abrir a versão web:
 npm run web
 ```
 
+Antes de iniciar, crie `mobile/.env.local` a partir de `.env.example` e preencha:
+
+```txt
+EXPO_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
+EXPO_PUBLIC_SUPABASE_ANON_KEY=chave-publica-anon
+EXPO_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+Somente valores publicos usam o prefixo `EXPO_PUBLIC_`. Chaves secretas nunca entram no aplicativo.
+
 Os testes em um iPhone físico serão feitos depois. Isso não impede o desenvolvimento do repositório e das telas.
 
 ## Verificações realizadas
@@ -139,19 +154,24 @@ Os testes em um iPhone físico serão feitos depois. Isso não impede o desenvol
 - Expo Doctor com 21 de 21 verificações aprovadas;
 - exportação web concluída;
 - navegação manual entre as cinco abas;
-- fluxo de entrada e onboarding;
+- login e cadastro por e-mail ligados ao Supabase Auth;
+- sessao persistente e abas protegidas;
+- token enviado automaticamente ao backend NestJS;
+- onboarding salvando objetivo e estado no banco;
+- telas Hoje, Treino, Dieta, Conta e Progresso lendo a API;
+- cargas, refeições e peso gravados por rotas autenticadas;
 - abertura de Progresso por Conta;
 - abertura de Configurações e Aparência por Conta;
 - troca persistente entre os temas claro e escuro;
 - seleção combinável de modalidades e focos de treino;
-- edição simulada de carga;
+- edição real de carga quando houver plano ativo;
 - envio simulado de mensagem ao Coach;
-- registro simulado de refeições.
+- registro real de refeições quando houver plano ativo.
 
-## Limite desta fase
+## Limite atual
 
-Os dados são temporários e existem apenas para validar as telas. Login real, persistência, planos reais, Planner, Coach local e comunicação com Supabase serão implementados nas próximas fases.
+Coach continua visual porque o servico local de NLP pertence a uma fase posterior. Imagens e preferencias locais continuam no aparelho. Sem um plano criado, as telas mostram estados vazios em vez de apresentar dados simulados como se fossem do usuario.
 
 ## Próximo passo
 
-Criar o backend NestJS e definir os contratos que ligarão o aplicativo ao Supabase, ao Planner e, futuramente, ao serviço local de NLP.
+Iniciar o Planner sem IA. A validacao completa em um iPhone sera feita depois, durante a etapa de qualidade do aplicativo.

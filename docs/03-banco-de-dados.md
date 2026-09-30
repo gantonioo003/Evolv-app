@@ -4,6 +4,8 @@
 
 Fase concluida em 19 de setembro de 2026.
 
+O schema inicial continua concluido. Novas necessidades descobertas durante o backend serão adicionadas por migrations separadas, preservando o histórico da fase 3.
+
 ## Objetivo desta fase
 
 Modelar o banco inicial do Evolv de forma organizada, versionada e pronta para ser usada pelo backend, mobile e Supabase.
@@ -48,8 +50,10 @@ supabase/
     202609190002_grant_authenticated_permissions.sql
     202609190003_enforce_owned_references.sql
     202609190004_fix_owned_reference_trigger.sql
+    202609300001_add_training_context.sql
   tests/
     phase_3_database.sql
+    phase_5_training_context.sql
 
 docs/
   03-banco-de-dados.md
@@ -85,6 +89,8 @@ Exemplos:
 - forca;
 - saude;
 - manutencao.
+
+Uma próxima migration diferenciará o objetivo geral do histórico de fases nutricionais. Assim, o usuário poderá registrar períodos de ganho de massa, perda de gordura, manutenção, recomposição ou pausa de dieta sem apagar objetivos anteriores.
 
 ### exercises
 
@@ -134,6 +140,8 @@ Exemplos:
 - data de inicio;
 - frequencia semanal;
 - objetivo ligado ao plano.
+
+Uma próxima migration adicionará o tipo de divisão do plano: Full body, Upper/Lower, Push/Pull/Legs, divisão por grupos musculares, híbrida ou personalizada. ABC, ABCD e ABCDE serão rótulos visuais; os dias do plano continuarão sendo a estrutura real.
 
 ### workout_days
 
@@ -187,6 +195,18 @@ Exemplos:
 - data recomendada para tentar;
 - motivo da sugestao;
 - sugestao aceita ou ignorada.
+
+As sugestões também poderão indicar manutenção de carga ou revisão de recuperação e explicar quais registros sustentaram o aviso. O Planner não tratará tempo sem aumento, sozinho, como prova de problema.
+
+### Extensões planejadas durante o backend
+
+- histórico de fases nutricionais;
+- tipo e nome da divisão de cada plano;
+- esforço percebido ou repetições em reserva opcionais;
+- check-ins opcionais de motivação, energia, sono, fome, estresse e recuperação;
+- evidências usadas para detectar possível dificuldade de progressão.
+
+Essas extensões ainda não estão implantadas no Supabase. Elas serão criadas e testadas em uma migration própria antes de serem usadas pelo aplicativo.
 
 ### diet_plans
 

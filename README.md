@@ -24,6 +24,8 @@ The central idea is simple:
 - Every main feature remains available to every user.
 - Onboarding covers the complete setup, but optional steps can be skipped and completed later in profile settings.
 - The daily experience should be simple and low-friction.
+- Proactive guidance should be quiet by default, rare, explainable, and dismissible.
+- Dismissing an insight should silence repeated alerts about the same topic for a meaningful period.
 
 ## MVP Scope
 
@@ -51,6 +53,10 @@ The first version of Evolv will focus on validating the core experience.
 - Notifications for workout and meal reminders.
 - Account screen with settings and progress access.
 - Standalone exercise load history and simple progression suggestions.
+- Optional nutrition-phase history for mass gain, fat loss, maintenance, recomposition, and diet breaks.
+- Training plans that support Full body, Upper/Lower, Push/Pull/Legs, body-part, hybrid, and custom splits.
+- Optional motivation and recovery check-ins used as context, never as mandatory daily tasks.
+- Plateau signals that connect comparable exercise logs with nutrition and recovery context before suggesting a review.
 
 ### Not included in the first MVP
 
@@ -203,7 +209,7 @@ In short:
 
 ## Current Project Status
 
-Product definition, the MVP database phase, and the repository-side mobile phase are complete. The Supabase project is deployed, seeded, secured, and tested. The Expo app is navigable with simulated data; backend integration has not started yet.
+Product definition and the initial MVP database phase are complete. The repository-side mobile phase is almost complete, with only validation on a physical iPhone still pending. All four backend passes are complete and provide authenticated integration between Expo, NestJS, and the remote Supabase project.
 
 Completed so far:
 
@@ -229,19 +235,33 @@ Completed so far:
 - Reusable visual components and centralized theme.
 - Simulated load editing, progression guidance, meal logging, and Coach conversation.
 - TypeScript, ESLint, web export, and manual navigation checks.
+- NestJS backend project organized by initial modules.
+- Environment validation, Supabase connection, token authentication, and centralized API errors.
+- Initial health and authenticated profile endpoints.
+- Backend build, unit test, and integration test passing.
+- Authenticated goals, workout, load history, nutrition, and progress modules.
+- Optional nutrition totals and user-controlled progression decisions.
+- Remote migration applied for nutrition phases, training splits, readiness, and quiet insight preferences.
+- Supabase Auth session, protected tabs, and authenticated API client in Expo.
+- Real profile, goal, workout, nutrition, load, and progress flows connected to the mobile screens.
+- Automatic profile creation enabled for new Auth accounts.
+- Remote schema lint and transactional database tests passing.
+- Database types regenerated from the updated remote schema.
+- OpenAPI/Swagger documentation with Bearer authentication.
+- Rate limiting, request timeout, request IDs, and structured HTTP logs.
+- Separate API liveness and Supabase readiness checks.
+- Eight unit tests and five E2E tests passing.
+- Production dependency audit with no known vulnerabilities.
 
 Next steps:
 
-1. Create the NestJS backend project.
-2. Define API contracts and connect the application layers to Supabase.
-3. Replace mobile mock data with authenticated API data.
-4. Implement the Planner without the Coach model.
-5. Build the local NLP baseline and knowledge retrieval.
-6. Train and evaluate the small Transformer language model.
-7. Integrate the local Coach service.
-8. Add notifications.
-9. Validate the app on a physical iPhone.
-10. Prepare a portfolio-ready demo.
+1. Implement the Planner without the Coach model.
+2. Build the local NLP baseline and knowledge retrieval.
+3. Train and evaluate the small Transformer language model.
+4. Integrate the local Coach service.
+5. Add notifications and validate the app on a physical iPhone.
+6. Configure deployment and production environments.
+7. Prepare a portfolio-ready demo.
 
 ## Repository Structure
 
@@ -265,7 +285,7 @@ evolv-app/
   README.md
 ```
 
-The mobile folder is now implemented. The backend and ML folders will be created when their phases begin.
+The mobile folder is connected to the real API and awaits physical iPhone validation. The backend MVP is complete for authentication, profiles, goals, workouts, loads, nutrition, and progress. The ML folder will be created when the local Coach phase begins.
 
 ## Author
 
