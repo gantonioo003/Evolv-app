@@ -203,7 +203,7 @@ In short:
 
 ## Current Project Status
 
-Product definition and the MVP database phase are complete. The Supabase project is deployed, seeded, secured, and tested. Mobile and backend implementation have not started yet.
+Product definition, the MVP database phase, and the repository-side mobile phase are complete. The Supabase project is deployed, seeded, secured, and tested. The Expo app is navigable with simulated data; backend integration has not started yet.
 
 Completed so far:
 
@@ -222,18 +222,26 @@ Completed so far:
 - Row Level Security and cross-user ownership protection.
 - Transactional CRUD tests for workout, load, diet, Coach, and progress.
 - Generated TypeScript database types.
+- Expo project with React Native and TypeScript.
+- Five-tab navigation: Today, Workout, Coach, Diet, and Account.
+- Login and skippable onboarding flows.
+- Account-based Progress screen.
+- Reusable visual components and centralized theme.
+- Simulated load editing, progression guidance, meal logging, and Coach conversation.
+- TypeScript, ESLint, web export, and manual navigation checks.
 
 Next steps:
 
-1. Create the Expo mobile project.
-2. Create the NestJS backend project.
-3. Connect the application layers to Supabase.
+1. Create the NestJS backend project.
+2. Define API contracts and connect the application layers to Supabase.
+3. Replace mobile mock data with authenticated API data.
 4. Implement the Planner without the Coach model.
 5. Build the local NLP baseline and knowledge retrieval.
 6. Train and evaluate the small Transformer language model.
 7. Integrate the local Coach service.
 8. Add notifications.
-9. Prepare a portfolio-ready demo.
+9. Validate the app on a physical iPhone.
+10. Prepare a portfolio-ready demo.
 
 ## Repository Structure
 
@@ -245,6 +253,7 @@ evolv-app/
     project documents, flow images, and visual concepts
     product and screen specifications
     database specification
+    mobile implementation notes
   supabase/
     database migrations, generated types, tests, and Supabase notes
   mobile/
@@ -256,7 +265,7 @@ evolv-app/
   README.md
 ```
 
-This structure may evolve as the implementation begins.
+The mobile folder is now implemented. The backend and ML folders will be created when their phases begin.
 
 ## Author
 

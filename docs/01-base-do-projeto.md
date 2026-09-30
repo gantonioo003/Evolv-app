@@ -64,7 +64,6 @@ evolv-app/
 
 ## Pendências curtas
 
-- Criar `mobile/` quando o app Expo começar.
 - Criar `backend/` quando a API NestJS começar.
 - Criar `ml/` quando a implementação do Coach local começar.
 - Criar o board de tarefas no GitHub se for usar gestão visual.
