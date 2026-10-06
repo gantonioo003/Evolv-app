@@ -111,11 +111,6 @@ export default function ProgressScreen() {
         eyebrow="Últimos 30 dias"
         title={"Evolução\nconsistente"}
         description="Cargas, medidas e fotos opcionais organizadas sem transformar progresso em cobrança."
-        meta={
-          weightDelta === null
-            ? "Histórico opcional"
-            : `${weightDelta >= 0 ? "+" : ""}${weightDelta.toFixed(1)} kg`
-        }
         height={240}
         overlayOpacity={0.18}
       />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
 import {
   Apple,
@@ -10,6 +10,9 @@ import {
 } from "lucide-react-native";
 import {
   Alert,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -34,6 +37,21 @@ export default function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [keyboardVisible, setKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const showSubscription = Keyboard.addListener("keyboardDidShow", () =>
+      setKeyboardVisible(true),
+    );
+    const hideSubscription = Keyboard.addListener("keyboardDidHide", () =>
+      setKeyboardVisible(false),
+    );
+
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, []);
 
   async function submit() {
     if (!email.trim() || password.length < 6) {
@@ -77,152 +95,173 @@ export default function LoginScreen() {
   }
 
   return (
-    <AppScreen>
-      <CinematicHero
-        source={require("@/assets/images/old-school-gym.png")}
-        eyebrow="Evolv"
-        title={"Feito para\no longo prazo."}
-        description="Plano, dieta, rotina e evolução em um só lugar."
-        meta="Consistência"
-      />
-
-      <View style={styles.heading}>
-        <Text style={styles.title}>
-          {mode === "login" ? "Entrar no Evolv" : "Criar sua conta"}
-        </Text>
-        <Text style={styles.description}>
-          {isConfigured
-            ? "Sua sessão é protegida pelo Supabase e continua ativa neste aparelho."
-            : "Configure o arquivo mobile/.env.local para habilitar a autenticação."}
-        </Text>
-      </View>
-
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => showSocialSetup("Google")}
-        style={({ pressed }) => [
-          styles.providerButton,
-          pressed && styles.pressed,
-        ]}
+    <AppScreen scroll={false} contentStyle={styles.screenContent}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        style={styles.keyboardView}
       >
-        <View style={styles.googleMark}>
-          <Text style={styles.googleText}>G</Text>
-        </View>
-        <Text style={styles.providerText}>Continuar com Google</Text>
-      </Pressable>
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => showSocialSetup("Apple")}
-        style={({ pressed }) => [
-          styles.providerButton,
-          pressed && styles.pressed,
-        ]}
-      >
-        <Apple color={palette.text} size={20} fill={palette.text} />
-        <Text style={styles.providerText}>Continuar com Apple</Text>
-      </Pressable>
-
-      <View style={styles.dividerRow}>
-        <View style={styles.line} />
-        <Text style={styles.or}>ou</Text>
-        <View style={styles.line} />
-      </View>
-
-      {mode === "signup" ? (
-        <View style={styles.inputGroup}>
-          <UserRound color={palette.muted} size={18} />
-          <TextInput
-            autoCapitalize="words"
-            autoComplete="name"
-            onChangeText={setFullName}
-            placeholder="Nome (opcional)"
-            placeholderTextColor={palette.faint}
-            style={styles.input}
-            value={fullName}
+        {!keyboardVisible ? (
+          <CinematicHero
+            source={require("@/assets/images/old-school-gym.png")}
+            eyebrow="Evolv"
+            title={"Seu plano.\nSeu ritmo."}
+            description="Treino, dieta e evolução para o longo prazo."
+            height={mode === "signup" ? 146 : 168}
+            overlayOpacity={0.3}
           />
+        ) : null}
+
+        <View style={styles.form}>
+          <View style={styles.heading}>
+            <Text style={styles.title}>
+              {mode === "login" ? "Entrar no Evolv" : "Criar sua conta"}
+            </Text>
+            <Text style={styles.description}>
+              {!isConfigured
+                ? "Configure o arquivo mobile/.env.local para habilitar a autenticação."
+                : mode === "login"
+                  ? "Continue de onde parou."
+                  : "Comece no seu ritmo e ajuste tudo depois."}
+            </Text>
+          </View>
+
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => showSocialSetup("Google")}
+            style={({ pressed }) => [
+              styles.providerButton,
+              pressed && styles.pressed,
+            ]}
+          >
+            <View style={styles.googleMark}>
+              <Text style={styles.googleText}>G</Text>
+            </View>
+            <Text style={styles.providerText}>Continuar com Google</Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => showSocialSetup("Apple")}
+            style={({ pressed }) => [
+              styles.providerButton,
+              pressed && styles.pressed,
+            ]}
+          >
+            <Apple color={palette.text} size={20} fill={palette.text} />
+            <Text style={styles.providerText}>Continuar com Apple</Text>
+          </Pressable>
+
+          <View style={styles.dividerRow}>
+            <View style={styles.line} />
+            <Text style={styles.or}>ou</Text>
+            <View style={styles.line} />
+          </View>
+
+          {mode === "signup" ? (
+            <View style={styles.inputGroup}>
+              <UserRound color={palette.muted} size={18} />
+              <TextInput
+                autoCapitalize="words"
+                autoComplete="name"
+                onChangeText={setFullName}
+                placeholder="Nome (opcional)"
+                placeholderTextColor={palette.faint}
+                style={styles.input}
+                value={fullName}
+              />
+            </View>
+          ) : null}
+
+          <View style={styles.inputGroup}>
+            <Mail color={palette.muted} size={18} />
+            <TextInput
+              autoCapitalize="none"
+              autoComplete="email"
+              keyboardType="email-address"
+              onChangeText={setEmail}
+              placeholder="E-mail"
+              placeholderTextColor={palette.faint}
+              style={styles.input}
+              value={email}
+            />
+          </View>
+          <View style={styles.inputGroup}>
+            <LogIn color={palette.muted} size={18} />
+            <TextInput
+              autoComplete="password"
+              onChangeText={setPassword}
+              placeholder="Senha"
+              placeholderTextColor={palette.faint}
+              secureTextEntry={!showPassword}
+              style={styles.input}
+              value={password}
+            />
+            <Pressable
+              accessibilityLabel={
+                showPassword ? "Ocultar senha" : "Mostrar senha"
+              }
+              onPress={() => setShowPassword((current) => !current)}
+              style={styles.eyeButton}
+            >
+              {showPassword ? (
+                <EyeOff color={palette.muted} size={18} />
+              ) : (
+                <Eye color={palette.muted} size={18} />
+              )}
+            </Pressable>
+          </View>
+
+          {error ? <Text style={styles.error}>{error}</Text> : null}
+
+          <Pressable
+            accessibilityRole="button"
+            disabled={isSubmitting || !isConfigured}
+            onPress={() => void submit()}
+            style={({ pressed }) => [
+              styles.primaryButton,
+              (!isConfigured || isSubmitting) && styles.disabled,
+              pressed && styles.pressed,
+            ]}
+          >
+            <Text style={styles.primaryButtonText}>
+              {isSubmitting
+                ? "Aguarde..."
+                : mode === "login"
+                  ? "Entrar com e-mail"
+                  : "Criar conta"}
+            </Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => {
+              setError(null);
+              setMode((current) => (current === "login" ? "signup" : "login"));
+            }}
+            style={styles.createButton}
+          >
+            <Text style={styles.createText}>
+              {mode === "login" ? "Criar uma conta" : "Já tenho uma conta"}
+            </Text>
+          </Pressable>
         </View>
-      ) : null}
-
-      <View style={styles.inputGroup}>
-        <Mail color={palette.muted} size={18} />
-        <TextInput
-          autoCapitalize="none"
-          autoComplete="email"
-          keyboardType="email-address"
-          onChangeText={setEmail}
-          placeholder="E-mail"
-          placeholderTextColor={palette.faint}
-          style={styles.input}
-          value={email}
-        />
-      </View>
-      <View style={styles.inputGroup}>
-        <LogIn color={palette.muted} size={18} />
-        <TextInput
-          autoComplete="password"
-          onChangeText={setPassword}
-          placeholder="Senha"
-          placeholderTextColor={palette.faint}
-          secureTextEntry={!showPassword}
-          style={styles.input}
-          value={password}
-        />
-        <Pressable
-          accessibilityLabel={showPassword ? "Ocultar senha" : "Mostrar senha"}
-          onPress={() => setShowPassword((current) => !current)}
-          style={styles.eyeButton}
-        >
-          {showPassword ? (
-            <EyeOff color={palette.muted} size={18} />
-          ) : (
-            <Eye color={palette.muted} size={18} />
-          )}
-        </Pressable>
-      </View>
-
-      {error ? <Text style={styles.error}>{error}</Text> : null}
-
-      <Pressable
-        accessibilityRole="button"
-        disabled={isSubmitting || !isConfigured}
-        onPress={() => void submit()}
-        style={({ pressed }) => [
-          styles.primaryButton,
-          (!isConfigured || isSubmitting) && styles.disabled,
-          pressed && styles.pressed,
-        ]}
-      >
-        <Text style={styles.primaryButtonText}>
-          {isSubmitting
-            ? "Aguarde..."
-            : mode === "login"
-              ? "Entrar com e-mail"
-              : "Criar conta"}
-        </Text>
-      </Pressable>
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => {
-          setError(null);
-          setMode((current) => (current === "login" ? "signup" : "login"));
-        }}
-        style={styles.createButton}
-      >
-        <Text style={styles.createText}>
-          {mode === "login" ? "Criar uma conta" : "Já tenho uma conta"}
-        </Text>
-      </Pressable>
+      </KeyboardAvoidingView>
     </AppScreen>
   );
 }
 
 const createStyles = (palette: AppThemePalette) =>
   StyleSheet.create({
-    heading: { gap: 5 },
-    title: { color: palette.text, fontSize: 22, fontWeight: "900" },
+    screenContent: {
+      paddingTop: spacing.sm,
+      paddingBottom: spacing.sm,
+      gap: 0,
+    },
+    keyboardView: { flex: 1, justifyContent: "center", gap: 10 },
+    form: { gap: 9 },
+    heading: { gap: 2 },
+    title: { color: palette.text, fontSize: 20, fontWeight: "900" },
     description: { color: palette.muted, fontSize: 12.5, lineHeight: 18 },
     providerButton: {
-      height: 52,
+      height: 46,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
@@ -250,7 +289,7 @@ const createStyles = (palette: AppThemePalette) =>
     },
     or: { color: palette.faint, fontSize: 11, textTransform: "uppercase" },
     inputGroup: {
-      minHeight: 52,
+      minHeight: 46,
       flexDirection: "row",
       alignItems: "center",
       gap: 10,
@@ -260,7 +299,7 @@ const createStyles = (palette: AppThemePalette) =>
       backgroundColor: palette.elevated,
       paddingHorizontal: 14,
     },
-    input: { flex: 1, color: palette.text, fontSize: 14, paddingVertical: 13 },
+    input: { flex: 1, color: palette.text, fontSize: 14, paddingVertical: 10 },
     eyeButton: {
       width: 34,
       height: 40,
@@ -268,7 +307,7 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
     },
     primaryButton: {
-      height: 52,
+      height: 48,
       alignItems: "center",
       justifyContent: "center",
       borderRadius: radius.lg,
@@ -276,7 +315,7 @@ const createStyles = (palette: AppThemePalette) =>
     },
     primaryButtonText: { color: colors.text, fontSize: 14, fontWeight: "900" },
     createButton: {
-      height: 40,
+      height: 34,
       alignItems: "center",
       justifyContent: "center",
     },

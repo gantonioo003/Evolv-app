@@ -96,6 +96,16 @@ O app não usará culpa, sequência obrigatória ou mensagens de fracasso. Se a 
 
 O usuário continuará livre para ignorar o check-in, não registrar treinos e usar somente as partes do app que desejar.
 
+O check-in deve reduzir esforco mental, nunca criar outra tarefa diaria. Por isso:
+
+- nao abre automaticamente sobre a tela principal;
+- pode ser respondido em poucos toques e sempre pode ser ignorado;
+- nao usa sequencia, pontuacao, culpa ou cobranca por dias vazios;
+- nao pede novamente uma informacao registrada recentemente sem necessidade;
+- aparece como convite discreto em momentos uteis, como resumo semanal, queda repetida de desempenho ou pedido do proprio usuario;
+- respostas parciais sao validas: a pessoa pode informar apenas sono ou energia;
+- os dados so geram uma sugestao quando existe contexto suficiente e nunca alteram o plano sozinhos.
+
 ## Atenção silenciosa
 
 O Evolv deve acompanhar somente os dados que o usuário decidiu registrar ou autorizou. Estar atento não significa interromper a pessoa o tempo todo.

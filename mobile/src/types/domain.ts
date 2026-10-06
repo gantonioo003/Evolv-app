@@ -3,9 +3,10 @@ export type Exercise = {
   name: string;
   sets: number;
   reps: string;
+  durationMinutes?: number;
   restSeconds: number;
   load: number;
-  unit: 'kg';
+  unit: "kg";
   note?: string;
 };
 
@@ -15,7 +16,7 @@ export type WorkoutDay = {
   shortLabel: string;
   title: string;
   durationMinutes: number;
-  status: 'planned' | 'free' | 'rest';
+  status: "planned" | "free" | "rest";
   exercises: Exercise[];
 };
 
@@ -32,6 +33,6 @@ export type Meal = {
 
 export type CoachMessage = {
   id: string;
-  sender: 'coach' | 'user';
+  sender: "coach" | "user";
   text: string;
 };

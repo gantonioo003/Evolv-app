@@ -198,7 +198,7 @@ Exemplos:
 
 As sugestões também poderão indicar manutenção de carga ou revisão de recuperação e explicar quais registros sustentaram o aviso. O Planner não tratará tempo sem aumento, sozinho, como prova de problema.
 
-### Extensões planejadas durante o backend
+### Extensões implantadas durante o backend
 
 - histórico de fases nutricionais;
 - tipo e nome da divisão de cada plano;
@@ -206,7 +206,7 @@ As sugestões também poderão indicar manutenção de carga ou revisão de recu
 - check-ins opcionais de motivação, energia, sono, fome, estresse e recuperação;
 - evidências usadas para detectar possível dificuldade de progressão.
 
-Essas extensões ainda não estão implantadas no Supabase. Elas serão criadas e testadas em uma migration própria antes de serem usadas pelo aplicativo.
+Essas extensões foram implantadas no Supabase e protegidas por RLS. O check-in de recuperação já pode guardar respostas parciais; sua interface permanecerá opcional e discreta.
 
 ### diet_plans
 
@@ -217,7 +217,11 @@ Exemplos:
 - meta aproximada de calorias;
 - meta aproximada de proteina;
 - metas de carboidrato, gordura e fibra;
+- fase nutricional, padrão de macros, estilo alimentar e horário;
+- versão e entrada usada pelo Planner;
 - observacoes do plano.
+
+Somente um plano alimentar pode estar ativo por usuário. Planos antigos são arquivados para preservar o histórico.
 
 ### foods
 
@@ -235,6 +239,13 @@ Dados principais por 100 g ou 100 ml:
 - sodio;
 - marca e codigo de barras, quando existirem;
 - fonte e identificador externo.
+
+Para o Planner, cada alimento também informa:
+
+- papel nutricional, como proteína, carboidrato, vegetal/fruta ou gordura;
+- estilos e tipos de refeição compatíveis;
+- alérgenos e nível de processamento;
+- porção mínima, máxima, inicial e passo de ajuste.
 
 ### nutrients e food_nutrients
 
@@ -272,6 +283,8 @@ Exemplos:
 - lanche;
 - jantar.
 
+Cada refeição guarda posição, metas e totais realmente calculados pelo gerador.
+
 ### meal_items
 
 Guarda os alimentos de cada refeicao.
@@ -283,6 +296,8 @@ Exemplos:
 - ovos;
 - banana;
 - aveia.
+
+Cada item guarda sua posição, quantidade, unidade, macros calculados, papel nutricional e alternativas equivalentes. A ordem é persistida para que os alimentos não voltem embaralhados da API.
 
 ### food_logs
 
@@ -419,11 +434,10 @@ O comando `supabase db lint --linked --level warning` tambem foi executado e ret
 
 ## O que pertence as proximas fases
 
-- Criar o app Expo.
-- Criar o backend NestJS.
-- Conectar app e backend ao Supabase.
-- Criar endpoints e regras do Planner.
-- Integrar as fontes externas de alimentos e exercicios.
+- integrar o Coach local de NLP/LM aos contratos seguros do Planner;
+- ampliar e revisar os catalogos de alimentos e exercicios com fontes compativeis;
+- configurar deploy, notificacoes e monitoramento;
+- concluir a validacao da experiencia em um iPhone fisico.
 
 ## Criterio para encerrar a fase
 

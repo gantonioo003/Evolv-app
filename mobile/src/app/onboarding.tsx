@@ -96,8 +96,7 @@ export default function OnboardingScreen() {
   }
 
   function skip() {
-    if (isLast) void finish(true);
-    else setStep((currentStep) => currentStep + 1);
+    void finish(true);
   }
 
   return (
@@ -119,7 +118,7 @@ export default function OnboardingScreen() {
           onPress={skip}
           style={styles.skipButton}
         >
-          <Text style={styles.skipText}>Pular</Text>
+          <Text style={styles.skipText}>Pular tudo</Text>
         </Pressable>
       </View>
 
@@ -232,7 +231,7 @@ const createStyles = (palette: AppThemePalette) =>
       textTransform: "uppercase",
     },
     skipButton: {
-      minWidth: 52,
+      minWidth: 76,
       height: 40,
       alignItems: "center",
       justifyContent: "center",

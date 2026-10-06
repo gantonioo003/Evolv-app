@@ -11,8 +11,8 @@ import { useRouter } from "expo-router";
 import {
   Apple,
   ArrowLeftRight,
+  CalendarRange,
   Flame,
-  Search,
   Utensils,
 } from "lucide-react-native";
 import Svg, { Circle } from "react-native-svg";
@@ -45,43 +45,100 @@ export default function DietScreen() {
     error,
     isMutating,
     nutritionSummary,
+    profile,
     todayFoodLogs,
+    todayContext,
     toggleMealRegistration,
+    workoutPlan,
   } = useEvolvData();
   const styles = createStyles(palette);
   const router = useRouter();
+  const currentWeekday = weekdayFromDate(new Date());
+  const isTrainingDay = workoutPlan
+    ? workoutPlan.workout_days.some((day) => day.weekday === currentWeekday)
+    : (profile?.available_training_days ?? []).includes(currentWeekday);
+  const currentDayType =
+    todayContext?.nutrition_day_type ??
+    (isTrainingDay ? "training_day" : "rest_day");
+  const rotationIndex = dietPlan?.menu_rotation_enabled
+    ? dayRotationIndex(new Date(), dietPlan.menu_rotation_size)
+    : 0;
+  const visibleMeals = useMemo(
+    () =>
+      dietPlan?.meals.filter(
+        (meal) =>
+          (!dietPlan.uses_day_variants || meal.day_type === currentDayType) &&
+          meal.rotation_index === rotationIndex,
+      ) ?? [],
+    [currentDayType, dietPlan, rotationIndex],
+  );
   const meals = useMemo(
-    () => (dietPlan ? mapDietPlanToMeals(dietPlan) : []),
-    [dietPlan],
+    () =>
+      dietPlan ? mapDietPlanToMeals({ ...dietPlan, meals: visibleMeals }) : [],
+    [dietPlan, visibleMeals],
   );
   const consumedCalories = nutritionSummary?.calories_kcal ?? 0;
-  const calorieTarget = dietPlan?.daily_calories_target ?? 0;
+  const calorieTarget = dietPlan?.uses_day_variants
+    ? currentDayType === "training_day"
+      ? (dietPlan.training_day_calories_target ?? 0)
+      : (dietPlan.rest_day_calories_target ?? 0)
+    : (dietPlan?.daily_calories_target ?? 0);
+  const mealTarget = (
+    field: "protein_target_g" | "carbohydrate_target_g" | "fat_target_g",
+  ) =>
+    Math.round(
+      visibleMeals.reduce((total, meal) => total + (meal[field] ?? 0), 0),
+    );
   const macroData = [
     {
       label: "Proteína",
       current: nutritionSummary?.protein_g ?? 0,
-      target: dietPlan?.daily_protein_target_g ?? 0,
+      target: dietPlan?.uses_day_variants
+        ? mealTarget("protein_target_g")
+        : (dietPlan?.daily_protein_target_g ?? 0),
       unit: "g",
       color: colors.red,
     },
     {
       label: "Carboidratos",
       current: nutritionSummary?.carbohydrate_g ?? 0,
-      target: dietPlan?.daily_carbohydrate_target_g ?? 0,
+      target: dietPlan?.uses_day_variants
+        ? mealTarget("carbohydrate_target_g")
+        : (dietPlan?.daily_carbohydrate_target_g ?? 0),
       unit: "g",
       color: colors.gold,
     },
     {
       label: "Gorduras",
       current: nutritionSummary?.fat_g ?? 0,
-      target: dietPlan?.daily_fat_target_g ?? 0,
+      target: dietPlan?.uses_day_variants
+        ? mealTarget("fat_target_g")
+        : (dietPlan?.daily_fat_target_g ?? 0),
       unit: "g",
       color: colors.green,
     },
   ];
+  const flexibleMealToday = Boolean(
+    dietPlan &&
+    isPlannedForToday(
+      new Date(),
+      dietPlan.created_at,
+      dietPlan.flexible_meal_weekday,
+      dietPlan.flexible_meal_frequency,
+    ),
+  );
+  const alcoholToday = Boolean(
+    dietPlan &&
+    isPlannedForToday(
+      new Date(),
+      dietPlan.created_at,
+      dietPlan.alcohol_preferred_weekday,
+      dietPlan.alcohol_frequency,
+    ),
+  );
 
   async function toggleMeal(index: number) {
-    const meal = dietPlan?.meals[index];
+    const meal = visibleMeals[index];
     if (!meal) return;
     try {
       await toggleMealRegistration(meal);
@@ -98,14 +155,9 @@ export default function DietScreen() {
       <PageHeader
         eyebrow="Plano simples"
         title="Dieta"
-        actionIcon={Search}
-        actionLabel="Buscar alimentos"
-        onAction={() =>
-          Alert.alert(
-            "Busca de alimentos",
-            "A busca completa será ligada à fonte nutricional na fase de integração.",
-          )
-        }
+        actionIcon={CalendarRange}
+        actionLabel="Gerenciar planos alimentares"
+        onAction={() => router.push("/diet-plans")}
       />
 
       <CinematicHero
@@ -113,7 +165,6 @@ export default function DietScreen() {
         eyebrow="Plano de hoje"
         title={"Comer bem.\nSeguir firme."}
         description="Refeições fáceis, troca rápida e metas que você consegue entender."
-        meta={dietPlan ? `${calorieTarget} kcal` : "Sem plano ativo"}
       />
 
       <View style={styles.nutritionFacts}>
@@ -123,9 +174,7 @@ export default function DietScreen() {
         </View>
         <View style={styles.nutritionDivider} />
         <View style={styles.nutritionFact}>
-          <Text style={styles.nutritionValue}>
-            {dietPlan?.daily_protein_target_g ?? 0} g
-          </Text>
+          <Text style={styles.nutritionValue}>{macroData[0].target} g</Text>
           <Text style={styles.nutritionLabel}>proteína</Text>
         </View>
         <View style={styles.nutritionDivider} />
@@ -178,7 +227,37 @@ export default function DietScreen() {
         </View>
       </View>
 
-      <SectionTitle title="Hoje" meta="registro opcional" />
+      {flexibleMealToday || alcoholToday ? (
+        <>
+          <SectionTitle title="Flexibilidade de hoje" meta="já planejada" />
+          <Surface>
+            <InfoRow
+              leading={<LabelIcon icon={CalendarRange} />}
+              title={
+                flexibleMealToday
+                  ? "Refeição flexível prevista"
+                  : "Bebida planejada para hoje"
+              }
+              description={
+                flexibleMealToday
+                  ? "Ela substitui uma refeição do plano. Aproveite sem transformar isso em uma refeição extra."
+                  : `Seu limite salvo é de ${dietPlan?.alcohol_max_servings ?? 1} porção. O registro continua opcional.`
+              }
+            />
+          </Surface>
+        </>
+      ) : null}
+
+      <SectionTitle
+        title="Hoje"
+        meta={
+          dietPlan?.uses_day_variants
+            ? isTrainingDay
+              ? "dia de treino"
+              : "dia de descanso"
+            : "registro opcional"
+        }
+      />
       <Surface>
         {meals.map((meal, index) => {
           const registered = todayFoodLogs.some(
@@ -298,6 +377,48 @@ export default function DietScreen() {
       </Surface>
     </AppScreen>
   );
+}
+
+function weekdayFromDate(date: Date) {
+  const weekdays = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+  return weekdays[date.getDay()];
+}
+
+function dayRotationIndex(date: Date, rotationSize: number) {
+  if (rotationSize <= 1) return 0;
+  const localDay = Date.UTC(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  );
+  return Math.floor(localDay / 86_400_000) % rotationSize;
+}
+
+function isPlannedForToday(
+  date: Date,
+  planCreatedAt: string,
+  weekday: string | null,
+  frequency: string,
+) {
+  if (!weekday || frequency === "none" || weekdayFromDate(date) !== weekday) {
+    return false;
+  }
+  if (frequency === "weekly") return true;
+  if (frequency === "monthly") return date.getDate() <= 7;
+  const created = new Date(planCreatedAt);
+  const elapsedDays = Math.max(
+    0,
+    Math.floor((date.getTime() - created.getTime()) / 86_400_000),
+  );
+  return Math.floor(elapsedDays / 7) % 2 === 0;
 }
 
 function NutritionDial({

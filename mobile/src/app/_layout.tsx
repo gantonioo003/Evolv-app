@@ -47,6 +47,12 @@ function ThemedRoot() {
           <Stack.Screen name="appearance" />
           <Stack.Screen name="image-preferences" />
           <Stack.Screen name="training-preferences" />
+          <Stack.Screen name="plans/index" />
+          <Stack.Screen name="plans/[planId]" />
+          <Stack.Screen name="diet-plans/index" />
+          <Stack.Screen name="diet-plans/[planId]" />
+          <Stack.Screen name="adjustments/index" />
+          <Stack.Screen name="adjustments/[adjustmentId]" />
         </Stack>
       </SafeAreaProvider>
     </GestureHandlerRootView>

@@ -1,15 +1,23 @@
 import { ApiClient } from "@/services/api-client";
 import type {
   DietPlanApi,
+  DietPlanSummaryApi,
+  ExerciseCatalogApi,
   FoodLogApi,
+  GenerateNutritionPlanInput,
+  GenerateWorkoutPlanInput,
   GoalApi,
   GoalType,
   NutritionSummaryApi,
+  PlannerAdjustmentApi,
+  PlannerDayContextApi,
+  CreatePlannerAdjustmentInput,
   ProfileApi,
   ProgressEntryApi,
   ProgressionSuggestionApi,
   UpdateProfileInput,
   WorkoutPlanApi,
+  WorkoutPlanSummaryApi,
 } from "@/types/api";
 
 const dateOnly = (date: Date) => date.toISOString().slice(0, 10);
@@ -41,6 +49,80 @@ export class EvolvApi {
     return this.client.get<WorkoutPlanApi | null>("/workouts/active-plan");
   }
 
+  listWorkoutPlans() {
+    return this.client.get<WorkoutPlanSummaryApi[]>("/planner/plans?limit=50");
+  }
+
+  getWorkoutPlan(planId: string) {
+    return this.client.get<WorkoutPlanApi>(`/planner/plans/${planId}`);
+  }
+
+  generateWorkoutPlan(input: GenerateWorkoutPlanInput) {
+    return this.client.post<WorkoutPlanApi>("/planner/plans/generate", input);
+  }
+
+  activateWorkoutPlan(planId: string) {
+    return this.client.post<WorkoutPlanApi>(
+      `/planner/plans/${planId}/activate`,
+    );
+  }
+
+  archiveWorkoutPlan(planId: string) {
+    return this.client.post<WorkoutPlanApi>(`/planner/plans/${planId}/archive`);
+  }
+
+  getPlannerDayContext(date = localDateOnly(new Date())) {
+    return this.client.get<PlannerDayContextApi>(
+      `/planner/day-context?date=${encodeURIComponent(date)}`,
+    );
+  }
+
+  listExercises(filters?: { muscleGroup?: string; search?: string }) {
+    const query = new URLSearchParams({ limit: "100" });
+    if (filters?.muscleGroup) query.set("muscle_group", filters.muscleGroup);
+    if (filters?.search) query.set("search", filters.search);
+    return this.client.get<ExerciseCatalogApi[]>(
+      `/workouts/exercises?${query.toString()}`,
+    );
+  }
+
+  previewPlannerAdjustment(input: CreatePlannerAdjustmentInput) {
+    return this.client.post<PlannerAdjustmentApi>(
+      "/planner/adjustments/preview",
+      input,
+    );
+  }
+
+  listPlannerAdjustments() {
+    return this.client.get<PlannerAdjustmentApi[]>(
+      "/planner/adjustments?limit=100",
+    );
+  }
+
+  getPlannerAdjustment(adjustmentId: string) {
+    return this.client.get<PlannerAdjustmentApi>(
+      `/planner/adjustments/${adjustmentId}`,
+    );
+  }
+
+  applyPlannerAdjustment(adjustmentId: string) {
+    return this.client.post<PlannerAdjustmentApi>(
+      `/planner/adjustments/${adjustmentId}/apply`,
+    );
+  }
+
+  rejectPlannerAdjustment(adjustmentId: string) {
+    return this.client.post<PlannerAdjustmentApi>(
+      `/planner/adjustments/${adjustmentId}/reject`,
+    );
+  }
+
+  revertPlannerAdjustment(adjustmentId: string) {
+    return this.client.post<PlannerAdjustmentApi>(
+      `/planner/adjustments/${adjustmentId}/revert`,
+    );
+  }
+
   getProgressionSuggestions() {
     return this.client.get<ProgressionSuggestionApi[]>(
       "/workouts/progression-suggestions?status=pending&limit=20",
@@ -61,6 +143,35 @@ export class EvolvApi {
 
   getActiveDietPlan() {
     return this.client.get<DietPlanApi | null>("/nutrition/active-plan");
+  }
+
+  listDietPlans() {
+    return this.client.get<DietPlanSummaryApi[]>(
+      "/planner/nutrition-plans?limit=50",
+    );
+  }
+
+  getDietPlan(planId: string) {
+    return this.client.get<DietPlanApi>(`/planner/nutrition-plans/${planId}`);
+  }
+
+  generateDietPlan(input: GenerateNutritionPlanInput) {
+    return this.client.post<DietPlanApi>(
+      "/planner/nutrition-plans/generate",
+      input,
+    );
+  }
+
+  activateDietPlan(planId: string) {
+    return this.client.post<DietPlanApi>(
+      `/planner/nutrition-plans/${planId}/activate`,
+    );
+  }
+
+  archiveDietPlan(planId: string) {
+    return this.client.post<DietPlanApi>(
+      `/planner/nutrition-plans/${planId}/archive`,
+    );
   }
 
   getTodayFoodLogs() {
@@ -109,4 +220,11 @@ export class EvolvApi {
       ...input,
     });
   }
+}
+
+function localDateOnly(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }

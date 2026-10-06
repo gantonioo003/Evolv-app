@@ -8,6 +8,7 @@ import {
 } from "lucide-react-native";
 import { useEffect, useState, type ComponentProps } from "react";
 import {
+  ActivityIndicator,
   Animated,
   Easing,
   Platform,
@@ -18,22 +19,41 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { shadows, typography } from "@/constants/theme";
+import { colors, shadows, typography } from "@/constants/theme";
 import { useAuth } from "@/context/auth-context";
+import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 
 export default function TabsLayout() {
   const { palette } = useAppTheme();
   const { isLoading, session } = useAuth();
+  const { hasLoaded, isLoading: isDataLoading, profile } = useEvolvData();
 
   if (isLoading) return null;
   if (!session) return <Redirect href="/login" />;
+  if (!hasLoaded || isDataLoading) {
+    return (
+      <View style={[styles.loadingScreen, { backgroundColor: palette.page }]}>
+        <Text style={[styles.loadingBrand, { color: palette.text }]}>
+          EVOLV
+        </Text>
+        <ActivityIndicator color={colors.gold} />
+      </View>
+    );
+  }
+  if (
+    profile &&
+    (profile.onboarding_status === "not_started" ||
+      profile.onboarding_status === "in_progress")
+  ) {
+    return <Redirect href="/onboarding" />;
+  }
 
   return (
     <Tabs
       tabBar={(props) => <AppTabBar {...props} />}
       screenOptions={{
-        animation: "fade",
+        animation: "shift",
         headerShown: false,
         sceneStyle: { backgroundColor: palette.page },
       }}
@@ -133,7 +153,11 @@ function AppTabItem({
 
   const scale = focusProgress.interpolate({
     inputRange: [0, 1],
-    outputRange: [1, 1.08],
+    outputRange: [1, 1.05],
+  });
+  const translateY = focusProgress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, -2],
   });
 
   return (
@@ -150,7 +174,13 @@ function AppTabItem({
       <Animated.View
         style={[
           styles.tabItemContent,
-          { opacity: focused ? 1 : 0.72, transform: [{ scale }] },
+          {
+            backgroundColor: focused ? palette.elevated : "transparent",
+            borderColor: focused ? palette.border : "transparent",
+            borderWidth: focused ? StyleSheet.hairlineWidth : 0,
+            opacity: focused ? 1 : 0.72,
+            transform: [{ translateY }, { scale }],
+          },
         ]}
       >
         <Icon color={color} size={23} strokeWidth={focused ? 2.15 : 1.8} />
@@ -161,17 +191,28 @@ function AppTabItem({
 }
 
 const styles = StyleSheet.create({
-  tabBarPosition: { position: "absolute", left: 10, right: 10 },
+  loadingScreen: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 14,
+  },
+  loadingBrand: {
+    fontFamily: typography.display,
+    fontSize: 25,
+    fontWeight: "900",
+  },
+  tabBarPosition: { position: "absolute", left: 14, right: 14 },
   tabBar: {
     width: "100%",
     maxWidth: 740,
-    height: 60,
+    height: 66,
     alignSelf: "center",
     flexDirection: "row",
     borderWidth: 1,
-    borderRadius: 22,
-    paddingHorizontal: 5,
-    paddingVertical: 3,
+    borderRadius: 30,
+    paddingHorizontal: 6,
+    paddingVertical: 4,
     ...shadows.card,
   },
   tabItem: {
@@ -181,12 +222,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   tabItemContent: {
+    minWidth: 60,
     alignItems: "center",
     justifyContent: "center",
     gap: 3,
-    paddingHorizontal: 4,
-    paddingVertical: 6,
+    borderRadius: 22,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
   },
   tabItemPressed: { opacity: 0.58 },
-  tabLabel: { fontFamily: typography.body, fontSize: 10, fontWeight: "700" },
+  tabLabel: { fontFamily: typography.body, fontSize: 10.5, fontWeight: "700" },
 });

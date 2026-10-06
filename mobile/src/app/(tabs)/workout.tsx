@@ -14,6 +14,7 @@ import {
   Dumbbell,
   Info,
   SlidersHorizontal,
+  Sparkles,
   TrendingUp,
 } from "lucide-react-native";
 
@@ -42,6 +43,7 @@ import {
 import { workoutDays } from "@/data/mock-data";
 import { pickWeeklyImage, workoutImageLibrary } from "@/data/image-library";
 import { trainingFocuses, trainingModalities } from "@/data/training-options";
+import type { PlannerModality } from "@/types/api";
 
 const emptyWorkoutDays = workoutDays.map((day) => ({
   ...day,
@@ -56,7 +58,9 @@ export default function WorkoutScreen() {
   const imagePreferences = useImagePreferences();
   const {
     error,
+    generateWorkoutPlan,
     isMutating,
+    profile,
     progressionSuggestions,
     recordExerciseLoad,
     workoutPlan,
@@ -117,7 +121,9 @@ export default function WorkoutScreen() {
     1,
   );
   const changedExercises = selectedDay.exercises.filter(
-    (exercise) => (loads[exercise.id] ?? exercise.load) !== exercise.load,
+    (exercise) =>
+      !exercise.durationMinutes &&
+      (loads[exercise.id] ?? exercise.load) !== exercise.load,
   );
   const firstSuggestion = progressionSuggestions.find(
     (suggestion) => suggestion.exercises.id === firstExercise?.id,
@@ -146,19 +152,36 @@ export default function WorkoutScreen() {
     }
   }
 
+  async function createPlan() {
+    try {
+      const savedDays = profile?.available_training_days ?? [];
+      await generateWorkoutPlan({
+        available_days: savedDays.length ? savedDays : undefined,
+        desired_weekly_frequency: savedDays.length ? undefined : 3,
+        session_minutes: 50,
+        modalities: selectedModalityIds as PlannerModality[],
+        activate: true,
+      });
+      Alert.alert(
+        "Plano criado",
+        "O Planner montou e ativou sua primeira semana com dados reais.",
+      );
+    } catch (caught) {
+      Alert.alert(
+        "Nao foi possivel criar",
+        caught instanceof Error ? caught.message : "Tente novamente.",
+      );
+    }
+  }
+
   return (
     <AppScreen>
       <PageHeader
         eyebrow={workoutPlan ? "Plano ativo" : "Sem plano ativo"}
         title="Treino"
         actionIcon={CalendarRange}
-        actionLabel="Informações do calendário"
-        onAction={() =>
-          Alert.alert(
-            "Calendário",
-            "A agenda completa será conectada quando o Planner for implementado.",
-          )
-        }
+        actionLabel="Gerenciar planos"
+        onAction={() => router.push("/plans")}
       />
 
       <ScrollView
@@ -199,13 +222,6 @@ export default function WorkoutScreen() {
         eyebrow={selectedDay.weekday}
         title={selectedDay.title}
         description={heroDescription}
-        meta={
-          selectedDay.status === "planned"
-            ? "Treino previsto"
-            : selectedDay.status === "rest"
-              ? "Recuperação"
-              : "Agenda flexível"
-        }
         height={240}
         overlayOpacity={0.2}
       />
@@ -224,6 +240,24 @@ export default function WorkoutScreen() {
           }
         />
       </View>
+
+      {!workoutPlan ? (
+        <Pressable
+          accessibilityRole="button"
+          disabled={isMutating}
+          onPress={() => void createPlan()}
+          style={({ pressed }) => [
+            styles.plannerButton,
+            isMutating && styles.disabled,
+            pressed && styles.pressed,
+          ]}
+        >
+          <Sparkles color={colors.text} size={18} />
+          <Text style={styles.plannerButtonText}>
+            {isMutating ? "Montando plano..." : "Criar plano com o Planner"}
+          </Text>
+        </Pressable>
+      ) : null}
 
       <SectionTitle title="Modalidades do plano" meta="combináveis" />
       <Surface>
@@ -261,20 +295,23 @@ export default function WorkoutScreen() {
                 <View style={styles.exerciseBody}>
                   <Text style={styles.exerciseName}>{exercise.name}</Text>
                   <Text style={styles.exerciseMeta}>
-                    {exercise.sets} séries - {exercise.reps} reps -{" "}
-                    {exercise.restSeconds}s
+                    {exercise.durationMinutes
+                      ? `${exercise.durationMinutes} minutos`
+                      : `${exercise.sets} séries - ${exercise.reps} reps - ${exercise.restSeconds}s`}
                     {exercise.note ? ` - ${exercise.note}` : ""}
                   </Text>
                 </View>
-                <LoadStepper
-                  value={loads[exercise.id] ?? exercise.load}
-                  onChange={(value) =>
-                    setLoads((current) => ({
-                      ...current,
-                      [exercise.id]: value,
-                    }))
-                  }
-                />
+                {!exercise.durationMinutes ? (
+                  <LoadStepper
+                    value={loads[exercise.id] ?? exercise.load}
+                    onChange={(value) =>
+                      setLoads((current) => ({
+                        ...current,
+                        [exercise.id]: value,
+                      }))
+                    }
+                  />
+                ) : null}
               </View>
             </View>
           ))}
@@ -438,6 +475,20 @@ const createStyles = (palette: AppThemePalette) =>
       backgroundColor: colors.red,
     },
     saveButtonText: { color: colors.text, fontSize: 13, fontWeight: "900" },
+    plannerButton: {
+      minHeight: 52,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 8,
+      borderRadius: radius.lg,
+      backgroundColor: colors.red,
+    },
+    plannerButtonText: {
+      color: colors.text,
+      fontSize: 13,
+      fontWeight: "900",
+    },
     errorText: {
       color: colors.red,
       fontSize: 12,

@@ -120,51 +120,158 @@ export type Database = {
           },
         ]
       }
+      daily_activity_overrides: {
+        Row: {
+          activity_date: string
+          activity_type: string
+          created_at: string
+          estimated_minutes: number | null
+          id: string
+          intensity: string | null
+          note: string | null
+          nutrition_day_type: string
+          source: string
+          updated_at: string
+          user_id: string
+          workout_day_id: string | null
+        }
+        Insert: {
+          activity_date: string
+          activity_type: string
+          created_at?: string
+          estimated_minutes?: number | null
+          id?: string
+          intensity?: string | null
+          note?: string | null
+          nutrition_day_type: string
+          source?: string
+          updated_at?: string
+          user_id: string
+          workout_day_id?: string | null
+        }
+        Update: {
+          activity_date?: string
+          activity_type?: string
+          created_at?: string
+          estimated_minutes?: number | null
+          id?: string
+          intensity?: string | null
+          note?: string | null
+          nutrition_day_type?: string
+          source?: string
+          updated_at?: string
+          user_id?: string
+          workout_day_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "daily_activity_overrides_workout_day_id_fkey"
+            columns: ["workout_day_id"]
+            isOneToOne: false
+            referencedRelation: "workout_days"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       diet_plans: {
         Row: {
+          alcohol_frequency: string
+          alcohol_max_servings: number | null
+          alcohol_preferred_weekday:
+            | Database["public"]["Enums"]["weekday"]
+            | null
           created_at: string
           daily_calories_target: number | null
           daily_carbohydrate_target_g: number | null
           daily_fat_target_g: number | null
           daily_fiber_target_g: number | null
           daily_protein_target_g: number | null
+          flexible_meal_frequency: string
+          flexible_meal_weekday: Database["public"]["Enums"]["weekday"] | null
+          food_style: string | null
           goal_id: string | null
           id: string
+          macro_pattern: string | null
+          meal_schedule: string | null
+          menu_rotation_enabled: boolean
+          menu_rotation_size: number
           name: string
           notes: string | null
+          nutrition_phase: string | null
+          planner_input: Json
+          planner_version: string | null
+          rest_day_calories_target: number | null
           status: Database["public"]["Enums"]["plan_status"]
+          training_day_calories_target: number | null
           updated_at: string
           user_id: string
+          uses_day_variants: boolean
         }
         Insert: {
+          alcohol_frequency?: string
+          alcohol_max_servings?: number | null
+          alcohol_preferred_weekday?:
+            | Database["public"]["Enums"]["weekday"]
+            | null
           created_at?: string
           daily_calories_target?: number | null
           daily_carbohydrate_target_g?: number | null
           daily_fat_target_g?: number | null
           daily_fiber_target_g?: number | null
           daily_protein_target_g?: number | null
+          flexible_meal_frequency?: string
+          flexible_meal_weekday?: Database["public"]["Enums"]["weekday"] | null
+          food_style?: string | null
           goal_id?: string | null
           id?: string
+          macro_pattern?: string | null
+          meal_schedule?: string | null
+          menu_rotation_enabled?: boolean
+          menu_rotation_size?: number
           name: string
           notes?: string | null
+          nutrition_phase?: string | null
+          planner_input?: Json
+          planner_version?: string | null
+          rest_day_calories_target?: number | null
           status?: Database["public"]["Enums"]["plan_status"]
+          training_day_calories_target?: number | null
           updated_at?: string
           user_id: string
+          uses_day_variants?: boolean
         }
         Update: {
+          alcohol_frequency?: string
+          alcohol_max_servings?: number | null
+          alcohol_preferred_weekday?:
+            | Database["public"]["Enums"]["weekday"]
+            | null
           created_at?: string
           daily_calories_target?: number | null
           daily_carbohydrate_target_g?: number | null
           daily_fat_target_g?: number | null
           daily_fiber_target_g?: number | null
           daily_protein_target_g?: number | null
+          flexible_meal_frequency?: string
+          flexible_meal_weekday?: Database["public"]["Enums"]["weekday"] | null
+          food_style?: string | null
           goal_id?: string | null
           id?: string
+          macro_pattern?: string | null
+          meal_schedule?: string | null
+          menu_rotation_enabled?: boolean
+          menu_rotation_size?: number
           name?: string
           notes?: string | null
+          nutrition_phase?: string | null
+          planner_input?: Json
+          planner_version?: string | null
+          rest_day_calories_target?: number | null
           status?: Database["public"]["Enums"]["plan_status"]
+          training_day_calories_target?: number | null
           updated_at?: string
           user_id?: string
+          uses_day_variants?: boolean
         }
         Relationships: [
           {
@@ -491,7 +598,9 @@ export type Database = {
           muscle_group: string
           name: string
           parent_exercise_id: string | null
+          planner_modalities: string[]
           source: string
+          training_kind: string
           updated_at: string
         }
         Insert: {
@@ -509,7 +618,9 @@ export type Database = {
           muscle_group: string
           name: string
           parent_exercise_id?: string | null
+          planner_modalities?: string[]
           source?: string
+          training_kind?: string
           updated_at?: string
         }
         Update: {
@@ -527,7 +638,9 @@ export type Database = {
           muscle_group?: string
           name?: string
           parent_exercise_id?: string | null
+          planner_modalities?: string[]
           source?: string
+          training_kind?: string
           updated_at?: string
         }
         Relationships: [
@@ -712,12 +825,14 @@ export type Database = {
       }
       foods: {
         Row: {
+          allergens: string[]
           barcode: string | null
           base_amount: number
           base_unit: string
           brand: string | null
           calories_kcal: number | null
           carbohydrate_g: number | null
+          compatible_food_styles: string[]
           created_at: string
           data_type: string | null
           external_id: string | null
@@ -728,6 +843,14 @@ export type Database = {
           last_synced_at: string | null
           locale: string
           name: string
+          nutrition_roles: string[]
+          planner_amount_step: number | null
+          planner_default_amount: number | null
+          planner_maximum_amount: number | null
+          planner_meal_types: string[]
+          planner_minimum_amount: number | null
+          planner_tags: string[]
+          processing_level: string
           protein_g: number | null
           saturated_fat_g: number | null
           sodium_mg: number | null
@@ -737,12 +860,14 @@ export type Database = {
           user_id: string | null
         }
         Insert: {
+          allergens?: string[]
           barcode?: string | null
           base_amount?: number
           base_unit?: string
           brand?: string | null
           calories_kcal?: number | null
           carbohydrate_g?: number | null
+          compatible_food_styles?: string[]
           created_at?: string
           data_type?: string | null
           external_id?: string | null
@@ -753,6 +878,14 @@ export type Database = {
           last_synced_at?: string | null
           locale?: string
           name: string
+          nutrition_roles?: string[]
+          planner_amount_step?: number | null
+          planner_default_amount?: number | null
+          planner_maximum_amount?: number | null
+          planner_meal_types?: string[]
+          planner_minimum_amount?: number | null
+          planner_tags?: string[]
+          processing_level?: string
           protein_g?: number | null
           saturated_fat_g?: number | null
           sodium_mg?: number | null
@@ -762,12 +895,14 @@ export type Database = {
           user_id?: string | null
         }
         Update: {
+          allergens?: string[]
           barcode?: string | null
           base_amount?: number
           base_unit?: string
           brand?: string | null
           calories_kcal?: number | null
           carbohydrate_g?: number | null
+          compatible_food_styles?: string[]
           created_at?: string
           data_type?: string | null
           external_id?: string | null
@@ -778,6 +913,14 @@ export type Database = {
           last_synced_at?: string | null
           locale?: string
           name?: string
+          nutrition_roles?: string[]
+          planner_amount_step?: number | null
+          planner_default_amount?: number | null
+          planner_maximum_amount?: number | null
+          planner_meal_types?: string[]
+          planner_minimum_amount?: number | null
+          planner_tags?: string[]
+          processing_level?: string
           protein_g?: number | null
           saturated_fat_g?: number | null
           sodium_mg?: number | null
@@ -857,38 +1000,62 @@ export type Database = {
       meal_items: {
         Row: {
           amount: string | null
+          calories_kcal: number | null
+          carbohydrate_g: number | null
           created_at: string
+          fat_g: number | null
+          fiber_g: number | null
           food_id: string | null
           id: string
           meal_id: string
           name: string
           notes: string | null
+          nutrition_role: string | null
+          position: number
+          protein_g: number | null
           quantity: number | null
           substitution_group: string | null
+          substitutions: Json
           unit: string | null
         }
         Insert: {
           amount?: string | null
+          calories_kcal?: number | null
+          carbohydrate_g?: number | null
           created_at?: string
+          fat_g?: number | null
+          fiber_g?: number | null
           food_id?: string | null
           id?: string
           meal_id: string
           name: string
           notes?: string | null
+          nutrition_role?: string | null
+          position?: number
+          protein_g?: number | null
           quantity?: number | null
           substitution_group?: string | null
+          substitutions?: Json
           unit?: string | null
         }
         Update: {
           amount?: string | null
+          calories_kcal?: number | null
+          carbohydrate_g?: number | null
           created_at?: string
+          fat_g?: number | null
+          fiber_g?: number | null
           food_id?: string | null
           id?: string
           meal_id?: string
           name?: string
           notes?: string | null
+          nutrition_role?: string | null
+          position?: number
+          protein_g?: number | null
           quantity?: number | null
           substitution_group?: string | null
+          substitutions?: Json
           unit?: string | null
         }
         Relationships: [
@@ -910,9 +1077,15 @@ export type Database = {
       }
       meals: {
         Row: {
+          actual_calories: number | null
+          actual_carbohydrate_g: number | null
+          actual_fat_g: number | null
+          actual_fiber_g: number | null
+          actual_protein_g: number | null
           calories_target: number | null
           carbohydrate_target_g: number | null
           created_at: string
+          day_type: string
           description: string | null
           diet_plan_id: string
           fat_target_g: number | null
@@ -921,12 +1094,19 @@ export type Database = {
           name: string
           position: number
           protein_target_g: number | null
+          rotation_index: number
           updated_at: string
         }
         Insert: {
+          actual_calories?: number | null
+          actual_carbohydrate_g?: number | null
+          actual_fat_g?: number | null
+          actual_fiber_g?: number | null
+          actual_protein_g?: number | null
           calories_target?: number | null
           carbohydrate_target_g?: number | null
           created_at?: string
+          day_type?: string
           description?: string | null
           diet_plan_id: string
           fat_target_g?: number | null
@@ -935,12 +1115,19 @@ export type Database = {
           name: string
           position?: number
           protein_target_g?: number | null
+          rotation_index?: number
           updated_at?: string
         }
         Update: {
+          actual_calories?: number | null
+          actual_carbohydrate_g?: number | null
+          actual_fat_g?: number | null
+          actual_fiber_g?: number | null
+          actual_protein_g?: number | null
           calories_target?: number | null
           carbohydrate_target_g?: number | null
           created_at?: string
+          day_type?: string
           description?: string | null
           diet_plan_id?: string
           fat_target_g?: number | null
@@ -949,6 +1136,7 @@ export type Database = {
           name?: string
           position?: number
           protein_target_g?: number | null
+          rotation_index?: number
           updated_at?: string
         }
         Relationships: [
@@ -1089,40 +1277,82 @@ export type Database = {
       }
       planner_adjustments: {
         Row: {
+          adjustment_kind: string | null
+          after_snapshot: Json
           applied_at: string | null
           applied_change: Json | null
+          before_snapshot: Json
+          confirmed_at: string | null
           conversation_id: string | null
           created_at: string
+          diet_plan_id: string | null
+          expires_at: string
           id: string
+          preview: Json
           reason: string
+          rejected_at: string | null
           requested_change: Json
+          reversible: boolean
+          reverted_at: string | null
+          source: string
           status: Database["public"]["Enums"]["adjustment_status"]
+          target_id: string | null
+          target_type: string | null
           updated_at: string
           user_id: string
+          workout_plan_id: string | null
         }
         Insert: {
+          adjustment_kind?: string | null
+          after_snapshot?: Json
           applied_at?: string | null
           applied_change?: Json | null
+          before_snapshot?: Json
+          confirmed_at?: string | null
           conversation_id?: string | null
           created_at?: string
+          diet_plan_id?: string | null
+          expires_at?: string
           id?: string
+          preview?: Json
           reason: string
+          rejected_at?: string | null
           requested_change?: Json
+          reversible?: boolean
+          reverted_at?: string | null
+          source?: string
           status?: Database["public"]["Enums"]["adjustment_status"]
+          target_id?: string | null
+          target_type?: string | null
           updated_at?: string
           user_id: string
+          workout_plan_id?: string | null
         }
         Update: {
+          adjustment_kind?: string | null
+          after_snapshot?: Json
           applied_at?: string | null
           applied_change?: Json | null
+          before_snapshot?: Json
+          confirmed_at?: string | null
           conversation_id?: string | null
           created_at?: string
+          diet_plan_id?: string | null
+          expires_at?: string
           id?: string
+          preview?: Json
           reason?: string
+          rejected_at?: string | null
           requested_change?: Json
+          reversible?: boolean
+          reverted_at?: string | null
+          source?: string
           status?: Database["public"]["Enums"]["adjustment_status"]
+          target_id?: string | null
+          target_type?: string | null
           updated_at?: string
           user_id?: string
+          workout_plan_id?: string | null
         }
         Relationships: [
           {
@@ -1130,6 +1360,20 @@ export type Database = {
             columns: ["conversation_id"]
             isOneToOne: false
             referencedRelation: "coach_conversations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "planner_adjustments_diet_plan_id_fkey"
+            columns: ["diet_plan_id"]
+            isOneToOne: false
+            referencedRelation: "diet_plans"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "planner_adjustments_workout_plan_id_fkey"
+            columns: ["workout_plan_id"]
+            isOneToOne: false
+            referencedRelation: "workout_plans"
             referencedColumns: ["id"]
           },
         ]
@@ -1413,42 +1657,51 @@ export type Database = {
       workout_day_exercises: {
         Row: {
           created_at: string
+          duration_minutes: number | null
           exercise_id: string
           id: string
-          max_reps: number
-          min_reps: number
+          max_reps: number | null
+          min_reps: number | null
           notes: string | null
+          planner_role: string | null
           position: number
+          prescription_kind: string
           rest_seconds: number | null
-          sets: number
+          sets: number | null
           target_load_kg: number | null
           updated_at: string
           workout_day_id: string
         }
         Insert: {
           created_at?: string
+          duration_minutes?: number | null
           exercise_id: string
           id?: string
-          max_reps: number
-          min_reps: number
+          max_reps?: number | null
+          min_reps?: number | null
           notes?: string | null
+          planner_role?: string | null
           position?: number
+          prescription_kind?: string
           rest_seconds?: number | null
-          sets: number
+          sets?: number | null
           target_load_kg?: number | null
           updated_at?: string
           workout_day_id: string
         }
         Update: {
           created_at?: string
+          duration_minutes?: number | null
           exercise_id?: string
           id?: string
-          max_reps?: number
-          min_reps?: number
+          max_reps?: number | null
+          min_reps?: number | null
           notes?: string | null
+          planner_role?: string | null
           position?: number
+          prescription_kind?: string
           rest_seconds?: number | null
-          sets?: number
+          sets?: number | null
           target_load_kg?: number | null
           updated_at?: string
           workout_day_id?: string
@@ -1557,6 +1810,8 @@ export type Database = {
           id: string
           name: string
           notes: string | null
+          planner_input: Json
+          planner_version: string | null
           split_label: string | null
           split_type: string | null
           start_date: string
@@ -1572,6 +1827,8 @@ export type Database = {
           id?: string
           name: string
           notes?: string | null
+          planner_input?: Json
+          planner_version?: string | null
           split_label?: string | null
           split_type?: string | null
           start_date: string
@@ -1587,6 +1844,8 @@ export type Database = {
           id?: string
           name?: string
           notes?: string | null
+          planner_input?: Json
+          planner_version?: string | null
           split_label?: string | null
           split_type?: string | null
           start_date?: string
@@ -1610,7 +1869,48 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      apply_day_activity_adjustment: {
+        Args: { p_adjustment_id: string }
+        Returns: string
+      }
+      apply_planner_adjustment: {
+        Args: { p_adjustment_id: string }
+        Returns: string
+      }
+      create_planner_diet_plan: { Args: { p_plan: Json }; Returns: string }
+      create_planner_diet_plan_v2: { Args: { p_plan: Json }; Returns: string }
+      create_planner_diet_plan_v3: { Args: { p_plan: Json }; Returns: string }
+      create_planner_workout_plan: { Args: { p_plan: Json }; Returns: string }
+      get_daily_activity_context: {
+        Args: { p_activity_date?: string }
+        Returns: Json
+      }
+      reject_planner_adjustment: {
+        Args: { p_adjustment_id: string }
+        Returns: string
+      }
+      revert_day_activity_adjustment: {
+        Args: { p_adjustment_id: string }
+        Returns: string
+      }
+      revert_planner_adjustment: {
+        Args: { p_adjustment_id: string }
+        Returns: string
+      }
+      set_diet_plan_status: {
+        Args: {
+          p_plan_id: string
+          p_status: Database["public"]["Enums"]["plan_status"]
+        }
+        Returns: string
+      }
+      set_workout_plan_status: {
+        Args: {
+          p_plan_id: string
+          p_status: Database["public"]["Enums"]["plan_status"]
+        }
+        Returns: string
+      }
     }
     Enums: {
       adjustment_status: "pending" | "applied" | "rejected"

@@ -2,7 +2,7 @@
 
 API do Evolv criada com Node.js, TypeScript e NestJS.
 
-Esta pasta concentra a autenticacao recebida do aplicativo, as regras de negocio e o acesso seguro ao Supabase. O backend do MVP esta concluido para perfil, objetivos, treino, cargas, dieta e progresso. Coach e Planner serao adicionados nas proximas fases.
+Esta pasta concentra a autenticacao recebida do aplicativo, as regras de negocio e o acesso seguro ao Supabase. O backend do MVP esta concluido para perfil, objetivos, treino, cargas, dieta e progresso. O Planner deterministico tambem gera, persiste e administra planos reais; o Coach local sera integrado em uma fase posterior.
 
 ## Base implementada
 
@@ -61,6 +61,16 @@ Esta pasta concentra a autenticacao recebida do aplicativo, as regras de negocio
 | POST | `/api/progress` | Sim | Cria uma medicao opcional |
 | PATCH | `/api/progress/:entryId` | Sim | Atualiza uma medicao propria |
 | DELETE | `/api/progress/:entryId` | Sim | Remove uma medicao propria |
+| POST | `/api/planner/plans/generate` | Sim | Gera e salva um plano deterministico |
+| GET | `/api/planner/plans` | Sim | Lista planos e permite filtrar por status |
+| GET | `/api/planner/plans/:planId` | Sim | Retorna um plano completo do usuario |
+| POST | `/api/planner/plans/:planId/activate` | Sim | Ativa um plano e arquiva o ativo anterior |
+| POST | `/api/planner/plans/:planId/archive` | Sim | Arquiva um plano |
+| POST | `/api/planner/nutrition-plans/generate` | Sim | Gera, salva e opcionalmente ativa um plano alimentar |
+| GET | `/api/planner/nutrition-plans` | Sim | Lista o historico de planos alimentares |
+| GET | `/api/planner/nutrition-plans/:planId` | Sim | Retorna refeicoes, porcoes, macros e substituicoes |
+| POST | `/api/planner/nutrition-plans/:planId/activate` | Sim | Ativa um plano alimentar e arquiva o ativo anterior |
+| POST | `/api/planner/nutrition-plans/:planId/archive` | Sim | Arquiva um plano alimentar |
 
 As rotas protegidas recebem o token no cabecalho:
 
@@ -111,6 +121,7 @@ backend/
     goals/      objetivo atual e historico
     health/     liveness da API e readiness do Supabase
     nutrition/  plano alimentar, registros e totais
+    planner/    regras, geracao e persistencia de planos
     profiles/   leitura e atualizacao do perfil autenticado
     progress/   peso, medidas e historico opcional
     supabase/   clientes de autenticacao e banco
@@ -123,9 +134,9 @@ backend/
 ## Estado dos testes
 
 - build e lint aprovados;
-- 8 testes unitarios aprovados;
+- 67 testes unitarios aprovados;
 - 5 testes E2E aprovados;
-- Swagger validado com 22 caminhos e 12 schemas;
+- Swagger atualizado com 39 caminhos, incluindo treino, nutricao, contexto diario e ajustes do Planner;
 - readiness validado contra o projeto Supabase remoto;
 - auditoria das dependencias de producao sem vulnerabilidades conhecidas;
 - testes SQL de CRUD, RLS e integridade aprovados na fase do banco.
@@ -134,5 +145,5 @@ backend/
 
 - validar a experiencia completa em um iPhone;
 - escolher e configurar o ambiente de deploy;
-- criar o Planner depois dos contratos principais da API;
+- criar a interface opcional de check-in de sono e recuperacao;
 - integrar o servico local de NLP quando a fase do Coach comecar.

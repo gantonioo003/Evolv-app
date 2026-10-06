@@ -56,7 +56,7 @@ A senha do usuario nao passa pelo backend do Evolv. O Supabase Auth cuida dela.
 
 ## Limite atual
 
-Coach e Planner nao fazem parte desta passada. Eles serao implementados depois da consolidacao dos contratos do backend.
+Naquela passada, Coach e Planner ainda nao faziam parte do backend. A base deterministica do Planner foi adicionada posteriormente e esta documentada em `docs/10-planner.md`.
 
 ## Terceira passada implementada no repositorio
 
@@ -81,7 +81,7 @@ Coach e Planner nao fazem parte desta passada. Eles serao implementados depois d
 - teste transacional da fase 3 aprovado;
 - teste transacional do novo contexto de treino e nutricao aprovado;
 - build, lint e os testes daquela passada do backend aprovados;
-- typecheck, lint e exportacao das 19 rotas web do mobile aprovados.
+- typecheck, lint e exportacao das 23 rotas web atuais do mobile aprovados.
 
 O teste manual da experiencia completa com uma conta real e a validacao no iPhone ficam para a etapa de qualidade do aplicativo.
 
@@ -89,7 +89,7 @@ O teste manual da experiencia completa com uma conta real e a validacao no iPhon
 
 - documentacao interativa OpenAPI/Swagger em `/api/docs`;
 - documento JSON OpenAPI em `/api/docs-json`;
-- 22 caminhos e 12 schemas documentados;
+- 39 caminhos documentados, incluindo as rotas dos Planners de treino, nutricao, contexto diario e ajustes;
 - testes automatizados para token ausente, invalido, expirado e valido;
 - resposta padronizada para indisponibilidade, timeout e excesso de requisicoes;
 - limite global de requisicoes;
@@ -101,12 +101,76 @@ O teste manual da experiencia completa com uma conta real e a validacao no iPhon
 - encerramento controlado da aplicacao;
 - arrays de perfil limitados para evitar cargas exageradas;
 - build e lint aprovados;
-- 8 testes unitarios e 5 testes E2E aprovados;
+- 67 testes unitarios e 5 testes E2E aprovados apos a fase 04.4 do Planner;
 - auditoria das dependencias de producao com zero vulnerabilidades conhecidas.
 
 ## Limites desta fase
 
-- Planner ainda nao gera planos; ele pertence a proxima fase;
+- o Planner cobre os ajustes seguros do MVP; novas familias de acao serao adicionadas conforme o Coach local for integrado;
 - Coach ainda nao usa o servico local de NLP;
 - deploy ainda nao foi configurado;
 - teste em iPhone sera realizado depois pelo usuario.
+
+## Planner - fases 01, 02 e 03 concluidas
+
+- modulo `PlannerModule` registrado no NestJS;
+- contratos para objetivo, nivel, dias, duracao, modalidades e frequencia;
+- suporte a Full body, Upper/Lower, Push/Pull/Legs, Body-part, Hibrida e Personalizada;
+- `ABC`, `ABCD` e `ABCDE` mantidos como rotulos de agenda;
+- suporte a musculacao, cardio, mobilidade e combinacoes;
+- padroes conservadores para dados opcionais pulados no onboarding;
+- distribuicao deterministica dos treinos nos dias disponiveis;
+- politica que proibe alteracoes automaticas e exige confirmacao futura;
+- selecao e ordenacao de exercicios pelo foco e padrao de movimento;
+- series, repeticoes e descanso adaptados ao objetivo e ao nivel;
+- cardio e mobilidade prescritos por duracao;
+- limites semanais de volume e protecao contra repeticoes desnecessarias;
+- filtros por modalidade, equipamento disponivel, dificuldade e exercicios evitados;
+- persistencia transacional no Postgres;
+- rotas para gerar, listar, visualizar, ativar e arquivar;
+- apenas um plano ativo por usuario;
+- integracao real com a tela Treino e o gerenciador de planos do Expo;
+- suporte persistido a cardio e mobilidade por duracao;
+- 51 testes unitarios especificos do Planner, incluindo treino, nutricao e contexto diario.
+
+## Planner - fase 04.4 concluida
+
+- mover ou inverter dias de treino sem duplicar a agenda;
+- trocar exercicios por alternativas compativeis;
+- trocar alimentos apenas por substituicoes previamente calculadas;
+- previa separando o que muda, o que permanece e os avisos;
+- confirmacao ou descarte explicitos;
+- snapshots antes/depois, deteccao de previa desatualizada e historico;
+- desfazer transacional quando o estado atual ainda corresponde ao ajuste aplicado;
+- telas mobile para ajustes manuais e historico;
+- contratos tipados que o futuro Coach podera propor sem executar SQL.
+
+## Planner nutricional - fases 04.1, 04.2 e 04.3 concluidas
+
+- fases de ganho de massa, perda de gordura, manutencao, recomposicao e diet break;
+- padroes equilibrado, alto carboidrato, low carb, cetogenico e personalizado;
+- horario regular, janela alimentar ou agenda personalizada;
+- estilos onivoro, pescetariano, vegetariano e vegano;
+- estimativa energetica explicita, com metodo e nivel de confianca;
+- metas de proteina, carboidrato, gordura e fibra;
+- distribuicao exata das metas entre uma e oito refeicoes;
+- separacao entre alergia/restricao, alimento rejeitado e alimento preferido;
+- bloqueio de geracao automatica quando o contexto informado exige revisao profissional;
+- 14 novos testes unitarios das regras nutricionais.
+- catalogo tipado com papeis nutricionais, estilos, horarios, alergenos e limites de porcao;
+- filtros rigidos de seguranca antes da selecao;
+- pontuacao por preferencia, adequacao, processamento e variedade;
+- otimizacao deterministica das quantidades para aproximar calorias e macros;
+- substituicoes do mesmo papel com porcao recalculada e similaridade nutricional;
+- avisos para catalogo incompleto ou metas que nao puderam ser aproximadas;
+- 13 novos testes unitarios do motor de alimentos.
+- catalogo inicial persistido com 26 alimentos e metadados do Planner;
+- geracao e persistencia transacional de metas, refeicoes, porcoes, macros e substituicoes;
+- ordem estavel dos alimentos dentro de cada refeicao;
+- apenas um plano alimentar ativo por usuario, com historico preservado;
+- cinco endpoints autenticados de geracao e gerenciamento;
+- telas Expo para gerar, listar, visualizar, ativar e arquivar planos reais;
+- dois testes unitarios de persistencia e um teste SQL transacional remoto;
+- tipos TypeScript regenerados e schema remoto aprovado no `db lint`.
+
+A fase 04.4 tambem adicionou metas e refeicoes distintas para treino e descanso, cardapio fixo ou rotacao de tres/sete opcoes, refeicao flexivel planejada e excecao opcional de alcool. A aba Dieta escolhe automaticamente a rotina e o cardapio do dia.

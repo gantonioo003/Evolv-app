@@ -36,13 +36,13 @@ Perfil, objetivo, planos, cargas, registros alimentares e progresso usam a API r
 
 - TypeScript mobile aprovado.
 - ESLint mobile aprovado.
-- exportacao web com 19 rotas aprovada.
+- exportacao web com 25 rotas aprovada, incluindo planos e historico de ajustes.
 - build e lint do backend aprovados.
-- 8 testes unitarios e 5 testes E2E aprovados.
-- duas migrations novas aplicadas no Supabase remoto.
+- 67 testes unitarios e 5 testes E2E aprovados.
+- migrations de integracao, Planner de treino, Planner nutricional, ajustes, rotacao de cardapios e flexibilidade planejada aplicadas no Supabase remoto.
 - tipos TypeScript regenerados a partir do schema remoto.
 - `db lint` concluido sem erros.
-- testes SQL da fase 3 e do contexto de treino aprovados.
+- cinco suites SQL remotas aprovadas, incluindo RLS, ajustes/desfazer e variacoes nutricionais.
 
 O backend foi finalizado. A experiencia completa ainda sera validada manualmente com uma conta real em um iPhone durante a etapa de qualidade do aplicativo.
 

@@ -1,8 +1,15 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createContext, useContext, useEffect, useMemo, useState, type PropsWithChildren } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type PropsWithChildren,
+} from "react";
 
-export type PeoplePreference = 'automatic' | 'men' | 'women';
-export type BodyTypePreference = 'fitness' | 'mixed' | 'muscular';
+export type PeoplePreference = "automatic" | "men" | "women";
+export type BodyTypePreference = "fitness" | "mixed" | "muscular";
 
 export type ImagePreferences = {
   people: PeoplePreference;
@@ -20,23 +27,24 @@ type StoredImagePreferences = {
   physique?: unknown;
 };
 
-const storageKey = '@evolv/image-preferences';
+const storageKey = "@evolv/image-preferences";
 const defaults: ImagePreferences = {
-  people: 'automatic',
-  bodyType: 'mixed',
+  people: "automatic",
+  bodyType: "mixed",
 };
 
-const ImagePreferencesContext = createContext<ImagePreferencesContextValue | null>(null);
+const ImagePreferencesContext =
+  createContext<ImagePreferencesContextValue | null>(null);
 
 function normalizePeople(value: unknown): PeoplePreference {
-  return value === 'men' || value === 'women' ? value : 'automatic';
+  return value === "men" || value === "women" ? value : "automatic";
 }
 
 function normalizeBodyType(value: unknown): BodyTypePreference {
-  if (value === 'fitness' || value === 'muscular') return value;
-  if (value === 'athletic') return 'fitness';
-  if (value === 'bodybuilder') return 'muscular';
-  return 'mixed';
+  if (value === "fitness" || value === "muscular") return value;
+  if (value === "athletic") return "fitness";
+  if (value === "bodybuilder") return "muscular";
+  return "mixed";
 }
 
 export function ImagePreferencesProvider({ children }: PropsWithChildren) {
@@ -58,22 +66,34 @@ export function ImagePreferencesProvider({ children }: PropsWithChildren) {
   function update(next: Partial<ImagePreferences>) {
     setPreferences((current) => {
       const value = { ...current, ...next };
-      AsyncStorage.setItem(storageKey, JSON.stringify(value)).catch(() => undefined);
+      AsyncStorage.setItem(storageKey, JSON.stringify(value)).catch(
+        () => undefined,
+      );
       return value;
     });
   }
 
-  const value = useMemo<ImagePreferencesContextValue>(() => ({
-    ...preferences,
-    setPeople: (people) => update({ people }),
-    setBodyType: (bodyType) => update({ bodyType }),
-  }), [preferences]);
+  const value = useMemo<ImagePreferencesContextValue>(
+    () => ({
+      ...preferences,
+      setPeople: (people) => update({ people }),
+      setBodyType: (bodyType) => update({ bodyType }),
+    }),
+    [preferences],
+  );
 
-  return <ImagePreferencesContext.Provider value={value}>{children}</ImagePreferencesContext.Provider>;
+  return (
+    <ImagePreferencesContext.Provider value={value}>
+      {children}
+    </ImagePreferencesContext.Provider>
+  );
 }
 
 export function useImagePreferences() {
   const context = useContext(ImagePreferencesContext);
-  if (!context) throw new Error('useImagePreferences must be used inside ImagePreferencesProvider');
+  if (!context)
+    throw new Error(
+      "useImagePreferences must be used inside ImagePreferencesProvider",
+    );
   return context;
 }

@@ -91,7 +91,6 @@ export default function AccountScreen() {
         eyebrow="Plano ativo"
         title={displayName}
         description="Seu plano, preferências, histórico e privacidade reunidos em um só lugar."
-        meta="Free"
         height={230}
         overlayOpacity={0.08}
       />

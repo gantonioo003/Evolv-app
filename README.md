@@ -49,7 +49,7 @@ The first version of Evolv will focus on validating the core experience.
 - Optional conversation memory to improve future guidance.
 - Local NLP pipeline with a small domain language model.
 - Retrieval from a curated training and nutrition knowledge base.
-- Basic planner rules for routine adjustments.
+- Deterministic Planner rules for weekly structure, exercise selection, volume, repetitions, rest, and ordering.
 - Notifications for workout and meal reminders.
 - Account screen with settings and progress access.
 - Standalone exercise load history and simple progression suggestions.
@@ -250,18 +250,33 @@ Completed so far:
 - OpenAPI/Swagger documentation with Bearer authentication.
 - Rate limiting, request timeout, request IDs, and structured HTTP logs.
 - Separate API liveness and Supabase readiness checks.
-- Eight unit tests and five E2E tests passing.
+- Sixty-six unit tests and five E2E tests passing.
 - Production dependency audit with no known vulnerabilities.
+- Deterministic Planner foundation with split, schedule, modality, duration, and stability rules.
+- Planner rule tests covering sparse onboarding data, cardio-only use, mixed modalities, and common training splits.
+- Planner generation engine with catalog filtering, exercise ordering, goal-specific prescriptions, weekly volume caps, and deterministic variety.
+- Planner constraints for level, available equipment, avoided exercises, duplicate movements, and repeated weekly exercises.
+- Transactional Planner persistence with authenticated plan generation, history, detail, activation, and archival.
+- Real mobile plan creation and management backed by NestJS and Supabase.
+- Nutrition Planner contracts and deterministic rules for energy phases, macro patterns, meal timing, food styles, preferences, restrictions, and meal targets.
+- Nutrition rules covering bulking, cutting, maintenance, recomposition, diet breaks, balanced, high-carb, low-carb, ketogenic, time-restricted eating, vegetarian, vegan, and custom plans.
+- Deterministic food-selection engine with safety filters, preference scoring, portion optimization, daily variety, and same-role substitutions.
+- Persisted Nutrition Planner catalog, meals, portions, macros, substitutions, history, activation, and archival.
+- Authenticated Nutrition Planner endpoints and real mobile plan management.
+- Single load-edit action per exercise, replacing repeated increment and decrement controls.
+- Controlled Planner adjustments for moving sessions and replacing exercises or foods, with preview, explicit confirmation, history, stale-data protection, and undo.
+- Automatic nutrition variants for training and rest days, plus fixed, three-menu, or seven-menu rotations.
+- Optional planned flexibility for weekly or fortnightly flexible meals and user-requested alcohol cadence.
 
 Next steps:
 
-1. Implement the Planner without the Coach model.
-2. Build the local NLP baseline and knowledge retrieval.
-3. Train and evaluate the small Transformer language model.
-4. Integrate the local Coach service.
-5. Add notifications and validate the app on a physical iPhone.
-6. Configure deployment and production environments.
-7. Prepare a portfolio-ready demo.
+1. Build the local NLP baseline and knowledge retrieval.
+2. Train and evaluate the small Transformer language model.
+3. Integrate the local Coach service with typed Planner proposals.
+4. Add the optional low-friction recovery check-in UI.
+5. Expand and verify the food and exercise catalogs from compatible sources.
+6. Add notifications and validate the app on a physical iPhone.
+7. Configure deployment and prepare a portfolio-ready demo.
 
 ## Repository Structure
 

@@ -36,11 +36,14 @@ export function mapWorkoutPlanToDays(plan: WorkoutPlanApi): WorkoutDay[] {
       exercises: day.workout_day_exercises.map((item) => ({
         id: item.exercise_id,
         name: item.exercises.name,
-        sets: item.sets,
+        sets: item.sets ?? 0,
         reps:
-          item.min_reps === item.max_reps
-            ? String(item.min_reps)
-            : `${item.min_reps}-${item.max_reps}`,
+          item.prescription_kind === "duration"
+            ? `${item.duration_minutes ?? 0} min`
+            : item.min_reps === item.max_reps
+              ? String(item.min_reps ?? 0)
+              : `${item.min_reps ?? 0}-${item.max_reps ?? 0}`,
+        durationMinutes: item.duration_minutes ?? undefined,
         restSeconds: item.rest_seconds ?? 0,
         load: item.target_load_kg ?? 0,
         unit: "kg",
