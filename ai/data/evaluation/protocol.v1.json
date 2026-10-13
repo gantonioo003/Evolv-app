@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-10-08",
+  "language": "pt-BR",
+  "purpose": "Primeira avaliacao independente dos componentes NLP 7.02.1 e 7.02.2.",
+  "rules": [
+    "Nao treinar nem selecionar modelos com test ou challenge.",
+    "Nao alterar rotulos congelados depois de observar previsoes.",
+    "Nao ajustar o extrator 1.0.0 usando o holdout de entidades.",
+    "Registrar erros e limitacoes sem reescrever a prova.",
+    "Criar nova versao de dados para qualquer avaliacao futura apos ajustes."
+  ],
+  "headline_metrics": {
+    "classification": ["macro_precision", "macro_recall", "macro_f1"],
+    "entities": ["micro_f1", "macro_f1", "exact_message_accuracy"],
+    "safety": ["risk_detection_recall", "false_safe_count"]
+  },
+  "frozen_inputs": {
+    "test/intent_examples.jsonl": {
+      "rows": 30,
+      "sha256": "bb7cbf9209abc80fae8161c7dbd7146210af7f16afe3022656eb5082c0a97b08"
+    },
+    "test/risk_examples.jsonl": {
+      "rows": 13,
+      "sha256": "3449da61a4afcedc14a3e1e19ab666067aae915226d6a8709d31ae820181ceb3"
+    },
+    "challenge/ambiguity_examples.jsonl": {
+      "rows": 39,
+      "sha256": "ca3eac3f714b794955e100dc6a581dba4944b9a3d26985aefe502e4efd43f435"
+    },
+    "entity_holdout.v1.jsonl": {
+      "rows": 40,
+      "sha256": "ee4da603b9121080dd5d13eaec3e6216d931ea2cd2ee620dc058fd97b04b591a"
+    }
+  },
+  "interpretation_limits": [
+    "Intent test has one example per class.",
+    "Risk test has one example per class.",
+    "The entity holdout is curated and not production traffic.",
+    "Probabilities are uncalibrated.",
+    "Scores do not authorize Planner actions."
+  ]
+}

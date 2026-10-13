@@ -1,0 +1,63 @@
+{
+  "artifact_version": "1.0.0",
+  "code": {
+    "scripts/analyze_message.py": {
+      "sha256": "1813b3ad962091a45afcd55ebcaf65618e3069b3bf7cc75db00a7ef573fba6bf"
+    },
+    "scripts/evaluate_pipeline.py": {
+      "sha256": "5fc5e32274cdb8b19660ec0aba9d65253dc98754d869cc0906cfe43032ca1ab8"
+    },
+    "src/evolv_nlp/pipeline.py": {
+      "sha256": "3acc66750a11f18559487eea6a74d1c2e7deb9e9932115046f73400220d75e64"
+    },
+    "src/evolv_nlp/topics.py": {
+      "sha256": "38c95356be3f67c695c80f305105c2ee68ba12a4474870d9fbc114d7294fbec1"
+    }
+  },
+  "guardrails": {
+    "challenge_used_for_threshold_selection": false,
+    "confirmation_required": true,
+    "direct_planner_writes": false,
+    "probabilities_calibrated": false,
+    "production_ready": false,
+    "test_used_for_threshold_selection": false
+  },
+  "inputs": {
+    "data/catalogs/entity_catalogs.v1.json": {
+      "sha256": "a8a7c863047712919cda974ae7264e749c4be1d1375e8853cab1016bb80b0944"
+    },
+    "data/pipeline/confidence_policy.v1.json": {
+      "sha256": "e5f2fa3eea6331d4e0fd9268aa55c5291a4c1708171ff98000f05ee1db9bbd16"
+    },
+    "data/pipeline/topic_rules.v1.json": {
+      "sha256": "9f721acd4fc42c7599f7127d70bebd17066a8ecd506e41edc6f31d149c83c1a5"
+    },
+    "data/splits/validation/intent_examples.jsonl": {
+      "sha256": "6591042cb900fd84c1a1fabe5a04d6ee358edc63bb0c54f91173a07afeae3606"
+    },
+    "data/splits/validation/risk_examples.jsonl": {
+      "sha256": "0ceba466272ce118881baf0a3a922a0f192c39a587a10fd3cd5fce498c576593"
+    },
+    "data/taxonomy/intents.v1.json": {
+      "sha256": "ed95fbbcddb1cdd67ba223bd1be2140239cab7df2d2114f80a6f74f6a39ea72e"
+    },
+    "data/taxonomy/risks.v1.json": {
+      "sha256": "8f37d01dbacd24362d3bc00aea5c8848630ccea5606754f3bec1a7d369bb24f1"
+    },
+    "data/taxonomy/topics.v1.json": {
+      "sha256": "7d9e0fd9139e29f2915b9a6fc69208d65cb483a395ebc5a61bdf1a029e379789"
+    }
+  },
+  "outputs": {
+    "artifacts/pipeline/1.0.0/confidence_metrics.json": {
+      "bytes": 13055,
+      "sha256": "75b89c5d5d3130b98dbdd2f430581174705a49f79391ba230fb768bcbc32f3e6"
+    },
+    "artifacts/pipeline/1.0.0/sample_outputs.jsonl": {
+      "bytes": 12908,
+      "sha256": "3eb261480f165527d065a54efd60d2ae220c0932173499c2325883dfabece9a0"
+    }
+  },
+  "release_date": "2026-10-08",
+  "status": "completed_conservative"
+}

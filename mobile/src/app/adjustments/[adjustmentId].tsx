@@ -16,7 +16,7 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
-import { colors, radius, spacing } from "@/constants/theme";
+import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type { PlannerAdjustmentApi } from "@/types/api";
@@ -251,7 +251,7 @@ const createStyles = (palette: AppThemePalette) =>
       color: palette.text,
       fontSize: 16,
       lineHeight: 23,
-      fontWeight: "800",
+      fontWeight: "600",
     },
     reason: { color: palette.muted, fontSize: 11.5, lineHeight: 17 },
     list: { gap: 12, padding: spacing.md },
@@ -272,10 +272,10 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       backgroundColor: colors.red,
     },
-    primaryText: { color: colors.text, fontSize: 12.5, fontWeight: "900" },
+    primaryText: { color: colors.text, fontSize: 12.5, fontWeight: "600" },
     secondaryButton: {
       minHeight: 50,
       flex: 1,
@@ -283,11 +283,11 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       borderWidth: 1,
       borderColor: palette.border,
       backgroundColor: palette.surface,
     },
-    secondaryText: { color: palette.text, fontSize: 12.5, fontWeight: "800" },
+    secondaryText: { color: palette.text, fontSize: 12.5, fontWeight: "600" },
     pressed: { opacity: 0.58 },
   });

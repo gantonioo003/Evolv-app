@@ -22,11 +22,14 @@ npm run lint
 
 ## Direção visual
 
-- composição editorial e cinematográfica;
-- referência cultural no fisiculturismo old school, sem copiar filmes ou atletas reais;
-- fotografia original combinada com controles modernos e objetivos;
-- paleta em preto, off-white, vermelho queimado, verde e amarelo antigo;
-- telas de uso frequente com menos cards e leitura rápida.
+- mesma linguagem visual da entrada em todas as telas: tipografia de sistema,
+  pesos moderados, hierarquia clara e controles discretos;
+- temas em branco e cinza neutro ou preto e grafite, com vermelho nas ações;
+- fotografias preservadas, com títulos menores e sem excesso de caixa alta;
+- telas de uso frequente com menos decoração e leitura rápida;
+- entrada em uma coluna no celular e foto ao lado do formulário no desktop;
+- dez fotografias reais locais na entrada desktop, alternadas a cada abertura,
+  sem mudança durante a digitação ou a troca entre entrar e criar conta.
 
 As imagens editoriais de treino, alimentação, Coach, conta e progresso foram geradas especificamente para o projeto e ficam em `assets/images`. Cada situação importante possui uma imagem própria, incluindo peito, pernas, ombros, full body, recuperação, preparo de refeições e substituição alimentar.
 

@@ -24,7 +24,7 @@ import {
   SelectionSheet,
   type SelectionOption,
 } from "@/components/selection-sheet";
-import { colors, radius, spacing } from "@/constants/theme";
+import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type { DietPlanApi, MealItemApi } from "@/types/api";
@@ -375,10 +375,10 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       backgroundColor: colors.red,
     },
-    primaryButtonText: { color: colors.text, fontSize: 13, fontWeight: "900" },
+    primaryButtonText: { color: colors.text, fontSize: 13, fontWeight: "600" },
     secondaryButton: {
       minHeight: 48,
       flex: 1,
@@ -386,7 +386,7 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       borderWidth: 1,
       borderColor: palette.border,
       backgroundColor: palette.surface,
@@ -394,7 +394,7 @@ const createStyles = (palette: AppThemePalette) =>
     secondaryButtonText: {
       color: palette.text,
       fontSize: 13,
-      fontWeight: "800",
+      fontWeight: "600",
     },
     meals: { gap: spacing.sm },
     mealGroup: { gap: spacing.sm },
@@ -406,7 +406,7 @@ const createStyles = (palette: AppThemePalette) =>
       padding: spacing.md,
     },
     mealHeadingText: { flex: 1 },
-    mealTitle: { color: palette.text, fontSize: 15, fontWeight: "900" },
+    mealTitle: { color: palette.text, fontSize: 15, fontWeight: "600" },
     mealMeta: { marginTop: 4, color: palette.muted, fontSize: 11.5 },
     foodRow: {
       minHeight: 68,
@@ -420,12 +420,12 @@ const createStyles = (palette: AppThemePalette) =>
       width: 24,
       color: colors.red,
       fontSize: 12,
-      fontWeight: "900",
+      fontWeight: "600",
       textAlign: "center",
       paddingTop: 2,
     },
     foodBody: { flex: 1 },
-    foodName: { color: palette.text, fontSize: 13, fontWeight: "800" },
+    foodName: { color: palette.text, fontSize: 13, fontWeight: "600" },
     foodMeta: { marginTop: 3, color: palette.muted, fontSize: 11.5 },
     substitutionText: {
       marginTop: 5,

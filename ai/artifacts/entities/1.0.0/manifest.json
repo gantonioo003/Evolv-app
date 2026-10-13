@@ -1,0 +1,33 @@
+{
+  "artifact_version": "1.0.0",
+  "evaluation_scope": "Development regression set created for phase 7.02.2. The scores prevent regressions but are not an unbiased production estimate.",
+  "files": {
+    "catalog": {
+      "path": "data/catalogs/entity_catalogs.v1.json",
+      "sha256": "a8a7c863047712919cda974ae7264e749c4be1d1375e8853cab1016bb80b0944"
+    },
+    "code": {
+      "path": "src/evolv_nlp/entities.py",
+      "sha256": "77b100f836d3ac9bb5cebc54b0f3649ef89c5c961f86c045686b9681434a00c8"
+    },
+    "evaluation": {
+      "path": "data/entities/evaluation.v1.jsonl",
+      "sha256": "359848f67a98554e8d196a6aefa1d061f258be8ca3da5ebb567502ece1668161"
+    },
+    "metrics": {
+      "path": "artifacts/entities/1.0.0/metrics.json",
+      "sha256": "044361f636b6cde25cf00f21bc90a9d4dc45327c4561e6c355333a3c9cae8705"
+    }
+  },
+  "method": {
+    "catalog": "Versioned exact phrase catalogs with aliases",
+    "context": "Lexical context rules for roles, preferences and limitations",
+    "rules": "Deterministic regular expressions for dates and quantities"
+  },
+  "release_date": "2026-10-07",
+  "safety": {
+    "medical_inference": false,
+    "planner_writes": false,
+    "requires_downstream_validation": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "dataset_version": "1.6.0",
+  "default_changed": false,
+  "dependencies": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "python": "3.14.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "model_artifacts": {
+    "intent_classification": {
+      "file": "private\\intent_classifier.joblib",
+      "sha256": "24076df1f6a85dba583fa90a9ab9445b198476bf01762e4e549d85f6ee172d8d"
+    },
+    "risk_classification": {
+      "file": "private\\risk_classifier.joblib",
+      "sha256": "136e07da100b576afaa5b385c4f6767084f69b973825e68b6e25b95a36b1965f"
+    }
+  },
+  "native_prediction_contract": true,
+  "no_test_retuning": true,
+  "reports": {
+    "confidence_policy.json": {
+      "file": "confidence_policy.json",
+      "sha256": "6a4f647391b26d0cf0c62396967112f2977edffc16ebe089d9981f944c6347b8"
+    },
+    "metrics.json": {
+      "file": "metrics.json",
+      "sha256": "cdc08f4bebbab9c81f7d456643bfa72ffe8f5a5b37bdde3564f4794d2747f0a1"
+    }
+  },
+  "rights_status": "unverified",
+  "selection": "Declared trials: 65% historical validation, 35% new native validation macro F1",
+  "source_files": {
+    "src/evolv_nlp/research_data.py": "eaedc168d9b805373028a78223eacc545c5f414f27e44abf2eaa1863921fade7",
+    "src/evolv_nlp/research_models.py": "1426991dd934e262ef17d6939acc088ec6006219a2d5a61a65ab921e09f29d4e",
+    "src/evolv_nlp/tuning_v14.py": "24d090f5d4af388536c5e45bcfb8f2ea3385582b9d472bb69fe678d4330a0d7e"
+  },
+  "status": "private_research_not_production",
+  "version": "1.4.0"
+}

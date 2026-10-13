@@ -16,7 +16,7 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
-import { colors, radius, spacing } from "@/constants/theme";
+import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import { useTrainingPreferences } from "@/context/training-preferences-context";
@@ -162,13 +162,13 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       backgroundColor: colors.red,
     },
     primaryButtonText: {
       color: colors.text,
       fontSize: 13,
-      fontWeight: "900",
+      fontWeight: "600",
     },
     disabled: { opacity: 0.45 },
     pressed: { opacity: 0.66 },

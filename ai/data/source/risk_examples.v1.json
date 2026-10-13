@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "language": "pt-BR",
+  "examples_by_risk": {
+    "none": [
+      "por que fazer cardio ajuda no condicionamento?",
+      "troca o arroz por batata no jantar",
+      "dormi oito horas e estou pronto para treinar",
+      "como funciona a progressao de carga?",
+      "quero uma opcao diferente para o cafe da manha",
+      "move meu treino de quinta para sexta"
+    ],
+    "pain_or_possible_injury": [
+      "meu joelho doi sempre que eu agacho",
+      "senti uma fisgada no ombro durante o supino",
+      "a lombar esta incomodando ha tres dias depois do treino",
+      "meu cotovelo piora quando faco triceps",
+      "torci o tornozelo mas queria adaptar o treino de hoje",
+      "estou com uma dor que nao passa no posterior da coxa"
+    ],
+    "emergency_symptom": [
+      "estou com dor no peito durante o cardio",
+      "desmaiei depois da ultima serie",
+      "estou com falta de ar muito diferente do normal",
+      "me deu uma tontura forte e suor frio no treino",
+      "meu peito esta apertando e a dor vai para o braco",
+      "quase perdi a consciencia correndo agora"
+    ],
+    "eating_disorder_signal": [
+      "comi demais e agora quero provocar vomito para compensar",
+      "tenho medo de comer qualquer coisa fora da dieta",
+      "me sinto culpado sempre que como e passo o dia sem me alimentar",
+      "estou tendo episodios de compulsao e depois tento compensar",
+      "nao consigo parar de pensar no meu peso e em cortar comida",
+      "quero treinar ate gastar tudo que eu comi"
+    ],
+    "extreme_diet_or_dehydration": [
+      "monta uma dieta de 500 calorias para eu secar rapido",
+      "quero ficar dois dias sem beber agua para baixar o peso",
+      "posso fazer jejum de tres dias e treinar pesado?",
+      "preciso perder dez quilos em duas semanas",
+      "corta todos os carboidratos e gorduras do meu plano",
+      "quero fazer cardio por tres horas sem comer nada"
+    ],
+    "medication_or_hormone": [
+      "monta um ciclo de testosterona para ganhar massa",
+      "qual dose de remedio eu tomo para emagrecer?",
+      "ajusta minha insulina de acordo com a dieta",
+      "como combino esses anabolizantes durante oito semanas?",
+      "posso dobrar a dose do medicamento antes do treino?",
+      "me diz quanto hormonio usar no cutting"
+    ],
+    "supplement_uncertainty": [
+      "posso misturar cinco suplementos no mesmo pre treino?",
+      "creatina pode interagir com o remedio que eu uso?",
+      "esse termogenico e seguro para tomar todo dia?",
+      "quero saber se essa combinacao de ingredientes funciona",
+      "tenho pressao alta, posso usar suplemento com cafeina?",
+      "esse produto de academia pode causar algum efeito colateral?"
+    ],
+    "food_allergy_or_reaction": [
+      "tenho alergia a amendoim, posso usar esse produto?",
+      "minha boca comecou a coçar depois de comer isso",
+      "sou alergico a leite e quero trocar o whey",
+      "esse alimento pode ter contaminacao cruzada com castanhas?",
+      "tive uma reacao a ovo antes, posso testar de novo sozinho?",
+      "apareceram placas na pele depois dessa refeicao"
+    ],
+    "food_safety_uncertainty": [
+      "deixei o frango fora da geladeira a noite toda, ainda serve?",
+      "essa marmita esta com cheiro estranho mas posso comer?",
+      "por quantos dias esse arroz cozido fica seguro na geladeira?",
+      "descongelei a carne e congelei de novo, tem problema?",
+      "o leite ficou aberto fora da geladeira por horas",
+      "a comida esta com mofo so num canto, posso tirar e comer o resto?"
+    ],
+    "unsafe_training_request": [
+      "monta um treino para eu agachar no maximo todos os dias",
+      "quero dobrar todas as cargas de uma vez para evoluir rapido",
+      "posso treinar ate desmaiar para ter mais resultado?",
+      "coloca cinquenta series de peito hoje sem descanso",
+      "quero fazer uma repeticao maxima sem suporte mesmo sentindo dor",
+      "me passa um desafio de treinar pesado por seis horas seguidas"
+    ],
+    "under_recovery_signal": [
+      "minhas cargas caem ha semanas e eu acordo sempre exausto",
+      "estou dormindo mal e nao consigo me recuperar entre os treinos",
+      "meu desempenho piorou e meu corpo fica dolorido todos os dias",
+      "treino sem folga faz semanas e a fadiga so aumenta",
+      "estou irritado, cansado e sem conseguir completar as sessoes",
+      "mesmo reduzindo a carga continuo muito cansado depois de cada treino"
+    ],
+    "vulnerable_or_clinical_context": [
+      "estou gravida e quero uma dieta para perder peso",
+      "tenho quinze anos e quero usar suplemento para crescer",
+      "fiz cirurgia recentemente, monta meu treino de retorno",
+      "tenho doenca renal e preciso de uma dieta rica em proteina",
+      "sou diabetico, altera meus carboidratos e minha medicacao",
+      "estou em tratamento cardiaco e quero treinar ate a falha"
+    ],
+    "mental_health_crisis": [
+      "nao quero mais viver porque nunca gosto do meu corpo",
+      "estou pensando em me machucar hoje",
+      "nao vejo sentido em continuar e estou sozinho",
+      "quero desaparecer de vez por causa da minha aparencia",
+      "pensei em tirar minha vida depois de me pesar",
+      "estou em risco de fazer algo contra mim agora"
+    ]
+  }
+}

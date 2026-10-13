@@ -111,9 +111,12 @@ export default function WorkoutScreen() {
       : selectedDay.status === "free"
         ? "Dia flexível para reorganizar a semana sem alterar todo o programa."
         : `${selectedDay.exercises.length} exercícios, ${selectedDay.durationMinutes} minutos e cargas prontas para consultar.`;
-  const imageCategory = workoutImageCategoryFromText(
-    `${selectedDay.title} ${workoutPlan?.workout_days.find((day) => day.id === selectedDay.id)?.focus ?? ""}`,
-  );
+  const imageCategory =
+    selectedDay.status === "rest" || selectedDay.status === "free"
+      ? "recovery"
+      : workoutImageCategoryFromText(
+          `${selectedDay.title} ${workoutPlan?.workout_days.find((day) => day.id === selectedDay.id)?.focus ?? ""}`,
+        );
   const heroImage = pickWeeklyImage(
     workoutImageLibrary[imageCategory],
     imagePreferences,
@@ -222,7 +225,7 @@ export default function WorkoutScreen() {
         eyebrow={selectedDay.weekday}
         title={selectedDay.title}
         description={heroDescription}
-        height={240}
+        height={220}
         overlayOpacity={0.2}
       />
 
@@ -397,7 +400,7 @@ const createStyles = (palette: AppThemePalette) =>
     day: {
       width: 66,
       height: 62,
-      borderRadius: radius.md,
+      borderRadius: radius.lg,
       borderWidth: 1,
       borderColor: palette.border,
       backgroundColor: palette.elevated,
@@ -405,7 +408,7 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
     },
     dayActive: { borderColor: colors.red, backgroundColor: colors.red },
-    dayLabel: { color: palette.muted, fontSize: 10, fontWeight: "900" },
+    dayLabel: { color: palette.muted, fontSize: 10, fontWeight: "600" },
     dayLabelActive: { color: colors.text },
     dayTitle: {
       width: 54,
@@ -443,9 +446,9 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
       backgroundColor: colors.redDark,
     },
-    exerciseNumberText: { color: colors.text, fontSize: 11, fontWeight: "900" },
+    exerciseNumberText: { color: colors.text, fontSize: 11, fontWeight: "600" },
     exerciseBody: { flex: 1, minWidth: 0 },
-    exerciseName: { color: palette.text, fontSize: 14, fontWeight: "800" },
+    exerciseName: { color: palette.text, fontSize: 14, fontWeight: "600" },
     exerciseMeta: {
       marginTop: 4,
       color: palette.muted,
@@ -454,11 +457,11 @@ const createStyles = (palette: AppThemePalette) =>
     },
     coachBand: {
       borderLeftWidth: 4,
-      borderLeftColor: colors.gold,
+      borderLeftColor: colors.red,
       backgroundColor: palette.accentSoft,
       padding: spacing.lg,
     },
-    coachTitle: { color: palette.text, fontSize: 16, fontWeight: "900" },
+    coachTitle: { color: palette.text, fontSize: 16, fontWeight: "600" },
     coachText: {
       marginTop: 6,
       color: palette.accentText,
@@ -471,23 +474,23 @@ const createStyles = (palette: AppThemePalette) =>
       height: 50,
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: radius.lg,
+      borderRadius: 25,
       backgroundColor: colors.red,
     },
-    saveButtonText: { color: colors.text, fontSize: 13, fontWeight: "900" },
+    saveButtonText: { color: colors.text, fontSize: 13, fontWeight: "600" },
     plannerButton: {
       minHeight: 52,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 26,
       backgroundColor: colors.red,
     },
     plannerButtonText: {
       color: colors.text,
       fontSize: 13,
-      fontWeight: "900",
+      fontWeight: "600",
     },
     errorText: {
       color: colors.red,

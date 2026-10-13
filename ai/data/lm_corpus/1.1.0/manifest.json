@@ -1,0 +1,55 @@
+{
+  "actual_token_count": null,
+  "added_rows": 174,
+  "added_sources": {
+    "evolv_knowledge_qa": 66,
+    "evolv_v14_authored_train": 108
+  },
+  "base_version": "1.0.0",
+  "files": {
+    "test.jsonl": {
+      "bytes": 64971,
+      "sha256": "0930ef0c45ad32689e334f6cffb0813acd8afd9a32a095d659117035ae23c943"
+    },
+    "test.txt": {
+      "bytes": 50409,
+      "sha256": "fe6dc57e04676492228fe6af4ee4807e02118639305f1e3360a1b9b49ed6f444"
+    },
+    "train.jsonl": {
+      "bytes": 13012453,
+      "sha256": "27517e5d64e24b3ca3b6192d7b957b141e05fab1ea92fc5cb56595b7688f5765"
+    },
+    "train.txt": {
+      "bytes": 10708535,
+      "sha256": "7ddb9bc6e5c5e64dcbf77bb35121c867ec4299d037ed840730218fc28189bc40"
+    },
+    "validation.jsonl": {
+      "bytes": 98397,
+      "sha256": "a0a22166b093782296332a5b7f5630be5bf43d5c40c66aef378955612b075b31"
+    },
+    "validation.txt": {
+      "bytes": 77819,
+      "sha256": "eff5761d24644a4504705769608dbf4bb059c33f75449191c1f39d5701ab465b"
+    }
+  },
+  "inputs": {
+    "authored_train": "371a88c78db7bd18b81434263940a2f0df344a2d66ae5b6cb7dbc12044c49c97",
+    "knowledge": "39877c7f30bc89face526beb50bb2e5d6a316edd5282d446e7438672f5aaa115",
+    "old_manifest": "7f36644e3e46d9c3ed41a6742cadb493e45efae13c37f6c93fb0869849d32bd9"
+  },
+  "language": "pt-BR",
+  "policy": {
+    "community_answers_excluded": true,
+    "corpus_size_is_not_response_quality": true,
+    "no_lm_training_or_tokenizer_training_started": true,
+    "synthetic_rows_not_reported_as_human": true,
+    "validation_and_test_preserved_byte_for_byte": true,
+    "web_questions_excluded": "All 10000 have unverified training/redistribution rights and are candidates, not reviewed knowledge."
+  },
+  "status": "prepared_not_trained",
+  "test_rows": 42,
+  "train_rows": 6456,
+  "validation_rows": 57,
+  "version": "1.1.0",
+  "whitespace_units": 1660248
+}

@@ -1,0 +1,105 @@
+{
+  "artifact_version": "1.1.0",
+  "guardrails": {
+    "dataset_hashes_verified": true,
+    "model_hashes_verified": true,
+    "models_retrained_during_evaluation": false,
+    "scoring_correction": "The first run used SVC.predict; the corrected run uses probability argmax to match baseline.classify. Model hashes and data stayed identical.",
+    "test_evaluation_count": 2,
+    "test_used_for_model_selection": false
+  },
+  "inputs": {
+    "baseline_manifest_before_evaluation": {
+      "path": "artifacts/evaluation/1.1.0/baseline_manifest_before_evaluation.json",
+      "sha256": "0105adf9506f307295f1c6381d67f3743ab4e2766233c8ba4336db1325f7d6ef"
+    },
+    "dataset:challenge/ambiguity_examples.jsonl": {
+      "path": "data/releases/1.3.0/challenge/ambiguity_examples.jsonl",
+      "sha256": "a0d260909e65c9e292c6056b8c6d254fda223b928e200251affc64dd3082a7e1"
+    },
+    "dataset:challenge/real_human_examples.jsonl": {
+      "path": "data/releases/1.3.0/challenge/real_human_examples.jsonl",
+      "sha256": "5845f08fef6ef92569e6343efed9c8abf3a216cb091031e2c92beeccac023460"
+    },
+    "dataset:source/curated_expansion.v1.json": {
+      "path": "data/releases/1.3.0/source/curated_expansion.v1.json",
+      "sha256": "12eb7d710242368fa7b1103bcd17abb17a1e614ce7f6e9ca0a23f49e5af7251b"
+    },
+    "dataset:source/real_human_holdout.v1.json": {
+      "path": "data/releases/1.3.0/source/real_human_holdout.v1.json",
+      "sha256": "a1f87ccb3208452ce490387d725168b21811536656998710367f6d8a843c1f65"
+    },
+    "dataset:splits/test/intent_examples.jsonl": {
+      "path": "data/releases/1.3.0/splits/test/intent_examples.jsonl",
+      "sha256": "54eac68885d9e6d43527ddf4415f506d9977bde96ae633479a7c58755c3da5d2"
+    },
+    "dataset:splits/test/risk_examples.jsonl": {
+      "path": "data/releases/1.3.0/splits/test/risk_examples.jsonl",
+      "sha256": "77b28a72fd031fb435dd556dd4fd826b9833f2b200ccc26a3275286ea82e711d"
+    },
+    "dataset:splits/train/intent_examples.jsonl": {
+      "path": "data/releases/1.3.0/splits/train/intent_examples.jsonl",
+      "sha256": "1fe95c253c952150be9b7d3d94a9a60b69ca698ff6c37447042f93c1d42d9080"
+    },
+    "dataset:splits/train/risk_examples.jsonl": {
+      "path": "data/releases/1.3.0/splits/train/risk_examples.jsonl",
+      "sha256": "ade63494750b4865ce51245683bc60994f048e2bd4fde730ca588e4aa1176a4b"
+    },
+    "dataset:splits/validation/intent_examples.jsonl": {
+      "path": "data/releases/1.3.0/splits/validation/intent_examples.jsonl",
+      "sha256": "a18eb3ecee9aa67c8a888138a541702c4abca93859a96c7b108d70852f5ea42c"
+    },
+    "dataset:splits/validation/risk_examples.jsonl": {
+      "path": "data/releases/1.3.0/splits/validation/risk_examples.jsonl",
+      "sha256": "00c434b08a90a051c56d97f00751e47e128a06119ff2100f0d4c792fca63ccec"
+    },
+    "dataset_manifest": {
+      "path": "data/releases/1.3.0/manifest.json",
+      "sha256": "3a7f7f23d988b0cf3bc643632b0befb8541ff056dd138853df43dd776a058968"
+    },
+    "model:intent_classification": {
+      "path": "artifacts/baseline/1.1.0/intent_classifier.joblib",
+      "sha256": "0738edf08b547ef9fed99150d9047908695b6cc6161197e0a77880c6adc12928"
+    },
+    "model:risk_classification": {
+      "path": "artifacts/baseline/1.1.0/risk_classifier.joblib",
+      "sha256": "bbaefa487c72f05ec9bd8490b40bbb6001e052ef78fbe7f9b903630cddf01ec8"
+    }
+  },
+  "outputs": {
+    "artifacts/evaluation/1.1.0/baseline_manifest_before_evaluation.json": {
+      "bytes": 1913,
+      "sha256": "0105adf9506f307295f1c6381d67f3743ab4e2766233c8ba4336db1325f7d6ef"
+    },
+    "artifacts/evaluation/1.1.0/intent_confusion_matrix.csv": {
+      "bytes": 2975,
+      "sha256": "751bd496d99df1708be9d4aece4a1c5000c92b8a391f2aaf9e16919e9466c54a"
+    },
+    "artifacts/evaluation/1.1.0/intent_predictions.jsonl": {
+      "bytes": 36561,
+      "sha256": "778381778ba5557765f1b0f1839a60660108328e8e6c3071bc35432dec295b85"
+    },
+    "artifacts/evaluation/1.1.0/metrics.json": {
+      "bytes": 95072,
+      "sha256": "ed97d5ea8ad71efa9ca0448b577506f41c46ad135b13b50018556add2b663117"
+    },
+    "artifacts/evaluation/1.1.0/real_human_intent_predictions.jsonl": {
+      "bytes": 3999,
+      "sha256": "458dde8b4a45e20f85a2fc2e252e7d2ba2cc539c4340aec467da113e12690fb3"
+    },
+    "artifacts/evaluation/1.1.0/real_human_risk_predictions.jsonl": {
+      "bytes": 3932,
+      "sha256": "adf6d546734b3532d03b0efbdfb702831ccf072f7d53aac63a5a2fe61a37742c"
+    },
+    "artifacts/evaluation/1.1.0/risk_confusion_matrix.csv": {
+      "bytes": 937,
+      "sha256": "80b90064e746fad7f85210395779345862ff62c4755837fc666de0dfbd0add8b"
+    },
+    "artifacts/evaluation/1.1.0/risk_predictions.jsonl": {
+      "bytes": 16667,
+      "sha256": "a8d529ae04c51464f5983534cd61c1d2cf9e91833bc8562e36fc251237dae047"
+    }
+  },
+  "release_date": "2026-10-09",
+  "status": "completed"
+}

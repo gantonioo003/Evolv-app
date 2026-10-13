@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "required_domains": {
+    "training": { "minimum_chunks": 12 },
+    "nutrition": { "minimum_chunks": 16 },
+    "recovery": { "minimum_chunks": 8 },
+    "safety": { "minimum_chunks": 12 }
+  },
+  "required_risk_coverage": [
+    "pain_or_possible_injury",
+    "emergency_symptom",
+    "eating_disorder_signal",
+    "extreme_diet_or_dehydration",
+    "medication_or_hormone",
+    "supplement_uncertainty",
+    "food_allergy_or_reaction",
+    "food_safety_uncertainty",
+    "unsafe_training_request",
+    "under_recovery_signal",
+    "vulnerable_or_clinical_context",
+    "mental_health_crisis"
+  ],
+  "required_response_modes": [
+    "educate",
+    "cautious",
+    "refer",
+    "emergency",
+    "product_policy"
+  ],
+  "required_local_routes": [
+    "brazil_samu_192_current",
+    "cvv_188_current",
+    "anvisa_supplements_2025",
+    "anvisa_food_safety_2024"
+  ],
+  "forbidden_source_types": [
+    "public_forum",
+    "social_media",
+    "commercial_blog",
+    "influencer_content",
+    "unreviewed_model_output"
+  ]
+}

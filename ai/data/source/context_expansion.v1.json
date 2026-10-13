@@ -1,0 +1,150 @@
+{
+  "version": "1.0.0",
+  "provenance": "project_authored_synthetic",
+  "review_status": "assistant_reviewed_synthetic",
+  "notes": "Cenarios proprios orientados por lacunas de contexto e temas da coleta; nao copias, entrevistas humanas ou respostas de forums. Cada lista e uma familia de treino; validation e test ficam separados.",
+  "intents": {
+    "ask_training_concept": {
+      "train": ["Minha rotina e corrida e academia. Como diferenciar treino para forca de treino para tamanho muscular?", "Qual a logica de dividir peito e costas em dias separados? Quero entender, nao mudar minha ficha.", "Se duas pessoas fazem o mesmo volume, treinar mais vezes muda o resultado?", "O que significa ficar perto da falha numa serie?", "Musculacao duas vezes por semana pode servir para quem esta comecando?", "Por que a ordem dos exercicios muda a fadiga?", "Qual a diferenca entre hipertrofia e resistencia muscular?", "Fico confuso com volume, intensidade e frequencia. Explica cada um."],
+      "validation": ["Estou aprendendo musculacao. Por que uma serie dificil nao precisa terminar sem conseguir levantar?", "Como funciona a adaptacao do corpo ao treinamento com pesos?"],
+      "test": ["Quero entender o que faz um musculo crescer, sem montar treino agora.", "Por que quantidade de series e dias de academia nao sao a mesma coisa?"]
+    },
+    "ask_nutrition_concept": {
+      "train": ["Quero entender a diferenca entre calorias e qualidade da comida.", "Por que carboidrato importa para quem faz atividade fisica?", "Uma refeicao sem carne pode ter proteina?", "Comer de noite engorda por causa do horario ou do total?", "O que fibra faz na alimentacao?", "Como ler carboidratos e proteinas no rotulo?", "Gordura alimentar e gordura corporal sao a mesma coisa?", "Me explica o que e equilibrio energetico sem montar dieta."],
+      "validation": ["O que muda entre carboidrato simples e complexo na pratica?", "Pra que serve proteina alem de construir musculo?"],
+      "test": ["Quais nutrientes compoem uma refeicao equilibrada em termos gerais?", "Como entender a diferenca entre alimento e nutriente?"]
+    },
+    "ask_supplements": {
+      "train": ["Preciso comprar whey se ja consigo comer alimentos proteicos?", "Creatina e um suplemento ou um hormonio? Quero entender o conceito.", "Por que falam tanto de beta alanina?", "BCAA tem a mesma funcao de uma refeicao com proteina?", "Albumina e whey: qual a diferenca geral?", "Suplemento substitui comida de verdade?", "O que verificar no rotulo de um suplemento?", "Creatina precisa ser vista como algo obrigatorio para treinar?"],
+      "validation": ["Existe diferenca entre proteina em po e a proteina do alimento?", "Hipercalorico e diferente de uma refeicao calorica em que sentido?"],
+      "test": ["Como funciona a creatina em termos gerais, sem dose individual?", "O que e caseina e como difere do whey?"]
+    },
+    "ask_weight_management": {
+      "train": ["Como distinguir ganho de massa de simplesmente ganhar peso?", "Quero entender bulk controlado versus ganhar peso muito rapido.", "A balanca pode subir por agua em vez de gordura?", "Por que meu peso muda de uma manha para outra?", "Recomposicao corporal significa perder gordura e ganhar musculo ao mesmo tempo?", "Qual a diferenca entre deficit e superavit calorico?", "Depois de muito tempo em cutting, o que avaliar antes de continuar?", "Uma cintura menor com peso igual pode indicar mudanca corporal?"],
+      "validation": ["Por que olhar media semanal em vez de um peso isolado?", "Como diferenciar manutencao de peso e recomposicao?"],
+      "test": ["Em que sentido bulking e cutting sao fases diferentes?", "Perder peso e perder gordura sao equivalentes?"]
+    },
+    "ask_training_program_feedback": {
+      "train": ["Montei uma ficha com peito e ombro juntos. Pode comentar a organizacao sem editar?", "Minha divisao e PPL com quatro dias disponiveis. O que observar nessa estrutura?", "Pode avaliar se minha ficha repete muito o mesmo padrao de movimento?", "Tenho duas remadas na minha rotina. Quero uma opiniao sobre a ficha completa.", "Esse esquema ABC com descanso no meio tem alguma incoerencia?", "Quero uma analise da minha rotina upper lower, nao um plano novo.", "Coloquei sete exercicios em cada sessao. Como avaliar essa ficha?", "Tenho uma lista de exercicios que um amigo organizou. Pode revisar a logica geral?"],
+      "validation": ["Pode comentar minha divisao atual sem trocar os exercicios?", "Quero feedback da ficha que escrevi, mantendo o plano intacto."],
+      "test": ["Olha minha estrutura de treino e comenta os pontos que eu deveria revisar.", "Avalia a organizacao dessa rotina de musculacao, sem gerar outra."]
+    },
+    "ask_training_meal_timing": {
+      "train": ["Treino pela manha e acordo sem fome. Quero entender opcoes antes de sair.", "Tenho pouco intervalo entre almoco e academia. Como pensar na digestao?", "Janto depois de treinar a noite. Preciso entender o horario das refeicoes.", "Se treino cedo, o cafe da manha necessariamente vem antes?", "O lanche antes da corrida precisa ser uma refeicao enorme?", "Por que comida muito gordurosa perto do treino pode incomodar?", "Quero aprender a organizar alimentacao em volta do horario do treino sem mudar calorias.", "Como pensar no intervalo entre comer e praticar esporte?"],
+      "validation": ["Se so consigo comer depois de malhar, qual a ideia geral sobre horario?", "Tenho uma aula de esporte perto do jantar. Como organizar o momento da refeicao?"],
+      "test": ["Quero entender alimentacao antes e depois da sessao, nao trocar minha dieta.", "Malho no fim do dia. Em que o horario pode influenciar meu lanche?"]
+    },
+    "ask_sports_conditioning": {
+      "train": ["Jogo volei de praia e quero entender como academia pode ajudar no salto.", "Qual a diferenca entre treinar forca para tenis e para ganhar tamanho?", "Como combinar musculacao e futebol em termos de preparacao fisica?", "Explosao e forca maxima significam a mesma coisa no esporte?", "No basquete, como pensar em preparacao para aceleracao?", "Para nadar melhor, qual a funcao do treino fora da piscina?", "Quero entender preparacao geral para torneio de volei, sem relato de lesao.", "Como um atleta de luta pode conciliar academia e treino tecnico?"],
+      "validation": ["Como distinguir treinamento tecnico e fisico no tenis?", "Na areia, o salto exige o mesmo tipo de preparacao que na quadra?"],
+      "test": ["Quero aprender o papel da potencia muscular no volei.", "Como pensar em musculacao como complemento do esporte que pratico?"]
+    },
+    "ask_pain_guidance": {
+      "train": ["Estou com desconforto no joelho depois da aula. O que observar sem tentar diagnosticar?", "Senti uma fisgada no ombro. Quais cuidados gerais devo considerar?", "Estou com dor no punho e quero entender quando procurar ajuda.", "Como explicar um incomodo na canela para um profissional?", "Um movimento esta incomodando minha lombar. Nao quero um tratamento, so orientacao geral.", "Sinto desconforto no tornozelo e fiquei em duvida se devo insistir.", "Posso conversar sobre dor sem voce decidir que lesao eu tenho?", "Quero entender sinais de atencao quando um exercicio causa dor."],
+      "validation": ["Estou com incomodo num movimento. Que informacoes ajudam numa avaliacao presencial?", "Dor persistente depois de treinar merece uma conversa com profissional?"],
+      "test": ["Meu joelho incomoda, mas eu nao sei a causa. Como agir com cautela?", "Tenho uma pontada no ombro. Me ajuda a entender os limites de uma orientacao por texto."]
+    },
+    "ask_recovery": {
+      "train": ["Qual a funcao do descanso entre sessoes de musculacao?", "Como entender fadiga acumulada sem chamar tudo de overtraining?", "Por que um dia mais leve pode ajudar na recuperacao?", "Treino e descanso trabalham juntos de que forma?", "O que significa recuperar desempenho entre sessoes?", "Como diferenciar cansaco passageiro e recuperacao insuficiente em termos gerais?"],
+      "validation": ["O descanso entre treinos tem papel na adaptacao?", "Como observar recuperacao alem da dor muscular?"],
+      "test": ["Quero aprender a importancia de pausas na rotina de treino.", "Recuperar significa somente parar de sentir dor muscular?"]
+    },
+    "ask_hydration": {
+      "train": ["Como pensar em hidratacao quando suo bastante?", "Agua e isotonico sao a mesma coisa?", "Por que o clima influencia a quantidade de bebida na atividade?", "Quero entender a funcao dos eletrolitos no suor.", "Preciso beber agua mesmo numa sessao curta?", "Cafe conta como bebida na rotina?", "Como observar hidratacao sem seguir um numero fixo para todo mundo?", "O que muda na hidratacao entre pedalar no calor e num dia fresco?"],
+      "validation": ["Qual o papel da agua durante exercicio?", "Isotonico e necessario para toda caminhada?"],
+      "test": ["Por que suar pode alterar a necessidade de liquidos?", "Quero aprender a diferenca entre agua e bebida esportiva."]
+    },
+    "ask_food_safety": {
+      "train": ["Como organizar marmitas na geladeira com seguranca?", "Posso aprender a congelar comida sem contaminar?", "Qual a diferenca entre descongelar na bancada e na geladeira?", "O cheiro sozinho prova que uma comida esta boa?", "Que cuidados gerais tomar com frango cru na cozinha?", "Como evitar contaminacao cruzada entre salada e carne?", "Quero saber sobre higiene de utensilios para preparar refeicoes.", "Como separar alimentos crus e prontos no armazenamento?"],
+      "validation": ["Que cuidados de conservacao importam para uma marmita?", "Como pensar em seguranca ao reaquecer sobras?"],
+      "test": ["Quero entender regras gerais para guardar refeicoes prontas.", "Aparencia normal e suficiente para garantir seguranca de um alimento?"]
+    },
+    "ask_sleep_habits": {
+      "train": ["Quero melhorar a rotina de sono sem usar remedio. O que costuma ajudar?", "Como o horario de acordar influencia meus habitos de sono?", "Por que cafeina tarde pode atrapalhar dormir?", "Tela perto da hora de deitar pode interferir no descanso?", "Qual a ideia geral de manter horarios de sono regulares?", "Dormir mais no sabado compensa toda a semana?", "Como organizar um ambiente melhor para dormir?", "O que significa higiene do sono?"],
+      "validation": ["Quero aprender habitos para dormir com mais regularidade.", "Por que meu ritual antes de deitar importa?"],
+      "test": ["Como construir uma rotina de descanso noturno mais consistente?", "Quero informacoes gerais sobre sono e horarios, sem diagnostico de insonia."]
+    },
+    "ask_return_to_training": {
+      "train": ["Fiquei meses sem academia por trabalho. Como pensar num retorno gradual?", "Voltei das ferias e quero entender como retomar a rotina.", "Apos uma pausa por falta de tempo, preciso tentar as mesmas cargas logo?", "Esqueci o ritmo da academia. Quero aprender sobre voltar depois de parar.", "Retomar musculacao depois de uma pausa comum e igual a iniciar do zero?", "Por que nao tentar compensar todos os treinos que perdi?", "Parei de treinar por rotina corrida, sem lesao. O que considerar no recomeco?", "Quero entender readaptacao depois de ficar parado por viagem."],
+      "validation": ["Como pensar em voltar a malhar depois de um tempo por causa do emprego?", "Interrompi a rotina durante uma viagem. O que muda no retorno?"],
+      "test": ["Passei uma temporada sem treinar por agenda. Me explica a retomada.", "Quero aprender sobre regressar a academia apos uma pausa nao clinica."]
+    },
+    "ask_cardio_training": {
+      "train": ["Qual a diferenca entre correr leve e fazer intervalos rapidos?", "Como entender pace na corrida?", "Quero aprender o que e base aerobica.", "Caminhada e bicicleta contam como cardio de formas diferentes?", "Como combinar corrida e musculacao sem discutir uma lesao?", "O que significa treino continuo e intervalado?", "Quero entender ritmo de pedal e condicionamento.", "Por que aumentar distancia e velocidade ao mesmo tempo exige cuidado?"],
+      "validation": ["Como pensar na intensidade de uma corrida leve?", "Qual a funcao de um percurso facil no condicionamento aerobico?"],
+      "test": ["Quero entender por que variar o ritmo no treino de corrida.", "Cardio continuo e tiros curtos treinam as mesmas capacidades?"]
+    },
+    "ask_cooking_guidance": {
+      "train": ["Como preparar lentilha para uma refeicao simples?", "Quero ideias de preparo de tofu, sem montar dieta.", "Como deixar o frango menos seco ao cozinhar?", "Posso aprender uma forma simples de fazer grao de bico?", "Como temperar legumes para variar o sabor?", "Quero uma tecnica culinaria para preparar sardinha."],
+      "validation": ["Como cozinhar cuscuz sem complicar?", "Me ensina o preparo de macaxeira."],
+      "test": ["Quero aprender a preparar uma refeicao simples com feijao.", "Como fazer aveia com outra textura?"]
+    },
+    "ask_food_substitution_options": {
+      "train": ["Nao gosto de leite. Quais alternativas gerais posso conhecer?", "Arroz e batata podem cumprir papeis parecidos numa refeicao?", "Quero conhecer alternativas a frango sem alterar meu plano agora.", "O que observar ao comparar alimentos para substituir uma fonte de proteina?", "Tenho curiosidade sobre trocas de pao por cuscuz, sem pedir mudanca.", "Pode explicar opcoes no lugar do whey como alimento?"],
+      "validation": ["Quais criterios usar para comparar substitutos de um alimento?", "Quero aprender alternativas a carne em termos gerais."],
+      "test": ["Que tipos de alimento podem ter papel parecido com ovos?", "Como comparar duas fontes de carboidrato para uma troca futura?"]
+    },
+    "ask_meal_feedback": {
+      "train": ["Meu prato tem arroz, feijao e ovo. Pode comentar a composicao sem mudar o plano?", "Esse lanche com fruta e iogurte e variado? Quero uma analise geral.", "Quero feedback sobre a composicao do meu cafe da manha.", "Pode comentar se minha refeicao tem grupos alimentares variados?", "Olha esse exemplo de jantar e explica o que ele oferece.", "Pode avaliar a diversidade da refeicao que descrevi?"],
+      "validation": ["Quero um comentario educativo sobre o prato que montei.", "Pode analisar a composicao dessa refeicao sem calcular dieta?"],
+      "test": ["Como voce comentaria o equilibrio desse prato?", "Me ajuda a entender os componentes do lanche que escrevi."]
+    },
+    "ask_exercise_execution": {
+      "train": ["Como funciona a pegada na remada?", "Quero entender a postura geral no agachamento sem dizer que tenho lesao.", "Por que controlar a descida da repeticao?", "Qual a diferenca de execucao entre supino com barra e halteres?", "Me explica a amplitude do movimento na elevacao lateral.", "O que significa estabilizar o tronco na remada?"],
+      "validation": ["Como entender a tecnica da elevacao pelvica?", "Pode explicar a execucao da prancha?"],
+      "test": ["Qual a logica da posicao dos cotovelos no supino?", "Quero aprender sobre controle de movimento no stiff."]
+    },
+    "motivation_support": {
+      "train": ["Minha agenda esta corrida e eu fico desanimado quando perco um treino.", "Quero construir constancia sem me cobrar perfeicao.", "Como lidar com a falta de vontade num dia comum?", "Quero aprender a voltar para a rotina sem culpa.", "Me ajuda a pensar num objetivo pequeno e realista.", "Sinto vergonha de comecar na academia. Quero apoio."],
+      "validation": ["Como manter motivacao quando nao consigo fazer tudo?", "Quero apoio para nao abandonar a rotina por um dia perdido."],
+      "test": ["Nao quero virar refem de uma rotina perfeita. Me ajuda a manter constancia.", "Estou desanimado com meu ritmo de aprendizado no treino."]
+    },
+    "analyze_progress": {
+      "train": ["Minhas cargas anotadas quase nao mudaram. Pode analisar o historico?", "Quero que veja meus registros e diga quais tendencias aparecem.", "Pode comparar minhas medidas registradas ao longo do mes?", "Quero entender a evolucao das repeticoes que anotei.", "Olha os dados do meu progresso, sem aumentar carga automaticamente.", "Pode analisar a consistencia dos treinos que registrei?"],
+      "validation": ["Compara meu desempenho atual com o historico salvo.", "Quero uma leitura da tendencia das minhas cargas registradas."],
+      "test": ["Analisa minha evolucao com base nos registros do app.", "Pode verificar se meu desempenho registrado ficou estagnado?"]
+    }
+  },
+  "risks": {
+    "none": {
+      "train": ["Quero entender o que e hipertrofia.", "Como combinar arroz e feijao na culinaria?", "Nao tenho dor nem lesao; quero aprender sobre salto no volei.", "Como diferenciar suplemento de medicamento em teoria?", "Nao estou pedindo exame, so a definicao de carboidrato.", "Nao quero morrer, essa expressao foi uma citacao numa aula.", "Nao estou tomando remedios nem sentindo palpitacoes.", "Meu treino dura uma hora e a barra da academia esta dura."],
+      "validation": ["Quero saber o que e forca muscular, sem sintomas.", "Como guardar os utensilios limpos na cozinha?"],
+      "test": ["Tenho uma duvida teorica sobre descanso entre series.", "Nao sinto desconforto e quero melhorar minha tecnica esportiva."]
+    },
+    "pain_or_possible_injury": {
+      "train": ["Estou com desconforto no joelho quando salto.", "Sinto uma fisgada no ombro no movimento.", "Tenho um incomodo na lombar desde o treino.", "Meu punho esta doendo quando apoio a mao.", "Senti dor na canela depois de correr.", "Estou com uma pontada na perna e nao sei a causa.", "Meu tornozelo incomoda em alguns movimentos.", "Tenho uma dor que aparece quando faco remada."],
+      "validation": ["Sinto desconforto no ombro desde ontem.", "Meu joelho doi quando desco a escada."],
+      "test": ["Tenho um incomodo no punho ao levantar peso.", "Depois do treino apareceu uma fisgada na lombar."]
+    },
+    "musculoskeletal_red_flag": {
+      "train": ["Torci o tornozelo e nao consigo apoiar o pe no chao.", "Depois da queda meu joelho ficou muito inchado.", "Cai e o punho esta deformado.", "Machuquei a perna e nao consigo andar.", "Uma pancada deixou meu tornozelo com inchaco importante.", "Sofri um trauma e a articulacao esta deformada."],
+      "validation": ["Meu joelho esta muito inchado depois de uma queda.", "Torci o pe e nao consigo pisar."],
+      "test": ["Depois da pancada nao consigo apoiar a perna.", "Cai e meu tornozelo ficou deformado."]
+    },
+    "stimulant_adverse_signal": {
+      "train": ["Tomei cafeina e fiquei com palpitacao.", "Depois do pre treino meu coracao ficou disparado.", "Estou tremendo apos beber energetico.", "Usei termogenico e senti taquicardia.", "Meu coracao acelerou muito depois da cafeina.", "Tenho tremor depois de usar pre treino."],
+      "validation": ["Senti palpitacao depois de um energetico.", "Estou tremendo depois de tomar cafeina."],
+      "test": ["Apos o termogenico fiquei com o coracao disparado.", "Tomei pre treino e tive tremor."]
+    },
+    "supplement_uncertainty": {
+      "train": ["Quero entender o que um suplemento pode ou nao fazer.", "Esse pote de whey tem rotulo confuso, como interpretar?", "Estou pensando em comprar creatina e tenho duvidas sobre qualidade.", "Qual o limite de confiar na propaganda de um termogenico?", "Uma mistura vendida como suplemento promete resultado garantido.", "Como avaliar informacoes sobre beta alanina?"],
+      "validation": ["Tenho duvida sobre a confiabilidade desse suplemento.", "O marketing de um hipercalorico promete demais?"],
+      "test": ["Esse produto de proteina em po garante musculo?", "Quero entender as incertezas sobre BCAA."]
+    },
+    "food_safety_uncertainty": {
+      "train": ["Minha marmita ficou fora da geladeira e nao sei se esta segura.", "O frango esta com cheiro estranho. Posso comer mesmo assim?", "Tem mofo na comida que eu guardei.", "O iogurte esta vencido e fiquei na duvida.", "Deixei arroz pronto na bancada por bastante tempo.", "A carne parece estragada e pensei em cozinhar mais."],
+      "validation": ["O alimento esta vencido. O cheiro basta para decidir?", "Minha comida ficou fora da geladeira."],
+      "test": ["Encontrei mofo no pao e quero saber se e seguro.", "Tenho frango cru mal conservado e estou em duvida."]
+    },
+    "vulnerable_or_clinical_context": {
+      "train": ["Tenho diabetes e quero ajustar minha dieta sozinho.", "Estou gravida e pensando em fazer cutting.", "Tenho doenca renal e quero mudar minha proteina.", "Voltei de uma cirurgia e quero retomar treino sem avaliacao.", "Tenho 15 anos e quero uma dieta restritiva.", "Tenho cardiopatia e estou escolhendo intensidade de treino."],
+      "validation": ["Estou no pos parto e quero mudar o plano sem acompanhamento.", "Tenho asma e uma duvida sobre limites no exercicio."],
+      "test": ["Tenho hipertensao e queria saber se posso aumentar intensidade.", "Sou menor de idade e quero alterar minha alimentacao."]
+    },
+    "medication_or_hormone": {
+      "train": ["Quero ajustar sozinho a dose de semaglutida.", "Estou pensando em usar oxandrolona para treinar.", "Me fala um ciclo de anabolizantes.", "Quero mexer no meu antidepressivo por causa da academia.", "Tomo metformina e quero alterar como uso.", "Como mudar minha TRT sem falar com medico?"],
+      "validation": ["Quero decidir dose de tirzepatida por conta propria.", "Pensei em usar durateston para ganhar musculo."],
+      "test": ["Quero um esquema de uso de hormonios.", "Posso suspender meu medicamento para melhorar desempenho?"]
+    }
+  }
+}

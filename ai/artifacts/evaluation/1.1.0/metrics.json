@@ -1,0 +1,4489 @@
+{
+  "baseline_version": "1.1.0",
+  "comparison": {
+    "baseline_1.0.0": {
+      "dataset_version": "1.2.0",
+      "intent_macro_f1": 0.161111,
+      "risk_macro_f1": 0.448718
+    },
+    "baseline_1.1.0": {
+      "dataset_version": "1.3.0",
+      "intent_macro_f1": 0.712857,
+      "risk_macro_f1": 0.852381
+    },
+    "warning": "Versions use different frozen test sets; compare directionally, not as a controlled head-to-head experiment."
+  },
+  "dataset_version": "1.3.0",
+  "evaluated_on": "2026-10-09",
+  "evaluation_version": "1.1.0",
+  "interpretation": {
+    "headline": "Frozen test evaluation for baseline 1.1.0 with probability-argmax inference.",
+    "human_holdout": "Ten public human-written prompts provide a small realism check, not a statistically stable product-quality claim.",
+    "scoring_correction": "The first run used SVC.predict; the corrected run uses probability argmax to match baseline.classify. Model hashes and data stayed identical.",
+    "test_reuse_policy": "Do not tune baseline 1.1.x against these errors. Improvements require development data and a newly frozen future test release."
+  },
+  "real_human_holdout": {
+    "intent": {
+      "accuracy": 0.3,
+      "confusion_matrix": {
+        "labels": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "analyze_progress",
+          "ask_cooking_guidance",
+          "ask_exercise_execution",
+          "ask_food_substitution_options",
+          "ask_meal_feedback",
+          "ask_nutrition_concept",
+          "ask_recovery",
+          "ask_training_concept",
+          "change_diet_structure",
+          "change_training_split",
+          "clarification",
+          "compare_options",
+          "confirm_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "image_context_request",
+          "motivation_support",
+          "move_workout_day",
+          "out_of_scope",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ],
+        "orientation": "rows=expected, columns=predicted",
+        "values": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "confusions": [
+        {
+          "count": 1,
+          "expected": "ask_meal_feedback",
+          "predicted": "ask_food_substitution_options"
+        },
+        {
+          "count": 1,
+          "expected": "clarification",
+          "predicted": "ask_food_substitution_options"
+        },
+        {
+          "count": 1,
+          "expected": "clarification",
+          "predicted": "explain_current_plan"
+        },
+        {
+          "count": 1,
+          "expected": "compare_options",
+          "predicted": "change_training_split"
+        },
+        {
+          "count": 1,
+          "expected": "greeting",
+          "predicted": "ask_cooking_guidance"
+        },
+        {
+          "count": 1,
+          "expected": "out_of_scope",
+          "predicted": "ask_cooking_guidance"
+        },
+        {
+          "count": 1,
+          "expected": "out_of_scope",
+          "predicted": "compare_options"
+        }
+      ],
+      "error_count": 7,
+      "errors": [
+        {
+          "alternatives": [
+            {
+              "confidence": 0.084735,
+              "label": "change_training_split"
+            },
+            {
+              "confidence": 0.063278,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.061381,
+              "label": "out_of_scope"
+            }
+          ],
+          "confidence": 0.084735,
+          "correct": false,
+          "expected": "compare_options",
+          "id": "human_holdout_001",
+          "predicted": "change_training_split",
+          "text": "Me explique as possíveis vantagens da prática de exercícios de calistenia sobre musculação, e como a calistenia, associada a exercícios aeróbicos (como corrida, por exemplo), podem contribuir para uma melhora geral da minha saúde."
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.098039,
+              "label": "ask_food_substitution_options"
+            },
+            {
+              "confidence": 0.076407,
+              "label": "ask_nutrition_concept"
+            },
+            {
+              "confidence": 0.075121,
+              "label": "compare_options"
+            }
+          ],
+          "confidence": 0.098039,
+          "correct": false,
+          "expected": "ask_meal_feedback",
+          "id": "human_holdout_002",
+          "predicted": "ask_food_substitution_options",
+          "text": "O que é mais nocivo à saúde, comer salgado velho ou comer doce velho?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.079799,
+              "label": "ask_cooking_guidance"
+            },
+            {
+              "confidence": 0.059889,
+              "label": "clarification"
+            },
+            {
+              "confidence": 0.059308,
+              "label": "reject_planner_action"
+            }
+          ],
+          "confidence": 0.079799,
+          "correct": false,
+          "expected": "greeting",
+          "id": "human_holdout_006",
+          "predicted": "ask_cooking_guidance",
+          "text": "Olaaaa, como você esta?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.178754,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.098035,
+              "label": "ask_nutrition_concept"
+            },
+            {
+              "confidence": 0.059029,
+              "label": "replace_exercise"
+            }
+          ],
+          "confidence": 0.178754,
+          "correct": false,
+          "expected": "clarification",
+          "id": "human_holdout_007",
+          "predicted": "explain_current_plan",
+          "text": "Por que?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.061369,
+              "label": "ask_food_substitution_options"
+            },
+            {
+              "confidence": 0.052857,
+              "label": "adjust_training_intensity"
+            },
+            {
+              "confidence": 0.050915,
+              "label": "clarification"
+            }
+          ],
+          "confidence": 0.061369,
+          "correct": false,
+          "expected": "clarification",
+          "id": "human_holdout_008",
+          "predicted": "ask_food_substitution_options",
+          "text": "Poderia dar mais três exemplos?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.103799,
+              "label": "ask_cooking_guidance"
+            },
+            {
+              "confidence": 0.080681,
+              "label": "ask_exercise_execution"
+            },
+            {
+              "confidence": 0.063996,
+              "label": "ask_recovery"
+            }
+          ],
+          "confidence": 0.103799,
+          "correct": false,
+          "expected": "out_of_scope",
+          "id": "human_holdout_009",
+          "predicted": "ask_cooking_guidance",
+          "text": "Como faz pra zerar Minecraft?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.154395,
+              "label": "compare_options"
+            },
+            {
+              "confidence": 0.145879,
+              "label": "ask_training_concept"
+            },
+            {
+              "confidence": 0.096459,
+              "label": "ask_nutrition_concept"
+            }
+          ],
+          "confidence": 0.154395,
+          "correct": false,
+          "expected": "out_of_scope",
+          "id": "human_holdout_010",
+          "predicted": "compare_options",
+          "text": "Qual a diferença entre débito e crédito?"
+        }
+      ],
+      "labels": [
+        "adjust_training_intensity",
+        "adjust_training_volume",
+        "analyze_progress",
+        "ask_cooking_guidance",
+        "ask_exercise_execution",
+        "ask_food_substitution_options",
+        "ask_meal_feedback",
+        "ask_nutrition_concept",
+        "ask_recovery",
+        "ask_training_concept",
+        "change_diet_structure",
+        "change_training_split",
+        "clarification",
+        "compare_options",
+        "confirm_planner_action",
+        "explain_current_plan",
+        "greeting",
+        "image_context_request",
+        "motivation_support",
+        "move_workout_day",
+        "out_of_scope",
+        "record_food_intake",
+        "record_training_load",
+        "reject_planner_action",
+        "remember_preference",
+        "replace_exercise",
+        "replace_meal_item",
+        "set_day_activity",
+        "undo_planner_action",
+        "update_goal"
+      ],
+      "macro": {
+        "f1": 0.148148,
+        "precision": 0.166667,
+        "recall": 0.166667
+      },
+      "micro": {
+        "f1": 0.3,
+        "precision": 0.3,
+        "recall": 0.3
+      },
+      "per_class": {
+        "adjust_training_intensity": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "adjust_training_volume": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "analyze_progress": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "ask_cooking_guidance": {
+          "f1": 0.666667,
+          "precision": 0.5,
+          "predicted": 4,
+          "recall": 1.0,
+          "support": 2
+        },
+        "ask_exercise_execution": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "ask_food_substitution_options": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 2,
+          "recall": 0.0,
+          "support": 0
+        },
+        "ask_meal_feedback": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 1
+        },
+        "ask_nutrition_concept": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "ask_recovery": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "ask_training_concept": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "change_diet_structure": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "change_training_split": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 0
+        },
+        "clarification": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 2
+        },
+        "compare_options": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 1
+        },
+        "confirm_planner_action": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "explain_current_plan": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 0
+        },
+        "greeting": {
+          "f1": 0.666667,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.5,
+          "support": 2
+        },
+        "image_context_request": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "motivation_support": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "move_workout_day": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "out_of_scope": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 2
+        },
+        "record_food_intake": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "record_training_load": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "reject_planner_action": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "remember_preference": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "replace_exercise": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "replace_meal_item": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "set_day_activity": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "undo_planner_action": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "update_goal": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        }
+      },
+      "rows": 10,
+      "top3_accuracy": 0.4,
+      "weighted": {
+        "f1": 0.266667,
+        "precision": 0.3,
+        "recall": 0.3
+      }
+    },
+    "risk": {
+      "accuracy": 0.3,
+      "confusion_matrix": {
+        "labels": [
+          "eating_disorder_signal",
+          "emergency_symptom",
+          "extreme_diet_or_dehydration",
+          "food_allergy_or_reaction",
+          "food_safety_uncertainty",
+          "medication_or_hormone",
+          "mental_health_crisis",
+          "none",
+          "pain_or_possible_injury",
+          "supplement_uncertainty",
+          "under_recovery_signal",
+          "unsafe_training_request",
+          "vulnerable_or_clinical_context"
+        ],
+        "orientation": "rows=expected, columns=predicted",
+        "values": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            2,
+            0,
+            2,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "confusions": [
+        {
+          "count": 2,
+          "expected": "none",
+          "predicted": "food_safety_uncertainty"
+        },
+        {
+          "count": 2,
+          "expected": "none",
+          "predicted": "mental_health_crisis"
+        },
+        {
+          "count": 1,
+          "expected": "food_safety_uncertainty",
+          "predicted": "eating_disorder_signal"
+        },
+        {
+          "count": 1,
+          "expected": "none",
+          "predicted": "extreme_diet_or_dehydration"
+        },
+        {
+          "count": 1,
+          "expected": "none",
+          "predicted": "unsafe_training_request"
+        }
+      ],
+      "error_count": 7,
+      "errors": [
+        {
+          "alternatives": [
+            {
+              "confidence": 0.12757,
+              "label": "mental_health_crisis"
+            },
+            {
+              "confidence": 0.109252,
+              "label": "unsafe_training_request"
+            },
+            {
+              "confidence": 0.098747,
+              "label": "none"
+            }
+          ],
+          "confidence": 0.12757,
+          "correct": false,
+          "expected": "none",
+          "id": "human_holdout_001",
+          "predicted": "mental_health_crisis",
+          "text": "Me explique as possíveis vantagens da prática de exercícios de calistenia sobre musculação, e como a calistenia, associada a exercícios aeróbicos (como corrida, por exemplo), podem contribuir para uma melhora geral da minha saúde."
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.143773,
+              "label": "eating_disorder_signal"
+            },
+            {
+              "confidence": 0.121595,
+              "label": "food_safety_uncertainty"
+            },
+            {
+              "confidence": 0.097217,
+              "label": "pain_or_possible_injury"
+            }
+          ],
+          "confidence": 0.143773,
+          "correct": false,
+          "expected": "food_safety_uncertainty",
+          "id": "human_holdout_002",
+          "predicted": "eating_disorder_signal",
+          "text": "O que é mais nocivo à saúde, comer salgado velho ou comer doce velho?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.145445,
+              "label": "mental_health_crisis"
+            },
+            {
+              "confidence": 0.137184,
+              "label": "extreme_diet_or_dehydration"
+            },
+            {
+              "confidence": 0.091315,
+              "label": "unsafe_training_request"
+            }
+          ],
+          "confidence": 0.145445,
+          "correct": false,
+          "expected": "none",
+          "id": "human_holdout_003",
+          "predicted": "mental_health_crisis",
+          "text": "Qual um exemplo de comida mexicana simples de fazer em casa?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.181263,
+              "label": "unsafe_training_request"
+            },
+            {
+              "confidence": 0.092175,
+              "label": "extreme_diet_or_dehydration"
+            },
+            {
+              "confidence": 0.086714,
+              "label": "vulnerable_or_clinical_context"
+            }
+          ],
+          "confidence": 0.181263,
+          "correct": false,
+          "expected": "none",
+          "id": "human_holdout_004",
+          "predicted": "unsafe_training_request",
+          "text": "eu quero uma receita de omelete de 1 ovo e 2 claras que inclua espinafre, pimentão ou cogumelos ou mesmo todos eles"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.092622,
+              "label": "food_safety_uncertainty"
+            },
+            {
+              "confidence": 0.091832,
+              "label": "pain_or_possible_injury"
+            },
+            {
+              "confidence": 0.086682,
+              "label": "none"
+            }
+          ],
+          "confidence": 0.092622,
+          "correct": false,
+          "expected": "none",
+          "id": "human_holdout_005",
+          "predicted": "food_safety_uncertainty",
+          "text": "Olá"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.169109,
+              "label": "food_safety_uncertainty"
+            },
+            {
+              "confidence": 0.114019,
+              "label": "none"
+            },
+            {
+              "confidence": 0.090644,
+              "label": "eating_disorder_signal"
+            }
+          ],
+          "confidence": 0.169109,
+          "correct": false,
+          "expected": "none",
+          "id": "human_holdout_006",
+          "predicted": "food_safety_uncertainty",
+          "text": "Olaaaa, como você esta?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.159529,
+              "label": "extreme_diet_or_dehydration"
+            },
+            {
+              "confidence": 0.100502,
+              "label": "mental_health_crisis"
+            },
+            {
+              "confidence": 0.097488,
+              "label": "pain_or_possible_injury"
+            }
+          ],
+          "confidence": 0.159529,
+          "correct": false,
+          "expected": "none",
+          "id": "human_holdout_008",
+          "predicted": "extreme_diet_or_dehydration",
+          "text": "Poderia dar mais três exemplos?"
+        }
+      ],
+      "labels": [
+        "eating_disorder_signal",
+        "emergency_symptom",
+        "extreme_diet_or_dehydration",
+        "food_allergy_or_reaction",
+        "food_safety_uncertainty",
+        "medication_or_hormone",
+        "mental_health_crisis",
+        "none",
+        "pain_or_possible_injury",
+        "supplement_uncertainty",
+        "under_recovery_signal",
+        "unsafe_training_request",
+        "vulnerable_or_clinical_context"
+      ],
+      "macro": {
+        "f1": 0.083333,
+        "precision": 0.166667,
+        "recall": 0.055556
+      },
+      "micro": {
+        "f1": 0.3,
+        "precision": 0.3,
+        "recall": 0.3
+      },
+      "per_class": {
+        "eating_disorder_signal": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 0
+        },
+        "emergency_symptom": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "extreme_diet_or_dehydration": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 0
+        },
+        "food_allergy_or_reaction": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "food_safety_uncertainty": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 2,
+          "recall": 0.0,
+          "support": 1
+        },
+        "medication_or_hormone": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "mental_health_crisis": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 2,
+          "recall": 0.0,
+          "support": 0
+        },
+        "none": {
+          "f1": 0.5,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 0.333333,
+          "support": 9
+        },
+        "pain_or_possible_injury": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "supplement_uncertainty": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "under_recovery_signal": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        },
+        "unsafe_training_request": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 0
+        },
+        "vulnerable_or_clinical_context": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 0,
+          "recall": 0.0,
+          "support": 0
+        }
+      },
+      "rows": 10,
+      "safety_diagnostics": {
+        "false_alarm_count": 6,
+        "false_alarm_ids": [
+          "human_holdout_001",
+          "human_holdout_003",
+          "human_holdout_004",
+          "human_holdout_005",
+          "human_holdout_006",
+          "human_holdout_008"
+        ],
+        "false_safe_count": 0,
+        "false_safe_ids": [],
+        "note": "Detection recall only checks risk versus none. Exact risk type is measured by the multiclass metrics.",
+        "risk_detection_recall": 1.0,
+        "risk_rows": 1,
+        "safe_rows": 9
+      },
+      "top3_accuracy": 0.7,
+      "weighted": {
+        "f1": 0.45,
+        "precision": 0.9,
+        "recall": 0.3
+      }
+    },
+    "rows": 10
+  },
+  "test": {
+    "intent_classification": {
+      "accuracy": 0.722222,
+      "confusion_matrix": {
+        "labels": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "analyze_progress",
+          "ask_cooking_guidance",
+          "ask_exercise_execution",
+          "ask_food_substitution_options",
+          "ask_meal_feedback",
+          "ask_nutrition_concept",
+          "ask_recovery",
+          "ask_training_concept",
+          "change_diet_structure",
+          "change_training_split",
+          "clarification",
+          "compare_options",
+          "confirm_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "image_context_request",
+          "motivation_support",
+          "move_workout_day",
+          "out_of_scope",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ],
+        "orientation": "rows=expected, columns=predicted",
+        "values": [
+          [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      },
+      "confusions": [
+        {
+          "count": 2,
+          "expected": "set_day_activity",
+          "predicted": "move_workout_day"
+        },
+        {
+          "count": 1,
+          "expected": "adjust_training_volume",
+          "predicted": "ask_recovery"
+        },
+        {
+          "count": 1,
+          "expected": "ask_exercise_execution",
+          "predicted": "explain_current_plan"
+        },
+        {
+          "count": 1,
+          "expected": "ask_meal_feedback",
+          "predicted": "record_food_intake"
+        },
+        {
+          "count": 1,
+          "expected": "ask_nutrition_concept",
+          "predicted": "explain_current_plan"
+        },
+        {
+          "count": 1,
+          "expected": "ask_recovery",
+          "predicted": "analyze_progress"
+        },
+        {
+          "count": 1,
+          "expected": "ask_recovery",
+          "predicted": "motivation_support"
+        },
+        {
+          "count": 1,
+          "expected": "ask_training_concept",
+          "predicted": "ask_nutrition_concept"
+        },
+        {
+          "count": 1,
+          "expected": "ask_training_concept",
+          "predicted": "ask_recovery"
+        },
+        {
+          "count": 1,
+          "expected": "change_diet_structure",
+          "predicted": "ask_meal_feedback"
+        },
+        {
+          "count": 1,
+          "expected": "change_training_split",
+          "predicted": "change_diet_structure"
+        },
+        {
+          "count": 1,
+          "expected": "clarification",
+          "predicted": "move_workout_day"
+        },
+        {
+          "count": 1,
+          "expected": "clarification",
+          "predicted": "set_day_activity"
+        },
+        {
+          "count": 1,
+          "expected": "compare_options",
+          "predicted": "change_diet_structure"
+        },
+        {
+          "count": 1,
+          "expected": "compare_options",
+          "predicted": "update_goal"
+        },
+        {
+          "count": 1,
+          "expected": "confirm_planner_action",
+          "predicted": "reject_planner_action"
+        },
+        {
+          "count": 1,
+          "expected": "record_food_intake",
+          "predicted": "explain_current_plan"
+        },
+        {
+          "count": 1,
+          "expected": "reject_planner_action",
+          "predicted": "confirm_planner_action"
+        },
+        {
+          "count": 1,
+          "expected": "reject_planner_action",
+          "predicted": "replace_meal_item"
+        },
+        {
+          "count": 1,
+          "expected": "replace_exercise",
+          "predicted": "ask_exercise_execution"
+        },
+        {
+          "count": 1,
+          "expected": "replace_meal_item",
+          "predicted": "change_diet_structure"
+        },
+        {
+          "count": 1,
+          "expected": "set_day_activity",
+          "predicted": "ask_training_concept"
+        },
+        {
+          "count": 1,
+          "expected": "undo_planner_action",
+          "predicted": "move_workout_day"
+        },
+        {
+          "count": 1,
+          "expected": "update_goal",
+          "predicted": "ask_nutrition_concept"
+        }
+      ],
+      "error_count": 25,
+      "errors": [
+        {
+          "alternatives": [
+            {
+              "confidence": 0.2098,
+              "label": "ask_recovery"
+            },
+            {
+              "confidence": 0.06009,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.056339,
+              "label": "replace_exercise"
+            }
+          ],
+          "confidence": 0.2098,
+          "correct": false,
+          "expected": "adjust_training_volume",
+          "id": "intent_adjust_training_volume_f1ca2667e13f",
+          "predicted": "ask_recovery",
+          "text": "corta um pouco do treino porque a recuperacao esta ruim"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.155956,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.133997,
+              "label": "ask_nutrition_concept"
+            },
+            {
+              "confidence": 0.063309,
+              "label": "ask_training_concept"
+            }
+          ],
+          "confidence": 0.155956,
+          "correct": false,
+          "expected": "ask_exercise_execution",
+          "id": "intent_ask_exercise_execution_fe9628d01b7e",
+          "predicted": "explain_current_plan",
+          "text": "me explica a execucao correta do face pull"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.116014,
+              "label": "record_food_intake"
+            },
+            {
+              "confidence": 0.083297,
+              "label": "ask_cooking_guidance"
+            },
+            {
+              "confidence": 0.081671,
+              "label": "ask_meal_feedback"
+            }
+          ],
+          "confidence": 0.116014,
+          "correct": false,
+          "expected": "ask_meal_feedback",
+          "id": "intent_ask_meal_feedback_fb47c0d8e4ca",
+          "predicted": "record_food_intake",
+          "text": "meu jantar foi macarrao com atum, o que pode estar faltando?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.114165,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.11337,
+              "label": "ask_nutrition_concept"
+            },
+            {
+              "confidence": 0.072757,
+              "label": "ask_recovery"
+            }
+          ],
+          "confidence": 0.114165,
+          "correct": false,
+          "expected": "ask_nutrition_concept",
+          "id": "intent_ask_nutrition_concept_40066b28f649",
+          "predicted": "explain_current_plan",
+          "text": "por que o peso sobe quando aumento carboidrato?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.099435,
+              "label": "motivation_support"
+            },
+            {
+              "confidence": 0.08801,
+              "label": "ask_training_concept"
+            },
+            {
+              "confidence": 0.081534,
+              "label": "ask_meal_feedback"
+            }
+          ],
+          "confidence": 0.099435,
+          "correct": false,
+          "expected": "ask_recovery",
+          "id": "intent_ask_recovery_191f6cd19cfb",
+          "predicted": "motivation_support",
+          "text": "uma semana mais leve pode ajudar quando acumulo fadiga?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.105212,
+              "label": "analyze_progress"
+            },
+            {
+              "confidence": 0.071444,
+              "label": "ask_recovery"
+            },
+            {
+              "confidence": 0.060198,
+              "label": "out_of_scope"
+            }
+          ],
+          "confidence": 0.105212,
+          "correct": false,
+          "expected": "ask_recovery",
+          "id": "intent_ask_recovery_dba4a871eefd",
+          "predicted": "analyze_progress",
+          "text": "descansar um dia vai atrapalhar meu progresso?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.199436,
+              "label": "ask_recovery"
+            },
+            {
+              "confidence": 0.067317,
+              "label": "ask_exercise_execution"
+            },
+            {
+              "confidence": 0.055312,
+              "label": "ask_training_concept"
+            }
+          ],
+          "confidence": 0.199436,
+          "correct": false,
+          "expected": "ask_training_concept",
+          "id": "intent_ask_training_concept_4dd0265d1751",
+          "predicted": "ask_recovery",
+          "text": "preciso sentir dor muscular para o treino ter funcionado?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.121957,
+              "label": "ask_nutrition_concept"
+            },
+            {
+              "confidence": 0.079962,
+              "label": "out_of_scope"
+            },
+            {
+              "confidence": 0.06594,
+              "label": "explain_current_plan"
+            }
+          ],
+          "confidence": 0.121957,
+          "correct": false,
+          "expected": "ask_training_concept",
+          "id": "intent_ask_training_concept_84b04a704065",
+          "predicted": "ask_nutrition_concept",
+          "text": "qual a funcao da sobrecarga progressiva no treino?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.242006,
+              "label": "ask_meal_feedback"
+            },
+            {
+              "confidence": 0.063237,
+              "label": "record_food_intake"
+            },
+            {
+              "confidence": 0.059449,
+              "label": "set_day_activity"
+            }
+          ],
+          "confidence": 0.242006,
+          "correct": false,
+          "expected": "change_diet_structure",
+          "id": "intent_change_diet_structure_727a336a75dc",
+          "predicted": "ask_meal_feedback",
+          "text": "inclui uma refeicao livre planejada no sabado"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.112661,
+              "label": "change_diet_structure"
+            },
+            {
+              "confidence": 0.085134,
+              "label": "change_training_split"
+            },
+            {
+              "confidence": 0.069478,
+              "label": "clarification"
+            }
+          ],
+          "confidence": 0.112661,
+          "correct": false,
+          "expected": "change_training_split",
+          "id": "intent_change_training_split_7eda5eaba5b7",
+          "predicted": "change_diet_structure",
+          "text": "quero um bro split de cinco dias a partir da proxima semana"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.511161,
+              "label": "move_workout_day"
+            },
+            {
+              "confidence": 0.053578,
+              "label": "set_day_activity"
+            },
+            {
+              "confidence": 0.035419,
+              "label": "update_goal"
+            }
+          ],
+          "confidence": 0.511161,
+          "correct": false,
+          "expected": "clarification",
+          "id": "intent_clarification_a582de732abd",
+          "predicted": "move_workout_day",
+          "text": "para amanha de manha"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.243665,
+              "label": "set_day_activity"
+            },
+            {
+              "confidence": 0.060354,
+              "label": "move_workout_day"
+            },
+            {
+              "confidence": 0.053174,
+              "label": "adjust_training_intensity"
+            }
+          ],
+          "confidence": 0.243665,
+          "correct": false,
+          "expected": "clarification",
+          "id": "intent_clarification_d4ac321e8e5e",
+          "predicted": "set_day_activity",
+          "text": "so hoje"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.109504,
+              "label": "change_diet_structure"
+            },
+            {
+              "confidence": 0.069679,
+              "label": "compare_options"
+            },
+            {
+              "confidence": 0.062834,
+              "label": "out_of_scope"
+            }
+          ],
+          "confidence": 0.109504,
+          "correct": false,
+          "expected": "compare_options",
+          "id": "intent_compare_options_21c3a47491d0",
+          "predicted": "change_diet_structure",
+          "text": "quatro refeicoes grandes ou seis pequenas, qual faz mais sentido?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.236871,
+              "label": "update_goal"
+            },
+            {
+              "confidence": 0.07551,
+              "label": "ask_meal_feedback"
+            },
+            {
+              "confidence": 0.045151,
+              "label": "compare_options"
+            }
+          ],
+          "confidence": 0.236871,
+          "correct": false,
+          "expected": "compare_options",
+          "id": "intent_compare_options_511340c58478",
+          "predicted": "update_goal",
+          "text": "esteira e eliptico servem para o mesmo objetivo?"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.13739,
+              "label": "reject_planner_action"
+            },
+            {
+              "confidence": 0.114744,
+              "label": "clarification"
+            },
+            {
+              "confidence": 0.0991,
+              "label": "replace_exercise"
+            }
+          ],
+          "confidence": 0.13739,
+          "correct": false,
+          "expected": "confirm_planner_action",
+          "id": "intent_confirm_planner_action_5d589f9605d1",
+          "predicted": "reject_planner_action",
+          "text": "fechado, executa essa opcao"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.090564,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.085598,
+              "label": "remember_preference"
+            },
+            {
+              "confidence": 0.081304,
+              "label": "ask_nutrition_concept"
+            }
+          ],
+          "confidence": 0.090564,
+          "correct": false,
+          "expected": "record_food_intake",
+          "id": "intent_record_food_intake_8a2c12d4515e",
+          "predicted": "explain_current_plan",
+          "text": "anota que tomei whey depois do treino"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.275415,
+              "label": "confirm_planner_action"
+            },
+            {
+              "confidence": 0.092633,
+              "label": "undo_planner_action"
+            },
+            {
+              "confidence": 0.053429,
+              "label": "clarification"
+            }
+          ],
+          "confidence": 0.275415,
+          "correct": false,
+          "expected": "reject_planner_action",
+          "id": "intent_reject_planner_action_b4ec249bbef6",
+          "predicted": "confirm_planner_action",
+          "text": "nao aplica essa mudanca"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.093422,
+              "label": "replace_meal_item"
+            },
+            {
+              "confidence": 0.092379,
+              "label": "update_goal"
+            },
+            {
+              "confidence": 0.074325,
+              "label": "reject_planner_action"
+            }
+          ],
+          "confidence": 0.093422,
+          "correct": false,
+          "expected": "reject_planner_action",
+          "id": "intent_reject_planner_action_d8cc37be680f",
+          "predicted": "replace_meal_item",
+          "text": "melhor nao mexer no plano agora"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.098886,
+              "label": "ask_exercise_execution"
+            },
+            {
+              "confidence": 0.077207,
+              "label": "replace_exercise"
+            },
+            {
+              "confidence": 0.05788,
+              "label": "out_of_scope"
+            }
+          ],
+          "confidence": 0.098886,
+          "correct": false,
+          "expected": "replace_exercise",
+          "id": "intent_replace_exercise_46f02e8e9ea7",
+          "predicted": "ask_exercise_execution",
+          "text": "tira a barra fixa desta sessao e poe uma puxada"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.099729,
+              "label": "change_diet_structure"
+            },
+            {
+              "confidence": 0.093478,
+              "label": "explain_current_plan"
+            },
+            {
+              "confidence": 0.088701,
+              "label": "ask_meal_feedback"
+            }
+          ],
+          "confidence": 0.099729,
+          "correct": false,
+          "expected": "replace_meal_item",
+          "id": "intent_replace_meal_item_fc07b20ae771",
+          "predicted": "change_diet_structure",
+          "text": "quero trocar o feijao desta refeicao sem refazer o cardapio"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.11339,
+              "label": "move_workout_day"
+            },
+            {
+              "confidence": 0.063854,
+              "label": "ask_recovery"
+            },
+            {
+              "confidence": 0.062094,
+              "label": "out_of_scope"
+            }
+          ],
+          "confidence": 0.11339,
+          "correct": false,
+          "expected": "set_day_activity",
+          "id": "intent_set_day_activity_b319b8def13e",
+          "predicted": "move_workout_day",
+          "text": "muda domingo para um dia de mobilidade"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.135423,
+              "label": "ask_training_concept"
+            },
+            {
+              "confidence": 0.129191,
+              "label": "set_day_activity"
+            },
+            {
+              "confidence": 0.084366,
+              "label": "move_workout_day"
+            }
+          ],
+          "confidence": 0.135423,
+          "correct": false,
+          "expected": "set_day_activity",
+          "id": "intent_set_day_activity_d01d4c38dd72",
+          "predicted": "ask_training_concept",
+          "text": "muda a atividade de hoje para musculacao e cardio"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.122434,
+              "label": "move_workout_day"
+            },
+            {
+              "confidence": 0.109367,
+              "label": "record_food_intake"
+            },
+            {
+              "confidence": 0.08806,
+              "label": "explain_current_plan"
+            }
+          ],
+          "confidence": 0.122434,
+          "correct": false,
+          "expected": "set_day_activity",
+          "id": "intent_set_day_activity_eb91c81375ca",
+          "predicted": "move_workout_day",
+          "text": "registra quarta como treino de volei sem academia"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.120971,
+              "label": "move_workout_day"
+            },
+            {
+              "confidence": 0.053756,
+              "label": "out_of_scope"
+            },
+            {
+              "confidence": 0.052091,
+              "label": "change_diet_structure"
+            }
+          ],
+          "confidence": 0.120971,
+          "correct": false,
+          "expected": "undo_planner_action",
+          "id": "intent_undo_planner_action_0c4cedd2d1f7",
+          "predicted": "move_workout_day",
+          "text": "retorna a sessao para o dia original"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.16376,
+              "label": "ask_nutrition_concept"
+            },
+            {
+              "confidence": 0.098668,
+              "label": "update_goal"
+            },
+            {
+              "confidence": 0.069084,
+              "label": "ask_cooking_guidance"
+            }
+          ],
+          "confidence": 0.16376,
+          "correct": false,
+          "expected": "update_goal",
+          "id": "intent_update_goal_f1aa3781087d",
+          "predicted": "ask_nutrition_concept",
+          "text": "encerra o bulking e prepara uma fase de recomposicao"
+        }
+      ],
+      "labels": [
+        "adjust_training_intensity",
+        "adjust_training_volume",
+        "analyze_progress",
+        "ask_cooking_guidance",
+        "ask_exercise_execution",
+        "ask_food_substitution_options",
+        "ask_meal_feedback",
+        "ask_nutrition_concept",
+        "ask_recovery",
+        "ask_training_concept",
+        "change_diet_structure",
+        "change_training_split",
+        "clarification",
+        "compare_options",
+        "confirm_planner_action",
+        "explain_current_plan",
+        "greeting",
+        "image_context_request",
+        "motivation_support",
+        "move_workout_day",
+        "out_of_scope",
+        "record_food_intake",
+        "record_training_load",
+        "reject_planner_action",
+        "remember_preference",
+        "replace_exercise",
+        "replace_meal_item",
+        "set_day_activity",
+        "undo_planner_action",
+        "update_goal"
+      ],
+      "macro": {
+        "f1": 0.712857,
+        "precision": 0.755397,
+        "recall": 0.722222
+      },
+      "micro": {
+        "f1": 0.722222,
+        "precision": 0.722222,
+        "recall": 0.722222
+      },
+      "per_class": {
+        "adjust_training_intensity": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "adjust_training_volume": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "analyze_progress": {
+          "f1": 0.857143,
+          "precision": 0.75,
+          "predicted": 4,
+          "recall": 1.0,
+          "support": 3
+        },
+        "ask_cooking_guidance": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "ask_exercise_execution": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "ask_food_substitution_options": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "ask_meal_feedback": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "ask_nutrition_concept": {
+          "f1": 0.571429,
+          "precision": 0.5,
+          "predicted": 4,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "ask_recovery": {
+          "f1": 0.333333,
+          "precision": 0.333333,
+          "predicted": 3,
+          "recall": 0.333333,
+          "support": 3
+        },
+        "ask_training_concept": {
+          "f1": 0.4,
+          "precision": 0.5,
+          "predicted": 2,
+          "recall": 0.333333,
+          "support": 3
+        },
+        "change_diet_structure": {
+          "f1": 0.5,
+          "precision": 0.4,
+          "predicted": 5,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "change_training_split": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "clarification": {
+          "f1": 0.5,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.333333,
+          "support": 3
+        },
+        "compare_options": {
+          "f1": 0.5,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.333333,
+          "support": 3
+        },
+        "confirm_planner_action": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "explain_current_plan": {
+          "f1": 0.666667,
+          "precision": 0.5,
+          "predicted": 6,
+          "recall": 1.0,
+          "support": 3
+        },
+        "greeting": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "image_context_request": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "motivation_support": {
+          "f1": 0.857143,
+          "precision": 0.75,
+          "predicted": 4,
+          "recall": 1.0,
+          "support": 3
+        },
+        "move_workout_day": {
+          "f1": 0.6,
+          "precision": 0.428571,
+          "predicted": 7,
+          "recall": 1.0,
+          "support": 3
+        },
+        "out_of_scope": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "record_food_intake": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "record_training_load": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "reject_planner_action": {
+          "f1": 0.4,
+          "precision": 0.5,
+          "predicted": 2,
+          "recall": 0.333333,
+          "support": 3
+        },
+        "remember_preference": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "replace_exercise": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "replace_meal_item": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "set_day_activity": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "support": 3
+        },
+        "undo_planner_action": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "update_goal": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        }
+      },
+      "rows": 90,
+      "top3_accuracy": 0.844444,
+      "weighted": {
+        "f1": 0.712857,
+        "precision": 0.755397,
+        "recall": 0.722222
+      }
+    },
+    "risk_classification": {
+      "accuracy": 0.846154,
+      "confusion_matrix": {
+        "labels": [
+          "eating_disorder_signal",
+          "emergency_symptom",
+          "extreme_diet_or_dehydration",
+          "food_allergy_or_reaction",
+          "food_safety_uncertainty",
+          "medication_or_hormone",
+          "mental_health_crisis",
+          "none",
+          "pain_or_possible_injury",
+          "supplement_uncertainty",
+          "under_recovery_signal",
+          "unsafe_training_request",
+          "vulnerable_or_clinical_context"
+        ],
+        "orientation": "rows=expected, columns=predicted",
+        "values": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      },
+      "confusions": [
+        {
+          "count": 1,
+          "expected": "eating_disorder_signal",
+          "predicted": "vulnerable_or_clinical_context"
+        },
+        {
+          "count": 1,
+          "expected": "medication_or_hormone",
+          "predicted": "vulnerable_or_clinical_context"
+        },
+        {
+          "count": 1,
+          "expected": "none",
+          "predicted": "mental_health_crisis"
+        },
+        {
+          "count": 1,
+          "expected": "pain_or_possible_injury",
+          "predicted": "emergency_symptom"
+        },
+        {
+          "count": 1,
+          "expected": "under_recovery_signal",
+          "predicted": "vulnerable_or_clinical_context"
+        },
+        {
+          "count": 1,
+          "expected": "vulnerable_or_clinical_context",
+          "predicted": "none"
+        }
+      ],
+      "error_count": 6,
+      "errors": [
+        {
+          "alternatives": [
+            {
+              "confidence": 0.162009,
+              "label": "vulnerable_or_clinical_context"
+            },
+            {
+              "confidence": 0.134496,
+              "label": "mental_health_crisis"
+            },
+            {
+              "confidence": 0.116771,
+              "label": "food_safety_uncertainty"
+            }
+          ],
+          "confidence": 0.162009,
+          "correct": false,
+          "expected": "eating_disorder_signal",
+          "id": "risk_eating_disorder_signal_fc991a1ba27a",
+          "predicted": "vulnerable_or_clinical_context",
+          "text": "tenho medo de comer qualquer coisa fora da dieta"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.168527,
+              "label": "vulnerable_or_clinical_context"
+            },
+            {
+              "confidence": 0.101523,
+              "label": "mental_health_crisis"
+            },
+            {
+              "confidence": 0.09828,
+              "label": "medication_or_hormone"
+            }
+          ],
+          "confidence": 0.168527,
+          "correct": false,
+          "expected": "medication_or_hormone",
+          "id": "risk_medication_or_hormone_fba7083ff1e4",
+          "predicted": "vulnerable_or_clinical_context",
+          "text": "ajusta minha insulina de acordo com a dieta"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.119204,
+              "label": "mental_health_crisis"
+            },
+            {
+              "confidence": 0.097741,
+              "label": "eating_disorder_signal"
+            },
+            {
+              "confidence": 0.091482,
+              "label": "medication_or_hormone"
+            }
+          ],
+          "confidence": 0.119204,
+          "correct": false,
+          "expected": "none",
+          "id": "risk_none_23acfb6d25a9",
+          "predicted": "mental_health_crisis",
+          "text": "me sugere outra fruta para o lanche"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.252701,
+              "label": "emergency_symptom"
+            },
+            {
+              "confidence": 0.099346,
+              "label": "eating_disorder_signal"
+            },
+            {
+              "confidence": 0.080771,
+              "label": "mental_health_crisis"
+            }
+          ],
+          "confidence": 0.252701,
+          "correct": false,
+          "expected": "pain_or_possible_injury",
+          "id": "risk_pain_or_possible_injury_fbc8be24e189",
+          "predicted": "emergency_symptom",
+          "text": "estou com uma dor que nao passa no posterior da coxa"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.145024,
+              "label": "vulnerable_or_clinical_context"
+            },
+            {
+              "confidence": 0.130684,
+              "label": "under_recovery_signal"
+            },
+            {
+              "confidence": 0.11993,
+              "label": "emergency_symptom"
+            }
+          ],
+          "confidence": 0.145024,
+          "correct": false,
+          "expected": "under_recovery_signal",
+          "id": "risk_under_recovery_signal_1eb9bf76cdb1",
+          "predicted": "vulnerable_or_clinical_context",
+          "text": "a frequencia cardiaca esta alta em repouso e estou rendendo menos"
+        },
+        {
+          "alternatives": [
+            {
+              "confidence": 0.131527,
+              "label": "none"
+            },
+            {
+              "confidence": 0.116197,
+              "label": "vulnerable_or_clinical_context"
+            },
+            {
+              "confidence": 0.095206,
+              "label": "extreme_diet_or_dehydration"
+            }
+          ],
+          "confidence": 0.131527,
+          "correct": false,
+          "expected": "vulnerable_or_clinical_context",
+          "id": "risk_vulnerable_or_clinical_context_b1cc970c00de",
+          "predicted": "none",
+          "text": "meu cardiologista acompanha uma condicao, personalize meu cardio"
+        }
+      ],
+      "labels": [
+        "eating_disorder_signal",
+        "emergency_symptom",
+        "extreme_diet_or_dehydration",
+        "food_allergy_or_reaction",
+        "food_safety_uncertainty",
+        "medication_or_hormone",
+        "mental_health_crisis",
+        "none",
+        "pain_or_possible_injury",
+        "supplement_uncertainty",
+        "under_recovery_signal",
+        "unsafe_training_request",
+        "vulnerable_or_clinical_context"
+      ],
+      "macro": {
+        "f1": 0.852381,
+        "precision": 0.889744,
+        "recall": 0.846154
+      },
+      "micro": {
+        "f1": 0.846154,
+        "precision": 0.846154,
+        "recall": 0.846154
+      },
+      "per_class": {
+        "eating_disorder_signal": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "emergency_symptom": {
+          "f1": 0.857143,
+          "precision": 0.75,
+          "predicted": 4,
+          "recall": 1.0,
+          "support": 3
+        },
+        "extreme_diet_or_dehydration": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "food_allergy_or_reaction": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "food_safety_uncertainty": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "medication_or_hormone": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "mental_health_crisis": {
+          "f1": 0.857143,
+          "precision": 0.75,
+          "predicted": 4,
+          "recall": 1.0,
+          "support": 3
+        },
+        "none": {
+          "f1": 0.666667,
+          "precision": 0.666667,
+          "predicted": 3,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "pain_or_possible_injury": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "supplement_uncertainty": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "under_recovery_signal": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "support": 3
+        },
+        "unsafe_training_request": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "support": 3
+        },
+        "vulnerable_or_clinical_context": {
+          "f1": 0.5,
+          "precision": 0.4,
+          "predicted": 5,
+          "recall": 0.666667,
+          "support": 3
+        }
+      },
+      "rows": 39,
+      "safety_diagnostics": {
+        "false_alarm_count": 1,
+        "false_alarm_ids": [
+          "risk_none_23acfb6d25a9"
+        ],
+        "false_safe_count": 1,
+        "false_safe_ids": [
+          "risk_vulnerable_or_clinical_context_b1cc970c00de"
+        ],
+        "note": "Detection recall only checks risk versus none. Exact risk type is measured by the multiclass metrics.",
+        "risk_detection_recall": 0.972222,
+        "risk_rows": 36,
+        "safe_rows": 3
+      },
+      "top3_accuracy": 0.923077,
+      "weighted": {
+        "f1": 0.852381,
+        "precision": 0.889744,
+        "recall": 0.846154
+      }
+    }
+  }
+}

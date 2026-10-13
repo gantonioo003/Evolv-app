@@ -1,0 +1,43 @@
+{
+  "version": "1.2.0",
+  "catalogs": {
+    "exercise": [
+      {"canonical": "agachamento bulgaro", "aliases": ["bulgaro", "afundo bulgaro"]},
+      {"canonical": "elevacao pelvica", "aliases": ["hip thrust", "hipthrust"]},
+      {"canonical": "cadeira abdutora", "aliases": ["abdutora"]},
+      {"canonical": "cadeira adutora", "aliases": ["adutora"]},
+      {"canonical": "remada articulada", "aliases": ["remada maquina"]},
+      {"canonical": "panturrilha sentada", "aliases": ["gemeos sentado"]},
+      {"canonical": "abdominal prancha", "aliases": ["prancha"]},
+      {"canonical": "agachamento hack", "aliases": ["hack squat", "hack"]}
+    ],
+    "food": [
+      {"canonical": "cuscuz", "aliases": ["cuscuz de milho"]},
+      {"canonical": "tapioca", "aliases": []},
+      {"canonical": "macaxeira", "aliases": ["aipim", "mandioca"]},
+      {"canonical": "pao frances", "aliases": ["pao de sal"]},
+      {"canonical": "lentilha", "aliases": ["lentilhas"]},
+      {"canonical": "grao de bico", "aliases": ["grao-de-bico"]},
+      {"canonical": "tofu", "aliases": []},
+      {"canonical": "sardinha", "aliases": ["sardinhas"]},
+      {"canonical": "iogurte natural", "aliases": []}
+    ],
+    "body_part": [
+      {"canonical": "joelho", "aliases": ["joelhos"]},
+      {"canonical": "ombro", "aliases": ["ombros"]},
+      {"canonical": "tornozelo", "aliases": ["tornozelos"]},
+      {"canonical": "punho", "aliases": ["punhos"]},
+      {"canonical": "lombar", "aliases": ["regiao lombar"]},
+      {"canonical": "canela", "aliases": ["canelas"]}
+    ],
+    "barrier": [
+      {"canonical": "tempo", "aliases": ["falta de tempo", "sem tempo"]},
+      {"canonical": "custo", "aliases": ["sem dinheiro", "orcamento apertado"]},
+      {"canonical": "equipamento", "aliases": ["sem equipamento", "academia lotada"]}
+    ],
+    "sleep_quality": [
+      {"canonical": "fragmentado", "aliases": ["sono fragmentado", "acordo varias vezes"]},
+      {"canonical": "ruim", "aliases": ["durmo mal", "sono ruim"]}
+    ]
+  }
+}

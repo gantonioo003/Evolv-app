@@ -1,0 +1,361 @@
+{
+  "dataset_version": "1.3.0",
+  "intent_examples": {
+    "adjust_training_intensity": [
+      "aumenta o descanso entre as series pesadas para tres minutos",
+      "deixa o treino de hoje com rpe sete",
+      "reduz dez por cento da carga do agachamento",
+      "muda a faixa do supino para cinco a oito repeticoes",
+      "coloca tres repeticoes em reserva nos exercicios de perna",
+      "aumenta um pouco a carga alvo sem adicionar series"
+    ],
+    "adjust_training_volume": [
+      "adiciona duas series semanais para costas",
+      "reduz o volume de quadriceps por enquanto",
+      "deixa o treino de ombro com menos series nesta semana",
+      "aumenta uma serie em cada exercicio de peito",
+      "corta pela metade as series de braco de hoje",
+      "mantem os exercicios e sobe apenas o volume de posterior"
+    ],
+    "analyze_progress": [
+      "olha minhas cargas e diz se evolui nas ultimas seis semanas",
+      "minha media de peso subiu rapido demais neste bulk?",
+      "estou repetindo os mesmos numeros no leg press, isso e plato?",
+      "analisa se minha frequencia caiu neste mes",
+      "ganhei peso mas as cargas nao mudaram, como interpretar?",
+      "compare minhas repeticoes recentes no supino e veja se avancei"
+    ],
+    "ask_cooking_guidance": [
+      "como preparo aveia com leite sem empelotar?",
+      "qual a melhor forma de congelar arroz em porcoes?",
+      "como fazer frango desfiado sem deixar seco?",
+      "posso guardar ovos cozidos na geladeira por quantos dias?",
+      "me passa um jeito simples de preparar legumes no forno",
+      "como descongelo uma marmita com seguranca?"
+    ],
+    "ask_exercise_execution": [
+      "como mantenho a escapula no supino com halteres?",
+      "onde posiciono os pes no leg press para fazer com controle?",
+      "como respirar durante o agachamento livre?",
+      "a remada baixa termina em qual altura do tronco?",
+      "me ensina a fazer elevacao lateral sem embalar",
+      "qual deve ser a amplitude da puxada na frente?"
+    ],
+    "ask_food_substitution_options": [
+      "acabou a banana, que fruta cumpre um papel parecido no lanche?",
+      "quais opcoes tenho no lugar do leite sem alterar o plano ainda?",
+      "o que pode substituir a aveia no cafe da manha?",
+      "me fala alternativas para feijao com nutrientes parecidos",
+      "nao tenho batata hoje, o que posso usar como carboidrato?",
+      "quais proteinas posso comer no lugar da carne vermelha?"
+    ],
+    "ask_meal_feedback": [
+      "meu almoco teve arroz ovos e tomate, ficou faltando alguma coisa?",
+      "esse prato com macaxeira frango e salada esta equilibrado?",
+      "comi so um iogurte antes de treinar, foi pouco?",
+      "me diz se pao queijo e fruta formam um cafe razoavel",
+      "essa refeicao com feijao carne e legumes combina com meu objetivo?",
+      "jantei tarde e comi arroz e peixe, isso prejudica o plano?"
+    ],
+    "ask_nutrition_concept": [
+      "o que muda nas calorias de manutencao para um bulk?",
+      "por que fibra ajuda na saciedade?",
+      "carboidrato a noite vira gordura mais facil?",
+      "qual a diferenca entre perder peso e perder gordura?",
+      "distribuir proteina no dia faz alguma diferenca?",
+      "por que o peso sobe quando aumento carboidrato?"
+    ],
+    "ask_recovery": [
+      "acordei quebrado mesmo dormindo cedo, devo aliviar hoje?",
+      "quantos dias um musculo costuma precisar para se recuperar?",
+      "meu rendimento caiu depois de varias noites ruins, o que observar?",
+      "como encaixar descanso quando a semana esta muito estressante?",
+      "estou sempre cansado no fim do treino, pode ser recuperacao ruim?",
+      "uma semana mais leve pode ajudar quando acumulo fadiga?"
+    ],
+    "ask_training_concept": [
+      "cardio depois da musculacao atrapalha ganhar massa?",
+      "como sei se meu volume semanal esta alto demais?",
+      "por que descansar entre as series muda meu desempenho?",
+      "fazer poucas repeticoes tambem gera hipertrofia?",
+      "qual a funcao da sobrecarga progressiva no treino?",
+      "preciso sentir dor muscular para o treino ter funcionado?"
+    ],
+    "change_diet_structure": [
+      "quero a mesma dieta todos os dias desta semana",
+      "faz cardapios diferentes para dia de treino e descanso",
+      "reduz meu plano de cinco para quatro refeicoes",
+      "quero variar o jantar em cada dia da semana",
+      "inclui uma refeicao livre planejada no sabado",
+      "muda a estrutura para tres refeicoes maiores por dia"
+    ],
+    "change_training_split": [
+      "muda meu plano semanal para upper lower",
+      "quero sair do abc e testar full body tres vezes",
+      "organiza meus quatro dias em push pull legs e upper",
+      "troca a divisao atual por torso e membros inferiores",
+      "quero um bro split de cinco dias a partir da proxima semana",
+      "refaz a divisao para dois treinos de corpo inteiro"
+    ],
+    "clarification": [
+      "quis dizer no treino de sexta",
+      "a segunda opcao que voce mostrou",
+      "somente hoje, nao a semana inteira",
+      "estou falando do arroz do jantar",
+      "sim, o exercicio de peito",
+      "para amanha de manha"
+    ],
+    "compare_options": [
+      "treino de corpo inteiro ou upper lower para tres dias?",
+      "whey ou comida de verdade faz diferenca para bater proteina?",
+      "stiff com barra ou halteres, o que muda?",
+      "cutting com mais carbo ou mais gordura: quais os tradeoffs?",
+      "esteira e eliptico servem para o mesmo objetivo?",
+      "quatro refeicoes grandes ou seis pequenas, qual faz mais sentido?"
+    ],
+    "confirm_planner_action": [
+      "concordo com a proposta, pode salvar",
+      "confirmo exatamente como voce mostrou",
+      "pode salvar essa proposta no meu plano",
+      "aplica assim mesmo",
+      "esta certo, confirma a alteracao",
+      "fechado, executa essa opcao"
+    ],
+    "explain_current_plan": [
+      "me mostra por que o treino de pernas comeca pelo agachamento",
+      "explica como as refeicoes de hoje foram distribuidas",
+      "qual foi o criterio para escolher meu treino de quarta?",
+      "por que hoje tem menos series que na semana passada?",
+      "resume o objetivo de cada refeicao do meu dia",
+      "me explica por que amanha aparece como descanso"
+    ],
+    "greeting": [
+      "fala coach, tudo certo?",
+      "bom dia, evolv",
+      "oi, como voce esta?",
+      "e ai coach",
+      "boa noite, tudo bem por ai?",
+      "ola, cheguei"
+    ],
+    "image_context_request": [
+      "olha essa foto e diz se minha postura esta certa",
+      "pela imagem desse prato, estima o que tem nele",
+      "analisa a foto da minha execucao",
+      "essa refeicao da imagem parece equilibrada?",
+      "ve a foto e fala qual aparelho estou usando",
+      "consegue avaliar meu movimento por essa imagem?"
+    ],
+    "motivation_support": [
+      "estou falhando na rotina e preciso de um jeito simples de voltar",
+      "me ajuda a planejar uma semana minima sem me cobrar demais",
+      "perdi o ritmo depois de viajar e estou desanimado",
+      "hoje estou sem energia mental para cumprir tudo",
+      "quero continuar mas o plano parece pesado demais para minha rotina",
+      "me ajuda a retomar aos poucos sem tentar recuperar treino perdido"
+    ],
+    "move_workout_day": [
+      "passa a sessao de hoje para sabado sem duplicar",
+      "move o treino de pernas de terca para quarta",
+      "nao consigo treinar amanha, joga esse treino para quinta",
+      "troca os dias de segunda e sexta desta semana",
+      "adia o treino de hoje para depois de amanha",
+      "antecipa a sessao de domingo para sabado"
+    ],
+    "out_of_scope": [
+      "qual e a capital da australia?",
+      "escreve um codigo para ordenar uma lista",
+      "me recomenda uma serie de ficcao cientifica",
+      "quanto e quinze vezes vinte e tres?",
+      "traduz esta frase para frances",
+      "quem ganhou a ultima copa do mundo?"
+    ],
+    "record_food_intake": [
+      "registra dois ovos e uma banana no cafe",
+      "anota que comi duzentos gramas de arroz no almoco",
+      "salva um pao com queijo no meu lanche da tarde",
+      "registra frango feijao e salada no jantar",
+      "coloca um copo de leite e aveia na ceia de hoje",
+      "anota que tomei whey depois do treino"
+    ],
+    "record_training_load": [
+      "anota vinte e quatro quilos por lado no supino para oito repeticoes",
+      "registra que fiz quatro series de dez com quarenta quilos",
+      "salva setenta quilos e seis repeticoes no agachamento de hoje",
+      "coloca doze quilos por halter na elevacao lateral",
+      "registra tres series com rpe nove na remada baixa",
+      "anota que completei dez repeticoes com cinquenta quilos no leg press"
+    ],
+    "reject_planner_action": [
+      "prefiro cancelar a proposta antes de salvar",
+      "cancela a proposta e deixa o plano igual",
+      "nao quero confirmar isso",
+      "descarta essa alteracao",
+      "melhor nao mexer no plano agora",
+      "rejeita essa opcao e volta para a anterior"
+    ],
+    "remember_preference": [
+      "lembra que prefiro treinar pernas usando maquinas",
+      "guarda que eu nao gosto de atum para os proximos cardapios",
+      "daqui para frente evita marcar treino cedo para mim",
+      "anota que prefiro cardio na bicicleta",
+      "lembra que eu gosto de repetir o cafe da manha",
+      "salva minha preferencia por treinos com no maximo uma hora"
+    ],
+    "replace_exercise": [
+      "muda a cadeira extensora por outra opcao neste treino",
+      "troca so a ultima remada porque essa maquina esta quebrada",
+      "coloca flexao no lugar do supino de hoje",
+      "substitui o stiff por um exercicio que nao use barra",
+      "tira a barra fixa desta sessao e poe uma puxada",
+      "quero outro exercicio no lugar da rosca direta, sem mexer no resto"
+    ],
+    "replace_meal_item": [
+      "troca o frango do almoco por peixe e mantem o restante",
+      "substitui o pao do lanche por tapioca no plano de hoje",
+      "muda a banana do pre treino por outra fruta",
+      "coloca feijao no lugar da lentilha no jantar",
+      "troca apenas o arroz desta refeicao por batata",
+      "na ceia de hoje substitui o iogurte por leite"
+    ],
+    "set_day_activity": [
+      "marca hoje como descanso completo",
+      "coloca trinta minutos de bicicleta para amanha",
+      "hoje vou fazer apenas cardio leve em vez de musculacao",
+      "define sexta como musculacao mais caminhada",
+      "muda domingo para um dia de mobilidade",
+      "registra quarta como treino de volei sem academia"
+    ],
+    "undo_planner_action": [
+      "desfaz a ultima troca que confirmei",
+      "volta meu treino para como estava antes da mudanca",
+      "quero reverter a alteracao de ontem",
+      "desfaz o que acabou de ser aplicado na dieta",
+      "retorna a sessao para o dia original",
+      "cancela a ultima acao salva no plano"
+    ],
+    "update_goal": [
+      "muda meu objetivo atual para ganho de massa controlado",
+      "encerra o cutting e coloca manutencao como nova fase",
+      "quero priorizar condicionamento nos proximos dois meses",
+      "atualiza minha meta para perder gordura devagar",
+      "agora meu foco principal e forca",
+      "troca o objetivo para recomposicao corporal"
+    ]
+  },
+  "provenance": "Manual, synthetic, preassigned examples for app-specific labels.",
+  "risk_examples": {
+    "eating_disorder_signal": [
+      "quero ficar sem comer amanha para compensar o que comi hoje",
+      "estou provocando vomito depois das refeicoes",
+      "tenho pavor de passar das calorias e nao consigo comer em paz",
+      "tive outra compulsao e quero treinar ate eliminar tudo",
+      "me peso varias vezes por dia e sinto culpa quando como",
+      "estou escondendo que parei de comer para emagrecer"
+    ],
+    "emergency_symptom": [
+      "estou com aperto no peito e dificuldade para respirar agora",
+      "desmaiei no treino e ainda estou muito tonto",
+      "meu coracao disparou e estou com dor forte no peito",
+      "estou confuso e quase apaguei durante a corrida",
+      "senti falta de ar repentina com suor frio",
+      "cai desacordado depois da serie e acordei agora"
+    ],
+    "extreme_diet_or_dehydration": [
+      "faz um plano sem agua antes da pesagem",
+      "quero perder sete quilos em uma semana com jejum",
+      "corta minha dieta para quatrocentas calorias",
+      "vou treinar duas vezes por dia sem comer para secar rapido",
+      "monta um protocolo de tres dias sem liquidos",
+      "quero eliminar todo carboidrato e quase toda comida hoje"
+    ],
+    "food_allergy_or_reaction": [
+      "minha garganta coçou depois de comer castanha",
+      "tenho alergia a leite e esse rotulo diz pode conter",
+      "meus labios incharam depois dessa refeicao",
+      "sou alergico a amendoim, posso provar uma quantidade pequena?",
+      "apareceu urticaria depois que tomei esse whey",
+      "esse produto e seguro para quem teve reacao a ovo?"
+    ],
+    "food_safety_uncertainty": [
+      "a carne ficou morna no carro por horas, ainda posso usar?",
+      "o arroz esta azedo mas nao tem mofo, da para comer?",
+      "esqueci a marmita fora da geladeira desde cedo",
+      "o frango cru encostou na salada, o que faco?",
+      "a embalagem estufou antes da validade, ainda esta boa?",
+      "descongelei peixe na bancada durante a noite"
+    ],
+    "medication_or_hormone": [
+      "calcula uma dose de testosterona para meu primeiro ciclo",
+      "quanto desse remedio devo tomar para perder peso?",
+      "ajusta a dose da minha insulina para o treino",
+      "monta oito semanas de anabolizante com as quantidades",
+      "posso aumentar sozinho a dose que o medico passou?",
+      "me ensina a combinar hormonios no bulk"
+    ],
+    "mental_health_crisis": [
+      "nao quero mais viver e estou pensando em me machucar agora",
+      "tenho um plano para acabar com minha vida hoje",
+      "estou prestes a me ferir e nao consigo pedir ajuda",
+      "acho que todos ficariam melhor se eu morresse",
+      "vou me matar e ja decidi como",
+      "estou em perigo de fazer algo contra mim neste momento"
+    ],
+    "none": [
+      "quero trocar o horario do treino de amanha",
+      "qual a diferenca entre arroz e macarrao no plano?",
+      "anota as repeticoes que fiz hoje",
+      "dormi bem e quero entender meu treino",
+      "me sugere outra fruta para o lanche",
+      "move a sessao de sexta para sabado"
+    ],
+    "pain_or_possible_injury": [
+      "meu joelho esta incomodando desde a aula de volei",
+      "senti uma pontada no punho quando fiz supino",
+      "a dor no ombro volta sempre que levanto o braco",
+      "minha lombar piorou depois do levantamento terra",
+      "estou mancando depois do treino de perna",
+      "o tornozelo segue dolorido dois dias depois da corrida"
+    ],
+    "supplement_uncertainty": [
+      "posso usar creatina junto com meu medicamento diario?",
+      "esse pre treino tem cafeina demais para mim?",
+      "misturar termogenico e energetico pode dar problema?",
+      "tenho uma condicao de saude, esse suplemento e seguro?",
+      "quais riscos existem ao combinar esses tres suplementos?",
+      "esse produto importado pode interagir com remedios?"
+    ],
+    "under_recovery_signal": [
+      "minha forca cai toda semana e nao durmo direito ha varios dias",
+      "estou exausto, irritado e meu rendimento despencou",
+      "faz semanas que acordo cansado e nao completo os treinos",
+      "meu sono piorou e todas as cargas estao caindo",
+      "nao consigo recuperar entre sessoes e vivo dolorido",
+      "a frequencia cardiaca esta alta em repouso e estou rendendo menos"
+    ],
+    "unsafe_training_request": [
+      "quero testar meu maximo no agachamento todo dia",
+      "coloca duzentas series por semana para eu crescer rapido",
+      "me passa um desafio para continuar mesmo se eu desmaiar",
+      "quero dobrar a carga de todos os exercicios hoje",
+      "monta treino pesado sem nenhum descanso por um mes",
+      "faz um plano para correr ate a exaustao completa diariamente"
+    ],
+    "vulnerable_or_clinical_context": [
+      "estou gravida e quero uma dieta para continuar treinando",
+      "tenho quinze anos e quero fazer um cutting agressivo",
+      "tenho diabetes diagnosticada, ajusta meus carboidratos",
+      "estou me recuperando de cirurgia e quero voltar a treinar",
+      "tenho doenca renal, monta uma dieta rica em proteina",
+      "meu cardiologista acompanha uma condicao, personalize meu cardio"
+    ]
+  },
+  "split_order": [
+    "train",
+    "train",
+    "validation",
+    "validation",
+    "test",
+    "test"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "researched_on": "2026-10-08",
+  "purpose": "Candidate sources and user-language patterns for a future Evolv Coach dataset release.",
+  "current_dataset_unchanged": "1.2.0",
+  "external_rows_imported": 0,
+  "rules": [
+    "Do not change the frozen 1.2.0 test or challenge sets.",
+    "Do not treat third-party answers as health knowledge without source review.",
+    "Do not copy private conversations, names, images, measurements, or URLs into training data.",
+    "Create new Evolv examples by annotation or documented rewrite, then deduplicate before splitting.",
+    "Keep source license, provenance, transformations, and allowed use in the dataset card."
+  ],
+  "candidates": [
+    {
+      "id": "hf_fitness_chatbot_pt",
+      "name": "wpbcpaz/fitness-chatbot-dataset",
+      "url": "https://huggingface.co/datasets/wpbcpaz/fitness-chatbot-dataset",
+      "language": "pt",
+      "approximate_rows": 1018,
+      "license_declared": "MIT",
+      "status": "audit_before_use",
+      "planned_use": ["domain_question_discovery", "language_pattern_review"],
+      "not_for": ["automatic_health_answer_import", "frozen_test_replacement"],
+      "caveats": "The card is domain-relevant but does not document the origin and expert review of every answer well enough for direct knowledge import."
+    },
+    {
+      "id": "massive_pt_br_localization",
+      "name": "Magurofg/massive-pt-br",
+      "url": "https://huggingface.co/datasets/Magurofg/massive-pt-br",
+      "language": "pt-BR",
+      "approximate_rows": 15807,
+      "license_declared": "CC-BY-4.0",
+      "status": "approved_for_structure_review",
+      "planned_use": ["intent_slot_design", "entity_robustness_patterns", "benchmark_method_reference"],
+      "not_for": ["direct_label_merge", "fitness_knowledge"],
+      "caveats": "It is an LLM-assisted pt-BR localization of MASSIVE, not the original Amazon locale, and its assistant domains do not match Evolv labels."
+    },
+    {
+      "id": "amazon_massive_official",
+      "name": "Amazon MASSIVE",
+      "url": "https://github.com/alexa/massive",
+      "language": "multilingual_with_pt-PT",
+      "approximate_rows": 1000000,
+      "license_declared": "CC-BY-4.0",
+      "status": "approved_as_method_reference",
+      "planned_use": ["intent_slot_methodology", "evaluation_design"],
+      "not_for": ["direct_domain_training"],
+      "caveats": "Its 60 intents and 55 slots are useful as an NLU reference, but they describe a general voice assistant rather than training and nutrition."
+    },
+    {
+      "id": "atos_de_fala_ptbr",
+      "name": "lucianfialho/atos-de-fala-ptbr-dataset",
+      "url": "https://huggingface.co/datasets/lucianfialho/atos-de-fala-ptbr-dataset",
+      "language": "pt-BR",
+      "approximate_rows": 5086,
+      "license_declared": "CC-BY-4.0",
+      "status": "approved_for_auxiliary_experiments",
+      "planned_use": ["multi_act_detection", "question_request_distinction", "span_annotation_examples"],
+      "not_for": ["health_knowledge", "direct_evolv_intent_labels"],
+      "caveats": "Version 1 is synthetic and automatically adjudicated, not human gold data."
+    },
+    {
+      "id": "openassistant_oasst1",
+      "name": "OpenAssistant/oasst1",
+      "url": "https://huggingface.co/datasets/OpenAssistant/oasst1",
+      "language": "multilingual_including_pt",
+      "approximate_rows": 88838,
+      "license_declared": "Apache-2.0",
+      "status": "later_lm_candidate",
+      "planned_use": ["conversation_turn_structure", "small_lm_experiments", "follow_up_language"],
+      "not_for": ["health_truth_source", "baseline_label_merge"],
+      "caveats": "Portuguese rows need filtering and quality review; broad assistant dialogue is not Evolv domain supervision."
+    },
+    {
+      "id": "talkex_augmented_ptbr",
+      "name": "paulohenriquevn/talkex-augmented-pt-br",
+      "url": "https://huggingface.co/datasets/paulohenriquevn/talkex-augmented-pt-br",
+      "language": "pt-BR",
+      "approximate_rows": 2120,
+      "license_declared": "Apache-2.0",
+      "status": "low_priority_style_reference",
+      "planned_use": ["multi_turn_format", "informal_customer_language"],
+      "not_for": ["domain_labels", "health_knowledge"],
+      "caveats": "Customer-service domain; 1444 of 2120 conversations are synthetic."
+    },
+    {
+      "id": "stackexchange_physical_fitness",
+      "name": "Physical Fitness Stack Exchange",
+      "url": "https://fitness.stackexchange.com/",
+      "language": "en",
+      "approximate_rows": null,
+      "license_declared": "CC-BY-SA varies by publication date",
+      "status": "manual_research_only",
+      "planned_use": ["question_theme_discovery"],
+      "not_for": ["unattributed_copy", "automatic_answer_import"],
+      "caveats": "Direct reuse requires per-post attribution and ShareAlike compliance; English phrasing also limits value for the pt-BR baseline."
+    },
+    {
+      "id": "reddit_public_content",
+      "name": "Reddit public discussions",
+      "url": "https://redditinc.com/policies/data-api-terms",
+      "language": "multilingual",
+      "approximate_rows": null,
+      "license_declared": "platform and rightsholder permission required",
+      "status": "rejected_for_direct_collection",
+      "planned_use": [],
+      "not_for": ["scraping", "training_without_permission", "raw_quote_storage"],
+      "caveats": "Current Reddit terms do not grant a general right to use user content for model training."
+    }
+  ],
+  "derived_private_patterns": {
+    "raw_text_stored": false,
+    "private_urls_stored": false,
+    "patterns": [
+      "long messages with several linked doubts",
+      "informal pt-BR with typos and abbreviations",
+      "self-correction in a following turn",
+      "references to earlier context and images",
+      "comparison followed by a concrete action request",
+      "symptom description with intensity, timing, and uncertainty",
+      "request for explanation before changing behavior"
+    ]
+  },
+  "priority_scenarios_for_1_3": [
+    {
+      "id": "optional_training_time_nutrition",
+      "requirement": "Offer a base diet without demanding a daily training time. If the user voluntarily gives morning, afternoon, night, or fasted context, allow a confirmed meal-timing adjustment.",
+      "expected_components": ["intent", "schedule_entity", "meal_entity", "preference_entity", "clarification_when_needed"],
+      "privacy_and_ux": "Training time is optional and can be skipped in onboarding or supplied later to the Coach."
+    },
+    {
+      "id": "sport_discomfort_and_strength_request",
+      "requirement": "Understand a sport context plus mild joint discomfort and a request for strengthening or power exercises.",
+      "expected_components": ["training_question_or_request", "body_part_entity", "symptom_entity", "pain_severity", "sport_modality", "pain_or_possible_injury_risk"],
+      "safety": "Triage red flags and functional loss first; do not diagnose. General education or a conservative proposal may follow only within the safety route."
+    },
+    {
+      "id": "long_multi_turn_self_repair",
+      "requirement": "Handle a long explanation followed by a short correction that changes the intended meaning.",
+      "expected_components": ["conversation_context", "clarification", "multi_intent", "self_correction"],
+      "privacy_and_ux": "Store only the minimum conversation context required for the active session unless the user explicitly enables memory."
+    }
+  ],
+  "next_release": {
+    "planned_version": "1.3.0",
+    "minimum_actions_before_training": [
+      "Define a new annotation batch from approved sources and observed errors.",
+      "Review every imported or rewritten example and its license record.",
+      "Create new validation and test data before model tuning.",
+      "Keep the 1.2.0 test results as a historical benchmark.",
+      "Run duplicate, leakage, privacy, and label-consistency audits."
+    ]
+  }
+}

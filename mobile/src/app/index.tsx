@@ -19,7 +19,7 @@ export default function IndexScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: palette.page }]}>
       <Text style={[styles.brand, { color: palette.text }]}>Evolv</Text>
-      <ActivityIndicator color={colors.gold} />
+      <ActivityIndicator color={colors.red} />
     </View>
   );
 }
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     color: colors.text,
     fontFamily: typography.display,
     fontSize: 34,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontWeight: "600",
+    textTransform: "none",
   },
 });

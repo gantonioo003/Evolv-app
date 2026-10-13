@@ -1,0 +1,96 @@
+{
+  "artifact_version": "1.0.0",
+  "code": {
+    "scripts/evaluate_nlp.py": {
+      "sha256": "6bab567ec7522a35a1f84e7817312fd193b763ef3fd04bb5669e795c96b8c2d3"
+    },
+    "src/evolv_nlp/evaluation.py": {
+      "sha256": "bb85a83592c94a73d8447fde2209030ae2a07fe23968d502f34d2d83c3383e5f"
+    }
+  },
+  "guardrails": {
+    "entity_extractor_modified_after_holdout": false,
+    "models_retrained": false,
+    "planner_writes": false,
+    "probabilities_calibrated": false,
+    "test_files_modified": false
+  },
+  "inputs": {
+    "challenge/ambiguity_examples.jsonl": {
+      "path": "data/splits/challenge/ambiguity_examples.jsonl",
+      "sha256": "ca3eac3f714b794955e100dc6a581dba4944b9a3d26985aefe502e4efd43f435"
+    },
+    "entity_catalogs.v1.json": {
+      "path": "data/catalogs/entity_catalogs.v1.json",
+      "sha256": "a8a7c863047712919cda974ae7264e749c4be1d1375e8853cab1016bb80b0944"
+    },
+    "entity_holdout.v1.jsonl": {
+      "path": "data/evaluation/entity_holdout.v1.jsonl",
+      "sha256": "ee4da603b9121080dd5d13eaec3e6216d931ea2cd2ee620dc058fd97b04b591a"
+    },
+    "model:intent_classification": {
+      "path": "artifacts/baseline/1.0.0/intent_classifier.joblib",
+      "sha256": "18e5ee13503e165510e5bc8d5bfd7388dbb99aff070fc3b5869e0651e2d42177"
+    },
+    "model:risk_classification": {
+      "path": "artifacts/baseline/1.0.0/risk_classifier.joblib",
+      "sha256": "1531c8c2366f90b8c110802b894e6d259156984676291de088375208e623e0f6"
+    },
+    "protocol.v1.json": {
+      "path": "data/evaluation/protocol.v1.json",
+      "sha256": "d2e8b03ba6eb91fa5929320c3436b0cf0e0b71cd47de40602e405b867a007a5a"
+    },
+    "test/intent_examples.jsonl": {
+      "path": "data/splits/test/intent_examples.jsonl",
+      "sha256": "bb7cbf9209abc80fae8161c7dbd7146210af7f16afe3022656eb5082c0a97b08"
+    },
+    "test/risk_examples.jsonl": {
+      "path": "data/splits/test/risk_examples.jsonl",
+      "sha256": "3449da61a4afcedc14a3e1e19ab666067aae915226d6a8709d31ae820181ceb3"
+    }
+  },
+  "outputs": {
+    "artifacts/evaluation/1.0.0/README.md": {
+      "bytes": 415,
+      "sha256": "18cc3116223eac81cd4b5714a7565982c209f55f8aaaaa25908f1c57c90a4652"
+    },
+    "artifacts/evaluation/1.0.0/challenge_predictions.jsonl": {
+      "bytes": 26336,
+      "sha256": "cde2858445ed06a664f7217ae2e7bde2720d65925e83bc153d2acd52a8ad5d55"
+    },
+    "artifacts/evaluation/1.0.0/entity_predictions.jsonl": {
+      "bytes": 17858,
+      "sha256": "ea4a92b2f792e4f8fd841b5f57914061db1122ce4323bc8972b605c1261ca9c3"
+    },
+    "artifacts/evaluation/1.0.0/error_analysis.md": {
+      "bytes": 3472,
+      "sha256": "98031fe3de004ec9aa88ad5769e4ae8367e09840d387e615ef282e174ea236c0"
+    },
+    "artifacts/evaluation/1.0.0/intent_confusion_matrix.csv": {
+      "bytes": 2975,
+      "sha256": "83fda94676fe1c9e9216ade1996cad183eefe564af19d897526aaae24d13a0e9"
+    },
+    "artifacts/evaluation/1.0.0/intent_predictions.jsonl": {
+      "bytes": 12160,
+      "sha256": "c50722289370bbb6954788e7d2def94d7b941471280699594e353553769872ab"
+    },
+    "artifacts/evaluation/1.0.0/metrics.json": {
+      "bytes": 112052,
+      "sha256": "4ee72d2a83e472f1c0758084611d23d74cb0c8981ea30bf838542175abb330a9"
+    },
+    "artifacts/evaluation/1.0.0/risk_confusion_matrix.csv": {
+      "bytes": 937,
+      "sha256": "3af46d17c08abb0ccb6bcf51b6f1dccdb5d1665d0a43220a3987968aeef47651"
+    },
+    "artifacts/evaluation/1.0.0/risk_predictions.jsonl": {
+      "bytes": 5525,
+      "sha256": "ff11a5e66300b57eb2f9852f8c6383952fb0da4f89b3094ca6c3f078a7625a8a"
+    }
+  },
+  "protocol": {
+    "path": "data/evaluation/protocol.v1.json",
+    "sha256": "d2e8b03ba6eb91fa5929320c3436b0cf0e0b71cd47de40602e405b867a007a5a"
+  },
+  "release_date": "2026-10-08",
+  "status": "completed"
+}

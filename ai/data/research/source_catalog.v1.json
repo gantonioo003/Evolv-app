@@ -1,0 +1,167 @@
+{
+  "version": "1.0.0",
+  "reviewed_at": "2026-10-06",
+  "description": "Fontes usadas somente para descobrir linguagem, temas e metodologia da taxonomia 7.01.1.",
+  "sources": [
+    {
+      "id": "private_user_conversation_patterns",
+      "type": "private_conversation",
+      "title": "Conversa real fornecida voluntariamente pelo responsavel do projeto",
+      "url_stored": false,
+      "license": "private_user_provided",
+      "allowed_use": "Extrair apenas padroes anonimos de pergunta, ambiguidade e continuidade de conversa.",
+      "prohibited_use": "Nao copiar mensagens, medidas, imagens, dados pessoais ou respostas para o dataset publico.",
+      "ingestion_status": "patterns_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "substituicao baseada no que existe em casa",
+        "avaliacao de refeicao e porcao",
+        "duvidas de preparo e armazenamento",
+        "mensagens curtas com erros ortograficos",
+        "referencias como isso e qual dos dois",
+        "conversa iterativa que depende de turnos anteriores"
+      ]
+    },
+    {
+      "id": "hipertrofia_forum_beginner_questions",
+      "type": "public_forum",
+      "title": "Hipertrofia.org - duvidas e perguntas frequentes de iniciantes",
+      "urls": [
+        "https://www.hipertrofia.org/forum/topic/61667-d%C3%BAvidas-academia/",
+        "https://www.hipertrofia.org/forum/topic/14121-perguntas-frequentes-de-iniciantes/",
+        "https://www.hipertrofia.org/forum/topic/235023-d%C3%BAvidas-de-iniciante/"
+      ],
+      "license": "not_identified_for_dataset_reuse",
+      "allowed_use": "Descobrir temas e formas de pergunta; escrever exemplos novos e independentes.",
+      "prohibited_use": "Nao tratar respostas do forum como conhecimento validado nem copiar publicacoes.",
+      "ingestion_status": "taxonomy_discovery_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "frequencia e duracao de treino",
+        "escolha de exercicios",
+        "volume e intensidade",
+        "objetivos combinados",
+        "horario de refeicoes",
+        "mudanca gradual de habitos"
+      ]
+    },
+    {
+      "id": "reddit_maromba_training_and_nutrition",
+      "type": "public_forum",
+      "title": "Reddit r/Maromba - linguagem brasileira de treino e dieta",
+      "urls": [
+        "https://www.reddit.com/r/Maromba/comments/1fes33g",
+        "https://www.reddit.com/r/Maromba/comments/1sdfvjq/",
+        "https://www.reddit.com/r/Maromba/comments/1tfaedu/",
+        "https://www.reddit.com/r/Maromba/comments/1pj2ca9/",
+        "https://www.reddit.com/r/Maromba/comments/1idktd1",
+        "https://www.reddit.com/r/Maromba/comments/1rzg9yk/",
+        "https://www.reddit.com/r/Maromba/comments/1svp1da/",
+        "https://www.reddit.com/r/Maromba/comments/1m4xcm3",
+        "https://www.reddit.com/r/Maromba/comments/1qxqgia/"
+      ],
+      "license": "not_identified_for_dataset_reuse",
+      "allowed_use": "Mapear topicos, girias, abreviacoes e situacoes recorrentes.",
+      "prohibited_use": "Nao copiar textos de usuarios e nao usar conselhos como fonte tecnica.",
+      "ingestion_status": "taxonomy_discovery_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "treino com pouco tempo",
+        "estagnacao de progressao",
+        "fadiga e dias de descanso",
+        "sono versus treino",
+        "refeicao livre e culpa",
+        "ajuste de proteina em bulking"
+      ]
+    },
+    {
+      "id": "reddit_loseit_adherence",
+      "type": "public_forum",
+      "title": "Reddit r/loseit - aderencia e linguagem de emagrecimento",
+      "urls": [
+        "https://www.reddit.com/r/loseit/",
+        "https://it.reddit.com/r/loseit/comments/1l5xmnq/can_i_have_a_cheat_day_if_im_in_a_strict_calorie/"
+      ],
+      "license": "not_identified_for_dataset_reuse",
+      "allowed_use": "Descobrir preocupacoes de aderencia, fome, culpa e refeicao flexivel.",
+      "prohibited_use": "Nao copiar relatos nem adotar respostas como recomendacao clinica.",
+      "ingestion_status": "taxonomy_discovery_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "fadiga de dieta",
+        "fome",
+        "plateau",
+        "refeicao flexivel",
+        "alimentos que a pessoa realmente aceita comer"
+      ]
+    },
+    {
+      "id": "fitness_qa_dataset",
+      "type": "public_dataset",
+      "title": "DavidConka/fitness-qa-dataset",
+      "urls": ["https://huggingface.co/datasets/DavidConka/fitness-qa-dataset"],
+      "license": "CC-BY-SA-4.0",
+      "allowed_use": "Auditar cobertura tematica e avaliar futura ingestao com atribuicao e revisao humana.",
+      "prohibited_use": "Nao ingerir automaticamente respostas incompletas ou tecnicamente nao verificadas.",
+      "ingestion_status": "candidate_requires_content_audit",
+      "factual_authority": false,
+      "observed_patterns": [
+        "amplitude de movimento",
+        "selecao de exercicios",
+        "relacao estimulo-fadiga",
+        "treino com tempo limitado",
+        "conceitos de volume"
+      ]
+    },
+    {
+      "id": "medpt",
+      "type": "public_dataset",
+      "title": "AKCIT/MedPT",
+      "urls": ["https://huggingface.co/datasets/AKCIT/MedPT"],
+      "license": "not_verified",
+      "allowed_use": "Estudar metodologia de tipagem e caracteristicas da linguagem medica brasileira.",
+      "prohibited_use": "Nao ingerir antes de revisar licenca, privacidade, qualidade clinica e escopo.",
+      "ingestion_status": "methodology_reference_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "perguntas reais em portugues brasileiro",
+        "linguagem coloquial",
+        "tipos semanticos de pergunta",
+        "necessidade de separar classificacao de resposta clinica"
+      ]
+    },
+    {
+      "id": "healthsearchqa",
+      "type": "public_dataset",
+      "title": "HealthSearchQA",
+      "urls": ["https://github.com/piyumalranawaka/Medical-Dataset/blob/main/resources/HealthSearchQA.md"],
+      "license": "requires_verification_before_ingestion",
+      "allowed_use": "Referencia metodologica para perguntas de saude feitas por consumidores.",
+      "prohibited_use": "Nao ingerir sem confirmar fonte primaria, licenca e adequacao ao escopo.",
+      "ingestion_status": "methodology_reference_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "perguntas comuns de consumidores",
+        "linguagem de busca",
+        "necessidade de cobertura de seguranca"
+      ]
+    },
+    {
+      "id": "chq_summ",
+      "type": "research_dataset",
+      "title": "CHQ-Summ: Consumer Health Question Summarization",
+      "urls": ["https://arxiv.org/abs/2206.06581"],
+      "license": "see_primary_repository_before_ingestion",
+      "allowed_use": "Aplicar a metodologia de foco da pergunta e tipo da pergunta a mensagens longas.",
+      "prohibited_use": "Nao ingerir textos sem revisar o repositorio e a licenca do conjunto.",
+      "ingestion_status": "methodology_reference_only",
+      "factual_authority": false,
+      "observed_patterns": [
+        "perguntas longas com detalhes perifericos",
+        "separacao entre foco e tipo da pergunta",
+        "anotacao por especialistas",
+        "avaliacao em treino validacao e teste"
+      ]
+    }
+  ]
+}

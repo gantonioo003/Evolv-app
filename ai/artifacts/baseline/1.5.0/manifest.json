@@ -1,0 +1,52 @@
+{
+  "augmentation_sha256": "f5c983853176fe14cf314575eb374d0c9a68f401822c3453a26cda6ca964076c",
+  "automatic_acceptance_enabled": false,
+  "dataset_version": "1.6.0",
+  "default_changed": false,
+  "dependencies": {
+    "huggingface_hub": "2.2.0",
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "onnxruntime": "1.31.0",
+    "python": "3.14.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "tokenizers": "0.23.3"
+  },
+  "encoder": {
+    "dimension": 384,
+    "files": {
+      "config.json": "6300193cb75e01cf80c96decef7187dfb33094d97cc1490b7ead6ff134476e4e",
+      "onnx/model_quint8_avx2.onnx": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f",
+      "special_tokens_map.json": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+      "tokenizer.json": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+      "tokenizer_config.json": "5036ea374ffedd706e3bef33e2e0d6953cb868ef8a490e76e32ba0faa37a6b9b"
+    },
+    "frozen_encoder": true,
+    "license": "apache-2.0",
+    "max_length": 128,
+    "model_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "pooling": "attention-masked token mean; token-count-weighted windows; L2 normalization",
+    "raw_text_sent_to_external_api": false,
+    "reference": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "metrics_sha256": "25437862269400134c6f488f540dd4c07f1b3f86d0721575e120660797b98401",
+  "model_artifacts": {
+    "intent_classification": {
+      "file": "private\\intent_classifier.joblib",
+      "sha256": "78b2c146bb7e8d025976e0d3f8f447df2f8c3edcd5dd984efab523bb2ea9baf3"
+    },
+    "risk_classification": {
+      "file": "private\\risk_classifier.joblib",
+      "sha256": "1e9a82cf8a6556185aceebba3b981daf78497c18c984e1f75ef2bc313774c190"
+    }
+  },
+  "selection": "65% legacy validation, 35% new native validation macro F1",
+  "source_files": {
+    "src/evolv_nlp/semantic_encoder.py": "2468f03d233348c69ae983ca7bb3fb99636eec8fafc1a4345610b423ec2f4cc8",
+    "src/evolv_nlp/tuning_semantic.py": "b948ecfe42cf43e0852953e4cad5100627a8bdca1378c5e5f121429cb18cf49b"
+  },
+  "status": "private_semantic_research",
+  "version": "1.5.0"
+}

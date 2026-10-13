@@ -267,16 +267,35 @@ Completed so far:
 - Controlled Planner adjustments for moving sessions and replacing exercises or foods, with preview, explicit confirmation, history, stale-data protection, and undo.
 - Automatic nutrition variants for training and rest days, plus fixed, three-menu, or seven-menu rotations.
 - Optional planned flexibility for weekly or fortnightly flexible meals and user-requested alcohol cadence.
+- Completed hierarchical Coach taxonomy with 30 intents, 94 topics, 79 entities, 13 independent risk labels, and 44 capabilities.
+- Completed and frozen Coach dataset 1.2.0 with 240 intent examples, 104 risk examples, and 39 separate ambiguity challenges.
+- Explicit provenance for synthetic data, anonymized real-pattern rewrites, informal language, and adversarial cases.
+- Completed Coach knowledge base 1.1 with 27 approved sources and 67 reviewed chunks across training, nutrition, recovery, and safety.
+- Source hierarchy, usage boundaries, expiration dates, Brazilian emergency routes, and automated coverage for all 12 safety risks.
+- Deterministic train, validation, test, and challenge splits with frozen ID assignments, source fingerprints, and SHA-256 manifests.
+- Automated exact and near-duplicate leakage audit with zero blocking findings across 383 records.
+- Independent taxonomy validation for IDs, routes, entity references, safety rules, and current Planner contracts.
+- Reproducible TF-IDF and logistic-regression baselines for 30 intents and 13 risk labels.
+- Versioned baseline artifacts with dependency metadata, SHA-256 verification, validation metrics, and untouched test/challenge sets.
+- Hybrid entity extraction for dates, exercises, foods, substitutions, training prescriptions, goals, preferences, and limitations.
+- Versioned domain catalogs, typed spans, deterministic temporal resolution, and a 40-message entity regression suite.
+- Frozen 7.02.3 evaluation with per-class metrics, confusion matrices, error analysis, safety diagnostics, and a separate entity holdout.
+- Conservative 7.02.4 pipeline joining intent, risk, entities, and topics into a versioned structured output.
+- Validation-only confidence gates, clarification on uncertainty, risk priority, and confirmation-only Planner proposals.
+- Frozen NLU dataset 1.3.0 with 1,277 regular examples and ten separate public human prompts.
+- Evaluated baseline 1.1.0 with test macro F1 of 0.713 for intent and 0.852 for risk; the ten-prompt human holdout achieved only 0.300 accuracy in both tasks.
+- Prepared TinyLM corpus 1.0.0 with 6,381 text chunks and approximately 2.24 million estimated subword tokens from attributed Portuguese sources.
 
 Next steps:
 
-1. Build the local NLP baseline and knowledge retrieval.
-2. Train and evaluate the small Transformer language model.
-3. Integrate the local Coach service with typed Planner proposals.
-4. Add the optional low-friction recovery check-in UI.
-5. Expand and verify the food and exercise catalogs from compatible sources.
-6. Add notifications and validate the app on a physical iPhone.
-7. Configure deployment and prepare a portfolio-ready demo.
+1. Collect consented human development data for version 1.4.0, preserving the frozen tests.
+2. Improve intent, risk, schedule, symptom, and multi-turn understanding from reviewed errors.
+3. Train and evaluate the small Transformer language model.
+4. Integrate the local Coach service with typed Planner proposals.
+5. Add the optional low-friction recovery check-in UI.
+6. Expand and verify the food and exercise catalogs from compatible sources.
+7. Add notifications and validate the app on a physical iPhone.
+8. Configure deployment and prepare a portfolio-ready demo.
 
 ## Repository Structure
 
@@ -295,12 +314,12 @@ evolv-app/
     React Native / Expo app
   backend/
     NestJS API
-  ml/
+  ai/
     local NLP, retrieval, training, evaluation, and model serving
   README.md
 ```
 
-The mobile folder is connected to the real API and awaits physical iPhone validation. The backend MVP is complete for authentication, profiles, goals, workouts, loads, nutrition, and progress. The ML folder will be created when the local Coach phase begins.
+The mobile folder is connected to the real API and awaits physical iPhone validation. The backend MVP is complete for authentication, profiles, goals, workouts, loads, nutrition, and progress. In `ai/`, phase 7.01 and NLP phases 7.02.1-7.02.4 are implemented, baseline 1.1.0 has been evaluated on dataset 1.3.0, and the TinyLM corpus is ready. The active runtime still uses baseline 1.0.0 with its conservative confidence policy; promoting 1.1.0 requires new validation-only confidence gates.
 
 ## Author
 

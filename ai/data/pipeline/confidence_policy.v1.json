@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "status": "active_conservative",
+  "language": "pt-BR",
+  "derived_from": {
+    "split": "validation",
+    "dataset_version": "1.2.0",
+    "test_used_for_threshold_selection": false,
+    "challenge_used_for_threshold_selection": false,
+    "reason": "The validation set is small and confidence is uncalibrated; thresholds favor abstention over unsafe automation."
+  },
+  "intent": {
+    "minimum_confidence": 0.15,
+    "minimum_margin": 0.10,
+    "top_k": 3,
+    "on_rejection": "clarify",
+    "note": "No validation prediction reached both thresholds. Intent acceptance is intentionally disabled in practice for baseline 1.0.0 until data and calibration improve."
+  },
+  "risk": {
+    "escalate_minimum_confidence": 0.13,
+    "escalate_minimum_margin": 0.03,
+    "safe_minimum_confidence": 0.20,
+    "safe_minimum_margin": 0.10,
+    "top_k": 3,
+    "uncertain_non_none_behavior": "clarify_with_caution",
+    "note": "The escalation gate selected six validation predictions with six correct labels. This is provisional evidence, not calibrated probability."
+  },
+  "planner": {
+    "requires_accepted_intent": true,
+    "requires_all_required_entities": true,
+    "always_requires_confirmation": true,
+    "direct_writes_allowed": false
+  },
+  "limits": {
+    "maximum_text_characters": 10000,
+    "probabilities_calibrated": false,
+    "production_ready": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "dataset_version": "1.3.0",
+  "files": {
+    "challenge/ambiguity_examples.jsonl": {
+      "rows": 39,
+      "sha256": "a0d260909e65c9e292c6056b8c6d254fda223b928e200251affc64dd3082a7e1"
+    },
+    "challenge/real_human_examples.jsonl": {
+      "rows": 10,
+      "sha256": "5845f08fef6ef92569e6343efed9c8abf3a216cb091031e2c92beeccac023460"
+    },
+    "source/curated_expansion.v1.json": {
+      "sha256": "12eb7d710242368fa7b1103bcd17abb17a1e614ce7f6e9ca0a23f49e5af7251b"
+    },
+    "source/real_human_holdout.v1.json": {
+      "sha256": "a1f87ccb3208452ce490387d725168b21811536656998710367f6d8a843c1f65"
+    },
+    "splits/test/intent_examples.jsonl": {
+      "rows": 90,
+      "sha256": "54eac68885d9e6d43527ddf4415f506d9977bde96ae633479a7c58755c3da5d2"
+    },
+    "splits/test/risk_examples.jsonl": {
+      "rows": 39,
+      "sha256": "77b28a72fd031fb435dd556dd4fd826b9833f2b200ccc26a3275286ea82e711d"
+    },
+    "splits/train/intent_examples.jsonl": {
+      "rows": 720,
+      "sha256": "1fe95c253c952150be9b7d3d94a9a60b69ca698ff6c37447042f93c1d42d9080"
+    },
+    "splits/train/risk_examples.jsonl": {
+      "rows": 299,
+      "sha256": "ade63494750b4865ce51245683bc60994f048e2bd4fde730ca588e4aa1176a4b"
+    },
+    "splits/validation/intent_examples.jsonl": {
+      "rows": 90,
+      "sha256": "a18eb3ecee9aa67c8a888138a541702c4abca93859a96c7b108d70852f5ea42c"
+    },
+    "splits/validation/risk_examples.jsonl": {
+      "rows": 39,
+      "sha256": "00c434b08a90a051c56d97f00751e47e128a06119ff2100f0d4c792fca63ccec"
+    }
+  },
+  "language": "pt-BR",
+  "manifest_version": "1.0.0",
+  "policy": {
+    "human_public": "Reserved as a separate real-world holdout; never used to fit or select the model.",
+    "legacy_train": "Retained; two train-only style variants stay grouped with each original.",
+    "legacy_validation_test": "Retained in their original splits and never copied into training.",
+    "new_examples": "Preassigned before model training: 2 train, 2 validation and 2 test per label."
+  },
+  "quality_report": {
+    "path": "quality_report.json",
+    "sha256": "51df23df7e558b801a57999a155415513cfc3b62e43cbef5639949778fabc24b",
+    "status": "passed"
+  },
+  "release_date": "2026-10-08",
+  "status": "frozen",
+  "summary": {
+    "legacy_challenge_rows": 39,
+    "real_human_holdout_rows": 10,
+    "regular_rows": 1277,
+    "split_counts": {
+      "test": 129,
+      "train": 1019,
+      "validation": 129
+    },
+    "task_counts": {
+      "intent_classification": 900,
+      "risk_classification": 377
+    }
+  }
+}

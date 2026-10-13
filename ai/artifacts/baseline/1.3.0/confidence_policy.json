@@ -1,0 +1,20 @@
+{
+  "intent_classification": {
+    "accepted": 0,
+    "minimum_confidence": 1.01,
+    "minimum_margin": 1.01,
+    "precision": null,
+    "rows": 154,
+    "selection_split": "development_only",
+    "warning": "Uncalibrated scores and small provisional sample, not a safety guarantee."
+  },
+  "risk_classification": {
+    "accepted": 44,
+    "minimum_confidence": 0.25,
+    "minimum_margin": 0.05,
+    "precision": 0.977273,
+    "rows": 68,
+    "selection_split": "development_only",
+    "warning": "Uncalibrated scores and small provisional sample, not a safety guarantee."
+  }
+}

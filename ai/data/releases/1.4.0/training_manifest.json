@@ -1,0 +1,39 @@
+{
+  "tasks": {
+    "intent_classification": {
+      "project_train_rows": 1056,
+      "real_development_rows": 73,
+      "validation_rows": 114,
+      "weak_labels": {
+        "analyze_progress": 3,
+        "ask_cooking_guidance": 8,
+        "ask_exercise_execution": 13,
+        "ask_pain_guidance": 134,
+        "ask_recovery": 62,
+        "ask_sports_conditioning": 12,
+        "ask_supplements": 160,
+        "ask_training_meal_timing": 16,
+        "ask_training_program_feedback": 160,
+        "ask_weight_management": 160,
+        "motivation_support": 6
+      },
+      "weak_web_train_rows": 734
+    },
+    "risk_classification": {
+      "project_train_rows": 407,
+      "real_development_rows": 40,
+      "validation_rows": 52,
+      "weak_labels": {
+        "clinical_measurement_request": 36,
+        "eating_disorder_signal": 1,
+        "food_allergy_or_reaction": 2,
+        "medication_or_hormone": 160,
+        "pain_or_possible_injury": 145,
+        "supplement_uncertainty": 160,
+        "vulnerable_or_clinical_context": 11
+      },
+      "weak_web_train_rows": 515
+    }
+  },
+  "weak_web_enabled": true
+}

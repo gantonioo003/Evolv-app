@@ -1,0 +1,192 @@
+{
+  "catalog": {
+    "file": "entity_catalogs.v1.json",
+    "sha256": "a8a7c863047712919cda974ae7264e749c4be1d1375e8853cab1016bb80b0944"
+  },
+  "catalog_version": "1.0.0",
+  "dataset": {
+    "expected_entities": 71,
+    "file": "evaluation.v1.jsonl",
+    "messages": 40,
+    "sha256": "359848f67a98554e8d196a6aefa1d061f258be8ca3da5ebb567502ece1668161"
+  },
+  "error_count": 0,
+  "errors": [],
+  "exact_message_accuracy": 1.0,
+  "extractor_version": "1.0.0",
+  "micro": {
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "per_type": {
+    "allergy": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "amount": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "body_part": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "diet_strategy": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "dietary_restriction": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "duration": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "equipment": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "exercise": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6
+    },
+    "food": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 7
+    },
+    "goal": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 3
+    },
+    "limitation": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "load": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "macronutrient_amount": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "meal": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 3
+    },
+    "modality": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "preference": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "repetitions": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 4
+    },
+    "replacement_exercise": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "replacement_food": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "rest_duration": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "rir": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "rpe": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "sets": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 3
+    },
+    "sleep_duration": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 1
+    },
+    "source_date": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 3
+    },
+    "target_date": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 9
+    },
+    "training_split": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    },
+    "weekly_frequency": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 2
+    }
+  }
+}

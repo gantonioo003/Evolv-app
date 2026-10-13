@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evolv.local/schemas/entity-evaluation-row.schema.json",
+  "title": "Evolv entity extraction evaluation row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "text", "reference_date", "expected"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^entity-eval-[0-9]{3}$" },
+    "text": { "type": "string", "minLength": 1 },
+    "reference_date": { "type": "string", "format": "date" },
+    "expected": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entity_type", "value"],
+        "properties": {
+          "entity_type": { "type": "string", "minLength": 1 },
+          "value": {}
+        }
+      }
+    }
+  }
+}

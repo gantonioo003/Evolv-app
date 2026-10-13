@@ -1,0 +1,81 @@
+{
+  "algorithm": {
+    "classifier": "LogisticRegression(multiclass, L2)",
+    "vectorizer": "Selected per task between word TF-IDF and word+character TF-IDF."
+  },
+  "artifact_version": "1.0.0",
+  "code_files": {
+    "ai/requirements.txt": {
+      "sha256": "33c2f5b8e9c142b3ed42789836b18428ded8d20d25dacbe5b77ee5b9bd413550"
+    },
+    "ai/scripts/train_baseline.py": {
+      "sha256": "50292ce1db5136c726de77210f2eaaa8ecad9b2096fdd8611c24df503f31cf28"
+    },
+    "ai/src/evolv_nlp/__init__.py": {
+      "sha256": "bfe00a78e3d475edb89259e57c5cd5836a6afb5ab6f87189202e038cc8ba12fb"
+    },
+    "ai/src/evolv_nlp/baseline.py": {
+      "sha256": "781056563a2b92a8c51dd472cc49fe2428ae66fa2e624eba2dd9bcee553a2bdb"
+    },
+    "ai/src/evolv_nlp/dataset.py": {
+      "sha256": "99f1f2f07e07a4b31243feedf7417e651cf0263406a69491603ce3e72463d6c3"
+    },
+    "ai/src/evolv_nlp/training.py": {
+      "sha256": "d8bebb75ed1dc12a0fbe7a09cd7a42ac0c42a87b29ba8340a1a4103a3ef5b142"
+    }
+  },
+  "data_usage": {
+    "challenge": "Not loaded or evaluated in phase 7.02.1.",
+    "test": "Not loaded or evaluated in phase 7.02.1.",
+    "train": "Fit vectorizer and classifier; three-fold stratified cross-validation.",
+    "validation": "One fixed post-training measurement; no tuning."
+  },
+  "dataset_version": "1.2.0",
+  "dependencies": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "python": "3.14.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "model_artifacts": {
+    "intent_classification": {
+      "bytes": 649136,
+      "file": "intent_classifier.joblib",
+      "sha256": "18e5ee13503e165510e5bc8d5bfd7388dbb99aff070fc3b5869e0651e2d42177"
+    },
+    "risk_classification": {
+      "bytes": 172242,
+      "file": "risk_classifier.joblib",
+      "sha256": "1531c8c2366f90b8c110802b894e6d259156984676291de088375208e623e0f6"
+    }
+  },
+  "random_seed": 42,
+  "release_date": "2026-10-07",
+  "reports": {
+    "metrics": "metrics.json",
+    "top_features": "top_features.json"
+  },
+  "security": {
+    "format": "joblib/pickle-based",
+    "load_policy": "Load only repository-generated files whose SHA-256 matches this manifest."
+  },
+  "source_files": {
+    "data/splits/train/intent_examples.jsonl": {
+      "rows": 180,
+      "sha256": "2be63e653f7c1accf0d4922113b0a702aacf246052b28d49ab09698c4cad92cb"
+    },
+    "data/splits/train/risk_examples.jsonl": {
+      "rows": 78,
+      "sha256": "33ddc7bc5c0b7f3491cea7c1357394ef71409d459cfe1265dcb39bdea1f0b6ca"
+    },
+    "data/splits/validation/intent_examples.jsonl": {
+      "rows": 30,
+      "sha256": "6591042cb900fd84c1a1fabe5a04d6ee358edc63bb0c54f91173a07afeae3606"
+    },
+    "data/splits/validation/risk_examples.jsonl": {
+      "rows": 13,
+      "sha256": "0ceba466272ce118881baf0a3a922a0f192c39a587a10fd3cd5fce498c576593"
+    }
+  }
+}

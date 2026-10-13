@@ -1,0 +1,2046 @@
+{
+  "task": "risk_classification",
+  "test_opened": false,
+  "trials": [
+    {
+      "architecture": "svm_025",
+      "id": "owned-semantic_None-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.80989
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.707692
+      },
+      "order": 0,
+      "selection_score": 0.774121,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_1",
+      "id": "owned-semantic_None-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.824908
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.684615
+      },
+      "order": 1,
+      "selection_score": 0.775805,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_4",
+      "id": "owned-semantic_None-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.827839
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.611905
+      },
+      "order": 2,
+      "selection_score": 0.752262,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_05",
+      "id": "owned-semantic_None-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.769231,
+        "macro_f1": 0.754945
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.576871
+      },
+      "order": 3,
+      "selection_score": 0.692619,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_2",
+      "id": "owned-semantic_None-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.805128
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.588095
+      },
+      "order": 4,
+      "selection_score": 0.729166,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_8",
+      "id": "owned-semantic_None-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.836447
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.683333
+      },
+      "order": 5,
+      "selection_score": 0.782857,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "owned-semantic_None-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.798535
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.59932
+      },
+      "order": 6,
+      "selection_score": 0.72881,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "owned-semantic_None-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.778755
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.630037
+      },
+      "order": 7,
+      "selection_score": 0.726704,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_025",
+      "id": "owned-semantic_0.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.855495
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.57432
+      },
+      "order": 8,
+      "selection_score": 0.757084,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_1",
+      "id": "owned-semantic_0.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.619048
+      },
+      "order": 9,
+      "selection_score": 0.793095,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_4",
+      "id": "owned-semantic_0.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.588095
+      },
+      "order": 10,
+      "selection_score": 0.799405,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_05",
+      "id": "owned-semantic_0.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.831868
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.577143
+      },
+      "order": 11,
+      "selection_score": 0.742714,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_2",
+      "id": "owned-semantic_0.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.640659
+      },
+      "order": 12,
+      "selection_score": 0.802445,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_8",
+      "id": "owned-semantic_0.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.619048
+      },
+      "order": 13,
+      "selection_score": 0.810238,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "owned-semantic_0.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.655172,
+        "macro_f1": 0.541682
+      },
+      "order": 14,
+      "selection_score": 0.78316,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "owned-semantic_0.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.615948
+      },
+      "order": 15,
+      "selection_score": 0.79201,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_025",
+      "id": "owned-semantic_0.5-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.855495
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.766667
+      },
+      "order": 16,
+      "selection_score": 0.824405,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_1",
+      "id": "owned-semantic_0.5-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.702564
+      },
+      "order": 17,
+      "selection_score": 0.824111,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_4",
+      "id": "owned-semantic_0.5-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.777778
+      },
+      "order": 18,
+      "selection_score": 0.850436,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_05",
+      "id": "owned-semantic_0.5-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.855495
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.641026
+      },
+      "order": 19,
+      "selection_score": 0.780431,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_2",
+      "id": "owned-semantic_0.5-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.862069,
+        "macro_f1": 0.771429
+      },
+      "order": 20,
+      "selection_score": 0.863572,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_8",
+      "id": "owned-semantic_0.5-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.694444
+      },
+      "order": 21,
+      "selection_score": 0.836627,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "owned-semantic_0.5-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.666667
+      },
+      "order": 22,
+      "selection_score": 0.796191,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "owned-semantic_0.5-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.711325
+      },
+      "order": 23,
+      "selection_score": 0.827178,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_025",
+      "id": "owned-semantic_1.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.863187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.862069,
+        "macro_f1": 0.816162
+      },
+      "order": 24,
+      "selection_score": 0.846728,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_1",
+      "id": "owned-semantic_1.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.841873
+      },
+      "order": 25,
+      "selection_score": 0.871084,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_4",
+      "id": "owned-semantic_1.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.920879
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.777778
+      },
+      "order": 26,
+      "selection_score": 0.870794,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_05",
+      "id": "owned-semantic_1.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.863187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.77037
+      },
+      "order": 27,
+      "selection_score": 0.830701,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_2",
+      "id": "owned-semantic_1.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.896552,
+        "macro_f1": 0.896037
+      },
+      "order": 28,
+      "selection_score": 0.890041,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_8",
+      "id": "owned-semantic_1.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.862069,
+        "macro_f1": 0.863636
+      },
+      "order": 29,
+      "selection_score": 0.880487,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "owned-semantic_1.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.863187
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.761111
+      },
+      "order": 30,
+      "selection_score": 0.82746,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "owned-semantic_1.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.789646
+      },
+      "order": 31,
+      "selection_score": 0.852805,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_025",
+      "id": "owned-semantic_2.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.733333
+      },
+      "order": 32,
+      "selection_score": 0.834881,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_1",
+      "id": "owned-semantic_2.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.733333
+      },
+      "order": 33,
+      "selection_score": 0.834881,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_4",
+      "id": "owned-semantic_2.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.923626
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.733333
+      },
+      "order": 34,
+      "selection_score": 0.857023,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_05",
+      "id": "owned-semantic_2.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.794444
+      },
+      "order": 35,
+      "selection_score": 0.840912,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_2",
+      "id": "owned-semantic_2.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.782828
+      },
+      "order": 36,
+      "selection_score": 0.836847,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "lr_8",
+      "id": "owned-semantic_2.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.782828
+      },
+      "order": 37,
+      "selection_score": 0.836847,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "owned-semantic_2.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.733333
+      },
+      "order": 38,
+      "selection_score": 0.833095,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "owned-semantic_2.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "owned",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.754762
+      },
+      "order": 39,
+      "selection_score": 0.827024,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.0
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_010-semantic_None-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.80989
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.684615
+      },
+      "order": 40,
+      "selection_score": 0.766044,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_010-semantic_None-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.824908
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.707692
+      },
+      "order": 41,
+      "selection_score": 0.783882,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_010-semantic_None-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.801832
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.657143
+      },
+      "order": 42,
+      "selection_score": 0.751191,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_010-semantic_None-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.769231,
+        "macro_f1": 0.754945
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.587075
+      },
+      "order": 43,
+      "selection_score": 0.696191,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_010-semantic_None-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.805128
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.597619
+      },
+      "order": 44,
+      "selection_score": 0.7325,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_010-semantic_None-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.836447
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.617949
+      },
+      "order": 45,
+      "selection_score": 0.759973,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_010-semantic_None-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.798535
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.568707
+      },
+      "order": 46,
+      "selection_score": 0.718095,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_010-semantic_None-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.778755
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.60696
+      },
+      "order": 47,
+      "selection_score": 0.718627,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_010-semantic_0.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.886813
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.633455
+      },
+      "order": 48,
+      "selection_score": 0.798138,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_010-semantic_0.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.948718,
+        "macro_f1": 0.93956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.603053
+      },
+      "order": 49,
+      "selection_score": 0.821783,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_010-semantic_0.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.661538
+      },
+      "order": 50,
+      "selection_score": 0.82511,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_010-semantic_0.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.829121
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.628757
+      },
+      "order": 51,
+      "selection_score": 0.758994,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_010-semantic_0.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.67126
+      },
+      "order": 52,
+      "selection_score": 0.813155,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_010-semantic_0.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.9
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.665934
+      },
+      "order": 53,
+      "selection_score": 0.818077,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_010-semantic_0.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.948718,
+        "macro_f1": 0.942308
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.678388
+      },
+      "order": 54,
+      "selection_score": 0.849936,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_010-semantic_0.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.894139
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.685714
+      },
+      "order": 55,
+      "selection_score": 0.82119,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_010-semantic_0.5-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.855495
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.705772
+      },
+      "order": 56,
+      "selection_score": 0.803092,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_010-semantic_0.5-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.700216
+      },
+      "order": 57,
+      "selection_score": 0.82329,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_010-semantic_0.5-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.864835
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.705772
+      },
+      "order": 58,
+      "selection_score": 0.809163,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_010-semantic_0.5-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.856044
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.739105
+      },
+      "order": 59,
+      "selection_score": 0.815115,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_010-semantic_0.5-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.725214
+      },
+      "order": 60,
+      "selection_score": 0.832039,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_010-semantic_0.5-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.725214
+      },
+      "order": 61,
+      "selection_score": 0.832039,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_010-semantic_0.5-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.863919
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.694444
+      },
+      "order": 62,
+      "selection_score": 0.804603,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_010-semantic_0.5-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.866667
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.743651
+      },
+      "order": 63,
+      "selection_score": 0.823611,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_010-semantic_1.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.863187
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.695726
+      },
+      "order": 64,
+      "selection_score": 0.804576,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_010-semantic_1.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.737037
+      },
+      "order": 65,
+      "selection_score": 0.82082,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_010-semantic_1.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.874359
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.795382
+      },
+      "order": 66,
+      "selection_score": 0.846717,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_010-semantic_1.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.842308
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.742593
+      },
+      "order": 67,
+      "selection_score": 0.807408,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_010-semantic_1.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.803263
+      },
+      "order": 68,
+      "selection_score": 0.859356,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_010-semantic_1.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.803263
+      },
+      "order": 69,
+      "selection_score": 0.859356,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_010-semantic_1.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.897253
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.651282
+      },
+      "order": 70,
+      "selection_score": 0.811163,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_010-semantic_1.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.821445
+      },
+      "order": 71,
+      "selection_score": 0.850363,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_010-semantic_2.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.692674
+      },
+      "order": 72,
+      "selection_score": 0.82065,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_010-semantic_2.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.745767
+      },
+      "order": 73,
+      "selection_score": 0.839232,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_010-semantic_2.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.897985
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.745767
+      },
+      "order": 74,
+      "selection_score": 0.844709,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_010-semantic_2.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.690598
+      },
+      "order": 75,
+      "selection_score": 0.804566,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_010-semantic_2.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.862069,
+        "macro_f1": 0.808333
+      },
+      "order": 76,
+      "selection_score": 0.845774,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_010-semantic_2.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.712821
+      },
+      "order": 77,
+      "selection_score": 0.812344,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_010-semantic_2.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.867216
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.671429
+      },
+      "order": 78,
+      "selection_score": 0.798691,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_010-semantic_2.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_010",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.75754
+      },
+      "order": 79,
+      "selection_score": 0.827996,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.1
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_030-semantic_None-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.80989
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.684615
+      },
+      "order": 80,
+      "selection_score": 0.766044,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_030-semantic_None-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.824908
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.684615
+      },
+      "order": 81,
+      "selection_score": 0.775805,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_030-semantic_None-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.801832
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.682984
+      },
+      "order": 82,
+      "selection_score": 0.760235,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_030-semantic_None-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.778571
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.589456
+      },
+      "order": 83,
+      "selection_score": 0.712381,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_030-semantic_None-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.836447
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.633333
+      },
+      "order": 84,
+      "selection_score": 0.765357,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_030-semantic_None-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.836447
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.655172,
+        "macro_f1": 0.594872
+      },
+      "order": 85,
+      "selection_score": 0.751896,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_030-semantic_None-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.794872,
+        "macro_f1": 0.798535
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.568707
+      },
+      "order": 86,
+      "selection_score": 0.718095,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_030-semantic_None-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.820513,
+        "macro_f1": 0.810073
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.689655,
+        "macro_f1": 0.649206
+      },
+      "order": 87,
+      "selection_score": 0.75377,
+      "semantic_weight": null,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_030-semantic_0.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.923077,
+        "macro_f1": 0.913187
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.640293
+      },
+      "order": 88,
+      "selection_score": 0.817674,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_030-semantic_0.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.948718,
+        "macro_f1": 0.93956
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.630403
+      },
+      "order": 89,
+      "selection_score": 0.831355,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_030-semantic_0.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.890293
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.646054
+      },
+      "order": 90,
+      "selection_score": 0.804809,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_030-semantic_0.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.831868
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.686447
+      },
+      "order": 91,
+      "selection_score": 0.780971,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_030-semantic_0.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.894139
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.647985
+      },
+      "order": 92,
+      "selection_score": 0.807985,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_030-semantic_0.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.88042
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.67126
+      },
+      "order": 93,
+      "selection_score": 0.807214,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_030-semantic_0.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.948718,
+        "macro_f1": 0.93956
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.678388
+      },
+      "order": 94,
+      "selection_score": 0.84815,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_030-semantic_0.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.9
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.685714
+      },
+      "order": 95,
+      "selection_score": 0.825,
+      "semantic_weight": 0.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_030-semantic_0.5-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.855495
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.640293
+      },
+      "order": 96,
+      "selection_score": 0.780174,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_030-semantic_0.5-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.887546
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.705772
+      },
+      "order": 97,
+      "selection_score": 0.823925,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_030-semantic_0.5-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.867582
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.681962
+      },
+      "order": 98,
+      "selection_score": 0.802615,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_030-semantic_0.5-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.860073
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.760317
+      },
+      "order": 99,
+      "selection_score": 0.825158,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_030-semantic_0.5-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.7
+      },
+      "order": 100,
+      "selection_score": 0.823214,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_030-semantic_0.5-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.725214
+      },
+      "order": 101,
+      "selection_score": 0.816682,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_030-semantic_0.5-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.846154,
+        "macro_f1": 0.841209
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.719841
+      },
+      "order": 102,
+      "selection_score": 0.79873,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_030-semantic_0.5-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.866667
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.827586,
+        "macro_f1": 0.743651
+      },
+      "order": 103,
+      "selection_score": 0.823611,
+      "semantic_weight": 0.5,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_030-semantic_1.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.695726
+      },
+      "order": 104,
+      "selection_score": 0.806361,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_030-semantic_1.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.874359
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.795382
+      },
+      "order": 105,
+      "selection_score": 0.846717,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_030-semantic_1.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.874359
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.730736
+      },
+      "order": 106,
+      "selection_score": 0.824091,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_030-semantic_1.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.665385
+      },
+      "order": 107,
+      "selection_score": 0.795742,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_030-semantic_1.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.781818
+      },
+      "order": 108,
+      "selection_score": 0.85185,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_030-semantic_1.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.781818
+      },
+      "order": 109,
+      "selection_score": 0.85185,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_030-semantic_1.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.871612
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.697619
+      },
+      "order": 110,
+      "selection_score": 0.810714,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_030-semantic_1.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.803463
+      },
+      "order": 111,
+      "selection_score": 0.844069,
+      "semantic_weight": 1.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_025",
+      "id": "weak_030-semantic_2.0-svm_025",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.88956
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.77037
+      },
+      "order": 112,
+      "selection_score": 0.847843,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_1",
+      "id": "weak_030-semantic_2.0-svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.867216
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.745767
+      },
+      "order": 113,
+      "selection_score": 0.824709,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "svm_4",
+      "id": "weak_030-semantic_2.0-svm_4",
+      "legacy_validation": {
+        "accuracy": 0.897436,
+        "macro_f1": 0.897985
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.793103,
+        "macro_f1": 0.721368
+      },
+      "order": 114,
+      "selection_score": 0.836169,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_05",
+      "id": "weak_030-semantic_2.0-lr_05",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.664103
+      },
+      "order": 115,
+      "selection_score": 0.795293,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_2",
+      "id": "weak_030-semantic_2.0-lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.664103
+      },
+      "order": 116,
+      "selection_score": 0.795293,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "lr_8",
+      "id": "weak_030-semantic_2.0-lr_8",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.724138,
+        "macro_f1": 0.664103
+      },
+      "order": 117,
+      "selection_score": 0.795293,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_svm_1",
+      "id": "weak_030-semantic_2.0-two_stage_svm_1",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.867216
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.692674
+      },
+      "order": 118,
+      "selection_score": 0.806126,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    },
+    {
+      "architecture": "two_stage_lr_2",
+      "id": "weak_030-semantic_2.0-two_stage_lr_2",
+      "legacy_validation": {
+        "accuracy": 0.871795,
+        "macro_f1": 0.865934
+      },
+      "mode": "weak_030",
+      "new_native_validation": {
+        "accuracy": 0.758621,
+        "macro_f1": 0.735606
+      },
+      "order": 119,
+      "selection_score": 0.820319,
+      "semantic_weight": 2.0,
+      "weak_sample_weight": 0.3
+    }
+  ]
+}

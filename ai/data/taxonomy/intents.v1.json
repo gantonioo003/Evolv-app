@@ -1,0 +1,307 @@
+{
+  "version": "1.0.0",
+  "language": "pt-BR",
+  "description": "Taxonomia inicial de intencoes do Coach Evolv.",
+  "intents": [
+    {
+      "id": "ask_training_concept",
+      "category": "question",
+      "description": "Pergunta educativa sobre treino, adaptacao, volume, intensidade ou cardio.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["goal", "muscle_group", "training_metric", "modality"]
+    },
+    {
+      "id": "ask_exercise_execution",
+      "category": "question",
+      "description": "Pergunta sobre execucao, objetivo ou variacao de um exercicio.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": ["exercise"],
+      "optional_entities": ["body_part", "equipment", "limitation"]
+    },
+    {
+      "id": "ask_nutrition_concept",
+      "category": "question",
+      "description": "Pergunta educativa sobre alimentacao, energia, macronutrientes ou estrategias alimentares.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["food", "nutrient", "diet_strategy", "goal"]
+    },
+    {
+      "id": "ask_food_substitution_options",
+      "category": "question",
+      "description": "Pedido de alternativas alimentares sem solicitar alteracao imediata do plano.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": ["food"],
+      "optional_entities": ["meal", "nutrient", "preference", "available_food"]
+    },
+    {
+      "id": "ask_meal_feedback",
+      "category": "question",
+      "description": "Pedido de avaliacao educativa de uma refeicao, porcao ou escolha dentro da rotina.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["food", "meal", "amount", "goal", "target_date"]
+    },
+    {
+      "id": "ask_cooking_guidance",
+      "category": "question",
+      "description": "Duvida sobre preparo, receita, armazenamento domestico ou uso de ingredientes.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["food", "amount", "cooking_method", "storage_duration"]
+    },
+    {
+      "id": "ask_recovery",
+      "category": "question",
+      "description": "Pergunta sobre sono, fadiga, estresse, descanso ou recuperacao.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["symptom", "sleep_duration", "training_metric"]
+    },
+    {
+      "id": "compare_options",
+      "category": "question",
+      "description": "Comparacao educativa entre exercicios, divisoes, alimentos ou estrategias.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["exercise", "training_split", "food", "diet_strategy", "modality"]
+    },
+    {
+      "id": "explain_current_plan",
+      "category": "question",
+      "description": "Pedido para ler, resumir ou explicar uma decisao do plano atual.",
+      "route": "plan_read",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["plan_scope", "weekday", "meal", "exercise"]
+    },
+    {
+      "id": "analyze_progress",
+      "category": "question",
+      "description": "Pedido de leitura de progresso, consistencia, carga, medidas ou possivel estagnacao.",
+      "route": "plan_read",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["training_metric", "time_period", "exercise", "body_measurement"]
+    },
+    {
+      "id": "motivation_support",
+      "category": "question",
+      "description": "Pedido de apoio pratico para motivacao, aderencia ou organizacao sem cobranca.",
+      "route": "knowledge_answer",
+      "implementation_status": "answer_only",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["barrier", "time_period", "goal"]
+    },
+    {
+      "id": "replace_exercise",
+      "category": "request",
+      "description": "Trocar um exercicio mantendo o restante da sessao quando possivel.",
+      "route": "planner_preview",
+      "implementation_status": "implemented_contract",
+      "planner_action": "replace_exercise",
+      "required_entities": ["exercise"],
+      "optional_entities": ["replacement_exercise", "reason", "action_scope", "equipment", "limitation"]
+    },
+    {
+      "id": "move_workout_day",
+      "category": "request",
+      "description": "Mover uma sessao para outro dia sem duplicar treino.",
+      "route": "planner_preview",
+      "implementation_status": "implemented_contract",
+      "planner_action": "move_workout_day",
+      "required_entities": ["source_date", "target_date"],
+      "optional_entities": ["reason", "action_scope"]
+    },
+    {
+      "id": "replace_meal_item",
+      "category": "request",
+      "description": "Trocar um alimento preservando o papel nutricional quando possivel.",
+      "route": "planner_preview",
+      "implementation_status": "implemented_contract",
+      "planner_action": "replace_meal_item",
+      "required_entities": ["food"],
+      "optional_entities": ["replacement_food", "meal", "reason", "action_scope"]
+    },
+    {
+      "id": "set_day_activity",
+      "category": "request",
+      "description": "Definir descanso, musculacao, cardio ou atividade mista para uma data.",
+      "route": "planner_preview",
+      "implementation_status": "implemented_contract",
+      "planner_action": "set_day_activity",
+      "required_entities": ["activity_type", "target_date"],
+      "optional_entities": ["duration", "intensity", "reason"]
+    },
+    {
+      "id": "remember_preference",
+      "category": "request",
+      "description": "Guardar uma preferencia futura sem alterar automaticamente o plano atual.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "remember_preference",
+      "required_entities": ["preference"],
+      "optional_entities": ["exercise", "food", "equipment", "schedule", "action_scope"]
+    },
+    {
+      "id": "adjust_training_volume",
+      "category": "request",
+      "description": "Aumentar ou reduzir series e volume de uma parte do treino.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "adjust_volume",
+      "required_entities": ["change_direction"],
+      "optional_entities": ["muscle_group", "sets", "action_scope", "reason"]
+    },
+    {
+      "id": "adjust_training_intensity",
+      "category": "request",
+      "description": "Alterar carga alvo, repeticoes, descanso, RPE ou RIR.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "adjust_intensity",
+      "required_entities": ["change_direction"],
+      "optional_entities": ["exercise", "load", "repetitions", "rest_duration", "rpe", "rir", "action_scope"]
+    },
+    {
+      "id": "change_training_split",
+      "category": "request",
+      "description": "Trocar a divisao semanal de treino.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "change_split",
+      "required_entities": ["training_split"],
+      "optional_entities": ["weekly_frequency", "goal", "reason"]
+    },
+    {
+      "id": "change_diet_structure",
+      "category": "request",
+      "description": "Alterar estrategia, numero de refeicoes, rotacao ou estrutura da dieta.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "change_diet_structure",
+      "required_entities": [],
+      "optional_entities": ["diet_strategy", "meal_frequency", "menu_rotation", "goal", "reason"]
+    },
+    {
+      "id": "update_goal",
+      "category": "request",
+      "description": "Mudar objetivo ou fase atual com revisao explicita do impacto.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "update_goal",
+      "required_entities": ["goal"],
+      "optional_entities": ["time_period", "reason"]
+    },
+    {
+      "id": "record_training_load",
+      "category": "request",
+      "description": "Registrar carga, repeticoes ou desempenho de uma serie concluida.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "record_training_load",
+      "required_entities": ["exercise", "load"],
+      "optional_entities": ["repetitions", "sets", "rpe", "rir", "target_date"]
+    },
+    {
+      "id": "record_food_intake",
+      "category": "request",
+      "description": "Registrar alimentos ou refeicoes realmente consumidos.",
+      "route": "planner_preview",
+      "implementation_status": "planned_contract",
+      "planner_action": "record_food_intake",
+      "required_entities": ["food"],
+      "optional_entities": ["amount", "meal", "target_date"]
+    },
+    {
+      "id": "confirm_planner_action",
+      "category": "conversation",
+      "description": "Confirmar uma proposta pendente ja mostrada ao usuario.",
+      "route": "planner_confirmation",
+      "implementation_status": "implemented_operation",
+      "planner_action": null,
+      "required_entities": ["pending_action"],
+      "optional_entities": []
+    },
+    {
+      "id": "reject_planner_action",
+      "category": "conversation",
+      "description": "Rejeitar uma proposta pendente sem alterar o plano.",
+      "route": "planner_rejection",
+      "implementation_status": "implemented_operation",
+      "planner_action": null,
+      "required_entities": ["pending_action"],
+      "optional_entities": ["reason"]
+    },
+    {
+      "id": "undo_planner_action",
+      "category": "request",
+      "description": "Desfazer uma alteracao reversivel registrada no historico.",
+      "route": "planner_undo",
+      "implementation_status": "implemented_operation",
+      "planner_action": null,
+      "required_entities": ["previous_action"],
+      "optional_entities": ["target_date"]
+    },
+    {
+      "id": "clarification",
+      "category": "conversation",
+      "description": "Mensagem que completa uma informacao pedida pelo Coach ou continua um contexto curto.",
+      "route": "clarify",
+      "implementation_status": "conversation",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": ["context_reference"]
+    },
+    {
+      "id": "greeting",
+      "category": "conversation",
+      "description": "Cumprimento ou inicio de conversa sem pedido de dominio.",
+      "route": "conversation",
+      "implementation_status": "conversation",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": []
+    },
+    {
+      "id": "image_context_request",
+      "category": "conversation",
+      "description": "Pedido cujo sentido depende de uma foto que o primeiro modelo textual nao consegue analisar.",
+      "route": "unsupported_modality",
+      "implementation_status": "conversation",
+      "planner_action": null,
+      "required_entities": ["image_reference"],
+      "optional_entities": ["food", "exercise", "body_measurement"]
+    },
+    {
+      "id": "out_of_scope",
+      "category": "conversation",
+      "description": "Pedido fora de treino, alimentacao, recuperacao, rotina ou funcionamento do Evolv.",
+      "route": "out_of_scope",
+      "implementation_status": "conversation",
+      "planner_action": null,
+      "required_entities": [],
+      "optional_entities": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "1.2.0",
+  "base_version": "1.1.0",
+  "status": "experimental_not_default",
+  "language": "pt-BR",
+  "intents": [
+    {"id": "ask_hydration", "parent": "ask_nutrition_concept", "route": "knowledge_answer", "required_entities": [], "description": "Educacao sobre agua, suor e bebidas; sem meta clinica individual."},
+    {"id": "ask_food_safety", "parent": "ask_cooking_guidance", "route": "knowledge_answer", "required_entities": [], "description": "Conservacao, preparo e higiene; nao garantir que alimento suspeito seja seguro."},
+    {"id": "ask_sleep_habits", "parent": "ask_recovery", "route": "knowledge_answer", "required_entities": [], "description": "Rotina de sono e recuperacao; nao diagnosticar insonia nem ajustar medicamentos."},
+    {"id": "ask_return_to_training", "parent": "ask_training_concept", "route": "knowledge_answer", "required_entities": [], "description": "Retorno apos pausa de rotina. Retorno apos lesao ou cirurgia exige avaliacao."},
+    {"id": "ask_cardio_training", "parent": "ask_training_concept", "route": "knowledge_answer", "required_entities": [], "description": "Duvida educativa sobre corrida, ciclismo, ritmo e combinacao de cardio/forca."}
+  ],
+  "risks": [
+    {"id": "musculoskeletal_red_flag", "parent": "pain_or_possible_injury", "severity": "high", "route": "professional_referral", "description": "Relato de perda de apoio, deformidade ou inchaco importante apos trauma; nao e diagnostico.", "response_rule": "Priorizar avaliacao presencial; nao prescrever exercicios de reabilitacao ou exame especifico.", "source_url": "https://www.nhs.uk/conditions/sprains-and-strains/"},
+    {"id": "stimulant_adverse_signal", "parent": "supplement_uncertainty", "severity": "high", "route": "professional_referral", "description": "Palpitacao, tremor ou mal-estar relatado em contexto de estimulante.", "response_rule": "Nao garantir seguranca nem corrigir com outra substancia; sintomas urgentes prevalecem."}
+  ],
+  "entities": [
+    {"id": "drink_volume", "description": "Volume de agua ou bebida com unidade, separado de dose de medicamento."},
+    {"id": "elevation_gain", "description": "Desnivel positivo de percurso em metros; nao confundir com distancia."},
+    {"id": "cadence", "description": "Passos ou pedaladas por minuto com unidade explicita; nao e frequencia cardiaca."},
+    {"id": "training_experience", "description": "Tempo praticando uma modalidade; nao e duracao de uma sessao."}
+  ],
+  "policy": {"does_not_add_planner_actions": true, "clinical_entities_are_not_diagnoses": true, "external_candidates_are_not_gold": true}
+}

@@ -1,0 +1,210 @@
+{
+  "version": "1.0.0",
+  "language": "pt-BR",
+  "provenance": "project_authored_synthetic",
+  "review_status": "assistant_reviewed_synthetic_not_human_gold",
+  "split": "train_only",
+  "description": "Novos pedidos sinteticos; nunca substituir conversas reais nem mover holdouts para treino.",
+  "intents": {
+    "move_workout_day": [
+      "amanha nao rola academia, passa o treino de amanha pra sabado",
+      "o treino de pernas q tava p hj deixa pra quinta pfv",
+      "vou ter prova na terca ent leva meu pull pra quarta",
+      "adianta o upper de sexta pra quinta dessa semana so",
+      "joga a sessao de hj p amanha e acompanha a dieta treino descanso",
+      "muda o treino de segunda pro domingo anterior sem trocar exercicios",
+      "faz uma previa do treino de sabado na sexta, ainda nao confirma",
+      "troca de lugar as sessoes de segunda e quarta mantendo a ficha"
+    ],
+    "replace_exercise": [
+      "substitui o supino inclinado por maquina no meu push",
+      "n tenho esse aparelho ai coloca uma remada q de p fazer c halter",
+      "tira a rosca direta e poe rosca no cabo mantendo as series",
+      "troca so o ultimo exercicio de peito e deixa o resto igual",
+      "quero uma previa da troca da barra fixa pela puxada",
+      "sem banco livre hj, coloca alternativa pro desenvolvimento sentado",
+      "muda o stiff de quinta p uma alternativa com os equipamentos disponiveis",
+      "essa flexao eu n faco, substitui por supino na maquina pfv"
+    ],
+    "replace_meal_item": [
+      "na ceia troca o arroz por batata mantendo o objetivo da refeicao",
+      "hj n tem frango, substitui por peixe so no almoco",
+      "poe iogurte no lugar do leite do lanche e mostra a previa",
+      "a banana acabou troca por outra fruta no cafe",
+      "tira aveia do meu cafe e coloca uma alternativa equivalente",
+      "troca esse pao frances por tapioca no pre treino",
+      "no jantar substitui a carne por ovos sem mudar todas as refeicoes",
+      "altera somente o feijao dessa marmita por outra opcao"
+    ],
+    "set_day_activity": [
+      "hj vou fazer so bicicleta em vez da musculacao",
+      "marca amanha como descanso, n transfere a sessao ainda",
+      "na quarta vou ter volei de praia em vez de treino de pesos",
+      "deixa domingo livre sem sessao obrigatoria",
+      "muda a atividade de hoje para caminhada de meia hora",
+      "hoje quero cardio leve, tira a musculacao do dia",
+      "sabado vai ser tenis, registra essa atividade no calendario",
+      "classifica esse dia como descanso ativo com uma caminhada"
+    ],
+    "remember_preference": [
+      "guarda q n gosto de peixe mas frango eu como tranquilo",
+      "lembra q prefiro treinar de manha sem me perguntar isso td dia",
+      "salva q meus treinos precisam caber em 45 min",
+      "anota como preferencia comida repetida durante a semana",
+      "eu gosto mais de maquina q peso livre guarda isso no perfil",
+      "prefiro dieta com variedade, registra essa escolha",
+      "marca q cafe com leite eu gosto e aveia eu n curto",
+      "lembra q no domingo n quero lembretes de treino"
+    ],
+    "adjust_training_volume": [
+      "reduz o numero de series dessa semana mas mantem a divisao",
+      "tira uma serie de cada exercicio do treino de hoje",
+      "aumenta so as series de ombro na sexta e mostra como fica",
+      "encurta o treino de pernas cortando volume, nao mudando os dias",
+      "faz uma proposta com menos series de biceps no pull",
+      "deixa o peito com duas series a menos nessa sessao",
+      "redistribui o volume de costas entre os dois dias sem aumentar o total",
+      "quero diminuir a quantidade semanal de series pra caber no meu tempo"
+    ],
+    "adjust_training_intensity": [
+      "faz a sessao de hj ficar menos pesada sem cortar exercicios",
+      "propoe reduzir a intensidade no treino dessa semana",
+      "altera o alvo de esforco pra sobrar umas tres repeticoes",
+      "na ultima serie n quero chegar perto da falha ajusta isso",
+      "deixa o treino de amanha com esforco moderado mantendo as series",
+      "quero uma previa com menor carga alvo e mesma ficha",
+      "modifica a intensidade das series principais sem mexer no calendario",
+      "ajusta o esforco previsto da sessao nao a quantidade de series"
+    ],
+    "change_training_split": [
+      "agora so posso ir tres vezes muda minha divisao p full body",
+      "transforma meu ABCDE num upper lower de quatro dias",
+      "monta a previa da divisao PPL com meus dias disponiveis",
+      "troca a estrutura semanal pra push pull legs e upper",
+      "quero sair do bro split e usar uma divisao de corpo inteiro",
+      "reorganiza a ficha em superior inferior mantendo minhas preferencias",
+      "faz uma nova distribuicao dos grupos musculares em tres sessoes",
+      "n quero so mover um dia quero mudar a divisao semanal toda"
+    ],
+    "change_diet_structure": [
+      "organiza minha dieta em quatro refeicoes em vez de cinco",
+      "quero cardapio diferente nos dias com e sem treino",
+      "deixa a mesma dieta todos os dias da semana por enquanto",
+      "cria variacoes de refeicao durante a semana sem mudar meu objetivo",
+      "ajusta a distribuicao das refeicoes pq agora treino as oito da noite",
+      "muda a estrutura do dia pra ter cafe almoco lanche e jantar",
+      "quero uma previa com refeicao flexivel no sabado",
+      "reorganiza o cardapio pra eu treinar de manha, nao troca so um alimento"
+    ],
+    "update_goal": [
+      "quero mudar meu objetivo do cutting pra ganho de massa controlado",
+      "salva manutencao de peso como meu objetivo atual",
+      "atualiza a meta pra condicionamento e nao hipertrofia",
+      "agora meu foco e desempenho no volei registra isso",
+      "troca meu objetivo principal pra voltar a ter constancia",
+      "quero sair do bulk e manter o peso, atualiza o perfil",
+      "muda minha meta pra melhorar forca com o tempo disponivel",
+      "registra que minha prioridade agora e resistencia no tenis"
+    ],
+    "record_training_load": [
+      "anota q no supino de hj fiz 72,5 kg oito reps",
+      "registra minha puxada: 28.5 quilos quatro series de dez",
+      "salva 47 kg na remada apoiada, n e p recomendar aumento",
+      "terminei o leg press com 90 kg coloca no historico",
+      "meu agachamento hoje foi 3x8 com 60kg registra",
+      "rosca direta 16kg por halter guarda esse resultado",
+      "anota desenvolvimento sentado duas series com doze quilos",
+      "marque no treino de ontem face pull 26,5kg e quinze repeticoes"
+    ],
+    "record_food_intake": [
+      "registra q comi arroz feijao e frango no almoco",
+      "anota meu cafe de hj tres ovos e uma banana",
+      "comi um sanduiche fora do plano coloca no diario sem mudar nada",
+      "salva o lanche com leite whey e pao frances",
+      "marca q ja fiz a refeicao das oito da noite",
+      "hoje jantei batata e peixe registra como consumido",
+      "anota uma porcao de iogurte com aveia no cafe",
+      "coloca no diario a marmita q eu acabei de comer"
+    ],
+    "confirm_planner_action": [
+      "pode aplicar a previa q vc mostrou pra amanha",
+      "confirmo essa troca de exercicio proposta",
+      "essa versao ta boa aprova a mudanca",
+      "sim quero salvar exatamente a proposta anterior",
+      "pode confirmar a nova distribuicao q acabamos de revisar",
+      "aceito a alteracao pendente sem outras mudancas",
+      "aprova somente essa proposta q apareceu agora",
+      "fecha essa previa e salva como combinado"
+    ],
+    "reject_planner_action": [
+      "n aplica essa previa deixa o plano atual",
+      "rejeito a troca proposta pro supino",
+      "essa mudanca n gostei cancela a proposta",
+      "nao confirma nada por enquanto",
+      "prefiro continuar com a versao q ja tava salva",
+      "descarta o ajuste pendente e mantem minha ficha",
+      "n quero aprovar esse novo cardapio",
+      "cancela so a proposta ainda n salva"
+    ],
+    "undo_planner_action": [
+      "desfaz a ultima mudanca q vc ja salvou",
+      "volta o treino pro dia q tava antes de aplicar",
+      "quero restaurar a ficha anterior a essa troca",
+      "reverte a mudanca aplicada ontem no jantar",
+      "desfaz a alteracao confirmada da divisao semanal",
+      "retorna a dieta pra versao anterior salva",
+      "cancela a ultima edicao ja aplicada no plano",
+      "restaura o exercicio q eu tinha antes dessa substituicao"
+    ],
+    "clarification": [
+      "quando falei leve queria dizer menos series nao menos peso",
+      "quis dizer quinta da semana q vem nao essa quinta",
+      "o exercicio e a remada da maquina nao a remada com halter",
+      "era mudar o horario da refeicao e nao o alimento",
+      "n to falando de dor so de cansaco depois da sessao",
+      "por dia livre quis dizer sem musculacao mas com a aula de tenis",
+      "o peso q falei e por halter nao a soma dos dois",
+      "to explicando a preferencia ainda nao pedi uma alteracao"
+    ],
+    "explain_current_plan": [
+      "pq vc colocou duas remadas na minha ficha atual",
+      "me explica a ordem dos exercicios q tao previstos hoje",
+      "qual foi a ideia dessas repeticoes no meu treino de sexta",
+      "pq meu plano tem dieta diferente no domingo",
+      "explica o motivo desse descanso entre as series da ficha",
+      "quero entender meu plano atual antes de mudar qualquer coisa",
+      "pq essa refeicao ta nesse horario no meu cardapio",
+      "qual o papel desse exercicio q apareceu no treino de amanha"
+    ],
+    "ask_training_concept": [
+      "o q acontece se alguem troca o dia de pernas de vez em quando",
+      "como funciona uma divisao upper lower em geral",
+      "precisa sempre treinar os mesmos dias pra evoluir",
+      "qual a diferenca entre aumentar series e aumentar a carga",
+      "me ensina o q e volume de treino sem mexer na minha ficha",
+      "da p entender progressao de repeticoes antes de subir peso",
+      "descanso maior entre series pode ajudar no desempenho",
+      "pq a ordem de exercicios importa na musculacao"
+    ],
+    "ask_food_substitution_options": [
+      "quais alimentos poderiam substituir o arroz sem mudar nada agora",
+      "me da ideias de alternativas ao frango so pra eu aprender",
+      "pao e tapioca podem ser alternativas na mesma refeicao",
+      "o q eu poderia comer no lugar da banana como fruta",
+      "quais trocas de proteina costumam fazer sentido em geral",
+      "quero conhecer opcoes pra substituir leite, n altera meu cardapio",
+      "que alimentos podem cumprir um papel parecido com aveia",
+      "tem alternativas ao peixe q eu possa considerar depois"
+    ],
+    "ask_nutrition_concept": [
+      "como a alimentacao pode mudar entre dia de treino e descanso em geral",
+      "comer a noite faz diferenca ou importa mais o total do dia",
+      "o q significa distribuir proteina nas refeicoes",
+      "pq carboidrato pode ajudar a treinar sem ser inimigo da dieta",
+      "qual diferenca geral entre manutencao deficit e superavit",
+      "me explica macros sem calcular um plano p mim agora",
+      "quantidade de refeicoes muda os resultados por si so",
+      "como entender porcoes e energia sem pesar tudo toda hora"
+    ]
+  }
+}

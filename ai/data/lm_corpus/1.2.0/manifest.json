@@ -1,0 +1,46 @@
+{
+  "actual_token_count": null,
+  "added_rows": 204,
+  "added_sources": {
+    "evolv_coach_boundary_qa": 6,
+    "evolv_context_authored": 198
+  },
+  "base_version": "1.1.0",
+  "excluded_previous_train_rows": 48,
+  "external_dataset_questions_added": 0,
+  "files": {
+    "excluded_documents.json": {
+      "bytes": 6511,
+      "sha256": "ef500028fd2c4fbaef8cd000dffafbf2a27eee35961264137a8ae8f26cb6d61d"
+    },
+    "test.jsonl": {
+      "bytes": 64971,
+      "sha256": "0930ef0c45ad32689e334f6cffb0813acd8afd9a32a095d659117035ae23c943"
+    },
+    "test.txt": {
+      "bytes": 50409,
+      "sha256": "fe6dc57e04676492228fe6af4ee4807e02118639305f1e3360a1b9b49ed6f444"
+    },
+    "train.jsonl": {
+      "bytes": 13001847,
+      "sha256": "e23db46d942b0b8d400c229a63f7ab21f36c8599e0c4f6bb5df7b38ba1f1608b"
+    },
+    "train.txt": {
+      "bytes": 10645864,
+      "sha256": "f84cb6260b858be69aa4f5441a02fd8b1a70fb5f5c72b9266544abd45a8aba0c"
+    },
+    "validation.jsonl": {
+      "bytes": 98397,
+      "sha256": "a0a22166b093782296332a5b7f5630be5bf43d5c40c66aef378955612b075b31"
+    },
+    "validation.txt": {
+      "bytes": 77819,
+      "sha256": "eff5761d24644a4504705769608dbf4bb059c33f75449191c1f39d5701ab465b"
+    }
+  },
+  "forum_answers_added": 0,
+  "heldout_bytes_preserved": true,
+  "model_or_tokenizer_trained": false,
+  "rows": 6711,
+  "version": "1.2.0"
+}

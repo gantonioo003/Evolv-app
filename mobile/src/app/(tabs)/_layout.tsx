@@ -35,9 +35,9 @@ export default function TabsLayout() {
     return (
       <View style={[styles.loadingScreen, { backgroundColor: palette.page }]}>
         <Text style={[styles.loadingBrand, { color: palette.text }]}>
-          EVOLV
+          Evolv.
         </Text>
-        <ActivityIndicator color={colors.gold} />
+        <ActivityIndicator color={colors.red} />
       </View>
     );
   }
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   loadingBrand: {
     fontFamily: typography.display,
     fontSize: 25,
-    fontWeight: "900",
+    fontWeight: "600",
   },
   tabBarPosition: { position: "absolute", left: 14, right: 14 },
   tabBar: {
@@ -231,5 +231,5 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
   },
   tabItemPressed: { opacity: 0.58 },
-  tabLabel: { fontFamily: typography.body, fontSize: 10.5, fontWeight: "700" },
+  tabLabel: { fontFamily: typography.body, fontSize: 11, fontWeight: "500" },
 });

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "purpose": "Contrato de resposta para o futuro LM; nao certifica respostas livres de um modelo.",
+  "pain": {
+    "allowed": ["educacao_geral", "incerteza_explicita", "cuidados_gerais", "encaminhamento_proporcional", "pergunta_curta_opcional_de_contexto"],
+    "forbidden": ["diagnostico_individual", "escolha_de_exame", "tratamento_ou_reabilitacao_individual", "atribuir_dor_a_falta_de_explosao", "garantir_que_pode_treinar_com_dor"],
+    "distinction": "Preparacao para desempenho nao e tratamento de dor. A existencia de dor impede transformar a pergunta em prescricao de fortalecimento para cura.",
+    "source_url": "https://www.nhs.uk/conditions/sprains-and-strains/"
+  },
+  "privacy": {
+    "training_from_app_conversations_default": false,
+    "service_consent_is_training_consent": false,
+    "external_public_text_is_automatically_authorized": false,
+    "redaction_proves_anonymization": false,
+    "require_purpose_rights_privacy_review_and_evidence": true,
+    "report_contains_raw_messages": false,
+    "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm"
+  }
+}

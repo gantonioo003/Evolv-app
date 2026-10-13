@@ -1,0 +1,14 @@
+expected\predicted,eating_disorder_signal,emergency_symptom,extreme_diet_or_dehydration,food_allergy_or_reaction,food_safety_uncertainty,medication_or_hormone,mental_health_crisis,none,pain_or_possible_injury,supplement_uncertainty,under_recovery_signal,unsafe_training_request,vulnerable_or_clinical_context
+eating_disorder_signal,0,0,0,0,0,0,0,0,0,0,0,0,1
+emergency_symptom,0,1,0,0,0,0,0,0,0,0,0,0,0
+extreme_diet_or_dehydration,0,0,1,0,0,0,0,0,0,0,0,0,0
+food_allergy_or_reaction,0,0,0,0,0,0,1,0,0,0,0,0,0
+food_safety_uncertainty,0,0,0,0,1,0,0,0,0,0,0,0,0
+medication_or_hormone,0,0,0,0,0,0,0,0,0,0,0,0,1
+mental_health_crisis,0,0,0,0,0,0,1,0,0,0,0,0,0
+none,0,0,0,0,0,0,0,1,0,0,0,0,0
+pain_or_possible_injury,0,1,0,0,0,0,0,0,0,0,0,0,0
+supplement_uncertainty,0,0,0,0,0,0,0,0,0,1,0,0,0
+under_recovery_signal,0,1,0,0,0,0,0,0,0,0,0,0,0
+unsafe_training_request,0,0,0,0,0,0,0,0,0,0,0,1,0
+vulnerable_or_clinical_context,0,0,0,0,0,0,0,0,0,1,0,0,0

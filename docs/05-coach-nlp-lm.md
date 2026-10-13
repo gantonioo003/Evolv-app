@@ -6,6 +6,48 @@ O Coach Evolv será desenvolvido com ferramentas gratuitas e executado como um s
 
 A solução será menor e mais limitada do que um assistente comercial. Essa limitação é aceita porque o objetivo é construir, entender, medir e apresentar uma arquitetura real de NLP e linguagem no portfólio.
 
+## Status de implementacao
+
+- Fase 7.01.1 concluida: hierarquia de intencao, topicos, entidades, riscos,
+  capacidades, pesquisa de cobertura e guia de anotacao;
+- Fase 7.01.2 concluida: dataset com procedencia, informalidade, riscos e
+  conjunto separado de ambiguidades;
+- Fase 7.01.3 concluida: 27 fontes aprovadas, 67 trechos curtos, politica de
+  selecao, expiracao e cobertura das doze rotas de risco;
+- Fase 7.01.4 concluida: dataset 1.2.0 congelado, hashes, registro fixo de
+  assignments e auditoria de duplicatas e vazamentos;
+- Fase 7.02.1 concluida: baselines TF-IDF + regressao logistica para 30
+  intencoes e 13 riscos, com treino isolado, selecao na validacao e teste ainda
+  fechado;
+- Fase 7.02.2 concluida: extrator hibrido e versionado de datas, exercicios,
+  alimentos, quantidades, objetivos, preferencias e limitacoes;
+- Fase 7.02.3 concluida: teste congelado, precision, recall, macro F1,
+  matrizes de confusao e erros separados de intencao, risco e entidades;
+- Fase 7.02.4 concluida: limites escolhidos em validacao, abstencao,
+  esclarecimento, topicos, prioridade de risco e proposta estruturada sem
+  escrita direta no Planner;
+- expansao concluida: dataset `1.3.0` com 1.277 registros regulares e baseline
+  `1.1.0` avaliado (macro F1: intencao 0,713; risco 0,852);
+- corpus TinyLM `1.0.0` preparado: 6.381 trechos e aproximadamente 2,24 milhoes
+  de tokens estimados, com fontes e divisao por artigo/conversa;
+- proxima entrega: treinar o tokenizador e implementar o Transformer pequeno.
+
+O holdout humano de dez perguntas teve apenas 30% de accuracy em ambas as
+tarefas. Ainda precisamos de dados humanos variados para generalizacao. O
+baseline novo permanece experimental; a pipeline ativa conserva sua politica
+de confianca anterior ate uma recalibracao em dados de desenvolvimento.
+
+Os detalhes da implementacao estao em `docs/13-coach-data-and-knowledge.md`.
+O baseline esta documentado em `docs/14-coach-nlp-baseline.md`.
+O extrator de entidades esta documentado em
+`docs/15-coach-entity-extraction.md`.
+O protocolo e os resultados de avaliacao estao em
+`docs/16-coach-nlp-evaluation.md`.
+A pipeline final da 7.02 esta documentada em
+`docs/17-coach-nlp-pipeline.md`, e a pesquisa para o dataset seguinte em
+`docs/18-coach-dataset-expansion-research.md`.
+Dados ampliados e corpus: `docs/19-coach-dataset-1-3-and-tinylm-corpus.md`.
+
 ## Objetivo
 
 Permitir que o Coach:
@@ -73,7 +115,15 @@ Antes do Transformer, será criado um modelo com TF-IDF e regressão logística.
 
 Conteúdo revisado sobre treino, alimentação, recuperação, rotina e funcionamento do Evolv. A primeira busca poderá usar BM25 ou TF-IDF.
 
-Cada trecho deve registrar fonte, tema, versão e data de revisão. O Coach deve preferir responder com conteúdo recuperado e informar quando a base não cobre a dúvida.
+Cada trecho registra dominio, topicos da taxonomia, fontes, nivel de evidencia,
+confianca, riscos, modo de resposta, limites, versao e prazo de revisao. O Coach
+deve preferir responder com conteudo recuperado, citar a origem tecnica e
+informar quando a base nao cobre a duvida.
+
+A versao 1.1 cobre treino, alimentacao, recuperacao e seguranca. Fontes tecnicas
+vem de autoridades publicas, diretrizes, consensos e posicionamentos; contratos
+internos sustentam apenas comportamento do produto. Forum, influenciador, blog
+comercial e texto de outro modelo nao sustentam afirmacao de saude.
 
 ### 4. LM com Transformer
 

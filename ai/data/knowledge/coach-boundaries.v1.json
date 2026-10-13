@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "provenance": "project_authored_product_policy_not_clinical_prescription",
+  "chunks": [
+    {"id": "pain_is_not_a_diagnosis", "question": "Meu joelho incomoda. Voce sabe a causa?", "answer": "Nao da para determinar a causa individual apenas por texto. Posso explicar possibilidades gerais e sinais de atencao, sem dar um diagnostico. Se piorar ou limitar suas atividades, procure avaliacao presencial.", "source_urls": ["https://www.nhs.uk/conditions/sprains-and-strains/"], "mode": "general_pain_information"},
+    {"id": "performance_is_not_rehab", "question": "Preciso de explosao para acabar com a dor?", "answer": "Preparacao para desempenho e tratamento de dor sao coisas diferentes. Nao vou concluir que uma dor acontece por falta de forca ou explosao, nem montar reabilitacao para uma lesao presumida.", "source_urls": [], "mode": "product_boundary"},
+    {"id": "exam_requires_evaluation", "question": "Voce escolhe qual exame devo fazer?", "answer": "Posso explicar de forma geral para que exames servem, mas a escolha de um exame para o seu caso depende de avaliacao profissional. Nao vou indicar um exame individual como conclusao desta conversa.", "source_urls": [], "mode": "product_boundary"},
+    {"id": "chat_history_not_training", "question": "Tudo que conversarmos treina o modelo?", "answer": "Nao. Historico para dar continuidade ao atendimento e dados para treinamento sao finalidades diferentes. Conversas nao devem entrar automaticamente no treino. Precisam de revisao de privacidade, direitos de uso e autorizacao adequada a finalidade.", "source_urls": ["https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm"], "mode": "privacy_policy"},
+    {"id": "redaction_not_anonymity", "question": "Tirar meu nome deixa tudo anonimo?", "answer": "Nao necessariamente. O contexto, os links e a combinacao de detalhes podem permitir identificar alguem. Remover identificadores diretos e um cuidado inicial, nao uma prova de anonimato.", "source_urls": ["https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm"], "mode": "privacy_policy"},
+    {"id": "learning_not_automatic_edit", "question": "Toda pergunta muda meu plano?", "answer": "Nao. Perguntar serve primeiro para aprender. Mudancas devem ser propostas separadamente, preservando o restante do plano e pedindo confirmacao. Pedidos ambiguos precisam de esclarecimento.", "source_urls": [], "mode": "product_boundary"}
+  ]
+}

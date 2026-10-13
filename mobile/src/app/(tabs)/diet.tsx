@@ -153,7 +153,7 @@ export default function DietScreen() {
   return (
     <AppScreen>
       <PageHeader
-        eyebrow="Plano simples"
+        eyebrow="Alimentação"
         title="Dieta"
         actionIcon={CalendarRange}
         actionLabel="Gerenciar planos alimentares"
@@ -163,8 +163,13 @@ export default function DietScreen() {
       <CinematicHero
         source={pickWeeklyImage(dietImages, imagePreferences, "diet", 0)}
         eyebrow="Plano de hoje"
-        title={"Comer bem.\nSeguir firme."}
-        description="Refeições fáceis, troca rápida e metas que você consegue entender."
+        title={dietPlan?.name ?? "Seu plano alimentar"}
+        description={
+          dietPlan
+            ? `${visibleMeals.length} refeições para hoje. Uma de cada vez.`
+            : "Sem plano ativo para hoje."
+        }
+        height={220}
       />
 
       <View style={styles.nutritionFacts}>
@@ -520,13 +525,13 @@ const createStyles = (palette: AppThemePalette) =>
     },
     nutritionFact: { flex: 1, alignItems: "center" },
     nutritionDivider: { width: 1, height: 34, backgroundColor: palette.border },
-    nutritionValue: { color: palette.text, fontSize: 20, fontWeight: "900" },
+    nutritionValue: { color: palette.text, fontSize: 20, fontWeight: "600" },
     nutritionLabel: {
       marginTop: 2,
       color: palette.faint,
       fontSize: 9.5,
-      fontWeight: "800",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     balancePanel: {
       minHeight: 178,
@@ -545,19 +550,19 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
     },
-    dialValue: { color: palette.text, fontSize: 27, fontWeight: "900" },
+    dialValue: { color: palette.text, fontSize: 27, fontWeight: "600" },
     dialLabel: {
       marginTop: 1,
       color: palette.faint,
       fontSize: 9.5,
-      fontWeight: "800",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     dialMeta: {
       marginTop: 5,
       color: colors.red,
       fontSize: 10,
-      fontWeight: "900",
+      fontWeight: "600",
     },
     balanceSummary: { flex: 1, alignItems: "flex-start" },
     balanceIcon: {
@@ -569,7 +574,7 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
       backgroundColor: palette.iconSurface,
     },
-    balanceTitle: { color: palette.text, fontSize: 16, fontWeight: "900" },
+    balanceTitle: { color: palette.text, fontSize: 16, fontWeight: "600" },
     balanceDescription: {
       marginTop: 5,
       marginBottom: 10,
@@ -585,7 +590,7 @@ const createStyles = (palette: AppThemePalette) =>
     macroList: { gap: 14 },
     macroRow: { gap: 7 },
     macroLabels: { flexDirection: "row", justifyContent: "space-between" },
-    macroName: { color: palette.text, fontSize: 12, fontWeight: "800" },
+    macroName: { color: palette.text, fontSize: 12, fontWeight: "600" },
     macroValue: { color: palette.faint, fontSize: 11, fontWeight: "700" },
     mealNumber: {
       width: 32,
@@ -596,7 +601,7 @@ const createStyles = (palette: AppThemePalette) =>
       backgroundColor: palette.iconSurface,
     },
     mealNumberRegistered: { backgroundColor: colors.green },
-    mealNumberText: { color: palette.text, fontSize: 11, fontWeight: "900" },
+    mealNumberText: { color: palette.text, fontSize: 11, fontWeight: "600" },
     mealNumberTextRegistered: { color: colors.text },
     calorieButton: {
       minWidth: 72,
@@ -612,7 +617,7 @@ const createStyles = (palette: AppThemePalette) =>
       borderColor: colors.green,
       backgroundColor: palette.successSoft,
     },
-    calorieText: { color: palette.faint, fontSize: 10, fontWeight: "800" },
+    calorieText: { color: palette.faint, fontSize: 10, fontWeight: "600" },
     calorieTextRegistered: { color: colors.green },
     editorialGrid: { gap: spacing.sm },
     editorialAction: {
@@ -638,17 +643,17 @@ const createStyles = (palette: AppThemePalette) =>
     },
     editorialCopy: { zIndex: 2, padding: spacing.md },
     editorialEyebrow: {
-      color: colors.gold,
+      color: colors.text,
       fontSize: 9,
-      fontWeight: "900",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     editorialTitle: {
       marginTop: 3,
       color: colors.text,
       fontSize: 14,
       lineHeight: 17,
-      fontWeight: "900",
+      fontWeight: "600",
     },
     coachAction: {
       minHeight: 72,
@@ -660,7 +665,7 @@ const createStyles = (palette: AppThemePalette) =>
       padding: spacing.lg,
     },
     coachActionText: { flex: 1 },
-    coachActionTitle: { color: colors.text, fontSize: 14, fontWeight: "900" },
+    coachActionTitle: { color: colors.text, fontSize: 14, fontWeight: "600" },
     coachActionDescription: { marginTop: 3, color: "#EBC7C2", fontSize: 12 },
     pressed: { opacity: 0.65 },
     disabled: { opacity: 0.45 },

@@ -1,0 +1,435 @@
+{
+  "challenge_used_for_threshold_selection": false,
+  "evaluated_on": "2026-10-08",
+  "intent_gate": {
+    "abstained": 30,
+    "accepted": 0,
+    "correct_accepted": 0,
+    "coverage": 0.0,
+    "rows": 30,
+    "rows_detail": [
+      {
+        "accepted": false,
+        "confidence": 0.100129,
+        "correct": false,
+        "expected": "adjust_training_intensity",
+        "id": "intent_adjust_training_intensity_7e67524d7530",
+        "margin": 0.051865,
+        "predicted": "record_training_load"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.070503,
+        "correct": false,
+        "expected": "adjust_training_volume",
+        "id": "intent_adjust_training_volume_eea4e94cd3be",
+        "margin": 0.006836,
+        "predicted": "adjust_training_intensity"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.069602,
+        "correct": true,
+        "expected": "analyze_progress",
+        "id": "intent_analyze_progress_c29aaab0edc1",
+        "margin": 0.02244,
+        "predicted": "analyze_progress"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.069273,
+        "correct": true,
+        "expected": "ask_cooking_guidance",
+        "id": "intent_ask_cooking_guidance_419b93376ea3",
+        "margin": 0.017542,
+        "predicted": "ask_cooking_guidance"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.047553,
+        "correct": false,
+        "expected": "ask_exercise_execution",
+        "id": "intent_ask_exercise_execution_eeecfb9af262",
+        "margin": 0.00408,
+        "predicted": "ask_training_concept"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.091949,
+        "correct": false,
+        "expected": "ask_food_substitution_options",
+        "id": "intent_ask_food_substitution_options_96833595b2af",
+        "margin": 0.03686,
+        "predicted": "remember_preference"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.047722,
+        "correct": false,
+        "expected": "ask_meal_feedback",
+        "id": "intent_ask_meal_feedback_ea102b05e808",
+        "margin": 0.004165,
+        "predicted": "ask_recovery"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.058301,
+        "correct": false,
+        "expected": "ask_nutrition_concept",
+        "id": "intent_ask_nutrition_concept_ded22821e53e",
+        "margin": 0.007642,
+        "predicted": "explain_current_plan"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.070282,
+        "correct": false,
+        "expected": "ask_recovery",
+        "id": "intent_ask_recovery_c7d603345f66",
+        "margin": 0.012502,
+        "predicted": "analyze_progress"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.046144,
+        "correct": true,
+        "expected": "ask_training_concept",
+        "id": "intent_ask_training_concept_e0478d5da6a4",
+        "margin": 0.003869,
+        "predicted": "ask_training_concept"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.13735,
+        "correct": false,
+        "expected": "change_diet_structure",
+        "id": "intent_change_diet_structure_d0bfe5b359bb",
+        "margin": 0.09208,
+        "predicted": "ask_meal_feedback"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.079422,
+        "correct": true,
+        "expected": "change_training_split",
+        "id": "intent_change_training_split_c7ddbd93ac60",
+        "margin": 0.036046,
+        "predicted": "change_training_split"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.050862,
+        "correct": false,
+        "expected": "clarification",
+        "id": "intent_clarification_844709a4f6d0",
+        "margin": 0.001803,
+        "predicted": "confirm_planner_action"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.08475,
+        "correct": false,
+        "expected": "compare_options",
+        "id": "intent_compare_options_de6c424c9608",
+        "margin": 0.043776,
+        "predicted": "change_training_split"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.05831,
+        "correct": false,
+        "expected": "confirm_planner_action",
+        "id": "intent_confirm_planner_action_bf549c62659d",
+        "margin": 0.006799,
+        "predicted": "replace_meal_item"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.054339,
+        "correct": false,
+        "expected": "explain_current_plan",
+        "id": "intent_explain_current_plan_d87d626199c4",
+        "margin": 0.000728,
+        "predicted": "clarification"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.061832,
+        "correct": true,
+        "expected": "greeting",
+        "id": "intent_greeting_d29ce50e95a2",
+        "margin": 0.014547,
+        "predicted": "greeting"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.054828,
+        "correct": true,
+        "expected": "image_context_request",
+        "id": "intent_image_context_request_fe1aec5170cb",
+        "margin": 0.002632,
+        "predicted": "image_context_request"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.049795,
+        "correct": false,
+        "expected": "motivation_support",
+        "id": "intent_motivation_support_dcf1c5135984",
+        "margin": 0.005713,
+        "predicted": "move_workout_day"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.053666,
+        "correct": true,
+        "expected": "move_workout_day",
+        "id": "intent_move_workout_day_c6c1ba0f3bc5",
+        "margin": 0.003414,
+        "predicted": "move_workout_day"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.048451,
+        "correct": false,
+        "expected": "out_of_scope",
+        "id": "intent_out_of_scope_cd77381d4e6c",
+        "margin": 0.004575,
+        "predicted": "adjust_training_intensity"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.064182,
+        "correct": true,
+        "expected": "record_food_intake",
+        "id": "intent_record_food_intake_f684446efa12",
+        "margin": 0.013575,
+        "predicted": "record_food_intake"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.059243,
+        "correct": false,
+        "expected": "record_training_load",
+        "id": "intent_record_training_load_cff2fdbedbb2",
+        "margin": 0.00067,
+        "predicted": "record_food_intake"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.080933,
+        "correct": false,
+        "expected": "reject_planner_action",
+        "id": "intent_reject_planner_action_a61c9dc8ddb4",
+        "margin": 0.015145,
+        "predicted": "replace_exercise"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.047679,
+        "correct": true,
+        "expected": "remember_preference",
+        "id": "intent_remember_preference_99999b59d543",
+        "margin": 0.000655,
+        "predicted": "remember_preference"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.06398,
+        "correct": false,
+        "expected": "replace_exercise",
+        "id": "intent_replace_exercise_a9a810ddda49",
+        "margin": 0.009835,
+        "predicted": "record_training_load"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.058365,
+        "correct": false,
+        "expected": "replace_meal_item",
+        "id": "intent_replace_meal_item_d944268c1b2c",
+        "margin": 0.000837,
+        "predicted": "replace_exercise"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.056899,
+        "correct": true,
+        "expected": "set_day_activity",
+        "id": "intent_set_day_activity_b591bf668089",
+        "margin": 0.015095,
+        "predicted": "set_day_activity"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.0832,
+        "correct": true,
+        "expected": "undo_planner_action",
+        "id": "intent_undo_planner_action_7bd48290c9c4",
+        "margin": 0.041316,
+        "predicted": "undo_planner_action"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.04723,
+        "correct": true,
+        "expected": "update_goal",
+        "id": "intent_update_goal_845b25d8d604",
+        "margin": 0.000922,
+        "predicted": "update_goal"
+      }
+    ],
+    "selective_accuracy": null,
+    "split": "validation"
+  },
+  "interpretation": {
+    "intent": "The baseline cannot reach the conservative gate on validation; the pipeline abstains instead of pretending confidence.",
+    "risk": "Accepted risk labels are safety overrides; low-confidence risk candidates request clarification."
+  },
+  "pipeline_version": "1.0.0",
+  "risk_gate": {
+    "abstained": 7,
+    "accepted": 6,
+    "correct_accepted": 6,
+    "coverage": 0.461538,
+    "escalated": 6,
+    "false_escalations": 0,
+    "rows": 13,
+    "rows_detail": [
+      {
+        "accepted": true,
+        "confidence": 0.198329,
+        "correct": true,
+        "decision": "escalate",
+        "expected": "eating_disorder_signal",
+        "id": "risk_eating_disorder_signal_f3fd659f7c4a",
+        "margin": 0.110523,
+        "predicted": "eating_disorder_signal"
+      },
+      {
+        "accepted": true,
+        "confidence": 0.134625,
+        "correct": true,
+        "decision": "escalate",
+        "expected": "emergency_symptom",
+        "id": "risk_emergency_symptom_bf806389d031",
+        "margin": 0.036385,
+        "predicted": "emergency_symptom"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.149365,
+        "correct": false,
+        "decision": "abstain",
+        "expected": "extreme_diet_or_dehydration",
+        "id": "risk_extreme_diet_or_dehydration_ec2efea5dbf2",
+        "margin": 0.021489,
+        "predicted": "unsafe_training_request"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.100856,
+        "correct": false,
+        "decision": "abstain",
+        "expected": "food_allergy_or_reaction",
+        "id": "risk_food_allergy_or_reaction_9a303dcbef91",
+        "margin": 0.000926,
+        "predicted": "food_safety_uncertainty"
+      },
+      {
+        "accepted": true,
+        "confidence": 0.15728,
+        "correct": true,
+        "decision": "escalate",
+        "expected": "food_safety_uncertainty",
+        "id": "risk_food_safety_uncertainty_a51cc4d04b3b",
+        "margin": 0.061489,
+        "predicted": "food_safety_uncertainty"
+      },
+      {
+        "accepted": true,
+        "confidence": 0.13254,
+        "correct": true,
+        "decision": "escalate",
+        "expected": "medication_or_hormone",
+        "id": "risk_medication_or_hormone_ee5f142ebd7f",
+        "margin": 0.049629,
+        "predicted": "medication_or_hormone"
+      },
+      {
+        "accepted": true,
+        "confidence": 0.175389,
+        "correct": true,
+        "decision": "escalate",
+        "expected": "mental_health_crisis",
+        "id": "risk_mental_health_crisis_c1fb1d9d82da",
+        "margin": 0.088587,
+        "predicted": "mental_health_crisis"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.105924,
+        "correct": false,
+        "decision": "abstain",
+        "expected": "none",
+        "id": "risk_none_88fd3895e078",
+        "margin": 0.012514,
+        "predicted": "emergency_symptom"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.115906,
+        "correct": true,
+        "decision": "abstain",
+        "expected": "pain_or_possible_injury",
+        "id": "risk_pain_or_possible_injury_f1af3145b6c2",
+        "margin": 0.026362,
+        "predicted": "pain_or_possible_injury"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.110851,
+        "correct": true,
+        "decision": "abstain",
+        "expected": "supplement_uncertainty",
+        "id": "risk_supplement_uncertainty_97ec7b65e05b",
+        "margin": 0.010148,
+        "predicted": "supplement_uncertainty"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.092722,
+        "correct": false,
+        "decision": "abstain",
+        "expected": "under_recovery_signal",
+        "id": "risk_under_recovery_signal_a131c7f97d29",
+        "margin": 0.004671,
+        "predicted": "unsafe_training_request"
+      },
+      {
+        "accepted": false,
+        "confidence": 0.092005,
+        "correct": false,
+        "decision": "abstain",
+        "expected": "unsafe_training_request",
+        "id": "risk_unsafe_training_request_9867dab45555",
+        "margin": 0.00424,
+        "predicted": "eating_disorder_signal"
+      },
+      {
+        "accepted": true,
+        "confidence": 0.157972,
+        "correct": true,
+        "decision": "escalate",
+        "expected": "vulnerable_or_clinical_context",
+        "id": "risk_vulnerable_or_clinical_context_de64d9c22acf",
+        "margin": 0.052141,
+        "predicted": "vulnerable_or_clinical_context"
+      }
+    ],
+    "selective_accuracy": 1.0,
+    "split": "validation"
+  },
+  "selection_data": "validation only",
+  "test_used_for_threshold_selection": false
+}

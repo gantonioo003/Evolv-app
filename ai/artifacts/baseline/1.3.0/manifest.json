@@ -1,0 +1,141 @@
+{
+  "artifact_version": "1.3.0",
+  "dataset_version": "1.5.0",
+  "default_changed": false,
+  "dependencies": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "python": "3.14.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "model_artifacts": {
+    "intent_classification": {
+      "file": "intent_classifier.joblib",
+      "sha256": "068f83c12984fea290af0898990592539837dcea8c5330220a55e5f55e193e7f"
+    },
+    "risk_classification": {
+      "file": "risk_classifier.joblib",
+      "sha256": "9159a51cdd23e0f89c24b0a4badfb7da4ef7d45c73931ba68cfbc4b0b52c2a9e"
+    }
+  },
+  "packaging_note": "Versioned current pipeline separately; fixed priority preservation. No model weights, hyperparameters or test/metric bytes changed.",
+  "prepared_data": {
+    "intent_classification": {
+      "test": 40,
+      "train": 950,
+      "train_labels": {
+        "adjust_training_intensity": 24,
+        "adjust_training_volume": 24,
+        "analyze_progress": 30,
+        "ask_cardio_training": 8,
+        "ask_cooking_guidance": 30,
+        "ask_exercise_execution": 30,
+        "ask_food_safety": 8,
+        "ask_food_substitution_options": 30,
+        "ask_hydration": 8,
+        "ask_meal_feedback": 30,
+        "ask_nutrition_concept": 32,
+        "ask_pain_guidance": 22,
+        "ask_recovery": 30,
+        "ask_return_to_training": 8,
+        "ask_sleep_habits": 8,
+        "ask_sports_conditioning": 22,
+        "ask_supplements": 22,
+        "ask_training_concept": 32,
+        "ask_training_meal_timing": 22,
+        "ask_training_program_feedback": 22,
+        "ask_weight_management": 22,
+        "change_diet_structure": 24,
+        "change_training_split": 24,
+        "clarification": 24,
+        "compare_options": 24,
+        "confirm_planner_action": 24,
+        "explain_current_plan": 24,
+        "greeting": 24,
+        "image_context_request": 24,
+        "motivation_support": 30,
+        "move_workout_day": 24,
+        "out_of_scope": 24,
+        "record_food_intake": 24,
+        "record_training_load": 24,
+        "reject_planner_action": 24,
+        "remember_preference": 24,
+        "replace_exercise": 24,
+        "replace_meal_item": 24,
+        "set_day_activity": 24,
+        "undo_planner_action": 24,
+        "update_goal": 24
+      },
+      "validation": 154
+    },
+    "risk_classification": {
+      "test": 16,
+      "train": 387,
+      "train_labels": {
+        "clinical_measurement_request": 8,
+        "eating_disorder_signal": 23,
+        "emergency_symptom": 23,
+        "extreme_diet_or_dehydration": 23,
+        "food_allergy_or_reaction": 23,
+        "food_safety_uncertainty": 29,
+        "heat_illness_signal": 8,
+        "medication_or_hormone": 29,
+        "mental_health_crisis": 23,
+        "musculoskeletal_red_flag": 6,
+        "none": 43,
+        "pain_or_possible_injury": 31,
+        "stimulant_adverse_signal": 6,
+        "substance_interaction": 8,
+        "supplement_uncertainty": 29,
+        "under_recovery_signal": 23,
+        "unsafe_training_request": 23,
+        "vulnerable_or_clinical_context": 29
+      },
+      "validation": 68
+    }
+  },
+  "raw_external_training_allowed": false,
+  "reports": {
+    "metrics": {
+      "file": "metrics.json",
+      "sha256": "d28f6b3f814245cdd5c61819aead3f3dd81b7bd565b489047257e129d7171988"
+    },
+    "policy": {
+      "file": "confidence_policy.json",
+      "sha256": "764413a9e730c973ddc827dad8fc8de64a62732429aa2b7b116c04f5d8ae5479"
+    }
+  },
+  "selection": "Six declared profiles; 80% historical validation and 20% new authored validation macro F1.",
+  "source_files": {
+    "data\\releases\\1.5.0\\splits\\test\\intent_examples.jsonl": "8c5993bd6a60d3d82209b8dd975e102e280d76e6127a352b33c5c015b90d6e00",
+    "data\\releases\\1.5.0\\splits\\test\\risk_examples.jsonl": "44e400af4a21db770903b42f23030e696d2cf44512b9248048e65eee60120ae3",
+    "data\\releases\\1.5.0\\splits\\train\\intent_examples.jsonl": "88c2807bd14da947200e1de9d8d55ecab31acab83a99db0fdc56483217e7e5f3",
+    "data\\releases\\1.5.0\\splits\\train\\risk_examples.jsonl": "681777e7f7c3abb41d85fac8491f8fed2ebad063c10953c31ea32fd5b615d85c",
+    "data\\releases\\1.5.0\\splits\\validation\\intent_examples.jsonl": "71860d0b679fb47d6df8cd05c03f5ca27c4587d6e7221707827143d4a417187a",
+    "data\\releases\\1.5.0\\splits\\validation\\risk_examples.jsonl": "2344899e76e24614433a4e919b35f368815ad3e8065d718548c0d3539fe5357f",
+    "data\\source\\ambiguity_examples.v1.json": "72a329a412bfdf70fb6840d83d51edc68e911ee18e44557674b2083668e9bf20",
+    "data\\source\\context_expansion.v1.json": "f8bbf5c18fecb74b8fce6805aeac72010c95f9b770f11767ca2606043fe6c4ed",
+    "data\\source\\expansion_ptbr.v1.json": "371a88c78db7bd18b81434263940a2f0df344a2d66ae5b6cb7dbc12044c49c97",
+    "data\\source\\intent_examples.v1.json": "dda5b07eff1a94a34c9613974bfcc29f0831a281b4fd0402d7ac32ef2c84007f",
+    "data\\source\\real_pattern_examples.v1.json": "7cd7c2bed7fb8d5c5cfdfb4b0eee174fc38a9f2475725508001bfa48544b63ae",
+    "data\\source\\risk_examples.v1.json": "14fd139d05e5eeb8f21dfac0e53947d14226f143a8bdf54430b6c94b7080ea57",
+    "data\\taxonomy\\capabilities.v1.json": "adc40b4b41ad2d9e5c754c0e913bf56b7fe2d3274e1ac34d4babf321e3b20afd",
+    "data\\taxonomy\\entities.v1.json": "cea66ac57569d26d0318c9577821759dceaa70c2375ef1fa0aeb25e7128d00fa",
+    "data\\taxonomy\\expansion.v1.1.json": "f7a4f9fb109a48e780403ded77b6e4dae2024831bf80e2cc6578246cc587a03a",
+    "data\\taxonomy\\expansion.v1.2.json": "bb7f8527f2ea7ade4304fab2960ba5ff64a0808d8580aef0b0fce4817dc33cae",
+    "data\\taxonomy\\hierarchy.v1.json": "355e5706c6f925633945f2a28b7570ebae6c56f65996272b8c9dca19bb888882",
+    "data\\taxonomy\\intents.v1.json": "ed95fbbcddb1cdd67ba223bd1be2140239cab7df2d2114f80a6f74f6a39ea72e",
+    "data\\taxonomy\\risks.v1.json": "8f37d01dbacd24362d3bc00aea5c8848630ccea5606754f3bec1a7d369bb24f1",
+    "data\\taxonomy\\topics.v1.json": "7d9e0fd9139e29f2915b9a6fc69208d65cb483a395ebc5a61bdf1a029e379789",
+    "src/evolv_nlp/conversation.py": "8393f43da28b4ee06d029f3e874914443f3f23aecad2c7d71c9336ef19f08585",
+    "src/evolv_nlp/entities_v13.py": "f798c3ee091f9e0696e906557558fc9a54e691fe4ce98f7d6b6ada13e472fdb7",
+    "src/evolv_nlp/pipeline_v12.py": "2582d261967492ee3a216a1b8aa01c7e115ffc7898bbe1d4b7d10019c62d1048",
+    "src/evolv_nlp/pipeline_v13.py": "3559822043f1ecee121202ddf9a0f48a48e1efa70f1db38263ea7beb56522fd2",
+    "src/evolv_nlp/privacy.py": "8e77dc772b3caec612ac051cf04d3ded37fe90ff9ce6f70843ca06f2bf262326",
+    "src/evolv_nlp/response_policy.py": "d60b0bd4e6d2c53f1630e932f0da014d5414f46b55b7087a63208a5f7bc4e0e2",
+    "src/evolv_nlp/risk_rules_v13.py": "730181d89be866b536b1a9230e0af0af5498e00982088869df5d496e40670727",
+    "src/evolv_nlp/training_v13.py": "453980802cf1c36942de78c112733092038279c6b93c96c9f2c18702e4173914"
+  },
+  "status": "experimental_not_default"
+}

@@ -1,0 +1,88 @@
+{
+  "dataset": "OpenAssistant/oasst1",
+  "examples": [
+    {
+      "primary_intent": "compare_options",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:1d4c8152-36b4-43db-b459-06ee0099e446",
+      "text": "Me explique as possíveis vantagens da prática de exercícios de calistenia sobre musculação, e como a calistenia, associada a exercícios aeróbicos (como corrida, por exemplo), podem contribuir para uma melhora geral da minha saúde."
+    },
+    {
+      "primary_intent": "ask_meal_feedback",
+      "risk_labels": [
+        "food_safety_uncertainty"
+      ],
+      "source_id": "oasst1:696ae42c-7a8c-4982-9215-cd0c01d6678d",
+      "text": "O que é mais nocivo à saúde, comer salgado velho ou comer doce velho?"
+    },
+    {
+      "primary_intent": "ask_cooking_guidance",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:aedb48df-4b6e-46a7-9641-49ca5b8ed128",
+      "text": "Qual um exemplo de comida mexicana simples de fazer em casa?"
+    },
+    {
+      "primary_intent": "ask_cooking_guidance",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:2e6b8a0c-df2d-4f55-b815-c1be79497dd8",
+      "text": "eu quero uma receita de omelete de 1 ovo e 2 claras que inclua espinafre, pimentão ou cogumelos ou mesmo todos eles"
+    },
+    {
+      "primary_intent": "greeting",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:e82bfc00-5ed5-4528-9878-62179f8d381c",
+      "text": "Olá"
+    },
+    {
+      "primary_intent": "greeting",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:1589f7d8-459c-4ad2-8be1-4fe56ded4dba",
+      "text": "Olaaaa, como você esta?"
+    },
+    {
+      "primary_intent": "clarification",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:c7e2776e-5456-49ed-93c6-fbf8236e1374",
+      "text": "Por que?"
+    },
+    {
+      "primary_intent": "clarification",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:19c27e5c-3f76-4e41-9d9f-cabd6b35378d",
+      "text": "Poderia dar mais três exemplos?"
+    },
+    {
+      "primary_intent": "out_of_scope",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:460a665e-09a7-470c-9b0b-498e3ebf7f5b",
+      "text": "Como faz pra zerar Minecraft?"
+    },
+    {
+      "primary_intent": "out_of_scope",
+      "risk_labels": [
+        "none"
+      ],
+      "source_id": "oasst1:23b2841b-1b98-4465-a5e3-e9ad2a6f05fd",
+      "text": "Qual a diferença entre débito e crédito?"
+    }
+  ],
+  "license": "Apache-2.0",
+  "selection_rule": "Human, approved, non-deleted, non-synthetic pt-BR prompts; manually labeled and reserved from training.",
+  "version": "1.0.0"
+}

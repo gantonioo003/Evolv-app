@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evolv.local/schemas/coach-analysis-output.schema.json",
+  "title": "Evolv Coach NLP analysis output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pipeline_version",
+    "input",
+    "decision",
+    "intent",
+    "risk",
+    "entities",
+    "topics",
+    "clarification",
+    "planner_proposal",
+    "guardrails"
+  ],
+  "properties": {
+    "pipeline_version": { "type": "string" },
+    "input": {
+      "type": "object",
+      "required": ["reference_date", "character_count", "sha256", "text_stored"]
+    },
+    "decision": {
+      "type": "object",
+      "required": ["status", "route", "reasons"],
+      "properties": {
+        "status": {
+          "enum": ["answer", "clarify", "safety", "planner_preview", "conversation", "unsupported", "out_of_scope"]
+        },
+        "route": { "type": "string" },
+        "reasons": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "intent": { "type": "object" },
+    "risk": { "type": "object" },
+    "entities": { "type": "array", "items": { "type": "object" } },
+    "topics": { "type": "array", "items": { "type": "object" } },
+    "clarification": { "type": ["object", "null"] },
+    "planner_proposal": { "type": ["object", "null"] },
+    "guardrails": { "type": "object" }
+  }
+}

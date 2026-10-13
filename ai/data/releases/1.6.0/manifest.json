@@ -1,0 +1,54 @@
+{
+  "excluded_signals": {
+    "cross_split_near_duplicate": 4,
+    "direct_identifiers_removed": 389,
+    "external_media_context": 1734,
+    "length_outside_research_scope": 15,
+    "possible_minor": 173,
+    "possible_sensitive_personal_data": 1927,
+    "previous_collection_overlap": 170,
+    "quarantined_thread": 174,
+    "source_outside_selected_local_research_scope": 1739,
+    "third_party_context": 424
+  },
+  "existing_training_permission_gate_changed": false,
+  "local_owner_request_is_not_legal_clearance": true,
+  "partitions": {
+    "quarantine": {
+      "community_replies": 182,
+      "eligible_private_questions": 0,
+      "questions": 174
+    },
+    "test": {
+      "community_replies": 772,
+      "eligible_private_questions": 528,
+      "questions": 1017
+    },
+    "train": {
+      "community_replies": 5652,
+      "eligible_private_questions": 3918,
+      "questions": 7859
+    },
+    "validation": {
+      "community_replies": 722,
+      "eligible_private_questions": 503,
+      "questions": 950
+    }
+  },
+  "protocol": "Keep source thread splits; quarantine contaminated threads; no old holdout reassignment",
+  "records": 10000,
+  "restrictions": [
+    "private_local_research_only",
+    "no_weights_or_text_publication",
+    "no_commercial_activation",
+    "no_forum_answers_as_gold",
+    "privacy_minimization_is_not_verified_anonymization"
+  ],
+  "rights_status": "unverified_not_authorized_by_rightsholders",
+  "source_policy_references": [
+    "https://support.reddithelp.com/hc/en-us/articles/26410290525844-Public-Content-Policy",
+    "https://huggingface.co/datasets/yikeee/reddit-subreddits25"
+  ],
+  "source_sha256": "c1e6af4fb3d18d1af94e9912f130beffef55df4f7aff7d9219ec1e8b913ccea9",
+  "version": "1.6.0"
+}

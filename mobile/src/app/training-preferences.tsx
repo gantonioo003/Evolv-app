@@ -138,18 +138,18 @@ const createStyles = (palette: AppThemePalette) =>
     },
     headerCopy: { flex: 1 },
     eyebrow: {
-      color: colors.gold,
+      color: palette.muted,
       fontSize: 11,
-      fontWeight: "800",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     title: {
       marginTop: 2,
       color: palette.text,
       fontFamily: typography.display,
       fontSize: 29,
-      fontWeight: "900",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     summary: {
       minHeight: 70,
@@ -161,7 +161,7 @@ const createStyles = (palette: AppThemePalette) =>
       borderBottomWidth: 1,
       borderColor: palette.border,
     },
-    summaryValue: { color: palette.text, fontSize: 22, fontWeight: "900" },
+    summaryValue: { color: palette.text, fontSize: 22, fontWeight: "600" },
     summaryLabel: {
       maxWidth: 110,
       color: palette.muted,
@@ -182,7 +182,7 @@ const createStyles = (palette: AppThemePalette) =>
       paddingVertical: spacing.sm,
     },
     optionCopy: { flex: 1, minWidth: 0 },
-    optionTitle: { color: palette.text, fontSize: 14, fontWeight: "800" },
+    optionTitle: { color: palette.text, fontSize: 14, fontWeight: "600" },
     optionDescription: {
       marginTop: 3,
       color: palette.muted,

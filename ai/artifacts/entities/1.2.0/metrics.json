@@ -1,0 +1,1239 @@
+{
+  "historical_annotated_types_only": {
+    "new_1_2": {
+      "counts": {
+        "exact": 28,
+        "expected": 83,
+        "predicted": 76,
+        "tp": 69
+      },
+      "errors": [
+        {
+          "id": "entity-holdout-003",
+          "missing": [
+            [
+              "load",
+              "{\"amount\": 100, \"unit\": \"kg\"}"
+            ]
+          ],
+          "text": "terra com cinco series de seis a oito repeticoes e cem quilos",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-007",
+          "missing": [
+            [
+              "rir",
+              "1"
+            ]
+          ],
+          "text": "a ultima serie ficou rpe nove e rir um",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-009",
+          "missing": [
+            [
+              "replacement_food",
+              "\"macaxeira\""
+            ]
+          ],
+          "text": "no almoco muda o arroz integral para macaxeira",
+          "unexpected": [
+            [
+              "food",
+              "\"macaxeira\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-010",
+          "missing": [
+            [
+              "meal",
+              "\"jantar\""
+            ],
+            [
+              "amount",
+              "{\"amount\": 120, \"unit\": \"g\"}"
+            ]
+          ],
+          "text": "jantei cento e vinte gramas de frango com brocolis",
+          "unexpected": [
+            [
+              "amount",
+              "{\"amount\": 20, \"unit\": \"gramas\"}"
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-015",
+          "missing": [],
+          "text": "sou vegana e nao posso consumir lactose",
+          "unexpected": [
+            [
+              "limitation",
+              "\"nao posso consumir lactose\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-018",
+          "missing": [
+            [
+              "preference",
+              "{\"polarity\": \"positive\", \"target\": \"fazer cardio pela manha\", \"target_type\": \"free_text\"}"
+            ]
+          ],
+          "text": "prefiro fazer cardio pela manha",
+          "unexpected": [
+            [
+              "preference",
+              "{\"polarity\": \"positive\", \"target\": \"cardio\", \"target_type\": \"modality\"}"
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-021",
+          "missing": [],
+          "text": "a academia daqui so tem maquina cabo e banco",
+          "unexpected": [
+            [
+              "modality",
+              "\"musculacao\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-026",
+          "missing": [
+            [
+              "sleep_duration",
+              "{\"amount\": 5.5, \"seconds\": 19800, \"unit\": \"hour\"}"
+            ]
+          ],
+          "text": "essa noite dormi cinco horas e meia",
+          "unexpected": [
+            [
+              "sleep_duration",
+              "{\"amount\": 5, \"seconds\": 18000, \"unit\": \"hour\"}"
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-033",
+          "missing": [
+            [
+              "exercise",
+              "\"supino reto\""
+            ],
+            [
+              "replacement_exercise",
+              "\"flexao de bracos\""
+            ]
+          ],
+          "text": "troca o supno pela flexao",
+          "unexpected": [
+            [
+              "exercise",
+              "\"flexao de bracos\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-036",
+          "missing": [
+            [
+              "exercise",
+              "\"puxada alta\""
+            ],
+            [
+              "sets",
+              "4"
+            ],
+            [
+              "repetitions",
+              "8"
+            ]
+          ],
+          "text": "anota puxada: quatro de oito",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-038",
+          "missing": [
+            [
+              "target_date",
+              "\"2026-10-08\""
+            ]
+          ],
+          "text": "hj foi leg 45 3x12 120kg",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-040",
+          "missing": [
+            [
+              "duration",
+              "{\"amount\": 30, \"seconds\": 1800, \"unit\": \"minute\"}"
+            ]
+          ],
+          "text": "depois de amanha faco bike por meia hora",
+          "unexpected": []
+        }
+      ],
+      "exact": 0.7,
+      "micro": {
+        "f1": 0.867925,
+        "precision": 0.907895,
+        "recall": 0.831325
+      },
+      "per_type": {
+        "allergy": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "amount": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "body_part": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "diet_strategy": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "dietary_restriction": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "duration": {
+          "expected": 2,
+          "f1": 0.666667,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.5,
+          "tp": 1
+        },
+        "equipment": {
+          "expected": 3,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "tp": 3
+        },
+        "exercise": {
+          "expected": 12,
+          "f1": 0.869565,
+          "precision": 0.909091,
+          "predicted": 11,
+          "recall": 0.833333,
+          "tp": 10
+        },
+        "food": {
+          "expected": 10,
+          "f1": 0.952381,
+          "precision": 0.909091,
+          "predicted": 11,
+          "recall": 1.0,
+          "tp": 10
+        },
+        "goal": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "limitation": {
+          "expected": 1,
+          "f1": 0.666667,
+          "precision": 0.5,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "load": {
+          "expected": 3,
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "tp": 2
+        },
+        "macronutrient_amount": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "meal": {
+          "expected": 6,
+          "f1": 0.909091,
+          "precision": 1.0,
+          "predicted": 5,
+          "recall": 0.833333,
+          "tp": 5
+        },
+        "modality": {
+          "expected": 6,
+          "f1": 0.923077,
+          "precision": 0.857143,
+          "predicted": 7,
+          "recall": 1.0,
+          "tp": 6
+        },
+        "muscle_group": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "preference": {
+          "expected": 2,
+          "f1": 0.5,
+          "precision": 0.5,
+          "predicted": 2,
+          "recall": 0.5,
+          "tp": 1
+        },
+        "repetitions": {
+          "expected": 3,
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "tp": 2
+        },
+        "replacement_exercise": {
+          "expected": 2,
+          "f1": 0.666667,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.5,
+          "tp": 1
+        },
+        "replacement_food": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "rest_duration": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "rir": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "rpe": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "sets": {
+          "expected": 3,
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "tp": 2
+        },
+        "sleep_duration": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "source_date": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "target_date": {
+          "expected": 9,
+          "f1": 0.941176,
+          "precision": 1.0,
+          "predicted": 8,
+          "recall": 0.888889,
+          "tp": 8
+        },
+        "training_split": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "weekly_frequency": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        }
+      },
+      "rows": 40
+    },
+    "previous_1_1": {
+      "counts": {
+        "exact": 28,
+        "expected": 83,
+        "predicted": 76,
+        "tp": 69
+      },
+      "errors": [
+        {
+          "id": "entity-holdout-003",
+          "missing": [
+            [
+              "load",
+              "{\"amount\": 100, \"unit\": \"kg\"}"
+            ]
+          ],
+          "text": "terra com cinco series de seis a oito repeticoes e cem quilos",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-007",
+          "missing": [
+            [
+              "rir",
+              "1"
+            ]
+          ],
+          "text": "a ultima serie ficou rpe nove e rir um",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-009",
+          "missing": [
+            [
+              "replacement_food",
+              "\"macaxeira\""
+            ]
+          ],
+          "text": "no almoco muda o arroz integral para macaxeira",
+          "unexpected": [
+            [
+              "food",
+              "\"macaxeira\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-010",
+          "missing": [
+            [
+              "meal",
+              "\"jantar\""
+            ],
+            [
+              "amount",
+              "{\"amount\": 120, \"unit\": \"g\"}"
+            ]
+          ],
+          "text": "jantei cento e vinte gramas de frango com brocolis",
+          "unexpected": [
+            [
+              "amount",
+              "{\"amount\": 20, \"unit\": \"gramas\"}"
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-015",
+          "missing": [],
+          "text": "sou vegana e nao posso consumir lactose",
+          "unexpected": [
+            [
+              "limitation",
+              "\"nao posso consumir lactose\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-018",
+          "missing": [
+            [
+              "preference",
+              "{\"polarity\": \"positive\", \"target\": \"fazer cardio pela manha\", \"target_type\": \"free_text\"}"
+            ]
+          ],
+          "text": "prefiro fazer cardio pela manha",
+          "unexpected": [
+            [
+              "preference",
+              "{\"polarity\": \"positive\", \"target\": \"cardio\", \"target_type\": \"modality\"}"
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-021",
+          "missing": [],
+          "text": "a academia daqui so tem maquina cabo e banco",
+          "unexpected": [
+            [
+              "modality",
+              "\"musculacao\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-026",
+          "missing": [
+            [
+              "sleep_duration",
+              "{\"amount\": 5.5, \"seconds\": 19800, \"unit\": \"hour\"}"
+            ]
+          ],
+          "text": "essa noite dormi cinco horas e meia",
+          "unexpected": [
+            [
+              "sleep_duration",
+              "{\"amount\": 5, \"seconds\": 18000, \"unit\": \"hour\"}"
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-033",
+          "missing": [
+            [
+              "exercise",
+              "\"supino reto\""
+            ],
+            [
+              "replacement_exercise",
+              "\"flexao de bracos\""
+            ]
+          ],
+          "text": "troca o supno pela flexao",
+          "unexpected": [
+            [
+              "exercise",
+              "\"flexao de bracos\""
+            ]
+          ]
+        },
+        {
+          "id": "entity-holdout-036",
+          "missing": [
+            [
+              "exercise",
+              "\"puxada alta\""
+            ],
+            [
+              "sets",
+              "4"
+            ],
+            [
+              "repetitions",
+              "8"
+            ]
+          ],
+          "text": "anota puxada: quatro de oito",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-038",
+          "missing": [
+            [
+              "target_date",
+              "\"2026-10-08\""
+            ]
+          ],
+          "text": "hj foi leg 45 3x12 120kg",
+          "unexpected": []
+        },
+        {
+          "id": "entity-holdout-040",
+          "missing": [
+            [
+              "duration",
+              "{\"amount\": 30, \"seconds\": 1800, \"unit\": \"minute\"}"
+            ]
+          ],
+          "text": "depois de amanha faco bike por meia hora",
+          "unexpected": []
+        }
+      ],
+      "exact": 0.7,
+      "micro": {
+        "f1": 0.867925,
+        "precision": 0.907895,
+        "recall": 0.831325
+      },
+      "per_type": {
+        "allergy": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "amount": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "body_part": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "diet_strategy": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "dietary_restriction": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "duration": {
+          "expected": 2,
+          "f1": 0.666667,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.5,
+          "tp": 1
+        },
+        "equipment": {
+          "expected": 3,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "tp": 3
+        },
+        "exercise": {
+          "expected": 12,
+          "f1": 0.869565,
+          "precision": 0.909091,
+          "predicted": 11,
+          "recall": 0.833333,
+          "tp": 10
+        },
+        "food": {
+          "expected": 10,
+          "f1": 0.952381,
+          "precision": 0.909091,
+          "predicted": 11,
+          "recall": 1.0,
+          "tp": 10
+        },
+        "goal": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "limitation": {
+          "expected": 1,
+          "f1": 0.666667,
+          "precision": 0.5,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "load": {
+          "expected": 3,
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "tp": 2
+        },
+        "macronutrient_amount": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "meal": {
+          "expected": 6,
+          "f1": 0.909091,
+          "precision": 1.0,
+          "predicted": 5,
+          "recall": 0.833333,
+          "tp": 5
+        },
+        "modality": {
+          "expected": 6,
+          "f1": 0.923077,
+          "precision": 0.857143,
+          "predicted": 7,
+          "recall": 1.0,
+          "tp": 6
+        },
+        "muscle_group": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "preference": {
+          "expected": 2,
+          "f1": 0.5,
+          "precision": 0.5,
+          "predicted": 2,
+          "recall": 0.5,
+          "tp": 1
+        },
+        "repetitions": {
+          "expected": 3,
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "tp": 2
+        },
+        "replacement_exercise": {
+          "expected": 2,
+          "f1": 0.666667,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.5,
+          "tp": 1
+        },
+        "replacement_food": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "rest_duration": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "rir": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "rpe": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "sets": {
+          "expected": 3,
+          "f1": 0.8,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 0.666667,
+          "tp": 2
+        },
+        "sleep_duration": {
+          "expected": 1,
+          "f1": 0,
+          "precision": 0.0,
+          "predicted": 1,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "source_date": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "target_date": {
+          "expected": 9,
+          "f1": 0.941176,
+          "precision": 1.0,
+          "predicted": 8,
+          "recall": 0.888889,
+          "tp": 8
+        },
+        "training_split": {
+          "expected": 1,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 1.0,
+          "tp": 1
+        },
+        "weekly_frequency": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        }
+      },
+      "rows": 40
+    }
+  },
+  "inputs": {
+    "data\\catalogs\\entity_catalogs.extension.v1.2.json": "b372f0244256743e8940ebb591b2668d2cb7546cd8d463a5f14e755a00f44bcd",
+    "data\\entities\\context_checks.v1.json": "f89bbf74336f6cc925c4a64f056206a4da84e4eb04702653124f5c7136b446c7",
+    "data\\evaluation\\entity_holdout.v1.jsonl": "ee4da603b9121080dd5d13eaec3e6216d931ea2cd2ee620dc058fd97b04b591a",
+    "src\\evolv_nlp\\entities_v13.py": "f798c3ee091f9e0696e906557558fc9a54e691fe4ce98f7d6b6ada13e472fdb7"
+  },
+  "new_development_feature_checks": {
+    "new_1_2": {
+      "counts": {
+        "exact": 22,
+        "expected": 19,
+        "predicted": 19,
+        "tp": 19
+      },
+      "errors": [],
+      "exact": 1.0,
+      "micro": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "per_type": {
+        "cadence": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "drink_volume": {
+          "expected": 3,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 3,
+          "recall": 1.0,
+          "tp": 3
+        },
+        "elevation_gain": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "laterality": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "meal_frequency": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "movement_tempo": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "pain_severity": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "symptom_onset": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        },
+        "training_experience": {
+          "expected": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "predicted": 2,
+          "recall": 1.0,
+          "tp": 2
+        }
+      },
+      "rows": 22
+    },
+    "previous_1_1": {
+      "counts": {
+        "exact": 5,
+        "expected": 19,
+        "predicted": 0,
+        "tp": 0
+      },
+      "errors": [
+        {
+          "id": null,
+          "missing": [
+            [
+              "drink_volume",
+              "{\"amount_ml\": 500, \"drink\": \"agua\"}"
+            ]
+          ],
+          "text": "bebi 500 ml de agua",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "drink_volume",
+              "{\"amount_ml\": 2000, \"drink\": \"agua\"}"
+            ]
+          ],
+          "text": "tomei 2 l de agua",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "drink_volume",
+              "{\"amount_ml\": 250, \"drink\": \"leite\"}"
+            ]
+          ],
+          "text": "250 ml de leite",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "cadence",
+              "{\"amount\": 180, \"unit\": \"steps/min\"}"
+            ]
+          ],
+          "text": "corrida a 180 passos/min",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "cadence",
+              "{\"amount\": 90, \"unit\": \"rpm\"}"
+            ]
+          ],
+          "text": "pedalo a 90 rpm",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "elevation_gain",
+              "{\"amount\": 120, \"unit\": \"m\"}"
+            ]
+          ],
+          "text": "percurso com desnivel de 120 m",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "elevation_gain",
+              "{\"amount\": 345, \"unit\": \"m\"}"
+            ]
+          ],
+          "text": "ganho de elevacao: 345 metros",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "training_experience",
+              "{\"amount\": 2, \"unit\": \"anos\"}"
+            ]
+          ],
+          "text": "malho faz 2 anos",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "training_experience",
+              "{\"amount\": 6, \"unit\": \"meses\"}"
+            ]
+          ],
+          "text": "corro ha 6 meses",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "pain_severity",
+              "{\"amount\": 4, \"scale_max\": 10}"
+            ],
+            [
+              "laterality",
+              "\"left\""
+            ]
+          ],
+          "text": "dor 4/10 no joelho esquerdo",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "pain_severity",
+              "{\"amount\": 2, \"scale_max\": 10}"
+            ],
+            [
+              "laterality",
+              "\"right\""
+            ]
+          ],
+          "text": "desconforto de 2/10 no ombro direito",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "symptom_onset",
+              "{\"amount\": 5, \"unit\": \"dias\"}"
+            ]
+          ],
+          "text": "dor no ombro ha 5 dias",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "symptom_onset",
+              "{\"amount\": 2, \"unit\": \"semanas\"}"
+            ]
+          ],
+          "text": "incomodo faz 2 semanas",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "movement_tempo",
+              "{\"phases_seconds\": [2, 0, 2]}"
+            ]
+          ],
+          "text": "cadencia 2-0-2",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "movement_tempo",
+              "{\"phases_seconds\": [3, 1, 1, 0]}"
+            ]
+          ],
+          "text": "tempo de 3-1-1-0",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "meal_frequency",
+              "5"
+            ]
+          ],
+          "text": "5 refeicoes por dia",
+          "unexpected": []
+        },
+        {
+          "id": null,
+          "missing": [
+            [
+              "meal_frequency",
+              "3"
+            ]
+          ],
+          "text": "3 refeicoes ao dia",
+          "unexpected": []
+        }
+      ],
+      "exact": 0.227273,
+      "micro": {
+        "f1": 0,
+        "precision": 0,
+        "recall": 0.0
+      },
+      "per_type": {
+        "cadence": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "drink_volume": {
+          "expected": 3,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "elevation_gain": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "laterality": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "meal_frequency": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "movement_tempo": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "pain_severity": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "symptom_onset": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "training_experience": {
+          "expected": 2,
+          "f1": 0,
+          "precision": 0,
+          "predicted": 0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "rows": 22
+    }
+  },
+  "supported_types": 50,
+  "version": "1.2.0",
+  "warning": "Old holdout already observed; new feature checks are scoped authored development tests, not independent real-world precision/recall."
+}

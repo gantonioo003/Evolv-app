@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evolv.local/schemas/entity-holdout-row.schema.json",
+  "title": "Evolv independent entity holdout row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "slice", "text", "reference_date", "expected"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^entity-holdout-[0-9]{3}$" },
+    "slice": { "type": "string", "minLength": 1 },
+    "text": { "type": "string", "minLength": 1 },
+    "reference_date": { "type": "string", "format": "date" },
+    "expected": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entity_type", "value"],
+        "properties": {
+          "entity_type": { "type": "string", "minLength": 1 },
+          "value": {}
+        }
+      }
+    }
+  }
+}

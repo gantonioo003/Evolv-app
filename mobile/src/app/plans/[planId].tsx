@@ -25,7 +25,7 @@ import {
   SelectionSheet,
   type SelectionOption,
 } from "@/components/selection-sheet";
-import { colors, radius, spacing } from "@/constants/theme";
+import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type {
@@ -362,13 +362,13 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       backgroundColor: colors.red,
     },
     primaryButtonText: {
       color: colors.text,
       fontSize: 13,
-      fontWeight: "900",
+      fontWeight: "600",
     },
     secondaryButton: {
       minHeight: 48,
@@ -377,7 +377,7 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
       gap: 8,
-      borderRadius: radius.lg,
+      borderRadius: 24,
       borderWidth: 1,
       borderColor: palette.border,
       backgroundColor: palette.surface,
@@ -385,7 +385,7 @@ const createStyles = (palette: AppThemePalette) =>
     secondaryButtonText: {
       color: palette.text,
       fontSize: 13,
-      fontWeight: "800",
+      fontWeight: "600",
     },
     days: { gap: spacing.sm },
     dayHeading: {
@@ -397,7 +397,7 @@ const createStyles = (palette: AppThemePalette) =>
     },
     dayHeadingText: { flex: 1 },
     dayActions: { flexDirection: "row", alignItems: "center", gap: 8 },
-    dayTitle: { color: palette.text, fontSize: 15, fontWeight: "900" },
+    dayTitle: { color: palette.text, fontSize: 15, fontWeight: "600" },
     dayMeta: { marginTop: 4, color: palette.muted, fontSize: 11.5 },
     exerciseRow: {
       minHeight: 64,
@@ -411,11 +411,11 @@ const createStyles = (palette: AppThemePalette) =>
       width: 24,
       color: colors.red,
       fontSize: 12,
-      fontWeight: "900",
+      fontWeight: "600",
       textAlign: "center",
     },
     exerciseBody: { flex: 1 },
-    exerciseName: { color: palette.text, fontSize: 13, fontWeight: "800" },
+    exerciseName: { color: palette.text, fontSize: 13, fontWeight: "600" },
     exerciseMeta: { marginTop: 3, color: palette.muted, fontSize: 11.5 },
     editButton: {
       width: 36,

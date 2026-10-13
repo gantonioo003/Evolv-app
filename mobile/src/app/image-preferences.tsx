@@ -144,18 +144,18 @@ const createStyles = (palette: AppThemePalette) =>
     },
     headerCopy: { flex: 1 },
     eyebrow: {
-      color: colors.gold,
+      color: palette.muted,
       fontFamily: typography.body,
       fontSize: 11,
-      fontWeight: "800",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     title: {
       marginTop: 2,
       color: palette.text,
       fontFamily: typography.display,
       fontSize: 29,
-      fontWeight: "800",
+      fontWeight: "600",
     },
     intro: {
       color: palette.muted,
@@ -178,7 +178,7 @@ const createStyles = (palette: AppThemePalette) =>
       fontSize: 14,
       fontWeight: "600",
     },
-    optionTextActive: { color: palette.text, fontWeight: "800" },
+    optionTextActive: { color: palette.text, fontWeight: "600" },
     radio: {
       width: 24,
       height: 24,

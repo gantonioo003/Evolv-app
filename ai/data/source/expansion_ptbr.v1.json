@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "provenance": "project_authored_synthetic",
+  "policy": "Train families can be augmented only within train. Validation families are authored separately. Not real human messages.",
+  "intents": {
+    "ask_supplements": {
+      "train": ["creatina presta pra quem ta comecando?", "qual a diferenca entre whey e albumina", "preciso comprar suplemento pra ganhar massa?", "esse hipercalorico vale a pena", "pra que serve beta alanina", "o suplemento substitui comida?", "como saber se o whey tem proteina de verdade", "bcaa serve pra alguma coisa?", "qual a funcao do pre treino", "posso usar caseina no lanche?", "qual suplemento faz sentido no meu objetivo?", "duvida scoop whey", "uso de creatina para iniciante", "whey causa gases?"],
+      "validation": ["consigo bater proteina sem tomar whey protein?", "vale gastar dinheiro com BCAA se ja como bem?", "qual e a utilidade de suplementar creatina", "albumina tem a mesma finalidade da proteina em po?"]
+    },
+    "ask_training_program_feedback": {
+      "train": ["avalia meu treino abc por favor", "essa ficha de musculacao ta bem montada?", "meu full body tem volume demais?", "opiniao sobre meu programa de treino", "essa divisao upper lower faz sentido pra mim?", "minha rotina ppl ta equilibrada?", "pode conferir o treino que o professor passou?", "avalia a ordem dos exercicios na minha ficha", "fiz um ab quatro vezes na semana, o que acha?", "minha ficha esqueceu posterior de coxa?", "essa serie de treino cobre todos os musculos?", "avalia meu treino sem pernas", "tem muita remada no meu programa?", "o volume da minha divisao esta adequado?"],
+      "validation": ["analisa se minha ficha de academia esta coerente", "opina sobre essa sequencia de treino A B C", "esse programa que montei ta desbalanceado?", "quero uma avaliacao do meu fullbody, nao mudar ele ainda"]
+    },
+    "ask_weight_management": {
+      "train": ["devo fazer bulking ou cutting agora?", "como ganhar peso sem engordar tanto", "estou perdendo massa no cutting?", "como funciona um bulk controlado", "quero entender a recomposicao corporal", "qual ritmo de ganho de peso e razoavel", "meu peso estagnou no deficit, por que?", "como saber se devo manter peso ou emagrecer", "quero ganhar massa magra sem aumentar a cintura", "bulking com percentual de gordura alto faz sentido?", "quando terminar o cutting e ir pra manutencao", "como acompanhar a media do peso corporal", "duvida sobre fase de bulking", "qual a diferenca entre perder gordura e perder peso"],
+      "validation": ["na balanca parei de emagrecer mesmo em deficit", "como decidir entre secar e fazer recomposicao", "ganhar meio quilo significa que ganhei gordura?", "qual criterio usar pra encerrar a fase de ganho de massa?"]
+    },
+    "ask_training_meal_timing": {
+      "train": ["o que comer antes do treino de manha?", "treino a noite, como encaixar o jantar?", "posso ir treinar sem tomar cafe da manha?", "qual intervalo entre almoco e musculacao", "treino cedo e nao consigo comer, o que fazer?", "o lanche pre treino pode ficar depois?", "como ajustar refeicoes pra quem treina as seis", "dieta de quem treina a noite muda muito?", "preciso comer logo apos o treino?", "como dividir cafe da manha e pos treino", "qual horario da refeicao antes do cardio", "meu treino e perto do jantar, como organizar", "alimentacao para treinar no inicio da manha", "quanto tempo esperar depois de comer pra malhar"],
+      "validation": ["saio do trabalho e vou direto malhar, quando lanchar?", "a refeicao antes de correr as 7 precisa ser grande?", "posso jantar depois da academia que termina tarde", "como distribuir comida quando a sessao acontece de madrugada?"]
+    },
+    "ask_sports_conditioning": {
+      "train": ["como conciliar academia com volei de praia", "que preparacao fisica ajuda no tenis", "fortalecimento pra corrida combina com musculacao?", "quero melhorar impulsao no basquete", "como organizar jiu jitsu com treino de forca", "qual treino ajuda na explosao do futebol", "musculacao interfere na natacao?", "como combinar ciclismo e treino de pernas", "quero condicionamento pro boxe", "preparacao fisica para beach tennis", "como treinar salto pro volei", "como ganhar resistencia pra jogar futsal", "academia e muay thai na mesma semana", "qual tipo de forca serve pra escalada"],
+      "validation": ["tenho partidas de tenis e quero preparar o corpo na academia", "o que considerar ao misturar pedal e musculacao", "qual preparacao me ajuda a saltar melhor na quadra", "como encaixar levantamento de peso e treinos de luta?"]
+    },
+    "ask_pain_guidance": {
+      "train": ["joelho incomodando depois de correr, devo me preocupar?", "sinto dor no ombro ao fazer supino", "meu cotovelo doi na rosca, o que observar?", "dor nas costas apos treino de peito e normal?", "acho que machuquei o tornozelo jogando", "como diferenciar dor muscular de lesao?", "dormencia na coxa ha dias, o que fazer?", "tendao do biceps dolorido no treino", "posso continuar treinando com essa dor no pulso?", "canelite depois de comecar corrida", "agachamento faz meu joelho doer", "sinto pontada na lombar no stiff", "possivel lesao no ombro?", "dor no joelho apos treino de inferiores"],
+      "validation": ["uma fisgada no quadril aparece toda vez que corro", "a articulacao do punho fica dolorida com flexao", "meu tendao de aquiles incomoda desde a partida", "formigamento persistente depois de levantar peso merece atencao?"]
+    }
+  },
+  "risks": {
+    "heat_illness_signal": {
+      "train": ["fiquei tonto correndo no calor forte", "mal estar depois de treinar no sol", "treinei no calor e estou passando mal", "calor intenso me deixou fraco e enjoado", "senti nausea durante corrida no sol quente", "quase desmaiei treinando no sol", "dor de cabeca forte e tontura apos atividade no calor", "corri sob sol e estou com fraqueza"],
+      "validation": ["passei mal pedalando no sol do meio dia", "tontura e enjoo depois de jogar em temperatura muito alta", "na onda de calor fui correr e comecei a me sentir mal"]
+    },
+    "substance_interaction": {
+      "train": ["posso misturar cerveja e pre treino?", "cafeina com meu remedio para pressao combina?", "alcool e creatina juntos tem algum problema", "uso medicamento e quero juntar com termogenico", "melatonina e alcool na mesma noite?", "misturar estimulante com remedio e seguro?", "pre treino com energetico e cafe junto", "tomo antidepressivo e queria usar termogenico"],
+      "validation": ["bebida alcoolica interage com o medicamento que tomo?", "posso juntar energetico com capsulas de cafeina", "uso remedio continuo e quero combinar suplemento estimulante"]
+    },
+    "clinical_measurement_request": {
+      "train": ["interpreta meu exame de testosterona", "qual diagnostico com esse resultado de tsh", "meu colesterol no exame esta alto?", "essa glicemia significa diabetes?", "le meu exame hormonal por favor", "o valor de creatinina diz que tenho problema nos rins?", "testosterona baixa no laudo, preciso de tratamento?", "analisa o resultado do meu exame de sangue"],
+      "validation": ["recebi o laudo de sangue, me diz qual doenca tenho", "consegue interpretar os resultados laboratoriais que enviei?", "minha hemoglobina glicada permite diagnosticar alguma coisa?"]
+    }
+  },
+  "risk_hard_negatives": {
+    "train": ["nao tenho dor no peito, so quero entender o treino", "nao desmaiei nem tive tontura, quero organizar o cardio", "nunca tive alergia alimentar conhecida", "posso misturar arroz e feijao no almoco?", "quero saber sobre volume de treino, nao volume de bebida", "eu nao uso hormonios nem medicamentos", "quero comparar supino com flexao", "como manter meus registros organizados", "qual cor de tenis combina com a roupa da academia", "a serie esta pesada mas nao sinto dor", "nao estou machucado, so preciso mudar o horario", "minha pergunta e sobre aprender tecnica sem aumentar a carga"],
+    "validation": ["sem dor ou mal estar, quero apenas consultar minha ficha", "nao uso remedio, alcool nem estimulante; pergunta so sobre arroz", "posso cozinhar feijao com arroz juntos?", "nao tenho lesao, so curiosidade sobre recuperacao"]
+  }
+}

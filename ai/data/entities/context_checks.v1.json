@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "status": "authored_development_feature_checks_not_independent_gold",
+  "cases": [
+    {"text": "bebi 500 ml de agua", "types": ["drink_volume"], "expected": [{"entity_type": "drink_volume", "value": {"amount_ml": 500, "drink": "agua"}}]},
+    {"text": "tomei 2 l de agua", "types": ["drink_volume"], "expected": [{"entity_type": "drink_volume", "value": {"amount_ml": 2000, "drink": "agua"}}]},
+    {"text": "250 ml de leite", "types": ["drink_volume"], "expected": [{"entity_type": "drink_volume", "value": {"amount_ml": 250, "drink": "leite"}}]},
+    {"text": "2 ml de medicamento", "types": ["drink_volume"], "expected": []},
+    {"text": "corrida a 180 passos/min", "types": ["cadence"], "expected": [{"entity_type": "cadence", "value": {"amount": 180, "unit": "steps/min"}}]},
+    {"text": "pedalo a 90 rpm", "types": ["cadence"], "expected": [{"entity_type": "cadence", "value": {"amount": 90, "unit": "rpm"}}]},
+    {"text": "frequencia de 160 bpm", "types": ["cadence"], "expected": []},
+    {"text": "percurso com desnivel de 120 m", "types": ["elevation_gain"], "expected": [{"entity_type": "elevation_gain", "value": {"amount": 120, "unit": "m"}}]},
+    {"text": "ganho de elevacao: 345 metros", "types": ["elevation_gain"], "expected": [{"entity_type": "elevation_gain", "value": {"amount": 345, "unit": "m"}}]},
+    {"text": "corri 300 metros", "types": ["elevation_gain"], "expected": []},
+    {"text": "malho faz 2 anos", "types": ["training_experience"], "expected": [{"entity_type": "training_experience", "value": {"amount": 2, "unit": "anos"}}]},
+    {"text": "corro ha 6 meses", "types": ["training_experience"], "expected": [{"entity_type": "training_experience", "value": {"amount": 6, "unit": "meses"}}]},
+    {"text": "treino de 40 minutos", "types": ["training_experience"], "expected": []},
+    {"text": "dor 4/10 no joelho esquerdo", "types": ["pain_severity", "laterality"], "expected": [{"entity_type": "pain_severity", "value": {"amount": 4, "scale_max": 10}}, {"entity_type": "laterality", "value": "left"}]},
+    {"text": "desconforto de 2/10 no ombro direito", "types": ["pain_severity", "laterality"], "expected": [{"entity_type": "pain_severity", "value": {"amount": 2, "scale_max": 10}}, {"entity_type": "laterality", "value": "right"}]},
+    {"text": "dor no ombro ha 5 dias", "types": ["symptom_onset"], "expected": [{"entity_type": "symptom_onset", "value": {"amount": 5, "unit": "dias"}}]},
+    {"text": "incomodo faz 2 semanas", "types": ["symptom_onset"], "expected": [{"entity_type": "symptom_onset", "value": {"amount": 2, "unit": "semanas"}}]},
+    {"text": "cadencia 2-0-2", "types": ["movement_tempo"], "expected": [{"entity_type": "movement_tempo", "value": {"phases_seconds": [2, 0, 2]}}]},
+    {"text": "tempo de 3-1-1-0", "types": ["movement_tempo"], "expected": [{"entity_type": "movement_tempo", "value": {"phases_seconds": [3, 1, 1, 0]}}]},
+    {"text": "5 refeicoes por dia", "types": ["meal_frequency"], "expected": [{"entity_type": "meal_frequency", "value": 5}]},
+    {"text": "3 refeicoes ao dia", "types": ["meal_frequency"], "expected": [{"entity_type": "meal_frequency", "value": 3}]},
+    {"text": "um lanche", "types": ["meal_frequency"], "expected": []}
+  ]
+}

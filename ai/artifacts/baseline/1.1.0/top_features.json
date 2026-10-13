@@ -1,0 +1,282 @@
+{
+  "baseline_version": "1.1.0",
+  "tasks": {
+    "intent_classification": {
+      "adjust_training_intensity": [
+        "word__28"
+      ],
+      "adjust_training_volume": [
+        "word__28"
+      ],
+      "analyze_progress": [
+        "word__28"
+      ],
+      "ask_cooking_guidance": [
+        "word__28"
+      ],
+      "ask_exercise_execution": [
+        "word__28"
+      ],
+      "ask_food_substitution_options": [
+        "word__28"
+      ],
+      "ask_meal_feedback": [
+        "word__28"
+      ],
+      "ask_nutrition_concept": [
+        "word__28"
+      ],
+      "ask_recovery": [
+        "word__28"
+      ],
+      "ask_training_concept": [
+        "word__28"
+      ],
+      "change_diet_structure": [
+        "word__28"
+      ],
+      "change_training_split": [
+        "word__28"
+      ],
+      "clarification": [
+        "word__28"
+      ],
+      "compare_options": [
+        "word__28"
+      ],
+      "confirm_planner_action": [
+        "word__28"
+      ],
+      "explain_current_plan": [
+        "word__28"
+      ],
+      "greeting": [
+        "word__28"
+      ],
+      "image_context_request": [
+        "word__28"
+      ],
+      "motivation_support": [
+        "word__28"
+      ],
+      "move_workout_day": [
+        "word__28"
+      ],
+      "out_of_scope": [
+        "word__28"
+      ],
+      "record_food_intake": [
+        "word__28"
+      ],
+      "record_training_load": [
+        "word__28"
+      ],
+      "reject_planner_action": [
+        "word__28"
+      ],
+      "remember_preference": [
+        "word__28"
+      ],
+      "replace_exercise": [
+        "word__28"
+      ],
+      "replace_meal_item": [
+        "word__28"
+      ],
+      "set_day_activity": [
+        "word__28"
+      ],
+      "undo_planner_action": [
+        "word__28"
+      ],
+      "update_goal": [
+        "word__28"
+      ]
+    },
+    "risk_classification": {
+      "eating_disorder_signal": [
+        "word__comi",
+        "word__compensar",
+        "char__omi",
+        "char__ com",
+        "char__om",
+        "char__com",
+        "char__ comi",
+        "char__comi",
+        "word__compulsao",
+        "word__vomito",
+        "word__dia",
+        "char__ensa"
+      ],
+      "emergency_symptom": [
+        "word__estou com",
+        "word__desmaiei",
+        "word__quase",
+        "word__no peito",
+        "word__peito",
+        "word__consciencia",
+        "word__no",
+        "word__dor no peito",
+        "word__dor no",
+        "word__agora",
+        "word__estou",
+        "word__suor frio"
+      ],
+      "extreme_diet_or_dehydration": [
+        "word__agua",
+        "word__tres",
+        "char__s ",
+        "word__dias sem",
+        "word__dias",
+        "word__sem",
+        "word__perder",
+        "word__jejum",
+        "word__quilos em",
+        "word__quilos",
+        "char__as ",
+        "word__sem comer"
+      ],
+      "food_allergy_or_reaction": [
+        "word__esse",
+        "word__alergia",
+        "word__sou alergico",
+        "word__alergico",
+        "char__lergi",
+        "char__lerg",
+        "char__alergi",
+        "char__ergi",
+        "char__aler",
+        "char__alerg",
+        "char__ alerg",
+        "char__ ale"
+      ],
+      "food_safety_uncertainty": [
+        "word__geladeira",
+        "word__ta",
+        "word__ainda",
+        "word__cheiro",
+        "word__carne",
+        "char__ge",
+        "word__frango",
+        "word__esta",
+        "word__ficou",
+        "char__gel",
+        "word__mofo",
+        "word__esta com"
+      ],
+      "medication_or_hormone": [
+        "word__dose",
+        "word__dose do",
+        "word__remedio",
+        "word__de testosterona",
+        "word__testosterona",
+        "word__ciclo",
+        "word__do",
+        "char__medi",
+        "word__do medicamento",
+        "word__dose do medicamento",
+        "char__dose ",
+        "char__dose"
+      ],
+      "mental_health_crisis": [
+        "word__me",
+        "word__em",
+        "word__minha",
+        "word__me machucar",
+        "word__machucar",
+        "word__vida",
+        "word__minha vida",
+        "word__de fazer",
+        "word__contra",
+        "word__contra mim",
+        "word__mim",
+        "char__ m"
+      ],
+      "none": [
+        "word__como funciona",
+        "word__meu treino",
+        "word__entender",
+        "word__jantar",
+        "word__troca",
+        "word__funciona",
+        "word__quero entender",
+        "word__como",
+        "word__dormi oito",
+        "word__dormi oito horas",
+        "word__dormi",
+        "word__oito horas"
+      ],
+      "pain_or_possible_injury": [
+        "word__doi",
+        "word__fisgada",
+        "word__incomodando",
+        "word__senti",
+        "word__senti uma",
+        "word__lombar",
+        "word__joelho",
+        "word__meu joelho",
+        "word__ombro",
+        "word__depois do",
+        "word__depois do treino",
+        "word__sempre"
+      ],
+      "supplement_uncertainty": [
+        "word__pre treino",
+        "word__pre",
+        "word__posso",
+        "word__pode",
+        "word__combinacao",
+        "word__com",
+        "word__creatina",
+        "word__posso misturar",
+        "word__misturar",
+        "word__esse",
+        "word__cafeina",
+        "word__posso usar"
+      ],
+      "under_recovery_signal": [
+        "word__semanas",
+        "word__os",
+        "word__exausto",
+        "word__irritado",
+        "word__faz semanas",
+        "word__dolorido",
+        "word__ha",
+        "word__fadiga",
+        "word__mal",
+        "word__faz",
+        "word__treinos",
+        "word__entre os"
+      ],
+      "unsafe_training_request": [
+        "word__um",
+        "word__ate",
+        "word__um treino",
+        "word__monta um treino",
+        "word__series",
+        "word__coloca",
+        "word__um desafio",
+        "word__desafio de",
+        "word__desafio",
+        "word__um desafio de",
+        "word__maximo",
+        "word__descanso"
+      ],
+      "vulnerable_or_clinical_context": [
+        "word__dieta",
+        "word__sou",
+        "word__doenca",
+        "word__tenho",
+        "word__sou menor",
+        "word__menor",
+        "word__tenho doenca renal",
+        "word__tenho doenca",
+        "word__doenca renal",
+        "word__renal",
+        "word__proteina",
+        "char__et"
+      ]
+    }
+  },
+  "warning": "Learned correlations, not causal explanations."
+}

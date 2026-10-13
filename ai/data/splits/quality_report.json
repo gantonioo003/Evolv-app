@@ -1,0 +1,72 @@
+{
+  "audit_version": "1.0.0",
+  "audited_at": "2026-10-07",
+  "dataset_version": "1.2.0",
+  "files": {
+    "challenge/ambiguity_examples.jsonl": {
+      "rows": 39,
+      "sha256": "ca3eac3f714b794955e100dc6a581dba4944b9a3d26985aefe502e4efd43f435"
+    },
+    "test/intent_examples.jsonl": {
+      "rows": 30,
+      "sha256": "bb7cbf9209abc80fae8161c7dbd7146210af7f16afe3022656eb5082c0a97b08"
+    },
+    "test/risk_examples.jsonl": {
+      "rows": 13,
+      "sha256": "3449da61a4afcedc14a3e1e19ab666067aae915226d6a8709d31ae820181ceb3"
+    },
+    "train/intent_examples.jsonl": {
+      "rows": 180,
+      "sha256": "2be63e653f7c1accf0d4922113b0a702aacf246052b28d49ab09698c4cad92cb"
+    },
+    "train/risk_examples.jsonl": {
+      "rows": 78,
+      "sha256": "33ddc7bc5c0b7f3491cea7c1357394ef71409d459cfe1265dcb39bdea1f0b6ca"
+    },
+    "validation/intent_examples.jsonl": {
+      "rows": 30,
+      "sha256": "6591042cb900fd84c1a1fabe5a04d6ee358edc63bb0c54f91173a07afeae3606"
+    },
+    "validation/risk_examples.jsonl": {
+      "rows": 13,
+      "sha256": "0ceba466272ce118881baf0a3a922a0f192c39a587a10fd3cd5fce498c576593"
+    }
+  },
+  "findings": {
+    "allocation_mismatches": [],
+    "challenge_policy_violations": [],
+    "duplicate_ids": [],
+    "exact_normalized_duplicates": [],
+    "near_duplicates_across_splits": [],
+    "version_mismatches": []
+  },
+  "status": "passed",
+  "summary": {
+    "blocking_findings": 0,
+    "rows": 383,
+    "source_type_counts": {
+      "real_pattern_rewrite": 86,
+      "synthetic_adversarial_curated": 39,
+      "synthetic_curated": 258
+    },
+    "split_counts": {
+      "challenge": 39,
+      "test": 43,
+      "train": 258,
+      "validation": 43
+    },
+    "task_counts": {
+      "challenge_evaluation": 39,
+      "intent_classification": 240,
+      "risk_classification": 104
+    },
+    "unique_ids": 383,
+    "unique_normalized_texts": 383
+  },
+  "thresholds": {
+    "blocking_rule": "Block when both thresholds are met, or when either metric is at least 0.96.",
+    "minimum_tokens_per_text": 5,
+    "sequence_ratio_threshold": 0.9,
+    "token_jaccard_threshold": 0.82
+  }
+}

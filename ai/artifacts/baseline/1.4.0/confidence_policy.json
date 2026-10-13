@@ -1,0 +1,10 @@
+{
+  "intent_classification": {
+    "automatic_acceptance_enabled": false,
+    "reason": "New native decision contract needs held-out calibration and pipeline integration"
+  },
+  "risk_classification": {
+    "automatic_acceptance_enabled": false,
+    "reason": "New native decision contract needs held-out calibration and pipeline integration"
+  }
+}

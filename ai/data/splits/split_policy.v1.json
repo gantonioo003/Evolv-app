@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "dataset_version": "1.2.0",
+  "status": "frozen",
+  "frozen_at": "2026-10-07",
+  "regular_splits": ["train", "validation", "test"],
+  "allocation_per_label": {
+    "train": 6,
+    "validation": 1,
+    "test": 1
+  },
+  "assignment": {
+    "algorithm": "sha256_order_per_label",
+    "algorithm_version": "1.0.0",
+    "rank_input": "label + null_byte + original_text",
+    "registry": "ai/data/splits/assignments.v1.json",
+    "change_rule": "Existing IDs cannot move between splits inside dataset version 1.2.0. Any source-row change requires an explicit new dataset version and registry review."
+  },
+  "challenge_policy": {
+    "split": "challenge",
+    "used_for_training": false,
+    "used_for_threshold_tuning": false,
+    "purpose": "Behavioral evaluation of ambiguity, safety overrides and unsupported modality."
+  },
+  "duplicate_detection": {
+    "normalization": "Unicode NFKD, casefold, remove diacritics, replace non-alphanumeric runs with one space.",
+    "exact_duplicates_block_release": true,
+    "near_duplicates": {
+      "minimum_tokens_per_text": 5,
+      "token_jaccard_threshold": 0.82,
+      "sequence_ratio_threshold": 0.9,
+      "blocking_rule": "Block when both thresholds are met, or when either metric is at least 0.96."
+    }
+  },
+  "release_requirements": [
+    "Every intent and risk label appears in train, validation and test.",
+    "Every regular label has exactly six train, one validation and one test row.",
+    "Challenge rows remain isolated from regular splits.",
+    "IDs and normalized texts are globally unique.",
+    "No blocking near-duplicate crosses split boundaries.",
+    "All rows use the frozen dataset version.",
+    "Generated file hashes and source fingerprints match the manifest.",
+    "The deterministic rebuild produces the same manifest and audit report."
+  ]
+}

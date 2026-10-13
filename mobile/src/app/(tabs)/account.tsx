@@ -88,10 +88,10 @@ export default function AccountScreen() {
 
       <CinematicHero
         source={pickWeeklyImage(accountImages, imagePreferences, "account", 0)}
-        eyebrow="Plano ativo"
+        eyebrow="Seu perfil"
         title={displayName}
-        description="Seu plano, preferências, histórico e privacidade reunidos em um só lugar."
-        height={230}
+        description={activeGoal?.title ?? "Um passo de cada vez."}
+        height={220}
         overlayOpacity={0.08}
       />
 
@@ -154,7 +154,10 @@ export default function AccountScreen() {
         />
       </Pressable>
 
-      <SectionTitle title="Seu plano" meta="semana 1 de 12" />
+      <SectionTitle
+        title="Seu plano"
+        meta={workoutPlan ? "ativo" : undefined}
+      />
       <Surface>
         <SettingRow
           icon={CalendarDays}
@@ -285,15 +288,15 @@ const createStyles = (palette: AppThemePalette) =>
       gap: 12,
     },
     progressCopy: { flex: 1, minWidth: 0 },
-    progressTitle: { color: palette.text, fontSize: 16, fontWeight: "900" },
+    progressTitle: { color: palette.text, fontSize: 16, fontWeight: "600" },
     progressDescription: { marginTop: 4, color: palette.faint, fontSize: 12 },
     progressMetrics: { flexDirection: "row", justifyContent: "space-between" },
-    progressValue: { color: palette.text, fontSize: 17, fontWeight: "900" },
+    progressValue: { color: palette.text, fontSize: 17, fontWeight: "600" },
     progressLabel: {
       marginTop: 2,
       color: palette.faint,
       fontSize: 10,
-      textTransform: "uppercase",
+      textTransform: "none",
     },
     version: { color: palette.faint, fontSize: 11, textAlign: "center" },
     pressed: { opacity: 0.66 },

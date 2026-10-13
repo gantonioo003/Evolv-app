@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evolv.local/schemas/dataset-row.schema.json",
+  "title": "Evolv Coach dataset row",
+  "type": "object",
+  "required": ["id", "task", "text", "language", "source_type", "dataset_version"],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "task": {
+      "enum": ["intent_classification", "risk_classification", "challenge_evaluation"]
+    },
+    "text": { "type": "string", "minLength": 3 },
+    "language": { "const": "pt-BR" },
+    "source_type": {
+      "enum": ["synthetic_curated", "real_pattern_rewrite", "synthetic_adversarial_curated"]
+    },
+    "source_id": { "type": ["string", "null"] },
+    "style": { "type": "string" },
+    "difficulty": { "type": "string" },
+    "dataset_version": { "const": "1.2.0" },
+    "label": { "type": "string" },
+    "primary_intent": { "type": "string" },
+    "secondary_intents": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "topics": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "risk_labels": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "requires_context": { "type": "boolean" },
+    "requires_image": { "type": "boolean" },
+    "missing_entities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "ambiguity_type": { "type": "string" },
+    "expected_behavior": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "task": { "const": "intent_classification" } } },
+      "then": { "required": ["label", "category", "route", "style", "difficulty"] }
+    },
+    {
+      "if": { "properties": { "task": { "const": "risk_classification" } } },
+      "then": { "required": ["label", "severity", "route", "style", "difficulty"] }
+    },
+    {
+      "if": { "properties": { "task": { "const": "challenge_evaluation" } } },
+      "then": {
+        "required": [
+          "primary_intent",
+          "secondary_intents",
+          "topics",
+          "risk_labels",
+          "requires_context",
+          "requires_image",
+          "missing_entities",
+          "ambiguity_type",
+          "expected_behavior"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": true
+}

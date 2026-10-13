@@ -53,7 +53,7 @@ export default function CoachScreen() {
   return (
     <AppScreen>
       <PageHeader
-        eyebrow="Contexto: Hoje"
+        eyebrow="Evolv"
         title="Coach"
         actionIcon={CircleHelp}
         actionLabel="Sobre o Coach"
@@ -67,10 +67,10 @@ export default function CoachScreen() {
 
       <CinematicHero
         source={pickWeeklyImage(coachImages, imagePreferences, "coach", 0)}
-        eyebrow="Conhecimento aplicado"
-        title={"Pergunte.\nEntenda. Ajuste."}
-        description="Tire dúvidas ou peça mudanças pequenas. O Coach usa o contexto do seu plano sem alterar tudo sozinho."
-        height={250}
+        eyebrow="No seu ritmo"
+        title="Vamos conversar."
+        description="Treino, alimentação, recuperação. Qual é sua dúvida?"
+        height={196}
         overlayOpacity={0.24}
       />
 
@@ -175,7 +175,7 @@ const createStyles = (palette: AppThemePalette) =>
     },
     memoryBand: {
       borderLeftWidth: 4,
-      borderLeftColor: colors.gold,
+      borderLeftColor: palette.border,
       backgroundColor: palette.elevated,
       paddingHorizontal: spacing.md,
     },
@@ -199,13 +199,13 @@ const createStyles = (palette: AppThemePalette) =>
     },
     bubbleLabel: {
       marginBottom: 4,
-      color: colors.gold,
-      fontSize: 9,
-      fontWeight: "900",
-      textTransform: "uppercase",
+      color: palette.muted,
+      fontSize: 11,
+      fontWeight: "600",
+      textTransform: "none",
     },
     userBubbleLabel: { color: "#EBC7C2" },
-    bubbleText: { color: palette.text, fontSize: 13.5, lineHeight: 20 },
+    bubbleText: { color: palette.text, fontSize: 14, lineHeight: 21 },
     userBubbleText: { color: colors.text },
     composer: {
       minHeight: 54,

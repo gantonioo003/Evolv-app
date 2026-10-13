@@ -65,7 +65,7 @@ evolv-app/
 ## Pendências curtas
 
 - Continuar os modulos do `backend/`, cuja base NestJS ja foi criada.
-- Criar `ml/` quando a implementação do Coach local começar.
+- A pasta `ai/` foi criada na fase 7.01 para dados, conhecimento, avaliacao e futuros modelos do Coach local.
 - Criar o board de tarefas no GitHub se for usar gestão visual.
 
 ## Critério para encerrar a fase

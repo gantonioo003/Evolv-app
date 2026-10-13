@@ -1,0 +1,136 @@
+{
+  "baseline_version": "1.0.0",
+  "dataset_version": "1.2.0",
+  "selection_policy": "Compare two declared TF-IDF profiles on validation; select by macro F1 and never inspect test.",
+  "tasks": {
+    "intent_classification": {
+      "classes": 30,
+      "cross_validation_on_train": {
+        "accuracy_mean": 0.283333,
+        "accuracy_std": 0.02357,
+        "folds": 3,
+        "macro_f1_mean": 0.260282,
+        "macro_f1_std": 0.026371
+      },
+      "feature_count": 6681,
+      "selection": {
+        "candidates": {
+          "word_char": {
+            "accuracy": 0.4,
+            "macro_f1": 0.333333,
+            "macro_precision": 0.3,
+            "macro_recall": 0.4,
+            "rows": 30
+          },
+          "word_only": {
+            "accuracy": 0.333333,
+            "macro_f1": 0.266667,
+            "macro_precision": 0.238889,
+            "macro_recall": 0.333333,
+            "rows": 30
+          }
+        },
+        "criterion": "Highest validation macro F1, then accuracy.",
+        "selected_feature_profile": "word_char"
+      },
+      "task": "intent_classification",
+      "test_evaluated": false,
+      "train_class_counts": {
+        "adjust_training_intensity": 6,
+        "adjust_training_volume": 6,
+        "analyze_progress": 6,
+        "ask_cooking_guidance": 6,
+        "ask_exercise_execution": 6,
+        "ask_food_substitution_options": 6,
+        "ask_meal_feedback": 6,
+        "ask_nutrition_concept": 6,
+        "ask_recovery": 6,
+        "ask_training_concept": 6,
+        "change_diet_structure": 6,
+        "change_training_split": 6,
+        "clarification": 6,
+        "compare_options": 6,
+        "confirm_planner_action": 6,
+        "explain_current_plan": 6,
+        "greeting": 6,
+        "image_context_request": 6,
+        "motivation_support": 6,
+        "move_workout_day": 6,
+        "out_of_scope": 6,
+        "record_food_intake": 6,
+        "record_training_load": 6,
+        "reject_planner_action": 6,
+        "remember_preference": 6,
+        "replace_exercise": 6,
+        "replace_meal_item": 6,
+        "set_day_activity": 6,
+        "undo_planner_action": 6,
+        "update_goal": 6
+      },
+      "train_rows": 180,
+      "validation": {
+        "accuracy": 0.4,
+        "macro_f1": 0.333333,
+        "macro_precision": 0.3,
+        "macro_recall": 0.4,
+        "rows": 30
+      }
+    },
+    "risk_classification": {
+      "classes": 13,
+      "cross_validation_on_train": {
+        "accuracy_mean": 0.397436,
+        "accuracy_std": 0.04797,
+        "folds": 3,
+        "macro_f1_mean": 0.393651,
+        "macro_f1_std": 0.03528
+      },
+      "feature_count": 4116,
+      "selection": {
+        "candidates": {
+          "word_char": {
+            "accuracy": 0.615385,
+            "macro_f1": 0.538462,
+            "macro_precision": 0.5,
+            "macro_recall": 0.615385,
+            "rows": 13
+          },
+          "word_only": {
+            "accuracy": 0.615385,
+            "macro_f1": 0.525641,
+            "macro_precision": 0.487179,
+            "macro_recall": 0.615385,
+            "rows": 13
+          }
+        },
+        "criterion": "Highest validation macro F1, then accuracy.",
+        "selected_feature_profile": "word_char"
+      },
+      "task": "risk_classification",
+      "test_evaluated": false,
+      "train_class_counts": {
+        "eating_disorder_signal": 6,
+        "emergency_symptom": 6,
+        "extreme_diet_or_dehydration": 6,
+        "food_allergy_or_reaction": 6,
+        "food_safety_uncertainty": 6,
+        "medication_or_hormone": 6,
+        "mental_health_crisis": 6,
+        "none": 6,
+        "pain_or_possible_injury": 6,
+        "supplement_uncertainty": 6,
+        "under_recovery_signal": 6,
+        "unsafe_training_request": 6,
+        "vulnerable_or_clinical_context": 6
+      },
+      "train_rows": 78,
+      "validation": {
+        "accuracy": 0.615385,
+        "macro_f1": 0.538462,
+        "macro_precision": 0.5,
+        "macro_recall": 0.615385,
+        "rows": 13
+      }
+    }
+  }
+}

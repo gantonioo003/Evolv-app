@@ -69,6 +69,8 @@ export function mapDietPlanToMeals(plan: DietPlanApi): Meal[] {
 
 export function workoutImageCategoryFromText(value: string) {
   const normalized = value.toLocaleLowerCase("pt-BR");
+  if (normalized.includes("descanso") || normalized.trim() === "livre")
+    return "recovery";
   if (normalized.includes("costa") || normalized.includes("bíceps"))
     return "back";
   if (normalized.includes("peito") || normalized.includes("tríceps"))

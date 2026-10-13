@@ -1,0 +1,293 @@
+{
+  "documents": [
+    {
+      "doc_id": "oasst1:043c6750-8b55-4cb7-a860-6204290ecee6",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:0988f463-fef1-4e97-8560-3420d7059181",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:20a632a9-c609-4b91-9c8c-41191af66c6c",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:23a997fb-8413-4d76-929a-492f1e44947a",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "oasst1:25fa0657-3d0c-46d1-b952-28de6e0a9eda",
+      "reasons": [
+        "third_party_context"
+      ]
+    },
+    {
+      "doc_id": "oasst1:35872ffb-4f9c-4d90-864c-d3adedc23fd4",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:36549b92-8d6b-41f0-937e-faea62be366e",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:390bc9bd-69a6-4d28-9902-acc51d4dc581",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:39206b98-86ab-4ad4-9d46-0234008eab37",
+      "reasons": [
+        "third_party_context"
+      ]
+    },
+    {
+      "doc_id": "oasst1:3d1049c9-0a4a-4c2d-bf81-38872a436cf3",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:409b6e22-ec08-479d-bd3c-6c130ff86bdf",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:5393a53f-1a7e-4657-88da-7804ded96a7b",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:5aaaf57c-021c-4313-8ba7-537bfaf0bf56",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:62b4c030-c2fb-4b3f-b300-c20bd04a0c96",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:6bf81d0d-67ae-4c81-91cc-65cb47d6e8e0",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:754f296a-13c3-4a75-9de8-fd7589bd059a",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:75f7a0bb-c36e-4615-b0c8-2ca05ed43d6e",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:85c1ff97-7e32-4800-8b2f-d30a4962c479",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:8c148091-6508-43cf-91b0-af53900410e2",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:91a7a814-e920-4ca3-9092-5fc9b51760ae",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:91edc50b-32f3-41a3-94be-157220c1faef",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:9576d2d7-3245-4679-97f4-44510c4b7521",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:9844e84c-6cc5-45c7-89e6-2ffaef4e4b39",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:b3a689dc-7ed1-485c-b226-ab95ed905afd",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:bdbeca28-b9f8-4a08-9749-e96beb24d13d",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:beabd9b1-5617-4352-b309-dc85c82445a5",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "oasst1:c49d3ab3-e022-472d-9fd6-49ffa5dc986d",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:d81a74f5-222b-4ec1-b1de-4e4769d1d9a5",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:e253d3c8-161d-4941-a317-508f86fdeab4",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:e7c60644-b985-4686-b6bb-17af2f72f19f",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "oasst1:f94123f3-6fb4-42a4-8b6d-241877343233",
+      "reasons": [
+        "possible_sensitive_personal_data"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:102937:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:164967:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:2129624:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:2286164:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:257:5",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:2630121:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:306:8",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:3103002:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:3103322:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:3348382:2",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:362355:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:5123213:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:5284399:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:5883355:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:5883574:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:601836:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    },
+    {
+      "doc_id": "wikipedia:601856:0",
+      "reasons": [
+        "direct_identifiers_removed"
+      ]
+    }
+  ],
+  "not_a_complete_privacy_audit": true
+}

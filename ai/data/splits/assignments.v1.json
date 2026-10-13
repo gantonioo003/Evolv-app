@@ -1,0 +1,1923 @@
+{
+  "assignments": {
+    "challenge_001": {
+      "label": "replace_exercise",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_002": {
+      "label": "move_workout_day",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_003": {
+      "label": "ask_recovery",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_004": {
+      "label": "ask_food_substitution_options",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_005": {
+      "label": "replace_meal_item",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_006": {
+      "label": "clarification",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_007": {
+      "label": "clarification",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_008": {
+      "label": "replace_exercise",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_009": {
+      "label": "image_context_request",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_010": {
+      "label": "image_context_request",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_011": {
+      "label": "set_day_activity",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_012": {
+      "label": "replace_meal_item",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_013": {
+      "label": "change_diet_structure",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_014": {
+      "label": "change_diet_structure",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_015": {
+      "label": "explain_current_plan",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_016": {
+      "label": "compare_options",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_017": {
+      "label": "replace_meal_item",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_018": {
+      "label": "clarification",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_019": {
+      "label": "record_food_intake",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_020": {
+      "label": "record_training_load",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_021": {
+      "label": "clarification",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_022": {
+      "label": "update_goal",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_023": {
+      "label": "compare_options",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_024": {
+      "label": "change_diet_structure",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_025": {
+      "label": "ask_recovery",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_026": {
+      "label": "analyze_progress",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_027": {
+      "label": "motivation_support",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_028": {
+      "label": "adjust_training_intensity",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_029": {
+      "label": "ask_nutrition_concept",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_030": {
+      "label": "ask_nutrition_concept",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_031": {
+      "label": "move_workout_day",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_032": {
+      "label": "move_workout_day",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_033": {
+      "label": "confirm_planner_action",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_034": {
+      "label": "clarification",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_035": {
+      "label": "image_context_request",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_036": {
+      "label": "change_training_split",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_037": {
+      "label": "out_of_scope",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_038": {
+      "label": "reject_planner_action",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "challenge_039": {
+      "label": "undo_planner_action",
+      "split": "challenge",
+      "task": "challenge_evaluation"
+    },
+    "intent_adjust_training_intensity_0b072fafd8f2": {
+      "label": "adjust_training_intensity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_364026a691fb": {
+      "label": "adjust_training_intensity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_369e73473958": {
+      "label": "adjust_training_intensity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_50558b69e471": {
+      "label": "adjust_training_intensity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_51dcdd25aaf9": {
+      "label": "adjust_training_intensity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_66e1c1fa3c70": {
+      "label": "adjust_training_intensity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_7e67524d7530": {
+      "label": "adjust_training_intensity",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_intensity_b4ad4e643301": {
+      "label": "adjust_training_intensity",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_1c63c3abd1eb": {
+      "label": "adjust_training_volume",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_36abc9316174": {
+      "label": "adjust_training_volume",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_36dacdc88b18": {
+      "label": "adjust_training_volume",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_91bf364b79a3": {
+      "label": "adjust_training_volume",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_bcf150b78c25": {
+      "label": "adjust_training_volume",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_d32efc44467f": {
+      "label": "adjust_training_volume",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_eea4e94cd3be": {
+      "label": "adjust_training_volume",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_adjust_training_volume_f1ca2667e13f": {
+      "label": "adjust_training_volume",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_330ca01b3170": {
+      "label": "analyze_progress",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_47aef4ce5456": {
+      "label": "analyze_progress",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_5e5c34462d4b": {
+      "label": "analyze_progress",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_6a1746d8c9a8": {
+      "label": "analyze_progress",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_6cf40a27827c": {
+      "label": "analyze_progress",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_bd7473d5bdf5": {
+      "label": "analyze_progress",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_c29aaab0edc1": {
+      "label": "analyze_progress",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_analyze_progress_f0d1899fd02b": {
+      "label": "analyze_progress",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_0be825ddf05f": {
+      "label": "ask_cooking_guidance",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_1681c9c26dda": {
+      "label": "ask_cooking_guidance",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_2658cc4a467f": {
+      "label": "ask_cooking_guidance",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_2a5f6e7313f0": {
+      "label": "ask_cooking_guidance",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_2e30db6c16f1": {
+      "label": "ask_cooking_guidance",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_3374efd345c4": {
+      "label": "ask_cooking_guidance",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_419b93376ea3": {
+      "label": "ask_cooking_guidance",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_cooking_guidance_7c3a46692aa8": {
+      "label": "ask_cooking_guidance",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_2e1cc85ca428": {
+      "label": "ask_exercise_execution",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_31304f6c0da8": {
+      "label": "ask_exercise_execution",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_41db3fb1c60d": {
+      "label": "ask_exercise_execution",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_61130ac75c34": {
+      "label": "ask_exercise_execution",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_7f09d4a06fcd": {
+      "label": "ask_exercise_execution",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_a672245ce46d": {
+      "label": "ask_exercise_execution",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_eeecfb9af262": {
+      "label": "ask_exercise_execution",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_exercise_execution_fe9628d01b7e": {
+      "label": "ask_exercise_execution",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_0c474730b145": {
+      "label": "ask_food_substitution_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_0c4c7bd34145": {
+      "label": "ask_food_substitution_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_283da2372218": {
+      "label": "ask_food_substitution_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_401b9f6a61b4": {
+      "label": "ask_food_substitution_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_50c3b6f39d55": {
+      "label": "ask_food_substitution_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_86dd1443b7d7": {
+      "label": "ask_food_substitution_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_96833595b2af": {
+      "label": "ask_food_substitution_options",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_food_substitution_options_a018759dbc8c": {
+      "label": "ask_food_substitution_options",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_0c53c145a4bb": {
+      "label": "ask_meal_feedback",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_1e5a4cc926b8": {
+      "label": "ask_meal_feedback",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_3f6ae1117729": {
+      "label": "ask_meal_feedback",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_48416bbe8b79": {
+      "label": "ask_meal_feedback",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_580528f2e8d9": {
+      "label": "ask_meal_feedback",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_5f55594b4d31": {
+      "label": "ask_meal_feedback",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_ea102b05e808": {
+      "label": "ask_meal_feedback",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_meal_feedback_fb47c0d8e4ca": {
+      "label": "ask_meal_feedback",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_212a2a69ef2c": {
+      "label": "ask_nutrition_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_6f4f239861d7": {
+      "label": "ask_nutrition_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_7ec7fe6bc2d3": {
+      "label": "ask_nutrition_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_a864cf95f3e1": {
+      "label": "ask_nutrition_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_c166ce590e23": {
+      "label": "ask_nutrition_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_c26be217d860": {
+      "label": "ask_nutrition_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_ded22821e53e": {
+      "label": "ask_nutrition_concept",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_nutrition_concept_e6e22f798e35": {
+      "label": "ask_nutrition_concept",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_1aa77f0e0a11": {
+      "label": "ask_recovery",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_25eedd89fb41": {
+      "label": "ask_recovery",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_33d3802dda53": {
+      "label": "ask_recovery",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_3655711d03f2": {
+      "label": "ask_recovery",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_6769bae9bade": {
+      "label": "ask_recovery",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_aa160ac06626": {
+      "label": "ask_recovery",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_c7d603345f66": {
+      "label": "ask_recovery",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_recovery_dba4a871eefd": {
+      "label": "ask_recovery",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_12662ef3c3c4": {
+      "label": "ask_training_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_2e14ccc4636a": {
+      "label": "ask_training_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_82dbaca5abfd": {
+      "label": "ask_training_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_b639e14b6934": {
+      "label": "ask_training_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_c3a4a6e8564d": {
+      "label": "ask_training_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_d3dc6e2fc120": {
+      "label": "ask_training_concept",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_e0478d5da6a4": {
+      "label": "ask_training_concept",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_ask_training_concept_ef7915a05dca": {
+      "label": "ask_training_concept",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_24c7f3b5c7c5": {
+      "label": "change_diet_structure",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_438ed50fa085": {
+      "label": "change_diet_structure",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_45a994c9f34a": {
+      "label": "change_diet_structure",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_6bf8f9b71b68": {
+      "label": "change_diet_structure",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_9d02ffd02779": {
+      "label": "change_diet_structure",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_c29cebeb5584": {
+      "label": "change_diet_structure",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_d0bfe5b359bb": {
+      "label": "change_diet_structure",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_change_diet_structure_f72e6c52c994": {
+      "label": "change_diet_structure",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_5c871c6a058a": {
+      "label": "change_training_split",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_8868723b9159": {
+      "label": "change_training_split",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_908acd4de349": {
+      "label": "change_training_split",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_90ea0cf2461f": {
+      "label": "change_training_split",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_abe2f0b2e23c": {
+      "label": "change_training_split",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_b22621659df4": {
+      "label": "change_training_split",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_c7ddbd93ac60": {
+      "label": "change_training_split",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_change_training_split_fc6478b993d0": {
+      "label": "change_training_split",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_clarification_212bf286a5b2": {
+      "label": "clarification",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_clarification_32c7aed522f2": {
+      "label": "clarification",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_clarification_537fb61a7519": {
+      "label": "clarification",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_clarification_633badb9c724": {
+      "label": "clarification",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_clarification_726d22c6f0e0": {
+      "label": "clarification",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_clarification_744aab47a379": {
+      "label": "clarification",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_clarification_844709a4f6d0": {
+      "label": "clarification",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_clarification_d4ac321e8e5e": {
+      "label": "clarification",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_2b56748e078e": {
+      "label": "compare_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_3236d5c2406b": {
+      "label": "compare_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_374a2516f7cd": {
+      "label": "compare_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_42c1642a4741": {
+      "label": "compare_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_86ce741c790e": {
+      "label": "compare_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_ae31c8eb191e": {
+      "label": "compare_options",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_de6c424c9608": {
+      "label": "compare_options",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_compare_options_e941d6f8d3fd": {
+      "label": "compare_options",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_55d69e88f106": {
+      "label": "confirm_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_5e30a79cad71": {
+      "label": "confirm_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_6a3a7f566c5c": {
+      "label": "confirm_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_80ec933f04c5": {
+      "label": "confirm_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_a3502bc769e0": {
+      "label": "confirm_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_b16b6557dc60": {
+      "label": "confirm_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_bf549c62659d": {
+      "label": "confirm_planner_action",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_confirm_planner_action_d520e1033782": {
+      "label": "confirm_planner_action",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_02ca2b1f82af": {
+      "label": "explain_current_plan",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_2651879e3b92": {
+      "label": "explain_current_plan",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_2aeaf350a30e": {
+      "label": "explain_current_plan",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_7c0259e50462": {
+      "label": "explain_current_plan",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_8918dc4aea7f": {
+      "label": "explain_current_plan",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_9bdea2a247be": {
+      "label": "explain_current_plan",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_d87d626199c4": {
+      "label": "explain_current_plan",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_explain_current_plan_dc2a13ac054f": {
+      "label": "explain_current_plan",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_greeting_11f219932364": {
+      "label": "greeting",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_greeting_21207eeaa11f": {
+      "label": "greeting",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_greeting_6bbba72ebd74": {
+      "label": "greeting",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_greeting_977301f84a2d": {
+      "label": "greeting",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_greeting_b9719cca36bb": {
+      "label": "greeting",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_greeting_c0ca582fd877": {
+      "label": "greeting",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_greeting_d29ce50e95a2": {
+      "label": "greeting",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_greeting_dc9229f52dcb": {
+      "label": "greeting",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_691cf60cfe6b": {
+      "label": "image_context_request",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_ad65e3304e9f": {
+      "label": "image_context_request",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_c002da3466d4": {
+      "label": "image_context_request",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_dedbdaecae5d": {
+      "label": "image_context_request",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_f9ea0799131d": {
+      "label": "image_context_request",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_fd84cf9bdd54": {
+      "label": "image_context_request",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_fe1aec5170cb": {
+      "label": "image_context_request",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_image_context_request_ffd9a78d1ef9": {
+      "label": "image_context_request",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_037592440709": {
+      "label": "motivation_support",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_39499cd4b137": {
+      "label": "motivation_support",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_5cbf0790a644": {
+      "label": "motivation_support",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_ab8aea9448e2": {
+      "label": "motivation_support",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_d45f3dfbfdbe": {
+      "label": "motivation_support",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_d4a9a0dec3b6": {
+      "label": "motivation_support",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_dcf1c5135984": {
+      "label": "motivation_support",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_motivation_support_fe157a238761": {
+      "label": "motivation_support",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_1e5f255f0ce0": {
+      "label": "move_workout_day",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_230e9ce9f5da": {
+      "label": "move_workout_day",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_67feec87c0e0": {
+      "label": "move_workout_day",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_6b13908307ac": {
+      "label": "move_workout_day",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_70527ea6d805": {
+      "label": "move_workout_day",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_bf2956a9f7dc": {
+      "label": "move_workout_day",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_c6c1ba0f3bc5": {
+      "label": "move_workout_day",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_move_workout_day_cef146b8ba52": {
+      "label": "move_workout_day",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_1144750ac901": {
+      "label": "out_of_scope",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_13cc25301ce0": {
+      "label": "out_of_scope",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_7c9b43d68ad6": {
+      "label": "out_of_scope",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_7efe45414558": {
+      "label": "out_of_scope",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_94b72613c6e8": {
+      "label": "out_of_scope",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_987550fd36f4": {
+      "label": "out_of_scope",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_cd77381d4e6c": {
+      "label": "out_of_scope",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_out_of_scope_e449936ab52b": {
+      "label": "out_of_scope",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_12bcbd2bca1a": {
+      "label": "record_food_intake",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_1e69ea3922d7": {
+      "label": "record_food_intake",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_1e74c40f84c6": {
+      "label": "record_food_intake",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_725b4b36d984": {
+      "label": "record_food_intake",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_7a8dad61dc92": {
+      "label": "record_food_intake",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_cac13263354f": {
+      "label": "record_food_intake",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_f684446efa12": {
+      "label": "record_food_intake",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_record_food_intake_fa4f213fa283": {
+      "label": "record_food_intake",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_348e798aaf49": {
+      "label": "record_training_load",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_492103d69f51": {
+      "label": "record_training_load",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_8f756cc25bc8": {
+      "label": "record_training_load",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_92d66751a1db": {
+      "label": "record_training_load",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_bfb54b60387e": {
+      "label": "record_training_load",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_c981913146e1": {
+      "label": "record_training_load",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_cff2fdbedbb2": {
+      "label": "record_training_load",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_record_training_load_f806ff42f110": {
+      "label": "record_training_load",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_0c6245a31423": {
+      "label": "reject_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_0cdea290237e": {
+      "label": "reject_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_15a282274b0b": {
+      "label": "reject_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_3ff5294d73f4": {
+      "label": "reject_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_5ac8e90e9348": {
+      "label": "reject_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_7188d73afb68": {
+      "label": "reject_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_a61c9dc8ddb4": {
+      "label": "reject_planner_action",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_reject_planner_action_b4ec249bbef6": {
+      "label": "reject_planner_action",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_0a310f20bbdd": {
+      "label": "remember_preference",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_49c756045aaf": {
+      "label": "remember_preference",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_4d8732127468": {
+      "label": "remember_preference",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_51c08f375a85": {
+      "label": "remember_preference",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_76ff6bcf008c": {
+      "label": "remember_preference",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_78f0c78d55d3": {
+      "label": "remember_preference",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_99999b59d543": {
+      "label": "remember_preference",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_remember_preference_e9a98e3495ee": {
+      "label": "remember_preference",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_0f88d5d6ba9b": {
+      "label": "replace_exercise",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_15d352971ef5": {
+      "label": "replace_exercise",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_2a18f3b692d2": {
+      "label": "replace_exercise",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_312f6d2b7a2d": {
+      "label": "replace_exercise",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_5351dfebc86f": {
+      "label": "replace_exercise",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_95c955e77971": {
+      "label": "replace_exercise",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_a9a810ddda49": {
+      "label": "replace_exercise",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_replace_exercise_f33bb69870e3": {
+      "label": "replace_exercise",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_0835cf57ba6a": {
+      "label": "replace_meal_item",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_22bf909c8362": {
+      "label": "replace_meal_item",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_7927aa1d6c8f": {
+      "label": "replace_meal_item",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_a0bc29f16c80": {
+      "label": "replace_meal_item",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_a8c4d5dbf026": {
+      "label": "replace_meal_item",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_d4fd07d32494": {
+      "label": "replace_meal_item",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_d944268c1b2c": {
+      "label": "replace_meal_item",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_replace_meal_item_fc07b20ae771": {
+      "label": "replace_meal_item",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_38e8d67705b1": {
+      "label": "set_day_activity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_3cc292e3ca88": {
+      "label": "set_day_activity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_4fca3423d297": {
+      "label": "set_day_activity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_638ef3d75621": {
+      "label": "set_day_activity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_693758c2d07e": {
+      "label": "set_day_activity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_96cc3358870f": {
+      "label": "set_day_activity",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_b591bf668089": {
+      "label": "set_day_activity",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_set_day_activity_d01d4c38dd72": {
+      "label": "set_day_activity",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_0dcf44fd1e02": {
+      "label": "undo_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_14436b39c290": {
+      "label": "undo_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_3463e826b7ec": {
+      "label": "undo_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_3babb40824e8": {
+      "label": "undo_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_49404e84b34b": {
+      "label": "undo_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_76f395d0424d": {
+      "label": "undo_planner_action",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_7bd48290c9c4": {
+      "label": "undo_planner_action",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_undo_planner_action_f43ad87a5e14": {
+      "label": "undo_planner_action",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_0cb5abb2fcde": {
+      "label": "update_goal",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_12f85c9ac37e": {
+      "label": "update_goal",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_1ba41b6b2ed1": {
+      "label": "update_goal",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_223d99b28df9": {
+      "label": "update_goal",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_709a07817d81": {
+      "label": "update_goal",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_83d393a23edb": {
+      "label": "update_goal",
+      "split": "train",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_845b25d8d604": {
+      "label": "update_goal",
+      "split": "validation",
+      "task": "intent_classification"
+    },
+    "intent_update_goal_f1aa3781087d": {
+      "label": "update_goal",
+      "split": "test",
+      "task": "intent_classification"
+    },
+    "risk_eating_disorder_signal_1abe055eca53": {
+      "label": "eating_disorder_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_2052fca4cd8a": {
+      "label": "eating_disorder_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_6d6a327a2cdc": {
+      "label": "eating_disorder_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_928e61e9bd32": {
+      "label": "eating_disorder_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_a006adb67dfb": {
+      "label": "eating_disorder_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_def782a64228": {
+      "label": "eating_disorder_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_f3fd659f7c4a": {
+      "label": "eating_disorder_signal",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_eating_disorder_signal_fc991a1ba27a": {
+      "label": "eating_disorder_signal",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_04b0faa212a8": {
+      "label": "emergency_symptom",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_4ec26f1667c6": {
+      "label": "emergency_symptom",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_52817d60eef6": {
+      "label": "emergency_symptom",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_55fb6c2db404": {
+      "label": "emergency_symptom",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_5f17aeb4c30f": {
+      "label": "emergency_symptom",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_a5fbb8b470cb": {
+      "label": "emergency_symptom",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_bf806389d031": {
+      "label": "emergency_symptom",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_emergency_symptom_efd262afa543": {
+      "label": "emergency_symptom",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_0289cb344512": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_811336b4dea1": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_83426572ef9a": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_921a280e8714": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_c896b5d51082": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_d5dfdc41eba6": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_ec2efea5dbf2": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_extreme_diet_or_dehydration_f9e8a9e7f9a3": {
+      "label": "extreme_diet_or_dehydration",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_25eb0d79d559": {
+      "label": "food_allergy_or_reaction",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_2a2215a0f334": {
+      "label": "food_allergy_or_reaction",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_3789d924bfa5": {
+      "label": "food_allergy_or_reaction",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_401b475fde48": {
+      "label": "food_allergy_or_reaction",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_93078cf79aa6": {
+      "label": "food_allergy_or_reaction",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_98cbc28249a3": {
+      "label": "food_allergy_or_reaction",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_9a303dcbef91": {
+      "label": "food_allergy_or_reaction",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_food_allergy_or_reaction_a2285b0a9052": {
+      "label": "food_allergy_or_reaction",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_1fec03508dbb": {
+      "label": "food_safety_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_2201a73162ec": {
+      "label": "food_safety_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_28e84ddf69f3": {
+      "label": "food_safety_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_4bc69d170418": {
+      "label": "food_safety_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_5095e647bfae": {
+      "label": "food_safety_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_5384a05ea3db": {
+      "label": "food_safety_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_a51cc4d04b3b": {
+      "label": "food_safety_uncertainty",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_food_safety_uncertainty_be8978c1f6e5": {
+      "label": "food_safety_uncertainty",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_0bb3f3e31990": {
+      "label": "medication_or_hormone",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_2f571bc64a39": {
+      "label": "medication_or_hormone",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_59a0f39d15c8": {
+      "label": "medication_or_hormone",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_6c282b9b364e": {
+      "label": "medication_or_hormone",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_e0aa712d0f81": {
+      "label": "medication_or_hormone",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_e6f987cf134b": {
+      "label": "medication_or_hormone",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_ee5f142ebd7f": {
+      "label": "medication_or_hormone",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_medication_or_hormone_fba7083ff1e4": {
+      "label": "medication_or_hormone",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_3c1d76899141": {
+      "label": "mental_health_crisis",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_5c3f7485df61": {
+      "label": "mental_health_crisis",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_5e636d81859a": {
+      "label": "mental_health_crisis",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_72859c80379a": {
+      "label": "mental_health_crisis",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_81a6f9bc1d43": {
+      "label": "mental_health_crisis",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_9bd81ad09d55": {
+      "label": "mental_health_crisis",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_c1fb1d9d82da": {
+      "label": "mental_health_crisis",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_mental_health_crisis_c4ef35b33f61": {
+      "label": "mental_health_crisis",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_none_176969c0e357": {
+      "label": "none",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_none_19230568029d": {
+      "label": "none",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_none_24b5e8c28ceb": {
+      "label": "none",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_none_30b64f4afa1f": {
+      "label": "none",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_none_72c910a71054": {
+      "label": "none",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_none_869d301b365d": {
+      "label": "none",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_none_88fd3895e078": {
+      "label": "none",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_none_d918fb482b2f": {
+      "label": "none",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_0287c0442d65": {
+      "label": "pain_or_possible_injury",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_42cb73ad22ff": {
+      "label": "pain_or_possible_injury",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_5f36afc87b29": {
+      "label": "pain_or_possible_injury",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_635de2140496": {
+      "label": "pain_or_possible_injury",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_abd3b83123c2": {
+      "label": "pain_or_possible_injury",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_e51e8ee414e3": {
+      "label": "pain_or_possible_injury",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_f1af3145b6c2": {
+      "label": "pain_or_possible_injury",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_pain_or_possible_injury_fbc8be24e189": {
+      "label": "pain_or_possible_injury",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_0f7d44912dc6": {
+      "label": "supplement_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_2a8a1d04ec9e": {
+      "label": "supplement_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_2e6f9d1e9eb6": {
+      "label": "supplement_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_3c7edd5d1d96": {
+      "label": "supplement_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_48196c3421ce": {
+      "label": "supplement_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_925423e93777": {
+      "label": "supplement_uncertainty",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_97ec7b65e05b": {
+      "label": "supplement_uncertainty",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_supplement_uncertainty_f38fd88f961b": {
+      "label": "supplement_uncertainty",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_0ba394b22a73": {
+      "label": "under_recovery_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_0f58c7b8a8ff": {
+      "label": "under_recovery_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_1a8679e50291": {
+      "label": "under_recovery_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_37392b6f62f7": {
+      "label": "under_recovery_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_5a3eea5e11d6": {
+      "label": "under_recovery_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_68972d38f4e1": {
+      "label": "under_recovery_signal",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_a131c7f97d29": {
+      "label": "under_recovery_signal",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_under_recovery_signal_ff44154179a6": {
+      "label": "under_recovery_signal",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_182d5c01b94d": {
+      "label": "unsafe_training_request",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_210d1d7df30f": {
+      "label": "unsafe_training_request",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_2f0780f2eb21": {
+      "label": "unsafe_training_request",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_3776df9ed926": {
+      "label": "unsafe_training_request",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_3f36b6ad29df": {
+      "label": "unsafe_training_request",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_92cade7ddffe": {
+      "label": "unsafe_training_request",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_9867dab45555": {
+      "label": "unsafe_training_request",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_unsafe_training_request_bf586bdf6ee8": {
+      "label": "unsafe_training_request",
+      "split": "test",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_03602bb60f88": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_0435b521e244": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_13dacf19242c": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_916685a2aa06": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_97ba96824d61": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_bafd693e91e6": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "train",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_de64d9c22acf": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "validation",
+      "task": "risk_classification"
+    },
+    "risk_vulnerable_or_clinical_context_ef1961b572f0": {
+      "label": "vulnerable_or_clinical_context",
+      "split": "test",
+      "task": "risk_classification"
+    }
+  },
+  "dataset_version": "1.2.0",
+  "frozen_at": "2026-10-07",
+  "status": "frozen",
+  "version": "1.0.0"
+}

@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
 import {
   CalendarClock,
+  ArrowUpRight,
   ChevronRight,
   CircleHelp,
   Dumbbell,
@@ -8,7 +9,7 @@ import {
   Target,
   Utensils,
 } from "lucide-react-native";
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 
 import {
   AppScreen,
@@ -85,14 +86,14 @@ export default function TodayScreen() {
     ? todayWorkout.title
     : workoutPlan
       ? "Dia livre"
-      : "Comece no seu ritmo";
+      : "Sem treino marcado";
   const heroDescription = todayWorkout
     ? `${todayWorkout.workout_day_exercises.length} exercícios e ${todayWorkout.estimated_minutes ?? 0} minutos previstos. Basta consultar e seguir quando chegar a hora.`
     : workoutPlan
       ? nextWorkout
         ? `Hoje não há treino previsto. O próximo é ${nextWorkout.title.toLocaleLowerCase("pt-BR")}.`
         : "Hoje não há treino previsto e seu plano continua igual."
-      : "Treino, dieta e Coach podem ser usados separadamente. Nada precisa ser registrado hoje.";
+      : "Sua agenda está livre. Escolha como quer começar.";
 
   return (
     <AppScreen>
@@ -120,11 +121,26 @@ export default function TodayScreen() {
         eyebrow={todayWorkout ? "Plano de hoje" : "Seu dia"}
         title={heroTitle}
         description={heroDescription}
-        height={258}
+        height={220}
         overlayOpacity={0.28}
       />
 
-      <SectionTitle title="Hoje em um olhar" meta="sem cobrança" />
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push("/(tabs)/workout")}
+        style={({ pressed }) => [styles.dayAction, pressed && { opacity: 0.7 }]}
+      >
+        <Text style={styles.dayActionText}>
+          {todayWorkout
+            ? "Ver treino de hoje"
+            : workoutPlan
+              ? "Ver minha semana"
+              : "Montar meu treino"}
+        </Text>
+        <ArrowUpRight color={colors.white} size={19} />
+      </Pressable>
+
+      <SectionTitle title="Sua rotina" />
       <View style={styles.dailyBrief}>
         <InfoRow
           leading={<LabelIcon icon={Dumbbell} />}
@@ -257,6 +273,17 @@ export default function TodayScreen() {
 
 const createStyles = (palette: AppThemePalette) =>
   StyleSheet.create({
+    dayAction: {
+      minHeight: 50,
+      borderRadius: 25,
+      backgroundColor: colors.red,
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: spacing.xl,
+      gap: 10,
+    },
+    dayActionText: { color: colors.white, fontSize: 14, fontWeight: "600" },
     dailyBrief: {
       borderTopWidth: 1,
       borderBottomWidth: 1,
@@ -283,7 +310,7 @@ const createStyles = (palette: AppThemePalette) =>
     weekLabel: {
       color: palette.faint,
       fontSize: 9.5,
-      fontWeight: "800",
+      fontWeight: "600",
     },
     weekLabelCurrent: { color: palette.text },
     weekDot: {

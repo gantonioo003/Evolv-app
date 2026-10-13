@@ -1,0 +1,73 @@
+{
+  "annotation_status": "machine_candidates_not_gold",
+  "community_answers_used_as_knowledge": false,
+  "completeness": {
+    "excerpt_only": 89,
+    "full_comment_body": 113,
+    "full_question_body": 57,
+    "full_rendered_body": 420,
+    "title_only": 8912,
+    "title_plus_short_excerpt": 409
+  },
+  "counts_by_source": {
+    "doctoralia.com.br": 91,
+    "fisiculturismo.com.br": 167,
+    "hipertrofia.org": 9119,
+    "reddit/r/corrida": 133,
+    "reddit/r/gymgurls": 66,
+    "reddit/r/maromba": 358,
+    "reddit/r/mejulguemaromba": 42,
+    "reddit/r/musculacaonatural": 20,
+    "reddit/r/perguntas": 2,
+    "reddit/r/perguntereddit": 2
+  },
+  "counts_by_split": {
+    "test": 966,
+    "train": 8012,
+    "validation": 1022
+  },
+  "dataset_version": "1.4.0",
+  "existing_versions_overwritten": false,
+  "import_version": "1.0.0",
+  "intent_candidates": {
+    "analyze_progress": 14,
+    "ask_cooking_guidance": 16,
+    "ask_exercise_execution": 74,
+    "ask_meal_feedback": 3,
+    "ask_nutrition_concept": 569,
+    "ask_recovery": 155,
+    "ask_training_concept": 855,
+    "compare_options": 66,
+    "image_context_request": 4,
+    "motivation_support": 23,
+    "unknown": 8221
+  },
+  "language": "pt-BR",
+  "near_duplicate_method": "word trigram Jaccard >=0.85 for texts of >=8 words; frequent shingles skipped, not exhaustive semantic deduplication",
+  "near_duplicate_pairs": 0,
+  "quarantine_reasons": {},
+  "quarantined_rows": 0,
+  "raw_text_location": "data/external_private/ptbr-10000-1.0.0 (ignored by Git)",
+  "rights_status": "unverified_do_not_publish_or_add_to_lm_corpus",
+  "risk_candidates": {
+    "eating_disorder_signal": 13,
+    "emergency_symptom": 4,
+    "extreme_diet_or_dehydration": 8,
+    "food_allergy_or_reaction": 4,
+    "food_safety_uncertainty": 10,
+    "medication_or_hormone": 24,
+    "none": 9124,
+    "pain_or_possible_injury": 225,
+    "supplement_uncertainty": 579,
+    "vulnerable_or_clinical_context": 30
+  },
+  "rows": 10000,
+  "source_hashes": {
+    "candidatos_novas_entidades.jsonl": "ca022ae351387de78b4afdc84b5fadb1f8913b1758e9ac33dfea72d750116e75",
+    "classificacao_revisar.jsonl": "a976d4a674352ea6ae40ac55986713cc443ede6ed55ce56ee5d11f503c0988f8",
+    "entidades_revisar.jsonl": "8af0e21256ba23c8433ec7866e7353c90bffb9527064275b6c8df04269bee1c7",
+    "mensagens.jsonl": "c20d008a2155c2908d47e6f3b25ad0acc5dc5c085daa96fde2f4deee2adbd522",
+    "split_manifest.jsonl": "9405afabce869c36bffddb1c3c71d5f7cf3b6e3ede7e26cbc69295dc18da9447"
+  },
+  "test_status": "reserved_not_used_for_training_or_model_selection"
+}

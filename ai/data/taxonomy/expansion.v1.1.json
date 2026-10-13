@@ -1,0 +1,34 @@
+{
+  "version": "1.1.0",
+  "base_version": "1.0.0",
+  "language": "pt-BR",
+  "status": "development_extension_not_default_pipeline",
+  "intents": [
+    {"id": "ask_supplements", "parent": "ask_nutrition_concept", "description": "Duvida educativa sobre suplemento; nao equivale a pedido de dose de medicamento.", "route": "knowledge_answer", "required_entities": [], "optional_entities": ["supplement", "amount", "medication"]},
+    {"id": "ask_training_program_feedback", "parent": "ask_training_concept", "description": "Pede avaliacao de ficha ou divisao apresentada, sem autorizar alteracao do plano.", "route": "knowledge_answer", "required_entities": [], "optional_entities": ["training_split", "exercise", "goal"]},
+    {"id": "ask_weight_management", "parent": "ask_nutrition_concept", "description": "Duvida sobre ganho, perda ou manutencao de peso e composicao corporal.", "route": "knowledge_answer", "required_entities": [], "optional_entities": ["goal", "body_measurement", "diet_strategy"]},
+    {"id": "ask_training_meal_timing", "parent": "ask_nutrition_concept", "description": "Duvida sobre horario de refeicao em relacao ao treino. Nao pedir horario diariamente nem mudar dieta sem confirmacao.", "route": "knowledge_answer", "required_entities": [], "optional_entities": ["schedule", "meal", "food", "preference"]},
+    {"id": "ask_sports_conditioning", "parent": "ask_training_concept", "description": "Duvida sobre preparacao fisica para esporte ou combinacao com academia.", "route": "knowledge_answer", "required_entities": [], "optional_entities": ["modality", "goal", "limitation", "distance", "pace"]},
+    {"id": "ask_pain_guidance", "parent": "ask_recovery", "description": "Pergunta sobre dor, desconforto ou lesao. Identificar nao significa diagnosticar ou prescrever reabilitacao.", "route": "cautious_response", "required_entities": [], "optional_entities": ["symptom", "body_part", "limitation"]}
+  ],
+  "risks": [
+    {"id": "heat_illness_signal", "parent": "emergency_symptom", "severity": "high", "route": "professional_referral", "description": "Relato de mal-estar com calor intenso; sinais graves acionam tambem emergency_symptom.", "response_rule": "Nao diagnosticar ou continuar treino. Priorizar seguranca e avaliacao profissional.", "source_url": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html"},
+    {"id": "substance_interaction", "parent": "supplement_uncertainty", "severity": "high", "route": "professional_referral", "description": "Duvida ou relato de combinacao de alcool, estimulantes, medicamentos ou hormonios.", "response_rule": "Nao garantir combinacao segura nem ajustar doses. Orientar consulta a profissional qualificado."},
+    {"id": "clinical_measurement_request", "parent": "vulnerable_or_clinical_context", "severity": "high", "route": "professional_referral", "description": "Pedido de interpretar exame, hormonio ou medida clinica para diagnostico ou tratamento.", "response_rule": "Nao diagnosticar por numero isolado nem modificar medicamento; educacao geral apenas."}
+  ],
+  "entities": [
+    {"id": "distance", "description": "Distancia explicita de atividade, com unidade; nao e duracao."},
+    {"id": "pace", "description": "Ritmo explicito em minutos e segundos por km; nao confundir com horario."},
+    {"id": "speed", "description": "Velocidade explicita com unidade."},
+    {"id": "heart_rate", "description": "Frequencia cardiaca em bpm; extracao nao interpreta o risco clinico."},
+    {"id": "lab_measurement", "description": "Medida de exame com unidade; nao converter em diagnostico."},
+    {"id": "ambiguous_weight", "description": "Peso em kg sem evidencia suficiente de carga, peso corporal ou alimento."}
+  ],
+  "policy": {
+    "new_intents_do_not_add_planner_actions": true,
+    "risk_is_multilabel_signal_not_diagnosis": true,
+    "titles_without_context_may_require_clarification": true,
+    "no_automatic_plan_writes": true,
+    "unsupported_languages_require_explicit_fallback": true
+  }
+}

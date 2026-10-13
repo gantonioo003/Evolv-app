@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
   },
   headingCopy: { flex: 1 },
-  title: { fontSize: 18, fontWeight: "900" },
+  title: { fontSize: 18, fontWeight: "600" },
   description: { marginTop: 5, fontSize: 12, lineHeight: 18 },
   close: {
     width: 38,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   options: { gap: 8, paddingHorizontal: spacing.lg },
   option: { minHeight: 58, justifyContent: "center", borderBottomWidth: 1 },
-  optionTitle: { fontSize: 13, fontWeight: "800" },
+  optionTitle: { fontSize: 13, fontWeight: "600" },
   optionDescription: { marginTop: 4, fontSize: 11, lineHeight: 16 },
   empty: { paddingVertical: spacing.xl, fontSize: 12, textAlign: "center" },
   pressed: { opacity: 0.58 },

@@ -131,18 +131,18 @@ const createStyles = (palette: AppThemePalette) =>
     },
     headerCopy: { flex: 1 },
     eyebrow: {
-      color: colors.gold,
+      color: palette.muted,
       fontSize: 11,
-      fontWeight: "800",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     title: {
       marginTop: 2,
       color: palette.text,
       fontFamily: typography.display,
       fontSize: 29,
-      fontWeight: "900",
-      textTransform: "uppercase",
+      fontWeight: "600",
+      textTransform: "none",
     },
     option: {
       minHeight: 82,
@@ -152,7 +152,7 @@ const createStyles = (palette: AppThemePalette) =>
       paddingVertical: spacing.sm,
     },
     optionCopy: { flex: 1, minWidth: 0 },
-    optionTitle: { color: palette.text, fontSize: 15, fontWeight: "900" },
+    optionTitle: { color: palette.text, fontSize: 15, fontWeight: "600" },
     optionDescription: {
       marginTop: 4,
       color: palette.muted,

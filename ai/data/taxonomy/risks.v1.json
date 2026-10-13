@@ -1,0 +1,97 @@
+{
+  "version": "1.0.0",
+  "language": "pt-BR",
+  "description": "Rotulos de risco avaliados separadamente da intencao principal.",
+  "risks": [
+    {
+      "id": "none",
+      "severity": "none",
+      "route": "normal",
+      "description": "Nao ha sinal de risco especial na mensagem."
+    },
+    {
+      "id": "pain_or_possible_injury",
+      "severity": "medium",
+      "route": "cautious_response",
+      "description": "Dor persistente, piora com movimento ou possivel lesao sem sinal emergencial.",
+      "response_rule": "Nao diagnosticar. Evitar progressao automatica e orientar avaliacao profissional quando apropriado."
+    },
+    {
+      "id": "emergency_symptom",
+      "severity": "emergency",
+      "route": "emergency_guidance",
+      "description": "Dor no peito, desmaio, falta de ar incomum ou outro sinal potencialmente urgente.",
+      "response_rule": "Interromper a atividade e orientar atendimento de emergencia local. Nao continuar coaching."
+    },
+    {
+      "id": "eating_disorder_signal",
+      "severity": "high",
+      "route": "support_and_referral",
+      "description": "Obsessao, culpa, compulsao, purgacao ou medo intenso relacionado a comida e corpo.",
+      "response_rule": "Nao reforcar restricao ou compensacao. Responder sem julgamento e recomendar apoio profissional."
+    },
+    {
+      "id": "extreme_diet_or_dehydration",
+      "severity": "high",
+      "route": "refuse_unsafe_plan",
+      "description": "Pedido de jejum extremo, desidratacao, corte alimentar severo ou perda de peso acelerada.",
+      "response_rule": "Nao montar nem executar a estrategia extrema. Explicar o limite e orientar ajuda qualificada."
+    },
+    {
+      "id": "medication_or_hormone",
+      "severity": "high",
+      "route": "professional_referral",
+      "description": "Pedido de dose, ciclo ou ajuste de medicamento, hormonio ou substancia controlada.",
+      "response_rule": "Nao prescrever, calcular dose ou montar ciclo. Encaminhar a profissional de saude."
+    },
+    {
+      "id": "supplement_uncertainty",
+      "severity": "medium",
+      "route": "evidence_limited_answer",
+      "description": "Uso de suplemento, combinacao de ingredientes ou possivel interacao.",
+      "response_rule": "Dar apenas informacao geral apoiada por fonte e recomendar avaliacao profissional quando houver condicao ou medicacao."
+    },
+    {
+      "id": "food_allergy_or_reaction",
+      "severity": "high",
+      "route": "allergy_caution",
+      "description": "Alergia conhecida, possivel reacao alimentar ou pedido de substituicao clinicamente sensivel.",
+      "response_rule": "Nao testar exposicao nem garantir seguranca. Orientar avaliacao profissional; sinais respiratorios ou circulatorios tambem acionam emergency_symptom."
+    },
+    {
+      "id": "food_safety_uncertainty",
+      "severity": "medium",
+      "route": "food_safety_caution",
+      "description": "Duvida sobre deterioracao, contaminacao, temperatura ou armazenamento de alimento.",
+      "response_rule": "Nao garantir que um alimento duvidoso esteja seguro. Aplicar orientacao conservadora apoiada por fonte de seguranca alimentar."
+    },
+    {
+      "id": "unsafe_training_request",
+      "severity": "high",
+      "route": "refuse_unsafe_plan",
+      "description": "Pedido de desafio, carga, volume ou pratica de treino com risco evidente e desnecessario.",
+      "response_rule": "Nao montar nem incentivar a pratica perigosa. Explicar o limite e oferecer alternativa conservadora."
+    },
+    {
+      "id": "under_recovery_signal",
+      "severity": "medium",
+      "route": "recovery_caution",
+      "description": "Conjunto de sinais como queda persistente de desempenho, sono ruim, fadiga elevada e recuperacao insuficiente.",
+      "response_rule": "Nao diagnosticar overtraining. Evitar progressao automatica, sugerir reducao conservadora e orientar avaliacao quando persistente ou intensa."
+    },
+    {
+      "id": "vulnerable_or_clinical_context",
+      "severity": "high",
+      "route": "professional_referral",
+      "description": "Gravidez, menor de idade, doenca diagnosticada ou recuperacao clinica relevante.",
+      "response_rule": "Nao personalizar conduta clinica. Limitar-se a educacao geral e orientar acompanhamento."
+    },
+    {
+      "id": "mental_health_crisis",
+      "severity": "emergency",
+      "route": "crisis_guidance",
+      "description": "Mensagem com risco imediato de autoagressao ou desesperanca extrema.",
+      "response_rule": "Priorizar seguranca, contato com emergencia e apoio humano imediato; nao responder como motivacao esportiva comum."
+    }
+  ]
+}

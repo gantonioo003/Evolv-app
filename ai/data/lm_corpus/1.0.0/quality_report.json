@@ -1,0 +1,44 @@
+{
+  "documents": 6381,
+  "estimated_subword_tokens": 2235726,
+  "exact_duplicates_removed": 11,
+  "group_leakage": [],
+  "limitations": [
+    "This is an educational TinyLM corpus, not production-scale pretraining data.",
+    "Wikipedia is broad prose; OASST1 supplies the conversational component.",
+    "Automated filtering reduces but cannot guarantee removal of every quality or privacy issue.",
+    "Medical answers from unlicensed or weakly sourced datasets were intentionally excluded."
+  ],
+  "nlu_human_holdout_conversations_excluded": true,
+  "pii_controls": [
+    "OASST PII label filter",
+    "email redaction",
+    "URL redaction",
+    "phone redaction"
+  ],
+  "reserved_nlu_texts_excluded": 0,
+  "source_documents": {
+    "evolv_knowledge": 67,
+    "evolv_nlu_train": 1017,
+    "oasst1_ptbr_human": 1092,
+    "wikipedia_pt": 4205
+  },
+  "source_whitespace_tokens": {
+    "evolv_knowledge": 2706,
+    "evolv_nlu_train": 9507,
+    "oasst1_ptbr_human": 94643,
+    "wikipedia_pt": 1549237
+  },
+  "split_documents": {
+    "test": 42,
+    "train": 6282,
+    "validation": 57
+  },
+  "split_whitespace_tokens": {
+    "test": 7551,
+    "train": 1636416,
+    "validation": 12126
+  },
+  "status": "passed",
+  "whitespace_tokens": 1656093
+}

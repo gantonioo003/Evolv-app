@@ -1,0 +1,91 @@
+{
+  "answer_identifier_matches": {
+    "address": 2,
+    "handle": 21,
+    "url": 298
+  },
+  "answers": 7328,
+  "complete_body_claims": 10000,
+  "counts_by_source": {
+    "doctoralia.com.br": 49,
+    "hipertrofia.org": 8,
+    "reddit/r/bicicletasbrasil": 212,
+    "reddit/r/brasilvegan": 4,
+    "reddit/r/conversas": 786,
+    "reddit/r/corrida": 1661,
+    "reddit/r/desabafos": 1682,
+    "reddit/r/gymgurls": 1490,
+    "reddit/r/maromba": 2500,
+    "reddit/r/mejulguemaromba": 1187,
+    "reddit/r/musculacaonatural": 17,
+    "reddit/r/perguntas": 149,
+    "reddit/r/perguntereddit": 255
+  },
+  "counts_by_split": {
+    "test": 1030,
+    "train": 8004,
+    "validation": 966
+  },
+  "counts_by_topic": {
+    "corrida_e_cardio": 1068,
+    "dieta_e_alimentacao": 1770,
+    "dor_e_saude": 1077,
+    "execucao_e_equipamentos": 421,
+    "motivacao_e_rotina": 686,
+    "preparo_e_seguranca_alimentar": 409,
+    "progresso_e_medidas": 704,
+    "sono_e_recuperacao": 1418,
+    "suplementos_e_medicamentos": 898,
+    "treinamento": 1549
+  },
+  "dataset_version": "1.5.0",
+  "external_answers_used_as_targets": false,
+  "external_texts_added_to_lm_corpus": false,
+  "external_training_rows_approved": 0,
+  "library_entries_pending_review": 35,
+  "near_duplicate_method": "bottom-8 hashed word 4-grams, buckets <=30, Jaccard >=0.8; not exhaustive",
+  "near_duplicate_pairs": 86,
+  "previous_collection_overlap_ids": 170,
+  "privacy_flags": {
+    "direct_identifiers_removed": 389,
+    "possible_minor": 173,
+    "possible_sensitive_personal_data": 1927,
+    "third_party_context": 424
+  },
+  "privacy_status": "redaction_is_not_verified_anonymization; rights_and_lawful_basis_review_pending",
+  "public_status": "aggregate_manifest_only_no_external_texts",
+  "quarantine_reasons": {
+    "cross_split_near_duplicate": 4,
+    "previous_collection_overlap": 170
+  },
+  "quarantined_rows": 174,
+  "question_identifier_matches": {
+    "address": 59,
+    "handle": 8,
+    "phone": 3,
+    "self_identified_name": 13,
+    "url": 570
+  },
+  "records": 10000,
+  "rows_with_answers": 3918,
+  "source_hashes": {
+    "biblioteca_cientifica.json": "93ec3d8d0691f6f677af49998e9541c06fcc84d2d18cd9bd25d61ad6152a7f9b",
+    "candidatos_novas_entidades.jsonl": "2a53569876380cfa93491de67cf8921a46cd86bf0b628b20e51391ed6475f346",
+    "classificacao_revisar.jsonl": "b05707cee7d09327f71a31921b352ffdf6f49fe9cda5f86b30cbe2bf086a5450",
+    "entidades_revisar.jsonl": "f6e79f425a1cfe57f9aa845027caee123b85840746faddf38ea3d1dd2cbfd240",
+    "entities.v1.json": "d2180d1ac2648941e11ba2e7d5e9e6ecc38e0ea29208b9f8fb0ba4dbe9c8ee5c",
+    "entity_catalogs.v1.json": "a8a7c863047712919cda974ae7264e749c4be1d1375e8853cab1016bb80b0944",
+    "erros_ingestao.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidencias_cientificas_por_mensagem.jsonl": "e5ed74a2406309e22ca4aaee2718b82a786b531586af468ec4bbe52385ee03aa",
+    "intents.v1.json": "63407e0345703a00355f55f2f600030eca1714bc0c35436e8ca82a4e2c64db00",
+    "mensagens.jsonl": "c1e6af4fb3d18d1af94e9912f130beffef55df4f7aff7d9219ec1e8b913ccea9",
+    "relatorio.json": "bd0ad567962c540e46af94b4a88b0162f7e9ae3c25ce21e6dd3c31841e1484b6",
+    "relatorio_enriquecimento_cientifico.json": "fcf7a3e528908e529319e24923441d726efa25750dbb90f07720d638630af8e5",
+    "risks.v1.json": "af02f547310f802b780b68736df0295c618deef70ae1827ec02ad5343f9d778d",
+    "split_manifest.jsonl": "8e5fd5a9e13db023511f8beabe54ef0ebe2f2567f59d81cbc1c08676874b7d38",
+    "validacao_escopo_e_evidencias.json": "7280d0ac97a142f71402e6b95289a40a11f0135831fe56a005e982059176f5a7",
+    "validacao_integridade.json": "50d124df2dd4ca0fd539d983301bec580c3721a0133371bbee25b89d6c033d24",
+    "validacao_qualidade.json": "59ba0bc3a837aa7efab35b2b50e14f43096714c4a1ca5e86736d001b8b1d78c0"
+  },
+  "source_labels": "machine_candidates_not_gold"
+}

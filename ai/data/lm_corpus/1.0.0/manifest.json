@@ -1,0 +1,91 @@
+{
+  "corpus_version": "1.0.0",
+  "created_at": "2026-10-09",
+  "document_grouping": "All chunks from one Wikipedia article or OASST conversation tree stay in one split.",
+  "files": {
+    "README.md": {
+      "bytes": 1846,
+      "sha256": "d20fdab7c724194f775ef200386941803d0051ab2ab621c0fa7fea546a85726c"
+    },
+    "quality_report.json": {
+      "bytes": 1243,
+      "sha256": "e0f3243799214e26d944c38f3a0aed7e4602cccea83f23317d760e808377216c"
+    },
+    "sources.json": {
+      "bytes": 2581,
+      "sha256": "92d09b2c081d6be540b4684089c8e0fbfec64c04de58992f81073a838c2688c1"
+    },
+    "test.jsonl": {
+      "bytes": 64971,
+      "sha256": "0930ef0c45ad32689e334f6cffb0813acd8afd9a32a095d659117035ae23c943"
+    },
+    "test.txt": {
+      "bytes": 50409,
+      "sha256": "fe6dc57e04676492228fe6af4ee4807e02118639305f1e3360a1b9b49ed6f444"
+    },
+    "train.jsonl": {
+      "bytes": 12911680,
+      "sha256": "f0dd2aa9e6b3709ae68bd866186311be1a03c4b5c8bbcebe3aca895ddc66dbc4"
+    },
+    "train.txt": {
+      "bytes": 10680003,
+      "sha256": "ed58378702451ec790084a8310d4f3833c34538cfd96b3bf7edfe8f4eb3d6769"
+    },
+    "validation.jsonl": {
+      "bytes": 98397,
+      "sha256": "a0a22166b093782296332a5b7f5630be5bf43d5c40c66aef378955612b075b31"
+    },
+    "validation.txt": {
+      "bytes": 77819,
+      "sha256": "eff5761d24644a4504705769608dbf4bb059c33f75449191c1f39d5701ab465b"
+    }
+  },
+  "language": "pt-BR",
+  "manifest_version": "1.0.0",
+  "split_policy": "SHA-256 of source document/conversation group: 98% train, 1% validation, 1% test.",
+  "status": "passed",
+  "summary": {
+    "documents": 6381,
+    "estimated_subword_tokens": 2235726,
+    "exact_duplicates_removed": 11,
+    "group_leakage": [],
+    "limitations": [
+      "This is an educational TinyLM corpus, not production-scale pretraining data.",
+      "Wikipedia is broad prose; OASST1 supplies the conversational component.",
+      "Automated filtering reduces but cannot guarantee removal of every quality or privacy issue.",
+      "Medical answers from unlicensed or weakly sourced datasets were intentionally excluded."
+    ],
+    "nlu_human_holdout_conversations_excluded": true,
+    "pii_controls": [
+      "OASST PII label filter",
+      "email redaction",
+      "URL redaction",
+      "phone redaction"
+    ],
+    "reserved_nlu_texts_excluded": 0,
+    "source_documents": {
+      "evolv_knowledge": 67,
+      "evolv_nlu_train": 1017,
+      "oasst1_ptbr_human": 1092,
+      "wikipedia_pt": 4205
+    },
+    "source_whitespace_tokens": {
+      "evolv_knowledge": 2706,
+      "evolv_nlu_train": 9507,
+      "oasst1_ptbr_human": 94643,
+      "wikipedia_pt": 1549237
+    },
+    "split_documents": {
+      "test": 42,
+      "train": 6282,
+      "validation": 57
+    },
+    "split_whitespace_tokens": {
+      "test": 7551,
+      "train": 1636416,
+      "validation": 12126
+    },
+    "status": "passed",
+    "whitespace_tokens": 1656093
+  }
+}

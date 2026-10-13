@@ -174,8 +174,20 @@ export function PageHeader({
   return (
     <View style={styles.pageHeader}>
       <View style={styles.pageHeaderText}>
-        {brand ? <Text style={styles.brand}>{brand}</Text> : null}
-        <Text style={styles.eyebrow}>{eyebrow}</Text>
+        {brand ? (
+          <Text style={[styles.brand, { color: palette.text }]}>
+            {brand.toLowerCase() === "evolv" ? (
+              <>
+                Evolv<Text style={{ color: colors.red }}>.</Text>
+              </>
+            ) : (
+              brand
+            )}
+          </Text>
+        ) : null}
+        <Text style={[styles.eyebrow, { color: palette.muted }]}>
+          {eyebrow}
+        </Text>
         <Text style={[styles.pageTitle, { color: palette.text }]}>{title}</Text>
       </View>
       {ActionIcon ? (
@@ -201,7 +213,7 @@ export function CinematicHero({
   eyebrow,
   title,
   description,
-  height = 370,
+  height = 240,
   overlayOpacity = 0.38,
 }: {
   source: ImageSourcePropType;
@@ -266,7 +278,11 @@ export function SectionTitle({
       <Text style={[styles.sectionTitle, { color: palette.text }]}>
         {title}
       </Text>
-      {meta ? <Text style={styles.sectionMeta}>{meta}</Text> : null}
+      {meta ? (
+        <Text style={[styles.sectionMeta, { color: palette.muted }]}>
+          {meta}
+        </Text>
+      ) : null}
     </View>
   );
 }
@@ -431,11 +447,18 @@ export function Divider({ paper = false }: { paper?: boolean }) {
 
 export function Tag({
   children,
-  color = colors.gold,
+  color,
 }: PropsWithChildren<{ color?: string }>) {
+  const { palette, isDark } = useAppTheme();
+  const resolvedColor =
+    !isDark && color === colors.green
+      ? "#376443"
+      : !isDark && color === colors.gold
+        ? "#87630D"
+        : (color ?? palette.muted);
   return (
-    <View style={[styles.tag, { borderColor: color }]}>
-      <Text style={[styles.tagText, { color }]}>{children}</Text>
+    <View style={[styles.tag, { borderColor: resolvedColor }]}>
+      <Text style={[styles.tagText, { color: resolvedColor }]}>{children}</Text>
     </View>
   );
 }
@@ -478,11 +501,7 @@ export function LabelIcon({
   const palette = useTonePalette(tone);
   return (
     <View style={[styles.labelIcon, { backgroundColor: palette.iconSurface }]}>
-      <Icon
-        color={palette === themePalettes.light ? colors.red : colors.gold}
-        size={18}
-        strokeWidth={1.8}
-      />
+      <Icon color={palette.accentText} size={18} strokeWidth={1.8} />
     </View>
   );
 }
@@ -498,7 +517,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingTop: 10,
     paddingBottom: 120,
-    gap: 22,
+    gap: 24,
   },
   pageHeader: {
     minHeight: 72,
@@ -508,26 +527,25 @@ const styles = StyleSheet.create({
   },
   pageHeaderText: { flex: 1, paddingRight: spacing.md },
   brand: {
-    marginBottom: 5,
+    marginBottom: 12,
     color: colors.red,
     fontFamily: typography.display,
-    fontSize: 12,
-    fontWeight: "900",
+    fontSize: 24,
+    fontWeight: "600",
     letterSpacing: 0,
   },
   eyebrow: {
-    color: colors.gold,
+    color: colors.textMuted,
     fontFamily: typography.body,
     fontSize: 12,
-    fontWeight: "800",
-    textTransform: "uppercase",
+    fontWeight: "500",
   },
   pageTitle: {
-    marginTop: 2,
+    marginTop: 5,
     fontFamily: typography.display,
-    fontSize: 32,
-    lineHeight: 37,
-    fontWeight: "800",
+    fontSize: 28,
+    lineHeight: 34,
+    fontWeight: "600",
     letterSpacing: 0,
   },
   iconButton: {
@@ -567,11 +585,10 @@ const styles = StyleSheet.create({
     padding: spacing.xl,
   },
   cinematicEyebrow: {
-    color: colors.gold,
+    color: "#E5E5E5",
     fontFamily: typography.body,
-    fontSize: 11,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontSize: 12,
+    fontWeight: "500",
   },
   cinematicCopy: { maxWidth: 430 },
   cinematicRule: {
@@ -583,26 +600,25 @@ const styles = StyleSheet.create({
   cinematicTitle: {
     color: colors.text,
     fontFamily: typography.display,
-    fontSize: 44,
-    lineHeight: 45,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontSize: 34,
+    lineHeight: 40,
+    fontWeight: "600",
     letterSpacing: 0,
   },
-  cinematicTitleCompact: { fontSize: 31, lineHeight: 31 },
+  cinematicTitleCompact: { fontSize: 28, lineHeight: 34 },
   cinematicDescription: {
     maxWidth: 340,
     marginTop: spacing.md,
-    color: "#E4DDD3",
+    color: "#E5E5E5",
     fontFamily: typography.body,
-    fontSize: 13.5,
-    lineHeight: 19,
+    fontSize: 14,
+    lineHeight: 21,
   },
   cinematicDescriptionCompact: {
     maxWidth: 300,
     marginTop: spacing.sm,
-    fontSize: 12,
-    lineHeight: 17,
+    fontSize: 13,
+    lineHeight: 19,
   },
   sectionHeader: {
     minHeight: 30,
@@ -617,23 +633,24 @@ const styles = StyleSheet.create({
     color: colors.text,
     fontFamily: typography.body,
     fontSize: 19,
-    fontWeight: "800",
+    fontWeight: "600",
   },
   sectionTitlePaper: { color: colors.ink },
   sectionMeta: {
-    color: colors.gold,
+    maxWidth: "42%",
+    flexShrink: 1,
+    textAlign: "right",
+    color: colors.textMuted,
     fontFamily: typography.body,
     fontSize: 11,
-    fontWeight: "800",
-    textTransform: "uppercase",
+    fontWeight: "500",
   },
   surface: {
-    borderRadius: 12,
+    borderRadius: radius.lg,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: colors.border,
     backgroundColor: colors.surface,
     padding: 18,
-    ...shadows.card,
   },
   surfacePaper: {
     borderColor: colors.paperBorder,
@@ -678,20 +695,18 @@ const styles = StyleSheet.create({
   posterBarTall: { height: 185 },
   posterBarShort: { height: 112 },
   posterEyebrow: {
-    color: colors.gold,
+    color: colors.textMuted,
     fontSize: 11,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontWeight: "500",
   },
   posterTitle: {
     maxWidth: "82%",
     marginTop: spacing.xs,
     color: colors.text,
     fontFamily: typography.display,
-    fontSize: 42,
-    lineHeight: 42,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontSize: 30,
+    lineHeight: 36,
+    fontWeight: "600",
   },
   posterTitleLight: { color: colors.ink },
   posterDescription: {
@@ -704,10 +719,9 @@ const styles = StyleSheet.create({
   posterDescriptionLight: { color: colors.textFaint },
   posterMeta: {
     marginTop: spacing.lg,
-    color: colors.gold,
+    color: colors.textMuted,
     fontSize: 11,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontWeight: "500",
   },
   metric: {
     flex: 1,
@@ -727,10 +741,16 @@ const styles = StyleSheet.create({
     color: colors.text,
     fontFamily: typography.display,
     fontSize: 25,
-    fontWeight: "900",
+    fontWeight: "600",
   },
   metricValuePaper: { color: colors.ink },
-  metricLabel: { marginTop: 3, color: colors.textMuted, fontSize: 12 },
+  metricLabel: {
+    marginTop: 5,
+    color: colors.textMuted,
+    fontFamily: typography.body,
+    fontSize: 12,
+    lineHeight: 18,
+  },
   infoRow: {
     minHeight: 68,
     flexDirection: "row",
@@ -738,19 +758,19 @@ const styles = StyleSheet.create({
     gap: 16,
     paddingVertical: 3,
   },
-  infoBody: { flex: 1, gap: 3 },
+  infoBody: { flex: 1, gap: 5 },
   infoTitle: {
     color: colors.text,
     fontFamily: typography.body,
     fontSize: 15,
-    fontWeight: "700",
+    fontWeight: "600",
   },
   infoTitlePaper: { color: colors.ink },
   infoDescription: {
     color: colors.textMuted,
     fontFamily: typography.body,
-    fontSize: 12.5,
-    lineHeight: 18,
+    fontSize: 13,
+    lineHeight: 19,
   },
   divider: { height: StyleSheet.hairlineWidth, backgroundColor: colors.border },
   dividerPaper: { backgroundColor: colors.paperBorder },
@@ -765,8 +785,7 @@ const styles = StyleSheet.create({
   tagText: {
     fontFamily: typography.body,
     fontSize: 10,
-    fontWeight: "900",
-    textTransform: "uppercase",
+    fontWeight: "500",
   },
   progressTrack: {
     width: "100%",
