@@ -1,0 +1,8 @@
+{
+  "scope": "One evidence chunk, short authored question, no history; not all possible user prompts or generation quality",
+  "max_input_tokens": 2048,
+  "max_observed_tokens": 2,
+  "over_budget": [],
+  "generation_used": false,
+  "status": "invalid_diagnostic_counted_mapping_keys_instead_of_token_ids"
+}

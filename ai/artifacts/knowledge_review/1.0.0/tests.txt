@@ -1,0 +1,25 @@
+test_all_boundaries_and_development_cases_reference_content (test_knowledge_review.KnowledgeReviewTests.test_all_boundaries_and_development_cases_reference_content) ... ok
+test_coverage_matches_current_taxonomy_without_claiming_quality (test_knowledge_review.KnowledgeReviewTests.test_coverage_matches_current_taxonomy_without_claiming_quality) ... ok
+test_inherited_dates_not_relabelled_as_full_new_review (test_knowledge_review.KnowledgeReviewTests.test_inherited_dates_not_relabelled_as_full_new_review) ... ok
+test_preparation_keeps_evidence_scopes_and_detects_stale_contract (test_knowledge_review.KnowledgeReviewTests.test_preparation_keeps_evidence_scopes_and_detects_stale_contract) ... ok
+test_publish_reproducible_protected_and_no_overwrite (test_knowledge_review.KnowledgeReviewTests.test_publish_reproducible_protected_and_no_overwrite) ... ok
+test_unknown_references_duplicate_text_and_unreviewed_science_are_rejected (test_knowledge_review.KnowledgeReviewTests.test_unknown_references_duplicate_text_and_unreviewed_science_are_rejected) ... ok
+test_build_is_reproducible_and_never_overwrites_release (test_rag_preparation.RagPreparationTests.test_build_is_reproducible_and_never_overwrites_release) ... ok
+test_duplicate_text_unknown_sources_and_topics_fail_before_publish (test_rag_preparation.RagPreparationTests.test_duplicate_text_unknown_sources_and_topics_fail_before_publish) ... ok
+test_expired_or_unapproved_source_blocks_dependent_documents (test_rag_preparation.RagPreparationTests.test_expired_or_unapproved_source_blocks_dependent_documents) ... ok
+test_future_and_due_documents_are_quarantined_not_silently_deleted (test_rag_preparation.RagPreparationTests.test_future_and_due_documents_are_quarantined_not_silently_deleted) ... ok
+test_prepared_context_keeps_boundaries_citations_and_all_text (test_rag_preparation.RagPreparationTests.test_prepared_context_keeps_boundaries_citations_and_all_text) ... ok
+test_splits_preserve_every_character_and_respect_budget (test_rag_preparation.RagPreparationTests.test_splits_preserve_every_character_and_respect_budget) ... ok
+test_every_approved_source_is_used_and_forums_are_excluded (test_knowledge_base.KnowledgeBaseTest.test_every_approved_source_is_used_and_forums_are_excluded) ... ok
+test_every_risk_route_and_response_mode_is_covered (test_knowledge_base.KnowledgeBaseTest.test_every_risk_route_and_response_mode_is_covered) ... ok
+test_phase_7_01_3_has_expected_catalog_and_domain_coverage (test_knowledge_base.KnowledgeBaseTest.test_phase_7_01_3_has_expected_catalog_and_domain_coverage) ... ok
+test_scientific_claims_are_not_supported_only_by_product_contracts (test_knowledge_base.KnowledgeBaseTest.test_scientific_claims_are_not_supported_only_by_product_contracts) ... ok
+test_invalid_queries_and_budgets (test_rag_search.SearchTests.test_invalid_queries_and_budgets) ... ok
+test_no_evidence_and_filters (test_rag_search.SearchTests.test_no_evidence_and_filters) ... ok
+test_rank_threshold_and_expiry_before_top_k (test_rag_search.SearchTests.test_rank_threshold_and_expiry_before_top_k) ... ok
+test_source_expiry_also_blocks (test_rag_search.SearchTests.test_source_expiry_also_blocks) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 3.494s
+
+OK

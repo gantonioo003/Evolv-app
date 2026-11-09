@@ -1,0 +1,16 @@
+{
+  "original": {
+    "test": {
+      "nll": 4.116795052063653,
+      "perplexity": 61.362263919248846,
+      "target_tokens": 1654,
+      "examples": 28
+    },
+    "validation_reload_check": {
+      "nll": 4.0396546737856385,
+      "perplexity": 56.80672256751822,
+      "target_tokens": 1563,
+      "examples": 28
+    }
+  }
+}

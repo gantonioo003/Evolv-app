@@ -1,0 +1,19 @@
+{
+  "phase": "7.06.3",
+  "credentials_recorded": false,
+  "checks": [
+    "create_conversation_and_config",
+    "atomic_pair_and_dedup",
+    "other_user_list_hidden",
+    "other_user_read_denied",
+    "cross_owner_reference_denied",
+    "history_survives_repository_restart",
+    "rename",
+    "delete_cascades_messages"
+  ],
+  "temporary_users_created": 2,
+  "temporary_users_deleted": 2,
+  "existing_user_data_modified": false,
+  "status": "verified",
+  "cleanup_complete": true
+}

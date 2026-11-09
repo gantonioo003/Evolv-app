@@ -1,0 +1,54 @@
+{
+  "status": "generation_complete_review_pending",
+  "phase": "7.04.5",
+  "metrics": {
+    "original": {
+      "test": {
+        "nll": 4.116795052063653,
+        "perplexity": 61.362263919248846,
+        "target_tokens": 1654,
+        "examples": 28
+      },
+      "validation_reload_check": {
+        "nll": 4.0396546737856385,
+        "perplexity": 56.80672256751822,
+        "target_tokens": 1563,
+        "examples": 28
+      }
+    },
+    "adapted": {
+      "test": {
+        "nll": 1.948432940814054,
+        "perplexity": 7.017681836729203,
+        "target_tokens": 1654,
+        "examples": 28
+      },
+      "validation_reload_check": {
+        "nll": 1.8846803056225132,
+        "perplexity": 6.5842491580734706,
+        "target_tokens": 1563,
+        "examples": 28
+      }
+    }
+  },
+  "paired_group_bootstrap": {
+    "metric": "adapted_NLL_minus_original_NLL",
+    "groups": 11,
+    "replicates": 2000,
+    "seed": 2026,
+    "interval_95_percentile": [
+      -2.540199818907254,
+      -1.848740182271818
+    ],
+    "limitation": "Conditional on this small synthetic family sample; not population safety or human quality."
+  },
+  "test_conversations": 28,
+  "challenge_cases": 20,
+  "generated_answers": 96,
+  "elapsed_seconds": 195.03200050001033,
+  "test_evaluated": true,
+  "frozen_training_and_test_preserved": true,
+  "model_promoted_to_app": false,
+  "protocol_fingerprint": "9da86753934ab5b26356c3212db8642dc7c45a805728079a2672b3d587c6a4d1",
+  "qualitative_review": "pending"
+}

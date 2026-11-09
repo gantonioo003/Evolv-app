@@ -18,12 +18,14 @@ import {
 } from "@/components/ui";
 import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
+import { useAuth } from "@/context/auth-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type { PlannerAdjustmentApi } from "@/types/api";
 
 export default function PlannerAdjustmentDetailsScreen() {
   const { adjustmentId } = useLocalSearchParams<{ adjustmentId: string }>();
   const router = useRouter();
+  const { session, isLoading: isAuthLoading } = useAuth();
   const { palette } = useAppTheme();
   const styles = createStyles(palette);
   const {
@@ -39,10 +41,15 @@ export default function PlannerAdjustmentDetailsScreen() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!adjustmentId) return;
+    if (!adjustmentId || isAuthLoading || !session?.access_token) return;
     let active = true;
     void loadPlannerAdjustment(adjustmentId)
-      .then((value) => active && setAdjustment(value))
+      .then((value) => {
+        if (active) {
+          setAdjustment(value);
+          setError(null);
+        }
+      })
       .catch(
         (caught: unknown) =>
           active &&
@@ -53,7 +60,7 @@ export default function PlannerAdjustmentDetailsScreen() {
     return () => {
       active = false;
     };
-  }, [adjustmentId, loadPlannerAdjustment]);
+  }, [adjustmentId, loadPlannerAdjustment, isAuthLoading, session?.access_token]);
 
   async function mutate(action: "apply" | "reject" | "revert") {
     if (!adjustment) return;

@@ -1,0 +1,10 @@
+{
+  "code": {
+    "src/evolv_rag/coach.py": "8c2e455392f165f386b2a75cd6205de0740560ea127672e65246e25e3673329f",
+    "scripts/chat_coach.py": "8a395de2cb83ce654b4e9de266044eab1dd1ae91aa1d72baec6cc5dc252ea480",
+    "scripts/verify_coach.py": "68bc747c9f128fb7334d52fa64bdfa32f9b2f82767da4d2fa9bac05a766b9884",
+    "tests/test_coach_composition.py": "eb2acf3a043a9ec9988ef0c0e6c5a8c4b9d968c3250686e9779fe57029e17038"
+  },
+  "index_manifest_sha256": "028251fa7d26cc9feefff72d560a7eec9b4960ee77eac47caca56df6e6535c01",
+  "output_sha256": "c66178fc04060b6f3c67b91c14664b0795ee6c63fac83d59973d4589324c5825"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "ready",
+  "mode": "generate",
+  "variant": "original",
+  "nlp_version": "1.9.0",
+  "retrieval_version": "1.1.1"
+}

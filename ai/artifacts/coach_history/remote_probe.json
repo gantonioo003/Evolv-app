@@ -1,0 +1,18 @@
+{
+  "phase": "7.06.3",
+  "scope": "anonymous REST probe only; not authenticated ownership verification",
+  "management_sql_connection": "failed_admin_login_role",
+  "credentials_recorded": false,
+  "tables": {
+    "coach_conversations": {
+      "http_status": 401,
+      "returned_rows": null,
+      "error_code": "42501"
+    },
+    "coach_messages": {
+      "http_status": 401,
+      "returned_rows": null,
+      "error_code": "42501"
+    }
+  }
+}

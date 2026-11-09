@@ -1,0 +1,51 @@
+{
+  "phase": "7.07.4",
+  "status": "implemented_and_verified",
+  "coach_schema": "coach.1.2.0",
+  "extractor_version": "1.3.1",
+  "current_checks": {
+    "coach_fastapi_tests_passed": 69,
+    "new_tests_included": 27,
+    "entity_tests_passed": 5,
+    "real_nlp_calls": 12,
+    "real_nlp_versions": [
+      "1.8.0_default",
+      "1.9.0_opt_in"
+    ],
+    "generation_calls": 0,
+    "real_database_writes": 0
+  },
+  "legacy_suite": {
+    "checks": 23,
+    "passed": 21,
+    "failed_or_incompatible": 2,
+    "reasons": [
+      "historical model expects Python 3.14.3, current interpreter 3.12.14",
+      "historical protected fingerprint set differs from current project"
+    ],
+    "old_artifacts_not_modified_to_force_checks": true
+  },
+  "model_and_dataset_hashes_preserved": true,
+  "confidence_policies_unchanged": true,
+  "classifier_labels_not_overridden_for_action": true,
+  "new_nlp_not_promoted": true,
+  "limitations": [
+    "clarification does not accumulate persistent slots from short replies",
+    "not a new classifier accuracy or safety certification",
+    "full Mobile-backend-Planner cycle not rerun in this phase"
+  ],
+  "sha256": {
+    "ai/src/evolv_rag/clarification.py": "76bd26da929062379bd01c5f45b8973c87a2c6533972732350784cbb0394877a",
+    "ai/src/evolv_rag/coach.py": "7ef20b701dd99a47d5816b067c7f126ea2a5a6cbab6ed31c5a93c6a76364c684",
+    "ai/src/evolv_nlp/activity_type.py": "a3e33888d7615b5958db88cfeb60666a84b173b543d839ef5476619ff7ea2b91",
+    "ai/src/evolv_nlp/entities_v14.py": "4836ccbe04b7488b5eea425d496d0bca80c724ecbb6addd9ad91668ff82eb393",
+    "ai/src/evolv_rag/actions.py": "2ad6d9de3c07c1ee54109a3dcdee52c767e191d0e6ad8087bb2016d688c93920",
+    "ai/src/evolv_rag/safety.py": "92e164d1f5e45e516febe8b5141e378714aafff6f9d6e6b6cbbe17daa9084c2d",
+    "ai/tests/test_coach_clarification.py": "1d700bfb06bede2ee17586bc052424339b84afe9e8c8204bafa09110ad0a7d5f",
+    "ai/tests/test_reviewed_release.py": "569dd10212a434337586d74be3e76c0caecc233298c44f264104377021216ad4",
+    "ai/scripts/verify_clarification.py": "1f824e307144f1e6c6844f96bd69e8d85a49645c5c3760b446274bc12c53886b",
+    "docs/49-coach-directed-clarification.md": "369b2f854d61c8a6a24154e5ab01db9b2fcf519f44c336e8aa567d2a3ea9336f",
+    "ai/README.md": "f14418a2fe7d2cd0cc14b072cd81785dde1a6673df21ef7eac73c0b90a867cd1",
+    "ai/artifacts/clarification/1.0.1/real_nlp_smoke.json": "8835e2e356db200447962be4d0a55c11dbaca8543b9db3fbc4b6f167638b7f4d"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "all_ids_processed": 12179,
+  "legacy_tests": {
+    "passed": 220,
+    "skipped": 4,
+    "total": 224
+  },
+  "metrics_rows": 405,
+  "models_and_source_hashes_verified": true,
+  "neural_adapter_replay": {
+    "finite": true,
+    "intent_shape": [
+      1,
+      60
+    ],
+    "risk_shape": [
+      1,
+      20
+    ]
+  },
+  "new_runtime_focused_tests": {
+    "passed": 16,
+    "skipped": 0,
+    "total": 16
+  },
+  "reserved_partitions_byte_identical": true,
+  "selection_frozen_before_test": true
+}

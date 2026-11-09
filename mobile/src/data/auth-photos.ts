@@ -1,16 +1,14 @@
 import type { ImageSourcePropType } from "react-native";
 
 export const authPhotos: readonly ImageSourcePropType[] = [
-  require("@/assets/images/auth-training.jpg"),
-  require("@/assets/images/auth-training-02.jpg"),
-  require("@/assets/images/auth-training-03.jpg"),
-  require("@/assets/images/auth-training-04.jpg"),
-  require("@/assets/images/auth-training-05.jpg"),
-  require("@/assets/images/auth-training-06.jpg"),
-  require("@/assets/images/auth-training-07.jpg"),
-  require("@/assets/images/auth-training-08.jpg"),
-  require("@/assets/images/auth-training-09.jpg"),
-  require("@/assets/images/auth-training-10.jpg"),
+  require("@/assets/images/auth-selected-01.jpg"),
+  require("@/assets/images/auth-selected-02.jpg"),
+  require("@/assets/images/auth-selected-03.jpg"),
+  require("@/assets/images/auth-selected-04.jpg"),
+  require("@/assets/images/auth-selected-05.jpg"),
+  require("@/assets/images/auth-selected-06.jpg"),
+  require("@/assets/images/auth-selected-07.jpg"),
+  require("@/assets/images/auth-selected-08.jpg"),
 ];
 
 export function nextAuthPhotoIndex(saved: string | null): number {

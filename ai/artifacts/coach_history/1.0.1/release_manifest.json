@@ -1,0 +1,30 @@
+{
+  "phase": "7.06.3",
+  "code_and_docs": {
+    "backend\\src\\coach\\coach-ai.client.spec.ts": "ce790f784839e0f84f9dc97170dfd7e522363309aeb6186657c4b0c43aa54a8c",
+    "backend\\src\\coach\\coach-ai.client.ts": "9b1f298813223bddb06a50fc5369e73366269430c4019fe8135a082a56d6f81c",
+    "backend\\src\\coach\\coach-context.service.spec.ts": "6840d424265a685ea534b4406694cd883b78a1b02c12d65d1a894f80ea62a151",
+    "backend\\src\\coach\\coach-context.service.ts": "593937e9134fe879b7f563ab4b0020c1d66bbc44d312e12b135c2ef1aea9b912",
+    "backend\\src\\coach\\coach-history.service.spec.ts": "5535055b924035f94ee62c7a3930a3ad6e98874da8906e1350a4e37bef241f4d",
+    "backend\\src\\coach\\coach-history.service.ts": "6af72fdbb6243e2257e8ca2e6871428650e530fd7f24ca3b8176a60d122ea153",
+    "backend\\src\\coach\\coach.controller.ts": "5f4852b10cd0db03334bb0e8edc47594416179dbbec2433e659f843b0d89f637",
+    "backend\\src\\coach\\coach.module.ts": "bd80abf418371ece4e59fa50e7868e18413d7c7166659375afc864249b78e823",
+    "backend\\src\\coach\\coach.service.spec.ts": "e11d84a84b222c8bd5c6f52b6bf9c9c9b56b173f219e4931e8247726c9707f55",
+    "backend\\src\\coach\\coach.service.ts": "5885fbf5eb1b7329c4e078de9f90bb75219825819d19524d7c82ee462c1a30e7",
+    "backend\\src\\coach\\dto\\coach.dto.ts": "ed409a7f1309162a074e35e8d6e0e42315e0e721d610e42da74ce0d3fd46eabd",
+    "backend\\package.json": "d7b29ff8539006826ea3416a3f8a434e5bd0097597d6634761767ed4922224a6",
+    "backend\\package-lock.json": "a59ea70c1f387c0b80d62b42409cb79aaa1a40070b621e74d0ca148ed797a934",
+    "backend\\test\\fixtures\\coach-postgres.ts": "03cbc8d86389018777be221d9484bd633a1c694b1c6b44baa6f331dcc03b670f",
+    "backend\\scripts\\verify-coach-history.mjs": "d237721d8cd3e64b72dc740739b245b2c7a07fa26160c37e6f9f8c47977085ec",
+    "backend\\scripts\\verify-coach-history-remote.mjs": "38a5184fa9212009c861a195fb274c91116b0d268fc7409b0e01c5d57d88b1ee",
+    "ai\\src\\evolv_api\\app.py": "08a436f870feb9ffc40b1b29fd44703b415395a5c4da969279c60ee893b51e53",
+    "ai\\tests\\test_coach_api.py": "9e9da5c9119eeb224581c1aca2ad632e70a881115c8f993df8c5220bd801b0d4",
+    "docs\\43-coach-conversations-history.md": "bc81d9fd58f638eb972f467f38725ad5ce1a2f86f5d366352398a0a9f9949ffb"
+  },
+  "outputs": {
+    "completion.json": "135a6b996f18649448f37484a88c8c228a802c1fea621a7614cc8aefad0187c7",
+    "manifest.json": "0c85a69c8cb9fb7693f33377d721ab6f72819dbdb62d860002e43e674359b398",
+    "verification.json": "db6883e7bbff2531964b3053c3ed6c2c803980e0012bfa7f62a54e4fa5a893c1"
+  },
+  "remote_verification_sha256": "2b0c94453e6691f8b60e54d962db3448ab9b9335a4a4c221d009daf26ec58941"
+}

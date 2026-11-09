@@ -1,0 +1,9 @@
+"""Educational TinyLM, separate from the Coach's existing NLP models."""
+
+TOKENIZER_VERSION = "1.0.0"
+CORPUS_VERSION = "1.2.0"
+PREPARED_DATA_VERSION = "1.0.0"
+MODEL_VERSION = "1.0.0"
+TRAINING_VERSION = "1.0.0"
+GENERATION_VERSION = "1.0.0"
+LM_EVALUATION_VERSION = "1.0.0"

@@ -1,8 +1,13 @@
 import {
+  cloneElement,
+  useCallback,
   useEffect,
+  useMemo,
+  useRef,
   useState,
   type ComponentType,
   type PropsWithChildren,
+  type ReactElement,
   type ReactNode,
 } from "react";
 import { Asset } from "expo-asset";
@@ -11,7 +16,6 @@ import {
   Easing,
   Image,
   Platform,
-  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -21,7 +25,21 @@ import {
   type StyleProp,
   type ViewStyle,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useFocusEffect, useScrollToTop } from "expo-router";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
+
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
+import { useReducedMotion } from "@/context/motion-context";
+import {
+  COMPACT_HEADER_HEIGHT,
+  headerCollapseRange,
+  SCREEN_SECTION_GAP,
+  SCREEN_TOP_PADDING,
+  shouldShowCompactHeader,
+} from "@/lib/screen-motion";
 
 import {
   colors,
@@ -82,33 +100,81 @@ export function CoverImage({
 }
 
 type AppScreenProps = PropsWithChildren<{
+  header?: ReactElement<PageHeaderProps>;
   tone?: ThemeTone;
   contentStyle?: ViewStyle;
   scroll?: boolean;
+  footer?: ReactNode;
+  scrollToEndKey?: string;
 }>;
 
 export function AppScreen({
   children,
+  header,
   tone,
   contentStyle,
   scroll = true,
+  footer,
+  scrollToEndKey,
 }: AppScreenProps) {
   const palette = useTonePalette(tone);
+  const reducedMotion = useReducedMotion();
+  const insets = useSafeAreaInsets();
+  const scrollRef = useRef<ScrollView>(null);
+  useEffect(()=>{
+    if(!scrollToEndKey)return;
+    const frame=requestAnimationFrame(()=>scrollRef.current?.scrollToEnd({animated:false}));
+    return()=>cancelAnimationFrame(frame);
+  },[scrollToEndKey]);
+  const [scrollY] = useState(() => new Animated.Value(0));
+  const [headerHeight, setHeaderHeight] = useState(72);
+  const [compactVisible, setCompactVisible] = useState(false);
   const [entrance] = useState(() => new Animated.Value(0));
+  const collapseRange = headerCollapseRange(headerHeight);
+  const collapseProgress = scrollY.interpolate({
+    inputRange: [0, collapseRange.end],
+    outputRange: [0, 1],
+    extrapolate: "clamp",
+  });
+  const compactOpacity = scrollY.interpolate({
+    inputRange: [collapseRange.start, collapseRange.end],
+    outputRange: [0, 1],
+    extrapolate: "clamp",
+  });
+  const scrollToTop = useMemo(
+    () => ({
+      current: {
+        scrollToTop: () =>
+          scrollRef.current?.scrollTo({ y: 0, animated: !reducedMotion }),
+      },
+    }),
+    [reducedMotion],
+  );
+  useScrollToTop(scrollToTop);
 
-  useEffect(() => {
-    Animated.timing(entrance, {
-      toValue: 1,
-      duration: 240,
-      easing: Easing.out(Easing.cubic),
-      useNativeDriver: Platform.OS !== "web",
-    }).start();
-  }, [entrance]);
+  useFocusEffect(
+    useCallback(() => {
+      if (reducedMotion) {
+        entrance.setValue(1);
+        return;
+      }
+      entrance.setValue(0);
+      const animation = Animated.timing(entrance, {
+        toValue: 1,
+        duration: 200,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: Platform.OS !== "web",
+      });
+      animation.start();
+      return () => animation.stop();
+    }, [entrance, reducedMotion]),
+  );
 
   const content = (
     <Animated.View
       style={[
         styles.content,
+        { paddingBottom: 120 + insets.bottom },
         contentStyle,
         {
           opacity: entrance,
@@ -123,6 +189,23 @@ export function AppScreen({
         },
       ]}
     >
+      {header ? (
+        <View
+          aria-hidden={compactVisible}
+          accessibilityElementsHidden={compactVisible}
+          importantForAccessibility={
+            compactVisible ? "no-hide-descendants" : "auto"
+          }
+          onLayout={(event) => setHeaderHeight(event.nativeEvent.layout.height)}
+          pointerEvents={compactVisible ? "none" : "auto"}
+        >
+          {cloneElement(header, {
+            active: !compactVisible,
+            tone: header.props.tone ?? tone,
+            collapseProgress: reducedMotion ? undefined : collapseProgress,
+          })}
+        </View>
+      ) : null}
       {children}
     </Animated.View>
   );
@@ -133,25 +216,94 @@ export function AppScreen({
       style={[styles.safeArea, { backgroundColor: palette.page }]}
     >
       {scroll ? (
-        <ScrollView
+        <Animated.ScrollView
+          ref={scrollRef}
+          testID={`page-scroll-${header?.props.title ?? "content"}`}
+          style={[
+            styles.scroller,
+            Platform.OS === "web" &&
+              ({
+                scrollbarWidth: "thin",
+                scrollbarColor: `${palette.faint} transparent`,
+              } as ViewStyle),
+          ]}
           contentContainerStyle={styles.scrollContent}
           contentInsetAdjustmentBehavior="automatic"
-          decelerationRate="fast"
+          decelerationRate="normal"
           directionalLockEnabled
           keyboardDismissMode="interactive"
           keyboardShouldPersistTaps="handled"
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator
+          indicatorStyle={
+            palette.page === themePalettes.light.page ? "black" : "white"
+          }
+          scrollIndicatorInsets={{
+            top: header ? COMPACT_HEADER_HEIGHT : 0,
+            bottom: 90 + insets.bottom,
+          }}
+          scrollEventThrottle={16}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+            {
+              useNativeDriver: Platform.OS !== "web",
+              listener: (event: {
+                nativeEvent: { contentOffset: { y: number } };
+              }) => {
+                const visible =
+                  Boolean(header) &&
+                  shouldShowCompactHeader(
+                    event.nativeEvent.contentOffset.y,
+                    headerHeight,
+                  );
+                if (visible !== compactVisible) {
+                  setCompactVisible(visible);
+                }
+              },
+            },
+          )}
         >
           {content}
-        </ScrollView>
+        </Animated.ScrollView>
       ) : (
         content
       )}
+      {footer}
+      {header && scroll ? (
+        <Animated.View
+          aria-hidden={!compactVisible}
+          accessibilityElementsHidden={!compactVisible}
+          importantForAccessibility={
+            compactVisible ? "auto" : "no-hide-descendants"
+          }
+          pointerEvents={compactVisible ? "auto" : "none"}
+          testID={`compact-page-header-${header.props.title}`}
+          style={[
+            styles.compactHeader,
+            {
+              top: insets.top,
+              backgroundColor: palette.page,
+              borderBottomColor: palette.border,
+              opacity: reducedMotion ? Number(compactVisible) : compactOpacity,
+            },
+          ]}
+        >
+          <View style={styles.compactHeaderContent}>
+            {cloneElement(header, {
+              compact: true,
+              active: compactVisible,
+              tone: header.props.tone ?? tone,
+            })}
+          </View>
+        </Animated.View>
+      ) : null}
     </SafeAreaView>
   );
 }
 
 type PageHeaderProps = {
+  active?: boolean;
+  compact?: boolean;
+  collapseProgress?: Animated.AnimatedInterpolation<number>;
   brand?: string;
   eyebrow: string;
   title: string;
@@ -162,6 +314,9 @@ type PageHeaderProps = {
 };
 
 export function PageHeader({
+  active = true,
+  compact = false,
+  collapseProgress,
   brand,
   eyebrow,
   title,
@@ -172,9 +327,9 @@ export function PageHeader({
 }: PageHeaderProps) {
   const palette = useTonePalette(tone);
   return (
-    <View style={styles.pageHeader}>
+    <View style={[styles.pageHeader, compact && styles.pageHeaderCompact]}>
       <View style={styles.pageHeaderText}>
-        {brand ? (
+        {brand && !compact ? (
           <Text style={[styles.brand, { color: palette.text }]}>
             {brand.toLowerCase() === "evolv" ? (
               <>
@@ -185,13 +340,37 @@ export function PageHeader({
             )}
           </Text>
         ) : null}
-        <Text style={[styles.eyebrow, { color: palette.muted }]}>
-          {eyebrow}
-        </Text>
-        <Text style={[styles.pageTitle, { color: palette.text }]}>{title}</Text>
+        {!compact ? (
+          <Text style={[styles.eyebrow, { color: palette.muted }]}>
+            {eyebrow}
+          </Text>
+        ) : null}
+        <Animated.Text
+          accessibilityRole="header"
+          numberOfLines={compact ? 1 : undefined}
+          style={[
+            styles.pageTitle,
+            { color: palette.text },
+            compact && styles.pageTitleCompact,
+            collapseProgress && {
+              transformOrigin: "left center",
+              transform: [
+                {
+                  scale: collapseProgress.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [1, 0.85],
+                  }),
+                },
+              ],
+            },
+          ]}
+        >
+          {title}
+        </Animated.Text>
       </View>
       {ActionIcon ? (
         <Pressable
+          disabled={!active}
           accessibilityLabel={actionLabel}
           accessibilityRole="button"
           onPress={onAction}
@@ -508,16 +687,31 @@ export function LabelIcon({
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1 },
+  scroller: { flex: 1 },
   scrollContent: { flexGrow: 1 },
+  compactHeader: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    zIndex: 10,
+    height: COMPACT_HEADER_HEIGHT,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  compactHeaderContent: {
+    width: "100%",
+    maxWidth: 760,
+    alignSelf: "center",
+    paddingHorizontal: spacing.lg,
+  },
   content: {
     flex: 1,
     width: "100%",
     maxWidth: 760,
     alignSelf: "center",
     paddingHorizontal: spacing.lg,
-    paddingTop: 10,
+    paddingTop: SCREEN_TOP_PADDING,
     paddingBottom: 120,
-    gap: 24,
+    gap: SCREEN_SECTION_GAP,
   },
   pageHeader: {
     minHeight: 72,
@@ -526,6 +720,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   pageHeaderText: { flex: 1, paddingRight: spacing.md },
+  pageHeaderCompact: { minHeight: COMPACT_HEADER_HEIGHT },
+  pageTitleCompact: { marginTop: 0, fontSize: 18, lineHeight: 24 },
   brand: {
     marginBottom: 12,
     color: colors.red,

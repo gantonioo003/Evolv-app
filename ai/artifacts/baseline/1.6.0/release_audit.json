@@ -1,0 +1,12 @@
+{
+  "entity_manifest_sha256": "c63e16d3460758e111c08837e306fbb39f4ce165372fcdbb6fb621117f0919e1",
+  "files": {
+    "RESULTS.md": "7798f1a4a8ad29254f9a5e62865e93b8ba693cce863f36d914557a9e4e5c1f5c",
+    "comparison.json": "73b62b3fe94777445af391fe2d987e066f57c5c42526d25a491da29f726292fc",
+    "evaluation.json": "ed1ccb0bb78a248cddee565048023ed24c8e165ee6981f5a12b7953c67143242",
+    "manifest.json": "8b29d808826770f97460886f3f62a986d80d2a1a986fe3f0ee395278c73214c8",
+    "search_progress.json": "4e3523fb4d8fcfebeafa70652106dd65369a721ab96f5a1ac9f023f9b35ab086",
+    "selection_frozen.json": "f805f51cc697ff5c7c880dc7e3538e04096ed006df39851e812b530db6836874"
+  },
+  "private_output_counts": 12179
+}

@@ -1,0 +1,10 @@
+{
+  "phase": "7.04.4",
+  "official_checkpoint_download_complete": true,
+  "full_model_loaded_on_gpu": true,
+  "real_lora_training_executed": true,
+  "original_validation_nll": 4.0396546737856385,
+  "selected_validation_nll": 1.8846803056225132,
+  "peak_allocated_mib": 4545.67529296875,
+  "note": "Supersedes the pending-download observation in the original phase 7.04.1 selection record. The historical record remains unchanged."
+}

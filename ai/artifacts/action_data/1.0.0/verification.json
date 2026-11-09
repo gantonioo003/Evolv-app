@@ -1,0 +1,42 @@
+{
+  "phase": "7.07.2",
+  "status": "complete",
+  "dataset_version": "1.9.0",
+  "original_rows_preserved": 12179,
+  "new_records": 293,
+  "new_train": 147,
+  "new_validation": 146,
+  "total": 12472,
+  "checks": {
+    "tests_passed": 7,
+    "tests_failed": 0,
+    "all_neighbor_radius_collisions": 0,
+    "all_parent_rows_unchanged": true,
+    "reserved_files_byte_identical": {
+      "external_human_language": "6fd5dc146295ea049a2388b65a10465051c8f3898925cd474baff9dfb586de29",
+      "quarantine": "9dd397209e4c2c2624445ac444c7cf59d7beff981083ac352f1fa0b93e7609f0",
+      "test": "189bc4d34449fd8bf0e7d977b9189fd2c0fa43d5dd61ae278ffced62d4e22713"
+    },
+    "validation_strata_separate": true,
+    "existing_release_overwrite_refused": true,
+    "development_loader_blocks_reserved_and_tampered_input": true
+  },
+  "limitations": [
+    "all new records synthetic, same author for train and validation",
+    "no real-world performance claim",
+    "new records have no explicit clinical risk; old risk examples preserved",
+    "activity_type runtime mismatch remains",
+    "model and confidence policy still unchanged"
+  ],
+  "sha256": {
+    "ai/data/action_authoring/v1/examples.py": "0f579c948de39eeb9e858f98438c18f9bd394d2fc1b80297a77140d6d23ac220",
+    "ai/src/evolv_nlp/action_release.py": "181f36b312523153e6f8176005e797fcd1f7e06e43355b8bf94b74e7c26b45d7",
+    "ai/scripts/prepare_action_release.py": "126cd746d3fda524c28c743eab6b2a4c00ce74f7fcc194f6b2545b8b4c48f64a",
+    "ai/tests/test_action_release.py": "b260e29c78ee4bb7f68af3b601d95a5d6cdc581e97617f4e75cb530b286316c2",
+    "ai/data/releases/1.9.0/manifest.json": "b2c7fdf11dffbb354f8066815e5247462d6c5b0e5dc08e382e288b88f59fc5d3",
+    "docs/47-coach-action-data.md": "485eb86a2c2ade9936b913127547561c32337f18cf6f24b2386a06e85f8756fb",
+    "ai/README.md": "c58fde45e13d843ad7b06b6e6ef38c8fc13a333b0a036382f7ccea0d8d394262",
+    ".gitignore": "c6962c65db30227aa94dc2c97ebfba84b4cfb82de70aaa3a48135cdcb54fe935",
+    "ai/artifacts/action_data/1.0.0/radius_audit.json": "5a93be00f67b17c1a5e2e8842bdc9a6309c5d8ea2e4e1509ddda9682f637d2c0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "phase": "7.07.7",
+  "status": "complete_with_documented_limitations",
+  "active_index": "1.1.1",
+  "knowledge": "1.2.1",
+  "tests_passed": 96,
+  "reserved_hit_at_3": 0.84375,
+  "reserved_followup_hit_at_3": 1.0,
+  "real_api_messages": 20,
+  "generation_evaluated": false,
+  "old_frozen_files_preserved": 65,
+  "code_and_docs": {
+    "ai/src/evolv_rag/retrieval.py": "ac15323c0cfe8bce2a4ff104f05a0fa7ec452cde2ec930ccb6aecda03a7d27ef",
+    "ai/src/evolv_rag/retrieval_runtime.py": "92df1f44313902e29edd19504f1ce7273fa28981bada3a115b62ba0ad6c50a90",
+    "ai/src/evolv_rag/coach.py": "936f6d74959f4d5ceb91727a893bfa219fdff4bf936b8073c55a5a921f3342fa",
+    "ai/src/evolv_api/app.py": "b6b10ec2b44cf0ee61a7784d84a1cc6e16598db32db7ca8cf0d95214fddc899c",
+    "ai/configs/retrieval.runtime.v1.json": "447eaa9eb535e4c3e07a1920f7afd7a14fbca64ac4ea9443c1737abac7becc93",
+    "ai/configs/rag.preparation.v3.json": "c5e00cafe493b4877497f5d0daacb5e35e64d83196dff79302b2e30f2afc0036",
+    "ai/data/evaluation/retrieval.v2.json": "dfddb468801a042e7bd54730ce336658ef2708b51cd40b4833cbe9808c984e97",
+    "ai/tests/test_retrieval_context.py": "b06852eb3b491ca1c05e4ba1d0e31290bcf5d0307671a018f27a29f45e70502f",
+    "ai/tests/test_coach_model_selection.py": "43edfb992cbd511796aae91fbb61bc0c7fd6b532c4711d7961bc18668e799b6b",
+    "ai/scripts/evaluate_retrieval.py": "81470861148567e1eda3320ac3cf9aa976b716f26f0c97b015f23fc6961a098a",
+    "ai/scripts/prepare_retrieval_runtime.py": "520d9bdc776fc57d4acfd0128cb3167fbad98b6f76eabcd580b3a9eb37d378c3",
+    "ai/scripts/verify_retrieval_integration.py": "41c5a235fdd3df41063b8f9edf4c2bdbab079db54ef6b1bc5f7ac3aa31d2629b",
+    "ai/scripts/search_knowledge.py": "b50548cf6159031a9673a8db1f3c9c429f4c6e6848e234a3dc1e88fcccb52b15",
+    "docs/52-coach-retrieval-improvement.md": "39f20dccb7cd78bd4288c7665a9ee7e1ad331bf3aa4eb7c0df702d87a59398fa",
+    "ai/README.md": "253ae1deff4d2b7124d3c5acc1b915895ab8741c22962d1e38497756d0140120"
+  },
+  "outputs": {
+    "coach_before.py": "f185f4f7871a51c0bc893e65817c03446edc66a714df54671274b3c1a2c811b1",
+    "legacy_reference.json": "c13052dfb9535bcec0a32f81a1ec125e8dc05893238f8d36d58d2a875d982971",
+    "prompt_budget.json": "785e6636e147052bf3dab9818392c236bbd60ebef9e2d3439dfe14f046c97954",
+    "prompt_budget_attempt.json": "82b26ec9c95681370764c665839313053ef7623a4c9428c2eca113cddf3f4fcb",
+    "real_api_smoke.json": "0ee6cb4de05ac433335ca84a4b781f2cbd6868de7c7538835728adc1529c8beb",
+    "tests.txt": "99a544f03a9e54271253a3a54d3fc2503417d10e9bfff70a106d3f38baae966b",
+    "verification.json": "0b45b9dc7ad6aad64e6901bf36b1accd9c6155c341c6b17e995e74f3a75a0dec"
+  },
+  "experiment_manifest_sha256": "c7c26165bcdc54fd8f1ec1228a2d741049128e935750ff4a445dd48491f7d175"
+}

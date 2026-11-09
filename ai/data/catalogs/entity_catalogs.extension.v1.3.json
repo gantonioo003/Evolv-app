@@ -1,0 +1,80 @@
+{
+  "version": "1.3.0",
+  "purpose": "Explicit mentions only; clinical terms never establish diagnoses",
+  "catalogs": {
+    "training_metric": [
+      {"canonical": "volume", "aliases": ["volume semanal"]},
+      {"canonical": "carga", "aliases": ["cargas"]},
+      {"canonical": "frequencia", "aliases": ["frequencia semanal"]},
+      {"canonical": "descanso", "aliases": ["intervalo entre series"]}
+    ],
+    "intensity": [
+      {"canonical": "leve", "aliases": ["intensidade leve"]},
+      {"canonical": "moderada", "aliases": ["moderado"]},
+      {"canonical": "alta", "aliases": ["intensidade alta", "alta intensidade"]}
+    ],
+    "nutrient": [
+      {"canonical": "proteina", "aliases": ["proteinas"]},
+      {"canonical": "carboidrato", "aliases": ["carboidratos", "carbos"]},
+      {"canonical": "gordura", "aliases": ["gorduras"]},
+      {"canonical": "fibra", "aliases": ["fibras"]}
+    ],
+    "medical_condition": [
+      {"canonical": "diabetes", "aliases": []},
+      {"canonical": "hipertensao", "aliases": ["pressao alta"]},
+      {"canonical": "doenca renal", "aliases": ["insuficiencia renal"]},
+      {"canonical": "asma", "aliases": []},
+      {"canonical": "hipotireoidismo", "aliases": []}
+    ],
+    "medication": [
+      {"canonical": "sertralina", "aliases": []},
+      {"canonical": "semaglutida", "aliases": ["ozempic", "wegovy"]},
+      {"canonical": "tirzepatida", "aliases": ["mounjaro"]},
+      {"canonical": "ibuprofeno", "aliases": []},
+      {"canonical": "anticoagulante", "aliases": ["anticoagulantes"]},
+      {"canonical": "testosterona", "aliases": ["durateston", "enantato"]}
+    ],
+    "supplement": [
+      {"canonical": "creatina", "aliases": []},
+      {"canonical": "whey", "aliases": ["whey protein"]},
+      {"canonical": "cafeina", "aliases": []},
+      {"canonical": "beta-alanina", "aliases": ["beta alanina"]},
+      {"canonical": "albumina", "aliases": []}
+    ],
+    "cooking_method": [
+      {"canonical": "assar", "aliases": ["assado", "assada"]},
+      {"canonical": "grelhar", "aliases": ["grelhado", "grelhada"]},
+      {"canonical": "cozinhar", "aliases": ["cozido", "cozida"]}
+    ],
+    "serving_unit": [
+      {"canonical": "colher", "aliases": ["colheres", "colher de sopa"]},
+      {"canonical": "xicara", "aliases": ["xicaras"]},
+      {"canonical": "fatia", "aliases": ["fatias"]},
+      {"canonical": "concha", "aliases": ["conchas"]}
+    ],
+    "location_environment": [
+      {"canonical": "casa", "aliases": ["em casa"]},
+      {"canonical": "academia", "aliases": ["na academia"]},
+      {"canonical": "hotel", "aliases": ["no hotel"]},
+      {"canonical": "praia", "aliases": ["na praia"]}
+    ],
+    "range_of_motion": [
+      {"canonical": "parcial", "aliases": ["meia amplitude", "amplitude parcial"]},
+      {"canonical": "completa", "aliases": ["amplitude completa", "amplitude total"]}
+    ],
+    "training_level": [
+      {"canonical": "iniciante", "aliases": ["iniciante na academia"]},
+      {"canonical": "intermediario", "aliases": ["intermediaria"]},
+      {"canonical": "avancado", "aliases": ["avancada"]}
+    ],
+    "hunger_level": [
+      {"canonical": "high", "aliases": ["muita fome", "fome demais"]},
+      {"canonical": "low", "aliases": ["sem apetite", "sem fome"]},
+      {"canonical": "satisfied", "aliases": ["estou satisfeito", "estou satisfeita"]}
+    ],
+    "stress_level": [
+      {"canonical": "high", "aliases": ["muito estressado", "muito estressada", "estresse alto"]},
+      {"canonical": "low", "aliases": ["semana tranquila", "estresse baixo"]}
+    ]
+  }
+}

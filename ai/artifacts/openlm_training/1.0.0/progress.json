@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "epoch": 3,
+  "global_step": 63,
+  "best_epoch": 3,
+  "validation_nll": 1.8846803056225132
+}

@@ -1,0 +1,10 @@
+{
+  "code": {
+    "src/evolv_rag/coach.py": "ffa281f7fe6ef22ddb932eadf8e98d12ee03b8421c58538b6ba4a570efa08f3a",
+    "src/evolv_rag/safety.py": "2856d8417ab825a12de35b85a474c8e24ad1cec9e9885b13ec6b94d999227994",
+    "scripts/verify_coach_dialogue_regressions.py": "e2f9227ed7475ecce1cd2b41a30ef9f25b9fa630e30d34e1d2b4b1dbd5b93b72"
+  },
+  "outputs": {
+    "results.json": "4b33f8632b4c3aa4f960abddda0c2a838e9151ef0f8abc4e1e461fbedc666dcc"
+  }
+}

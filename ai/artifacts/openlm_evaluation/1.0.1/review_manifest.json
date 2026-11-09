@@ -1,0 +1,17 @@
+{
+  "review_method": "AI-assisted rubric review, unblinded, not independent human evaluation",
+  "code_sha256": "f0d94cd91d2a4366bbca3befcf17c08bb0c8ab857e1a1e0416a61e6351be539c",
+  "inputs": {
+    "results.json": "567064a64a0c458fb0b5eef4c925bd3669e7236c12513a80f39cd5bc6869db71",
+    "private/review.json": "92385e43528d9046a7ac8e528cbc08b89c7d860837efe47f3f7a35e2ad426f4d",
+    "manifest.json": "d4f210fe30baaf2d7acf6e26d15095ba1b87bee6e46f13a075005494576e3d97"
+  },
+  "outputs": {
+    "RESULTS.md": "235f1f4ba33e32418dd342196a2b6ee8588330847df8392a24ee246268d50953",
+    "qualitative_summary.json": "ca240cde3fdc45fc9538033ab74a45c1bf5622bebaf7be83c34f2e8b2ee82448",
+    "decision.json": "771cbdb65c13ed3fcc8cb76728d4119fab4f5d5fa06aa99a3f2e4e95e47a784c",
+    "private/COMPARISON.md": "ce5f580df05d00c11f8a5fff61b3a223f65da8ddb5dc9bdc0d8214cf00a275a6",
+    "private/comparison.html": "e48b3263f2b3ba3e4041dca23eef11bf5f2c30601f8392e1ff7d8ef3a8985b8d",
+    "private/review_table.csv": "e5b68dd866257f9b4546613ba5908a79a8894daba26eb1445b0bd7ed1f05605d"
+  }
+}

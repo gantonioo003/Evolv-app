@@ -13,7 +13,11 @@ type Profile = Tables<'profiles'>;
 export class ProfilesService {
   constructor(private readonly supabase: SupabaseService) {}
 
-  async getMine(userId: string, accessToken: string): Promise<Profile> {
+  async getMine(
+    userId: string,
+    accessToken: string,
+    signupMetadata: Record<string, unknown> = {},
+  ): Promise<Profile> {
     const { data, error } = await this.supabase
       .forUser(accessToken)
       .from('profiles')
@@ -22,7 +26,27 @@ export class ProfilesService {
       .maybeSingle();
 
     if (error) this.throwDatabaseError();
-    if (!data) return this.upsertProfile(userId, accessToken);
+    const signupProfile = profileFromSignup(signupMetadata);
+    if (!data) return this.upsertProfile(userId, accessToken, signupProfile);
+
+    // Email confirmation may happen long after signup; metadata survives it.
+    if (
+      data.onboarding_status === 'not_started' &&
+      data.birth_date === null &&
+      signupProfile.birth_date
+    ) {
+      const { data: hydrated, error: hydrationError } = await this.supabase
+        .forUser(accessToken)
+        .from('profiles')
+        .update({ birth_date: signupProfile.birth_date })
+        .eq('id', userId)
+        .is('birth_date', null)
+        .eq('onboarding_status', 'not_started')
+        .select('*')
+        .maybeSingle();
+      if (hydrationError) this.throwDatabaseError();
+      return hydrated ?? data;
+    }
 
     return data;
   }
@@ -70,4 +94,28 @@ export class ProfilesService {
     if (error) this.throwDatabaseError();
     return data;
   }
+}
+
+function profileFromSignup(
+  metadata: Record<string, unknown>,
+): TablesUpdate<'profiles'> {
+  const profile: TablesUpdate<'profiles'> = {};
+  if (typeof metadata.full_name === 'string') {
+    const name = metadata.full_name.trim();
+    if (name.length >= 2 && name.length <= 120) profile.full_name = name;
+  }
+  if (
+    typeof metadata.birth_date === 'string' &&
+    /^\d{4}-\d{2}-\d{2}$/.test(metadata.birth_date)
+  ) {
+    const date = new Date(`${metadata.birth_date}T00:00:00Z`);
+    if (
+      !Number.isNaN(date.getTime()) &&
+      date.toISOString().slice(0, 10) === metadata.birth_date &&
+      metadata.birth_date >= '1900-01-01' &&
+      metadata.birth_date <= new Date().toISOString().slice(0, 10)
+    )
+      profile.birth_date = metadata.birth_date;
+  }
+  return profile;
 }

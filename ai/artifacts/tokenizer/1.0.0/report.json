@@ -1,0 +1,290 @@
+{
+  "audit": {
+    "corpus_version": "1.2.0",
+    "documents": {
+      "test": 42,
+      "train": 6612,
+      "validation": 57
+    },
+    "group_leaks": 0,
+    "manifest_sha256": "51406e1484ada0f0f16263633cdd0e4aed2b8ba900fc6a226b5b920c7fc119f6",
+    "near_duplicate_check": "not_performed_in_this_stage",
+    "normalized_exact_text_leaks": 0,
+    "source_files": {
+      "excluded_documents.json": {
+        "bytes": 6511,
+        "sha256": "ef500028fd2c4fbaef8cd000dffafbf2a27eee35961264137a8ae8f26cb6d61d"
+      },
+      "test.jsonl": {
+        "bytes": 64971,
+        "sha256": "0930ef0c45ad32689e334f6cffb0813acd8afd9a32a095d659117035ae23c943"
+      },
+      "test.txt": {
+        "bytes": 50409,
+        "sha256": "fe6dc57e04676492228fe6af4ee4807e02118639305f1e3360a1b9b49ed6f444"
+      },
+      "train.jsonl": {
+        "bytes": 13001847,
+        "sha256": "e23db46d942b0b8d400c229a63f7ab21f36c8599e0c4f6bb5df7b38ba1f1608b"
+      },
+      "train.txt": {
+        "bytes": 10645864,
+        "sha256": "f84cb6260b858be69aa4f5441a02fd8b1a70fb5f5c72b9266544abd45a8aba0c"
+      },
+      "validation.jsonl": {
+        "bytes": 98397,
+        "sha256": "a0a22166b093782296332a5b7f5630be5bf43d5c40c66aef378955612b075b31"
+      },
+      "validation.txt": {
+        "bytes": 77819,
+        "sha256": "eff5761d24644a4504705769608dbf4bb059c33f75449191c1f39d5701ab465b"
+      }
+    }
+  },
+  "interpretation": {
+    "corpus_scope": "educational small Portuguese corpus; not enough for a production Coach",
+    "heldout": "descriptive check after freeze; never fit or select vocabulary on these texts",
+    "metrics": "tokenization statistics, not LM accuracy or perplexity",
+    "roles": "reserved for future formatting; no dialogue model trained here",
+    "unicode_coverage": "byte support is not multilingual language competence"
+  },
+  "partitions": {
+    "test": {
+      "characters": 48786,
+      "characters_per_token": 3.2879,
+      "document_token_lengths": {
+        "max": 1729,
+        "mean": 353.29,
+        "p50": 214,
+        "p90": 786,
+        "p95": 1191,
+        "p99": 1729
+      },
+      "documents": 42,
+      "raw_control_tokens": 0,
+      "raw_tokens": 14838,
+      "roundtrip_failures": 0,
+      "sources": {
+        "evolv_nlu_train": {
+          "characters": 254,
+          "documents": 5,
+          "raw_control_tokens": 0,
+          "raw_tokens": 80,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 90,
+          "unknown_tokens": 0,
+          "utf8_bytes": 254,
+          "whitespace_words": 49
+        },
+        "oasst1_ptbr_human": {
+          "characters": 884,
+          "documents": 4,
+          "raw_control_tokens": 0,
+          "raw_tokens": 286,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 294,
+          "unknown_tokens": 0,
+          "utf8_bytes": 904,
+          "whitespace_words": 150
+        },
+        "wikipedia_pt": {
+          "characters": 47648,
+          "documents": 33,
+          "raw_control_tokens": 0,
+          "raw_tokens": 14472,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 14538,
+          "unknown_tokens": 0,
+          "utf8_bytes": 49168,
+          "whitespace_words": 7352
+        }
+      },
+      "tokens_per_whitespace_word": 1.965,
+      "tokens_with_bos_eos": 14922,
+      "unknown_rate": 0.0,
+      "unknown_tokens": 0,
+      "utf8_bytes": 50326,
+      "whitespace_words": 7551
+    },
+    "train": {
+      "characters": 10348162,
+      "characters_per_token": 3.5113,
+      "document_token_lengths": {
+        "max": 2847,
+        "mean": 445.72,
+        "p50": 173,
+        "p90": 1467,
+        "p95": 1608,
+        "p99": 1868
+      },
+      "documents": 6612,
+      "raw_control_tokens": 0,
+      "raw_tokens": 2947105,
+      "roundtrip_failures": 0,
+      "sources": {
+        "evolv_coach_boundary_qa": {
+          "characters": 1564,
+          "documents": 6,
+          "raw_control_tokens": 0,
+          "raw_tokens": 417,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 429,
+          "unknown_tokens": 0,
+          "utf8_bytes": 1564,
+          "whitespace_words": 229
+        },
+        "evolv_context_authored": {
+          "characters": 11100,
+          "documents": 198,
+          "raw_control_tokens": 0,
+          "raw_tokens": 3188,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 3584,
+          "unknown_tokens": 0,
+          "utf8_bytes": 11100,
+          "whitespace_words": 1840
+        },
+        "evolv_knowledge": {
+          "characters": 17974,
+          "documents": 66,
+          "raw_control_tokens": 0,
+          "raw_tokens": 4930,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 5062,
+          "unknown_tokens": 0,
+          "utf8_bytes": 17974,
+          "whitespace_words": 2665
+        },
+        "evolv_knowledge_qa": {
+          "characters": 24060,
+          "documents": 66,
+          "raw_control_tokens": 0,
+          "raw_tokens": 6558,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 6690,
+          "unknown_tokens": 0,
+          "utf8_bytes": 24060,
+          "whitespace_words": 3445
+        },
+        "evolv_nlu_train": {
+          "characters": 52616,
+          "documents": 1004,
+          "raw_control_tokens": 0,
+          "raw_tokens": 14731,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 16739,
+          "unknown_tokens": 0,
+          "utf8_bytes": 52617,
+          "whitespace_words": 9392
+        },
+        "evolv_v14_authored_train": {
+          "characters": 4124,
+          "documents": 108,
+          "raw_control_tokens": 0,
+          "raw_tokens": 1219,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 1435,
+          "unknown_tokens": 0,
+          "utf8_bytes": 4124,
+          "whitespace_words": 710
+        },
+        "oasst1_ptbr_human": {
+          "characters": 538027,
+          "documents": 1042,
+          "raw_control_tokens": 0,
+          "raw_tokens": 145669,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 147753,
+          "unknown_tokens": 0,
+          "utf8_bytes": 553607,
+          "whitespace_words": 87679
+        },
+        "wikipedia_pt": {
+          "characters": 9698697,
+          "documents": 4122,
+          "raw_control_tokens": 0,
+          "raw_tokens": 2770393,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 2778637,
+          "unknown_tokens": 0,
+          "utf8_bytes": 9967595,
+          "whitespace_words": 1525061
+        }
+      },
+      "tokens_per_whitespace_word": 1.8069,
+      "tokens_with_bos_eos": 2960329,
+      "unknown_rate": 0.0,
+      "unknown_tokens": 0,
+      "utf8_bytes": 10632641,
+      "whitespace_words": 1631021
+    },
+    "validation": {
+      "characters": 75649,
+      "characters_per_token": 3.5135,
+      "document_token_lengths": {
+        "max": 1988,
+        "mean": 377.74,
+        "p50": 137,
+        "p90": 1288,
+        "p95": 1562,
+        "p99": 1988
+      },
+      "documents": 57,
+      "raw_control_tokens": 0,
+      "raw_tokens": 21531,
+      "roundtrip_failures": 0,
+      "sources": {
+        "evolv_knowledge": {
+          "characters": 282,
+          "documents": 1,
+          "raw_control_tokens": 0,
+          "raw_tokens": 84,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 86,
+          "unknown_tokens": 0,
+          "utf8_bytes": 282,
+          "whitespace_words": 41
+        },
+        "evolv_nlu_train": {
+          "characters": 374,
+          "documents": 8,
+          "raw_control_tokens": 0,
+          "raw_tokens": 104,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 120,
+          "unknown_tokens": 0,
+          "utf8_bytes": 374,
+          "whitespace_words": 66
+        },
+        "oasst1_ptbr_human": {
+          "characters": 3503,
+          "documents": 15,
+          "raw_control_tokens": 0,
+          "raw_tokens": 1047,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 1077,
+          "unknown_tokens": 0,
+          "utf8_bytes": 3615,
+          "whitespace_words": 616
+        },
+        "wikipedia_pt": {
+          "characters": 71490,
+          "documents": 33,
+          "raw_control_tokens": 0,
+          "raw_tokens": 20296,
+          "roundtrip_failures": 0,
+          "tokens_with_bos_eos": 20362,
+          "unknown_tokens": 0,
+          "utf8_bytes": 73435,
+          "whitespace_words": 11403
+        }
+      },
+      "tokens_per_whitespace_word": 1.7756,
+      "tokens_with_bos_eos": 21645,
+      "unknown_rate": 0.0,
+      "unknown_tokens": 0,
+      "utf8_bytes": 77706,
+      "whitespace_words": 12126
+    }
+  }
+}

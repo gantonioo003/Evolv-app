@@ -1,0 +1,15 @@
+{
+  "selection_date": "2026-10-14",
+  "purpose": "Shared web login and signup photograph rotation",
+  "color_reference": "E2",
+  "photos": [
+    { "file": "auth-selected-01.jpg", "code": "4", "source": "https://www.pexels.com/photo/a-woman-sitting-in-a-gym-14838293/", "lighting_edit": "image_gen" },
+    { "file": "auth-selected-02.jpg", "code": "7", "original_project_asset": "auth-training-07.jpg", "lighting_edit": "image_gen" },
+    { "file": "auth-selected-03.jpg", "code": "N1", "source": "https://www.pexels.com/photo/woman-with-headphones-resting-at-gym-17017404/", "lighting_edit": "image_gen" },
+    { "file": "auth-selected-04.jpg", "code": "N9", "source": "https://www.pexels.com/photo/a-man-in-a-tank-top-exercising-6388979/", "lighting_edit": "image_gen" },
+    { "file": "auth-selected-05.jpg", "code": "E2", "source": "https://www.pexels.com/photo/a-man-lifting-a-barbell-9602279/", "lighting_edit": null },
+    { "file": "auth-selected-06.jpg", "code": "E4", "source": "https://www.pexels.com/photo/woman-stretching-in-gym-14591564/", "lighting_edit": "image_gen" },
+    { "file": "auth-selected-07.jpg", "code": "E7", "source": "https://www.pexels.com/photo/man-doing-pull-ups-7672103/", "lighting_edit": "image_gen" },
+    { "file": "auth-selected-08.jpg", "code": "E8", "source": "https://www.pexels.com/photo/woman-lifting-a-barbell-13822300/", "lighting_edit": "image_gen" }
+  ]
+}

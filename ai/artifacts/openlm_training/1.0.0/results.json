@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "initial_adapter_validation_nll": 4.03348388476625,
+  "initial_adapter_train_nll": 4.143333481407789,
+  "original_model_metrics": {
+    "validation": {
+      "nll": 4.0396546737856385,
+      "perplexity": 56.80672256751822,
+      "target_tokens": 1563,
+      "examples": 28
+    },
+    "train": {
+      "nll": 4.149058398183332,
+      "perplexity": 63.37429884011575,
+      "target_tokens": 19259,
+      "examples": 335
+    }
+  },
+  "selected_epoch": 3,
+  "epochs_completed": 3,
+  "optimizer_steps": 63,
+  "early_stopped": false,
+  "plan": {
+    "train_conversations": 335,
+    "world_size": 1,
+    "microbatches_per_epoch": 335,
+    "effective_batch_size_max": 16,
+    "optimizer_steps_per_epoch": 21,
+    "planned_optimizer_steps_max": 63,
+    "warmup_steps": 7,
+    "last_accumulation_microbatches": 15,
+    "epochs_max": 3,
+    "last_partial_batch_kept": true
+  },
+  "final_validation": {
+    "nll": 1.8846803056225132,
+    "perplexity": 6.5842491580734706,
+    "target_tokens": 1563,
+    "examples": 28
+  },
+  "final_train_eval": {
+    "nll": 1.5831313525177657,
+    "perplexity": 4.870182216520145,
+    "target_tokens": 19259,
+    "examples": 335
+  },
+  "trainability": {
+    "trainable_parameters": 16515072,
+    "trainable_tensors": 504,
+    "only_lora_trainable": true,
+    "trainable_dtypes": [
+      "torch.float32"
+    ]
+  },
+  "validation_improved_over_initial_adapter": true,
+  "validation_improved_over_original": true,
+  "test_evaluated": false,
+  "elapsed_seconds_this_invocation": 1068.3035371000879,
+  "memory": {
+    "peak_allocated_mib": 4545.67529296875,
+    "peak_reserved_mib": 5216.0
+  },
+  "best_adapter": "private/checkpoints/epoch_0003",
+  "last_checkpoint": "private/checkpoints/epoch_0003",
+  "resume_granularity": "last_complete_epoch",
+  "model_promoted_to_app": false
+}

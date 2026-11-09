@@ -1,0 +1,16 @@
+{
+  "all_raw_predictions_private": true,
+  "files": {
+    "artifacts/baseline/1.6.0/evaluation.json": "ed1ccb0bb78a248cddee565048023ed24c8e165ee6981f5a12b7953c67143242",
+    "artifacts/baseline/1.6.0/manifest.json": "8b29d808826770f97460886f3f62a986d80d2a1a986fe3f0ee395278c73214c8",
+    "artifacts/baseline/1.6.0/selection_frozen.json": "f805f51cc697ff5c7c880dc7e3538e04096ed006df39851e812b530db6836874",
+    "artifacts/baseline/1.6.1/evaluation.json": "e85d10cfb01ea8a8abd0e97357981d15025281d0212b18c25c8b2be75fae8068",
+    "artifacts/baseline/1.6.1/manifest.json": "0ebe29e16807d772f0311d09e74de6c701928d9b5abe22b8ccc2436b078402a6",
+    "artifacts/baseline/1.6.1/selection_frozen.json": "5d9f0bddfa2dfd98a74d7063dc0552695304b89c5c94837ca819715e50bafb3c",
+    "artifacts/baseline/1.7.0/evaluation.json": "e3f40d0667e16c81b3f2ca35aec5c4f152de6d3771ae3f60f7054e73c0cbcb88",
+    "artifacts/baseline/1.7.0/manifest.json": "038135ad610ce6830ef24a342d5a7736a9f295e9ec4fc91adc2c9a924b15de3c",
+    "artifacts/baseline/1.7.0/selection_frozen.json": "18292abeaff4a6c7ae6b61d01c6a54513077971c2d1b7761b707101caf516e00",
+    "artifacts/review/2026-10-19/RESULTS.md": "8e204265bc37a594320161bdd89760794c4d9ae020fb4b1a3d0989c81cbd402c",
+    "artifacts/review/2026-10-19/recommendation.json": "6e4dcbc1bf3ed9a1c3b0f0074746753b3d7cae64d04b1a5a44ed19d50d96c7c1"
+  }
+}

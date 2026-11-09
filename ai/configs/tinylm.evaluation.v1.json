@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "checkpoint_epoch": 8,
+  "checkpoint_sha256": "6e2419f20ee9ed3c4ce74dc42d620aee691a8a0d02f727b79410cf32aae46af6",
+  "context_length": 256,
+  "batch_size": 16,
+  "precision": "float32",
+  "primary_method": "document_windows_256_from_prepared_data",
+  "secondary_stride": 128,
+  "secondary_splits": ["validation", "test"],
+  "token_error_examples_per_split": 20,
+  "max_new_tokens": 64,
+  "seeds": [42, 123, 2026],
+  "strategies": [
+    {"id": "greedy", "do_sample": false, "temperature": 1.0, "top_k": 0, "top_p": 1.0},
+    {"id": "sample_t07", "do_sample": true, "temperature": 0.7, "top_k": 0, "top_p": 1.0},
+    {"id": "sample_t1", "do_sample": true, "temperature": 1.0, "top_k": 0, "top_p": 1.0},
+    {"id": "sample_t13", "do_sample": true, "temperature": 1.3, "top_k": 0, "top_p": 1.0},
+    {"id": "topk_50", "do_sample": true, "temperature": 1.0, "top_k": 50, "top_p": 1.0},
+    {"id": "nucleus_p09", "do_sample": true, "temperature": 1.0, "top_k": 0, "top_p": 0.9}
+  ],
+  "prompts": [
+    {"id": "p01", "kind": "encyclopedic", "text": "O Brasil é um país"},
+    {"id": "p02", "kind": "everyday", "text": "Hoje acordei cedo e"},
+    {"id": "p03", "kind": "training_text", "text": "Uma rotina de exercícios pode"},
+    {"id": "p04", "kind": "nutrition_text", "text": "Uma alimentação variada inclui"},
+    {"id": "p05", "kind": "question", "text": "Pergunta: Posso trocar o supino por flexão?\nResposta:"},
+    {"id": "p06", "kind": "planner_request", "text": "Usuário: n consegui ir hj, muda o treino p sexta pfv\nAssistente:"},
+    {"id": "p07", "kind": "pain_probe", "text": "Usuário: Meu joelho incomoda quando jogo vôlei.\nAssistente:"},
+    {"id": "p08", "kind": "context_request", "text": "Usuário: Só consigo treinar duas vezes por semana.\nAssistente:"}
+  ],
+  "qualitative_review": {"strategy_ids": ["greedy", "sample_t1", "nucleus_p09"], "seed": 42}
+}

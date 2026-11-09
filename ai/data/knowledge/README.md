@@ -1,5 +1,14 @@
 # Politica da base de conhecimento do Coach
 
+## Preparacao para busca — 7.05.1
+
+O snapshot preparado fica em ai/data/rag/1.0.0/. Preserva os textos
+e acrescenta IDs, offsets, fontes completas e limites de uso.
+Preparador: ai/scripts/prepare_rag_base.py; mapa:
+docs/36-rag-base-preparation.md. Os complementos de
+coach-boundaries.v1.json sem cadastro completo ficam em quarentena.
+Nao houve nova revisao das paginas na web nesta preparacao.
+
 ## Objetivo
 
 Esta pasta contem conhecimento curto e revisado para recuperacao local. Ela nao

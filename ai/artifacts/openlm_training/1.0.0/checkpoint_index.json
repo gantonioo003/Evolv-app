@@ -1,0 +1,24 @@
+{
+  "best": {
+    "epoch": 3,
+    "validation_nll": 1.8846803056225132,
+    "path": "private/checkpoints/epoch_0003",
+    "files": {
+      "adapter_config.json": "99062fdb52345b30a7ec978f808085b29d1cdfb6865edbf1ee6c840a0677f69c",
+      "adapter_model.safetensors": "7634bb726cdf0319500848f9dcc1ef316d3a0c1e1c00d0b35e7ce16eca91d2b7",
+      "README.md": "678742275e6a4d4a361eb467bc11c04c21794cc63a67e7f0f78b989dfd6d6bfb",
+      "trainer_state.pt": "c2bf2f7a4327c05e4032ce99781b33c67d70a892adaee72617db442ea5632984"
+    }
+  },
+  "last": {
+    "epoch": 3,
+    "validation_nll": 1.8846803056225132,
+    "path": "private/checkpoints/epoch_0003",
+    "files": {
+      "adapter_config.json": "99062fdb52345b30a7ec978f808085b29d1cdfb6865edbf1ee6c840a0677f69c",
+      "adapter_model.safetensors": "7634bb726cdf0319500848f9dcc1ef316d3a0c1e1c00d0b35e7ce16eca91d2b7",
+      "README.md": "678742275e6a4d4a361eb467bc11c04c21794cc63a67e7f0f78b989dfd6d6bfb",
+      "trainer_state.pt": "c2bf2f7a4327c05e4032ce99781b33c67d70a892adaee72617db442ea5632984"
+    }
+  }
+}

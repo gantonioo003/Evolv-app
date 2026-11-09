@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AuthModule } from './auth/auth.module.js';
+import { CoachModule } from './coach/coach.module.js';
 import { RequestTimeoutInterceptor } from './common/interceptors/request-timeout.interceptor.js';
 import { envValidationSchema } from './config/env.validation.js';
 import { HealthModule } from './health/health.module.js';
@@ -32,6 +33,7 @@ import { WorkoutsModule } from './workouts/workouts.module.js';
     }),
     SupabaseModule,
     AuthModule,
+    CoachModule,
     HealthModule,
     ProfilesModule,
     GoalsModule,

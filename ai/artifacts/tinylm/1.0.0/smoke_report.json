@@ -1,0 +1,97 @@
+{
+  "architecture": {
+    "context_length": 256,
+    "d_model": 192,
+    "dropout": 0.1,
+    "ffn_dim": 768,
+    "ignore_index": -100,
+    "layer_norm_eps": 1e-05,
+    "num_heads": 6,
+    "num_layers": 4,
+    "pad_token_id": 0,
+    "tie_embeddings": true,
+    "vocab_size": 8192
+  },
+  "checks": [
+    {
+      "causal_prefix_max_difference": 0.0,
+      "changed_future_max_difference": 1.718984603881836,
+      "device": "cpu",
+      "gradient_norm": 2.999861001968384,
+      "gradients_finite": true,
+      "initial_random_weight_loss": 9.025653839111328,
+      "input_shape": [
+        16,
+        256
+      ],
+      "logits_shape": [
+        16,
+        256,
+        8192
+      ],
+      "optimizer_steps": 0,
+      "padding_prefix_max_difference": 1.0728836059570312e-06,
+      "parameter_summary": {
+        "by_component_unique_parameters": {
+          "blocks": 1779456,
+          "final_norm": 384,
+          "position_embedding": 49152,
+          "token_embedding": 1572864
+        },
+        "output_head_shares_token_embedding": true,
+        "total": 3401856,
+        "trainable": 3401856
+      },
+      "valid_target_tokens": 1241,
+      "weights_saved": false
+    },
+    {
+      "causal_prefix_max_difference": 0.0,
+      "changed_future_max_difference": 1.7189843654632568,
+      "device": "cuda",
+      "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU",
+      "gradient_norm": 2.9957683086395264,
+      "gradients_finite": true,
+      "initial_random_weight_loss": 9.028545379638672,
+      "input_shape": [
+        16,
+        256
+      ],
+      "logits_shape": [
+        16,
+        256,
+        8192
+      ],
+      "optimizer_steps": 0,
+      "padding_prefix_max_difference": 8.344650268554688e-07,
+      "parameter_summary": {
+        "by_component_unique_parameters": {
+          "blocks": 1779456,
+          "final_norm": 384,
+          "position_embedding": 49152,
+          "token_embedding": 1572864
+        },
+        "output_head_shares_token_embedding": true,
+        "total": 3401856,
+        "trainable": 3401856
+      },
+      "peak_allocated_mib": 769.84,
+      "valid_target_tokens": 1241,
+      "weights_saved": false
+    }
+  ],
+  "config_sha256": "3c0b645968d15852e1c4b1a050a38ad21bc4c761c4452c6575a90c14ce2b0b1d",
+  "created_at": "2026-11-01T13:46:18.298012+00:00",
+  "data_partition_used": "train",
+  "interpretation": "Random initialization checks only; loss is not trained-model quality.",
+  "model_version": "1.0.0",
+  "prepared_data_manifest_sha256": "b04dea5a1a2dca42f0ad6fc181aa5536d70b909a4bf4ec7f341c77dac556f609",
+  "runtime": {
+    "cpu_threads": 4,
+    "python": "3.12.14",
+    "torch": "2.11.0+cu128"
+  },
+  "seed": 42,
+  "status": "architecture_verified_untrained",
+  "tokenizer_sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a"
+}

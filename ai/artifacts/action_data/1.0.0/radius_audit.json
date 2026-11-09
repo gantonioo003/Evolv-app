@@ -1,0 +1,8 @@
+{
+  "accepted_records": 293,
+  "threshold": 0.92,
+  "metric": "char_wb TF-IDF cosine",
+  "all_neighbors_in_radius": true,
+  "remaining_collisions": {},
+  "checked_reserved_content_only_for_deduplication_not_label_tuning": true
+}

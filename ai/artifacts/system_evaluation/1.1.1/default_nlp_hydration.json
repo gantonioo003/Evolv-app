@@ -1,0 +1,41 @@
+{
+  "runtime": {
+    "status": "ready",
+    "mode": "analyze",
+    "variant": "original",
+    "nlp_version": "1.8.0",
+    "retrieval_version": "1.1.2"
+  },
+  "cases": [
+    {
+      "text": "Todo mundo deve beber a mesma quantidade de água no treino?",
+      "route": "clarify",
+      "intent": "ask_hydration",
+      "matches": [
+        "hydration_is_individual",
+        "pre_workout_meal_context",
+        "concurrent_training_tradeoffs"
+      ],
+      "actions": 0
+    },
+    {
+      "text": "Quanto de água eu devo tomar na academia?",
+      "route": "clarify",
+      "intent": "ask_hydration",
+      "matches": [
+        "hydration_is_individual"
+      ],
+      "actions": 0
+    },
+    {
+      "text": "Preciso beber líquido enquanto pedalo?",
+      "route": "clarify",
+      "intent": "ask_hydration",
+      "matches": [
+        "hydration_is_individual",
+        "pre_workout_meal_context"
+      ],
+      "actions": 0
+    }
+  ]
+}

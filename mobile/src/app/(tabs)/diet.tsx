@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import {
   Alert,
-  Pressable,
   StyleSheet,
   Text,
   View,
@@ -16,6 +15,7 @@ import {
   Utensils,
 } from "lucide-react-native";
 import Svg, { Circle } from "react-native-svg";
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 
 import {
   AppScreen,
@@ -151,15 +151,17 @@ export default function DietScreen() {
   }
 
   return (
-    <AppScreen>
-      <PageHeader
-        eyebrow="Alimentação"
-        title="Dieta"
-        actionIcon={CalendarRange}
-        actionLabel="Gerenciar planos alimentares"
-        onAction={() => router.push("/diet-plans")}
-      />
-
+    <AppScreen
+      header={
+        <PageHeader
+          eyebrow="Alimentação"
+          title="Dieta"
+          actionIcon={CalendarRange}
+          actionLabel="Gerenciar planos alimentares"
+          onAction={() => router.push("/diet-plans")}
+        />
+      }
+    >
       <CinematicHero
         source={pickWeeklyImage(dietImages, imagePreferences, "diet", 0)}
         eyebrow="Plano de hoje"

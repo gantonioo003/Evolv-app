@@ -1,0 +1,1912 @@
+{
+  "app_modified": false,
+  "application_modified": false,
+  "approved_additions": [
+    "ask_equipment_recommendation",
+    "record_body_measurement",
+    "adapt_training_plan",
+    "create_training_plan",
+    "create_diet_plan",
+    "ask_medication_or_hormone",
+    "ask_health_guidance",
+    "ask_fitness_services",
+    "ask_fitness_resources",
+    "ask_app_functionality",
+    "ask_equipment_use_or_care",
+    "ask_sport_event_guidance",
+    "ask_activity_location",
+    "ask_activity_safety",
+    "ask_activity_hygiene",
+    "share_fitness_content",
+    "calculate_body_metric",
+    "preserve_plan_constraint",
+    "defer_planner_action"
+  ],
+  "boundary_overrides": {
+    "acute_illness_signal": "Doença aguda ativa ou recuperação recente não esclarecida relevante ao pedido de treinar/retomar. Não inferir infecção por mal-estar inespecífico, nem marcar doença remota resolvida. Não duplicar vulnerable_or_clinical_context pela mesma doença aguda: ambos só com vulnerabilidade clínica independente. Urgência explícita usa emergency_symptom.",
+    "ask_activity_hygiene": "Higiene corporal e capilar após exercício cabe aqui. Limpeza de roupa e equipamento usa ask_equipment_use_or_care. Estética sem função de higiene fica fora. Ferida, alergia ou sintoma dominante pode pedir ask_health_guidance/ask_pain_guidance.",
+    "ask_activity_location": "Locais, percursos e busca de parceiros ou grupos presenciais cabem aqui, mesmo sem pedir endereço. Escolha de academia/assessoria como serviço usa ask_fitness_services. Comunidade, fórum ou grupo online usa ask_fitness_resources. Não inferir localização pessoal.",
+    "ask_activity_safety": "Dor ou sintomas já presentes usam orientação de saúde; equipamento e preparo físico usam suas intenções específicas. Risco hipotético não vira automaticamente risco pessoal.",
+    "ask_app_functionality": "Inclui software, sincronização, arquivos, registros, métricas e configurações por software de relógios e dispositivos fitness. Botões, funcionamento físico, ajuste, instalação de peça e manutenção usam ask_equipment_use_or_care. Escolher aplicativo novo usa ask_fitness_resources. Pedir executar ação no plano usa a intenção da ação.",
+    "ask_equipment_recommendation": "Inclui equipamentos de sono/recuperação com função declarada. Escolha/compra/adequação usa esta classe mesmo entre alternativas fechadas. Não inclui roupa por moda nem suplementos.",
+    "ask_equipment_use_or_care": "Botões, ajuste físico, instalação, limpeza, conservação e manutenção de relógio, bicicleta, calçado e roupa esportiva cabem aqui. Software/sincronização usa ask_app_functionality. Escolher/comprar/substituir produto por adequação usa ask_equipment_recommendation, mesmo entre alternativas fechadas. Sintoma dominante usa a orientação de saúde/dor; mídia indispensável ausente usa image_context_request.",
+    "ask_fitness_resources": "Pergunta científica concreta permanece no conceito correspondente mesmo quando pede referências; usar este rótulo quando escolher o recurso é o objeto central.",
+    "ask_fitness_services": "Escolha, compra ou adequação de serviço fitness usa esta classe mesmo entre alternativas fechadas. compare_options compara atributos ou métodos sem aquisição central. Avaliar a ficha entregue é ask_training_program_feedback. Conflito trabalhista/relacional apenas ambientado em academia não é serviço fitness.",
+    "ask_health_guidance": "Dor/lesão musculoesquelética usa ask_pain_guidance. Dor visceral, cólica e cefaleia usam saúde. Estalo indolor pode usar saúde sem risco automático. Hábitos do sono usam ask_sleep_habits; decisão farmacológica central usa ask_medication_or_hormone. Não transformar pump, suor habitual, fadiga muscular normal ou libido aumentada isolada em doença.",
+    "ask_medication_or_hormone": "Suplemento alimentar sem fármaco pertence a ask_supplements. Exame hormonal sem decisão de fármaco pertence a ask_health_guidance. O rótulo não autoriza prescrição.",
+    "ask_pain_guidance": "Dor/lesão musculoesquelética; cefaleia e dor visceral usam ask_health_guidance. Não inferir risco de dor por estalo explicitamente indolor.",
+    "ask_sleep_habits": "Rotina, ambiente e hábitos para dormir. Compra/adequação de acessório de sono ou recuperação usa ask_equipment_recommendation. Decisão farmacológica central usa ask_medication_or_hormone; efeito do sono no desempenho pode ser ask_recovery.",
+    "ask_sport_event_guidance": "Inclui participação direta em evento esportivo: regras, inscrição, transferência, largada, cronometragem e etiqueta. Preparação física para a prova usa ask_cardio_training/ask_sports_conditioning. Hotel/turismo, compra de fotos, carreira ou negócio sem questão específica da participação continuam out_of_scope; questão administrativa militar não vira evento esportivo.",
+    "calculate_body_metric": "Pede resultado numérico pessoal de IMC, TMB ou gasto energético; pedir método ou significado continua conceito, mesmo com números no contexto. Meta alimentar educativa, peso para decidir bulking e estimativa visual sem mídia não viram cálculo automaticamente. Exame para doença usa ask_health_guidance; salvar medida usa record_body_measurement. Não calcular se faltarem entradas; registrar a intenção e pedir dados.",
+    "change_training_split": "Pede mudar distribuição/frequência semanal. Adaptação global do programa à viagem, modalidade, ambiente ou limitação usa adapt_training_plan, que já existe na base; ação pontual prevalece quando delimitada.",
+    "compare_options": "Seleção de compra/adequação de equipamento ou serviço usa sua subclasse mesmo com opções fechadas; compare_options compara atributos/métodos sem aquisição central.",
+    "create_diet_plan": "Sugestões gerais de refeições, conceitos e receitas continuam nas intenções educativas; change_diet_structure exige mudança da estrutura existente.",
+    "create_training_plan": "adapt_training_plan exige plano/rotina existente; ask_training_concept explica conceitos sem entregar programa completo.",
+    "defer_planner_action": "Rejeição efetiva cancela/recusa; mover dia do treino modifica sessão e é move_workout_day. A proposta fica pendente apenas se ainda válida; nada é executado.",
+    "medication_or_substance_context": "Não depende de pedir dose. Excluir notícia, citação, hipótese geral, uso negado, café comum, vacina rotineira sem reação e intenção hormonal remota incidental. Suplemento alimentar usa supplement_uncertainty. Não inferir interação, evento adverso, dependência, diagnóstico ou pedido de dose. substance_interaction exige combinação explícita; medication_or_hormone exige pedido de dose, ciclo ou ajuste.",
+    "preserve_plan_constraint": "Se rejeita proposta identificável, usar reject_planner_action. Se pede guardar preferência para futuro, remember_preference. Não cria mudança, memória permanente ou autorização implícita.",
+    "share_fitness_content": "Pedido claro de orientação/apoio prevalece sobre relato introdutório. Não é registro no aplicativo. Propaganda comercial ou recrutamento puro permanece out_of_scope com flag específica na observação. Assunto social sem foco fitness permanece out_of_scope. Riscos independem de haver pergunta.",
+    "systemic_symptom_signal": "Não diagnostica. Excluir hipótese, negação, suor normal, fadiga isolada, libido aumentada normal, estalo indolor e números clínicos isolados. Emergência explícita usa emergency_symptom sem duplicação deste risco pela mesma evidência. Reação alimentar, suplemento ou substância podem coexistir apenas com evidências próprias.",
+    "update_goal": "Solicita mudar objetivo ou fase. Registrar peso corporal já medido usa record_body_measurement, que já existe na base; números contextuais não criam ação."
+  },
+  "counts": {
+    "entities": 89,
+    "intents": 60,
+    "risks": 21
+  },
+  "entities": [
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Exercicio citado.",
+      "examples": [
+        "supino reto",
+        "agachamento",
+        "puxada alta"
+      ],
+      "id": "exercise"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Exercicio desejado como substituto.",
+      "examples": [
+        "flexao",
+        "remada baixa"
+      ],
+      "id": "replacement_exercise"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Grupo muscular ou regiao treinada.",
+      "examples": [
+        "peito",
+        "costas",
+        "posterior de coxa"
+      ],
+      "id": "muscle_group"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Parte corporal citada em tecnica ou desconforto.",
+      "examples": [
+        "ombro",
+        "joelho",
+        "lombar"
+      ],
+      "id": "body_part"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Equipamento disponivel, ocupado ou ausente.",
+      "examples": [
+        "halteres",
+        "barra",
+        "polia"
+      ],
+      "id": "equipment"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Modalidade de atividade.",
+      "examples": [
+        "musculacao",
+        "calistenia",
+        "corrida"
+      ],
+      "id": "modality"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Divisao semanal de treino.",
+      "examples": [
+        "PPL",
+        "upper lower",
+        "full body"
+      ],
+      "id": "training_split"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Atividade de um dia do Planner.",
+      "examples": [
+        "rest",
+        "resistance",
+        "cardio",
+        "mixed"
+      ],
+      "id": "activity_type"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Metrica de desempenho ou prescricao.",
+      "examples": [
+        "volume",
+        "frequencia",
+        "carga"
+      ],
+      "id": "training_metric"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Carga usada em um exercicio.",
+      "examples": [
+        "40 kg",
+        "vinte quilos de cada lado"
+      ],
+      "id": "load"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Quantidade de series.",
+      "examples": [
+        "3 series",
+        "quatro sets"
+      ],
+      "id": "sets"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Quantidade ou faixa de repeticoes.",
+      "examples": [
+        "10 repeticoes",
+        "8 a 12"
+      ],
+      "id": "repetitions"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Descanso entre series ou exercicios.",
+      "examples": [
+        "90 segundos",
+        "dois minutos"
+      ],
+      "id": "rest_duration"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Esforco percebido na escala RPE.",
+      "examples": [
+        "RPE 8"
+      ],
+      "id": "rpe"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Repeticoes em reserva.",
+      "examples": [
+        "2 RIR",
+        "uma repeticao sobrando"
+      ],
+      "id": "rir"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Intensidade qualitativa da atividade.",
+      "examples": [
+        "leve",
+        "moderada",
+        "forte"
+      ],
+      "id": "intensity"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Duracao prevista.",
+      "examples": [
+        "30 minutos",
+        "uma hora"
+      ],
+      "id": "duration"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Dias ou sessoes por semana.",
+      "examples": [
+        "4 vezes por semana"
+      ],
+      "id": "weekly_frequency"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Data ou dia de origem de uma mudanca.",
+      "examples": [
+        "hoje",
+        "segunda"
+      ],
+      "id": "source_date"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Data ou dia de destino.",
+      "examples": [
+        "amanha",
+        "sexta-feira"
+      ],
+      "id": "target_date"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Dia da semana citado.",
+      "examples": [
+        "segunda",
+        "sabado"
+      ],
+      "id": "weekday"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Periodo de analise ou validade.",
+      "examples": [
+        "ultimas quatro semanas",
+        "por um mes"
+      ],
+      "id": "time_period"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Alcance da mudanca.",
+      "examples": [
+        "so hoje",
+        "esta semana",
+        "de agora em diante"
+      ],
+      "id": "action_scope"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Alimento ou preparacao citada.",
+      "examples": [
+        "arroz",
+        "frango",
+        "aveia"
+      ],
+      "id": "food"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Alimento desejado como substituto.",
+      "examples": [
+        "batata",
+        "peixe"
+      ],
+      "id": "replacement_food"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Ingrediente que a pessoa ja possui e quer aproveitar.",
+      "examples": [
+        "so tenho queijo",
+        "tem arroz pronto"
+      ],
+      "id": "available_food"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Quantidade de alimento, liquido ou ingrediente.",
+      "examples": [
+        "duas fatias",
+        "300 ml",
+        "uma colher"
+      ],
+      "id": "amount"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Refeicao ou horario alimentar.",
+      "examples": [
+        "cafe da manha",
+        "pre-treino",
+        "jantar"
+      ],
+      "id": "meal"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Nutriente ou macronutriente.",
+      "examples": [
+        "proteina",
+        "carboidrato",
+        "fibra"
+      ],
+      "id": "nutrient"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Estrategia alimentar.",
+      "examples": [
+        "cutting",
+        "bulking",
+        "low carb"
+      ],
+      "id": "diet_strategy"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Numero de refeicoes por dia.",
+      "examples": [
+        "quatro refeicoes"
+      ],
+      "id": "meal_frequency"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Padrao de variacao do cardapio.",
+      "examples": [
+        "igual todo dia",
+        "sete menus"
+      ],
+      "id": "menu_rotation"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Metodo de preparo culinario.",
+      "examples": [
+        "assar",
+        "grelhar",
+        "cozinhar"
+      ],
+      "id": "cooking_method"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Tempo de armazenamento ou espera.",
+      "examples": [
+        "ate a noite",
+        "por dois dias"
+      ],
+      "id": "storage_duration"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Objetivo principal.",
+      "examples": [
+        "hipertrofia",
+        "emagrecimento",
+        "forca"
+      ],
+      "id": "goal"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Peso ou medida corporal.",
+      "examples": [
+        "peso",
+        "cintura",
+        "braco"
+      ],
+      "id": "body_measurement"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Duracao de sono relatada.",
+      "examples": [
+        "seis horas",
+        "oito horas"
+      ],
+      "id": "sleep_duration"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Sinal ou sintoma relatado, sujeito a triagem de risco.",
+      "examples": [
+        "tontura",
+        "falta de ar",
+        "dor"
+      ],
+      "id": "symptom"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Limitacao funcional ou movimento evitado.",
+      "examples": [
+        "nao consigo elevar o braco",
+        "evito impacto"
+      ],
+      "id": "limitation"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Motivo declarado para pergunta ou mudanca.",
+      "examples": [
+        "academia lotada",
+        "falta de tempo"
+      ],
+      "id": "reason"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Barreira de aderencia ou rotina.",
+      "examples": [
+        "desanimo",
+        "horario apertado"
+      ],
+      "id": "barrier"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Preferencia que pode ser memorizada.",
+      "examples": [
+        "nao gosto de peixe",
+        "prefiro treino curto"
+      ],
+      "id": "preference"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Direcao desejada da mudanca.",
+      "examples": [
+        "aumentar",
+        "reduzir",
+        "manter"
+      ],
+      "id": "change_direction"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Parte do plano a ser explicada.",
+      "examples": [
+        "treino de hoje",
+        "dieta da semana"
+      ],
+      "id": "plan_scope"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Horario ou disponibilidade recorrente.",
+      "examples": [
+        "treino de manha",
+        "livre na sexta"
+      ],
+      "id": "schedule"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Referencia a proposta aguardando confirmacao.",
+      "examples": [
+        "essa mudanca",
+        "pode aplicar"
+      ],
+      "id": "pending_action"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Referencia a uma mudanca anterior reversivel.",
+      "examples": [
+        "a ultima troca",
+        "o que voce mudou"
+      ],
+      "id": "previous_action"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Referencia curta ao contexto anterior.",
+      "examples": [
+        "o de hoje",
+        "esse mesmo",
+        "por uma semana"
+      ],
+      "id": "context_reference"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Referencia a uma imagem anexada.",
+      "examples": [
+        "isso aqui",
+        "o da foto",
+        "esse produto"
+      ],
+      "id": "image_reference"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Nivel de experiencia em treino.",
+      "examples": [
+        "iniciante",
+        "intermediario",
+        "treino ha cinco anos"
+      ],
+      "id": "training_level"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Faixa etaria quando explicitamente relevante.",
+      "examples": [
+        "adolescente",
+        "adulto",
+        "idoso"
+      ],
+      "id": "age_group"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Restricao alimentar declarada.",
+      "examples": [
+        "sem lactose",
+        "vegetariano",
+        "nao como gluten"
+      ],
+      "id": "dietary_restriction"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Alergia alimentar ou substancia associada.",
+      "examples": [
+        "alergia a amendoim",
+        "sou alergico a leite"
+      ],
+      "id": "allergy"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Condicao de saude mencionada sem inferencia diagnostica.",
+      "examples": [
+        "diabetes",
+        "pressao alta",
+        "doenca renal"
+      ],
+      "id": "medical_condition"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Medicamento relatado pelo usuario.",
+      "examples": [
+        "anticoagulante",
+        "remedio para pressao"
+      ],
+      "id": "medication"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Suplemento ou ingrediente suplementar citado.",
+      "examples": [
+        "creatina",
+        "whey",
+        "cafeina"
+      ],
+      "id": "supplement"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Inicio ou duracao de um sintoma.",
+      "examples": [
+        "comecou ontem",
+        "ha tres semanas",
+        "durante o treino"
+      ],
+      "id": "symptom_onset"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Intensidade de dor declarada pelo usuario.",
+      "examples": [
+        "dor leve",
+        "oito de dez",
+        "muito forte"
+      ],
+      "id": "pain_severity"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Lado do corpo citado.",
+      "examples": [
+        "esquerdo",
+        "lado direito",
+        "nos dois joelhos"
+      ],
+      "id": "laterality"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Quantidade energetica declarada.",
+      "examples": [
+        "2200 kcal",
+        "quinhentas calorias"
+      ],
+      "id": "energy_amount"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Quantidade de um macronutriente.",
+      "examples": [
+        "150 g de proteina",
+        "60 gramas de gordura"
+      ],
+      "id": "macronutrient_amount"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Unidade domestica ou padrao de porcao.",
+      "examples": [
+        "colher",
+        "xicara",
+        "fatia"
+      ],
+      "id": "serving_unit"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Contexto em que a refeicao ocorre.",
+      "examples": [
+        "dia de treino",
+        "dia de descanso",
+        "no trabalho"
+      ],
+      "id": "meal_context"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Frequencia planejada de refeicao flexivel.",
+      "examples": [
+        "uma vez por semana",
+        "a cada quinze dias"
+      ],
+      "id": "flexible_meal_cadence"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Frequencia de consumo de alcool declarada.",
+      "examples": [
+        "todo sabado",
+        "duas vezes por mes"
+      ],
+      "id": "alcohol_cadence"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Prazo desejado para um objetivo.",
+      "examples": [
+        "em doze semanas",
+        "ate dezembro"
+      ],
+      "id": "goal_timeframe"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Ambiente onde treino ou refeicao acontecera.",
+      "examples": [
+        "academia",
+        "em casa",
+        "hotel"
+      ],
+      "id": "location_environment"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Posicao de um exercicio dentro da sessao.",
+      "examples": [
+        "primeiro",
+        "antes da remada",
+        "por ultimo"
+      ],
+      "id": "exercise_position"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Cadencia ou duracao das fases do movimento.",
+      "examples": [
+        "tres segundos na descida",
+        "cadencia lenta"
+      ],
+      "id": "movement_tempo"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Amplitude de movimento declarada.",
+      "examples": [
+        "ate o peito",
+        "meia amplitude",
+        "amplitude completa"
+      ],
+      "id": "range_of_motion"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Qualidade percebida do sono.",
+      "examples": [
+        "sono ruim",
+        "acordei descansado",
+        "dormi picado"
+      ],
+      "id": "sleep_quality"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Nivel de estresse declarado.",
+      "examples": [
+        "muito estressado",
+        "semana tranquila"
+      ],
+      "id": "stress_level"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Fome ou saciedade percebida.",
+      "examples": [
+        "muita fome",
+        "sem apetite",
+        "estou satisfeito"
+      ],
+      "id": "hunger_level"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Negacao que altera o sentido de uma entidade ou preferencia.",
+      "examples": [
+        "nao gosto",
+        "sem cardio",
+        "nunca uso"
+      ],
+      "id": "negation"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Grau de certeza ou hipotese expresso na mensagem.",
+      "examples": [
+        "talvez",
+        "tenho certeza",
+        "acho que"
+      ],
+      "id": "certainty"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Prioridade declarada entre objetivos ou pedidos.",
+      "examples": [
+        "principalmente",
+        "primeiro",
+        "o mais importante"
+      ],
+      "id": "request_priority"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Limite financeiro declarado para alimentos, academia ou equipamentos.",
+      "examples": [
+        "ate 300 reais",
+        "preciso de opcoes baratas"
+      ],
+      "id": "budget"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Jornada ou turno que afeta a rotina.",
+      "examples": [
+        "trabalho a noite",
+        "plantao de doze horas"
+      ],
+      "id": "work_schedule"
+    },
+    {
+      "definition_source": "entities.v1.json",
+      "description": "Data de competicao declarada.",
+      "examples": [
+        "campeonato em novembro",
+        "subo no palco dia quinze"
+      ],
+      "id": "competition_date"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Distancia explicita de atividade, com unidade; nao e duracao.",
+      "id": "distance"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Ritmo explicito em minutos e segundos por km; nao confundir com horario.",
+      "id": "pace"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Velocidade explicita com unidade.",
+      "id": "speed"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Frequencia cardiaca em bpm; extracao nao interpreta o risco clinico.",
+      "id": "heart_rate"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Medida de exame com unidade; nao converter em diagnostico.",
+      "id": "lab_measurement"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Peso em kg sem evidencia suficiente de carga, peso corporal ou alimento.",
+      "id": "ambiguous_weight"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Volume de agua ou bebida com unidade, separado de dose de medicamento.",
+      "id": "drink_volume"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Desnivel positivo de percurso em metros; nao confundir com distancia.",
+      "id": "elevation_gain"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Passos ou pedaladas por minuto com unidade explicita; nao e frequencia cardiaca.",
+      "id": "cadence"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Tempo praticando uma modalidade; nao e duracao de uma sessao.",
+      "id": "training_experience"
+    }
+  ],
+  "expansion_requested_date": "2026-10-15",
+  "final_boundary_rules": {
+    "ask_equipment_recommendation": "Inclui equipamentos de sono/recuperação com função declarada. Escolha/compra/adequação usa esta classe mesmo entre alternativas fechadas. Não inclui roupa por moda nem suplementos.",
+    "ask_pain_guidance": "Dor/lesão musculoesquelética; cefaleia e dor visceral usam ask_health_guidance. Não inferir risco de dor por estalo explicitamente indolor.",
+    "compare_options": "Seleção de compra/adequação de equipamento ou serviço usa sua subclasse mesmo com opções fechadas; compare_options compara atributos/métodos sem aquisição central.",
+    "preserve_and_defer": "Preservar limita o pedido atual sem proposta a rejeitar; deferir exige proposta pendente identificável. Evidência de ambos é sintética, não prevalência observada no corpus.",
+    "priority": "Estas regras finais prevalecem sobre limites contraditórios na base congelada e em rules.json. Os objetos originais foram preservados para rastreabilidade.",
+    "semantic_review": "Busca lexical recupera candidatos, nunca decide rótulos. Reler texto e contexto completos; registrar uma decisão final por identificador alterado sem apagar as anotações da primeira rodada."
+  },
+  "finalized_date": "2026-10-16",
+  "intents": [
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pergunta educativa sobre treino, adaptacao, volume, intensidade ou cardio.",
+      "id": "ask_training_concept",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "goal",
+        "muscle_group",
+        "training_metric",
+        "modality"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pergunta sobre execucao, objetivo ou variacao de um exercicio.",
+      "id": "ask_exercise_execution",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "body_part",
+        "equipment",
+        "limitation"
+      ],
+      "planner_action": null,
+      "required_entities": [
+        "exercise"
+      ],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pergunta educativa sobre alimentacao, energia, macronutrientes ou estrategias alimentares.",
+      "id": "ask_nutrition_concept",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "food",
+        "nutrient",
+        "diet_strategy",
+        "goal"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido de alternativas alimentares sem solicitar alteracao imediata do plano.",
+      "id": "ask_food_substitution_options",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "meal",
+        "nutrient",
+        "preference",
+        "available_food"
+      ],
+      "planner_action": null,
+      "required_entities": [
+        "food"
+      ],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido de avaliacao educativa de uma refeicao, porcao ou escolha dentro da rotina.",
+      "id": "ask_meal_feedback",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "food",
+        "meal",
+        "amount",
+        "goal",
+        "target_date"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Duvida sobre preparo, receita, armazenamento domestico ou uso de ingredientes.",
+      "id": "ask_cooking_guidance",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "food",
+        "amount",
+        "cooking_method",
+        "storage_duration"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pergunta sobre sono, fadiga, estresse, descanso ou recuperacao.",
+      "id": "ask_recovery",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "symptom",
+        "sleep_duration",
+        "training_metric"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Comparacao educativa entre exercicios, divisoes, alimentos ou estrategias.",
+      "id": "compare_options",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "exercise",
+        "training_split",
+        "food",
+        "diet_strategy",
+        "modality"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido para ler, resumir ou explicar uma decisao do plano atual.",
+      "id": "explain_current_plan",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "plan_scope",
+        "weekday",
+        "meal",
+        "exercise"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "plan_read"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido de leitura de progresso, consistencia, carga, medidas ou possivel estagnacao.",
+      "id": "analyze_progress",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "training_metric",
+        "time_period",
+        "exercise",
+        "body_measurement"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "plan_read"
+    },
+    {
+      "category": "question",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido de apoio pratico para motivacao, aderencia ou organizacao sem cobranca.",
+      "id": "motivation_support",
+      "implementation_status": "answer_only",
+      "optional_entities": [
+        "barrier",
+        "time_period",
+        "goal"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Trocar um exercicio mantendo o restante da sessao quando possivel.",
+      "id": "replace_exercise",
+      "implementation_status": "implemented_contract",
+      "optional_entities": [
+        "replacement_exercise",
+        "reason",
+        "action_scope",
+        "equipment",
+        "limitation"
+      ],
+      "planner_action": "replace_exercise",
+      "required_entities": [
+        "exercise"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Mover uma sessao para outro dia sem duplicar treino.",
+      "id": "move_workout_day",
+      "implementation_status": "implemented_contract",
+      "optional_entities": [
+        "reason",
+        "action_scope"
+      ],
+      "planner_action": "move_workout_day",
+      "required_entities": [
+        "source_date",
+        "target_date"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Trocar um alimento preservando o papel nutricional quando possivel.",
+      "id": "replace_meal_item",
+      "implementation_status": "implemented_contract",
+      "optional_entities": [
+        "replacement_food",
+        "meal",
+        "reason",
+        "action_scope"
+      ],
+      "planner_action": "replace_meal_item",
+      "required_entities": [
+        "food"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Definir descanso, musculacao, cardio ou atividade mista para uma data.",
+      "id": "set_day_activity",
+      "implementation_status": "implemented_contract",
+      "optional_entities": [
+        "duration",
+        "intensity",
+        "reason"
+      ],
+      "planner_action": "set_day_activity",
+      "required_entities": [
+        "activity_type",
+        "target_date"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Guardar uma preferencia futura sem alterar automaticamente o plano atual.",
+      "id": "remember_preference",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "exercise",
+        "food",
+        "equipment",
+        "schedule",
+        "action_scope"
+      ],
+      "planner_action": "remember_preference",
+      "required_entities": [
+        "preference"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Aumentar ou reduzir series e volume de uma parte do treino.",
+      "id": "adjust_training_volume",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "muscle_group",
+        "sets",
+        "action_scope",
+        "reason"
+      ],
+      "planner_action": "adjust_volume",
+      "required_entities": [
+        "change_direction"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Alterar carga alvo, repeticoes, descanso, RPE ou RIR.",
+      "id": "adjust_training_intensity",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "exercise",
+        "load",
+        "repetitions",
+        "rest_duration",
+        "rpe",
+        "rir",
+        "action_scope"
+      ],
+      "planner_action": "adjust_intensity",
+      "required_entities": [
+        "change_direction"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Trocar a divisao semanal de treino.",
+      "id": "change_training_split",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "weekly_frequency",
+        "goal",
+        "reason"
+      ],
+      "planner_action": "change_split",
+      "required_entities": [
+        "training_split"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Alterar estrategia, numero de refeicoes, rotacao ou estrutura da dieta.",
+      "id": "change_diet_structure",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "diet_strategy",
+        "meal_frequency",
+        "menu_rotation",
+        "goal",
+        "reason"
+      ],
+      "planner_action": "change_diet_structure",
+      "required_entities": [],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Mudar objetivo ou fase atual com revisao explicita do impacto.",
+      "id": "update_goal",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "time_period",
+        "reason"
+      ],
+      "planner_action": "update_goal",
+      "required_entities": [
+        "goal"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Registrar carga, repeticoes ou desempenho de uma serie concluida.",
+      "id": "record_training_load",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "repetitions",
+        "sets",
+        "rpe",
+        "rir",
+        "target_date"
+      ],
+      "planner_action": "record_training_load",
+      "required_entities": [
+        "exercise",
+        "load"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Registrar alimentos ou refeicoes realmente consumidos.",
+      "id": "record_food_intake",
+      "implementation_status": "planned_contract",
+      "optional_entities": [
+        "amount",
+        "meal",
+        "target_date"
+      ],
+      "planner_action": "record_food_intake",
+      "required_entities": [
+        "food"
+      ],
+      "route": "planner_preview"
+    },
+    {
+      "category": "conversation",
+      "definition_source": "intents.v1.json",
+      "description": "Confirmar uma proposta pendente ja mostrada ao usuario.",
+      "id": "confirm_planner_action",
+      "implementation_status": "implemented_operation",
+      "optional_entities": [],
+      "planner_action": null,
+      "required_entities": [
+        "pending_action"
+      ],
+      "route": "planner_confirmation"
+    },
+    {
+      "category": "conversation",
+      "definition_source": "intents.v1.json",
+      "description": "Rejeitar uma proposta pendente sem alterar o plano.",
+      "id": "reject_planner_action",
+      "implementation_status": "implemented_operation",
+      "optional_entities": [
+        "reason"
+      ],
+      "planner_action": null,
+      "required_entities": [
+        "pending_action"
+      ],
+      "route": "planner_rejection"
+    },
+    {
+      "category": "request",
+      "definition_source": "intents.v1.json",
+      "description": "Desfazer uma alteracao reversivel registrada no historico.",
+      "id": "undo_planner_action",
+      "implementation_status": "implemented_operation",
+      "optional_entities": [
+        "target_date"
+      ],
+      "planner_action": null,
+      "required_entities": [
+        "previous_action"
+      ],
+      "route": "planner_undo"
+    },
+    {
+      "category": "conversation",
+      "definition_source": "intents.v1.json",
+      "description": "Mensagem que completa uma informacao pedida pelo Coach ou continua um contexto curto.",
+      "id": "clarification",
+      "implementation_status": "conversation",
+      "optional_entities": [
+        "context_reference"
+      ],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "clarify"
+    },
+    {
+      "category": "conversation",
+      "definition_source": "intents.v1.json",
+      "description": "Cumprimento ou inicio de conversa sem pedido de dominio.",
+      "id": "greeting",
+      "implementation_status": "conversation",
+      "optional_entities": [],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "conversation"
+    },
+    {
+      "category": "conversation",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido cujo sentido depende de uma foto que o primeiro modelo textual nao consegue analisar.",
+      "id": "image_context_request",
+      "implementation_status": "conversation",
+      "optional_entities": [
+        "food",
+        "exercise",
+        "body_measurement"
+      ],
+      "planner_action": null,
+      "required_entities": [
+        "image_reference"
+      ],
+      "route": "unsupported_modality"
+    },
+    {
+      "category": "conversation",
+      "definition_source": "intents.v1.json",
+      "description": "Pedido fora de treino, alimentacao, recuperacao, rotina ou funcionamento do Evolv.",
+      "id": "out_of_scope",
+      "implementation_status": "conversation",
+      "optional_entities": [],
+      "planner_action": null,
+      "required_entities": [],
+      "route": "out_of_scope"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Duvida educativa sobre suplemento; nao equivale a pedido de dose de medicamento.",
+      "id": "ask_supplements",
+      "optional_entities": [
+        "supplement",
+        "amount",
+        "medication"
+      ],
+      "parent": "ask_nutrition_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Pede avaliacao de ficha ou divisao apresentada, sem autorizar alteracao do plano.",
+      "id": "ask_training_program_feedback",
+      "optional_entities": [
+        "training_split",
+        "exercise",
+        "goal"
+      ],
+      "parent": "ask_training_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Duvida sobre ganho, perda ou manutencao de peso e composicao corporal.",
+      "id": "ask_weight_management",
+      "optional_entities": [
+        "goal",
+        "body_measurement",
+        "diet_strategy"
+      ],
+      "parent": "ask_nutrition_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Duvida sobre horario de refeicao em relacao ao treino. Nao pedir horario diariamente nem mudar dieta sem confirmacao.",
+      "id": "ask_training_meal_timing",
+      "optional_entities": [
+        "schedule",
+        "meal",
+        "food",
+        "preference"
+      ],
+      "parent": "ask_nutrition_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Duvida sobre preparacao fisica para esporte ou combinacao com academia.",
+      "id": "ask_sports_conditioning",
+      "optional_entities": [
+        "modality",
+        "goal",
+        "limitation",
+        "distance",
+        "pace"
+      ],
+      "parent": "ask_training_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Pergunta sobre dor, desconforto ou lesao. Identificar nao significa diagnosticar ou prescrever reabilitacao.",
+      "id": "ask_pain_guidance",
+      "optional_entities": [
+        "symptom",
+        "body_part",
+        "limitation"
+      ],
+      "parent": "ask_recovery",
+      "required_entities": [],
+      "route": "cautious_response"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Educacao sobre agua, suor e bebidas; sem meta clinica individual.",
+      "id": "ask_hydration",
+      "parent": "ask_nutrition_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Conservacao, preparo e higiene; nao garantir que alimento suspeito seja seguro.",
+      "id": "ask_food_safety",
+      "parent": "ask_cooking_guidance",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Rotina de sono e recuperacao; nao diagnosticar insonia nem ajustar medicamentos.",
+      "id": "ask_sleep_habits",
+      "parent": "ask_recovery",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Retorno apos pausa de rotina. Retorno apos lesao ou cirurgia exige avaliacao.",
+      "id": "ask_return_to_training",
+      "parent": "ask_training_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Duvida educativa sobre corrida, ciclismo, ritmo e combinacao de cardio/forca.",
+      "id": "ask_cardio_training",
+      "parent": "ask_training_concept",
+      "required_entities": [],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "knowledge",
+      "definition_source": "Extensão da revisão solicitada pelo usuário em 14/10/2026; ainda não adicionada ao aplicativo",
+      "description": "Pede indicação, escolha ou adequação de equipamento, calçado ou acessório para atividade física, com ou sem orçamento. Não pede alteração do plano de treino.",
+      "exclude": "Comparação explícita de opções determinadas pode ser compare_options. Execução ou escolha de exercício é ask_exercise_execution/ask_training_concept. Alimentos e suplementos seguem suas classes. Moda sem função esportiva permanece out_of_scope.",
+      "id": "ask_equipment_recommendation",
+      "implementation_status": "review_only_user_requested",
+      "include": "Qual tênis devo comprar para correr 5 km até R$ 500? Qual elástico serve para treinar em casa?",
+      "optional_entities": [
+        "equipment",
+        "modality",
+        "budget",
+        "goal",
+        "location_environment",
+        "limitation",
+        "body_measurement"
+      ],
+      "route": "knowledge_answer"
+    },
+    {
+      "category": "record",
+      "definition_source": "Extensão de revisão aprovada pelo usuário em 14/10/2026; não implementada no aplicativo",
+      "description": "Pede registrar ou atualizar uma medida corporal já observada, como peso corporal, altura ou circunferência. Não é carga de exercício, mudança de meta nem interpretação clínica.",
+      "exclude": "Quero chegar a 82 kg é update_goal. Fiz supino com 82 kg é record_training_load. Perdi peso, estou indo bem? é analyze_progress.",
+      "id": "record_body_measurement",
+      "implementation_status": "review_only_user_approved",
+      "include": "Anota que me pesei hoje e deu 82 kg. Atualiza minha cintura para 90 cm.",
+      "optional_entities": [
+        "source_date",
+        "time_period",
+        "body_part",
+        "amount"
+      ],
+      "required_entities": [
+        "body_measurement"
+      ],
+      "route": "record_preview"
+    },
+    {
+      "category": "request",
+      "definition_source": "Extensão de revisão aprovada pelo usuário em 14/10/2026; não implementada no aplicativo",
+      "description": "Pede adaptar globalmente um programa de treino a disponibilidade, viagem, ambiente, equipamento, modalidade ou limitação. Usar quando o pedido não especifica somente uma ação pontual coberta por outra intenção.",
+      "exclude": "Troca stiff por mesa flexora é replace_exercise. Move segunda para terça é move_workout_day. Muda ABC para full body é change_training_split. Em contexto clínico, a intenção não autoriza prescrever reabilitação.",
+      "id": "adapt_training_plan",
+      "implementation_status": "review_only_user_approved",
+      "include": "Adapta meu treino para passar um mês sem academia. Reorganiza meu programa para a maratona.",
+      "optional_entities": [
+        "schedule",
+        "weekly_frequency",
+        "duration",
+        "location_environment",
+        "equipment",
+        "modality",
+        "limitation",
+        "goal",
+        "time_period"
+      ],
+      "required_entities": [],
+      "route": "planner_preview"
+    },
+    {
+      "boundary": "adapt_training_plan exige plano/rotina existente; ask_training_concept explica conceitos sem entregar programa completo.",
+      "category": "request",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede criar, montar ou obter um programa de treino inicial, sem programa vigente que seja o objeto de adaptação. Uma pergunta genérica de como começar não basta sem pedir ficha, divisão ou plano.",
+      "finalized_date": "2026-10-16",
+      "id": "create_training_plan",
+      "implementation_status": "review_only_user_requested",
+      "route": "planner_preview"
+    },
+    {
+      "boundary": "Sugestões gerais de refeições, conceitos e receitas continuam nas intenções educativas; change_diet_structure exige mudança da estrutura existente.",
+      "category": "request",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede criar primeiro plano alimentar, cardápio ou dieta pessoal, sem plano vigente a modificar.",
+      "finalized_date": "2026-10-16",
+      "id": "create_diet_plan",
+      "implementation_status": "review_only_user_requested",
+      "route": "planner_preview"
+    },
+    {
+      "boundary": "Suplemento alimentar sem fármaco pertence a ask_supplements. Exame hormonal sem decisão de fármaco pertence a ask_health_guidance. O rótulo não autoriza prescrição.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede informação ou orientação sobre medicamento, hormônio ou outra intervenção farmacológica em relação a treino, dieta, sono ou corpo: efeitos, escolha, início, interrupção, dose ou ciclo.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_medication_or_hormone",
+      "implementation_status": "review_only_user_requested",
+      "route": "cautious_professional_context"
+    },
+    {
+      "boundary": "Dor/lesão musculoesquelética usa ask_pain_guidance. Dor visceral, cólica e cefaleia usam saúde. Estalo indolor pode usar saúde sem risco automático. Hábitos do sono usam ask_sleep_habits; decisão farmacológica central usa ask_medication_or_hormone. Não transformar pump, suor habitual, fadiga muscular normal ou libido aumentada isolada em doença.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede explicação, investigação ou orientação de saúde relacionada ao domínio fitness/recuperação: sintomas não musculoesqueléticos, alterações fisiológicas/cutâneas, doenças ou resultados clínicos.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_health_guidance",
+      "implementation_status": "review_only_user_requested",
+      "route": "cautious_professional_context"
+    },
+    {
+      "boundary": "Escolha, compra ou adequação de serviço fitness usa esta classe mesmo entre alternativas fechadas. compare_options compara atributos ou métodos sem aquisição central. Avaliar a ficha entregue é ask_training_program_feedback. Conflito trabalhista/relacional apenas ambientado em academia não é serviço fitness.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede escolher, localizar, avaliar ou entender atendimento de nutricionista, personal, assessoria, academia, estúdio ou serviço de alimentação voltado à rotina fitness.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_fitness_services",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Pergunta científica concreta permanece no conceito correspondente mesmo quando pede referências; usar este rótulo quando escolher o recurso é o objeto central.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede indicação ou descoberta de aplicativos, sites, livros, canais, materiais, fóruns ou comunidades para aprender, acompanhar ou apoiar atividades fitness.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_fitness_resources",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Inclui software, sincronização, arquivos, registros, métricas e configurações por software de relógios e dispositivos fitness. Botões, funcionamento físico, ajuste, instalação de peça e manutenção usam ask_equipment_use_or_care. Escolher aplicativo novo usa ask_fitness_resources. Pedir executar ação no plano usa a intenção da ação.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede entender, usar, configurar ou resolver uma função de aplicativo fitness/Evolv: cálculo automático, restrições suportadas, sincronização e registro por software.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_app_functionality",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Botões, ajuste físico, instalação, limpeza, conservação e manutenção de relógio, bicicleta, calçado e roupa esportiva cabem aqui. Software/sincronização usa ask_app_functionality. Escolher/comprar/substituir produto por adequação usa ask_equipment_recommendation, mesmo entre alternativas fechadas. Sintoma dominante usa a orientação de saúde/dor; mídia indispensável ausente usa image_context_request.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede usar, ajustar, configurar, limpar, conservar, reparar ou entender funcionamento de equipamento esportivo já identificado, incluindo relógio, bicicleta e calçado.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_equipment_use_or_care",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Inclui participação direta em evento esportivo: regras, inscrição, transferência, largada, cronometragem e etiqueta. Preparação física para a prova usa ask_cardio_training/ask_sports_conditioning. Hotel/turismo, compra de fotos, carreira ou negócio sem questão específica da participação continuam out_of_scope; questão administrativa militar não vira evento esportivo.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede regras, inscrição, transferência, preço, largada, cronometragem, etiqueta ou logística diretamente ligada à participação em prova/evento esportivo.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_sport_event_guidance",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Locais, percursos e busca de parceiros ou grupos presenciais cabem aqui, mesmo sem pedir endereço. Escolha de academia/assessoria como serviço usa ask_fitness_services. Comunidade, fórum ou grupo online usa ask_fitness_resources. Não inferir localização pessoal.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede trajetos, parques, pistas, locais permitidos/adequados ou parceiros/grupos presenciais para praticar atividade física em uma região.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_activity_location",
+      "implementation_status": "review_only_user_requested",
+      "include_examples": [
+        "Onde posso correr em Fortaleza?",
+        "Existe pista pública para treinar neste bairro?",
+        "Alguém vai à prova e quer correr comigo?",
+        "Procuro parceiro presencial para pedalar aos domingos."
+      ],
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Dor ou sintomas já presentes usam orientação de saúde; equipamento e preparo físico usam suas intenções específicas. Risco hipotético não vira automaticamente risco pessoal.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede prevenção ou conduta diante de perigos do ambiente da prática: trânsito, cães, clima, segurança de percurso, máscara e riscos externos ao corpo durante exercício.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_activity_safety",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Higiene corporal e capilar após exercício cabe aqui. Limpeza de roupa e equipamento usa ask_equipment_use_or_care. Estética sem função de higiene fica fora. Ferida, alergia ou sintoma dominante pode pedir ask_health_guidance/ask_pain_guidance.",
+      "category": "question",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede higiene, odor, banho ou cuidados de limpeza corporal relacionados diretamente ao exercício e rotina de treino.",
+      "finalized_date": "2026-10-16",
+      "id": "ask_activity_hygiene",
+      "implementation_status": "review_only_user_requested",
+      "route": "knowledge_answer"
+    },
+    {
+      "boundary": "Pedido claro de orientação/apoio prevalece sobre relato introdutório. Não é registro no aplicativo. Propaganda comercial ou recrutamento puro permanece out_of_scope com flag específica na observação. Assunto social sem foco fitness permanece out_of_scope. Riscos independem de haver pergunta.",
+      "category": "conversation",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Compartilha ou convida troca de experiência, conquista, rotina, opinião, review, desabafo ou conteúdo educativo impessoal ligado a treino, alimentação, corpo ou recuperação, sem pedido específico de análise, ação ou conselho.",
+      "finalized_date": "2026-10-16",
+      "id": "share_fitness_content",
+      "implementation_status": "review_only_user_requested",
+      "route": "conversation"
+    },
+    {
+      "boundary": "Pede resultado numérico pessoal de IMC, TMB ou gasto energético; pedir método ou significado continua conceito, mesmo com números no contexto. Meta alimentar educativa, peso para decidir bulking e estimativa visual sem mídia não viram cálculo automaticamente. Exame para doença usa ask_health_guidance; salvar medida usa record_body_measurement. Não calcular se faltarem entradas; registrar a intenção e pedir dados.",
+      "category": "request",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede calcular numericamente métrica corporal/energética como IMC, TMB ou gasto estimado a partir dos dados pessoais, sem solicitar diagnóstico ou registro.",
+      "finalized_date": "2026-10-16",
+      "id": "calculate_body_metric",
+      "implementation_status": "review_only_user_requested",
+      "route": "calculator_request"
+    },
+    {
+      "boundary": "Se rejeita proposta identificável, usar reject_planner_action. Se pede guardar preferência para futuro, remember_preference. Não cria mudança, memória permanente ou autorização implícita.",
+      "category": "conversation",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede preservar parte do plano ou proíbe mudança preventiva sem proposta pendente a rejeitar; define limite do pedido atual.",
+      "finalized_date": "2026-10-16",
+      "id": "preserve_plan_constraint",
+      "implementation_status": "review_only_user_requested",
+      "route": "no_change"
+    },
+    {
+      "boundary": "Rejeição efetiva cancela/recusa; mover dia do treino modifica sessão e é move_workout_day. A proposta fica pendente apenas se ainda válida; nada é executado.",
+      "category": "conversation",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Pede adiar decisão/execução de proposta pendente identificável sem aceitá-la nem cancelá-la.",
+      "finalized_date": "2026-10-16",
+      "id": "defer_planner_action",
+      "implementation_status": "review_only_user_requested",
+      "route": "no_change"
+    }
+  ],
+  "risks": [
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Nao ha sinal de risco especial na mensagem.",
+      "id": "none",
+      "route": "normal",
+      "severity": "none"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Dor persistente, piora com movimento ou possivel lesao sem sinal emergencial.",
+      "id": "pain_or_possible_injury",
+      "response_rule": "Nao diagnosticar. Evitar progressao automatica e orientar avaliacao profissional quando apropriado.",
+      "route": "cautious_response",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Dor no peito, desmaio, falta de ar incomum ou outro sinal potencialmente urgente.",
+      "id": "emergency_symptom",
+      "response_rule": "Interromper a atividade e orientar atendimento de emergencia local. Nao continuar coaching.",
+      "route": "emergency_guidance",
+      "severity": "emergency"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Obsessao, culpa, compulsao, purgacao ou medo intenso relacionado a comida e corpo.",
+      "id": "eating_disorder_signal",
+      "response_rule": "Nao reforcar restricao ou compensacao. Responder sem julgamento e recomendar apoio profissional.",
+      "route": "support_and_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Pedido de jejum extremo, desidratacao, corte alimentar severo ou perda de peso acelerada.",
+      "id": "extreme_diet_or_dehydration",
+      "response_rule": "Nao montar nem executar a estrategia extrema. Explicar o limite e orientar ajuda qualificada.",
+      "route": "refuse_unsafe_plan",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Pedido de dose, ciclo ou ajuste de medicamento, hormonio ou substancia controlada.",
+      "id": "medication_or_hormone",
+      "response_rule": "Nao prescrever, calcular dose ou montar ciclo. Encaminhar a profissional de saude.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Uso de suplemento, combinacao de ingredientes ou possivel interacao.",
+      "id": "supplement_uncertainty",
+      "response_rule": "Dar apenas informacao geral apoiada por fonte e recomendar avaliacao profissional quando houver condicao ou medicacao.",
+      "route": "evidence_limited_answer",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Alergia conhecida, possivel reacao alimentar ou pedido de substituicao clinicamente sensivel.",
+      "id": "food_allergy_or_reaction",
+      "response_rule": "Nao testar exposicao nem garantir seguranca. Orientar avaliacao profissional; sinais respiratorios ou circulatorios tambem acionam emergency_symptom.",
+      "route": "allergy_caution",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Duvida sobre deterioracao, contaminacao, temperatura ou armazenamento de alimento.",
+      "id": "food_safety_uncertainty",
+      "response_rule": "Nao garantir que um alimento duvidoso esteja seguro. Aplicar orientacao conservadora apoiada por fonte de seguranca alimentar.",
+      "route": "food_safety_caution",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Pedido de desafio, carga, volume ou pratica de treino com risco evidente e desnecessario.",
+      "id": "unsafe_training_request",
+      "response_rule": "Nao montar nem incentivar a pratica perigosa. Explicar o limite e oferecer alternativa conservadora.",
+      "route": "refuse_unsafe_plan",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Conjunto de sinais como queda persistente de desempenho, sono ruim, fadiga elevada e recuperacao insuficiente.",
+      "id": "under_recovery_signal",
+      "response_rule": "Nao diagnosticar overtraining. Evitar progressao automatica, sugerir reducao conservadora e orientar avaliacao quando persistente ou intensa.",
+      "route": "recovery_caution",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Gravidez, menor de idade, doenca diagnosticada ou recuperacao clinica relevante.",
+      "id": "vulnerable_or_clinical_context",
+      "response_rule": "Nao personalizar conduta clinica. Limitar-se a educacao geral e orientar acompanhamento.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Mensagem com risco imediato de autoagressao ou desesperanca extrema.",
+      "id": "mental_health_crisis",
+      "response_rule": "Priorizar seguranca, contato com emergencia e apoio humano imediato; nao responder como motivacao esportiva comum.",
+      "route": "crisis_guidance",
+      "severity": "emergency"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Relato de mal-estar com calor intenso; sinais graves acionam tambem emergency_symptom.",
+      "id": "heat_illness_signal",
+      "parent": "emergency_symptom",
+      "response_rule": "Nao diagnosticar ou continuar treino. Priorizar seguranca e avaliacao profissional.",
+      "route": "professional_referral",
+      "severity": "high",
+      "source_url": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Duvida ou relato de combinacao de alcool, estimulantes, medicamentos ou hormonios.",
+      "id": "substance_interaction",
+      "parent": "supplement_uncertainty",
+      "response_rule": "Nao garantir combinacao segura nem ajustar doses. Orientar consulta a profissional qualificado.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Pedido de interpretar exame, hormonio ou medida clinica para diagnostico ou tratamento.",
+      "id": "clinical_measurement_request",
+      "parent": "vulnerable_or_clinical_context",
+      "response_rule": "Nao diagnosticar por numero isolado nem modificar medicamento; educacao geral apenas.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Relato de perda de apoio, deformidade ou inchaco importante apos trauma; nao e diagnostico.",
+      "id": "musculoskeletal_red_flag",
+      "parent": "pain_or_possible_injury",
+      "response_rule": "Priorizar avaliacao presencial; nao prescrever exercicios de reabilitacao ou exame especifico.",
+      "route": "professional_referral",
+      "severity": "high",
+      "source_url": "https://www.nhs.uk/conditions/sprains-and-strains/"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Palpitacao, tremor ou mal-estar relatado em contexto de estimulante.",
+      "id": "stimulant_adverse_signal",
+      "parent": "supplement_uncertainty",
+      "response_rule": "Nao garantir seguranca nem corrigir com outra substancia; sintomas urgentes prevalecem.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "boundary": "Não depende de pedir dose. Excluir notícia, citação, hipótese geral, uso negado, café comum, vacina rotineira sem reação e intenção hormonal remota incidental. Suplemento alimentar usa supplement_uncertainty. Não inferir interação, evento adverso, dependência, diagnóstico ou pedido de dose. substance_interaction exige combinação explícita; medication_or_hormone exige pedido de dose, ciclo ou ajuste.",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Relata uso/exposição atual ou recente relevante, ou intenção concreta de iniciar, de fármaco, hormônio, tabaco/vape ou droga recreativa pela pessoa em foco (usuário ou familiar/pessoa sobre quem pede orientação).",
+      "finalized_date": "2026-10-16",
+      "id": "medication_or_substance_context",
+      "implementation_status": "review_only_user_requested"
+    },
+    {
+      "boundary": "Não diagnostica. Excluir hipótese, negação, suor normal, fadiga isolada, libido aumentada normal, estalo indolor e números clínicos isolados. Emergência explícita usa emergency_symptom sem duplicação deste risco pela mesma evidência. Reação alimentar, suplemento ou substância podem coexistir apenas com evidências próprias.",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Relata sintoma não musculoesquelético atual ou recorrente na pessoa em foco: tontura, náusea, vômito, cefaleia, alteração visual, constipação/distensão ou outra alteração gastrointestinal, cutânea ou sangramento, sem sinal urgente explícito.",
+      "finalized_date": "2026-10-16",
+      "id": "systemic_symptom_signal",
+      "implementation_status": "review_only_user_requested"
+    },
+    {
+      "boundary": "Doença aguda ativa ou recuperação recente não esclarecida relevante ao pedido de treinar/retomar. Não inferir infecção por mal-estar inespecífico, nem marcar doença remota resolvida. Não duplicar vulnerable_or_clinical_context pela mesma doença aguda: ambos só com vulnerabilidade clínica independente. Urgência explícita usa emergency_symptom.",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Relata febre, infecção ou doença aguda ainda ativa/recuperação recente não esclarecida ao pedir treinar ou retomar exercícios.",
+      "finalized_date": "2026-10-16",
+      "id": "acute_illness_signal",
+      "implementation_status": "review_only_user_requested"
+    }
+  ],
+  "status": "final_for_dataset_semantic_refinement",
+  "synthetic_evidence": {
+    "defer_planner_action": [
+      {
+        "family": "coach",
+        "n": 379
+      }
+    ],
+    "preserve_plan_constraint": [
+      {
+        "family": "coach",
+        "n": 104
+      },
+      {
+        "family": "coach",
+        "n": 105
+      },
+      {
+        "family": "coach",
+        "n": 256
+      },
+      {
+        "family": "coach",
+        "n": 415
+      }
+    ]
+  },
+  "version": "review-60-2026-10-16"
+}

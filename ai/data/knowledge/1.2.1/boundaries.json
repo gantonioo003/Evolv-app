@@ -1,0 +1,12 @@
+{
+  "version": "1.2.1",
+  "chunks": [],
+  "migrated_to_main_knowledge": {
+    "pain_is_not_a_diagnosis": "pain_text_cannot_diagnose",
+    "performance_is_not_rehab": "performance_not_rehab_policy",
+    "exam_requires_evaluation": "exam_requires_professional_policy",
+    "chat_history_not_training": "history_not_automatic_training_policy",
+    "redaction_not_anonymity": "redaction_not_anonymization",
+    "learning_not_automatic_edit": "learning_not_automatic_edit_policy"
+  }
+}

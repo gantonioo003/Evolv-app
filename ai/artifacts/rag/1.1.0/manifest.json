@@ -1,0 +1,28 @@
+{
+  "base_manifest_sha256": "a256d5931e41e2747eef829876cee629d0c39d7e99af82ee18156dbe9e399b78",
+  "encoder": {
+    "dimension": 384,
+    "files": {
+      "config.json": "6300193cb75e01cf80c96decef7187dfb33094d97cc1490b7ead6ff134476e4e",
+      "onnx/model_quint8_avx2.onnx": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f",
+      "special_tokens_map.json": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+      "tokenizer.json": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+      "tokenizer_config.json": "5036ea374ffedd706e3bef33e2e0d6953cb868ef8a490e76e32ba0faa37a6b9b"
+    },
+    "frozen_encoder": true,
+    "license": "apache-2.0",
+    "max_length": 128,
+    "model_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "pooling": "attention-masked token mean; token-count-weighted windows; L2 normalization",
+    "raw_text_sent_to_external_api": false,
+    "reference": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "rows": 107,
+  "dimension": 384,
+  "method": "exact cosine; L2 normalized vectors; masked mean over all 128-token windows",
+  "outputs": {
+    "vectors.npy": "39102b1f339560598dedc9422d997a7a6fb36d8af2de4893ee6ed00488996989",
+    "chunks.json": "2df621dca536a9e00757c234f337c96f47eed0ba86b3816fc68381a0186ce3fe"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "alpha": [
+    0.01,
+    0.1
+  ],
+  "features": [
+    "bow",
+    "tfidf"
+  ],
+  "hidden_layers": [
+    128,
+    64
+  ],
+  "preserve_negation": true,
+  "stopword_variants": [
+    false,
+    true
+  ],
+  "stopwords": [
+    "a",
+    "ao",
+    "aos",
+    "as",
+    "da",
+    "das",
+    "de",
+    "do",
+    "dos",
+    "e",
+    "em",
+    "na",
+    "nas",
+    "no",
+    "nos",
+    "o",
+    "os",
+    "um",
+    "uma",
+    "umas",
+    "uns"
+  ],
+  "svd_dimensions": 128,
+  "test_for_selection": false
+}

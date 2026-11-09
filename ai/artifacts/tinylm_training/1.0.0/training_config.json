@@ -1,0 +1,19 @@
+{
+  "batch_size": 16,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "cpu_threads": 4,
+  "epochs": 8,
+  "eps": 1e-08,
+  "grad_clip_norm": 1.0,
+  "learning_rate": 0.0003,
+  "log_every": 100,
+  "min_delta": 0.005,
+  "min_lr_ratio": 0.1,
+  "num_workers": 0,
+  "patience": 3,
+  "precision": "auto",
+  "seed": 42,
+  "warmup_fraction": 0.05,
+  "weight_decay": 0.1
+}

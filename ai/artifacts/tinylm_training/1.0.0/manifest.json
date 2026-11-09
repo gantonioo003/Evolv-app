@@ -1,0 +1,44 @@
+{
+  "checkpoint_integrity": "checkpoint_index.json records each private checkpoint hash",
+  "files": {
+    "binding.json": {
+      "bytes": 1468,
+      "sha256": "ee0b932157b5f7faf4df722fd9c7a0826d4cb47c5ad0a3ff76e015246ab9e00d"
+    },
+    "checkpoint_index.json": {
+      "bytes": 4029,
+      "sha256": "f10e2ea63494d8143e96de976b27970f4b60f948e93dbe92d513b2add4a0a345"
+    },
+    "history.csv": {
+      "bytes": 1030,
+      "sha256": "47f1098006c19200188f1ffebb06b2713569ac6bcaca1cd1ac4fe0ce05c5f5e7"
+    },
+    "history.json": {
+      "bytes": 3047,
+      "sha256": "fc7ae047e00abc507a6f626eaf3ced389832944b0b9781f7bfad75a5a519c6fe"
+    },
+    "loss_curve.png": {
+      "bytes": 122254,
+      "sha256": "ff4eade17b8459436616a974f7c8d68356ed56a875cb9da19184e1cbecb78933"
+    },
+    "loss_curve.svg": {
+      "bytes": 23028,
+      "sha256": "85407a51620cd692969a64f5bfe41c74250fd421e22722b817d5c7e4aea2535e"
+    },
+    "model_config.json": {
+      "bytes": 239,
+      "sha256": "a5c4dc1ffd560a722235f889e8a98eac4706882bb64253eaeff024d063cb7332"
+    },
+    "results.json": {
+      "bytes": 3092,
+      "sha256": "e99616e54f5df88caf1b68abc7d3a6fa87e9be55e4c9122ffce3c085cccb03ec"
+    },
+    "training_config.json": {
+      "bytes": 348,
+      "sha256": "b6fdc8e887b9873004de58c5f08d5297788f79073a6cb806dd4f983c13b10e36"
+    }
+  },
+  "matplotlib": "3.10.8",
+  "plot_source_sha256": "b19415a191098c962205aae51c7c78073f5178e7988cc6710b3884df024ca62a",
+  "status": "completed"
+}

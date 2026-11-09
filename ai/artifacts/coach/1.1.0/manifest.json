@@ -1,0 +1,16 @@
+{
+  "code": {
+    "src/evolv_rag/coach.py": "f04ed56e71c2a11c37555ca2ceea813eb8fd75275c3086ae1ffe3848d21000d1",
+    "src/evolv_rag/actions.py": "76834ae12102f90e327fec43ce95042c5853c7dd88c1a5a1f768dc0e4e2afec8",
+    "src/evolv_rag/safety.py": "641f44e35640ffdd58d01da3432f68c1676931dfa5e57756b0be7e8c030cba99",
+    "tests/test_coach_actions.py": "180a3c2bae8122ce0959c83a16f85464ad36f1c9776b4bb3eb6d7fe6048f9770",
+    "tests/test_coach_composition.py": "eb2acf3a043a9ec9988ef0c0e6c5a8c4b9d968c3250686e9779fe57029e17038",
+    "scripts/verify_coach_actions.py": "b5971db5735ec2dc9b09c15ccfaff88ee5689beca601bf082d1e1e0341ac4edd"
+  },
+  "backend_contract_sha256": "904fa531811904498a8ef9e5179e2afd3b42320249185d6432636e510e14da05",
+  "previous_verification_sha256": "c66178fc04060b6f3c67b91c14664b0795ee6c63fac83d59973d4589324c5825",
+  "outputs": {
+    "verification.json": "db59cadcbc89e8cc7fe61eb0b8e33b5612e0d9d96f0f1739cf061d9d1dc0d85b",
+    "tests.txt": "beecda4c15ad9ee6916542a44ee945129da86e3f0575927a445f7930ebc40a67"
+  }
+}

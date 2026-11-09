@@ -1,4 +1,5 @@
-import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 import { useRouter } from "expo-router";
 import {
   Bell,
@@ -77,15 +78,17 @@ export default function AccountScreen() {
   const latestProgress = progressEntries[0];
 
   return (
-    <AppScreen>
-      <PageHeader
-        eyebrow="Espaço pessoal"
-        title="Conta"
-        actionIcon={Settings2}
-        actionLabel="Abrir configurações"
-        onAction={() => router.push("/settings")}
-      />
-
+    <AppScreen
+      header={
+        <PageHeader
+          eyebrow="Espaço pessoal"
+          title="Conta"
+          actionIcon={Settings2}
+          actionLabel="Abrir configurações"
+          onAction={() => router.push("/settings")}
+        />
+      }
+    >
       <CinematicHero
         source={pickWeeklyImage(accountImages, imagePreferences, "account", 0)}
         eyebrow="Seu perfil"

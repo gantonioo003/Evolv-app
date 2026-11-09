@@ -69,6 +69,7 @@ web_modules/
 .env
 .env.*
 !.env.example
+!ai/.env.api.example
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -161,3 +162,28 @@ ai/artifacts/baseline/1.4.0/private/
 ai/data/releases/1.6.0/private/
 ai/artifacts/baseline/1.5.0/private/
 ai/artifacts/encoders/
+ai/data/releases/1.7.0/private/
+ai/artifacts/baseline/1.6.0/private/
+ai/artifacts/baseline/1.7.0/private/
+ai/artifacts/baseline/1.6.1/private/
+ai/data/releases/1.8.0/private/
+ai/data/releases/1.9.0/private/
+ai/artifacts/baseline/1.8.0/private/
+ai/artifacts/baseline/1.8.1/private/
+ai/artifacts/baseline/1.9.0/private/
+# Locally learned tokenizer assets retain corpus license/provenance obligations.
+ai/artifacts/tokenizer/**/private/
+ai/artifacts/tinylm_data/**/private/
+ai/artifacts/tinylm_training/**/private/
+ai/artifacts/tinylm_evaluation/**/private/
+ai/artifacts/openlm/**/private/
+ai/data/sft/**/private/
+ai/artifacts/openlm_training/**/private/
+ai/artifacts/openlm_jobs/**/private/
+ai/artifacts/openlm_evaluation/**/private/
+# Local browser verification exports (generated app bundles).
+ai/artifacts/mobile_coach/**/web/
+ai/artifacts/system_evaluation/**/web/
+
+# Local evaluation process lock.
+ai/artifacts/openlm_evaluation/**/.evaluation.lock

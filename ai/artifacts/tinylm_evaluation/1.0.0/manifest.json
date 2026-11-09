@@ -1,0 +1,70 @@
+{
+  "files": {
+    "evaluation.json": {
+      "bytes": 1251,
+      "sha256": "ea06e7fbd6f9f5a527b03a536c5f7d1d23fa8dd2b98e94a3e24700cb289732d8"
+    },
+    "frozen_selection.json": {
+      "bytes": 666,
+      "sha256": "b3b83bb684f9dc4d431ec23cea1486265593ef450827be93ab5674fb4cec8cfa"
+    },
+    "generation_summary.json": {
+      "bytes": 1524,
+      "sha256": "ff0bb8047d75e1f87464855a433e7efd7018f4fb0dfb8a5eff41afb3e71d5064"
+    },
+    "metrics.json": {
+      "bytes": 17363,
+      "sha256": "fcb6c01b8c9e5e5fc020c7468f8ce335c358ac28990d29dff0a5726cfeae0eee"
+    },
+    "private/generations.jsonl": {
+      "bytes": 169016,
+      "sha256": "634d83f57380afda2986330d3d1ff67b5b67669ae45116ae1ad066e6608030a2"
+    },
+    "private/initial_test_documents.jsonl": {
+      "bytes": 9751,
+      "sha256": "e1e788ce93f7531bbbde497d100e45f2639257c465fa8acd8531b82e0c703271"
+    },
+    "private/initial_train_documents.jsonl": {
+      "bytes": 1589605,
+      "sha256": "5ee741ec417c9956d4b7ae9ea94ff6648ef69736dc74828c55687ab2a9e42c2c"
+    },
+    "private/initial_validation_documents.jsonl": {
+      "bytes": 13814,
+      "sha256": "be3e8c9a619bf51acb8a41b578b0aa2eff5813f293f69ff06e6cc56a71e60b12"
+    },
+    "private/qualitative_review_samples.jsonl": {
+      "bytes": 34350,
+      "sha256": "289311c1f7e03f5dc2c095ff538926d0ee7ae3ccaa0c71df6d7bf108be4a1aa0"
+    },
+    "private/test_token_errors.jsonl": {
+      "bytes": 10319,
+      "sha256": "ffaf3fa3e2bd47cc5d7614c49053a71a5580d0ae877f3ffe030341015a6bc451"
+    },
+    "private/trained_test_documents.jsonl": {
+      "bytes": 9831,
+      "sha256": "241f7f957c2ba4c0a70f19b300ecd9d5c067bd6b1aba3901ebdc8e15b4cc69ec"
+    },
+    "private/trained_train_documents.jsonl": {
+      "bytes": 1599375,
+      "sha256": "9b93717667577e6ebd75df95233994b74ac6e05ee9b6aa4b0f7d35c1484b4333"
+    },
+    "private/trained_validation_documents.jsonl": {
+      "bytes": 13909,
+      "sha256": "04a8fbab3906b4535be96512bffe9d3529d85793abc3f45ba8978367b5f274cf"
+    },
+    "private/validation_token_errors.jsonl": {
+      "bytes": 10452,
+      "sha256": "31319a04342cb28f6b36b5385346c919fcd4ea68061f87bdb2bb37f4579184c3"
+    },
+    "protocol.json": {
+      "bytes": 2420,
+      "sha256": "506885f5c54d86ba037daab0a1890a6ceafab7616eff5d996ab2e35f245aeed2"
+    }
+  },
+  "source_sha256": {
+    "generation.py": "f96127eb9ef4aaea7909ac86c9e3cead7dd3cd1f001f80407d46daba2865c679",
+    "lm_evaluation.py": "9397abe523e4055ea6bab6c048684fbaec2f8625e6a22098f3da8528deb32039"
+  },
+  "status": "completed",
+  "version": "1.0.0"
+}

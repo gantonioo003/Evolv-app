@@ -1,0 +1,14 @@
+{
+  "phase": "7.04.4",
+  "status": "verified_complete",
+  "optimizer_steps": 63,
+  "epochs_completed": 3,
+  "selected_epoch": 3,
+  "all_recorded_outputs_and_checkpoint_hashes_match": true,
+  "entry_script_and_core_code_match_training_binding": true,
+  "frozen_sft_inputs_and_outputs_preserved": true,
+  "test_evaluated": false,
+  "report_and_curve_hashes_match": true,
+  "model_promoted_to_app": false,
+  "gpu_peak_allocated_mib": 4545.67529296875
+}

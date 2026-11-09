@@ -1,0 +1,32 @@
+{
+  "mode": "explicit_known_intent_fixtures_not_real_nlp_accuracy",
+  "real_entity_extractor": true,
+  "real_lm": false,
+  "real_backend": false,
+  "cases": [
+    [
+      "move_workout_day",
+      "Mova o treino de 03/11/2026 para 05/11/2026"
+    ],
+    [
+      "replace_exercise",
+      "Troque supino reto por flexao"
+    ],
+    [
+      "replace_meal_item",
+      "Troque arroz por feijao"
+    ],
+    [
+      "set_day_activity",
+      "Hoje quero descansar"
+    ]
+  ],
+  "adversarial": [
+    "reject",
+    "expired",
+    "stale",
+    "wrong_id",
+    "clear",
+    "risk_before_confirm"
+  ]
+}

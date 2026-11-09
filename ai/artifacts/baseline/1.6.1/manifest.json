@@ -1,0 +1,621 @@
+{
+  "all_imported_records_processed": 12179,
+  "configuration": {
+    "alpha": [
+      0.01,
+      0.1
+    ],
+    "features": [
+      "bow",
+      "tfidf"
+    ],
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "preserve_negation": true,
+    "stopword_variants": [
+      false,
+      true
+    ],
+    "stopwords": [
+      "a",
+      "ao",
+      "aos",
+      "as",
+      "da",
+      "das",
+      "de",
+      "do",
+      "dos",
+      "e",
+      "em",
+      "na",
+      "nas",
+      "no",
+      "nos",
+      "o",
+      "os",
+      "um",
+      "uma",
+      "umas",
+      "uns"
+    ],
+    "svd_dimensions": 128,
+    "test_for_selection": false
+  },
+  "dataset_manifest_sha256": "875687ac74ff6e6d7f94861b2626cb8052598cbc23ef8054810afb4ed1eaa7a9",
+  "dataset_version": "1.7.0",
+  "model_version": "1.6.1",
+  "models": {
+    "intent": {
+      "file": "private/intent_classifier.joblib",
+      "sha256": "1a2c2ade372338b349ea5c24116bd6135592a67eb3966191fcb9021805c499f3"
+    },
+    "risk": {
+      "file": "private/risk_classifier.joblib",
+      "sha256": "4cda2be65843cdfd326090faa34ab88be33f928893629c4fd13e50269ddeef46"
+    }
+  },
+  "note": "MLP already has a linear softmax/sigmoid head; no redundant post-hoc regression added",
+  "runtime": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "python": "3.14.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "selected": {
+    "intent": {
+      "alpha": 0.01,
+      "epochs": 28,
+      "features": "tfidf",
+      "remove_stopwords": true,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.5104052573932092,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.22464985624992023,
+        "macro_f1_supported": 0.36429706418905977,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    "risk": {
+      "alpha": 0.1,
+      "epochs": 30,
+      "features": "tfidf",
+      "remove_stopwords": false,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5761226725082147,
+        "macro_f1_all_positive_labels": 0.2781674399516182,
+        "macro_f1_supported": 0.32725581170778606,
+        "micro_f1": 0.44308943089430897,
+        "none_accuracy": 0.7305585980284776,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    }
+  },
+  "trials": [
+    {
+      "alpha": 0.01,
+      "epochs": 25,
+      "features": "bow",
+      "remove_stopwords": false,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.4304490690032859,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.18084840277703831,
+        "macro_f1_supported": 0.293267680178981,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 25,
+      "features": "bow",
+      "remove_stopwords": false,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.4359255202628697,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.1791329124335711,
+        "macro_f1_supported": 0.2904858039463315,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 17,
+      "features": "bow",
+      "remove_stopwords": false,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5432639649507119,
+        "macro_f1_all_positive_labels": 0.17351432517767093,
+        "macro_f1_supported": 0.20413450020902463,
+        "micro_f1": 0.3801980198019802,
+        "none_accuracy": 0.6867469879518072,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 17,
+      "features": "bow",
+      "remove_stopwords": false,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5596933187294633,
+        "macro_f1_all_positive_labels": 0.1623671871271508,
+        "macro_f1_supported": 0.1910202201495892,
+        "micro_f1": 0.3772020725388601,
+        "none_accuracy": 0.696604600219058,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 25,
+      "features": "bow",
+      "remove_stopwords": true,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.4370208105147864,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.18428868519003094,
+        "macro_f1_supported": 0.29884651652437455,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 24,
+      "features": "bow",
+      "remove_stopwords": true,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.4370208105147864,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.18826295810033022,
+        "macro_f1_supported": 0.3052912834059409,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 28,
+      "features": "bow",
+      "remove_stopwords": true,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5082146768893757,
+        "macro_f1_all_positive_labels": 0.16314263709306914,
+        "macro_f1_supported": 0.1919325142271402,
+        "micro_f1": 0.3646723646723647,
+        "none_accuracy": 0.6714129244249726,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 27,
+      "features": "bow",
+      "remove_stopwords": true,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5279299014238773,
+        "macro_f1_all_positive_labels": 0.1684091146800136,
+        "macro_f1_supported": 0.19812837021178067,
+        "micro_f1": 0.37561455260570303,
+        "none_accuracy": 0.6867469879518072,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 27,
+      "features": "tfidf",
+      "remove_stopwords": false,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.5016429353778752,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.2022528402955803,
+        "macro_f1_supported": 0.32797757885769774,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 25,
+      "features": "tfidf",
+      "remove_stopwords": false,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.49069003285870755,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.20238433033429795,
+        "macro_f1_supported": 0.32819080594751027,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 32,
+      "features": "tfidf",
+      "remove_stopwords": false,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5859802847754655,
+        "macro_f1_all_positive_labels": 0.2770212487686935,
+        "macro_f1_supported": 0.32590735149258054,
+        "micro_f1": 0.42736842105263156,
+        "none_accuracy": 0.7305585980284776,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 30,
+      "features": "tfidf",
+      "remove_stopwords": false,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.5761226725082147,
+        "macro_f1_all_positive_labels": 0.2781674399516182,
+        "macro_f1_supported": 0.32725581170778606,
+        "micro_f1": 0.44308943089430897,
+        "none_accuracy": 0.7305585980284776,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 28,
+      "features": "tfidf",
+      "remove_stopwords": true,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.5104052573932092,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.22464985624992023,
+        "macro_f1_supported": 0.36429706418905977,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 27,
+      "features": "tfidf",
+      "remove_stopwords": true,
+      "task": "intent",
+      "validation": {
+        "accuracy": 0.5125958378970427,
+        "classes_with_support": 37,
+        "declared_classes": 60,
+        "macro_f1_all_declared": 0.21408721751106413,
+        "macro_f1_supported": 0.3471684608287527,
+        "records": 913,
+        "unsupported_classes": [
+          "adjust_training_intensity",
+          "adjust_training_volume",
+          "ask_food_safety",
+          "ask_hydration",
+          "calculate_body_metric",
+          "change_diet_structure",
+          "clarification",
+          "confirm_planner_action",
+          "defer_planner_action",
+          "explain_current_plan",
+          "greeting",
+          "move_workout_day",
+          "preserve_plan_constraint",
+          "record_body_measurement",
+          "record_food_intake",
+          "record_training_load",
+          "reject_planner_action",
+          "remember_preference",
+          "replace_exercise",
+          "replace_meal_item",
+          "set_day_activity",
+          "undo_planner_action",
+          "update_goal"
+        ]
+      }
+    },
+    {
+      "alpha": 0.01,
+      "epochs": 19,
+      "features": "tfidf",
+      "remove_stopwords": true,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.6078860898138007,
+        "macro_f1_all_positive_labels": 0.21316836988501767,
+        "macro_f1_supported": 0.2507863175117855,
+        "micro_f1": 0.44396551724137934,
+        "none_accuracy": 0.7480832420591457,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    },
+    {
+      "alpha": 0.1,
+      "epochs": 25,
+      "features": "tfidf",
+      "remove_stopwords": true,
+      "task": "risk",
+      "validation": {
+        "exact_match_accuracy": 0.515881708652793,
+        "macro_f1_all_positive_labels": 0.23700014697338795,
+        "macro_f1_supported": 0.27882370232163295,
+        "micro_f1": 0.4088888888888889,
+        "none_accuracy": 0.7020810514786419,
+        "positive_labels_with_support": 17,
+        "records": 913,
+        "unsupported_labels": [
+          "clinical_measurement_request",
+          "musculoskeletal_red_flag",
+          "unsafe_training_request"
+        ]
+      }
+    }
+  ]
+}

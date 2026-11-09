@@ -1,0 +1,219 @@
+{
+  "phase": "7.06.5",
+  "version": "1.0.2",
+  "started_at": "2026-11-03T09:44:17.718Z",
+  "status": "evaluation_completed",
+  "scope": "Development suite; real NestJS, FastAPI, frozen NLP, RAG, Qwen original, Supabase and Planner",
+  "suite_sha256": "85f4f39562c80da939e347fa4d4d54c3e6de8db0b30c1b96396b0a1df031970a",
+  "credentials_recorded": false,
+  "existing_user_data_modified": false,
+  "native_iphone_tested": false,
+  "checks": [
+    {
+      "name": "temporary_profile_ready",
+      "passed": true
+    },
+    {
+      "name": "real_planner_generates_temporary_plan",
+      "passed": true
+    },
+    {
+      "name": "unauthenticated_coach_denied",
+      "passed": true
+    },
+    {
+      "name": "client_cannot_choose_owner",
+      "passed": true
+    },
+    {
+      "name": "internal_api_requires_key",
+      "passed": true
+    },
+    {
+      "name": "internal_cross_user_denied",
+      "passed": true
+    },
+    {
+      "name": "privacy-01_persistence_truth",
+      "passed": true
+    },
+    {
+      "name": "direct_planner_preview_created",
+      "passed": true
+    },
+    {
+      "name": "direct_preview_does_not_mutate",
+      "passed": true
+    },
+    {
+      "name": "direct_real_planner_apply",
+      "passed": true
+    },
+    {
+      "name": "direct_real_planner_revert",
+      "passed": true
+    },
+    {
+      "name": "mobile_real_message_reaches_real_services",
+      "passed": true
+    },
+    {
+      "name": "mobile_real_history_reopened",
+      "passed": true
+    },
+    {
+      "name": "mobile_action_preview_created",
+      "passed": true
+    },
+    {
+      "name": "direct_link_waits_for_auth_without_stale_error",
+      "passed": true
+    },
+    {
+      "name": "mobile_preview_has_no_automatic_write",
+      "passed": true
+    },
+    {
+      "name": "mobile_click_applies_real_plan",
+      "passed": true
+    },
+    {
+      "name": "mobile_click_restores_real_plan",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_javascript_errors",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "privacy-01",
+      "category": "privacy",
+      "text": "Minhas conversas entram automaticamente no treinamento?",
+      "http_status": 201,
+      "total_seconds": 1.9309466000000028,
+      "result": {
+        "mode": "local_research",
+        "answer": "No aplicativo, suas conversas são salvas na sua conta para você retomar o histórico. Elas não entram automaticamente no treinamento do modelo. Você pode excluir conversas pelo histórico; pedir exclusão no chat não apaga dados nem confirma consentimento.",
+        "safety": {
+          "preflight_route": "privacy_information",
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "labels": []
+          },
+          "route": "privacy_information",
+          "intent": {
+            "label": "guarded",
+            "confident": false
+          },
+          "entities": {
+            "entities": []
+          }
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "schema_version": "coach.1.1.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "checks": {
+        "http_ok": true,
+        "no_unknown_citations": true,
+        "no_automatic_action": true,
+        "generated": false,
+        "completed_generation": null,
+        "expected_risk_detected": null
+      }
+    }
+  ],
+  "dialogues": [],
+  "actions": [
+    {
+      "origin": "direct_planner_not_nlu",
+      "kind": "set_day_activity",
+      "apply_http": 201,
+      "revert_http": 201
+    },
+    {
+      "origin": "real_mobile_manual_planner_not_nlu",
+      "kind": "move_workout_day",
+      "confirmed_in_browser": true
+    }
+  ],
+  "temporary_users_created": 2,
+  "temporary_users_deleted": 2,
+  "case_filter": [
+    "privacy-01"
+  ],
+  "cold_start_seconds": 29.494303900000002,
+  "plan_generation_status": 201,
+  "test_plan_id": "e591c5a1-4979-4d1d-856f-b115eb8abd10",
+  "browser": {
+    "version": "156.0.4314.58",
+    "network_mocked": false,
+    "auth_mocked": false,
+    "requests": [
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 201
+      },
+      {
+        "path": "/api/coach/sessions/128a64b0-2bd3-471b-af48-94681f9597a3/messages",
+        "status": 201
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions/128a64b0-2bd3-471b-af48-94681f9597a3/messages",
+        "status": 200
+      }
+    ],
+    "page_error_types": []
+  },
+  "cleanup_complete": true,
+  "completed_at": "2026-11-03T09:45:14.489Z",
+  "summary": {
+    "completed_cases": 1,
+    "total_cases": 1,
+    "generated": 0,
+    "truncated": 0,
+    "proposed_actions": 0,
+    "real_coach_action_cycles": 0,
+    "checks_passed": 19,
+    "checks_failed": 0,
+    "warm_request_p50_seconds": 1.9309466000000028,
+    "warm_request_p95_seconds": 1.9309466000000028
+  },
+  "service_error_observed": false
+}

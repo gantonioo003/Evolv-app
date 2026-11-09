@@ -1,0 +1,105 @@
+{
+  "scope": "NLP 1.8.0 classifier with context variants, no generation, no persisted history changes",
+  "rows": [
+    {
+      "dialogue": "implicit_topic_switch",
+      "turn": 2,
+      "question": "Quanto tempo um adulto costuma precisar dormir por noite?",
+      "modes": {
+        "full_history": {
+          "intent": "ask_cardio_training",
+          "confident": false,
+          "margin": 0.007556260683030565,
+          "route": "clarify"
+        },
+        "user_only": {
+          "intent": "ask_cardio_training",
+          "confident": false,
+          "margin": 0.0004652807469580286,
+          "route": "clarify"
+        },
+        "no_history": {
+          "intent": "ask_sleep_habits",
+          "confident": false,
+          "margin": 0.005847499227551935,
+          "route": "clarify"
+        }
+      }
+    },
+    {
+      "dialogue": "single_exercise_reference",
+      "turn": 3,
+      "question": "Troque supino reto por flexão.",
+      "modes": {
+        "full_history": {
+          "intent": "clarification",
+          "confident": false,
+          "margin": 0.006444694821184441,
+          "route": "clarify"
+        },
+        "user_only": {
+          "intent": "replace_exercise",
+          "confident": false,
+          "margin": 0.0027014428917854216,
+          "route": "clarify"
+        },
+        "no_history": {
+          "intent": "replace_exercise",
+          "confident": false,
+          "margin": 0.021271941354939875,
+          "route": "clarify"
+        }
+      }
+    },
+    {
+      "dialogue": "equipment_and_preference",
+      "turn": 4,
+      "question": "Se só tenho elásticos em casa, dá para treinar força?",
+      "modes": {
+        "full_history": {
+          "intent": "remember_preference",
+          "confident": false,
+          "margin": 0.014339101699284783,
+          "route": "clarify"
+        },
+        "user_only": {
+          "intent": "clarification",
+          "confident": false,
+          "margin": 0.007438186935663903,
+          "route": "clarify"
+        },
+        "no_history": {
+          "intent": "ask_training_concept",
+          "confident": false,
+          "margin": 0.01055116870025577,
+          "route": "clarify"
+        }
+      }
+    },
+    {
+      "dialogue": "updated_preference",
+      "turn": 3,
+      "question": "Qual horário de treino eu prefiro agora?",
+      "modes": {
+        "full_history": {
+          "intent": "remember_preference",
+          "confident": false,
+          "margin": 0.021523703739597215,
+          "route": "clarify"
+        },
+        "user_only": {
+          "intent": "remember_preference",
+          "confident": false,
+          "margin": 0.016800944520859284,
+          "route": "clarify"
+        },
+        "no_history": {
+          "intent": "remember_preference",
+          "confident": false,
+          "margin": 0.021392084417557175,
+          "route": "clarify"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "phase": "7.07.3",
+  "status": "completed_development_candidate",
+  "intent_candidate_selected": true,
+  "risk_previous_kept": true,
+  "model_configurations_compared": 15,
+  "new_unit_tests_passed": 6,
+  "runtime_metrics_reproduced_on_validation": 1059,
+  "confidence_calibration": "three train-only group folds, fold vocabularies refitted",
+  "confidence_target_unchanged": 0.9,
+  "four_diagnostic_cases_used_for_selection": false,
+  "test_opened_for_metrics": false,
+  "reserved_bytes_identical": true,
+  "old_inputs_and_weights_preserved": true,
+  "live_coach_promoted": false,
+  "limitations": [
+    "synthetic and previously exposed validation, not independent gold",
+    "accuracy on legacy stratum decreases slightly",
+    "risk did not improve",
+    "95.41% only among 28.80% accepted",
+    "food replacement weak",
+    "activity_type contract still unresolved"
+  ],
+  "source_sha256": {
+    "ai/src/evolv_nlp/recognition_experiment.py": "f9d43b35efc45c5f9c7b5cc2221eea67fa4dcd3dc47b6c2c6daf689abe372d5a",
+    "ai/src/evolv_nlp/recognition_pipeline.py": "e338e9dc288a6241a6f41aa90dd86464a29ab77f1633e269cdbfdd718174b03c",
+    "ai/scripts/train_recognition.py": "7ac96cbe646234bc0b14f155bfe1fd7cb867eb86bbdc24a48c240b7875b8664d",
+    "ai/scripts/analyze_recognition.py": "b6678f1f2844cd9c4b5905dfc1734247fb0e336544da4d84f60dbd5efad13b6e",
+    "ai/scripts/verify_recognition.py": "61283fa58925f91a692899be2495ad90075cd76dce6287d92f23f8a85d0f3ff1",
+    "ai/scripts/report_recognition.py": "c0cc4db0b6e1d17f13da3abf90b28306e63e7e87ba8ecbb68721fb7491d9baae",
+    "ai/tests/test_recognition_experiment.py": "cd6b6310f5d3b01c7a408d33a9a149179cc08e0cf55e0b5b9e056f0acde97825",
+    "docs/48-coach-recognition-comparison.md": "93b6e37b75c083fd321fed634f5118ac714738c2257d0d0dd5bc3445b349e8ef",
+    "ai/README.md": "4ea1c2ce1b6d51e1fee246336fd6f1f5f7f4866f2003d0ca37160614d4457359",
+    ".gitignore": "c517d2c5792827e31b7e3b89b560445e658a6d117e2c6fed5ad49242066b0091"
+  },
+  "output_sha256": {
+    "ai/artifacts/baseline/1.9.0/baseline_validation.json": "2e7fe1b9e9fa64524031c02b274ac0ffdbcccd6fac15c16be538e62bf5125b84",
+    "ai/artifacts/baseline/1.9.0/calibration.json": "863f70f038a4005d1dcc07aaf97cbd511fcbe336451ee42c315ecb1fd8cb2a4b",
+    "ai/artifacts/baseline/1.9.0/class_details.json": "7b5771a2fe592b7043bf79f6419b810ccb70b97d4f0c7807162d68d0dd131106",
+    "ai/artifacts/baseline/1.9.0/manifest.json": "09a55cd1bae38b215e2fd9a1d6d5bf48db796f4ef152ce47e6efeeba2100fd72",
+    "ai/artifacts/baseline/1.9.0/protocol.json": "34c3b6966a13962fbde029d06e742932a09f8813291049a2efe33df17064e7eb",
+    "ai/artifacts/baseline/1.9.0/runtime_verification.json": "416c2207f22398e972929da2f28233592a905e79ab80354f14b02c24d7fbfe40",
+    "ai/artifacts/baseline/1.9.0/selection.json": "c7027182921fed26f8206827ab238d03b256d5b1d6d729126228acb9416cdbfa",
+    "ai/artifacts/baseline/1.9.0/trials.json": "a56bba8f6534861d0e8d45b9f8b592cfe54e162118a9ec141634dac358bf515f",
+    "ai/artifacts/baseline/1.9.0/validation_metrics.json": "c12436ba653d5e52b6c6160ec906a8cf9c74743a06e90196c41101e7a6792308",
+    "ai/artifacts/baseline/1.9.0/RESULTS.md": "93b6e37b75c083fd321fed634f5118ac714738c2257d0d0dd5bc3445b349e8ef"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "scope": "Existing development traces; no inference, no threshold changes; payload parser uses synthetic snapshot and bypasses no runtime guard",
+  "source_sha256": "07c3c43cc02b3738c2999ad396316d83b34aa840e88ced3b86d7236bc4c6a411",
+  "cases": [
+    {
+      "id": "action-01",
+      "text": "Mova meu treino de 03/11/2026 para 05/11/2026.",
+      "correct_top_intent": true,
+      "margin": 0.014713229427273822,
+      "threshold": 0.025621061356581865,
+      "margin_pass": false,
+      "validation_label_support": 0,
+      "required_label_support": 5,
+      "support_pass": false,
+      "missing_entities": [],
+      "risk_labels": [],
+      "isolated_payload_parser_pass": true,
+      "isolated_payload_parser_failure": null
+    },
+    {
+      "id": "action-02",
+      "text": "Troque o treino de terÃ§a para quinta nesta semana.",
+      "correct_top_intent": true,
+      "margin": 0.02209905234334331,
+      "threshold": 0.025621061356581865,
+      "margin_pass": false,
+      "validation_label_support": 0,
+      "required_label_support": 5,
+      "support_pass": false,
+      "missing_entities": [],
+      "risk_labels": [],
+      "isolated_payload_parser_pass": true,
+      "isolated_payload_parser_failure": null
+    },
+    {
+      "id": "action-03",
+      "text": "Defina 05/11/2026 como dia de descanso.",
+      "correct_top_intent": true,
+      "margin": 0.029687873382956944,
+      "threshold": 0.025621061356581865,
+      "margin_pass": true,
+      "validation_label_support": 0,
+      "required_label_support": 5,
+      "support_pass": false,
+      "missing_entities": [
+        "activity_type"
+      ],
+      "risk_labels": [],
+      "isolated_payload_parser_pass": true,
+      "isolated_payload_parser_failure": null
+    },
+    {
+      "id": "action-04",
+      "text": "Coloque cardio no dia 06/11/2026.",
+      "correct_top_intent": true,
+      "margin": 0.002005248594715306,
+      "threshold": 0.025621061356581865,
+      "margin_pass": false,
+      "validation_label_support": 0,
+      "required_label_support": 5,
+      "support_pass": false,
+      "missing_entities": [
+        "activity_type"
+      ],
+      "risk_labels": [],
+      "isolated_payload_parser_pass": true,
+      "isolated_payload_parser_failure": null
+    }
+  ]
+}

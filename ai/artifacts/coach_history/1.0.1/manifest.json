@@ -1,0 +1,13 @@
+{
+  "code": {
+    "backend/src/coach/coach-history.service.ts": "6af72fdbb6243e2257e8ca2e6871428650e530fd7f24ca3b8176a60d122ea153",
+    "backend/test/fixtures/coach-postgres.ts": "03cbc8d86389018777be221d9484bd633a1c694b1c6b44baa6f331dcc03b670f",
+    "backend/src/coach/coach.service.ts": "5885fbf5eb1b7329c4e078de9f90bb75219825819d19524d7c82ee462c1a30e7",
+    "backend/src/coach/coach-ai.client.ts": "9b1f298813223bddb06a50fc5369e73366269430c4019fe8135a082a56d6f81c",
+    "backend/src/coach/coach.controller.ts": "5f4852b10cd0db03334bb0e8edc47594416179dbbec2433e659f843b0d89f637",
+    "backend/src/coach/coach-context.service.ts": "593937e9134fe879b7f563ab4b0020c1d66bbc44d312e12b135c2ef1aea9b912",
+    "ai/src/evolv_api/app.py": "08a436f870feb9ffc40b1b29fd44703b415395a5c4da969279c60ee893b51e53",
+    "ai/tests/fixtures/serve_coach_api.py": "08a0511b606fe06ca435d86aae7f4acc3a2af22be948cc63a6744ad228f81cba",
+    "backend/scripts/verify-coach-history.mjs": "d237721d8cd3e64b72dc740739b245b2c7a07fa26160c37e6f9f8c47977085ec"
+  }
+}

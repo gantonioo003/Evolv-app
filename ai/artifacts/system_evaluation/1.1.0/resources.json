@@ -1,0 +1,15 @@
+{
+  "sampling_seconds": 1,
+  "samples": 727,
+  "rss_peak_bytes": 2185334784,
+  "cuda_allocated_peak_bytes": 3073650688,
+  "cuda_reserved_peak_bytes": 3571449856,
+  "torch_peak_allocated_bytes": 3247322112,
+  "torch_peak_reserved_bytes": 3571449856,
+  "rss_last_bytes": 1450037248,
+  "backend_rss_peak_bytes": 124555264,
+  "backend_rss_last_bytes": 115322880,
+  "elapsed_seconds": 746.063000000082,
+  "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU",
+  "gpu_total_bytes": 8546484224
+}

@@ -1,0 +1,86 @@
+{
+  "intent": {
+    "new": {
+      "accuracy": 0.6507042253521127,
+      "classes_with_support": 24,
+      "declared_classes": 41,
+      "macro_f1_all_declared": 0.3498156422526472,
+      "macro_f1_supported": 0.5976017221816057,
+      "records": 710,
+      "unsupported_classes": [
+        "adjust_training_intensity",
+        "adjust_training_volume",
+        "change_diet_structure",
+        "change_training_split",
+        "clarification",
+        "confirm_planner_action",
+        "greeting",
+        "move_workout_day",
+        "record_food_intake",
+        "record_training_load",
+        "reject_planner_action",
+        "remember_preference",
+        "replace_exercise",
+        "replace_meal_item",
+        "set_day_activity",
+        "undo_planner_action",
+        "update_goal"
+      ]
+    },
+    "old": {
+      "accuracy": 0.33098591549295775,
+      "classes_with_support": 24,
+      "declared_classes": 41,
+      "macro_f1_all_declared": 0.14374561339572245,
+      "macro_f1_supported": 0.2455654228843592,
+      "records": 710,
+      "unsupported_classes": [
+        "adjust_training_intensity",
+        "adjust_training_volume",
+        "change_diet_structure",
+        "change_training_split",
+        "clarification",
+        "confirm_planner_action",
+        "greeting",
+        "move_workout_day",
+        "record_food_intake",
+        "record_training_load",
+        "reject_planner_action",
+        "remember_preference",
+        "replace_exercise",
+        "replace_meal_item",
+        "set_day_activity",
+        "undo_planner_action",
+        "update_goal"
+      ]
+    },
+    "records_shared_labels": 710
+  },
+  "not_comparable_to_old_small_test_headline": true,
+  "prior_model_may_have_seen_old_versions_of_public_rows": true,
+  "risk": {
+    "new": {
+      "exact_match_accuracy": 0.7382198952879581,
+      "macro_f1_all_positive_labels": 0.39750881735288646,
+      "macro_f1_supported": 0.39750881735288646,
+      "micro_f1": 0.6212121212121212,
+      "none_accuracy": 0.8167539267015707,
+      "positive_labels_with_support": 17,
+      "records": 955,
+      "unsupported_labels": []
+    },
+    "old": {
+      "exact_match_accuracy": 0.42198952879581153,
+      "macro_f1_all_positive_labels": 0.20344872748940243,
+      "macro_f1_supported": 0.20344872748940243,
+      "micro_f1": 0.2768595041322314,
+      "none_accuracy": 0.5926701570680628,
+      "positive_labels_with_support": 17,
+      "records": 955,
+      "unsupported_labels": []
+    },
+    "old_contract_was_single_label": true,
+    "shared_positive_labels": 17
+  },
+  "same_new_test_inputs": true
+}

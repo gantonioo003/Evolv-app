@@ -1,0 +1,226 @@
+{
+  "phase": "7.07.1",
+  "version": "1.0.1",
+  "status": "diagnosed",
+  "policy_support_matches_raw_validation_counts": true,
+  "raw_development_counts": {
+    "train": {
+      "move_workout_day": {
+        "records": 61,
+        "synthetic": 61,
+        "non_synthetic": 0,
+        "distinct_groups": 2,
+        "source_families": {
+          "coach": 1,
+          "rare_synthetic": 60
+        }
+      },
+      "set_day_activity": {
+        "records": 44,
+        "synthetic": 44,
+        "non_synthetic": 0,
+        "distinct_groups": 4,
+        "source_families": {
+          "coach": 4,
+          "rare_synthetic": 40
+        }
+      }
+    },
+    "validation": {
+      "move_workout_day": {
+        "records": 0,
+        "synthetic": 0,
+        "non_synthetic": 0,
+        "distinct_groups": 0,
+        "source_families": {}
+      },
+      "set_day_activity": {
+        "records": 0,
+        "synthetic": 0,
+        "non_synthetic": 0,
+        "distinct_groups": 0,
+        "source_families": {}
+      }
+    }
+  },
+  "support_blocked_labels": [
+    "adapt_training_plan",
+    "adjust_training_intensity",
+    "adjust_training_volume",
+    "ask_activity_hygiene",
+    "ask_activity_safety",
+    "ask_app_functionality",
+    "ask_equipment_use_or_care",
+    "ask_food_safety",
+    "ask_food_substitution_options",
+    "ask_hydration",
+    "ask_meal_feedback",
+    "ask_sport_event_guidance",
+    "ask_training_meal_timing",
+    "calculate_body_metric",
+    "change_diet_structure",
+    "change_training_split",
+    "clarification",
+    "confirm_planner_action",
+    "create_diet_plan",
+    "defer_planner_action",
+    "explain_current_plan",
+    "greeting",
+    "move_workout_day",
+    "preserve_plan_constraint",
+    "record_body_measurement",
+    "record_food_intake",
+    "record_training_load",
+    "reject_planner_action",
+    "remember_preference",
+    "replace_exercise",
+    "replace_meal_item",
+    "set_day_activity",
+    "undo_planner_action",
+    "update_goal"
+  ],
+  "support_blocked_label_count": 34,
+  "cases": [
+    {
+      "id": "action-01",
+      "text": "Mova meu treino de 03/11/2026 para 05/11/2026.",
+      "top_intent_correct": true,
+      "intent": "move_workout_day",
+      "margin": 0.014713229427273822,
+      "margin_minimum": 0.025621061356581865,
+      "margin_pass": false,
+      "validation_support": 0,
+      "support_minimum": 5,
+      "support_pass": false,
+      "missing_entities": [],
+      "risk_labels": [],
+      "observed_route": "clarify",
+      "still_blocked_with_large_margin": true,
+      "isolated_payload_parser_pass": true,
+      "entities": [
+        {
+          "type": "source_date",
+          "value": "2026-11-03"
+        },
+        {
+          "type": "target_date",
+          "value": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "action-02",
+      "text": "Troque o treino de terça para quinta nesta semana.",
+      "top_intent_correct": true,
+      "intent": "move_workout_day",
+      "margin": 0.02209905234334331,
+      "margin_minimum": 0.025621061356581865,
+      "margin_pass": false,
+      "validation_support": 0,
+      "support_minimum": 5,
+      "support_pass": false,
+      "missing_entities": [],
+      "risk_labels": [],
+      "observed_route": "clarify",
+      "still_blocked_with_large_margin": true,
+      "isolated_payload_parser_pass": true,
+      "entities": [
+        {
+          "type": "source_date",
+          "value": "2026-11-03"
+        },
+        {
+          "type": "weekday",
+          "value": 1
+        },
+        {
+          "type": "target_date",
+          "value": "2026-11-05"
+        },
+        {
+          "type": "weekday",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "action-03",
+      "text": "Defina 05/11/2026 como dia de descanso.",
+      "top_intent_correct": true,
+      "intent": "set_day_activity",
+      "margin": 0.029687873382956944,
+      "margin_minimum": 0.025621061356581865,
+      "margin_pass": true,
+      "validation_support": 0,
+      "support_minimum": 5,
+      "support_pass": false,
+      "missing_entities": [
+        "activity_type"
+      ],
+      "risk_labels": [],
+      "observed_route": "clarify",
+      "still_blocked_with_large_margin": true,
+      "isolated_payload_parser_pass": true,
+      "entities": [
+        {
+          "type": "target_date",
+          "value": "2026-11-05"
+        },
+        {
+          "type": "meal_context",
+          "value": "dia de descanso"
+        },
+        {
+          "type": "training_metric",
+          "value": "descanso"
+        }
+      ]
+    },
+    {
+      "id": "action-04",
+      "text": "Coloque cardio no dia 06/11/2026.",
+      "top_intent_correct": true,
+      "intent": "set_day_activity",
+      "margin": 0.002005248594715306,
+      "margin_minimum": 0.025621061356581865,
+      "margin_pass": false,
+      "validation_support": 0,
+      "support_minimum": 5,
+      "support_pass": false,
+      "missing_entities": [
+        "activity_type"
+      ],
+      "risk_labels": [],
+      "observed_route": "clarify",
+      "still_blocked_with_large_margin": true,
+      "isolated_payload_parser_pass": true,
+      "entities": [
+        {
+          "type": "modality",
+          "value": "cardio"
+        },
+        {
+          "type": "target_date",
+          "value": "2026-11-06"
+        }
+      ]
+    }
+  ],
+  "source_sha256_before_and_after_equal": {
+    "ai/artifacts/system_evaluation/1.0.1/results.json": "07c3c43cc02b3738c2999ad396316d83b34aa840e88ced3b86d7236bc4c6a411",
+    "ai/artifacts/baseline/1.8.0/candidate_selection.json": "af677318912365954c873962ec3dcd8a8d0fae57aec8dc238049ce00b45bba82",
+    "ai/artifacts/baseline/1.8.0/private/intent_classifier.joblib": "bf42033207c98d6d78ad1f8b88f128e443c53956846156c8cabe8d7741b6bc26",
+    "ai/data/releases/1.8.0/private/train.jsonl": "478777c1129e8743043e6693ae7130f14d8b7d3d8f5fbff411eebe32497c8a41",
+    "ai/data/releases/1.8.0/private/validation.jsonl": "7d3c261b64dc1ef9c2e25bd3d4d0182ccfc7936fd9b8ab590a4da03a87325a2f",
+    "ai/src/evolv_nlp/corrected_pipeline.py": "6dfa06c8380c65c88da073a4f6b12d22d8acecc1998a53e0780e1ce5864871c5",
+    "ai/src/evolv_nlp/corrected_training.py": "4b9b96664762a1ed95fa320c46fa762580c30d8b6eec2645a685bab54d544170",
+    "ai/src/evolv_nlp/review_release.py": "994c97968e008cab4efabff43e6382e6f0de8d3bade5dabcfc9474b9ad78d3e7",
+    "ai/src/evolv_nlp/pipeline_v14.py": "9627d5af9bcd99a08f52a4cb382f28dfe041bd255e959dc2056b5deae3596605",
+    "ai/src/evolv_rag/actions.py": "76834ae12102f90e327fec43ce95042c5853c7dd88c1a5a1f768dc0e4e2afec8"
+  },
+  "reserved_test_read": false,
+  "new_predictions_or_training": false,
+  "production_rules_changed": false,
+  "confidence_policy_changed": false,
+  "parser_probe_scope": "Saved analyses plus synthetic snapshot; no proposal, confirmation or database write"
+}

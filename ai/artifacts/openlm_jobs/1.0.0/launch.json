@@ -1,0 +1,8 @@
+{
+  "stdout": "private/training.stdout.log",
+  "created_at_utc": "2026-11-02T18:38:25.9091000Z",
+  "script": "ai/scripts/train_openlm.py",
+  "stderr": "private/training.stderr.log",
+  "automatic_training_after_download": true,
+  "process_id": 41144
+}

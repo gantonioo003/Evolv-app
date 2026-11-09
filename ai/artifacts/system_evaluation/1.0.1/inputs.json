@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "ai/data/evaluation/coach_system.v1.json": "85f4f39562c80da939e347fa4d4d54c3e6de8db0b30c1b96396b0a1df031970a",
+    "ai/scripts/serve_coach_evaluation.py": "3d4a3ce78a9f98226bf8c428de9b28e5e4ff9f7b651971e2131f2adbee582476",
+    "backend/scripts/evaluate-coach-system.mjs": "4738dd35b27be27096afb876cd311f7cd2ff6d812c5def6d0e3d47567d116ca3",
+    "ai/src/evolv_rag/coach.py": "dbd915d3ed6ff3597ef9d954ff800d93734e3dc7ad881cad0eca663e916cec0b",
+    "ai/src/evolv_rag/safety.py": "2856d8417ab825a12de35b85a474c8e24ad1cec9e9885b13ec6b94d999227994",
+    "ai/configs/openlm.v1.json": "c5bcc7d3c0028483cc3ddef618ea37111df629bbf3338e1fdd641f35904838e4",
+    "ai/artifacts/baseline/1.8.0/selection_frozen.json": "11012b4327bf67ffe8c699cf807619bc259cd1972fd9b1851c1cb7df011e39af",
+    "backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+    "backend/src/coach/coach-context.service.ts": "593937e9134fe879b7f563ab4b0020c1d66bbc44d312e12b135c2ef1aea9b912",
+    "backend/src/planner/planner-adjustments.service.ts": "46ebce98068dd31c65f474e6481c915e50c3fcaeb2da35023fb80b25d2f36f58",
+    "mobile/src/components/coach-connected-screen.tsx": "b7018bda154e36d55425cda0e3ccdc5c4d927e0141803d3c711e891fd7a490f2"
+  }
+}

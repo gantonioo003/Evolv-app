@@ -1,0 +1,34 @@
+{
+  "scope": "Known action from 7.07.5, real NLP and local FastAPI, generation disabled, synthetic plan",
+  "rows": [
+    {
+      "nlp_version": "1.8.0",
+      "text": "Defina 05/11/2026 como dia de descanso.",
+      "proposed": [],
+      "initial_route": "clarify"
+    },
+    {
+      "nlp_version": "1.9.0",
+      "text": "Defina 05/11/2026 como dia de descanso.",
+      "proposed": [
+        {
+          "id": "d708cc1a-da93-4ddc-952c-989c94486a97",
+          "payload": {
+            "kind": "set_day_activity",
+            "source": "coach",
+            "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+            "activity_date": "2026-11-05",
+            "activity_type": "rest"
+          },
+          "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+          "expires_at": "2026-11-08T23:25:45.567148+00:00",
+          "status": "pending_user_confirmation"
+        }
+      ],
+      "initial_route": "draft_for_confirmation",
+      "other_user_status": 404,
+      "wrong_session_answer": "Proposta não pertence a esta sessão.",
+      "correct_session_status": "confirmed_for_planner_preview"
+    }
+  ]
+}

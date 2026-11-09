@@ -1,0 +1,1248 @@
+{
+  "old": {
+    "metrics": {
+      "positive_queries": 20,
+      "negative_queries": 5,
+      "hit_at_1": 0.55,
+      "hit_at_3": 0.65,
+      "mrr_at_3": 0.6,
+      "rejection_rate": 1.0,
+      "by_category": {
+        "negative": {
+          "positive_queries": 0,
+          "negative_queries": 5,
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "mrr_at_3": null,
+          "rejection_rate": 1.0
+        },
+        "single": {
+          "positive_queries": 20,
+          "negative_queries": 0,
+          "hit_at_1": 0.55,
+          "hit_at_3": 0.65,
+          "mrr_at_3": 0.6,
+          "rejection_rate": null
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "legacy-0",
+        "category": "single",
+        "question": "Quanto tempo um adulto deve dormir?",
+        "history": [],
+        "expected": [
+          "sleep_duration_adults"
+        ],
+        "rank": 1,
+        "seconds": 0.005543800070881844,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_duration_adults",
+            "score": 0.6581615805625916
+          },
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.5238043665885925
+          },
+          {
+            "document_id": "athlete_sleep_is_individual",
+            "score": 0.5083866119384766
+          }
+        ]
+      },
+      {
+        "id": "legacy-1",
+        "category": "single",
+        "question": "Preciso falhar em toda série para crescer?",
+        "history": [],
+        "expected": [
+          "training_to_failure_optional"
+        ],
+        "rank": null,
+        "seconds": 0.006735400063917041,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-2",
+        "category": "single",
+        "question": "Posso trocar a máquina por pesos livres?",
+        "history": [],
+        "expected": [
+          "training_equipment_flexibility"
+        ],
+        "rank": null,
+        "seconds": 0.006891299970448017,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-3",
+        "category": "single",
+        "question": "Perdi o treino ontem, faço o dobro hoje?",
+        "history": [],
+        "expected": [
+          "missed_workout_no_compensation"
+        ],
+        "rank": 1,
+        "seconds": 0.0068802000023424625,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.5341625213623047
+          }
+        ]
+      },
+      {
+        "id": "legacy-4",
+        "category": "single",
+        "question": "O joelho começou a doer no exercício. Você sabe a causa?",
+        "history": [],
+        "expected": [
+          "training_pain_boundary"
+        ],
+        "rank": null,
+        "seconds": 0.0072185000171884894,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-5",
+        "category": "single",
+        "question": "Como progredir a carga aos poucos?",
+        "history": [],
+        "expected": [
+          "progressive_overload_gradual"
+        ],
+        "rank": 1,
+        "seconds": 0.005722900037653744,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "progressive_overload_gradual",
+            "score": 0.6277788281440735
+          },
+          {
+            "document_id": "training_and_recovery_balance",
+            "score": 0.5506515502929688
+          },
+          {
+            "document_id": "power_intent_matters",
+            "score": 0.537168025970459
+          }
+        ]
+      },
+      {
+        "id": "legacy-6",
+        "category": "single",
+        "question": "A creatina ajuda no desempenho?",
+        "history": [],
+        "expected": [
+          "creatine_evidence_general"
+        ],
+        "rank": 1,
+        "seconds": 0.005627400008961558,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "creatine_evidence_general",
+            "score": 0.6984878778457642
+          },
+          {
+            "document_id": "post_workout_meal_context",
+            "score": 0.4804561138153076
+          },
+          {
+            "document_id": "training_pain_boundary",
+            "score": 0.4543951749801636
+          }
+        ]
+      },
+      {
+        "id": "legacy-7",
+        "category": "single",
+        "question": "Qual quantidade de proteína para adultos ativos?",
+        "history": [],
+        "expected": [
+          "protein_range_active_adults"
+        ],
+        "rank": 1,
+        "seconds": 0.005227499990724027,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.7539808750152588
+          },
+          {
+            "document_id": "protein_distribution_general",
+            "score": 0.6776403784751892
+          },
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.5670908093452454
+          }
+        ]
+      },
+      {
+        "id": "legacy-8",
+        "category": "single",
+        "question": "O que comer antes de treinar?",
+        "history": [],
+        "expected": [
+          "pre_workout_meal_context"
+        ],
+        "rank": 1,
+        "seconds": 0.005746499984525144,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.48374587297439575
+          }
+        ]
+      },
+      {
+        "id": "legacy-9",
+        "category": "single",
+        "question": "Como comer depois do treino?",
+        "history": [],
+        "expected": [
+          "post_workout_meal_context"
+        ],
+        "rank": null,
+        "seconds": 0.006027400027960539,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.49065059423446655
+          },
+          {
+            "document_id": "nutrition_training_day_context",
+            "score": 0.48959559202194214
+          },
+          {
+            "document_id": "food_pattern_over_single_meal",
+            "score": 0.4715627133846283
+          }
+        ]
+      },
+      {
+        "id": "legacy-10",
+        "category": "single",
+        "question": "Preciso beber a mesma quantidade de água que todo mundo?",
+        "history": [],
+        "expected": [
+          "hydration_is_individual"
+        ],
+        "rank": 1,
+        "seconds": 0.00711899995803833,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "hydration_is_individual",
+            "score": 0.5444201827049255
+          }
+        ]
+      },
+      {
+        "id": "legacy-11",
+        "category": "single",
+        "question": "Uma refeição ruim estraga a alimentação inteira?",
+        "history": [],
+        "expected": [
+          "food_pattern_over_single_meal"
+        ],
+        "rank": 2,
+        "seconds": 0.005921800038777292,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_context_is_part_of_quality",
+            "score": 0.6224847435951233
+          },
+          {
+            "document_id": "food_pattern_over_single_meal",
+            "score": 0.5988041162490845
+          },
+          {
+            "document_id": "food_substitution_preserves_role",
+            "score": 0.5528659820556641
+          }
+        ]
+      },
+      {
+        "id": "legacy-12",
+        "category": "single",
+        "question": "Preciso compensar o que comi com jejum e exercício?",
+        "history": [],
+        "expected": [
+          "flexible_meal_without_compensation"
+        ],
+        "rank": null,
+        "seconds": 0.006831499980762601,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.5101503729820251
+          },
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.4910176396369934
+          },
+          {
+            "document_id": "physical_activity_health",
+            "score": 0.47828641533851624
+          }
+        ]
+      },
+      {
+        "id": "legacy-13",
+        "category": "single",
+        "question": "Meu relógio sabe exatamente como eu dormi?",
+        "history": [],
+        "expected": [
+          "sleep_tracker_is_estimate"
+        ],
+        "rank": null,
+        "seconds": 0.004977499949745834,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-14",
+        "category": "single",
+        "question": "Não sentir dor depois significa que o treino não funcionou?",
+        "history": [],
+        "expected": [
+          "soreness_is_not_progress_requirement"
+        ],
+        "rank": 1,
+        "seconds": 0.006364500033669174,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.7209979295730591
+          },
+          {
+            "document_id": "training_pain_boundary",
+            "score": 0.5680800676345825
+          },
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.5588829517364502
+          }
+        ]
+      },
+      {
+        "id": "legacy-15",
+        "category": "single",
+        "question": "Dia de descanso faz parte do plano?",
+        "history": [],
+        "expected": [
+          "rest_day_is_part_of_plan"
+        ],
+        "rank": 1,
+        "seconds": 0.0044756000861525536,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "rest_day_is_part_of_plan",
+            "score": 0.5328903198242188
+          },
+          {
+            "document_id": "recovery_change_requires_pattern",
+            "score": 0.5215491652488708
+          }
+        ]
+      },
+      {
+        "id": "legacy-16",
+        "category": "single",
+        "question": "Sinto dor no peito, posso continuar treinando?",
+        "history": [],
+        "expected": [
+          "chest_pain_emergency"
+        ],
+        "rank": 2,
+        "seconds": 0.005465599941089749,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.559153139591217
+          },
+          {
+            "document_id": "chest_pain_emergency",
+            "score": 0.47567254304885864
+          }
+        ]
+      },
+      {
+        "id": "legacy-17",
+        "category": "single",
+        "question": "Sou alérgico a amendoim, posso comer mesmo assim?",
+        "history": [],
+        "expected": [
+          "food_allergy_and_anaphylaxis_boundary"
+        ],
+        "rank": 1,
+        "seconds": 0.006478299968875945,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_allergy_and_anaphylaxis_boundary",
+            "score": 0.5312466621398926
+          }
+        ]
+      },
+      {
+        "id": "legacy-18",
+        "category": "single",
+        "question": "Perguntar sobre um exercício muda meu plano automaticamente?",
+        "history": [],
+        "expected": [
+          "question_is_not_action"
+        ],
+        "rank": null,
+        "seconds": 0.005481000058352947,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.6397933959960938
+          },
+          {
+            "document_id": "nutrition_training_day_context",
+            "score": 0.6303517818450928
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.6156572699546814
+          }
+        ]
+      },
+      {
+        "id": "legacy-19",
+        "category": "single",
+        "question": "O Coach pode gravar mudanças direto no banco de dados?",
+        "history": [],
+        "expected": [
+          "coach_does_not_write_database"
+        ],
+        "rank": 1,
+        "seconds": 0.005704700015485287,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "coach_does_not_write_database",
+            "score": 0.5353385806083679
+          },
+          {
+            "document_id": "medication_and_hormone_boundary",
+            "score": 0.49133455753326416
+          },
+          {
+            "document_id": "planner_preview_confirmation",
+            "score": 0.47613996267318726
+          }
+        ]
+      },
+      {
+        "id": "legacy-20",
+        "category": "negative",
+        "question": "Qual a cotação do dólar agora?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.004729800042696297,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-21",
+        "category": "negative",
+        "question": "Quem ganhou o Oscar ontem?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.003885100013576448,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-22",
+        "category": "negative",
+        "question": "Escreva código SQL para invadir um servidor.",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.005501299980096519,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-23",
+        "category": "negative",
+        "question": "Qual é o saldo da minha conta bancária?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.004912000033073127,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "legacy-24",
+        "category": "negative",
+        "question": "Qual ônibus vai para o aeroporto?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.004307799972593784,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      }
+    ]
+  },
+  "new": {
+    "metrics": {
+      "positive_queries": 20,
+      "negative_queries": 5,
+      "hit_at_1": 0.6,
+      "hit_at_3": 0.8,
+      "mrr_at_3": 0.675,
+      "rejection_rate": 0.8,
+      "by_category": {
+        "negative": {
+          "positive_queries": 0,
+          "negative_queries": 5,
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "mrr_at_3": null,
+          "rejection_rate": 0.8
+        },
+        "single": {
+          "positive_queries": 20,
+          "negative_queries": 0,
+          "hit_at_1": 0.6,
+          "hit_at_3": 0.8,
+          "mrr_at_3": 0.675,
+          "rejection_rate": null
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "legacy-0",
+        "category": "single",
+        "question": "Quanto tempo um adulto deve dormir?",
+        "history": [],
+        "expected": [
+          "sleep_duration_adults"
+        ],
+        "rank": null,
+        "seconds": 0.005423899972811341,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "sleep_persistent_difficulty",
+            "score": 0.4242971144473115
+          },
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.42217225887437654
+          },
+          {
+            "document_id": "sleep_recovery_explanation",
+            "score": 0.41730625553724676
+          }
+        ]
+      },
+      {
+        "id": "legacy-1",
+        "category": "single",
+        "question": "Preciso falhar em toda série para crescer?",
+        "history": [],
+        "expected": [
+          "training_to_failure_optional"
+        ],
+        "rank": 1,
+        "seconds": 0.005852899979799986,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "training_to_failure_optional",
+            "score": 0.4489803471377921
+          },
+          {
+            "document_id": "progressive_overload_gradual",
+            "score": 0.3615792121124011
+          },
+          {
+            "document_id": "stress_and_schedule_affect_recovery",
+            "score": 0.31575102849767567
+          }
+        ]
+      },
+      {
+        "id": "legacy-2",
+        "category": "single",
+        "question": "Posso trocar a máquina por pesos livres?",
+        "history": [],
+        "expected": [
+          "training_equipment_flexibility"
+        ],
+        "rank": 1,
+        "seconds": 0.005655399989336729,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "training_equipment_flexibility",
+            "score": 0.3973444879829183
+          }
+        ]
+      },
+      {
+        "id": "legacy-3",
+        "category": "single",
+        "question": "Perdi o treino ontem, faço o dobro hoje?",
+        "history": [],
+        "expected": [
+          "missed_workout_no_compensation"
+        ],
+        "rank": 1,
+        "seconds": 0.0060548000037670135,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.40644437423131335
+          },
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.3058420789711122
+          }
+        ]
+      },
+      {
+        "id": "legacy-4",
+        "category": "single",
+        "question": "O joelho começou a doer no exercício. Você sabe a causa?",
+        "history": [],
+        "expected": [
+          "training_pain_boundary"
+        ],
+        "rank": null,
+        "seconds": 0.008433499955572188,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "pain_text_cannot_diagnose",
+            "score": 0.5045720315661357
+          }
+        ]
+      },
+      {
+        "id": "legacy-5",
+        "category": "single",
+        "question": "Como progredir a carga aos poucos?",
+        "history": [],
+        "expected": [
+          "progressive_overload_gradual"
+        ],
+        "rank": 1,
+        "seconds": 0.006022599991410971,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "progressive_overload_gradual",
+            "score": 0.5556572408568856
+          },
+          {
+            "document_id": "training_and_recovery_balance",
+            "score": 0.4329509968782474
+          },
+          {
+            "document_id": "rest_between_sets_context",
+            "score": 0.4316002385553739
+          }
+        ]
+      },
+      {
+        "id": "legacy-6",
+        "category": "single",
+        "question": "A creatina ajuda no desempenho?",
+        "history": [],
+        "expected": [
+          "creatine_evidence_general"
+        ],
+        "rank": 1,
+        "seconds": 0.005232500028796494,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "creatine_evidence_general",
+            "score": 0.6499593549778477
+          },
+          {
+            "document_id": "nutrient_timing_after_daily_totals",
+            "score": 0.41760274468083236
+          },
+          {
+            "document_id": "post_workout_meal_context",
+            "score": 0.39762491315734355
+          }
+        ]
+      },
+      {
+        "id": "legacy-7",
+        "category": "single",
+        "question": "Qual quantidade de proteína para adultos ativos?",
+        "history": [],
+        "expected": [
+          "protein_range_active_adults"
+        ],
+        "rank": 1,
+        "seconds": 0.007795900106430054,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.6774572469734841
+          },
+          {
+            "document_id": "protein_distribution_general",
+            "score": 0.5553105831413516
+          },
+          {
+            "document_id": "protein_amino_acids_mechanism",
+            "score": 0.5296287232254271
+          }
+        ]
+      },
+      {
+        "id": "legacy-8",
+        "category": "single",
+        "question": "O que comer antes de treinar?",
+        "history": [],
+        "expected": [
+          "pre_workout_meal_context"
+        ],
+        "rank": 3,
+        "seconds": 0.006923799985088408,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "early_training_food_options",
+            "score": 0.535918261853468
+          },
+          {
+            "document_id": "late_training_meals_sleep",
+            "score": 0.49105407035186704
+          },
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.3993806624228695
+          }
+        ]
+      },
+      {
+        "id": "legacy-9",
+        "category": "single",
+        "question": "Como comer depois do treino?",
+        "history": [],
+        "expected": [
+          "post_workout_meal_context"
+        ],
+        "rank": null,
+        "seconds": 0.0063572999788448215,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "late_training_meals_sleep",
+            "score": 0.5039960487512088
+          },
+          {
+            "document_id": "early_training_food_options",
+            "score": 0.4244450629667438
+          },
+          {
+            "document_id": "nutrition_training_day_context",
+            "score": 0.4207722032699495
+          }
+        ]
+      },
+      {
+        "id": "legacy-10",
+        "category": "single",
+        "question": "Preciso beber a mesma quantidade de água que todo mundo?",
+        "history": [],
+        "expected": [
+          "hydration_is_individual"
+        ],
+        "rank": 3,
+        "seconds": 0.00872530008200556,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "alcohol_is_not_performance_strategy",
+            "score": 0.3417762305518881
+          },
+          {
+            "document_id": "carbohydrate_fuel",
+            "score": 0.30761966222722303
+          },
+          {
+            "document_id": "hydration_is_individual",
+            "score": 0.305603029848592
+          }
+        ]
+      },
+      {
+        "id": "legacy-11",
+        "category": "single",
+        "question": "Uma refeição ruim estraga a alimentação inteira?",
+        "history": [],
+        "expected": [
+          "food_pattern_over_single_meal"
+        ],
+        "rank": 1,
+        "seconds": 0.007254200056195259,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "food_pattern_over_single_meal",
+            "score": 0.5064104001128603
+          },
+          {
+            "document_id": "early_training_food_options",
+            "score": 0.4791688213508404
+          },
+          {
+            "document_id": "substitution_portions_not_identical",
+            "score": 0.44447155592761345
+          }
+        ]
+      },
+      {
+        "id": "legacy-12",
+        "category": "single",
+        "question": "Preciso compensar o que comi com jejum e exercício?",
+        "history": [],
+        "expected": [
+          "flexible_meal_without_compensation"
+        ],
+        "rank": null,
+        "seconds": 0.00706580001860857,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "early_training_food_options",
+            "score": 0.43220288971989695
+          },
+          {
+            "document_id": "carbohydrate_fuel",
+            "score": 0.42741713751978305
+          },
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.4252118859115325
+          }
+        ]
+      },
+      {
+        "id": "legacy-13",
+        "category": "single",
+        "question": "Meu relógio sabe exatamente como eu dormi?",
+        "history": [],
+        "expected": [
+          "sleep_tracker_is_estimate"
+        ],
+        "rank": 1,
+        "seconds": 0.0058842001017183065,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "sleep_tracker_is_estimate",
+            "score": 0.35764562412798206
+          }
+        ]
+      },
+      {
+        "id": "legacy-14",
+        "category": "single",
+        "question": "Não sentir dor depois significa que o treino não funcionou?",
+        "history": [],
+        "expected": [
+          "soreness_is_not_progress_requirement"
+        ],
+        "rank": 1,
+        "seconds": 0.006792300031520426,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.5984030963715684
+          },
+          {
+            "document_id": "performance_not_rehab_policy",
+            "score": 0.531612308068611
+          },
+          {
+            "document_id": "cooldown_gradual_finish",
+            "score": 0.48499060448612125
+          }
+        ]
+      },
+      {
+        "id": "legacy-15",
+        "category": "single",
+        "question": "Dia de descanso faz parte do plano?",
+        "history": [],
+        "expected": [
+          "rest_day_is_part_of_plan"
+        ],
+        "rank": 1,
+        "seconds": 0.0053891000570729375,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "rest_day_is_part_of_plan",
+            "score": 0.5808968384041675
+          },
+          {
+            "document_id": "recovery_change_requires_pattern",
+            "score": 0.46050218533242243
+          },
+          {
+            "document_id": "rest_between_sets_context",
+            "score": 0.36825807897044405
+          }
+        ]
+      },
+      {
+        "id": "legacy-16",
+        "category": "single",
+        "question": "Sinto dor no peito, posso continuar treinando?",
+        "history": [],
+        "expected": [
+          "chest_pain_emergency"
+        ],
+        "rank": 1,
+        "seconds": 0.007490199990570545,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "chest_pain_emergency",
+            "score": 0.47542941820764695
+          },
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.43929055090958224
+          },
+          {
+            "document_id": "performance_not_rehab_policy",
+            "score": 0.40419314887075247
+          }
+        ]
+      },
+      {
+        "id": "legacy-17",
+        "category": "single",
+        "question": "Sou alérgico a amendoim, posso comer mesmo assim?",
+        "history": [],
+        "expected": [
+          "food_allergy_and_anaphylaxis_boundary"
+        ],
+        "rank": 2,
+        "seconds": 0.007596499985083938,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "food_context_is_part_of_quality",
+            "score": 0.33844151187220073
+          },
+          {
+            "document_id": "food_allergy_and_anaphylaxis_boundary",
+            "score": 0.327450390889562
+          },
+          {
+            "document_id": "late_training_meals_sleep",
+            "score": 0.3010135387996167
+          }
+        ]
+      },
+      {
+        "id": "legacy-18",
+        "category": "single",
+        "question": "Perguntar sobre um exercício muda meu plano automaticamente?",
+        "history": [],
+        "expected": [
+          "question_is_not_action"
+        ],
+        "rank": 1,
+        "seconds": 0.006532200030051172,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "question_is_not_action",
+            "score": 0.523032519888323
+          },
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.4980450615424648
+          },
+          {
+            "document_id": "training_pain_boundary",
+            "score": 0.48179805071555404
+          }
+        ]
+      },
+      {
+        "id": "legacy-19",
+        "category": "single",
+        "question": "O Coach pode gravar mudanças direto no banco de dados?",
+        "history": [],
+        "expected": [
+          "coach_does_not_write_database"
+        ],
+        "rank": 3,
+        "seconds": 0.006760400021448731,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "multiple_requests_need_scope",
+            "score": 0.5065722413533204
+          },
+          {
+            "document_id": "planner_preview_confirmation",
+            "score": 0.43338054181473445
+          },
+          {
+            "document_id": "coach_does_not_write_database",
+            "score": 0.41035273685618917
+          }
+        ]
+      },
+      {
+        "id": "legacy-20",
+        "category": "negative",
+        "question": "Qual a cotação do dólar agora?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.0056122998939827085,
+        "status": "no_evidence",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": []
+      },
+      {
+        "id": "legacy-21",
+        "category": "negative",
+        "question": "Quem ganhou o Oscar ontem?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.004891799995675683,
+        "status": "no_evidence",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": []
+      },
+      {
+        "id": "legacy-22",
+        "category": "negative",
+        "question": "Escreva código SQL para invadir um servidor.",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.006447600084356964,
+        "status": "found",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": [
+          {
+            "document_id": "coach_does_not_write_database",
+            "score": 0.3185655450503094
+          }
+        ]
+      },
+      {
+        "id": "legacy-23",
+        "category": "negative",
+        "question": "Qual é o saldo da minha conta bancária?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.0063547000754624605,
+        "status": "no_evidence",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": []
+      },
+      {
+        "id": "legacy-24",
+        "category": "negative",
+        "question": "Qual ônibus vai para o aeroporto?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.005555599927902222,
+        "status": "no_evidence",
+        "context": {
+          "used": false,
+          "user_turns_used": 0,
+          "reason": "standalone"
+        },
+        "retrieved": []
+      }
+    ]
+  },
+  "scope": "Previously known development questions, measured after selection; not independent testing"
+}

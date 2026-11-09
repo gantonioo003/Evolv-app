@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "sources": {
+    "configs/openlm.v1.json": "c5bcc7d3c0028483cc3ddef618ea37111df629bbf3338e1fdd641f35904838e4",
+    "configs/openlm.data.v1.json": "fda22c13d86c1220d44bd5a7ec4f01586d4909df15a87e19e95e7e32bf5dc33d",
+    "data/sft_sources/v1/knowledge_prompts.json": "bb7ec4e3655bf26a408ad790137c0425d90c0b64d1495cce7388dbf3bdcd4b13",
+    "data/sft_sources/v1/scenarios.json": "29403a42bc61cb738e4750c138d2785a14656828f1ae343980936a119a23e7b6",
+    "data/sft_sources/v1/knowledge_answers.json": "c97e9cbc0e9007272e0f4984219a8f71e55264196fdc5c5b4743fe2999532921",
+    "data/knowledge/knowledge_chunks.v1.json": "39877c7f30bc89face526beb50bb2e5d6a316edd5282d446e7438672f5aaa115",
+    "data/metadata/sources.v1.json": "d3f7d26b3b7a1f489c60ff11e267e900b567ffe00e3bf3fb5a49c95442a30b7b",
+    "data/releases/1.8.0/taxonomy.json": "d0b4ec4cc5b791c7c1e3a0856932a452a3b4b1c9aa5083b81cea8f5772c92202",
+    "data/releases/1.8.0/private/records.jsonl": "4dc7508d3615f4869cddf9002b3f32912891ca61935a5dbd0c227303beef649e",
+    "data/lm_corpus/1.2.0/train.jsonl": "e23db46d942b0b8d400c229a63f7ab21f36c8599e0c4f6bb5df7b38ba1f1608b",
+    "data/lm_corpus/1.2.0/validation.jsonl": "a0a22166b093782296332a5b7f5630be5bf43d5c40c66aef378955612b075b31",
+    "data/lm_corpus/1.2.0/test.jsonl": "0930ef0c45ad32689e334f6cffb0813acd8afd9a32a095d659117035ae23c943"
+  },
+  "tokenizer_files": {
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3"
+  },
+  "outputs": {
+    "config.json": "6ae69957500dda6f92f68dfc5ef811eeee5e80433fe5bb06372e78c85561d91a",
+    "private/excluded.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "private/source_inventory.jsonl": "80a908793639bece1640bfa6b7ed98a894855a4a5b354579c1c359b01c7f9050",
+    "private/test.jsonl": "59975e88d01be57375e7581994024cc42fb8040170f81ca66ff75c346d9a1717",
+    "private/test_tokens.jsonl": "d7411024b52fbcc716fcd6704d66186bde03f1e0a0eee168e56dd72354da527b",
+    "private/train.jsonl": "f204f3d842f01e2fd64327c86df5fff87de8c38ba85a14b19c4e5065f50e3bef",
+    "private/train_tokens.jsonl": "21be094105ff2c90b24e07c2f1d29c0a83eb2fb986962af99655667d2994c61a",
+    "private/validation.jsonl": "0ae921fd44b0640a3470bcc1aff4d6967e2225c9110af053577bd03a0c2a2c8e",
+    "private/validation_tokens.jsonl": "4ffe2b221c60ec83356c8d6edb4157feee9a0898ab2cf4e15966c687deaf5b06",
+    "report.json": "ae542f5283eb308a7bdb8894bbf989079e686df403c7858d3b5f3108b4305979"
+  },
+  "code": {
+    "sft_data.py": "73f53c7a8f4e8bbf7130a2ec34e4e6a30de9d27a9669ddd159bd347a13fc45c0"
+  }
+}

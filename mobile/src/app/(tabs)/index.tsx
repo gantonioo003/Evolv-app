@@ -9,7 +9,8 @@ import {
   Target,
   Utensils,
 } from "lucide-react-native";
-import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 
 import {
   AppScreen,
@@ -96,21 +97,23 @@ export default function TodayScreen() {
       : "Sua agenda está livre. Escolha como quer começar.";
 
   return (
-    <AppScreen>
-      <PageHeader
-        brand="EVOLV"
-        eyebrow={dateLabel}
-        title="Hoje"
-        actionIcon={CircleHelp}
-        actionLabel="Ajuda sobre a tela Hoje"
-        onAction={() =>
-          Alert.alert(
-            "Hoje",
-            "Um resumo simples do que importa agora. Você não precisa confirmar treino, alimentação ou ausência.",
-          )
-        }
-      />
-
+    <AppScreen
+      header={
+        <PageHeader
+          brand="EVOLV"
+          eyebrow={dateLabel}
+          title="Hoje"
+          actionIcon={CircleHelp}
+          actionLabel="Ajuda sobre a tela Hoje"
+          onAction={() =>
+            Alert.alert(
+              "Hoje",
+              "Um resumo simples do que importa agora. Você não precisa confirmar treino, alimentação ou ausência.",
+            )
+          }
+        />
+      }
+    >
       <CinematicHero
         source={pickWeeklyImage(
           workoutImageLibrary[imageCategory],

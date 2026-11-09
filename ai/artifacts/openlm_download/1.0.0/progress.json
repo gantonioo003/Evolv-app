@@ -1,0 +1,6 @@
+{
+  "verified_complete": true,
+  "status": "complete",
+  "completion_source": "artifacts/openlm_jobs/1.0.0/download_manifest.json",
+  "note": "A execução automática completou a transferência e verificou os hashes oficiais."
+}

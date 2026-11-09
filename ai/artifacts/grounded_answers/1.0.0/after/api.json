@@ -1,0 +1,50 @@
+[
+  {
+    "question": "O que é deload no treino?",
+    "answer": "Você quer tirar uma dúvida de treino, alimentação ou recuperação, registrar algo que já fez ou pedir uma mudança no plano?",
+    "route": "clarify",
+    "grounding": null,
+    "generation": null
+  },
+  {
+    "question": "O que comer antes de treinar de manhã?",
+    "answer": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto. [kb:pre_workout_meal_context:v1.1.0:001]",
+    "route": "clarify",
+    "grounding": {
+      "status": "supported_excerpt",
+      "method": "source_excerpt"
+    },
+    "generation": {
+      "input_tokens": 844,
+      "generated_tokens": 6,
+      "seconds": 2.1108124000020325,
+      "tokens_per_second": 2.842507463000607,
+      "stopped_at_eos": true,
+      "variant": "original"
+    }
+  },
+  {
+    "question": "E se eu treinar à noite e for dormir logo depois?",
+    "answer": "Depois de treinar à noite, a alimentação pode ser organizada junto da ingestão diária e do horário de dormir. Cafeína e refeições grandes perto de deitar podem atrapalhar o sono de algumas pessoas. Não é obrigatório pular a refeição nem comer logo antes de dormir sem considerar conforto e rotina. [kb:late_training_meals_sleep:v1.2.0:001]",
+    "route": "clarify",
+    "grounding": {
+      "status": "supported_excerpt",
+      "method": "source_excerpt"
+    },
+    "generation": {
+      "input_tokens": 892,
+      "generated_tokens": 6,
+      "seconds": 2.9930437998846173,
+      "tokens_per_second": 2.004648244783889,
+      "stopped_at_eos": true,
+      "variant": "original"
+    }
+  },
+  {
+    "question": "Sinto dor no peito e falta de ar.",
+    "answer": "Interrompa a atividade e procure atendimento de emergência. Não consigo avaliar a causa pela conversa.",
+    "route": "safety_information_only",
+    "grounding": null,
+    "generation": null
+  }
+]

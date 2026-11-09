@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "max_words": 180,
+  "inputs": [
+    "data/knowledge/README.md",
+    "data/knowledge/coverage.v1.json",
+    "data/knowledge/knowledge_chunks.v1.json",
+    "data/metadata/sources.v1.json",
+    "data/taxonomy/topics.v1.json",
+    "data/taxonomy/risks.v1.json",
+    "data/knowledge/coach-boundaries.v1.json"
+  ]
+}

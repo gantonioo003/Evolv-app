@@ -1,0 +1,18 @@
+{
+  "phase": "7.05.5",
+  "status": "verified_complete",
+  "initial_dialogues": 11,
+  "initial_turns": 22,
+  "initial_errors_preserved": 1,
+  "contract_dialogues": 10,
+  "contract_turns": 24,
+  "targeted_regression_scenarios": 4,
+  "targeted_regression_turns": 7,
+  "unit_tests_passed": 30,
+  "original_code_snapshots_match": true,
+  "current_regression_code_matches": true,
+  "inference_and_report_hashes_match": true,
+  "html_articles": 22,
+  "database_connected": false,
+  "promoted_to_app": false
+}

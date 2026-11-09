@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "as_of": "2026-11-02",
+  "inputs": {
+    "data/knowledge/README.md": "7a1c51870e149ac6bf2def80c70fe87282d026f697c451c9f38f40bf4ca5fb69",
+    "data/knowledge/coverage.v1.json": "59352a36695a28ae26505043e1fe01893a80a351b1c54fac1d06225d49b74a05",
+    "data/knowledge/knowledge_chunks.v1.json": "39877c7f30bc89face526beb50bb2e5d6a316edd5282d446e7438672f5aaa115",
+    "data/metadata/sources.v1.json": "d3f7d26b3b7a1f489c60ff11e267e900b567ffe00e3bf3fb5a49c95442a30b7b",
+    "data/taxonomy/topics.v1.json": "7d9e0fd9139e29f2915b9a6fc69208d65cb483a395ebc5a61bdf1a029e379789",
+    "data/taxonomy/risks.v1.json": "8f37d01dbacd24362d3bc00aea5c8848630ccea5606754f3bec1a7d369bb24f1",
+    "data/knowledge/coach-boundaries.v1.json": "d55243b6c29d4710f42fad941a44db99dcfeaffccbd8ac8c8f55b8f0f8b07100",
+    "../docs/10-planner.md": "373b3644f6f324ab18aa76c7f69792e90333e2dc9f90f076182833d880b96cab",
+    "../docs/11-coach-planner-actions.md": "fc086e28b1db9e48e7fef40ab4c1b857af7c775c4d4cfd77d80b21ad9b0cd0b0",
+    "../docs/12-nutrition-planner.md": "0573421621bdbdbf4c9eb619a3d050ab742d9f8d71d1c3f41b45db94c1594e5e",
+    "../docs/08-contexto-de-treino-dieta-e-motivacao.md": "87f2f00ceb60a7894fd4621dd47fc952e1a73ef13153d98a93ea43a13da67a12"
+  },
+  "code": {
+    "src\\evolv_rag\\preparation.py": "590f66688f482c1c70ca01b9084ba393ca42e22406c871b657456da38cf912a7",
+    "scripts\\prepare_rag_base.py": "1ab3418de6f066980ef3ee1165c4d1b5997e33cad9e64343083101e0be4e8079"
+  },
+  "outputs": {
+    "chunks.jsonl": "6ba17531f0dcecdb0aa44b32649a6965162f34323c32069bfb35d6e9d51dcfbd",
+    "config.json": "87823c26d28f9dd37bba928e1a73a1036088d3951c271b76685e571ea0f3905c",
+    "documents.json": "0bf1cbc6be8470ba871d2919b52837c8dfb665853f14b2184160985d1040e6f0",
+    "quarantine.json": "9203ca04fbdb4941aa18af5f295f0099bd5257ad9fb7a8da5d3216dac33e6946",
+    "report.json": "a82da8c5ddc9be42113375451cb54bbbca9fc692fb35fc7c69fcf45a207aa3bf",
+    "sources.json": "ba646c992d48b4134292a5f23bbba10de6fcf7c369c417472cf4569d3f9b15dc"
+  }
+}

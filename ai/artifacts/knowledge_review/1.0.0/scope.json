@@ -1,0 +1,59 @@
+{
+  "coverage_definition": "Presence of topic/risk tags and readable scoped content, not answer quality or safety certification",
+  "remaining_gaps": [
+    {
+      "topic": "technical_execution",
+      "status": "limited",
+      "reason": "Não cobre execução detalhada de cada exercício nem correção visual."
+    },
+    {
+      "topic": "sports_programming",
+      "status": "limited",
+      "reason": "Princípios gerais não constituem periodização individual de vôlei, tênis ou competição."
+    },
+    {
+      "topic": "clinical_and_special_populations",
+      "status": "boundary_only",
+      "reason": "Sem protocolos de tratamento, exames, medicação, reabilitação ou personalização clínica."
+    },
+    {
+      "topic": "equipment_hygiene_and_maintenance",
+      "status": "not_covered",
+      "reason": "Intenções novas de higiene corporal e manutenção de equipamentos não têm conteúdo específico."
+    },
+    {
+      "topic": "local_services_events_products",
+      "status": "not_covered",
+      "reason": "Locais, preços, disponibilidade, eventos e produtos requerem fontes atualizadas fora desta base local."
+    },
+    {
+      "topic": "knowledge_vs_retrieval",
+      "status": "pending_next_phase",
+      "reason": "Ter o trecho não garante recuperá-lo; o índice de 67 trechos não é substituído nesta etapa."
+    }
+  ],
+  "access_limitations": [
+    {
+      "locator": "https://journals.lww.com/acsm-msse/fulltext/2026/04000/american_college_of_sports_medicine_position.21.aspx",
+      "observed": "restricted_full_paper_402",
+      "used_instead": "ACSM institutional summary; not full article verification"
+    },
+    {
+      "locator": "https://bjsm.bmj.com/content/55/7/356",
+      "observed": "direct_access_403",
+      "used_instead": "Publisher indexed passage only, explicitly labelled"
+    },
+    {
+      "locator": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+      "observed": "access_denied",
+      "used_instead": "ANPD technical PDF; not a new declaration of legal compliance"
+    },
+    {
+      "locator": "https://pmc.ncbi.nlm.nih.gov/",
+      "observed": "intermittent_recaptcha_after_successful_reads",
+      "used_instead": "Accessible publisher texts or already retrieved selected passages; never claim whole-site verification"
+    }
+  ],
+  "sources": "ai/data/knowledge/1.2.0/evidence.json",
+  "next_phase": "7.07.7: build/compare retrieval using the new snapshot; do not present these 40 authored questions as independent gold"
+}

@@ -1,0 +1,8 @@
+{
+  "binding_sha256": "19c8fec0670039f574032a2b8a3366098be603be83cd789a5927a69f10eb098b",
+  "outputs": {
+    "protocol.json": "c94d0fcb264958de8e7059c936d41cb03082cedbcaaa6525b61a10b9577e4b5a",
+    "turns.jsonl": "e861af537e9a5ca9a4eb2943543fa55113092c6ecaf159ba3035c5b5717f46c5",
+    "summary.json": "8e82cd9aa0d0e5be7c8129186392add1e50cb2561e0be60772d096c81fabcef8"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "verified_complete",
+  "phase": "7.04.5",
+  "test_conversations": 28,
+  "paired_prompts": 48,
+  "generated_answers": 96,
+  "rubric_reviews_complete": 48,
+  "unit_tests_passed": 12,
+  "frozen_sft_sources_and_outputs_preserved": true,
+  "original_weights_and_selected_adapter_unchanged": true,
+  "training_run_outputs_preserved": true,
+  "scientific_inference_outputs_and_review_hashes_match": true,
+  "code_matches_registered_evaluation": true,
+  "historical_validation_reproduced_with_original_precision": true,
+  "same_tf32_disabled_for_scored_inference": true,
+  "html_filters_and_desktop_mobile_layout_verified": true,
+  "model_promoted_to_app": false,
+  "inference_manifest_final_sha256": "58b33290de02064ce1a6106cfdea62910440ebc23c053e9fda9c78d57ced99d9",
+  "review_manifest_sha256": "b46f688a5b6334aae2f9d883d2df81be7b7a9bbe2a2d985ac3113c7104d7276c",
+  "documents_sha256": {
+    "ai/README.md": "8772d49e39a2e3b529a4b4807c2f3fd2df0565c71c54802548c139a79db9f948",
+    "docs/35-openlm-comparison.md": "5e3d9ac5c5907c6a52c3e312edf80e696e0c597504b4c9970d5e5989ff1ebaa5"
+  }
+}

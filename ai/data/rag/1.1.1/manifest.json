@@ -1,0 +1,37 @@
+{
+  "version": "1.1.0",
+  "as_of": "2026-11-03",
+  "inputs": {
+    "data/knowledge/1.2.1/knowledge_chunks.json": "1d9b22fbbfe63d2f410a9a7daa561e3f84f90ec2085d1869ce4691e8921ee57f",
+    "data/knowledge/1.2.1/sources.json": "72a639b885f75e8c6d6ade1426ab78ec3bb5b1c9c5f16f4ab288e2a93ba3b6be",
+    "data/knowledge/1.2.1/risks.json": "97f7f3bf1dfaf8b67b0db3b7f06e6c9989a92a921436e61ce28715154fbe31d0",
+    "data/knowledge/1.2.1/coverage.json": "1dc927d55e8496a837683b14640a6ec9a2a7f14d7edd0d30d663daa24288c85f",
+    "data/knowledge/1.2.1/evidence.json": "671a155f4feac389a852c1aa408476215a912b531fb86fb51f9c143e5c5cd38a",
+    "data/knowledge/1.2.1/boundaries.json": "c165043d80fcf7c2524cc1df5cb3204b67ee949d9b7a68f429d38846f8201806",
+    "data/knowledge/1.2.1/changes.json": "9e32cb6365e36e9db5a1c26ea61936e7a861db99bfece64f2c28c90461cba3ff",
+    "data/knowledge/1.2.1/acceptance_cases.json": "a50fabad22b2cb7d9b2192b4e01fc89f0c758824bbbd052428cff163594f629d",
+    "data/knowledge/review_7_07_6.v1.json": "3e5e769c8d3d3e1de14af67ddd6adcfc1b0ad7caf095d152f3c4a87c841af8d9",
+    "data/taxonomy/topics.v1.json": "7d9e0fd9139e29f2915b9a6fc69208d65cb483a395ebc5a61bdf1a029e379789",
+    "data/knowledge/1.2.1/manifest.json": "00c332e7dc6f06eb368d3a290ae3edd2b0a1fdc3793258c332947966fd5c4ad6",
+    "../docs/50-coach-real-action-validation.md": "cbcf7b2ff6c5de82b35787caef3f330e294228e77d0fcab5be3fc591e80ad1d7",
+    "../backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+    "../ai/src/evolv_rag/coach.py": "936f6d74959f4d5ceb91727a893bfa219fdff4bf936b8073c55a5a921f3342fa",
+    "../ai/src/evolv_rag/actions.py": "2ad6d9de3c07c1ee54109a3dcdee52c767e191d0e6ad8087bb2016d688c93920",
+    "../docs/10-planner.md": "373b3644f6f324ab18aa76c7f69792e90333e2dc9f90f076182833d880b96cab",
+    "../docs/11-coach-planner-actions.md": "fc086e28b1db9e48e7fef40ab4c1b857af7c775c4d4cfd77d80b21ad9b0cd0b0",
+    "../docs/12-nutrition-planner.md": "0573421621bdbdbf4c9eb619a3d050ab742d9f8d71d1c3f41b45db94c1594e5e",
+    "../docs/08-contexto-de-treino-dieta-e-motivacao.md": "87f2f00ceb60a7894fd4621dd47fc952e1a73ef13153d98a93ea43a13da67a12"
+  },
+  "code": {
+    "src\\evolv_rag\\preparation.py": "e8def72d980952f355a0a3ca3e8b85647c612b2345f5d88d722f3c660b373f0a",
+    "scripts\\prepare_rag_base.py": "1ab3418de6f066980ef3ee1165c4d1b5997e33cad9e64343083101e0be4e8079"
+  },
+  "outputs": {
+    "chunks.jsonl": "089cbe444a4473023c17b01bd8420c4be32ef7cdf0598cc3217ae67e00bc12bd",
+    "config.json": "c5e00cafe493b4877497f5d0daacb5e35e64d83196dff79302b2e30f2afc0036",
+    "documents.json": "e210e10618abf593d8dcc1436b01a21130aabcadc659e133410bd226224b2982",
+    "quarantine.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "report.json": "68ec980a8a44d5b11b75e0429dcf1938008e116948caad5142a6810ecd180199",
+    "sources.json": "ba1ff4ee74fb2214c253a0bd688c4c72fd9cd162416c15bfc2665693112ec57d"
+  }
+}

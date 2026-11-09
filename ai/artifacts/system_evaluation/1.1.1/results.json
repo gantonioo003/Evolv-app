@@ -1,0 +1,793 @@
+{
+  "phase": "7.07.11",
+  "version": "1.1.1",
+  "started_at": "2026-11-09T01:14:59.093Z",
+  "status": "evaluation_completed",
+  "scope": "Development suite; real NestJS, FastAPI, frozen NLP, RAG, Qwen original, Supabase and Planner",
+  "suite_sha256": "aea64ad79ed94482291a4a05434a1d44c0537ede54c57f5c6d38d93032d98904",
+  "credentials_recorded": false,
+  "existing_user_data_modified": false,
+  "native_iphone_tested": false,
+  "checks": [
+    {
+      "name": "temporary_profile_ready",
+      "passed": true
+    },
+    {
+      "name": "real_planner_generates_temporary_plan",
+      "passed": true
+    },
+    {
+      "name": "unauthenticated_coach_denied",
+      "passed": true
+    },
+    {
+      "name": "client_cannot_choose_owner",
+      "passed": true
+    },
+    {
+      "name": "internal_api_requires_key",
+      "passed": true
+    },
+    {
+      "name": "internal_cross_user_denied",
+      "passed": true
+    },
+    {
+      "name": "direct_planner_preview_created",
+      "passed": true
+    },
+    {
+      "name": "direct_preview_does_not_mutate",
+      "passed": true
+    },
+    {
+      "name": "direct_real_planner_apply",
+      "passed": true
+    },
+    {
+      "name": "direct_real_planner_revert",
+      "passed": true
+    },
+    {
+      "name": "mobile_real_message_reaches_real_services",
+      "passed": true
+    },
+    {
+      "name": "mobile_real_history_reopened",
+      "passed": true
+    },
+    {
+      "name": "desktop_grounded_reply_displays_a_source",
+      "passed": true
+    },
+    {
+      "name": "desktop_hydration_reply_and_source",
+      "passed": true
+    },
+    {
+      "name": "mobile_action_preview_created",
+      "passed": true
+    },
+    {
+      "name": "direct_link_waits_for_auth_without_stale_error",
+      "passed": true
+    },
+    {
+      "name": "mobile_preview_has_no_automatic_write",
+      "passed": true
+    },
+    {
+      "name": "mobile_click_applies_real_plan",
+      "passed": true
+    },
+    {
+      "name": "mobile_click_restores_real_plan",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_javascript_errors",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "education-11",
+      "category": "education",
+      "text": "Todo mundo deve beber a mesma quantidade de água no treino?",
+      "topic": "hydration",
+      "task_criteria": "Explica que a quantidade de água depende do contexto e da pessoa.",
+      "http_status": 201,
+      "total_seconds": 18.625764299999997,
+      "result": {
+        "mode": "local_research",
+        "answer": "Necessidade de liquido varia com clima, duracao, intensidade, suor, alimentacao e pessoa. A orientacao geral e chegar hidratado, ter acesso a liquido e repor perdas sem transformar um numero fixo em regra universal. [kb:hydration_is_individual:v1.1.0:001]",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "ask_hydration",
+            "margin": 0.11035788535130484,
+            "confident": false,
+            "alternatives": [
+              {
+                "label": "ask_hydration",
+                "score": 0.15130626947495207
+              },
+              {
+                "label": "ask_nutrition_concept",
+                "score": 0.04094838412364724
+              },
+              {
+                "label": "share_fitness_content",
+                "score": 0.025726404991381444
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "hydration",
+              "domain": "nutrition",
+              "sources": [
+                "lexical"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Todo mundo deve beber a mesma quantidade de água no treino?",
+            "entities": [],
+            "reference_date": "2026-11-08",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [
+            "kb:hydration_is_individual:v1.1.0:001"
+          ],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [
+            "kb:concurrent_training_tradeoffs:v1.2.0:001",
+            "kb:hydration_is_individual:v1.1.0:001",
+            "kb:pre_workout_meal_context:v1.1.0:001"
+          ],
+          "claim_faithfulness_verified": false
+        },
+        "grounding": {
+          "method": "source_excerpt",
+          "status": "supported_excerpt"
+        },
+        "retrieval": {
+          "method": "hybrid",
+          "status": "found",
+          "context": {
+            "used": false,
+            "reason": "standalone",
+            "user_turns_used": 0
+          },
+          "matches": [
+            {
+              "id": "kb:hydration_is_individual:v1.1.0:001",
+              "text": "Necessidade de liquido varia com clima, duracao, intensidade, suor, alimentacao e pessoa. A orientacao geral e chegar hidratado, ter acesso a liquido e repor perdas sem transformar um numero fixo em regra universal.",
+              "score": 0.5909631230893901,
+              "title": "Hidratacao depende do contexto",
+              "domain": "nutrition",
+              "not_for": "Prescrever reposicao em doenca, calor extremo ou sintoma grave.",
+              "ordinal": 1,
+              "char_end": 215,
+              "language": "pt-BR",
+              "citations": [
+                {
+                  "id": "acsm_nutrition_performance_2016",
+                  "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                  "type": "joint_position_statement",
+                  "scope": "Alimentacao, hidratacao, recuperacao e desempenho em cenarios esportivos.",
+                  "title": "Nutrition and Athletic Performance",
+                  "status": "approved",
+                  "domains": [
+                    "nutrition"
+                  ],
+                  "language": "en",
+                  "authority": "professional_scientific_organizations",
+                  "limitations": "Faixas esportivas precisam ser ajustadas ao individuo; o artigo recomenda nutricionista para plano personalizado.",
+                  "organization": "Academy of Nutrition and Dietetics, Dietitians of Canada and American College of Sports Medicine",
+                  "published_at": "2016-03-01",
+                  "reuse_policy": "reference_and_paraphrase_only",
+                  "verification": {
+                    "id": "evidence:acsm_nutrition_performance_2016",
+                    "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica.",
+                    "status": "inherited_not_reverified_in_this_phase",
+                    "locator": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                    "source_id": "acsm_nutrition_performance_2016",
+                    "last_legacy_verification": "2026-10-07"
+                  },
+                  "evidence_role": "sports_nutrition_recommendation",
+                  "review_due_at": "2027-10-07",
+                  "last_verified_at": "2026-10-07"
+                }
+              ],
+              "risk_tags": [
+                "extreme_diet_or_dehydration"
+              ],
+              "topic_ids": [
+                "hydration",
+                "electrolytes",
+                "cardio_conditioning"
+              ],
+              "char_start": 0,
+              "confidence": "moderate",
+              "source_ids": [
+                "acsm_nutrition_performance_2016"
+              ],
+              "allowed_use": "Educacao geral de hidratacao para adulto saudavel.",
+              "document_id": "hydration_is_individual",
+              "reviewed_at": "2026-10-07",
+              "text_sha256": "3ccf45832a836cfd053dd5f336f6279c092203b6faaf90c6fee7d07572b2885b",
+              "content_kind": "scientific_or_safety_synthesis",
+              "evidence_ids": [
+                "evidence:acsm_nutrition_performance_2016"
+              ],
+              "lexical_score": 0.6110592635612071,
+              "response_mode": "cautious",
+              "embedding_text": "Hidratacao depende do contexto\nNecessidade de liquido varia com clima, duracao, intensidade, suor, alimentacao e pessoa. A orientacao geral e chegar hidratado, ter acesso a liquido e repor perdas sem transformar um numero fixo em regra universal.",
+              "evidence_level": "joint_position_statement",
+              "evidence_notes": "Texto herdado; fontes têm estados de conferência individuais no registro de evidências.",
+              "semantic_score": 0.5745208263397217,
+              "source_version": "1.1.0",
+              "generation_context": {
+                "text": "Necessidade de liquido varia com clima, duracao, intensidade, suor, alimentacao e pessoa. A orientacao geral e chegar hidratado, ter acesso a liquido e repor perdas sem transformar um numero fixo em regra universal.",
+                "title": "Hidratacao depende do contexto",
+                "domain": "nutrition",
+                "not_for": "Prescrever reposicao em doenca, calor extremo ou sintoma grave.",
+                "citations": [
+                  {
+                    "id": "acsm_nutrition_performance_2016",
+                    "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                    "type": "joint_position_statement",
+                    "scope": "Alimentacao, hidratacao, recuperacao e desempenho em cenarios esportivos.",
+                    "title": "Nutrition and Athletic Performance",
+                    "status": "approved",
+                    "domains": [
+                      "nutrition"
+                    ],
+                    "language": "en",
+                    "authority": "professional_scientific_organizations",
+                    "limitations": "Faixas esportivas precisam ser ajustadas ao individuo; o artigo recomenda nutricionista para plano personalizado.",
+                    "organization": "Academy of Nutrition and Dietetics, Dietitians of Canada and American College of Sports Medicine",
+                    "published_at": "2016-03-01",
+                    "reuse_policy": "reference_and_paraphrase_only",
+                    "verification": {
+                      "id": "evidence:acsm_nutrition_performance_2016",
+                      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica.",
+                      "status": "inherited_not_reverified_in_this_phase",
+                      "locator": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                      "source_id": "acsm_nutrition_performance_2016",
+                      "last_legacy_verification": "2026-10-07"
+                    },
+                    "evidence_role": "sports_nutrition_recommendation",
+                    "review_due_at": "2027-10-07",
+                    "last_verified_at": "2026-10-07"
+                  }
+                ],
+                "risk_tags": [
+                  "extreme_diet_or_dehydration"
+                ],
+                "topic_ids": [
+                  "hydration",
+                  "electrolytes",
+                  "cardio_conditioning"
+                ],
+                "confidence": "moderate",
+                "source_ids": [
+                  "acsm_nutrition_performance_2016"
+                ],
+                "allowed_use": "Educacao geral de hidratacao para adulto saudavel.",
+                "content_kind": "scientific_or_safety_synthesis",
+                "evidence_ids": [
+                  "evidence:acsm_nutrition_performance_2016"
+                ],
+                "response_mode": "cautious",
+                "evidence_level": "joint_position_statement",
+                "evidence_notes": "Texto herdado; fontes têm estados de conferência individuais no registro de evidências.",
+                "effective_review_due_at": "2027-10-07"
+              },
+              "effective_review_due_at": "2027-10-07"
+            },
+            {
+              "id": "kb:pre_workout_meal_context:v1.1.0:001",
+              "text": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+              "score": 0.472481237945912,
+              "title": "Pre-treino precisa fornecer energia sem atrapalhar",
+              "domain": "nutrition",
+              "not_for": "Prescrever refeicao clinica ou ignorar alergia e restricao.",
+              "ordinal": 1,
+              "char_end": 229,
+              "language": "pt-BR",
+              "citations": [
+                {
+                  "id": "acsm_nutrition_performance_2016",
+                  "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                  "type": "joint_position_statement",
+                  "scope": "Alimentacao, hidratacao, recuperacao e desempenho em cenarios esportivos.",
+                  "title": "Nutrition and Athletic Performance",
+                  "status": "approved",
+                  "domains": [
+                    "nutrition"
+                  ],
+                  "language": "en",
+                  "authority": "professional_scientific_organizations",
+                  "limitations": "Faixas esportivas precisam ser ajustadas ao individuo; o artigo recomenda nutricionista para plano personalizado.",
+                  "organization": "Academy of Nutrition and Dietetics, Dietitians of Canada and American College of Sports Medicine",
+                  "published_at": "2016-03-01",
+                  "reuse_policy": "reference_and_paraphrase_only",
+                  "verification": {
+                    "id": "evidence:acsm_nutrition_performance_2016",
+                    "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica.",
+                    "status": "inherited_not_reverified_in_this_phase",
+                    "locator": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                    "source_id": "acsm_nutrition_performance_2016",
+                    "last_legacy_verification": "2026-10-07"
+                  },
+                  "evidence_role": "sports_nutrition_recommendation",
+                  "review_due_at": "2027-10-07",
+                  "last_verified_at": "2026-10-07"
+                },
+                {
+                  "id": "issn_nutrient_timing_2017",
+                  "url": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+                  "type": "position_stand",
+                  "scope": "Distribuicao de proteina e carboidrato ao redor do exercicio.",
+                  "title": "International Society of Sports Nutrition Position Stand: nutrient timing",
+                  "status": "approved",
+                  "domains": [
+                    "nutrition"
+                  ],
+                  "language": "en",
+                  "authority": "professional_scientific_organization",
+                  "limitations": "O horario nao corrige ingestao total inadequada e depende do tipo de treino e da tolerancia.",
+                  "organization": "International Society of Sports Nutrition",
+                  "published_at": "2017-08-29",
+                  "reuse_policy": "reference_and_paraphrase_only",
+                  "verification": {
+                    "id": "evidence:issn_nutrient_timing_2017",
+                    "notes": "Demanda do exercício e ingestão diária contextualizam alimentação pré e pós-treino.",
+                    "method": "full_text",
+                    "status": "reviewed_selected_scope",
+                    "locator": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+                    "section": "Position stand; Carbohydrates; Protein",
+                    "source_id": "issn_nutrient_timing_2017",
+                    "verified_at": "2026-11-03",
+                    "last_legacy_verification": "2026-10-07"
+                  },
+                  "evidence_role": "sports_nutrition_recommendation",
+                  "review_due_at": "2027-11-03",
+                  "last_verified_at": "2026-11-03"
+                }
+              ],
+              "risk_tags": [],
+              "topic_ids": [
+                "pre_workout_meal",
+                "digestive_comfort",
+                "carbohydrate_intake"
+              ],
+              "char_start": 0,
+              "confidence": "moderate",
+              "source_ids": [
+                "acsm_nutrition_performance_2016",
+                "issn_nutrient_timing_2017"
+              ],
+              "allowed_use": "Sugerir estrutura geral baseada em tolerancia e contexto.",
+              "document_id": "pre_workout_meal_context",
+              "reviewed_at": "2026-10-07",
+              "text_sha256": "da0e20bd9a2bc10bceff24220a2cd6d63d4c8d9caa8cf1f89262cc59005aca42",
+              "content_kind": "scientific_or_safety_synthesis",
+              "evidence_ids": [
+                "evidence:acsm_nutrition_performance_2016",
+                "evidence:issn_nutrient_timing_2017"
+              ],
+              "lexical_score": 0.4829971373036123,
+              "response_mode": "educate",
+              "embedding_text": "Pre-treino precisa fornecer energia sem atrapalhar\nUma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+              "evidence_level": "position_stand",
+              "evidence_notes": "Texto herdado; fontes têm estados de conferência individuais no registro de evidências.",
+              "semantic_score": 0.4638773202896118,
+              "source_version": "1.1.0",
+              "generation_context": {
+                "text": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+                "title": "Pre-treino precisa fornecer energia sem atrapalhar",
+                "domain": "nutrition",
+                "not_for": "Prescrever refeicao clinica ou ignorar alergia e restricao.",
+                "citations": [
+                  {
+                    "id": "acsm_nutrition_performance_2016",
+                    "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                    "type": "joint_position_statement",
+                    "scope": "Alimentacao, hidratacao, recuperacao e desempenho em cenarios esportivos.",
+                    "title": "Nutrition and Athletic Performance",
+                    "status": "approved",
+                    "domains": [
+                      "nutrition"
+                    ],
+                    "language": "en",
+                    "authority": "professional_scientific_organizations",
+                    "limitations": "Faixas esportivas precisam ser ajustadas ao individuo; o artigo recomenda nutricionista para plano personalizado.",
+                    "organization": "Academy of Nutrition and Dietetics, Dietitians of Canada and American College of Sports Medicine",
+                    "published_at": "2016-03-01",
+                    "reuse_policy": "reference_and_paraphrase_only",
+                    "verification": {
+                      "id": "evidence:acsm_nutrition_performance_2016",
+                      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica.",
+                      "status": "inherited_not_reverified_in_this_phase",
+                      "locator": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                      "source_id": "acsm_nutrition_performance_2016",
+                      "last_legacy_verification": "2026-10-07"
+                    },
+                    "evidence_role": "sports_nutrition_recommendation",
+                    "review_due_at": "2027-10-07",
+                    "last_verified_at": "2026-10-07"
+                  },
+                  {
+                    "id": "issn_nutrient_timing_2017",
+                    "url": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+                    "type": "position_stand",
+                    "scope": "Distribuicao de proteina e carboidrato ao redor do exercicio.",
+                    "title": "International Society of Sports Nutrition Position Stand: nutrient timing",
+                    "status": "approved",
+                    "domains": [
+                      "nutrition"
+                    ],
+                    "language": "en",
+                    "authority": "professional_scientific_organization",
+                    "limitations": "O horario nao corrige ingestao total inadequada e depende do tipo de treino e da tolerancia.",
+                    "organization": "International Society of Sports Nutrition",
+                    "published_at": "2017-08-29",
+                    "reuse_policy": "reference_and_paraphrase_only",
+                    "verification": {
+                      "id": "evidence:issn_nutrient_timing_2017",
+                      "notes": "Demanda do exercício e ingestão diária contextualizam alimentação pré e pós-treino.",
+                      "method": "full_text",
+                      "status": "reviewed_selected_scope",
+                      "locator": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+                      "section": "Position stand; Carbohydrates; Protein",
+                      "source_id": "issn_nutrient_timing_2017",
+                      "verified_at": "2026-11-03",
+                      "last_legacy_verification": "2026-10-07"
+                    },
+                    "evidence_role": "sports_nutrition_recommendation",
+                    "review_due_at": "2027-11-03",
+                    "last_verified_at": "2026-11-03"
+                  }
+                ],
+                "risk_tags": [],
+                "topic_ids": [
+                  "pre_workout_meal",
+                  "digestive_comfort",
+                  "carbohydrate_intake"
+                ],
+                "confidence": "moderate",
+                "source_ids": [
+                  "acsm_nutrition_performance_2016",
+                  "issn_nutrient_timing_2017"
+                ],
+                "allowed_use": "Sugerir estrutura geral baseada em tolerancia e contexto.",
+                "content_kind": "scientific_or_safety_synthesis",
+                "evidence_ids": [
+                  "evidence:acsm_nutrition_performance_2016",
+                  "evidence:issn_nutrient_timing_2017"
+                ],
+                "response_mode": "educate",
+                "evidence_level": "position_stand",
+                "evidence_notes": "Texto herdado; fontes têm estados de conferência individuais no registro de evidências.",
+                "effective_review_due_at": "2027-10-07"
+              },
+              "effective_review_due_at": "2027-10-07"
+            },
+            {
+              "id": "kb:concurrent_training_tradeoffs:v1.2.0:001",
+              "text": "Uma revisão não encontrou prejuízo médio à hipertrofia ou força máxima ao combinar treino aeróbio e força. Ganhos de força explosiva podem ser menores, especialmente quando ambos são feitos na mesma sessão. Isso não significa que todo cardio atrapalhe nem define sozinho a melhor agenda individual.",
+              "score": 0.38884697446401234,
+              "title": "Cardio e musculação podem coexistir",
+              "domain": "training",
+              "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano.",
+              "ordinal": 1,
+              "char_end": 298,
+              "language": "pt-BR",
+              "citations": [
+                {
+                  "id": "concurrent_training_review_2022",
+                  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+                  "type": "systematic_review_meta_analysis",
+                  "notes": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+                  "scope": "Abstract: Results and Conclusion",
+                  "title": "Compatibility of Concurrent Aerobic and Strength Training for Skeletal Muscle Size and Function",
+                  "status": "approved",
+                  "domains": [
+                    "training"
+                  ],
+                  "section": "Abstract: Results and Conclusion",
+                  "language": "en",
+                  "authority": "primary_institution_or_research_authors",
+                  "limitations": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+                  "organization": "Sports Medicine / Schumann et al.",
+                  "published_at": null,
+                  "reuse_policy": "reference_and_original_paraphrase_only",
+                  "verification": {
+                    "id": "evidence:concurrent_training_review_2022",
+                    "notes": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+                    "method": "web_primary_source_selected_sections",
+                    "status": "reviewed",
+                    "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+                    "section": "Abstract: Results and Conclusion",
+                    "source_id": "concurrent_training_review_2022",
+                    "verified_at": "2026-11-03"
+                  },
+                  "evidence_role": "scoped_education",
+                  "review_due_at": "2027-11-03",
+                  "approval_scope": "editorial_not_clinical_signoff",
+                  "last_verified_at": "2026-11-03",
+                  "publication_year": 2022
+                }
+              ],
+              "risk_tags": [],
+              "topic_ids": [
+                "concurrent_training",
+                "cardio_conditioning",
+                "strength_training",
+                "sport_specific_training"
+              ],
+              "char_start": 0,
+              "confidence": "moderate",
+              "source_ids": [
+                "concurrent_training_review_2022"
+              ],
+              "allowed_use": "Explicação educativa geral com limites explícitos; não executar alterações automaticamente.",
+              "document_id": "concurrent_training_tradeoffs",
+              "reviewed_at": "2026-11-03",
+              "text_sha256": "dd3361abbc692292fb9a7972733f9b1080cad2128baa2927fa4467c5e43249d2",
+              "content_kind": "scientific_or_safety_synthesis",
+              "evidence_ids": [
+                "evidence:concurrent_training_review_2022"
+              ],
+              "lexical_score": 0.32874520375055993,
+              "response_mode": "educate",
+              "embedding_text": "Cardio e musculação podem coexistir\nUma revisão não encontrou prejuízo médio à hipertrofia ou força máxima ao combinar treino aeróbio e força. Ganhos de força explosiva podem ser menores, especialmente quando ambos são feitos na mesma sessão. Isso não significa que todo cardio atrapalhe nem define sozinho a melhor agenda individual.",
+              "evidence_level": "scoped_primary_source_synthesis",
+              "evidence_notes": "Síntese de estudos, não garantia individual ou programação específica para vôlei/tênis.",
+              "semantic_score": 0.43802115321159363,
+              "source_version": "1.2.0",
+              "generation_context": {
+                "text": "Uma revisão não encontrou prejuízo médio à hipertrofia ou força máxima ao combinar treino aeróbio e força. Ganhos de força explosiva podem ser menores, especialmente quando ambos são feitos na mesma sessão. Isso não significa que todo cardio atrapalhe nem define sozinho a melhor agenda individual.",
+                "title": "Cardio e musculação podem coexistir",
+                "domain": "training",
+                "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano.",
+                "citations": [
+                  {
+                    "id": "concurrent_training_review_2022",
+                    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+                    "type": "systematic_review_meta_analysis",
+                    "notes": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+                    "scope": "Abstract: Results and Conclusion",
+                    "title": "Compatibility of Concurrent Aerobic and Strength Training for Skeletal Muscle Size and Function",
+                    "status": "approved",
+                    "domains": [
+                      "training"
+                    ],
+                    "section": "Abstract: Results and Conclusion",
+                    "language": "en",
+                    "authority": "primary_institution_or_research_authors",
+                    "limitations": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+                    "organization": "Sports Medicine / Schumann et al.",
+                    "published_at": null,
+                    "reuse_policy": "reference_and_original_paraphrase_only",
+                    "verification": {
+                      "id": "evidence:concurrent_training_review_2022",
+                      "notes": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+                      "method": "web_primary_source_selected_sections",
+                      "status": "reviewed",
+                      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+                      "section": "Abstract: Results and Conclusion",
+                      "source_id": "concurrent_training_review_2022",
+                      "verified_at": "2026-11-03"
+                    },
+                    "evidence_role": "scoped_education",
+                    "review_due_at": "2027-11-03",
+                    "approval_scope": "editorial_not_clinical_signoff",
+                    "last_verified_at": "2026-11-03",
+                    "publication_year": 2022
+                  }
+                ],
+                "risk_tags": [],
+                "topic_ids": [
+                  "concurrent_training",
+                  "cardio_conditioning",
+                  "strength_training",
+                  "sport_specific_training"
+                ],
+                "confidence": "moderate",
+                "source_ids": [
+                  "concurrent_training_review_2022"
+                ],
+                "allowed_use": "Explicação educativa geral com limites explícitos; não executar alterações automaticamente.",
+                "content_kind": "scientific_or_safety_synthesis",
+                "evidence_ids": [
+                  "evidence:concurrent_training_review_2022"
+                ],
+                "response_mode": "educate",
+                "evidence_level": "scoped_primary_source_synthesis",
+                "evidence_notes": "Síntese de estudos, não garantia individual ou programação específica para vôlei/tênis.",
+                "effective_review_due_at": "2027-11-03"
+              },
+              "effective_review_due_at": "2027-11-03"
+            }
+          ],
+          "threshold": 0.3,
+          "score_is_probability": false
+        },
+        "generation": {
+          "seconds": 6.817256599897519,
+          "variant": "original",
+          "input_tokens": 916,
+          "stopped_at_eos": true,
+          "generated_tokens": 6,
+          "tokens_per_second": 0.8801194310465291
+        },
+        "clarification": null,
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": true
+      },
+      "checks": {
+        "http_ok": true,
+        "no_unknown_citations": true,
+        "no_automatic_action": true,
+        "generated": true,
+        "completed_generation": true,
+        "expected_risk_detected": null
+      }
+    }
+  ],
+  "dialogues": [],
+  "actions": [
+    {
+      "origin": "direct_planner_not_nlu",
+      "kind": "set_day_activity",
+      "apply_http": 201,
+      "revert_http": 201
+    },
+    {
+      "origin": "real_mobile_manual_planner_not_nlu",
+      "kind": "move_workout_day",
+      "confirmed_in_browser": true
+    }
+  ],
+  "temporary_users_created": 2,
+  "temporary_users_deleted": 2,
+  "case_filter": [
+    "education-11"
+  ],
+  "ai_runtime": {
+    "status": "ready",
+    "mode": "generate",
+    "variant": "original",
+    "nlp_version": "1.9.0",
+    "retrieval_version": "1.1.2"
+  },
+  "cold_start_seconds": 112.0934216,
+  "plan_generation_status": 201,
+  "test_plan_id": "b9c99b45-8440-4cc6-9167-5a20af60cbf7",
+  "browser": {
+    "version": "156.0.4314.58",
+    "viewport": {
+      "width": 1366,
+      "height": 900
+    },
+    "network_mocked": false,
+    "auth_mocked": false,
+    "requests": [
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 201
+      },
+      {
+        "path": "/api/coach/sessions/43e2a070-35c2-401b-b72d-21dbe5d6d904/messages",
+        "status": 201
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions/43e2a070-35c2-401b-b72d-21dbe5d6d904/messages",
+        "status": 200
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 201
+      },
+      {
+        "path": "/api/coach/sessions/463c2dc3-37bf-483d-91be-f57c8197581e/messages",
+        "status": 201
+      },
+      {
+        "path": "/api/coach/sessions",
+        "status": 200
+      }
+    ],
+    "page_error_types": []
+  },
+  "cleanup_complete": true,
+  "completed_at": "2026-11-09T01:17:59.335Z",
+  "summary": {
+    "completed_cases": 1,
+    "total_cases": 1,
+    "generated": 1,
+    "truncated": 0,
+    "proposed_actions": 0,
+    "real_coach_action_cycles": 0,
+    "checks_passed": 20,
+    "checks_failed": 0,
+    "warm_request_p50_seconds": 18.625764299999997,
+    "warm_request_p95_seconds": 18.625764299999997
+  },
+  "service_error_observed": false
+}

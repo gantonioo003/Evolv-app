@@ -1,0 +1,36 @@
+{
+  "version": "1.1.0",
+  "as_of": "2026-11-03",
+  "inputs": {
+    "data/knowledge/1.2.0/knowledge_chunks.json": "69a8cc0e9ce99f78c971ac6ac21b0f2e5b4f29502aeb8dfd926e8a5278cb1705",
+    "data/knowledge/1.2.0/sources.json": "dd4add0f6de993babc17fed014e439d24fa67d43a492816f264d347d46983d37",
+    "data/knowledge/1.2.0/risks.json": "97f7f3bf1dfaf8b67b0db3b7f06e6c9989a92a921436e61ce28715154fbe31d0",
+    "data/knowledge/1.2.0/coverage.json": "cc7d1773ab72af7fff9f64bd02d560891a7e1ee465da9177762c0779b334b0a1",
+    "data/knowledge/1.2.0/evidence.json": "4b5467c4741d3af4d88e0a56feecc8ac6bd8b8b7291955373337a0ff5c5139c3",
+    "data/knowledge/1.2.0/boundaries.json": "b3e85940c4ed990be4904d3d9e877c4067441341d997dc8d1937ff5b1bbb1fcb",
+    "data/knowledge/1.2.0/changes.json": "3e31bbe80d1c5c36a39a1515295c6886c2f001365133cc9bf8fbe8bae25497e3",
+    "data/knowledge/1.2.0/acceptance_cases.json": "a50fabad22b2cb7d9b2192b4e01fc89f0c758824bbbd052428cff163594f629d",
+    "data/knowledge/review_7_07_6.v1.json": "3e5e769c8d3d3e1de14af67ddd6adcfc1b0ad7caf095d152f3c4a87c841af8d9",
+    "data/taxonomy/topics.v1.json": "7d9e0fd9139e29f2915b9a6fc69208d65cb483a395ebc5a61bdf1a029e379789",
+    "../docs/50-coach-real-action-validation.md": "cbcf7b2ff6c5de82b35787caef3f330e294228e77d0fcab5be3fc591e80ad1d7",
+    "../backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+    "../ai/src/evolv_rag/coach.py": "f185f4f7871a51c0bc893e65817c03446edc66a714df54671274b3c1a2c811b1",
+    "../ai/src/evolv_rag/actions.py": "2ad6d9de3c07c1ee54109a3dcdee52c767e191d0e6ad8087bb2016d688c93920",
+    "../docs/10-planner.md": "373b3644f6f324ab18aa76c7f69792e90333e2dc9f90f076182833d880b96cab",
+    "../docs/11-coach-planner-actions.md": "fc086e28b1db9e48e7fef40ab4c1b857af7c775c4d4cfd77d80b21ad9b0cd0b0",
+    "../docs/12-nutrition-planner.md": "0573421621bdbdbf4c9eb619a3d050ab742d9f8d71d1c3f41b45db94c1594e5e",
+    "../docs/08-contexto-de-treino-dieta-e-motivacao.md": "87f2f00ceb60a7894fd4621dd47fc952e1a73ef13153d98a93ea43a13da67a12"
+  },
+  "code": {
+    "src\\evolv_rag\\preparation.py": "e8def72d980952f355a0a3ca3e8b85647c612b2345f5d88d722f3c660b373f0a",
+    "scripts\\prepare_rag_base.py": "1ab3418de6f066980ef3ee1165c4d1b5997e33cad9e64343083101e0be4e8079"
+  },
+  "outputs": {
+    "chunks.jsonl": "be6654b22e221fe30c70eb9f67a0f18a839cb26758cc2911c17313e1d4674f1f",
+    "config.json": "2fdcc84225e66ccec43b210042039026e289ffb4d6a21d98e8070543908cff2b",
+    "documents.json": "e210e10618abf593d8dcc1436b01a21130aabcadc659e133410bd226224b2982",
+    "quarantine.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "report.json": "68ec980a8a44d5b11b75e0429dcf1938008e116948caad5142a6810ecd180199",
+    "sources.json": "852bc8b667791ffb39cc59d9fd359ab2f29f85dd601da996d8b712a3ee4f7413"
+  }
+}

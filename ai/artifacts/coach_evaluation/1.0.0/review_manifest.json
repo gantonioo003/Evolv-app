@@ -1,0 +1,16 @@
+{
+  "report_code_sha256": "7fabdf8352716b28ebef71db06c4576f5e284c8794da4e8873d2ae57848b8cca",
+  "inputs": {
+    "turns.jsonl": "e861af537e9a5ca9a4eb2943543fa55113092c6ecaf159ba3035c5b5717f46c5",
+    "summary.json": "8e82cd9aa0d0e5be7c8129186392add1e50cb2561e0be60772d096c81fabcef8",
+    "review.json": "7b93260e61bafcafd7c7a09b49b9af194b40787a78f957166667bbba1b8467e6",
+    "manifest.json": "56fea36843938a7c09090300b99ff226c3e5f6469e9b3222f242d46a887fa288",
+    "regressions/results.json": "4b33f8632b4c3aa4f960abddda0c2a838e9151ef0f8abc4e1e461fbedc666dcc"
+  },
+  "outputs": {
+    "RESULTS.md": "9f9d760e00f0b4bc15255e3067faf64b6565f085b5c0cd29e4bd76e7deec4ef3",
+    "conversations.html": "9aae1333827798394d918b32c3a3346b6e23a708f005b1d06014516a979ea0cc",
+    "decision.json": "324b8606b87bcf24728f0d7634a9f2e6ad2aabc58d586f823a483cb6ee5db40a",
+    "completion.json": "5c178d0874288761f8d2f65f1730e275e72db27621cf9ce86f965227145e5c7b"
+  }
+}

@@ -2,7 +2,9 @@
 
 API do Evolv criada com Node.js, TypeScript e NestJS.
 
-Esta pasta concentra a autenticacao recebida do aplicativo, as regras de negocio e o acesso seguro ao Supabase. O backend do MVP esta concluido para perfil, objetivos, treino, cargas, dieta e progresso. O Planner deterministico tambem gera, persiste e administra planos reais; o Coach local sera integrado em uma fase posterior.
+Esta pasta concentra a autenticacao recebida do aplicativo, as regras de negocio e o acesso seguro ao Supabase. O backend do MVP esta concluido para perfil, objetivos, treino, cargas, dieta e progresso. O Planner deterministico tambem gera, persiste e administra planos reais. O Coach foi conectado a FastAPI, historico e Mobile, e avaliado com os servicos reais na 7.06.5; continua experimental por limitacoes de cobertura e propostas do NLP.
+
+Metodo, recursos e limites: [avaliacao completa](../docs/45-coach-system-evaluation.md).
 
 ## Base implementada
 

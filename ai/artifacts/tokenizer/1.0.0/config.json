@@ -1,0 +1,26 @@
+{
+  "add_prefix_space": false,
+  "algorithm": "ByteLevel BPE",
+  "byte_alphabet_size": 256,
+  "fit_field": "text",
+  "fit_partition": "train",
+  "literal_special_tokens": "encode as ordinary text; explicit trusted boundaries only",
+  "lowercase": false,
+  "min_frequency": 2,
+  "normalization": "NFC",
+  "padding": null,
+  "requested_vocab_size": 8192,
+  "selection": "fixed_before_heldout_tokenization; no vocabulary search on test",
+  "special_token_ids": {
+    "<|assistant|>": 6,
+    "<|bos|>": 1,
+    "<|eos|>": 2,
+    "<|pad|>": 0,
+    "<|system|>": 4,
+    "<|unk|>": 3,
+    "<|user|>": 5
+  },
+  "strip_accents": false,
+  "truncation": null,
+  "use_regex": true
+}

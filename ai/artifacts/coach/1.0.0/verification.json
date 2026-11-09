@@ -1,0 +1,1018 @@
+{
+  "phase": "7.05.3",
+  "mode": "local_research",
+  "unit_tests_passed": 9,
+  "real_nlp_search_adapter_loaded": true,
+  "real_generated_answers": 2,
+  "no_app_or_database_connection": true,
+  "quality_or_safety_certification": false,
+  "cases": [
+    {
+      "prompt": "Quanto tempo um adulto deve dormir?",
+      "result": {
+        "schema_version": "coach.1.0.0",
+        "mode": "local_research",
+        "analysis": {
+          "schema_version": "1.5.0",
+          "model_version": "1.8.0",
+          "dataset_version": "1.8.0",
+          "status": "experimental_opt_in_not_default",
+          "intent": {
+            "label": "ask_sleep_habits",
+            "margin": 0.013573493226707603,
+            "confident": false,
+            "is_calibrated_probability": false,
+            "alternatives": [
+              {
+                "label": "ask_sleep_habits",
+                "score": 0.0469997961137087
+              },
+              {
+                "label": "calculate_body_metric",
+                "score": 0.033426302887001096
+              },
+              {
+                "label": "create_training_plan",
+                "score": 0.02979911452609242
+              }
+            ],
+            "low_support_labels_require_clarification": true
+          },
+          "risk": {
+            "labels": [],
+            "model_labels": [],
+            "rules": {
+              "risks": [],
+              "evidence": [],
+              "status": "unmatched",
+              "ambiguity_flag": false,
+              "rules_version": "1.4.0",
+              "safety_assessment": "unknown",
+              "requires_review": true,
+              "is_diagnosis": false
+            },
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "entities": {
+            "text": "Quanto tempo um adulto deve dormir?",
+            "reference_date": "2026-11-02",
+            "extractor_version": "1.3.0",
+            "catalog_version": "1.3.0",
+            "entities": [
+              {
+                "entity_type": "barrier",
+                "text": "tempo",
+                "value": "tempo",
+                "start": 7,
+                "end": 12,
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "tempo"
+                }
+              }
+            ]
+          },
+          "route": "clarify",
+          "missing_required_entities": [],
+          "topics": [
+            {
+              "id": "session_duration",
+              "domain": "training",
+              "sources": [
+                "lexical"
+              ]
+            },
+            {
+              "id": "tempo_and_cadence",
+              "domain": "training",
+              "sources": [
+                "lexical"
+              ]
+            }
+          ],
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "no_injury_treatment_prescription": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "component_families": {
+            "intent": "classical",
+            "risk": "classical"
+          }
+        },
+        "retrieval": {
+          "status": "found",
+          "matches": [
+            {
+              "score": 0.6581615805625916,
+              "id": "kb:sleep_duration_adults:v1.1.0:001",
+              "document_id": "sleep_duration_adults",
+              "ordinal": 1,
+              "language": "pt-BR",
+              "title": "Sono suficiente e qualidade importam",
+              "domain": "recovery",
+              "topic_ids": [
+                "sleep_duration",
+                "sleep_quality"
+              ],
+              "risk_tags": [],
+              "response_mode": "educate",
+              "allowed_use": "Educacao geral e contexto de recuperacao.",
+              "not_for": "Diagnosticar disturbio do sono.",
+              "confidence": "high",
+              "evidence_level": "official_public_health",
+              "text": "Para adultos de 18 a 60 anos, a referencia populacional e pelo menos sete horas de sono por dia. Duracao nao e o unico fator: regularidade, qualidade, despertares e funcionamento durante o dia ajudam a interpretar recuperacao.",
+              "char_start": 0,
+              "char_end": 226,
+              "text_sha256": "f11687f8c497102387a3b93441af5bcd0d4d8c81d64239f3954afc2a049e5295",
+              "embedding_text": "Sono suficiente e qualidade importam\nPara adultos de 18 a 60 anos, a referencia populacional e pelo menos sete horas de sono por dia. Duracao nao e o unico fator: regularidade, qualidade, despertares e funcionamento durante o dia ajudam a interpretar recuperacao.",
+              "source_ids": [
+                "cdc_sleep_2024"
+              ],
+              "citations": [
+                {
+                  "id": "cdc_sleep_2024",
+                  "title": "About Sleep",
+                  "organization": "Centers for Disease Control and Prevention",
+                  "type": "official_public_health",
+                  "domains": [
+                    "recovery",
+                    "safety"
+                  ],
+                  "authority": "national_public_health_authority",
+                  "evidence_role": "population_guidance",
+                  "status": "approved",
+                  "published_at": "2024-05-15",
+                  "last_verified_at": "2026-10-07",
+                  "review_due_at": "2027-04-07",
+                  "url": "https://www.cdc.gov/sleep/about/index.html",
+                  "language": "en",
+                  "scope": "Duracao e qualidade do sono por faixa etaria.",
+                  "limitations": "Referencia populacional; nao diagnostica insonia ou outro disturbio do sono.",
+                  "reuse_policy": "reference_and_paraphrase_only"
+                }
+              ],
+              "reviewed_at": "2026-10-07",
+              "effective_review_due_at": "2027-04-07",
+              "source_version": "1.1.0",
+              "generation_context": {
+                "title": "Sono suficiente e qualidade importam",
+                "domain": "recovery",
+                "topic_ids": [
+                  "sleep_duration",
+                  "sleep_quality"
+                ],
+                "risk_tags": [],
+                "response_mode": "educate",
+                "allowed_use": "Educacao geral e contexto de recuperacao.",
+                "not_for": "Diagnosticar disturbio do sono.",
+                "confidence": "high",
+                "evidence_level": "official_public_health",
+                "text": "Para adultos de 18 a 60 anos, a referencia populacional e pelo menos sete horas de sono por dia. Duracao nao e o unico fator: regularidade, qualidade, despertares e funcionamento durante o dia ajudam a interpretar recuperacao.",
+                "source_ids": [
+                  "cdc_sleep_2024"
+                ],
+                "citations": [
+                  {
+                    "id": "cdc_sleep_2024",
+                    "title": "About Sleep",
+                    "organization": "Centers for Disease Control and Prevention",
+                    "type": "official_public_health",
+                    "domains": [
+                      "recovery",
+                      "safety"
+                    ],
+                    "authority": "national_public_health_authority",
+                    "evidence_role": "population_guidance",
+                    "status": "approved",
+                    "published_at": "2024-05-15",
+                    "last_verified_at": "2026-10-07",
+                    "review_due_at": "2027-04-07",
+                    "url": "https://www.cdc.gov/sleep/about/index.html",
+                    "language": "en",
+                    "scope": "Duracao e qualidade do sono por faixa etaria.",
+                    "limitations": "Referencia populacional; nao diagnostica insonia ou outro disturbio do sono.",
+                    "reuse_policy": "reference_and_paraphrase_only"
+                  }
+                ],
+                "effective_review_due_at": "2027-04-07"
+              }
+            },
+            {
+              "score": 0.5238043665885925,
+              "id": "kb:sleep_habits_general:v1.1.0:001",
+              "document_id": "sleep_habits_general",
+              "ordinal": 1,
+              "language": "pt-BR",
+              "title": "Habitos consistentes podem apoiar o sono",
+              "domain": "recovery",
+              "topic_ids": [
+                "sleep_quality",
+                "routine_and_schedule",
+                "supplement_caffeine"
+              ],
+              "risk_tags": [],
+              "response_mode": "educate",
+              "allowed_use": "Oferecer higiene do sono geral e nao punitiva.",
+              "not_for": "Tratar insonia ou recomendar medicacao.",
+              "confidence": "moderate",
+              "evidence_level": "official_public_health_and_consensus",
+              "text": "Horario relativamente regular, ambiente escuro e silencioso, rotina de desaceleracao e cuidado com cafeina, alcool e refeicoes pesadas perto de dormir podem apoiar o sono. Mudancas pequenas e sustentaveis sao preferiveis a uma lista rigida.",
+              "char_start": 0,
+              "char_end": 240,
+              "text_sha256": "c72dadccff6f38496c898b0792310a86b83d182c9a405eb91fed178a45e56ee9",
+              "embedding_text": "Habitos consistentes podem apoiar o sono\nHorario relativamente regular, ambiente escuro e silencioso, rotina de desaceleracao e cuidado com cafeina, alcool e refeicoes pesadas perto de dormir podem apoiar o sono. Mudancas pequenas e sustentaveis sao preferiveis a uma lista rigida.",
+              "source_ids": [
+                "cdc_sleep_2024",
+                "athlete_sleep_consensus_2021"
+              ],
+              "citations": [
+                {
+                  "id": "cdc_sleep_2024",
+                  "title": "About Sleep",
+                  "organization": "Centers for Disease Control and Prevention",
+                  "type": "official_public_health",
+                  "domains": [
+                    "recovery",
+                    "safety"
+                  ],
+                  "authority": "national_public_health_authority",
+                  "evidence_role": "population_guidance",
+                  "status": "approved",
+                  "published_at": "2024-05-15",
+                  "last_verified_at": "2026-10-07",
+                  "review_due_at": "2027-04-07",
+                  "url": "https://www.cdc.gov/sleep/about/index.html",
+                  "language": "en",
+                  "scope": "Duracao e qualidade do sono por faixa etaria.",
+                  "limitations": "Referencia populacional; nao diagnostica insonia ou outro disturbio do sono.",
+                  "reuse_policy": "reference_and_paraphrase_only"
+                },
+                {
+                  "id": "athlete_sleep_consensus_2021",
+                  "title": "Sleep and the athlete: narrative review and 2021 expert consensus recommendations",
+                  "organization": "British Journal of Sports Medicine expert panel",
+                  "type": "expert_consensus",
+                  "domains": [
+                    "recovery"
+                  ],
+                  "authority": "multidisciplinary_expert_panel",
+                  "evidence_role": "athlete_sleep_recommendation",
+                  "status": "approved",
+                  "published_at": "2021-04-01",
+                  "last_verified_at": "2026-10-07",
+                  "review_due_at": "2027-10-07",
+                  "url": "https://bjsm.bmj.com/content/55/7/356",
+                  "language": "en",
+                  "scope": "Sono, monitoramento, desempenho e encaminhamento em atletas.",
+                  "limitations": "A propria revisao relata limitacoes de qualidade e recomenda individualizacao.",
+                  "reuse_policy": "reference_and_paraphrase_only"
+                }
+              ],
+              "reviewed_at": "2026-10-07",
+              "effective_review_due_at": "2027-04-07",
+              "source_version": "1.1.0",
+              "generation_context": {
+                "title": "Habitos consistentes podem apoiar o sono",
+                "domain": "recovery",
+                "topic_ids": [
+                  "sleep_quality",
+                  "routine_and_schedule",
+                  "supplement_caffeine"
+                ],
+                "risk_tags": [],
+                "response_mode": "educate",
+                "allowed_use": "Oferecer higiene do sono geral e nao punitiva.",
+                "not_for": "Tratar insonia ou recomendar medicacao.",
+                "confidence": "moderate",
+                "evidence_level": "official_public_health_and_consensus",
+                "text": "Horario relativamente regular, ambiente escuro e silencioso, rotina de desaceleracao e cuidado com cafeina, alcool e refeicoes pesadas perto de dormir podem apoiar o sono. Mudancas pequenas e sustentaveis sao preferiveis a uma lista rigida.",
+                "source_ids": [
+                  "cdc_sleep_2024",
+                  "athlete_sleep_consensus_2021"
+                ],
+                "citations": [
+                  {
+                    "id": "cdc_sleep_2024",
+                    "title": "About Sleep",
+                    "organization": "Centers for Disease Control and Prevention",
+                    "type": "official_public_health",
+                    "domains": [
+                      "recovery",
+                      "safety"
+                    ],
+                    "authority": "national_public_health_authority",
+                    "evidence_role": "population_guidance",
+                    "status": "approved",
+                    "published_at": "2024-05-15",
+                    "last_verified_at": "2026-10-07",
+                    "review_due_at": "2027-04-07",
+                    "url": "https://www.cdc.gov/sleep/about/index.html",
+                    "language": "en",
+                    "scope": "Duracao e qualidade do sono por faixa etaria.",
+                    "limitations": "Referencia populacional; nao diagnostica insonia ou outro disturbio do sono.",
+                    "reuse_policy": "reference_and_paraphrase_only"
+                  },
+                  {
+                    "id": "athlete_sleep_consensus_2021",
+                    "title": "Sleep and the athlete: narrative review and 2021 expert consensus recommendations",
+                    "organization": "British Journal of Sports Medicine expert panel",
+                    "type": "expert_consensus",
+                    "domains": [
+                      "recovery"
+                    ],
+                    "authority": "multidisciplinary_expert_panel",
+                    "evidence_role": "athlete_sleep_recommendation",
+                    "status": "approved",
+                    "published_at": "2021-04-01",
+                    "last_verified_at": "2026-10-07",
+                    "review_due_at": "2027-10-07",
+                    "url": "https://bjsm.bmj.com/content/55/7/356",
+                    "language": "en",
+                    "scope": "Sono, monitoramento, desempenho e encaminhamento em atletas.",
+                    "limitations": "A propria revisao relata limitacoes de qualidade e recomenda individualizacao.",
+                    "reuse_policy": "reference_and_paraphrase_only"
+                  }
+                ],
+                "effective_review_due_at": "2027-04-07"
+              }
+            },
+            {
+              "score": 0.5083866119384766,
+              "id": "kb:athlete_sleep_is_individual:v1.1.0:001",
+              "document_id": "athlete_sleep_is_individual",
+              "ordinal": 1,
+              "language": "pt-BR",
+              "title": "Necessidade de sono do atleta nao e um numero unico",
+              "domain": "recovery",
+              "topic_ids": [
+                "sleep_duration",
+                "training_performance",
+                "travel_training"
+              ],
+              "risk_tags": [],
+              "response_mode": "educate",
+              "allowed_use": "Explicar individualizacao de sono no esporte.",
+              "not_for": "Prescrever extensao de sono como tratamento de insonia.",
+              "confidence": "moderate",
+              "evidence_level": "expert_consensus",
+              "text": "Atletas podem precisar de mais oportunidade de sono conforme carga, idade, viagem e competicao, mas uma meta identica para todos nao e adequada. Necessidade percebida, sonolencia, desempenho e qualidade ajudam a individualizar.",
+              "char_start": 0,
+              "char_end": 227,
+              "text_sha256": "975275443a4da121f43f37b283cf042dd15f229f15c4345d4d45d6601fba985a",
+              "embedding_text": "Necessidade de sono do atleta nao e um numero unico\nAtletas podem precisar de mais oportunidade de sono conforme carga, idade, viagem e competicao, mas uma meta identica para todos nao e adequada. Necessidade percebida, sonolencia, desempenho e qualidade ajudam a individualizar.",
+              "source_ids": [
+                "athlete_sleep_consensus_2021"
+              ],
+              "citations": [
+                {
+                  "id": "athlete_sleep_consensus_2021",
+                  "title": "Sleep and the athlete: narrative review and 2021 expert consensus recommendations",
+                  "organization": "British Journal of Sports Medicine expert panel",
+                  "type": "expert_consensus",
+                  "domains": [
+                    "recovery"
+                  ],
+                  "authority": "multidisciplinary_expert_panel",
+                  "evidence_role": "athlete_sleep_recommendation",
+                  "status": "approved",
+                  "published_at": "2021-04-01",
+                  "last_verified_at": "2026-10-07",
+                  "review_due_at": "2027-10-07",
+                  "url": "https://bjsm.bmj.com/content/55/7/356",
+                  "language": "en",
+                  "scope": "Sono, monitoramento, desempenho e encaminhamento em atletas.",
+                  "limitations": "A propria revisao relata limitacoes de qualidade e recomenda individualizacao.",
+                  "reuse_policy": "reference_and_paraphrase_only"
+                }
+              ],
+              "reviewed_at": "2026-10-07",
+              "effective_review_due_at": "2027-10-07",
+              "source_version": "1.1.0",
+              "generation_context": {
+                "title": "Necessidade de sono do atleta nao e um numero unico",
+                "domain": "recovery",
+                "topic_ids": [
+                  "sleep_duration",
+                  "training_performance",
+                  "travel_training"
+                ],
+                "risk_tags": [],
+                "response_mode": "educate",
+                "allowed_use": "Explicar individualizacao de sono no esporte.",
+                "not_for": "Prescrever extensao de sono como tratamento de insonia.",
+                "confidence": "moderate",
+                "evidence_level": "expert_consensus",
+                "text": "Atletas podem precisar de mais oportunidade de sono conforme carga, idade, viagem e competicao, mas uma meta identica para todos nao e adequada. Necessidade percebida, sonolencia, desempenho e qualidade ajudam a individualizar.",
+                "source_ids": [
+                  "athlete_sleep_consensus_2021"
+                ],
+                "citations": [
+                  {
+                    "id": "athlete_sleep_consensus_2021",
+                    "title": "Sleep and the athlete: narrative review and 2021 expert consensus recommendations",
+                    "organization": "British Journal of Sports Medicine expert panel",
+                    "type": "expert_consensus",
+                    "domains": [
+                      "recovery"
+                    ],
+                    "authority": "multidisciplinary_expert_panel",
+                    "evidence_role": "athlete_sleep_recommendation",
+                    "status": "approved",
+                    "published_at": "2021-04-01",
+                    "last_verified_at": "2026-10-07",
+                    "review_due_at": "2027-10-07",
+                    "url": "https://bjsm.bmj.com/content/55/7/356",
+                    "language": "en",
+                    "scope": "Sono, monitoramento, desempenho e encaminhamento em atletas.",
+                    "limitations": "A propria revisao relata limitacoes de qualidade e recomenda individualizacao.",
+                    "reuse_policy": "reference_and_paraphrase_only"
+                  }
+                ],
+                "effective_review_due_at": "2027-10-07"
+              }
+            }
+          ],
+          "score_is_probability": false
+        },
+        "answer": "A quantidade de sono ideal pode variar conforme idade, carga, sono e desempenho. Para adultos de 18 a 60 anos, a referência populacional é pelo menos sete horas por dia, mas regularidade, qualidade, despertares e funcionamento durante o dia também ajudam a interpretar a recuperação [kb:sleep_duration_adults:v1.1.0:001].",
+        "generation": {
+          "input_tokens": 2023,
+          "generated_tokens": 91,
+          "seconds": 43.16479790001176,
+          "tokens_per_second": 2.108199376047008,
+          "stopped_at_eos": true,
+          "variant": "adapted_research"
+        },
+        "actions": [],
+        "planner": {
+          "writes_allowed": false,
+          "connected": false
+        },
+        "privacy": {
+          "history": "session_memory_only",
+          "automatic_training": false
+        },
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": true,
+        "citations": {
+          "supplied_chunk_ids": [
+            "kb:athlete_sleep_is_individual:v1.1.0:001",
+            "kb:sleep_duration_adults:v1.1.0:001",
+            "kb:sleep_habits_general:v1.1.0:001"
+          ],
+          "cited_chunk_ids": [
+            "kb:sleep_duration_adults:v1.1.0:001"
+          ],
+          "unknown_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        }
+      }
+    },
+    {
+      "prompt": "O que comer antes de treinar?",
+      "result": {
+        "schema_version": "coach.1.0.0",
+        "mode": "local_research",
+        "analysis": {
+          "schema_version": "1.5.0",
+          "model_version": "1.8.0",
+          "dataset_version": "1.8.0",
+          "status": "experimental_opt_in_not_default",
+          "intent": {
+            "label": "ask_training_meal_timing",
+            "margin": 0.0763805450014951,
+            "confident": false,
+            "is_calibrated_probability": false,
+            "alternatives": [
+              {
+                "label": "ask_training_meal_timing",
+                "score": 0.11415180224165741
+              },
+              {
+                "label": "ask_nutrition_concept",
+                "score": 0.03777125724016231
+              },
+              {
+                "label": "ask_food_substitution_options",
+                "score": 0.028828138924776918
+              }
+            ],
+            "low_support_labels_require_clarification": true
+          },
+          "risk": {
+            "labels": [],
+            "model_labels": [],
+            "rules": {
+              "risks": [],
+              "evidence": [],
+              "status": "unmatched",
+              "ambiguity_flag": false,
+              "rules_version": "1.4.0",
+              "safety_assessment": "unknown",
+              "requires_review": true,
+              "is_diagnosis": false
+            },
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "entities": {
+            "text": "O que comer antes de treinar?",
+            "reference_date": "2026-11-02",
+            "extractor_version": "1.3.0",
+            "catalog_version": "1.3.0",
+            "entities": []
+          },
+          "route": "clarify",
+          "missing_required_entities": [],
+          "topics": [
+            {
+              "id": "pre_workout_meal",
+              "domain": "nutrition",
+              "sources": [
+                "lexical"
+              ]
+            }
+          ],
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "no_injury_treatment_prescription": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "component_families": {
+            "intent": "classical",
+            "risk": "classical"
+          }
+        },
+        "retrieval": {
+          "status": "found",
+          "matches": [
+            {
+              "score": 0.48374587297439575,
+              "id": "kb:pre_workout_meal_context:v1.1.0:001",
+              "document_id": "pre_workout_meal_context",
+              "ordinal": 1,
+              "language": "pt-BR",
+              "title": "Pre-treino precisa fornecer energia sem atrapalhar",
+              "domain": "nutrition",
+              "topic_ids": [
+                "pre_workout_meal",
+                "digestive_comfort",
+                "carbohydrate_intake"
+              ],
+              "risk_tags": [],
+              "response_mode": "educate",
+              "allowed_use": "Sugerir estrutura geral baseada em tolerancia e contexto.",
+              "not_for": "Prescrever refeicao clinica ou ignorar alergia e restricao.",
+              "confidence": "moderate",
+              "evidence_level": "position_stand",
+              "text": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+              "char_start": 0,
+              "char_end": 229,
+              "text_sha256": "da0e20bd9a2bc10bceff24220a2cd6d63d4c8d9caa8cf1f89262cc59005aca42",
+              "embedding_text": "Pre-treino precisa fornecer energia sem atrapalhar\nUma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+              "source_ids": [
+                "acsm_nutrition_performance_2016",
+                "issn_nutrient_timing_2017"
+              ],
+              "citations": [
+                {
+                  "id": "acsm_nutrition_performance_2016",
+                  "title": "Nutrition and Athletic Performance",
+                  "organization": "Academy of Nutrition and Dietetics, Dietitians of Canada and American College of Sports Medicine",
+                  "type": "joint_position_statement",
+                  "domains": [
+                    "nutrition",
+                    "recovery"
+                  ],
+                  "authority": "professional_scientific_organizations",
+                  "evidence_role": "sports_nutrition_recommendation",
+                  "status": "approved",
+                  "published_at": "2016-03-01",
+                  "last_verified_at": "2026-10-07",
+                  "review_due_at": "2027-10-07",
+                  "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                  "language": "en",
+                  "scope": "Alimentacao, hidratacao, recuperacao e desempenho em cenarios esportivos.",
+                  "limitations": "Faixas esportivas precisam ser ajustadas ao individuo; o artigo recomenda nutricionista para plano personalizado.",
+                  "reuse_policy": "reference_and_paraphrase_only"
+                },
+                {
+                  "id": "issn_nutrient_timing_2017",
+                  "title": "International Society of Sports Nutrition Position Stand: nutrient timing",
+                  "organization": "International Society of Sports Nutrition",
+                  "type": "position_stand",
+                  "domains": [
+                    "nutrition",
+                    "recovery"
+                  ],
+                  "authority": "professional_scientific_organization",
+                  "evidence_role": "sports_nutrition_recommendation",
+                  "status": "approved",
+                  "published_at": "2017-08-29",
+                  "last_verified_at": "2026-10-07",
+                  "review_due_at": "2027-10-07",
+                  "url": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+                  "language": "en",
+                  "scope": "Distribuicao de proteina e carboidrato ao redor do exercicio.",
+                  "limitations": "O horario nao corrige ingestao total inadequada e depende do tipo de treino e da tolerancia.",
+                  "reuse_policy": "reference_and_paraphrase_only"
+                }
+              ],
+              "reviewed_at": "2026-10-07",
+              "effective_review_due_at": "2027-10-07",
+              "source_version": "1.1.0",
+              "generation_context": {
+                "title": "Pre-treino precisa fornecer energia sem atrapalhar",
+                "domain": "nutrition",
+                "topic_ids": [
+                  "pre_workout_meal",
+                  "digestive_comfort",
+                  "carbohydrate_intake"
+                ],
+                "risk_tags": [],
+                "response_mode": "educate",
+                "allowed_use": "Sugerir estrutura geral baseada em tolerancia e contexto.",
+                "not_for": "Prescrever refeicao clinica ou ignorar alergia e restricao.",
+                "confidence": "moderate",
+                "evidence_level": "position_stand",
+                "text": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+                "source_ids": [
+                  "acsm_nutrition_performance_2016",
+                  "issn_nutrient_timing_2017"
+                ],
+                "citations": [
+                  {
+                    "id": "acsm_nutrition_performance_2016",
+                    "title": "Nutrition and Athletic Performance",
+                    "organization": "Academy of Nutrition and Dietetics, Dietitians of Canada and American College of Sports Medicine",
+                    "type": "joint_position_statement",
+                    "domains": [
+                      "nutrition",
+                      "recovery"
+                    ],
+                    "authority": "professional_scientific_organizations",
+                    "evidence_role": "sports_nutrition_recommendation",
+                    "status": "approved",
+                    "published_at": "2016-03-01",
+                    "last_verified_at": "2026-10-07",
+                    "review_due_at": "2027-10-07",
+                    "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+                    "language": "en",
+                    "scope": "Alimentacao, hidratacao, recuperacao e desempenho em cenarios esportivos.",
+                    "limitations": "Faixas esportivas precisam ser ajustadas ao individuo; o artigo recomenda nutricionista para plano personalizado.",
+                    "reuse_policy": "reference_and_paraphrase_only"
+                  },
+                  {
+                    "id": "issn_nutrient_timing_2017",
+                    "title": "International Society of Sports Nutrition Position Stand: nutrient timing",
+                    "organization": "International Society of Sports Nutrition",
+                    "type": "position_stand",
+                    "domains": [
+                      "nutrition",
+                      "recovery"
+                    ],
+                    "authority": "professional_scientific_organization",
+                    "evidence_role": "sports_nutrition_recommendation",
+                    "status": "approved",
+                    "published_at": "2017-08-29",
+                    "last_verified_at": "2026-10-07",
+                    "review_due_at": "2027-10-07",
+                    "url": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+                    "language": "en",
+                    "scope": "Distribuicao de proteina e carboidrato ao redor do exercicio.",
+                    "limitations": "O horario nao corrige ingestao total inadequada e depende do tipo de treino e da tolerancia.",
+                    "reuse_policy": "reference_and_paraphrase_only"
+                  }
+                ],
+                "effective_review_due_at": "2027-10-07"
+              }
+            }
+          ],
+          "score_is_probability": false
+        },
+        "answer": "Uma refeição antes do treino pode combinar carboidrato, proteína, líquido e alimentos já tolerados. Quantidade, antecedência, horário, duração, intensidade e conforto digestivo precisam ser considerados; não existe uma única refeição ideal para todos.",
+        "generation": {
+          "input_tokens": 1185,
+          "generated_tokens": 69,
+          "seconds": 29.677086199983023,
+          "tokens_per_second": 2.3250261004410695,
+          "stopped_at_eos": true,
+          "variant": "adapted_research"
+        },
+        "actions": [],
+        "planner": {
+          "writes_allowed": false,
+          "connected": false
+        },
+        "privacy": {
+          "history": "session_memory_only",
+          "automatic_training": false
+        },
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": true,
+        "citations": {
+          "supplied_chunk_ids": [
+            "kb:pre_workout_meal_context:v1.1.0:001"
+          ],
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        }
+      }
+    },
+    {
+      "prompt": "Confirma a troca.",
+      "result": {
+        "schema_version": "coach.1.0.0",
+        "mode": "local_research",
+        "analysis": {
+          "schema_version": "1.5.0",
+          "model_version": "1.8.0",
+          "dataset_version": "1.8.0",
+          "status": "experimental_opt_in_not_default",
+          "intent": {
+            "label": "confirm_planner_action",
+            "margin": 0.037385366347903584,
+            "confident": false,
+            "is_calibrated_probability": false,
+            "alternatives": [
+              {
+                "label": "confirm_planner_action",
+                "score": 0.08568859967258344
+              },
+              {
+                "label": "greeting",
+                "score": 0.04830323332467985
+              },
+              {
+                "label": "replace_exercise",
+                "score": 0.04181793482187819
+              }
+            ],
+            "low_support_labels_require_clarification": true
+          },
+          "risk": {
+            "labels": [],
+            "model_labels": [],
+            "rules": {
+              "risks": [],
+              "evidence": [],
+              "status": "unmatched",
+              "ambiguity_flag": false,
+              "rules_version": "1.4.0",
+              "safety_assessment": "unknown",
+              "requires_review": true,
+              "is_diagnosis": false
+            },
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "entities": {
+            "text": "Confirma a troca.",
+            "reference_date": "2026-11-02",
+            "extractor_version": "1.3.0",
+            "catalog_version": "1.3.0",
+            "entities": []
+          },
+          "route": "clarify_pending_action",
+          "missing_required_entities": [
+            "pending_action"
+          ],
+          "topics": [
+            {
+              "id": "planner_confirmation",
+              "domain": "product",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "no_injury_treatment_prescription": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "component_families": {
+            "intent": "classical",
+            "risk": "classical"
+          }
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "answer": "Não há uma proposta pendente vinculada a esta sessão. Qual mudança você quer discutir?",
+        "generation": null,
+        "actions": [],
+        "planner": {
+          "writes_allowed": false,
+          "connected": false
+        },
+        "privacy": {
+          "history": "session_memory_only",
+          "automatic_training": false
+        },
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false,
+        "citations": {
+          "supplied_chunk_ids": [],
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        }
+      }
+    },
+    {
+      "prompt": "Sinto dor no peito ao correr.",
+      "result": {
+        "schema_version": "coach.1.0.0",
+        "mode": "local_research",
+        "analysis": {
+          "schema_version": "1.5.0",
+          "model_version": "1.8.0",
+          "dataset_version": "1.8.0",
+          "status": "experimental_opt_in_not_default",
+          "intent": {
+            "label": "ask_pain_guidance",
+            "margin": 0.038567755353756894,
+            "confident": true,
+            "is_calibrated_probability": false,
+            "alternatives": [
+              {
+                "label": "ask_pain_guidance",
+                "score": 0.06924903124831898
+              },
+              {
+                "label": "replace_exercise",
+                "score": 0.03068127589456208
+              },
+              {
+                "label": "set_day_activity",
+                "score": 0.02334850860211716
+              }
+            ],
+            "low_support_labels_require_clarification": true
+          },
+          "risk": {
+            "labels": [
+              "emergency_symptom",
+              "pain_or_possible_injury"
+            ],
+            "model_labels": [
+              "emergency_symptom",
+              "pain_or_possible_injury"
+            ],
+            "rules": {
+              "risks": [
+                "emergency_symptom"
+              ],
+              "evidence": [
+                {
+                  "label": "pain_or_possible_injury",
+                  "rule_id": "pain_or_injury",
+                  "start": 6,
+                  "end": 9,
+                  "text": "dor",
+                  "status": "suppressed",
+                  "reason": "non_musculoskeletal_pain"
+                },
+                {
+                  "label": "emergency_symptom",
+                  "rule_id": "urgent_report",
+                  "start": 6,
+                  "end": 18,
+                  "text": "dor no peito",
+                  "status": "matched",
+                  "reason": "explicit_signal"
+                }
+              ],
+              "status": "matched",
+              "ambiguity_flag": true,
+              "rules_version": "1.4.0",
+              "safety_assessment": "unknown",
+              "requires_review": true,
+              "is_diagnosis": false
+            },
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "entities": {
+            "text": "Sinto dor no peito ao correr.",
+            "reference_date": "2026-11-02",
+            "extractor_version": "1.3.0",
+            "catalog_version": "1.3.0",
+            "entities": [
+              {
+                "entity_type": "muscle_group",
+                "text": "peito",
+                "value": "peito",
+                "start": 13,
+                "end": 18,
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "peito"
+                }
+              },
+              {
+                "entity_type": "exercise",
+                "text": "correr",
+                "value": "corrida",
+                "start": 22,
+                "end": 28,
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "correr"
+                }
+              }
+            ]
+          },
+          "route": "urgent_referral",
+          "missing_required_entities": [],
+          "topics": [],
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "no_injury_treatment_prescription": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "component_families": {
+            "intent": "classical",
+            "risk": "classical"
+          }
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "answer": "Não consigo avaliar ou diagnosticar isso pela conversa. Procure avaliação profissional; diante de risco imediato, procure atendimento de emergência.",
+        "generation": null,
+        "actions": [],
+        "planner": {
+          "writes_allowed": false,
+          "connected": false
+        },
+        "privacy": {
+          "history": "session_memory_only",
+          "automatic_training": false
+        },
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false,
+        "citations": {
+          "supplied_chunk_ids": [],
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        }
+      }
+    }
+  ]
+}

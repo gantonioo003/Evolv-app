@@ -1,0 +1,12 @@
+{
+  "code": {
+    "src/evolv_rag/coach.py": "f04ed56e71c2a11c37555ca2ceea813eb8fd75275c3086ae1ffe3848d21000d1",
+    "src/evolv_rag/actions.py": "76834ae12102f90e327fec43ce95042c5853c7dd88c1a5a1f768dc0e4e2afec8",
+    "src/evolv_rag/safety.py": "641f44e35640ffdd58d01da3432f68c1676931dfa5e57756b0be7e8c030cba99",
+    "scripts/evaluate_coach_contract_dialogues.py": "f5d7430f1f1de3bd84d0e7c8de196c1292c7fa325b19c9a20b3e19c5ad83b35d"
+  },
+  "outputs": {
+    "results.json": "685997192fadedc5031414a94c364092085ddeb2f01a3fdec2324316e2c7f693",
+    "protocol.json": "938d9f3fdfe2306f7b0e66df7eb9eae14aa017f6037312fbc28ebe21a75002b1"
+  }
+}

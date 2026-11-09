@@ -1,0 +1,16 @@
+{
+  "protocol_sha256": "c94d0fcb264958de8e7059c936d41cb03082cedbcaaa6525b61a10b9577e4b5a",
+  "code": {
+    "src/evolv_rag/coach.py": "f04ed56e71c2a11c37555ca2ceea813eb8fd75275c3086ae1ffe3848d21000d1",
+    "src/evolv_rag/actions.py": "76834ae12102f90e327fec43ce95042c5853c7dd88c1a5a1f768dc0e4e2afec8",
+    "src/evolv_rag/safety.py": "641f44e35640ffdd58d01da3432f68c1676931dfa5e57756b0be7e8c030cba99",
+    "src/evolv_rag/search.py": "42201175038369cddd33a44738a7bb3b7139b659b3d15cc2896a31090864f9ad",
+    "src/evolv_rag/integrated_evaluation.py": "6f115c460fdf45b3d273f75468a60cdb360340f1ab4d77843dd22584ee1bce68",
+    "scripts/evaluate_coach_dialogues.py": "393d1745cfd07b8d5e90729fa8e6f3f087093feae527a5b9965bdd6db0abeb71"
+  },
+  "index_sha256": "028251fa7d26cc9feefff72d560a7eec9b4960ee77eac47caca56df6e6535c01",
+  "nlp_selection_sha256": "11012b4327bf67ffe8c699cf807619bc259cd1972fd9b1851c1cb7df011e39af",
+  "backend_connected": false,
+  "nlp_is_real_and_not_overridden": true,
+  "runtime_greedy_max_new_tokens": 256
+}

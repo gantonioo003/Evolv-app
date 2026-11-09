@@ -1,0 +1,15 @@
+{
+  "status": "retain_research_candidate",
+  "nll_improved": true,
+  "autonomous_use_blocked": true,
+  "adapted_critical_cases_in_ai_review": 3,
+  "reason": "Keep the experiment and adapter for research; small synthetic evaluation and non-independent AI review do not establish deployment safety.",
+  "training_or_hyperparameters_changed_after_test": false,
+  "model_promoted_to_app": false,
+  "production_guardrails_implemented_by_this_phase": false,
+  "next_steps": [
+    "Address failure categories using new development cases, not this test",
+    "Integrate retrieval and backend/Planner validation separately",
+    "Require explicit action confirmation and independently reviewed new evaluation before release"
+  ]
+}

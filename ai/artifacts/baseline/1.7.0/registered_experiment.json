@@ -1,0 +1,18 @@
+{
+  "batch_size": 16,
+  "dropout": 0.2,
+  "epochs": 4,
+  "intent_loss": "sqrt_class_weighted_cross_entropy_label_smoothing_0.03",
+  "learning_rates": [
+    2e-05,
+    5e-05
+  ],
+  "long_text": "first_half_and_last_half_tokens",
+  "max_length": 256,
+  "risk_loss": "BCEWithLogits_sqrt_positive_weight_cap_15",
+  "risk_loss_weight": 0.7,
+  "selection": "best_validation_macro_f1_separately_for_each_task",
+  "test_used_for_selection": false,
+  "unfrozen_encoder_layers": 4,
+  "weight_decay": 0.01
+}

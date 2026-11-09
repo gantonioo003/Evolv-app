@@ -1,0 +1,20 @@
+{
+  "inputs": {
+    "lora_config": "20f95d985d9cc4c04b2233ec9bda609d7d2acc20c07d4e2e827375fc01b2ab81",
+    "model_config": "c5bcc7d3c0028483cc3ddef618ea37111df629bbf3338e1fdd641f35904838e4",
+    "data_manifest": "97cc13b71125ee039af214b254b649b11683143dbabfc5e40d8f94a44b330970",
+    "data_report": "ae542f5283eb308a7bdb8894bbf989079e686df403c7858d3b5f3108b4305979",
+    "qwen_architecture": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba"
+  },
+  "outputs": {
+    "adapter_config.json": "b93e31dc9dddf50ba9d97f1e666c50e29da385c82ca11c23f614eeccdb43dedb",
+    "configuration_report.json": "a56a0617591b237641fbbe6c605372d03d31e5bf41747d665b74976d4d78c774",
+    "recipe.json": "a75ab8252b3caa7f7979261b3e51f7d2a793a568d1359f5a7e8d79589b6acf20",
+    "training_arguments.json": "71c34be5b97d10971e2dcfa43fd5ea5e1c0d9da1168c6b053192dcfecf6872a8"
+  },
+  "code": {
+    "scripts/configure_openlm_lora.py": "c71bcf7e105cf61cc70b31f275b00ced3f8ffc3803ad9f0bc7456d2f51c60c38",
+    "src/evolv_openlm/lora.py": "c7b8297ee50b0c5bd25df72491b4f7606f1269cc7ab8e5b0001ede7789ead407",
+    "src/evolv_openlm/lora_checks.py": "c6dea5acfddf6154a9e573cd1a1690228bf831d732549a10a0bc9b3b1c4bb6b1"
+  }
+}

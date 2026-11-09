@@ -1,0 +1,6 @@
+{
+  "reason": "Same fixed model, questions, decoding and rubric; next attempt batches four prompts instead of one. No training or model selection.",
+  "status": "superseded_for_throughput",
+  "successor": "artifacts/openlm_evaluation/1.0.1",
+  "partial_outputs_preserved": true
+}

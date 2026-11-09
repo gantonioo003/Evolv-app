@@ -1,0 +1,51 @@
+{
+  "phase": "7.05.4",
+  "schema_version": "coach.1.1.0",
+  "tests_passed": 22,
+  "backend_kind_and_field_names_match": true,
+  "backend_validator_executed": false,
+  "model_retrained": false,
+  "database_connected": false,
+  "planner_preview_api_called": false,
+  "test_scope": "deterministic and integration doubles; actual entity extractor, not NLU accuracy or LM generation",
+  "guards": [
+    {
+      "query": "Sou alergico a amendoim, posso comer?",
+      "result": {
+        "route": "safety_information_only",
+        "risks": [
+          "food_allergy_or_reaction"
+        ],
+        "answer": "Não vou sugerir consumir um alimento ao qual você informou alergia. Se houver reação importante ou dificuldade para respirar, procure atendimento de emergência."
+      }
+    },
+    {
+      "query": "Dor no peito ao correr",
+      "result": {
+        "route": "safety_information_only",
+        "risks": [
+          "emergency_symptom"
+        ],
+        "answer": "Interrompa a atividade e procure atendimento de emergência. Não consigo avaliar a causa pela conversa."
+      }
+    },
+    {
+      "query": "Quero apagar meus dados",
+      "result": {
+        "route": "privacy_information",
+        "risks": [],
+        "answer": "Nesta prévia local, o histórico fica apenas na memória da sessão e não entra automaticamente em treino. Não tenho acesso ao cadastro de consentimento ou à exclusão de dados no servidor."
+      }
+    },
+    {
+      "query": "Tenho dor no peito. Quero apagar meus dados.",
+      "result": {
+        "route": "safety_information_only",
+        "risks": [
+          "emergency_symptom"
+        ],
+        "answer": "Interrompa a atividade e procure atendimento de emergência. Não consigo avaliar a causa pela conversa."
+      }
+    }
+  ]
+}

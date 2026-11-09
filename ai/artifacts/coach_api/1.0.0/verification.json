@@ -1,0 +1,31 @@
+{
+  "phase": "7.06.1",
+  "real_uvicorn_http": true,
+  "host": "loopback",
+  "real_nlp_search_and_qwen": true,
+  "variant": "original",
+  "startup_seconds": 23.140999999945052,
+  "http_unit_tests_passed": 12,
+  "auth_enforced": true,
+  "cross_user_access_blocked": true,
+  "duplicate_request_response_reused": true,
+  "deleted_session_unavailable": true,
+  "service_key_recorded": false,
+  "database_connected": false,
+  "observed_answer": "Um adulto de 18 a 60 anos deve dormir pelo menos **sete horas por dia**, de acordo com orientações populacionais da Organização de Controle de Doenças dos EUA (CDC), que é uma fonte oficial de saúde pública [kb:sleep_duration_adults:v1.1.0:001].\n\nNo entanto, é importante ressaltar que a **duração do sono não é o único fator** para a qualidade da recuperação; aspectos como regularidade, qualidade do sono, despertares e funcionamento durante o dia também influenciam significativamente o bem-estar e o desempenho [kb:sleep_duration_adults:v1.1.0:001].\n\nAlém disso, há consenso entre especialistas que a necessidade de sono pode variar individualmente, especialmente em atletas ou pessoas com cargas de trabalho ou treino intensas, e que não existe um número único aplicável a todos [kb:athlete_sleep_is_individual:v1.1.0:001].\n\n**Lacuna de evidência:**  \nAs fontes fornecidas **não indicam recomendações",
+  "generation": {
+    "input_tokens": 2023,
+    "generated_tokens": 256,
+    "seconds": 17.401759100030176,
+    "tokens_per_second": 14.711156414040698,
+    "stopped_at_eos": false,
+    "variant": "original"
+  },
+  "packages": {
+    "fastapi": "0.162.0",
+    "starlette": "1.10.0",
+    "pydantic": "2.14.2",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1"
+  }
+}

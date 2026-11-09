@@ -25,7 +25,7 @@ export class ProfilesController {
   @Get('me')
   @ApiOperation({ summary: 'Busca o perfil do usuario autenticado' })
   getMine(@CurrentUser() user: User, @AccessToken() accessToken: string) {
-    return this.profiles.getMine(user.id, accessToken);
+    return this.profiles.getMine(user.id, accessToken, user.user_metadata);
   }
 
   @Patch('me')

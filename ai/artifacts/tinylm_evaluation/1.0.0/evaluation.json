@@ -1,0 +1,26 @@
+{
+  "binding": {
+    "checkpoint_index_sha256": "f10e2ea63494d8143e96de976b27970f4b60f948e93dbe92d513b2add4a0a345",
+    "checkpoint_sha256": "6e2419f20ee9ed3c4ce74dc42d620aee691a8a0d02f727b79410cf32aae46af6",
+    "corpus_manifest_sha256": "51406e1484ada0f0f16263633cdd0e4aed2b8ba900fc6a226b5b920c7fc119f6",
+    "data_manifest_sha256": "b04dea5a1a2dca42f0ad6fc181aa5536d70b909a4bf4ec7f341c77dac556f609",
+    "frozen_before_test_at": "2026-11-01T14:32:02.750191+00:00",
+    "generation_not_selected_by_test": true,
+    "protocol_sha256": "8ef7097597248f793df573d8818b3b20d1e630efd9cb6aee24dbce21383aa85e",
+    "tokenizer_sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a"
+  },
+  "completed_at": "2026-11-01T14:35:30.606963+00:00",
+  "device": "cuda",
+  "evaluation_version": "1.0.0",
+  "generation_samples": 128,
+  "inputs_preserved": true,
+  "interpretation": "PPL depends on tokenizer/context protocol; generation diagnostics do not certify factuality.",
+  "optimizer_steps": 0,
+  "precision": "float32",
+  "primary_method": "document_windows_256_from_prepared_data",
+  "qualitative_review_samples": 24,
+  "secondary_stride": 128,
+  "status": "completed",
+  "test_evaluated_without_updates": true,
+  "torch": "2.11.0+cu128"
+}

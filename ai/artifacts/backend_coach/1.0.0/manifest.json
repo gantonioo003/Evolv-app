@@ -1,0 +1,11 @@
+{
+  "code": {
+    "backend/src/coach/coach.service.ts": "7839e0a920c72641119bc4a1d21697bf914b230d92c75fb8c5b886fb110744f2",
+    "backend/src/coach/coach-ai.client.ts": "3260ea1d14bbbda72e4f4d0afcc3f7e0e743d35a16e1397a978d3475b60b0b4d",
+    "backend/src/coach/coach.controller.ts": "678d69d38ba590f99ecbd4c7e0860949a9229b8c92f288aa730170454a97f543",
+    "backend/src/coach/coach-context.service.ts": "e489d93024f5554b1d949c66e78ce95faa0b7d52311c76bccf9ca79a75db83a7",
+    "ai/src/evolv_api/app.py": "49b2620ee766da2e01b30e240dfcc7b5db0b25b8862aa39b5ad817835c56918c",
+    "ai/tests/fixtures/serve_coach_api.py": "82ccce112341eebedbfa90464f78c56f8388f3a7c103d9b175e4b2bad4c5b3a1",
+    "backend/scripts/verify-coach-bridge.mjs": "b3929d1d50eda2b913133f96af4987014eb4a749376672d61800351b5b985f17"
+  }
+}

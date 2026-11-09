@@ -1,0 +1,7 @@
+{
+  "generation_batch_size": 4,
+  "version": "1.0.1",
+  "phase": "7.04.5",
+  "resumed_after": "TF32 validation precision repair",
+  "pid": 41668
+}

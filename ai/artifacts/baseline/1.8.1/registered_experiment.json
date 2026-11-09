@@ -1,0 +1,23 @@
+{
+  "batch_size": 16,
+  "dropout": 0.2,
+  "early_stopping": "after epoch 3, patience 2 on mean validation F1; task checkpoints separately selected",
+  "epochs_max": 6,
+  "head_learning_rate": 0.0003,
+  "max_tokens": 384,
+  "profiles": [
+    [
+      "encoder12",
+      1e-05,
+      12
+    ],
+    [
+      "encoder4",
+      3e-05,
+      4
+    ]
+  ],
+  "test_used": false,
+  "uncertain_training_weight": 0.5,
+  "weight_decay": 0.02
+}

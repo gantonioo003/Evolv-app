@@ -1,0 +1,148 @@
+{
+  "all": {
+    "cases": 48,
+    "preference": {
+      "original": 14,
+      "adapted": 22,
+      "tie": 12
+    },
+    "original": {
+      "rubric_mean_0_to_8": 5.354166666666667,
+      "rubric_by_criterion": {
+        "relevance_context": 1.6666666666666667,
+        "usefulness_clarity": 1.125,
+        "grounding_uncertainty": 1.0625,
+        "safety_product_integrity": 1.5
+      },
+      "critical_cases": 3,
+      "critical_flags": {
+        "privacy_or_source_fabrication": 2,
+        "diagnosis_or_individual_treatment": 1
+      },
+      "empty_outputs": 0,
+      "budget_truncations": 24,
+      "mean_output_tokens": 208.83333333333334,
+      "median_seconds": 21.444503350008745,
+      "total_generation_seconds": 256.2017741003074,
+      "total_generated_tokens": 10024,
+      "aggregate_tokens_per_second": 39.12541212956407
+    },
+    "adapted": {
+      "rubric_mean_0_to_8": 5.875,
+      "rubric_by_criterion": {
+        "relevance_context": 1.5,
+        "usefulness_clarity": 1.4166666666666667,
+        "grounding_uncertainty": 1.375,
+        "safety_product_integrity": 1.5833333333333333
+      },
+      "critical_cases": 3,
+      "critical_flags": {
+        "privacy_or_source_fabrication": 1,
+        "unsafe_symptom_or_food_guidance": 1,
+        "unauthorized_action_or_false_execution": 1
+      },
+      "empty_outputs": 0,
+      "budget_truncations": 0,
+      "mean_output_tokens": 48.604166666666664,
+      "median_seconds": 9.473196899984032,
+      "total_generation_seconds": 115.31274779990781,
+      "total_generated_tokens": 2333,
+      "aggregate_tokens_per_second": 20.231934842522808
+    }
+  },
+  "frozen_test": {
+    "cases": 28,
+    "preference": {
+      "original": 8,
+      "tie": 7,
+      "adapted": 13
+    },
+    "original": {
+      "rubric_mean_0_to_8": 5.5,
+      "rubric_by_criterion": {
+        "relevance_context": 1.7142857142857142,
+        "usefulness_clarity": 1.1428571428571428,
+        "grounding_uncertainty": 1.0357142857142858,
+        "safety_product_integrity": 1.6071428571428572
+      },
+      "critical_cases": 0,
+      "critical_flags": {},
+      "empty_outputs": 0,
+      "budget_truncations": 15,
+      "mean_output_tokens": 225.82142857142858,
+      "median_seconds": 21.992794700083323,
+      "total_generation_seconds": 149.37203340022825,
+      "total_generated_tokens": 6323,
+      "aggregate_tokens_per_second": 42.330547801127665
+    },
+    "adapted": {
+      "rubric_mean_0_to_8": 6.142857142857143,
+      "rubric_by_criterion": {
+        "relevance_context": 1.5,
+        "usefulness_clarity": 1.4285714285714286,
+        "grounding_uncertainty": 1.4642857142857142,
+        "safety_product_integrity": 1.75
+      },
+      "critical_cases": 0,
+      "critical_flags": {},
+      "empty_outputs": 0,
+      "budget_truncations": 0,
+      "mean_output_tokens": 49.392857142857146,
+      "median_seconds": 9.0981987999985,
+      "total_generation_seconds": 63.82404979993589,
+      "total_generated_tokens": 1383,
+      "aggregate_tokens_per_second": 21.66894774517096
+    }
+  },
+  "challenge": {
+    "cases": 20,
+    "preference": {
+      "adapted": 9,
+      "tie": 5,
+      "original": 6
+    },
+    "original": {
+      "rubric_mean_0_to_8": 5.15,
+      "rubric_by_criterion": {
+        "relevance_context": 1.6,
+        "usefulness_clarity": 1.1,
+        "grounding_uncertainty": 1.1,
+        "safety_product_integrity": 1.35
+      },
+      "critical_cases": 3,
+      "critical_flags": {
+        "privacy_or_source_fabrication": 2,
+        "diagnosis_or_individual_treatment": 1
+      },
+      "empty_outputs": 0,
+      "budget_truncations": 9,
+      "mean_output_tokens": 185.05,
+      "median_seconds": 21.39219220005907,
+      "total_generation_seconds": 106.82974070007913,
+      "total_generated_tokens": 3701,
+      "aggregate_tokens_per_second": 34.64391072885248
+    },
+    "adapted": {
+      "rubric_mean_0_to_8": 5.5,
+      "rubric_by_criterion": {
+        "relevance_context": 1.5,
+        "usefulness_clarity": 1.4,
+        "grounding_uncertainty": 1.25,
+        "safety_product_integrity": 1.35
+      },
+      "critical_cases": 3,
+      "critical_flags": {
+        "privacy_or_source_fabrication": 1,
+        "unsafe_symptom_or_food_guidance": 1,
+        "unauthorized_action_or_false_execution": 1
+      },
+      "empty_outputs": 0,
+      "budget_truncations": 0,
+      "mean_output_tokens": 47.5,
+      "median_seconds": 10.21373970003333,
+      "total_generation_seconds": 51.48869799997192,
+      "total_generated_tokens": 950,
+      "aggregate_tokens_per_second": 18.450651053567487
+    }
+  }
+}

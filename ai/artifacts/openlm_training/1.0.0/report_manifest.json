@@ -1,0 +1,11 @@
+{
+  "plot": {
+    "status": "rendered"
+  },
+  "files": {
+    "RESULTS.md": "60d81b54a20ccae4c87176f8b0bdd244f7f6d74a27a9b5a254851b7e3add0ac4",
+    "loss_curve.png": "80b2e5bca7865f02f6eecfbc5197862870ede6a087cf711c9eceff8270b02066",
+    "loss_curve.svg": "cba5c8d1e73991e4e24785920d803c5399a4264b79767beb4c8e050e26c144e5"
+  },
+  "test_evaluated": false
+}

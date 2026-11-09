@@ -1,0 +1,13 @@
+{
+  "sampling_seconds": 1,
+  "samples": 204,
+  "rss_peak_bytes": 1615298560,
+  "cuda_allocated_peak_bytes": 0,
+  "cuda_reserved_peak_bytes": 0,
+  "torch_peak_allocated_bytes": 0,
+  "torch_peak_reserved_bytes": 0,
+  "rss_last_bytes": 1602961408,
+  "backend_rss_peak_bytes": 133816320,
+  "backend_rss_last_bytes": 119136256,
+  "elapsed_seconds": 205.01600000006147
+}

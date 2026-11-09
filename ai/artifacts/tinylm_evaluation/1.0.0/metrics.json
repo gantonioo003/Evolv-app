@@ -1,0 +1,540 @@
+{
+  "primary": {
+    "initial": {
+      "test": {
+        "documents": 42,
+        "loss": 9.017768275513443,
+        "next_token_accuracy": 0.01760752688172043,
+        "nll_sum": 134184.39193964005,
+        "perplexity": 8248.348483849346,
+        "precision": "float32",
+        "sequences": 81,
+        "sources": {
+          "evolv_nlu_train": {
+            "correct": 0,
+            "documents": 5,
+            "loss": 9.025440115087173,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 767.1624097824097,
+            "perplexity": 8311.871849132907,
+            "tokens": 85
+          },
+          "oasst1_ptbr_human": {
+            "correct": 0,
+            "documents": 4,
+            "loss": 9.039460405810125,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 2621.4435176849365,
+            "perplexity": 8429.227466483937,
+            "tokens": 290
+          },
+          "wikipedia_pt": {
+            "correct": 262,
+            "documents": 33,
+            "loss": 9.0172896251067,
+            "next_token_accuracy": 0.018062736987245778,
+            "nll_sum": 130795.7860121727,
+            "perplexity": 8244.401353215795,
+            "tokens": 14505
+          }
+        },
+        "tokens": 14880,
+        "unmodified_logits": true
+      },
+      "train": {
+        "documents": 6612,
+        "loss": 9.0192844052796,
+        "next_token_accuracy": 0.013602183282961772,
+        "nll_sum": 26640413.675709248,
+        "perplexity": 8260.863535331078,
+        "precision": "float32",
+        "sequences": 15618,
+        "sources": {
+          "evolv_coach_boundary_qa": {
+            "correct": 0,
+            "documents": 6,
+            "loss": 9.028915666801145,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 3819.2313270568848,
+            "perplexity": 8340.81044925489,
+            "tokens": 423
+          },
+          "evolv_context_authored": {
+            "correct": 2,
+            "documents": 198,
+            "loss": 9.028816739835474,
+            "next_token_accuracy": 0.0005906674542232723,
+            "nll_sum": 30571.573481082916,
+            "perplexity": 8339.985358998412,
+            "tokens": 3386
+          },
+          "evolv_knowledge": {
+            "correct": 63,
+            "documents": 66,
+            "loss": 9.024968719272445,
+            "next_token_accuracy": 0.012610088070456365,
+            "nll_sum": 45088.74372148514,
+            "perplexity": 8307.954590892781,
+            "tokens": 4996
+          },
+          "evolv_knowledge_qa": {
+            "correct": 2,
+            "documents": 66,
+            "loss": 9.029062292930009,
+            "next_token_accuracy": 0.00030193236714975844,
+            "nll_sum": 59808.50862836838,
+            "perplexity": 8342.033519667497,
+            "tokens": 6624
+          },
+          "evolv_nlu_train": {
+            "correct": 6,
+            "documents": 1004,
+            "loss": 9.023441578556252,
+            "next_token_accuracy": 0.00038131553860819826,
+            "nll_sum": 141983.8532385826,
+            "perplexity": 8295.27685797368,
+            "tokens": 15735
+          },
+          "evolv_v14_authored_train": {
+            "correct": 0,
+            "documents": 108,
+            "loss": 9.027963005876577,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 11980.106908798218,
+            "perplexity": 8332.868268763828,
+            "tokens": 1327
+          },
+          "oasst1_ptbr_human": {
+            "correct": 1261,
+            "documents": 1042,
+            "loss": 9.021711164825078,
+            "next_token_accuracy": 0.008595129199582854,
+            "nll_sum": 1323584.266702652,
+            "perplexity": 8280.93500923943,
+            "tokens": 146711
+          },
+          "wikipedia_pt": {
+            "correct": 38843,
+            "documents": 4122,
+            "loss": 9.019081674347127,
+            "next_token_accuracy": 0.013999924311095813,
+            "nll_sum": 25023577.39170122,
+            "perplexity": 8259.188972512102,
+            "tokens": 2774515
+          }
+        },
+        "tokens": 2953717,
+        "unmodified_logits": true
+      },
+      "validation": {
+        "documents": 57,
+        "loss": 9.017233884994997,
+        "next_token_accuracy": 0.01380396516583287,
+        "nll_sum": 194664.045109272,
+        "perplexity": 8243.941822170716,
+        "precision": "float32",
+        "sequences": 119,
+        "sources": {
+          "evolv_knowledge": {
+            "correct": 1,
+            "documents": 1,
+            "loss": 9.06182399076574,
+            "next_token_accuracy": 0.011764705882352941,
+            "nll_sum": 770.2550392150879,
+            "perplexity": 8619.858866826353,
+            "tokens": 85
+          },
+          "evolv_nlu_train": {
+            "correct": 0,
+            "documents": 8,
+            "loss": 9.03139340026038,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 1011.5160608291626,
+            "perplexity": 8361.502378338737,
+            "tokens": 112
+          },
+          "oasst1_ptbr_human": {
+            "correct": 1,
+            "documents": 15,
+            "loss": 9.02435704858065,
+            "next_token_accuracy": 0.0009416195856873823,
+            "nll_sum": 9583.867185592651,
+            "perplexity": 8302.874412417304,
+            "tokens": 1062
+          },
+          "wikipedia_pt": {
+            "correct": 296,
+            "documents": 33,
+            "loss": 9.01659731534434,
+            "next_token_accuracy": 0.014560480102316887,
+            "nll_sum": 183298.4068236351,
+            "perplexity": 8238.695648959416,
+            "tokens": 20329
+          }
+        },
+        "tokens": 21588,
+        "unmodified_logits": true
+      }
+    },
+    "trained": {
+      "test": {
+        "documents": 42,
+        "loss": 4.628282985906772,
+        "next_token_accuracy": 0.22237903225806452,
+        "nll_sum": 68868.85083029277,
+        "perplexity": 102.33819704398421,
+        "precision": "float32",
+        "sequences": 81,
+        "sources": {
+          "evolv_nlu_train": {
+            "correct": 19,
+            "documents": 5,
+            "loss": 4.18141969252816,
+            "next_token_accuracy": 0.2235294117647059,
+            "nll_sum": 355.4206738648936,
+            "perplexity": 65.45871853191593,
+            "tokens": 85
+          },
+          "oasst1_ptbr_human": {
+            "correct": 49,
+            "documents": 4,
+            "loss": 4.9664867421162535,
+            "next_token_accuracy": 0.16896551724137931,
+            "nll_sum": 1440.2811552137136,
+            "perplexity": 143.52177159393784,
+            "tokens": 290
+          },
+          "wikipedia_pt": {
+            "correct": 3241,
+            "documents": 33,
+            "loss": 4.624139882882741,
+            "next_token_accuracy": 0.22344019303688384,
+            "nll_sum": 67073.14900121416,
+            "perplexity": 101.91507647164799,
+            "tokens": 14505
+          }
+        },
+        "tokens": 14880,
+        "unmodified_logits": true
+      },
+      "train": {
+        "documents": 6612,
+        "loss": 4.405536574535745,
+        "next_token_accuracy": 0.2359565929979074,
+        "nll_sum": 13012708.274327997,
+        "perplexity": 81.9030781609674,
+        "precision": "float32",
+        "sequences": 15618,
+        "sources": {
+          "evolv_coach_boundary_qa": {
+            "correct": 87,
+            "documents": 6,
+            "loss": 4.705769019946676,
+            "next_token_accuracy": 0.20567375886524822,
+            "nll_sum": 1990.540295437444,
+            "perplexity": 110.5832930149304,
+            "tokens": 423
+          },
+          "evolv_context_authored": {
+            "correct": 763,
+            "documents": 198,
+            "loss": 4.558161700229951,
+            "next_token_accuracy": 0.22533963378617838,
+            "nll_sum": 15433.935516978614,
+            "perplexity": 95.4079301469821,
+            "tokens": 3386
+          },
+          "evolv_knowledge": {
+            "correct": 1026,
+            "documents": 66,
+            "loss": 4.655545391359354,
+            "next_token_accuracy": 0.20536429143314652,
+            "nll_sum": 23259.10477523133,
+            "perplexity": 105.1665612945777,
+            "tokens": 4996
+          },
+          "evolv_knowledge_qa": {
+            "correct": 1826,
+            "documents": 66,
+            "loss": 4.219810522069508,
+            "next_token_accuracy": 0.27566425120772947,
+            "nll_sum": 27952.02489818842,
+            "perplexity": 68.02059466680045,
+            "tokens": 6624
+          },
+          "evolv_nlu_train": {
+            "correct": 4162,
+            "documents": 1004,
+            "loss": 4.236811480284226,
+            "next_token_accuracy": 0.26450587861455355,
+            "nll_sum": 66666.2286422723,
+            "perplexity": 69.18689598298754,
+            "tokens": 15735
+          },
+          "evolv_v14_authored_train": {
+            "correct": 246,
+            "documents": 108,
+            "loss": 4.921486231921621,
+            "next_token_accuracy": 0.18538055764883196,
+            "nll_sum": 6530.812229759991,
+            "perplexity": 137.20638223005233,
+            "tokens": 1327
+          },
+          "oasst1_ptbr_human": {
+            "correct": 32189,
+            "documents": 1042,
+            "loss": 4.476248329786607,
+            "next_token_accuracy": 0.21940413465929617,
+            "nll_sum": 656714.8687113229,
+            "perplexity": 87.90426545938239,
+            "tokens": 146711
+          },
+          "wikipedia_pt": {
+            "correct": 656650,
+            "documents": 4122,
+            "loss": 4.4022687782400975,
+            "next_token_accuracy": 0.2366719949252392,
+            "nll_sum": 12214160.759258823,
+            "perplexity": 81.63587241031148,
+            "tokens": 2774515
+          }
+        },
+        "tokens": 2953717,
+        "unmodified_logits": true
+      },
+      "validation": {
+        "documents": 57,
+        "loss": 4.578859313722249,
+        "next_token_accuracy": 0.23689086529553455,
+        "nll_sum": 98848.41486463591,
+        "perplexity": 97.40322429275085,
+        "precision": "float32",
+        "sequences": 119,
+        "sources": {
+          "evolv_knowledge": {
+            "correct": 15,
+            "documents": 1,
+            "loss": 5.137919226277838,
+            "next_token_accuracy": 0.17647058823529413,
+            "nll_sum": 436.7231342336163,
+            "perplexity": 170.3609167475872,
+            "tokens": 85
+          },
+          "evolv_nlu_train": {
+            "correct": 36,
+            "documents": 8,
+            "loss": 4.102793849322812,
+            "next_token_accuracy": 0.32142857142857145,
+            "nll_sum": 459.5129111241549,
+            "perplexity": 60.50910498436535,
+            "tokens": 112
+          },
+          "oasst1_ptbr_human": {
+            "correct": 155,
+            "documents": 15,
+            "loss": 5.053162277479728,
+            "next_token_accuracy": 0.14595103578154425,
+            "nll_sum": 5366.458338683471,
+            "perplexity": 156.5166317473663,
+            "tokens": 1062
+          },
+          "wikipedia_pt": {
+            "correct": 4908,
+            "documents": 33,
+            "loss": 4.554366691947202,
+            "next_token_accuracy": 0.24142850115598405,
+            "nll_sum": 92585.72048059467,
+            "perplexity": 95.04654243025153,
+            "tokens": 20329
+          }
+        },
+        "tokens": 21588,
+        "unmodified_logits": true
+      }
+    }
+  },
+  "strided_context": {
+    "initial": {
+      "test": {
+        "documents": 42,
+        "loss": 9.018227167187199,
+        "next_token_accuracy": 0.01760752688172043,
+        "nll_sum": 134191.2202477455,
+        "perplexity": 8252.134450898757,
+        "precision": "float32",
+        "sequences": 140,
+        "sources": {
+          "evolv_nlu_train": {
+            "correct": 0,
+            "documents": 5,
+            "loss": 9.025440115087173,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 767.1624097824097,
+            "perplexity": 8311.871849132907,
+            "tokens": 85
+          },
+          "oasst1_ptbr_human": {
+            "correct": 0,
+            "documents": 4,
+            "loss": 9.039460405810125,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 2621.4435176849365,
+            "perplexity": 8429.227466483937,
+            "tokens": 290
+          },
+          "wikipedia_pt": {
+            "correct": 262,
+            "documents": 33,
+            "loss": 9.017760380577606,
+            "next_token_accuracy": 0.018062736987245778,
+            "nll_sum": 130802.61432027817,
+            "perplexity": 8248.28336392436,
+            "tokens": 14505
+          }
+        },
+        "tokens": 14880,
+        "unmodified_logits": true
+      },
+      "validation": {
+        "documents": 57,
+        "loss": 9.020686877752336,
+        "next_token_accuracy": 0.013850287196590698,
+        "nll_sum": 194738.58831691742,
+        "perplexity": 8272.457297105933,
+        "precision": "float32",
+        "sequences": 203,
+        "sources": {
+          "evolv_knowledge": {
+            "correct": 1,
+            "documents": 1,
+            "loss": 9.06182399076574,
+            "next_token_accuracy": 0.011764705882352941,
+            "nll_sum": 770.2550392150879,
+            "perplexity": 8619.858866826353,
+            "tokens": 85
+          },
+          "evolv_nlu_train": {
+            "correct": 0,
+            "documents": 8,
+            "loss": 9.03139340026038,
+            "next_token_accuracy": 0.0,
+            "nll_sum": 1011.5160608291626,
+            "perplexity": 8361.502378338737,
+            "tokens": 112
+          },
+          "oasst1_ptbr_human": {
+            "correct": 1,
+            "documents": 15,
+            "loss": 9.02435704858065,
+            "next_token_accuracy": 0.0009416195856873823,
+            "nll_sum": 9583.867185592651,
+            "perplexity": 8302.874412417304,
+            "tokens": 1062
+          },
+          "wikipedia_pt": {
+            "correct": 297,
+            "documents": 33,
+            "loss": 9.020264156194624,
+            "next_token_accuracy": 0.014609670913473363,
+            "nll_sum": 183372.95003128052,
+            "perplexity": 8268.961090084298,
+            "tokens": 20329
+          }
+        },
+        "tokens": 21588,
+        "unmodified_logits": true
+      }
+    },
+    "trained": {
+      "test": {
+        "documents": 42,
+        "loss": 4.610657245197716,
+        "next_token_accuracy": 0.22439516129032258,
+        "nll_sum": 68606.57980854201,
+        "perplexity": 100.55021406907186,
+        "precision": "float32",
+        "sequences": 140,
+        "sources": {
+          "evolv_nlu_train": {
+            "correct": 19,
+            "documents": 5,
+            "loss": 4.18141969252816,
+            "next_token_accuracy": 0.2235294117647059,
+            "nll_sum": 355.4206738648936,
+            "perplexity": 65.45871853191593,
+            "tokens": 85
+          },
+          "oasst1_ptbr_human": {
+            "correct": 49,
+            "documents": 4,
+            "loss": 4.9664867421162535,
+            "next_token_accuracy": 0.16896551724137931,
+            "nll_sum": 1440.2811552137136,
+            "perplexity": 143.52177159393784,
+            "tokens": 290
+          },
+          "wikipedia_pt": {
+            "correct": 3271,
+            "documents": 33,
+            "loss": 4.606058461183275,
+            "next_token_accuracy": 0.2255084453636677,
+            "nll_sum": 66810.8779794634,
+            "perplexity": 100.08886698284334,
+            "tokens": 14505
+          }
+        },
+        "tokens": 14880,
+        "unmodified_logits": true
+      },
+      "validation": {
+        "documents": 57,
+        "loss": 4.566535266265555,
+        "next_token_accuracy": 0.23726144154159717,
+        "nll_sum": 98582.36332814081,
+        "perplexity": 96.21018894627163,
+        "precision": "float32",
+        "sequences": 203,
+        "sources": {
+          "evolv_knowledge": {
+            "correct": 15,
+            "documents": 1,
+            "loss": 5.137919226277838,
+            "next_token_accuracy": 0.17647058823529413,
+            "nll_sum": 436.7231342336163,
+            "perplexity": 170.3609167475872,
+            "tokens": 85
+          },
+          "evolv_nlu_train": {
+            "correct": 36,
+            "documents": 8,
+            "loss": 4.102793849322812,
+            "next_token_accuracy": 0.32142857142857145,
+            "nll_sum": 459.5129111241549,
+            "perplexity": 60.50910498436535,
+            "tokens": 112
+          },
+          "oasst1_ptbr_human": {
+            "correct": 155,
+            "documents": 15,
+            "loss": 5.053162277479728,
+            "next_token_accuracy": 0.14595103578154425,
+            "nll_sum": 5366.458338683471,
+            "perplexity": 156.5166317473663,
+            "tokens": 1062
+          },
+          "wikipedia_pt": {
+            "correct": 4916,
+            "documents": 33,
+            "loss": 4.541279401057581,
+            "next_token_accuracy": 0.24182202764523586,
+            "nll_sum": 92319.66894409957,
+            "perplexity": 93.81074494063684,
+            "tokens": 20329
+          }
+        },
+        "tokens": 21588,
+        "unmodified_logits": true
+      }
+    }
+  }
+}

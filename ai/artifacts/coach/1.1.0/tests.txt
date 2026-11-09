@@ -1,0 +1,27 @@
+test_compound_risk_cannot_confirm_pending_proposal (test_coach_actions.ActionTests.test_compound_risk_cannot_confirm_pending_proposal) ... ok
+test_confirmation_requires_id_session_and_not_replayed (test_coach_actions.ActionTests.test_confirmation_requires_id_session_and_not_replayed) ... ok
+test_conflicts_crossweek_and_ambiguous_item_fail (test_coach_actions.ActionTests.test_conflicts_crossweek_and_ambiguous_item_fail) ... ok
+test_emergency_takes_priority_over_privacy (test_coach_actions.ActionTests.test_emergency_takes_priority_over_privacy) ... ok
+test_expiry_revision_and_rejection (test_coach_actions.ActionTests.test_expiry_revision_and_rejection) ... ok
+test_four_dto_kinds_with_actual_entity_extractor (test_coach_actions.ActionTests.test_four_dto_kinds_with_actual_entity_extractor) ... ok
+test_full_preview_flow_and_clear_invalidates_pending (test_coach_actions.ActionTests.test_full_preview_flow_and_clear_invalidates_pending) ... ok
+test_missing_context_uncertainty_risk_and_unsupported_action (test_coach_actions.ActionTests.test_missing_context_uncertainty_risk_and_unsupported_action) ... ok
+test_negative_hypothetical_compound_requests_require_clarification (test_coach_actions.ActionTests.test_negative_hypothetical_compound_requests_require_clarification) ... ok
+test_order_missing_replacement_and_negated_spans (test_coach_actions.ActionTests.test_order_missing_replacement_and_negated_spans) ... ok
+test_preflight_emergency_allergy_privacy_and_output_guards (test_coach_actions.ActionTests.test_preflight_emergency_allergy_privacy_and_output_guards) ... ok
+test_returned_proposal_mutation_does_not_change_pending (test_coach_actions.ActionTests.test_returned_proposal_mutation_does_not_change_pending) ... ok
+test_unknown_fields_sql_kind_and_bad_uuid_rejected (test_coach_actions.ActionTests.test_unknown_fields_sql_kind_and_bad_uuid_rejected) ... ok
+test_citations_checked_against_delivered_evidence (test_coach_composition.CoachCompositionTests.test_citations_checked_against_delivered_evidence) ... ok
+test_context_has_entities_sources_and_boundaries (test_coach_composition.CoachCompositionTests.test_context_has_entities_sources_and_boundaries) ... ok
+test_history_isolated_bounded_and_resettable (test_coach_composition.CoachCompositionTests.test_history_isolated_bounded_and_resettable) ... ok
+test_identifiers_minimized_before_nlp_and_history (test_coach_composition.CoachCompositionTests.test_identifiers_minimized_before_nlp_and_history) ... ok
+test_invalid_input (test_coach_composition.CoachCompositionTests.test_invalid_input) ... ok
+test_knowledge_fallback_keeps_uncertainty_but_not_actions (test_coach_composition.CoachCompositionTests.test_knowledge_fallback_keeps_uncertainty_but_not_actions) ... ok
+test_no_evidence_never_calls_lm (test_coach_composition.CoachCompositionTests.test_no_evidence_never_calls_lm) ... ok
+test_overflow_rejects_without_saving_turn (test_coach_composition.CoachCompositionTests.test_overflow_rejects_without_saving_turn) ... ok
+test_risk_and_pending_routes_bypass_generation_and_retrieval (test_coach_composition.CoachCompositionTests.test_risk_and_pending_routes_bypass_generation_and_retrieval) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.003s
+
+OK

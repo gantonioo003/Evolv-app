@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "nll": 4.0396546737856385,
+    "perplexity": 56.80672256751822,
+    "target_tokens": 1563,
+    "examples": 28
+  },
+  "train": {
+    "nll": 4.149058398183332,
+    "perplexity": 63.37429884011575,
+    "target_tokens": 19259,
+    "examples": 335
+  }
+}

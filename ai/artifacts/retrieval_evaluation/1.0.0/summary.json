@@ -1,0 +1,103 @@
+{
+  "selected_config": {
+    "lexical_weight": 0.45,
+    "context_weight": 0.8,
+    "min_score": 0.3
+  },
+  "validation": {
+    "positive_queries": 52,
+    "negative_queries": 10,
+    "hit_at_1": 0.6538461538461539,
+    "hit_at_3": 0.8269230769230769,
+    "mrr_at_3": 0.7371794871794872,
+    "rejection_rate": 1.0,
+    "by_category": {
+      "followup": {
+        "positive_queries": 10,
+        "negative_queries": 0,
+        "hit_at_1": 0.9,
+        "hit_at_3": 1.0,
+        "mrr_at_3": 0.95,
+        "rejection_rate": null
+      },
+      "negative": {
+        "positive_queries": 0,
+        "negative_queries": 10,
+        "hit_at_1": null,
+        "hit_at_3": null,
+        "mrr_at_3": null,
+        "rejection_rate": 1.0
+      },
+      "single": {
+        "positive_queries": 40,
+        "negative_queries": 0,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "mrr_at_3": 0.6958333333333333,
+        "rejection_rate": null
+      },
+      "switch": {
+        "positive_queries": 2,
+        "negative_queries": 0,
+        "hit_at_1": 0.5,
+        "hit_at_3": 0.5,
+        "mrr_at_3": 0.5,
+        "rejection_rate": null
+      }
+    }
+  },
+  "reserved": {
+    "positive_queries": 32,
+    "negative_queries": 10,
+    "hit_at_1": 0.65625,
+    "hit_at_3": 0.84375,
+    "mrr_at_3": 0.7447916666666666,
+    "rejection_rate": 1.0,
+    "by_category": {
+      "ambiguous": {
+        "positive_queries": 0,
+        "negative_queries": 2,
+        "hit_at_1": null,
+        "hit_at_3": null,
+        "mrr_at_3": null,
+        "rejection_rate": 1.0
+      },
+      "followup": {
+        "positive_queries": 12,
+        "negative_queries": 0,
+        "hit_at_1": 0.6666666666666666,
+        "hit_at_3": 1.0,
+        "mrr_at_3": 0.8194444444444445,
+        "rejection_rate": null
+      },
+      "negative": {
+        "positive_queries": 0,
+        "negative_queries": 8,
+        "hit_at_1": null,
+        "hit_at_3": null,
+        "mrr_at_3": null,
+        "rejection_rate": 1.0
+      },
+      "single": {
+        "positive_queries": 16,
+        "negative_queries": 0,
+        "hit_at_1": 0.5625,
+        "hit_at_3": 0.6875,
+        "mrr_at_3": 0.625,
+        "rejection_rate": null
+      },
+      "switch": {
+        "positive_queries": 4,
+        "negative_queries": 0,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "rejection_rate": null
+      }
+    }
+  },
+  "independent_human_test": false,
+  "models_or_safety_thresholds_changed": false,
+  "index_rows": 107,
+  "app_promoted": false
+}

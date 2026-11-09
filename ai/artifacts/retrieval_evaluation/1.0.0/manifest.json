@@ -1,0 +1,13 @@
+{
+  "index_manifest_sha256": "85d5f7e9d1c2e2985f32bb560a4f7fd46442044c7bc6a45308366d05fb780729",
+  "outputs": {
+    "old_67.json": "692ef28991e50e59214f6d97b8e739486a8558c7a9fb1b29f339fd487b125eb6",
+    "protocol.json": "02bd4e6403bf4f6d860addcb6ed1b4c8d3a9132a8d74958936bb25f97787eb51",
+    "reserved.json": "1c3e975a89c20a63633d1056518e15924f842f3ef701e6f35212c383fcce930a",
+    "selected_validation.json": "3554cd74c6a2ee4721dde6366b801f552f0d1800ee04db469669c400557f7dad",
+    "selection.json": "7974927bbea3849a59ba2c1c0db3e92836eb963e852630a5b3e09dfdebc16331",
+    "semantic_107.json": "7e7ca7add65e3e37295f7f8533622027f11526c842644261b96d5134abd39665",
+    "summary.json": "5eee258442c6c9b0b94edb33a6ba4352d7fa4aed39c418c6de6f72d3b3644e59",
+    "trials.json": "7ebad40fbe8947a0dd9e2d032d2e97c074f9f31a9d4e13da90b04a560880c65c"
+  }
+}

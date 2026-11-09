@@ -1,0 +1,315 @@
+{
+  "as_of": "2026-11-03",
+  "suite_sha256": "dfddb468801a042e7bd54730ce336658ef2708b51cd40b4833cbe9808c984e97",
+  "purpose": "Authored development evaluation. Reserved cases separated before scores; not independent human gold.",
+  "candidate_grid": [
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.0,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.0,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.0,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.0,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.0,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.55,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.55,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.55,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.55,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.55,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.8,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.8,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.8,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.8,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.0,
+      "context_weight": 0.8,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.0,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.0,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.0,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.0,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.0,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.55,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.55,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.55,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.55,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.55,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.8,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.8,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.8,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.8,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.25,
+      "context_weight": 0.8,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.0,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.0,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.0,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.0,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.0,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.55,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.55,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.55,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.55,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.55,
+      "min_score": 0.5
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.8,
+      "min_score": 0.3
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.8,
+      "min_score": 0.35
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.8,
+      "min_score": 0.4
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.8,
+      "min_score": 0.45
+    },
+    {
+      "lexical_weight": 0.45,
+      "context_weight": 0.8,
+      "min_score": 0.5
+    }
+  ],
+  "selection": "Validation only; require >=90% rejection on validation negatives, then maximize mean category Hit@3 (single, followup, switch), break ties by MRR and higher threshold. If no eligible candidate, report failure without promotion.",
+  "reserved_opened_only_after_selection": true,
+  "fixed_rules": {
+    "bm25_k1": 1.2,
+    "bm25_b": 0.75,
+    "duplicate_cosine": 0.94,
+    "context_unsupported_semantic": 0.3,
+    "context_unsupported_lexical": 0.12,
+    "independent_subject_semantic": 0.62,
+    "subject_document_cosine": 0.45
+  },
+  "protected": {
+    "artifacts\\baseline\\1.8.0\\candidate_selection.json": "af677318912365954c873962ec3dcd8a8d0fae57aec8dc238049ce00b45bba82",
+    "artifacts\\baseline\\1.8.0\\clustering.json": "8a0d706bebcb46f02790855d2d241996d80350018278abc6500a00226a70b567",
+    "artifacts\\baseline\\1.8.0\\comparison_same_references.json": "1aaf1403e99166a64e4451890354094f3a9ed6c61adaf6bfae222e39a3740f4c",
+    "artifacts\\baseline\\1.8.0\\evaluation.json": "b879565102ebe8dcadb89223587f4f0095d4a5e61e0279eba372449b04f68e70",
+    "artifacts\\baseline\\1.8.0\\extra_progress.json": "965465cdb975e7754fc2ffbf4282b00a89f059b313191a82dee565471028dc46",
+    "artifacts\\baseline\\1.8.0\\manifest.json": "c3feb81719fce041b86bd4ff8988aadd1a2ace1996973bf55d8f0c3ac78032ef",
+    "artifacts\\baseline\\1.8.0\\private\\errors.jsonl": "51876fd377066a62d90c0455b61de6921a4b2aa34e3687155df500ad17a43f4c",
+    "artifacts\\baseline\\1.8.0\\private\\features.joblib": "efc26837be5800e8f9401b1d7e37317f7316402ccbc88a24cbeef542a3ce8aa4",
+    "artifacts\\baseline\\1.8.0\\private\\intent_candidate.joblib": "e5c144d1528626e5929d84a60472b0b5111e493fb381cb835de8d042208a901f",
+    "artifacts\\baseline\\1.8.0\\private\\intent_classifier.joblib": "bf42033207c98d6d78ad1f8b88f128e443c53956846156c8cabe8d7741b6bc26",
+    "artifacts\\baseline\\1.8.0\\private\\predictions_all_12179.jsonl": "b3f7b24b4f6e484315b201a4557a8ba76617c146616ac0f983bbc196abc27b13",
+    "artifacts\\baseline\\1.8.0\\private\\risk_candidate.joblib": "d776062d941281502569e15474544695c889a235f3879e2013661a7d3e5d65f8",
+    "artifacts\\baseline\\1.8.0\\private\\risk_classifier.joblib": "b6c17acb5e2d2e0d3b9af28051236052deb111a08aec166e223058e10a92548a",
+    "artifacts\\baseline\\1.8.0\\search_progress.json": "e9367bc8f4d5ed0e746149c70e0ae60af65915f796f2e5024d7be99fb55f11cb",
+    "artifacts\\baseline\\1.8.0\\selection_frozen.json": "11012b4327bf67ffe8c699cf807619bc259cd1972fd9b1851c1cb7df011e39af",
+    "artifacts\\baseline\\1.9.0\\baseline_validation.json": "2e7fe1b9e9fa64524031c02b274ac0ffdbcccd6fac15c16be538e62bf5125b84",
+    "artifacts\\baseline\\1.9.0\\calibration.json": "863f70f038a4005d1dcc07aaf97cbd511fcbe336451ee42c315ecb1fd8cb2a4b",
+    "artifacts\\baseline\\1.9.0\\class_details.json": "7b5771a2fe592b7043bf79f6419b810ccb70b97d4f0c7807162d68d0dd131106",
+    "artifacts\\baseline\\1.9.0\\completion.json": "5b82d9b83161c65b9ad0454252d1ebe4427cd1f2ba9d4ccb6ec75c7bf28d3d57",
+    "artifacts\\baseline\\1.9.0\\manifest.json": "09a55cd1bae38b215e2fd9a1d6d5bf48db796f4ef152ce47e6efeeba2100fd72",
+    "artifacts\\baseline\\1.9.0\\private\\embeddings.npz": "eee27a44fd5ce6b5b557e686e28bdcfd1fba3c8607f2a375bb3a7c0ee9be701a",
+    "artifacts\\baseline\\1.9.0\\private\\features.joblib": "658e38c2b2a15c4425b9307bf7517bf0f529961d0d2b5705bf77f9fc737c482d",
+    "artifacts\\baseline\\1.9.0\\private\\intent.joblib": "8eb21e9a9a084d6ed6405d508b72a1fb72b430781e753f895cb680b153d205b1",
+    "artifacts\\baseline\\1.9.0\\private\\legacy_features.joblib": "6d5fd2ef9fa9b27472522dc24ef7f3bdb9624c35b3adb48c3a0366aee8283e5e",
+    "artifacts\\baseline\\1.9.0\\private\\risk.joblib": "df83d1842dfe632b4d8fdb0f5001b07af17686816341808b34a8ca624f80a03f",
+    "artifacts\\baseline\\1.9.0\\protocol.json": "34c3b6966a13962fbde029d06e742932a09f8813291049a2efe33df17064e7eb",
+    "artifacts\\baseline\\1.9.0\\RESULTS.md": "93b6e37b75c083fd321fed634f5118ac714738c2257d0d0dd5bc3445b349e8ef",
+    "artifacts\\baseline\\1.9.0\\runtime_verification.json": "416c2207f22398e972929da2f28233592a905e79ab80354f14b02c24d7fbfe40",
+    "artifacts\\baseline\\1.9.0\\selection.json": "c7027182921fed26f8206827ab238d03b256d5b1d6d729126228acb9416cdbfa",
+    "artifacts\\baseline\\1.9.0\\trials.json": "a56bba8f6534861d0e8d45b9f8b592cfe54e162118a9ec141634dac358bf515f",
+    "artifacts\\baseline\\1.9.0\\validation_metrics.json": "c12436ba653d5e52b6c6160ec906a8cf9c74743a06e90196c41101e7a6792308",
+    "artifacts\\rag\\1.0.0\\chunks.json": "84edff5ba07535d1c999f38f8e45ed65a823f0e36a5df57505b2578232dec804",
+    "artifacts\\rag\\1.0.0\\manifest.json": "028251fa7d26cc9feefff72d560a7eec9b4960ee77eac47caca56df6e6535c01",
+    "artifacts\\rag\\1.0.0\\vectors.npy": "0fd73b59eaa5523c5620c1e9461de699e26ae4c44cdbfdb26db709ab0ff90b81",
+    "data\\knowledge\\coach-boundaries.v1.json": "d55243b6c29d4710f42fad941a44db99dcfeaffccbd8ac8c8f55b8f0f8b07100",
+    "data\\knowledge\\coverage.v1.json": "59352a36695a28ae26505043e1fe01893a80a351b1c54fac1d06225d49b74a05",
+    "data\\knowledge\\knowledge_chunks.v1.json": "39877c7f30bc89face526beb50bb2e5d6a316edd5282d446e7438672f5aaa115",
+    "data\\metadata\\sources.v1.json": "d3f7d26b3b7a1f489c60ff11e267e900b567ffe00e3bf3fb5a49c95442a30b7b",
+    "data\\rag\\1.0.0\\chunks.jsonl": "6ba17531f0dcecdb0aa44b32649a6965162f34323c32069bfb35d6e9d51dcfbd",
+    "data\\rag\\1.0.0\\config.json": "87823c26d28f9dd37bba928e1a73a1036088d3951c271b76685e571ea0f3905c",
+    "data\\rag\\1.0.0\\documents.json": "0bf1cbc6be8470ba871d2919b52837c8dfb665853f14b2184160985d1040e6f0",
+    "data\\rag\\1.0.0\\manifest.json": "c50e9e3340aed6ee90877eee9e57c4bfbbdc578c53a2fc52c53c90875c41d962",
+    "data\\rag\\1.0.0\\quarantine.json": "9203ca04fbdb4941aa18af5f295f0099bd5257ad9fb7a8da5d3216dac33e6946",
+    "data\\rag\\1.0.0\\report.json": "a82da8c5ddc9be42113375451cb54bbbca9fc692fb35fc7c69fcf45a207aa3bf",
+    "data\\rag\\1.0.0\\sources.json": "ba646c992d48b4134292a5f23bbba10de6fcf7c369c417472cf4569d3f9b15dc",
+    "data\\releases\\1.8.0\\manifest.json": "addb33ab4c9c59d838448640614d8e8638a0e5300700f88d81d748da1ccb70c9",
+    "data\\releases\\1.8.0\\private\\annotation_changes.jsonl": "0d24d93f548ece564afa7e1b909796fa5b989de8d26b1fcc258e095db5a4bea3",
+    "data\\releases\\1.8.0\\private\\external_human_language.jsonl": "6fd5dc146295ea049a2388b65a10465051c8f3898925cd474baff9dfb586de29",
+    "data\\releases\\1.8.0\\private\\quarantine.jsonl": "9dd397209e4c2c2624445ac444c7cf59d7beff981083ac352f1fa0b93e7609f0",
+    "data\\releases\\1.8.0\\private\\records.jsonl": "4dc7508d3615f4869cddf9002b3f32912891ca61935a5dbd0c227303beef649e",
+    "data\\releases\\1.8.0\\private\\test.jsonl": "189bc4d34449fd8bf0e7d977b9189fd2c0fa43d5dd61ae278ffced62d4e22713",
+    "data\\releases\\1.8.0\\private\\train.jsonl": "478777c1129e8743043e6693ae7130f14d8b7d3d8f5fbff411eebe32497c8a41",
+    "data\\releases\\1.8.0\\private\\validation.jsonl": "7d3c261b64dc1ef9c2e25bd3d4d0182ccfc7936fd9b8ab590a4da03a87325a2f",
+    "data\\releases\\1.8.0\\taxonomy.json": "d0b4ec4cc5b791c7c1e3a0856932a452a3b4b1c9aa5083b81cea8f5772c92202",
+    "data\\releases\\1.9.0\\manifest.json": "b2c7fdf11dffbb354f8066815e5247462d6c5b0e5dc08e382e288b88f59fc5d3",
+    "data\\releases\\1.9.0\\private\\external_human_language.jsonl": "6fd5dc146295ea049a2388b65a10465051c8f3898925cd474baff9dfb586de29",
+    "data\\releases\\1.9.0\\private\\quarantine.jsonl": "9dd397209e4c2c2624445ac444c7cf59d7beff981083ac352f1fa0b93e7609f0",
+    "data\\releases\\1.9.0\\private\\records.jsonl": "d0ebfd01297f8c47d00ed3afee19232ba0863443db3bf13da30fb5d1f38e564b",
+    "data\\releases\\1.9.0\\private\\test.jsonl": "189bc4d34449fd8bf0e7d977b9189fd2c0fa43d5dd61ae278ffced62d4e22713",
+    "data\\releases\\1.9.0\\private\\train.jsonl": "6aca5fe37b939b51c0cfae0ca014a1edbc9ecb27a520d00477c94bc88a4e6d37",
+    "data\\releases\\1.9.0\\private\\train_actions_synthetic.jsonl": "77e22e8e150365e62b62470e11f7954652fcf4284ce7c10bf02a9579c1734e1c",
+    "data\\releases\\1.9.0\\private\\validation.jsonl": "2ad0cd5a1c5e5e8a91349c33bc2d878b3ad35c1ef6ad3c7f81e7dadfeb0af9fd",
+    "data\\releases\\1.9.0\\private\\validation_actions_synthetic.jsonl": "a2d7f2c0333678984802aaa06e12431812d160b003efc32db2625452d395f064",
+    "data\\releases\\1.9.0\\private\\validation_legacy.jsonl": "5ba6642dfae8acca14583679511f37f690ea62dfbd0e116b52b2ad8cbd60c7ce",
+    "data\\releases\\1.9.0\\taxonomy.json": "d0b4ec4cc5b791c7c1e3a0856932a452a3b4b1c9aa5083b81cea8f5772c92202"
+  },
+  "code_sha256": {
+    "src/evolv_rag/retrieval.py": "ac15323c0cfe8bce2a4ff104f05a0fa7ec452cde2ec930ccb6aecda03a7d27ef",
+    "scripts/evaluate_retrieval.py": "81470861148567e1eda3320ac3cf9aa976b716f26f0c97b015f23fc6961a098a",
+    "src/evolv_rag/search.py": "42201175038369cddd33a44738a7bb3b7139b659b3d15cc2896a31090864f9ad"
+  }
+}

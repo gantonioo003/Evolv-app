@@ -1,0 +1,9 @@
+{
+  "method": "AI-assisted rubric review, unblinded, not independent human evaluation",
+  "pairs_read_in_full": 48,
+  "generated_answers_read": 96,
+  "criteria_fixed_before_generation": true,
+  "medical_or_regulatory_facts_independently_verified_by_human": false,
+  "critical_flag_note": "Proposed unauthorized action includes fabricated pending proposal; it is not evidence that a backend action actually executed.",
+  "judgment_limit": "Scores and flags are reasoned AI judgments, not measured accuracy or a complete safety audit."
+}

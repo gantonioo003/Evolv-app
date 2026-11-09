@@ -30,6 +30,7 @@ import { colors, typography } from "@/constants/theme";
 import { useAuth } from "@/context/auth-context";
 import { useAppTheme } from "@/context/theme-context";
 import { authPhotos, nextAuthPhotoIndex } from "@/data/auth-photos";
+import { formatBirthDate, validateSignup } from "@/lib/signup";
 
 const AUTH_PHOTO_KEY = "@evolv/auth-photo-index";
 
@@ -138,7 +139,9 @@ export default function LoginScreen() {
   const router = useRouter();
   const { isConfigured, signIn, signUp } = useAuth();
   const [mode, setMode] = useState<AuthMode>("login");
+  const compactForm = compact || (mode === "signup" && viewportHeight < 920);
   const [fullName, setFullName] = useState("");
+  const [birthDate, setBirthDate] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -148,6 +151,7 @@ export default function LoginScreen() {
   const [keyboardVisible, setKeyboardVisible] = useState(false);
   const nameRef = useRef<TextInput>(null);
   const emailRef = useRef<TextInput>(null);
+  const birthDateRef = useRef<TextInput>(null);
   const passwordRef = useRef<TextInput>(null);
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
   const photoSelected = useRef(false);
@@ -200,6 +204,21 @@ export default function LoginScreen() {
 
   async function submit() {
     if (isSubmitting || !isConfigured) return;
+    const signup =
+      mode === "signup"
+        ? validateSignup({ name: fullName, email, password, birthDate })
+        : null;
+    if (signup && !signup.ok) {
+      setError(signup.message);
+      const refs = {
+        name: nameRef,
+        email: emailRef,
+        birthDate: birthDateRef,
+        password: passwordRef,
+      };
+      refs[signup.field].current?.focus();
+      return;
+    }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       setError("Informe um e-mail válido.");
       emailRef.current?.focus();
@@ -223,7 +242,13 @@ export default function LoginScreen() {
         await signIn(email, password);
         router.replace("/(tabs)");
       } else {
-        const result = await signUp(email, password, fullName);
+        if (!signup?.ok) return;
+        const result = await signUp(
+          signup.email,
+          password,
+          signup.name,
+          signup.birthDate,
+        );
         if (result.needsEmailConfirmation) {
           setMode("login");
           setPassword("");
@@ -290,7 +315,7 @@ export default function LoginScreen() {
             }
             contentContainerStyle={[
               styles.scrollContent,
-              compact && styles.compactContent,
+              compactForm && styles.compactContent,
             ]}
             keyboardShouldPersistTaps="handled"
             keyboardDismissMode="on-drag"
@@ -300,7 +325,7 @@ export default function LoginScreen() {
               keyboardVisible || contentHeight > viewportHeight + 1
             }
           >
-            <View style={[styles.form, compact && styles.compactForm]}>
+            <View style={[styles.form, compactForm && styles.compactForm]}>
               <View style={styles.brandRow}>
                 <Text style={[styles.brand, { color: palette.text }]}>
                   Evolv<Text style={styles.brandDot}>.</Text>
@@ -341,13 +366,13 @@ export default function LoginScreen() {
                 {mode === "signup" ? (
                   <AuthField
                     label="Nome"
-                    optional
                     palette={palette}
                     inputRef={nameRef}
                     autoCapitalize="words"
                     autoComplete="name"
                     textContentType="name"
-                    placeholder="Como podemos chamar você?"
+                    placeholder="Seu nome"
+                    maxLength={120}
                     value={fullName}
                     onChangeText={setFullName}
                     returnKeyType="next"
@@ -368,9 +393,34 @@ export default function LoginScreen() {
                   value={email}
                   onChangeText={setEmail}
                   returnKeyType="next"
-                  onSubmitEditing={() => passwordRef.current?.focus()}
+                  onSubmitEditing={() =>
+                    (mode === "signup"
+                      ? birthDateRef
+                      : passwordRef
+                    ).current?.focus()
+                  }
                   editable={!isSubmitting}
                 />
+                {mode === "signup" ? (
+                  <AuthField
+                    label="Data de nascimento"
+                    optional
+                    palette={palette}
+                    inputRef={birthDateRef}
+                    autoComplete="birthdate-full"
+                    textContentType="birthdate"
+                    keyboardType="number-pad"
+                    placeholder="DD/MM/AAAA"
+                    value={birthDate}
+                    onChangeText={(value) =>
+                      setBirthDate(formatBirthDate(value))
+                    }
+                    maxLength={10}
+                    returnKeyType="next"
+                    onSubmitEditing={() => passwordRef.current?.focus()}
+                    editable={!isSubmitting}
+                  />
+                ) : null}
                 <AuthField
                   label="Senha"
                   palette={palette}

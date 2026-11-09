@@ -1,0 +1,29 @@
+{
+  "phase": "7.06.2",
+  "real_nest_fastapi_http": true,
+  "production_auth_guard_executed": true,
+  "supabase_auth_and_database_are_fixtures": true,
+  "nlp_intent_is_explicit_fixture": true,
+  "real_entity_extractor": true,
+  "real_lm_used": false,
+  "checks_passed": 14,
+  "checks": [
+    "unauthenticated_denied",
+    "client_identity_rejected",
+    "session_created",
+    "typed_pending_proposal",
+    "proposal_not_applied",
+    "planner_preview_created",
+    "preview_not_duplicated",
+    "false_confirmation_rejected",
+    "other_user_denied",
+    "explicit_apply_only",
+    "unrelated_adjustment_denied",
+    "stale_snapshot_not_previewed",
+    "session_deleted",
+    "deleted_session_not_found"
+  ],
+  "preview_calls": 1,
+  "apply_fixture_calls": 1,
+  "real_database_writes": 0
+}

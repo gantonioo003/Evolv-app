@@ -1,0 +1,78 @@
+{
+  "phase": "7.07.6",
+  "as_of": "2026-11-03",
+  "status": "verified",
+  "knowledge_version": "1.2.0",
+  "prepared_rag_version": "1.1.0",
+  "tests_run": 20,
+  "test_failures": 0,
+  "test_errors": 0,
+  "historical_files_preserved": 65,
+  "knowledge_and_preparation_manifests_verified": true,
+  "counts": {
+    "documents_before": 67,
+    "documents_after": 107,
+    "new_documents": 40,
+    "revised_documents": 10,
+    "sources_registered": 47,
+    "source_review_status": {
+      "reviewed_selected_scope": 10,
+      "inherited_not_reverified_in_this_phase": 17,
+      "reviewed": 20
+    },
+    "closed_nominal_topic_gaps": 15,
+    "new_risk_tags_addressed": 8,
+    "boundary_migrations": 6,
+    "development_content_cases": 40
+  },
+  "generation_or_classifier_training": false,
+  "classifier_metrics_recomputed": false,
+  "retrieval_metrics_recomputed": false,
+  "app_promoted": false,
+  "active_index_rows": 67,
+  "residual_gaps": [
+    {
+      "topic": "technical_execution",
+      "status": "limited",
+      "reason": "Não cobre execução detalhada de cada exercício nem correção visual."
+    },
+    {
+      "topic": "sports_programming",
+      "status": "limited",
+      "reason": "Princípios gerais não constituem periodização individual de vôlei, tênis ou competição."
+    },
+    {
+      "topic": "clinical_and_special_populations",
+      "status": "boundary_only",
+      "reason": "Sem protocolos de tratamento, exames, medicação, reabilitação ou personalização clínica."
+    },
+    {
+      "topic": "equipment_hygiene_and_maintenance",
+      "status": "not_covered",
+      "reason": "Intenções novas de higiene corporal e manutenção de equipamentos não têm conteúdo específico."
+    },
+    {
+      "topic": "local_services_events_products",
+      "status": "not_covered",
+      "reason": "Locais, preços, disponibilidade, eventos e produtos requerem fontes atualizadas fora desta base local."
+    },
+    {
+      "topic": "knowledge_vs_retrieval",
+      "status": "pending_next_phase",
+      "reason": "Ter o trecho não garante recuperá-lo; o índice de 67 trechos não é substituído nesta etapa."
+    }
+  ],
+  "sha256": {
+    "ai\\data\\knowledge\\review_7_07_6.v1.json": "3e5e769c8d3d3e1de14af67ddd6adcfc1b0ad7caf095d152f3c4a87c841af8d9",
+    "ai\\src\\evolv_rag\\knowledge_review.py": "1c9d0efda80e759de042a1cb24a3a3ffc8c38542dd01d1c43bb796a4e5a80e3c",
+    "ai\\src\\evolv_rag\\preparation.py": "e8def72d980952f355a0a3ca3e8b85647c612b2345f5d88d722f3c660b373f0a",
+    "ai\\scripts\\review_knowledge.py": "cd0b4603242446e7e045bbb8b904e9af9c92899f24d92b0de3bb853e4943bb75",
+    "ai\\scripts\\verify_knowledge_review.py": "b3df891a1d874fd8d20421c971cbf9fc294f9c7ae4089a5a8a174b64ddf30f84",
+    "ai\\scripts\\knowledge_report.py": "e7f1077bdedfedaf2841db4440c13fee504e06a053ec0334a7e60bd1552a4b7c",
+    "ai\\configs\\rag.preparation.v2.json": "2315821e0eabfdc93211b1f1be146a8015b951605d10e83e97091af0aaacf4dd",
+    "ai\\tests\\test_knowledge_review.py": "7fb181be38254a366a70d673dd278486b1f96af218e2feaaf0382e9369fc56b3",
+    "docs\\51-coach-knowledge-review.md": "edbd51ebe6f16051d2b1f0c54eb11b82a59247db936d2ca73a7615cad60ce02e",
+    "ai\\data\\knowledge\\1.2.0\\manifest.json": "941078a9a42d77e80e19d4874fe3f6c8c5c8d969162dca5c0fd1ad8405ef3688",
+    "ai\\data\\rag\\1.1.0\\manifest.json": "a256d5931e41e2747eef829876cee629d0c39d7e99af82ee18156dbe9e399b78"
+  }
+}

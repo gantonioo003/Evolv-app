@@ -1,0 +1,37 @@
+{
+  "phase": "7.07.5",
+  "status": "validated_with_coverage_limitations",
+  "local_tests_passed": 72,
+  "remote_checks_passed": 92,
+  "remote_checks_failed": 0,
+  "cases": 12,
+  "real_coach_action_cycles": 3,
+  "browser_flow_verified": true,
+  "generation_enabled": false,
+  "nlp_version": "1.9.0",
+  "default_nlp_version": "1.8.0",
+  "model_or_threshold_changes": false,
+  "protected_files_verified": 51,
+  "input_code_hashes_match": true,
+  "temporary_users_created_in_final_run": 2,
+  "temporary_users_deleted_in_final_run": 2,
+  "scope": "Development integration, not an independent classifier benchmark or production certification",
+  "limitations": [
+    "Cardio and exercise/food replacements abstained in this suite",
+    "No Qwen generation evaluated",
+    "Physical iPhone deferred",
+    "Default NLP not promoted"
+  ],
+  "sha256": {
+    "ai/src/evolv_api/app.py": "59bee3872a5bf7346914972b839d1698218f4408bb7d8d7bbb7d312ac78165ab",
+    "ai/src/evolv_rag/coach.py": "f185f4f7871a51c0bc893e65817c03446edc66a714df54671274b3c1a2c811b1",
+    "ai/tests/test_coach_model_selection.py": "3e84f30db55c95662a44503c09702aabca36c9165b1f38e4eda1157ae9c5ed30",
+    "ai/tests/test_coach_api.py": "80f76c904ebb20b9a83eca713ebc3fd6bb1ba50fb6f5b0f74f6b0f9ecc0c5565",
+    "backend/scripts/evaluate-coach-action-flow.mjs": "50f21c71081bd6a31356a2719b8bc684fb1193268357996a45b4a9700b80c666",
+    "docs/50-coach-real-action-validation.md": "cbcf7b2ff6c5de82b35787caef3f330e294228e77d0fcab5be3fc591e80ad1d7",
+    "ai/README.md": "4c1e204a9c16f55f957aa82a3a390a2df3bf3fd3eb4a11792fe4180bce918c22",
+    "ai/artifacts/coach_action_flow/1.0.2/results.json": "65f9afada063607026d24dda3de849a991a25476c5257cf8647fb9e6e7d13f2f",
+    "ai/artifacts/coach_action_flow/1.0.2/inputs.json": "a33ad8e727fd63dc5a99e0b93d8af9c57fceb99bd7c841bbbebceb3b6f2ad3ae",
+    "ai/artifacts/coach_action_flow/1.0.2/resources.json": "b7684464a454bdec098c12bab11974df431c3a6aecb77ac3e3d66f28c161b845"
+  }
+}

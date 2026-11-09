@@ -1,0 +1,20 @@
+{
+  "sha256": {
+    "ai\\data\\evaluation\\coach_system.v2.json": "aea64ad79ed94482291a4a05434a1d44c0537ede54c57f5c6d38d93032d98904",
+    "ai/scripts/serve_coach_evaluation.py": "3d4a3ce78a9f98226bf8c428de9b28e5e4ff9f7b651971e2131f2adbee582476",
+    "ai/src/evolv_rag/grounding.py": "9682c4ce3c52e44eee8026ba9cd6c5fdf4aae564876db0b9957e5795d7c7bb8d",
+    "ai/src/evolv_api/app.py": "15f773e6341e0e03ba186e028ceb51739071142c955a0429b2473c583566a3a3",
+    "ai/configs/retrieval.runtime.v1.json": "447eaa9eb535e4c3e07a1920f7afd7a14fbca64ac4ea9443c1737abac7becc93",
+    "ai/artifacts/baseline/1.9.0/manifest.json": "09a55cd1bae38b215e2fd9a1d6d5bf48db796f4ef152ce47e6efeeba2100fd72",
+    "backend/scripts/evaluate-coach-system.mjs": "c93cc082647f664bf445a703bd7a705df1466536255cb5feb6d35f65f9122e06",
+    "ai/src/evolv_rag/coach.py": "795a7d08b485463d97971820f5fc625b9d0efe87fdf00f8e27418785abeff298",
+    "ai/src/evolv_rag/safety.py": "b746ae827aa208d8225a7a0bf2fc5d57c5322cb2ef77b36be97bbc48dcc6e059",
+    "ai/configs/openlm.v1.json": "c5bcc7d3c0028483cc3ddef618ea37111df629bbf3338e1fdd641f35904838e4",
+    "ai/artifacts/baseline/1.8.0/selection_frozen.json": "11012b4327bf67ffe8c699cf807619bc259cd1972fd9b1851c1cb7df011e39af",
+    "backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+    "backend/src/coach/coach-context.service.ts": "593937e9134fe879b7f563ab4b0020c1d66bbc44d312e12b135c2ef1aea9b912",
+    "backend/src/planner/planner-adjustments.service.ts": "46ebce98068dd31c65f474e6481c915e50c3fcaeb2da35023fb80b25d2f36f58",
+    "mobile/src/components/coach-connected-screen.tsx": "b35dbff3a1e990b05aaf19a46dcdbefbeb0859a9fa2e2dbb0f4514b38cf84eed",
+    "mobile/src/app/adjustments/[adjustmentId].tsx": "d1eda7435e2df747d6741d754c3ad22293befe04c70e50691f5925335a96b484"
+  }
+}

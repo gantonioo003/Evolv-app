@@ -1,0 +1,51 @@
+{
+  "actual_vocab_size": 8192,
+  "corpus_version": "1.2.0",
+  "distribution": "local research; preserve source attribution and license obligations",
+  "files": {
+    "config.json": {
+      "bytes": 696,
+      "sha256": "250b2c990f960e6366c2d791a93fd4cc5f9304c4f1626137959df9d79c6c7807"
+    },
+    "examples.json": {
+      "bytes": 7552,
+      "sha256": "eaf156f134b3bf5d08273024a9b6e7d6bb38361af6c245c39cc171981d0d16b1"
+    },
+    "private/merges.txt": {
+      "bytes": 67792,
+      "sha256": "c2f10e7883030f540facc264ebae54ca7b2a5ae5b77819d04c7a21d40a759b72"
+    },
+    "private/tokenizer.json": {
+      "bytes": 554292,
+      "sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a"
+    },
+    "private/vocab.json": {
+      "bytes": 116839,
+      "sha256": "f1d65016738b11e8e7ab14b252164d8e82abd96312819bb76cc5aa9382fe164f"
+    },
+    "report.json": {
+      "bytes": 8943,
+      "sha256": "fd6eb8e2c41ae361d67ffd7cd03f4ce99a73b09b289e6f08258ac7be37ae2bb6"
+    }
+  },
+  "fit_documents": 6612,
+  "fit_partition": "train",
+  "frozen_at": "2026-11-01T13:19:15.874995+00:00",
+  "frozen_tokenizer_sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a",
+  "heldout_evaluation_started_at": "2026-11-01T13:19:15.907705+00:00",
+  "runtime": {
+    "python": "3.12.14",
+    "tokenizers": "0.23.3"
+  },
+  "special_token_ids": {
+    "<|assistant|>": 6,
+    "<|bos|>": 1,
+    "<|eos|>": 2,
+    "<|pad|>": 0,
+    "<|system|>": 4,
+    "<|unk|>": 3,
+    "<|user|>": 5
+  },
+  "status": "complete",
+  "version": "1.0.0"
+}

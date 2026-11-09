@@ -1,0 +1,27 @@
+{
+  "phase": "7.06.2",
+  "files": {
+    "backend\\src\\coach\\coach-ai.client.spec.ts": "ce790f784839e0f84f9dc97170dfd7e522363309aeb6186657c4b0c43aa54a8c",
+    "backend\\src\\coach\\coach-ai.client.ts": "9b1f298813223bddb06a50fc5369e73366269430c4019fe8135a082a56d6f81c",
+    "backend\\src\\coach\\coach-context.service.spec.ts": "6840d424265a685ea534b4406694cd883b78a1b02c12d65d1a894f80ea62a151",
+    "backend\\src\\coach\\coach-context.service.ts": "593937e9134fe879b7f563ab4b0020c1d66bbc44d312e12b135c2ef1aea9b912",
+    "backend\\src\\coach\\coach.controller.ts": "7c8275f33c63bbf456313ed6e0730491a67a7aeafed3979ee7a456998e307fbe",
+    "backend\\src\\coach\\coach.module.ts": "25c2c294cb4a5c5081683c3f6fe830296bf8be3981aec1100d6ab503f1879c24",
+    "backend\\src\\coach\\coach.service.spec.ts": "f9d555c1d099971e38e983bba176cdcb061ca9affb09bc2a4fdf5ae60fe48fd4",
+    "backend\\src\\coach\\coach.service.ts": "c89301b516959f7380fb1e862fbc5bab9faa180ba2ed13eff60c2d259b05b332",
+    "backend\\src\\coach\\dto\\coach.dto.ts": "41b190217678bfc63abde25a3b66da636075f59e13c0f34d03892e91af51d787",
+    "ai\\src\\evolv_api\\app.py": "49b2620ee766da2e01b30e240dfcc7b5db0b25b8862aa39b5ad817835c56918c",
+    "ai\\tests\\test_coach_api.py": "660c215660f1bf7998832c65978a6b7ea556343ae40cb01ed52a6bbb3433e005",
+    "ai\\tests\\fixtures\\serve_coach_api.py": "82ccce112341eebedbfa90464f78c56f8388f3a7c103d9b175e4b2bad4c5b3a1",
+    "backend\\src\\config\\env.validation.ts": "9f0ab9cbf347daaf4828db79797fe010c2bf1cba5c66ab6b8296c9471c4f39f3",
+    "backend\\src\\common\\interceptors\\request-timeout.interceptor.ts": "5f1afb82aba953929a06feb8a28faf95a3f3929b8b0a1fc447e4552e1bd5dddc",
+    "backend\\src\\app.module.ts": "fead5e85f7a0ef2c0b7299110bde8f1ffefb09b0a71ff2cf54b8c70b66a91474",
+    "backend\\.env.example": "256fcc67f87a778d40789c97b83be02fdea4d245dbd2f40c849c9aadf3259303",
+    "docs\\42-coach-backend-planner.md": "0214dd8143e7c4ff5465c43da396270ba762d3ac218c8f2c78ea0ffbba0252fe"
+  },
+  "outputs": {
+    "completion.json": "bbd6f4c04f67c78b6337bddca57348aa2e4f119513cd7bd84927b51a8cd68bc1",
+    "manifest.json": "44e1baaecbb3bb3bfba70d15e34c2501e7523d9869862d19624feeead06b2a85",
+    "verification.json": "2dc282b646ab260506a9531a4d04d73671ee3a4a79adb1870a07ef6dfc6d0327"
+  }
+}

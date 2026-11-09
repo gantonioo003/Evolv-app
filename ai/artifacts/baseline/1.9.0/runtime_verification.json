@@ -1,0 +1,10 @@
+{
+  "class_details_sha256": "7b5771a2fe592b7043bf79f6419b810ccb70b97d4f0c7807162d68d0dd131106",
+  "live_pipeline_changed": false,
+  "phase": "7.07.3",
+  "private_artifact_hashes_checked": true,
+  "saved_metrics_reproduced_exactly": true,
+  "shared_encoder_cache_not_written": true,
+  "test_opened": false,
+  "validation_rows": 1059
+}

@@ -1,0 +1,2398 @@
+{
+  "phase": "7.07.5",
+  "version": "1.0.1",
+  "started_at": "2026-11-03T15:20:41.190Z",
+  "status": "evaluation_completed",
+  "scope": "Development suite; real NestJS, FastAPI, recognition 1.9 opt-in, real entities, RAG, Supabase and Planner; LM generation disabled",
+  "nlp_version": "1.9.0",
+  "lm_mode": "analyze",
+  "independent_quality_benchmark": false,
+  "credentials_recorded": false,
+  "existing_user_data_modified": false,
+  "native_iphone_tested": false,
+  "checks": [
+    {
+      "name": "temporary_profile_ready",
+      "passed": true
+    },
+    {
+      "name": "real_planner_generates_temporary_plan",
+      "passed": true
+    },
+    {
+      "name": "unauthenticated_coach_denied",
+      "passed": true
+    },
+    {
+      "name": "client_cannot_choose_owner",
+      "passed": true
+    },
+    {
+      "name": "internal_api_requires_key",
+      "passed": true
+    },
+    {
+      "name": "internal_cross_user_denied",
+      "passed": true
+    },
+    {
+      "name": "real_diet_generated",
+      "passed": true
+    },
+    {
+      "name": "all_four_action_kinds_have_test_input",
+      "passed": true
+    },
+    {
+      "name": "move-explicit_http_ok",
+      "passed": true
+    },
+    {
+      "name": "move-explicit_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "move-explicit_correct_kind",
+      "passed": true
+    },
+    {
+      "name": "preview_has_expected_kind_move_workout_day",
+      "passed": false
+    },
+    {
+      "name": "preview_leaves_plan_unchanged_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "false_confirmation_denied_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "other_user_cannot_apply_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "real_apply_changes_state_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "second_apply_denied_move_workout_day",
+      "passed": false
+    },
+    {
+      "name": "real_revert_restores_state_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "move-explicit_history_saved",
+      "passed": true
+    },
+    {
+      "name": "move-weekdays_http_ok",
+      "passed": true
+    },
+    {
+      "name": "move-weekdays_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "move-weekdays_correct_kind",
+      "passed": true
+    },
+    {
+      "name": "preview_has_expected_kind_move_workout_day",
+      "passed": false
+    },
+    {
+      "name": "preview_leaves_plan_unchanged_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "false_confirmation_denied_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "other_user_cannot_apply_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "real_apply_changes_state_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "second_apply_denied_move_workout_day",
+      "passed": false
+    },
+    {
+      "name": "real_revert_restores_state_move_workout_day",
+      "passed": true
+    },
+    {
+      "name": "move-weekdays_history_saved",
+      "passed": true
+    },
+    {
+      "name": "rest_http_ok",
+      "passed": true
+    },
+    {
+      "name": "rest_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "rest_correct_kind",
+      "passed": true
+    },
+    {
+      "name": "preview_has_expected_kind_set_day_activity",
+      "passed": false
+    },
+    {
+      "name": "preview_leaves_plan_unchanged_set_day_activity",
+      "passed": true
+    },
+    {
+      "name": "false_confirmation_denied_set_day_activity",
+      "passed": true
+    },
+    {
+      "name": "other_user_cannot_apply_set_day_activity",
+      "passed": true
+    },
+    {
+      "name": "real_apply_changes_state_set_day_activity",
+      "passed": true
+    },
+    {
+      "name": "second_apply_denied_set_day_activity",
+      "passed": false
+    },
+    {
+      "name": "real_revert_restores_state_set_day_activity",
+      "passed": true
+    },
+    {
+      "name": "rest_history_saved",
+      "passed": true
+    },
+    {
+      "name": "cardio_http_ok",
+      "passed": true
+    },
+    {
+      "name": "cardio_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "cardio_history_saved",
+      "passed": true
+    },
+    {
+      "name": "exercise_http_ok",
+      "passed": true
+    },
+    {
+      "name": "exercise_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "exercise_history_saved",
+      "passed": true
+    },
+    {
+      "name": "food_http_ok",
+      "passed": true
+    },
+    {
+      "name": "food_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "food_history_saved",
+      "passed": true
+    },
+    {
+      "name": "missing-destination_http_ok",
+      "passed": true
+    },
+    {
+      "name": "missing-destination_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "missing-destination_blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-destination_history_saved",
+      "passed": true
+    },
+    {
+      "name": "missing-replacement_http_ok",
+      "passed": true
+    },
+    {
+      "name": "missing-replacement_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "missing-replacement_blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-replacement_history_saved",
+      "passed": true
+    },
+    {
+      "name": "missing-date_http_ok",
+      "passed": true
+    },
+    {
+      "name": "missing-date_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "missing-date_blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-date_history_saved",
+      "passed": true
+    },
+    {
+      "name": "negated_http_ok",
+      "passed": true
+    },
+    {
+      "name": "negated_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "negated_blocked",
+      "passed": true
+    },
+    {
+      "name": "negated_history_saved",
+      "passed": true
+    },
+    {
+      "name": "hypothetical_http_ok",
+      "passed": true
+    },
+    {
+      "name": "hypothetical_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "hypothetical_blocked",
+      "passed": true
+    },
+    {
+      "name": "hypothetical_history_saved",
+      "passed": true
+    },
+    {
+      "name": "unsafe-pain_http_ok",
+      "passed": true
+    },
+    {
+      "name": "unsafe-pain_no_automatic_mutation",
+      "passed": true
+    },
+    {
+      "name": "unsafe-pain_blocked",
+      "passed": true
+    },
+    {
+      "name": "unsafe-pain_history_saved",
+      "passed": true
+    },
+    {
+      "name": "wrong_proposal_id_no_preview",
+      "passed": true
+    },
+    {
+      "name": "proposal_rejection_no_preview",
+      "passed": true
+    },
+    {
+      "name": "rejection_preserves_plan",
+      "passed": true
+    },
+    {
+      "name": "rejected_proposal_cannot_be_confirmed",
+      "passed": true
+    },
+    {
+      "name": "changed_plan_invalidates_old_proposal",
+      "passed": true
+    },
+    {
+      "name": "stale_test_restores_plan",
+      "passed": true
+    },
+    {
+      "name": "browser_proposal_preview_does_not_mutate",
+      "passed": true
+    },
+    {
+      "name": "browser_confirmation_changes_real_plan",
+      "passed": true
+    },
+    {
+      "name": "browser_undo_restores_real_plan",
+      "passed": true
+    },
+    {
+      "name": "browser_no_javascript_errors",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "move-explicit",
+      "text": "Mova meu treino de 03/11/2026 para 05/11/2026.",
+      "kind": "move_workout_day",
+      "http_status": 201,
+      "seconds": 4.457143599999999,
+      "result": {
+        "mode": "local_research",
+        "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [
+          {
+            "id": "88cd8758-618e-42e3-9ebd-37d759110216",
+            "status": "pending_user_confirmation",
+            "payload": {
+              "kind": "move_workout_day",
+              "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+              "source": "coach",
+              "target_weekday": "thursday",
+              "workout_day_id": "10a849b8-e9af-47f1-8b08-5796c91f6a2f",
+              "workout_plan_id": "799c7eb1-91fc-487c-bdb7-08977b66e363"
+            },
+            "expires_at": "2026-11-03T15:31:07.979283+00:00",
+            "snapshot_fingerprint": "d421107470b3a0cc4d4947eaddc00d39aa791f9783c0626be631be42d996778b"
+          }
+        ],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "draft_for_confirmation",
+          "intent": {
+            "label": "move_workout_day",
+            "margin": 0.1030440299772995,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "move_workout_day",
+                "score": 0.12935879743026818
+              },
+              {
+                "label": "image_context_request",
+                "score": 0.026314767452968672
+              },
+              {
+                "label": "adapt_training_plan",
+                "score": 0.02398371170691528
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "missed_workout",
+              "domain": "training",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Mova meu treino de 03/11/2026 para 05/11/2026.",
+            "entities": [
+              {
+                "end": 29,
+                "text": "03/11/2026",
+                "start": 19,
+                "value": "2026-11-03",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "absolute_date"
+                },
+                "entity_type": "source_date"
+              },
+              {
+                "end": 45,
+                "text": "05/11/2026",
+                "start": 35,
+                "value": "2026-11-05",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "absolute_date"
+                },
+                "entity_type": "target_date"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": null,
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "proposal"
+    },
+    {
+      "id": "move-weekdays",
+      "text": "Troque o treino de terça para quinta nesta semana.",
+      "kind": "move_workout_day",
+      "http_status": 201,
+      "seconds": 5.731443,
+      "result": {
+        "mode": "local_research",
+        "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [
+          {
+            "id": "98e00aab-faf4-4e1d-a73b-f40fd0452b11",
+            "status": "pending_user_confirmation",
+            "payload": {
+              "kind": "move_workout_day",
+              "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+              "source": "coach",
+              "target_weekday": "thursday",
+              "workout_day_id": "10a849b8-e9af-47f1-8b08-5796c91f6a2f",
+              "workout_plan_id": "799c7eb1-91fc-487c-bdb7-08977b66e363"
+            },
+            "expires_at": "2026-11-03T15:31:28.763370+00:00",
+            "snapshot_fingerprint": "6d9c22136f685f1e74af19b9bdbdd14585df040c145e10d3d7f6c0fea73ae7b6"
+          }
+        ],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "draft_for_confirmation",
+          "intent": {
+            "label": "move_workout_day",
+            "margin": 0.05900717948278922,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "move_workout_day",
+                "score": 0.0884169503756752
+              },
+              {
+                "label": "ask_training_concept",
+                "score": 0.02940977089288598
+              },
+              {
+                "label": "update_goal",
+                "score": 0.025752247570295154
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "missed_workout",
+              "domain": "training",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Troque o treino de terça para quinta nesta semana.",
+            "entities": [
+              {
+                "end": 24,
+                "text": "terça",
+                "start": 19,
+                "value": "2026-11-03",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 1,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "source_date"
+              },
+              {
+                "end": 24,
+                "text": "terça",
+                "start": 19,
+                "value": 1,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              },
+              {
+                "end": 36,
+                "text": "quinta",
+                "start": 30,
+                "value": "2026-11-05",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 3,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "target_date"
+              },
+              {
+                "end": 36,
+                "text": "quinta",
+                "start": 30,
+                "value": 3,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": null,
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "proposal"
+    },
+    {
+      "id": "rest",
+      "text": "Defina 05/11/2026 como dia de descanso.",
+      "kind": "set_day_activity",
+      "http_status": 201,
+      "seconds": 4.926567600000002,
+      "result": {
+        "mode": "local_research",
+        "answer": "Proposta preparada para a prévia do Planner: set_day_activity. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [
+          {
+            "id": "0b8856ee-b173-45c3-b99f-f2985c80ae8c",
+            "status": "pending_user_confirmation",
+            "payload": {
+              "kind": "set_day_activity",
+              "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+              "source": "coach",
+              "activity_date": "2026-11-05",
+              "activity_type": "rest"
+            },
+            "expires_at": "2026-11-03T15:31:47.678973+00:00",
+            "snapshot_fingerprint": "2ee4e0e7b12ffd1a01bcdf0a752510281ebb2588b51737e2c4361ff88ed149bb"
+          }
+        ],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "draft_for_confirmation",
+          "intent": {
+            "label": "set_day_activity",
+            "margin": 0.0769474899193332,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "set_day_activity",
+                "score": 0.10863506894064844
+              },
+              {
+                "label": "move_workout_day",
+                "score": 0.031687579021315235
+              },
+              {
+                "label": "ask_recovery",
+                "score": 0.02871679526489984
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "rest_between_sets",
+              "domain": "training",
+              "sources": [
+                "lexical"
+              ]
+            },
+            {
+              "id": "rest_day",
+              "domain": "recovery",
+              "sources": [
+                "lexical"
+              ]
+            },
+            {
+              "id": "routine_and_schedule",
+              "domain": "recovery",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Defina 05/11/2026 como dia de descanso.",
+            "entities": [
+              {
+                "end": 17,
+                "text": "05/11/2026",
+                "start": 7,
+                "value": "2026-11-05",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "absolute_date"
+                },
+                "entity_type": "target_date"
+              },
+              {
+                "end": 38,
+                "text": "dia de descanso",
+                "start": 23,
+                "value": "dia de descanso",
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "meal_context"
+              },
+              {
+                "end": 38,
+                "text": "descanso",
+                "start": 30,
+                "value": "rest",
+                "source": "activity_type_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "activity_type"
+              },
+              {
+                "end": 38,
+                "text": "descanso",
+                "start": 30,
+                "value": "descanso",
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "descanso"
+                },
+                "entity_type": "training_metric"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": null,
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "proposal"
+    },
+    {
+      "id": "cardio",
+      "text": "Coloque cardio no dia 06/11/2026.",
+      "kind": "set_day_activity",
+      "http_status": 201,
+      "seconds": 5.949007599999997,
+      "result": {
+        "mode": "local_research",
+        "answer": "Você quer alterar a atividade no calendário ou apenas conversar sobre essa atividade?",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "set_day_activity",
+            "margin": 0.03656238072930898,
+            "confident": false,
+            "alternatives": [
+              {
+                "label": "set_day_activity",
+                "score": 0.06688310605893517
+              },
+              {
+                "label": "record_body_measurement",
+                "score": 0.030320725329626194
+              },
+              {
+                "label": "ask_cardio_training",
+                "score": 0.029607244337453136
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "cardio_conditioning",
+              "domain": "training",
+              "sources": [
+                "lexical"
+              ]
+            },
+            {
+              "id": "routine_and_schedule",
+              "domain": "recovery",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Coloque cardio no dia 06/11/2026.",
+            "entities": [
+              {
+                "end": 14,
+                "text": "cardio",
+                "start": 8,
+                "value": "cardio",
+                "source": "activity_type_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "activity_type"
+              },
+              {
+                "end": 14,
+                "text": "cardio",
+                "start": 8,
+                "value": "cardio",
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "cardio"
+                },
+                "entity_type": "modality"
+              },
+              {
+                "end": 32,
+                "text": "06/11/2026",
+                "start": 22,
+                "value": "2026-11-06",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "absolute_date"
+                },
+                "entity_type": "target_date"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Você quer alterar a atividade no calendário ou apenas conversar sobre essa atividade?",
+          "reason": "intent_uncertain",
+          "question": "Você quer alterar a atividade no calendário ou apenas conversar sobre essa atividade?",
+          "model_intent": "set_day_activity",
+          "missing_fields": [],
+          "original_route": "clarify",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "set_day_activity",
+          "candidate_source": "classifier",
+          "authorizes_action": false,
+          "requires_complete_request": false
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "exercise",
+      "text": "Troque Afundo por Agachamento bulgaro.",
+      "kind": "replace_exercise",
+      "http_status": 201,
+      "seconds": 5.528327799999999,
+      "result": {
+        "mode": "local_research",
+        "answer": "Você quer substituir um exercício na ficha ou só conhecer alternativas?",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "replace_exercise",
+            "margin": 0.0017783044277999288,
+            "confident": false,
+            "alternatives": [
+              {
+                "label": "replace_exercise",
+                "score": 0.03669518335130294
+              },
+              {
+                "label": "update_goal",
+                "score": 0.03491687892350301
+              },
+              {
+                "label": "record_training_load",
+                "score": 0.03004704470856461
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "exercise_substitution",
+              "domain": "training",
+              "sources": [
+                "entity_hint",
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Troque Afundo por Agachamento bulgaro.",
+            "entities": [
+              {
+                "end": 13,
+                "text": "Afundo",
+                "start": 7,
+                "value": "afundo",
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "afundo"
+                },
+                "entity_type": "exercise"
+              },
+              {
+                "end": 37,
+                "text": "Agachamento bulgaro",
+                "start": 18,
+                "value": "agachamento bulgaro",
+                "source": "context_rule",
+                "attributes": {
+                  "relation": "replace_with",
+                  "matched_alias": "agachamento bulgaro"
+                },
+                "entity_type": "replacement_exercise"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Você quer substituir um exercício na ficha ou só conhecer alternativas?",
+          "reason": "intent_uncertain",
+          "question": "Você quer substituir um exercício na ficha ou só conhecer alternativas?",
+          "model_intent": "replace_exercise",
+          "missing_fields": [],
+          "original_route": "clarify",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "replace_exercise",
+          "candidate_source": "classifier",
+          "authorizes_action": false,
+          "requires_complete_request": false
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "food",
+      "text": "Troque Ovo por Tofu.",
+      "kind": "replace_meal_item",
+      "http_status": 201,
+      "seconds": 4.608282899999991,
+      "result": {
+        "mode": "local_research",
+        "answer": "Você quer substituir um alimento do plano ou só conhecer opções equivalentes?",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "update_goal",
+            "margin": 0.001971066198568898,
+            "confident": false,
+            "alternatives": [
+              {
+                "label": "update_goal",
+                "score": 0.04206518858785865
+              },
+              {
+                "label": "replace_exercise",
+                "score": 0.04009412238928975
+              },
+              {
+                "label": "greeting",
+                "score": 0.032439533620385576
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "food_substitution",
+              "domain": "nutrition",
+              "sources": [
+                "entity_hint"
+              ]
+            },
+            {
+              "id": "goal_setting",
+              "domain": "progress",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Troque Ovo por Tofu.",
+            "entities": [
+              {
+                "end": 10,
+                "text": "Ovo",
+                "start": 7,
+                "value": "ovo",
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "ovo"
+                },
+                "entity_type": "food"
+              },
+              {
+                "end": 19,
+                "text": "Tofu",
+                "start": 15,
+                "value": "tofu",
+                "source": "context_rule",
+                "attributes": {
+                  "relation": "replace_with",
+                  "matched_alias": "tofu"
+                },
+                "entity_type": "replacement_food"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": [
+            "goal"
+          ]
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Você quer substituir um alimento do plano ou só conhecer opções equivalentes?",
+          "reason": "intent_uncertain",
+          "question": "Você quer substituir um alimento do plano ou só conhecer opções equivalentes?",
+          "model_intent": "update_goal",
+          "missing_fields": [],
+          "original_route": "clarify",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "replace_meal_item",
+          "candidate_source": "explicit_change_mention_for_question_only",
+          "authorizes_action": false,
+          "requires_complete_request": false
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "missing-destination",
+      "text": "Mova meu treino de terça.",
+      "must_abstain": true,
+      "http_status": 201,
+      "seconds": 4.867551499999987,
+      "result": {
+        "mode": "local_research",
+        "answer": "Em qual dia está o treino que você quer mover? Na próxima mensagem, junte esse detalhe ao pedido completo.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "move_workout_day",
+            "margin": 0.049947843729839056,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "move_workout_day",
+                "score": 0.08122963330517449
+              },
+              {
+                "label": "ask_training_program_feedback",
+                "score": 0.031281789575335436
+              },
+              {
+                "label": "replace_exercise",
+                "score": 0.026800136272984876
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "missed_workout",
+              "domain": "training",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Mova meu treino de terça.",
+            "entities": [
+              {
+                "end": 24,
+                "text": "terça",
+                "start": 19,
+                "value": "2026-11-03",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 1,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "target_date"
+              },
+              {
+                "end": 24,
+                "text": "terça",
+                "start": 19,
+                "value": 1,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": [
+            "source_date"
+          ]
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Em qual dia está o treino que você quer mover? Na próxima mensagem, junte esse detalhe ao pedido completo.",
+          "reason": "missing_fields",
+          "question": "Em qual dia está o treino que você quer mover?",
+          "model_intent": "move_workout_day",
+          "missing_fields": [
+            "source_date"
+          ],
+          "original_route": "clarify",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "move_workout_day",
+          "candidate_source": "classifier",
+          "authorizes_action": false,
+          "requires_complete_request": true
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "missing-replacement",
+      "text": "Troque o supino reto.",
+      "must_abstain": true,
+      "http_status": 201,
+      "seconds": 4.939095000000001,
+      "result": {
+        "mode": "local_research",
+        "answer": "Se você quer alterar o plano: Qual exercício deve entrar no lugar? Na próxima mensagem, junte esse detalhe ao pedido completo.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "greeting",
+            "margin": 0.003232753179246886,
+            "confident": false,
+            "alternatives": [
+              {
+                "label": "greeting",
+                "score": 0.036857637613123224
+              },
+              {
+                "label": "replace_exercise",
+                "score": 0.03362488443387634
+              },
+              {
+                "label": "update_goal",
+                "score": 0.032444913981157494
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Troque o supino reto.",
+            "entities": [
+              {
+                "end": 20,
+                "text": "supino reto",
+                "start": 9,
+                "value": "supino reto",
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "supino reto"
+                },
+                "entity_type": "exercise"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Se você quer alterar o plano: Qual exercício deve entrar no lugar? Na próxima mensagem, junte esse detalhe ao pedido completo.",
+          "reason": "missing_fields",
+          "question": "Se você quer alterar o plano: Qual exercício deve entrar no lugar?",
+          "model_intent": "greeting",
+          "missing_fields": [
+            "replacement_exercise"
+          ],
+          "original_route": "clarify",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "replace_exercise",
+          "candidate_source": "explicit_change_mention_for_question_only",
+          "authorizes_action": false,
+          "requires_complete_request": true
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "missing-date",
+      "text": "Quero definir descanso.",
+      "must_abstain": true,
+      "http_status": 201,
+      "seconds": 4.860568600000013,
+      "result": {
+        "mode": "local_research",
+        "answer": "Em qual data você quer definir essa atividade? Na próxima mensagem, junte esse detalhe ao pedido completo.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "set_day_activity",
+            "margin": 0.06341742224058784,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "set_day_activity",
+                "score": 0.09835529946964239
+              },
+              {
+                "label": "update_goal",
+                "score": 0.034937877229054545
+              },
+              {
+                "label": "adjust_training_intensity",
+                "score": 0.03483070696128851
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "rest_between_sets",
+              "domain": "training",
+              "sources": [
+                "lexical"
+              ]
+            },
+            {
+              "id": "rest_day",
+              "domain": "recovery",
+              "sources": [
+                "lexical"
+              ]
+            },
+            {
+              "id": "routine_and_schedule",
+              "domain": "recovery",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Quero definir descanso.",
+            "entities": [
+              {
+                "end": 22,
+                "text": "descanso",
+                "start": 14,
+                "value": "rest",
+                "source": "activity_type_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "activity_type"
+              },
+              {
+                "end": 22,
+                "text": "descanso",
+                "start": 14,
+                "value": "descanso",
+                "source": "catalog",
+                "attributes": {
+                  "matched_alias": "descanso"
+                },
+                "entity_type": "training_metric"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": [
+            "target_date"
+          ]
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Em qual data você quer definir essa atividade? Na próxima mensagem, junte esse detalhe ao pedido completo.",
+          "reason": "missing_fields",
+          "question": "Em qual data você quer definir essa atividade?",
+          "model_intent": "set_day_activity",
+          "missing_fields": [
+            "activity_date"
+          ],
+          "original_route": "clarify",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "set_day_activity",
+          "candidate_source": "classifier",
+          "authorizes_action": false,
+          "requires_complete_request": true
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "negated",
+      "text": "Não mova meu treino de terça para quinta.",
+      "must_abstain": true,
+      "http_status": 201,
+      "seconds": 6.953015000000014,
+      "result": {
+        "mode": "local_research",
+        "answer": "Não preparei alteração: há uma negação, hipótese ou mais de uma mudança no pedido. Reescreva uma mudança afirmativa por vez, se desejar prosseguir.",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "move_workout_day",
+            "margin": 0.08605035005447258,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "move_workout_day",
+                "score": 0.1137062742142831
+              },
+              {
+                "label": "remember_preference",
+                "score": 0.027655924159810524
+              },
+              {
+                "label": "replace_exercise",
+                "score": 0.02602507184429763
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "missed_workout",
+              "domain": "training",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Não mova meu treino de terça para quinta.",
+            "entities": [
+              {
+                "end": 3,
+                "text": "Não",
+                "start": 0,
+                "value": "nao",
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "negation"
+              },
+              {
+                "end": 28,
+                "text": "terça",
+                "start": 23,
+                "value": "2026-11-03",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 1,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "source_date"
+              },
+              {
+                "end": 28,
+                "text": "terça",
+                "start": 23,
+                "value": 1,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              },
+              {
+                "end": 40,
+                "text": "quinta",
+                "start": 34,
+                "value": "2026-11-05",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 3,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "target_date"
+              },
+              {
+                "end": 40,
+                "text": "quinta",
+                "start": 34,
+                "value": 3,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Não preparei alteração: há uma negação, hipótese ou mais de uma mudança no pedido. Reescreva uma mudança afirmativa por vez, se desejar prosseguir.",
+          "reason": "scope_or_negation",
+          "question": "Não preparei alteração: há uma negação, hipótese ou mais de uma mudança no pedido. Reescreva uma mudança afirmativa por vez, se desejar prosseguir.",
+          "missing_fields": [],
+          "original_route": "draft_for_confirmation",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "move_workout_day",
+          "authorizes_action": false,
+          "requires_complete_request": false
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "hypothetical",
+      "text": "Talvez eu troque meu treino de terça para quinta.",
+      "must_abstain": true,
+      "http_status": 201,
+      "seconds": 4.476859399999987,
+      "result": {
+        "mode": "local_research",
+        "answer": "Não preparei alteração com esse pedido. Você quer apenas discutir opções ou fazer um pedido novo de mudança?",
+        "safety": {
+          "preflight_route": null,
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "rules": {
+              "risks": [],
+              "status": "unmatched",
+              "evidence": [],
+              "is_diagnosis": false,
+              "rules_version": "1.4.0",
+              "ambiguity_flag": false,
+              "requires_review": true,
+              "safety_assessment": "unknown"
+            },
+            "labels": [],
+            "model_labels": [],
+            "safety_assessment": "unknown",
+            "none_is_not_medical_clearance": true
+          },
+          "route": "clarify",
+          "intent": {
+            "label": "move_workout_day",
+            "margin": 0.045768139785897076,
+            "confident": true,
+            "alternatives": [
+              {
+                "label": "move_workout_day",
+                "score": 0.07858356910536149
+              },
+              {
+                "label": "update_goal",
+                "score": 0.03281542931946441
+              },
+              {
+                "label": "ask_training_concept",
+                "score": 0.03168782666879154
+              }
+            ],
+            "is_calibrated_probability": false,
+            "validation_support_includes_synthetic": true
+          },
+          "status": "development_opt_in_not_promoted",
+          "topics": [
+            {
+              "id": "missed_workout",
+              "domain": "training",
+              "sources": [
+                "intent_hint"
+              ]
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "requires_confirmation": true,
+            "pending_action_resolved_from_text": false
+          },
+          "privacy": {
+            "automatic_training": false,
+            "conversation_persistence": false,
+            "direct_identifiers_minimized_before_features": true
+          },
+          "entities": {
+            "text": "Talvez eu troque meu treino de terça para quinta.",
+            "entities": [
+              {
+                "end": 6,
+                "text": "Talvez",
+                "start": 0,
+                "value": "talvez",
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "certainty"
+              },
+              {
+                "end": 36,
+                "text": "terça",
+                "start": 31,
+                "value": "2026-11-03",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 1,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "source_date"
+              },
+              {
+                "end": 36,
+                "text": "terça",
+                "start": 31,
+                "value": 1,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              },
+              {
+                "end": 48,
+                "text": "quinta",
+                "start": 42,
+                "value": "2026-11-05",
+                "source": "date_rule",
+                "attributes": {
+                  "kind": "weekday",
+                  "weekday": 3,
+                  "resolution": "next_or_same"
+                },
+                "entity_type": "target_date"
+              },
+              {
+                "end": 48,
+                "text": "quinta",
+                "start": 42,
+                "value": 3,
+                "source": "review_rule",
+                "attributes": {
+                  "explicit_mention_only": true
+                },
+                "entity_type": "weekday"
+              }
+            ],
+            "reference_date": "2026-11-03",
+            "catalog_version": "1.3.1",
+            "extractor_version": "1.3.1"
+          },
+          "model_version": "1.9.0",
+          "schema_version": "1.6.0",
+          "dataset_version": "1.9.0",
+          "response_constraints": {
+            "no_diagnosis": true,
+            "no_exam_selection": true,
+            "no_injury_treatment_prescription": true,
+            "no_medication_dose_or_hormone_cycle": true,
+            "pain_not_inferred_to_need_explosive_training": true
+          },
+          "missing_required_entities": []
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": {
+          "answer": "Não preparei alteração com esse pedido. Você quer apenas discutir opções ou fazer um pedido novo de mudança?",
+          "reason": "scope_or_negation",
+          "question": "Não preparei alteração com esse pedido. Você quer apenas discutir opções ou fazer um pedido novo de mudança?",
+          "model_intent": "move_workout_day",
+          "missing_fields": [],
+          "original_route": "draft_for_confirmation",
+          "schema_version": "clarification.1.0.0",
+          "candidate_intent": "move_workout_day",
+          "candidate_source": "classifier",
+          "authorizes_action": false,
+          "requires_complete_request": false
+        },
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "clarification"
+    },
+    {
+      "id": "unsafe-pain",
+      "text": "Estou com dor no peito e falta de ar.",
+      "must_abstain": true,
+      "http_status": 201,
+      "seconds": 3.071479400000011,
+      "result": {
+        "mode": "local_research",
+        "answer": "Interrompa a atividade e procure atendimento de emergência. Não consigo avaliar a causa pela conversa.",
+        "safety": {
+          "preflight_route": "safety_information_only",
+          "generated_output_blocked": false
+        },
+        "actions": [],
+        "planner": {
+          "connected": true,
+          "writes_allowed": false
+        },
+        "privacy": {
+          "history": "supabase_user_scoped",
+          "automatic_training": false
+        },
+        "analysis": {
+          "risk": {
+            "labels": [
+              "emergency_symptom"
+            ]
+          },
+          "route": "safety_information_only",
+          "intent": {
+            "label": "guarded",
+            "confident": false
+          },
+          "entities": {
+            "entities": []
+          }
+        },
+        "citations": {
+          "cited_chunk_ids": [],
+          "unknown_chunk_ids": [],
+          "supplied_chunk_ids": [],
+          "claim_faithfulness_verified": false
+        },
+        "retrieval": {
+          "status": "not_requested",
+          "matches": []
+        },
+        "generation": null,
+        "clarification": null,
+        "schema_version": "coach.1.2.0",
+        "history_turns_dropped": 0,
+        "knowledge_only_fallback": false
+      },
+      "outcome": "no_proposal"
+    }
+  ],
+  "dialogues": [],
+  "actions": [
+    {
+      "origin": "real_coach",
+      "kind": "move_workout_day",
+      "preview_http": 201,
+      "preview_created": true,
+      "preview_id": "99f7e823-7b3c-467d-8a6e-5f17ccceff38",
+      "apply_http": 201,
+      "apply_error": null,
+      "state_changed": true,
+      "revert_http": 201,
+      "revert_error": null,
+      "original_state_restored": true
+    },
+    {
+      "origin": "real_coach",
+      "kind": "move_workout_day",
+      "preview_http": 201,
+      "preview_created": true,
+      "preview_id": "aa4326d0-f581-4507-9f90-c583e5c9779a",
+      "apply_http": 201,
+      "apply_error": null,
+      "state_changed": true,
+      "revert_http": 201,
+      "revert_error": null,
+      "original_state_restored": true
+    },
+    {
+      "origin": "real_coach",
+      "kind": "set_day_activity",
+      "preview_http": 201,
+      "preview_created": true,
+      "preview_id": "869bb261-195a-4249-9e72-4249f9c17c34",
+      "apply_http": 201,
+      "apply_error": null,
+      "state_changed": true,
+      "revert_http": 201,
+      "revert_error": null,
+      "original_state_restored": true
+    }
+  ],
+  "temporary_users_created": 2,
+  "temporary_users_deleted": 2,
+  "cold_start_seconds": 8.1580347,
+  "plan_generation_status": 201,
+  "test_plan_id": "799c7eb1-91fc-487c-bdb7-08977b66e363",
+  "test_diet_id": "4e128dac-acd3-4bc1-a8c5-976d97fee0cc",
+  "planned_cases": [
+    {
+      "id": "move-explicit",
+      "text": "Mova meu treino de 03/11/2026 para 05/11/2026.",
+      "kind": "move_workout_day"
+    },
+    {
+      "id": "move-weekdays",
+      "text": "Troque o treino de terça para quinta nesta semana.",
+      "kind": "move_workout_day"
+    },
+    {
+      "id": "rest",
+      "text": "Defina 05/11/2026 como dia de descanso.",
+      "kind": "set_day_activity"
+    },
+    {
+      "id": "cardio",
+      "text": "Coloque cardio no dia 06/11/2026.",
+      "kind": "set_day_activity"
+    },
+    {
+      "id": "exercise",
+      "text": "Troque Afundo por Agachamento bulgaro.",
+      "kind": "replace_exercise"
+    },
+    {
+      "id": "food",
+      "text": "Troque Ovo por Tofu.",
+      "kind": "replace_meal_item"
+    },
+    {
+      "id": "missing-destination",
+      "text": "Mova meu treino de terça.",
+      "must_abstain": true
+    },
+    {
+      "id": "missing-replacement",
+      "text": "Troque o supino reto.",
+      "must_abstain": true
+    },
+    {
+      "id": "missing-date",
+      "text": "Quero definir descanso.",
+      "must_abstain": true
+    },
+    {
+      "id": "negated",
+      "text": "Não mova meu treino de terça para quinta.",
+      "must_abstain": true
+    },
+    {
+      "id": "hypothetical",
+      "text": "Talvez eu troque meu treino de terça para quinta.",
+      "must_abstain": true
+    },
+    {
+      "id": "unsafe-pain",
+      "text": "Estou com dor no peito e falta de ar.",
+      "must_abstain": true
+    }
+  ],
+  "catalog_pair_selection": "First compatible unused catalog exercise; first unique meal item with approved substitution; chosen without inspecting model predictions",
+  "browser": {
+    "network_mocked": false,
+    "real_nlp": true,
+    "real_authenticated_session": true,
+    "error_types": []
+  },
+  "cleanup_complete": true,
+  "completed_at": "2026-11-03T15:24:15.649Z",
+  "summary": {
+    "completed_cases": 12,
+    "requested_action_cases": 6,
+    "proposed_actions": 3,
+    "real_coach_action_cycles": 3,
+    "checks_passed": 78,
+    "checks_failed": 6
+  },
+  "service_error_observed": false
+}

@@ -1,0 +1,4 @@
+# Local learning environment; also runs on CPU. No Transformers/MiniLM dependency.
+--extra-index-url https://download.pytorch.org/whl/cu128
+-r requirements.tinylm.txt
+torch==2.11.0+cu128

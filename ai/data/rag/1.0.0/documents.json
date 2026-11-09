@@ -1,0 +1,1793 @@
+[
+  {
+    "id": "training_consistency_first",
+    "domain": "training",
+    "title": "Consistencia antes de complexidade",
+    "text": "Para adultos saudaveis, sair da inatividade e manter treino resistido regular costuma produzir mais beneficio do que procurar a rotina perfeita. Um plano simples, progressivo e compativel com a vida real favorece aderencia de longo prazo.",
+    "topic_ids": [
+      "adherence",
+      "training_frequency"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "brazil_physical_activity_guide_2021"
+    ],
+    "evidence_level": "official_guideline_and_position_stand",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Educacao geral para adultos saudaveis e explicacao de escolhas simples do plano.",
+    "not_for": "Prometer resultado ou substituir avaliacao clinica.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "physical_activity_health",
+    "domain": "training",
+    "title": "Atividade fisica contribui para a saude",
+    "text": "Atividade fisica regular pode trazer beneficios cardiovasculares, metabolicos, mentais e funcionais. Para quem esta inativo, algum movimento e melhor que nenhum; a progressao deve respeitar capacidade, rotina e contexto de saude.",
+    "topic_ids": [
+      "cardio_conditioning",
+      "goal_setting"
+    ],
+    "source_ids": [
+      "who_physical_activity_2020",
+      "brazil_physical_activity_guide_2021"
+    ],
+    "evidence_level": "official_guideline",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar beneficios gerais da atividade fisica.",
+    "not_for": "Liberacao medica ou prescricao para doenca.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "resistance_training_frequency_general",
+    "domain": "training",
+    "title": "Treinar os grandes grupos com regularidade",
+    "text": "Como referencia geral para adultos saudaveis, trabalhar os principais grupos musculares pelo menos duas vezes por semana e uma base util. A divisao exata depende dos dias disponiveis, volume, recuperacao, experiencia e objetivo.",
+    "topic_ids": [
+      "training_frequency",
+      "training_split_selection"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar frequencia populacional e escolha de divisao.",
+    "not_for": "Impor frequencia unica ou prescrever para reabilitacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "training_goal_specificity",
+    "domain": "training",
+    "title": "O treino deve refletir o objetivo",
+    "text": "Forca, hipertrofia, potencia e resistencia muscular usam exercicios semelhantes, mas mudam prioridade, carga, volume, descanso e intencao do movimento. O Planner combina essas variaveis com nivel, tempo, equipamento e preferencias.",
+    "topic_ids": [
+      "strength_training",
+      "muscle_hypertrophy",
+      "muscular_endurance"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "mixed_evidence_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar por que duas pessoas recebem prescricoes diferentes.",
+    "not_for": "Garantir que uma estrutura produza um resultado individual.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "strength_uses_heavier_loads",
+    "domain": "training",
+    "title": "Forca tende a priorizar cargas maiores",
+    "text": "Para desenvolver forca maxima em adultos saudaveis, cargas relativamente maiores costumam ser mais especificas do que apenas aumentar repeticoes. A tecnica, a experiencia e uma progressao toleravel continuam limitando quanto peso usar.",
+    "topic_ids": [
+      "strength_training",
+      "training_intensity",
+      "sets_and_repetitions"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [
+      "unsafe_training_request"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar a relacao geral entre carga e objetivo de forca.",
+    "not_for": "Calcular carga maxima ou incentivar tentativa perigosa.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "hypertrophy_uses_sufficient_volume",
+    "domain": "training",
+    "title": "Hipertrofia depende de volume suficiente e sustentavel",
+    "text": "Para hipertrofia, o volume semanal por grupo muscular importa, mas mais nao e sempre melhor. Uma referencia populacional proxima de dez series semanais pode orientar o inicio; resposta, experiencia e recuperacao definem ajustes graduais.",
+    "topic_ids": [
+      "muscle_hypertrophy",
+      "training_volume",
+      "under_recovery"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "acsm_ecss_overtraining_2013"
+    ],
+    "evidence_level": "position_stand_and_consensus",
+    "confidence": "moderate",
+    "risk_tags": [
+      "under_recovery_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar volume como faixa inicial e necessidade de ajuste.",
+    "not_for": "Prescrever volume ilimitado ou tratar o numero como regra universal.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "power_intent_matters",
+    "domain": "training",
+    "title": "Potencia combina resistencia e intencao de velocidade",
+    "text": "Treino de potencia busca produzir forca rapidamente. Para adultos saudaveis, pode usar cargas moderadas com intencao de mover a fase de subida rapidamente, sem sacrificar controle, tecnica ou seguranca.",
+    "topic_ids": [
+      "training_intensity",
+      "tempo_and_cadence",
+      "sport_specific_training"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [
+      "unsafe_training_request"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar o principio de potencia para adultos saudaveis.",
+    "not_for": "Ensinar movimento explosivo complexo sem supervisao adequada.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "training_equipment_flexibility",
+    "domain": "training",
+    "title": "Equipamento e um meio, nao o objetivo",
+    "text": "Maquinas, pesos livres, elasticos e exercicios com peso corporal podem desenvolver funcao e forca quando o estimulo e apropriado. Uma troca deve preservar padrao de movimento, objetivo, dificuldade e limitacoes conhecidas.",
+    "topic_ids": [
+      "exercise_substitution",
+      "gym_equipment_availability",
+      "calisthenics"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "mixed_evidence_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Sustentar alternativas de exercicio para adultos saudaveis.",
+    "not_for": "Adaptar lesao ou dor sem avaliacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "training_to_failure_optional",
+    "domain": "training",
+    "title": "Falha muscular nao e obrigatoria em toda serie",
+    "text": "Treinar ate a falha pode ser uma ferramenta, mas nao e necessario em toda serie para a maioria dos adultos saudaveis. Proximidade da falha, tecnica, fadiga acumulada e custo de recuperacao devem ser considerados juntos.",
+    "topic_ids": [
+      "training_intensity",
+      "fatigue",
+      "under_recovery"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [
+      "under_recovery_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Responder se falha e obrigatoria e explicar o custo de fadiga.",
+    "not_for": "Definir RIR individual sem dados de execucao e contexto.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "training_advanced_methods_optional",
+    "domain": "training",
+    "title": "Tecnicas avancadas sao opcionais",
+    "text": "Periodizacao complexa, tecnicas intensificadoras e uma marca especifica de equipamento nao mostraram vantagem consistente para todo adulto saudavel. Elas podem ser ferramentas, mas nao substituem regularidade, progressao e recuperacao.",
+    "topic_ids": [
+      "training_split_selection",
+      "progressive_overload",
+      "training_intensity"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar por que um plano simples pode funcionar bem.",
+    "not_for": "Desautorizar estrategia individual acompanhada por profissional.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "progressive_overload_gradual",
+    "domain": "training",
+    "title": "Progredir nao significa apenas colocar mais peso",
+    "text": "Sobrecarga progressiva pode ocorrer por carga, repeticoes, series, amplitude, controle ou dificuldade. O aumento deve ser gradual e baseado no desempenho real; piora persistente de tecnica, dor ou recuperacao e sinal para nao acelerar.",
+    "topic_ids": [
+      "progressive_overload",
+      "training_performance",
+      "range_of_motion"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "mixed_evidence_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "pain_or_possible_injury",
+      "under_recovery_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar formas conservadoras de progressao.",
+    "not_for": "Aumentar automaticamente diante de dor ou tecnica instavel.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "exercise_selection_supports_adherence",
+    "domain": "training",
+    "title": "O exercicio precisa funcionar no papel e na rotina",
+    "text": "A escolha de exercicios deve atender ao objetivo, mas tambem considerar equipamento, experiencia, conforto e preferencia. Entre alternativas adequadas, a opcao que a pessoa executa bem e mantem costuma ser a mais util.",
+    "topic_ids": [
+      "exercise_selection",
+      "food_preference",
+      "adherence"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "mixed_evidence_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar selecao e substituicao por preferencia ou disponibilidade.",
+    "not_for": "Manter exercicio que provoca dor relevante.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "missed_workout_no_compensation",
+    "domain": "training",
+    "title": "Perder um treino nao exige punicao",
+    "text": "Uma sessao perdida pode ser movida, pulada ou absorvida pelo restante da semana conforme o plano. Dobrar volume, cortar comida ou treinar exausto para compensar nao deve ser a resposta automatica.",
+    "topic_ids": [
+      "missed_workout",
+      "routine_and_schedule",
+      "training_volume"
+    ],
+    "source_ids": [
+      "evolv_planner_internal_v1",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [
+      "unsafe_training_request",
+      "eating_disorder_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Orientar ajuste local e sem culpa na agenda.",
+    "not_for": "Criar compensacao extrema de treino ou comida.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "training_pain_boundary",
+    "domain": "training",
+    "title": "Dor muda a prioridade da resposta",
+    "text": "Dor aguda, fisgada, piora progressiva, perda de funcao ou dor que altera o movimento nao deve ser tratada como simples falta de motivacao. O Coach evita progressao, interrompe o exercicio envolvido e orienta avaliacao adequada sem diagnosticar.",
+    "topic_ids": [
+      "pain_during_training",
+      "exercise_technique"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1",
+      "acsm_ecss_overtraining_2013"
+    ],
+    "evidence_level": "consensus_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "pain_or_possible_injury"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Reconhecer limite, evitar agravamento e encaminhar.",
+    "not_for": "Diagnosticar lesao ou prescrever reabilitacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "food_minimally_processed_base",
+    "domain": "nutrition",
+    "title": "Alimentos in natura formam a base",
+    "text": "O Guia Alimentar brasileiro recomenda que alimentos in natura ou minimamente processados formem a base da alimentacao. Isso inclui considerar variedade, preparacoes culinarias, cultura, acesso, custo e tempo, nao apenas macros isolados.",
+    "topic_ids": [
+      "meal_evaluation",
+      "micronutrient_intake",
+      "food_budget_and_access"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025"
+    ],
+    "evidence_level": "official_guideline",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Educacao alimentar geral no contexto brasileiro.",
+    "not_for": "Prescricao terapeutica individual.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "food_pattern_over_single_meal",
+    "domain": "nutrition",
+    "title": "Uma refeicao isolada nao define a dieta",
+    "text": "A qualidade da alimentacao aparece no padrao ao longo do tempo. Alimentos ultraprocessados nao devem ser a base da rotina, mas uma escolha isolada nao transforma a pessoa em fracasso nem exige jejum, treino extra ou outra compensacao.",
+    "topic_ids": [
+      "meal_evaluation",
+      "flexible_meal",
+      "adherence"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "eating_disorder_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar padrao alimentar sem moralizar comida.",
+    "not_for": "Reforcar culpa ou compensacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "food_context_is_part_of_quality",
+    "domain": "nutrition",
+    "title": "Comer tambem envolve contexto",
+    "text": "Planejamento alimentar precisa respeitar preferencias, cultura, companhia, custo, acesso, tempo e habilidade culinaria. Uma dieta teoricamente otima, mas impossivel de comprar, preparar ou tolerar, nao e uma boa solucao pratica.",
+    "topic_ids": [
+      "food_preference",
+      "food_budget_and_access",
+      "meal_prep"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "evolv_nutrition_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Adaptar opcoes a realidade declarada pela pessoa.",
+    "not_for": "Inferir renda, cultura ou acesso sem perguntar.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "energy_balance_guides_weight_trend",
+    "domain": "nutrition",
+    "title": "Balanco energetico influencia tendencia de peso",
+    "text": "Perda de gordura exige deficit energetico sustentado e ganho de peso exige superavit sustentado, mas a balanca varia diariamente por agua, glicogenio, conteudo intestinal e outros fatores. O ajuste deve usar tendencia de semanas, medidas, aderencia e desempenho.",
+    "topic_ids": [
+      "energy_balance",
+      "body_weight_trend",
+      "body_measurements"
+    ],
+    "source_ids": [
+      "issn_diets_body_composition_2017",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "position_stand_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar tendencia, deficit e superavit de forma geral.",
+    "not_for": "Prometer velocidade de mudanca ou reagir a um unico peso.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "named_diets_are_strategies",
+    "domain": "nutrition",
+    "title": "Low carb, cetogenica e jejum sao estrategias, nao magia",
+    "text": "Diferentes distribuicoes de alimentos e horarios podem produzir mudanca corporal quando criam o balanco energetico adequado e sao mantidas. Low carb, cetogenica e jejum intermitente nao anulam energia total, adequacao nutricional, preferencia ou aderencia.",
+    "topic_ids": [
+      "low_carb",
+      "ketogenic_diet",
+      "intermittent_fasting"
+    ],
+    "source_ids": [
+      "issn_diets_body_composition_2017"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [
+      "extreme_diet_or_dehydration"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Comparar estrategias em adultos saudaveis sem afirmar superioridade universal.",
+    "not_for": "Montar protocolo extremo ou tratar doenca.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "protein_supports_training_adaptation",
+    "domain": "nutrition",
+    "title": "Proteina apoia manutencao e adaptacao",
+    "text": "Proteina fornece aminoacidos usados na manutencao e adaptacao dos tecidos. Seu efeito depende do conjunto formado por treino, energia total, quantidade diaria, distribuicao, fontes alimentares e consistencia.",
+    "topic_ids": [
+      "protein_intake",
+      "muscle_hypertrophy",
+      "strength_training"
+    ],
+    "source_ids": [
+      "issn_protein_exercise_2017",
+      "acsm_nutrition_performance_2016"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar o papel da proteina em adultos saudaveis e ativos.",
+    "not_for": "Tratar whey como obrigatorio ou alimento como inferior por padrao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "protein_range_active_adults",
+    "domain": "nutrition",
+    "title": "Faixa de proteina para adultos ativos e uma referencia",
+    "text": "Para adultos saudaveis que treinam, a literatura esportiva usa com frequencia cerca de 1,4 a 2,0 gramas de proteina por quilo ao dia como faixa geral. Objetivo, deficit energetico, tolerancia e contexto de saude podem mudar a decisao individual.",
+    "topic_ids": [
+      "protein_intake",
+      "bulking",
+      "cutting"
+    ],
+    "source_ids": [
+      "issn_protein_exercise_2017"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [
+      "vulnerable_or_clinical_context"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Apresentar faixa populacional para adulto saudavel e ativo.",
+    "not_for": "Definir meta para doenca renal, gestacao, menor ou outro contexto clinico.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "protein_distribution_general",
+    "domain": "nutrition",
+    "title": "Distribuir proteina pode facilitar o dia",
+    "text": "Como referencia esportiva, porcoes de aproximadamente 20 a 40 gramas de proteina de boa qualidade distribuidas a cada tres ou quatro horas podem favorecer a sintese proteica. Isso e uma faixa pratica, nao uma obrigacao por refeicao.",
+    "topic_ids": [
+      "protein_intake",
+      "meal_timing"
+    ],
+    "source_ids": [
+      "issn_nutrient_timing_2017",
+      "issn_protein_exercise_2017"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "moderate",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar distribuicao geral para adultos saudaveis que treinam.",
+    "not_for": "Transformar horario ou porcao em regra rigida.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "nutrient_timing_after_daily_totals",
+    "domain": "nutrition",
+    "title": "Horario ajuda, mas o total diario vem primeiro",
+    "text": "Distribuir carboidrato e proteina perto do treino pode apoiar desempenho e recuperacao, especialmente em sessoes exigentes ou proximas. Ainda assim, timing nao corrige baixa ingestao total, plano impraticavel ou falta de consistencia.",
+    "topic_ids": [
+      "meal_timing",
+      "carbohydrate_intake",
+      "protein_intake"
+    ],
+    "source_ids": [
+      "issn_nutrient_timing_2017",
+      "acsm_nutrition_performance_2016"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Colocar timing na prioridade correta.",
+    "not_for": "Prometer janela anabolica rigida.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "pre_workout_meal_context",
+    "domain": "nutrition",
+    "title": "Pre-treino precisa fornecer energia sem atrapalhar",
+    "text": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto.",
+    "topic_ids": [
+      "pre_workout_meal",
+      "digestive_comfort",
+      "carbohydrate_intake"
+    ],
+    "source_ids": [
+      "acsm_nutrition_performance_2016",
+      "issn_nutrient_timing_2017"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "moderate",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Sugerir estrutura geral baseada em tolerancia e contexto.",
+    "not_for": "Prescrever refeicao clinica ou ignorar alergia e restricao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "post_workout_meal_context",
+    "domain": "nutrition",
+    "title": "Pos-treino faz parte do restante do dia",
+    "text": "Depois do treino, proteina apoia reparo e carboidrato ajuda a repor energia, sobretudo quando o volume e alto ou outra sessao esta proxima. Uma refeicao comum pode cumprir esse papel; suplemento nao e obrigatorio.",
+    "topic_ids": [
+      "post_workout_meal",
+      "protein_intake",
+      "carbohydrate_intake"
+    ],
+    "source_ids": [
+      "acsm_nutrition_performance_2016",
+      "issn_nutrient_timing_2017"
+    ],
+    "evidence_level": "position_stand",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar composicao geral e flexibilidade do pos-treino.",
+    "not_for": "Criar urgencia artificial para consumo imediato.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "hydration_is_individual",
+    "domain": "nutrition",
+    "title": "Hidratacao depende do contexto",
+    "text": "Necessidade de liquido varia com clima, duracao, intensidade, suor, alimentacao e pessoa. A orientacao geral e chegar hidratado, ter acesso a liquido e repor perdas sem transformar um numero fixo em regra universal.",
+    "topic_ids": [
+      "hydration",
+      "electrolytes",
+      "cardio_conditioning"
+    ],
+    "source_ids": [
+      "acsm_nutrition_performance_2016"
+    ],
+    "evidence_level": "joint_position_statement",
+    "confidence": "moderate",
+    "risk_tags": [
+      "extreme_diet_or_dehydration"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Educacao geral de hidratacao para adulto saudavel.",
+    "not_for": "Prescrever reposicao em doenca, calor extremo ou sintoma grave.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "creatine_evidence_general",
+    "domain": "nutrition",
+    "title": "Creatina e uma das substancias mais estudadas",
+    "text": "A creatina pode aumentar estoques musculares e apoiar desempenho em esforcos repetidos de alta intensidade e adaptacoes ao treino em adultos saudaveis. O efeito nao substitui treino, alimentacao, sono ou consistencia.",
+    "topic_ids": [
+      "supplement_creatine",
+      "training_performance"
+    ],
+    "source_ids": [
+      "issn_creatine_2017",
+      "nih_performance_supplements_2021"
+    ],
+    "evidence_level": "position_stand_and_official_summary",
+    "confidence": "high",
+    "risk_tags": [
+      "supplement_uncertainty"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar evidencia geral para adulto saudavel.",
+    "not_for": "Autorizar uso individual, dose clinica ou interacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "supplements_not_foundation",
+    "domain": "nutrition",
+    "title": "Suplemento nao substitui a base",
+    "text": "Suplementos nao substituem alimentacao adequada, hidratacao, treino e recuperacao. Poucos ingredientes possuem evidencia util para cenarios especificos, e o tamanho do beneficio costuma ser menor que o impacto de corrigir a base.",
+    "topic_ids": [
+      "supplement_creatine",
+      "supplement_protein",
+      "supplement_caffeine"
+    ],
+    "source_ids": [
+      "nih_performance_supplements_2021",
+      "anvisa_supplements_2025"
+    ],
+    "evidence_level": "official_evidence_and_regulatory_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "supplement_uncertainty"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar prioridade e limites de suplementos.",
+    "not_for": "Montar pilha de suplementos ou prometer efeito.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "supplement_label_and_regulation",
+    "domain": "nutrition",
+    "title": "Rotulo e regularizacao importam",
+    "text": "No Brasil, suplemento alimentar deve trazer identificacao, modo de uso, advertencias, restricoes, ingredientes e informacao nutricional. Suplemento nao e medicamento e nao deve prometer tratar, prevenir ou curar doenca.",
+    "topic_ids": [
+      "food_label",
+      "supplement_protein",
+      "supplement_caffeine"
+    ],
+    "source_ids": [
+      "anvisa_supplements_2025"
+    ],
+    "evidence_level": "regulatory_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "supplement_uncertainty"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Orientar leitura de rotulo e verificacao regulatoria.",
+    "not_for": "Concluir que um produto e necessario apenas por estar regularizado.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "supplement_combinations_uncertain",
+    "domain": "nutrition",
+    "title": "Combinacoes de suplementos exigem cautela",
+    "text": "Produtos podem combinar estimulantes e outras substancias em doses diferentes, e a mistura nem sempre foi estudada como conjunto. Condicao de saude, medicamento e outro produto usado no mesmo dia podem alterar o risco.",
+    "topic_ids": [
+      "supplement_caffeine",
+      "food_label"
+    ],
+    "source_ids": [
+      "nih_performance_supplements_2021",
+      "anvisa_supplements_2025"
+    ],
+    "evidence_level": "official_evidence_and_regulatory_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "supplement_uncertainty",
+      "medication_or_hormone"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Explicar incerteza e recomendar verificacao profissional.",
+    "not_for": "Garantir seguranca, prescrever dose ou combinar produtos.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "nutrition_variation_preferences",
+    "domain": "nutrition",
+    "title": "Variacao e repeticao sao preferencias validas",
+    "text": "Uma pessoa pode preferir o mesmo menu diariamente, dias diferentes, variantes para treino e descanso ou uma refeicao flexivel planejada. O Nutrition Planner recomenda variedade por padrao, mas respeita repeticao quando ela facilita custo, preparo e aderencia.",
+    "topic_ids": [
+      "food_preference",
+      "meal_prep",
+      "adherence"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "evolv_nutrition_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Explicar e configurar rotacao do cardapio.",
+    "not_for": "Afirmar que uma unica estrutura serve para todos.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "nutrition_training_day_context",
+    "domain": "nutrition",
+    "title": "O menu acompanha a atividade conhecida",
+    "text": "Quando um treino e movido ou a pessoa informa descanso, cardio ou atividade mista, o Planner seleciona a variante alimentar correspondente. Se a rotina mudar fora do app e nao for informada, o sistema mantem o contexto conhecido e aceita correcao depois.",
+    "topic_ids": [
+      "pre_workout_meal",
+      "post_workout_meal",
+      "routine_and_schedule"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1",
+      "evolv_nutrition_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Explicar sincronizacao entre agenda, atividade e menu.",
+    "not_for": "Inventar atividade que nao foi registrada.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "flexible_meal_without_compensation",
+    "domain": "nutrition",
+    "title": "Refeicao flexivel nao exige compensacao extrema",
+    "text": "Uma refeicao flexivel pode fazer parte de um padrao alimentar sem apagar o restante da semana. O sistema pode registrar e seguir o plano normal; nao recomenda jejum prolongado, desidratacao ou treino punitivo depois.",
+    "topic_ids": [
+      "flexible_meal",
+      "eating_out",
+      "adherence"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "eating_disorder_signal",
+      "extreme_diet_or_dehydration"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Responder sem culpa e manter o plano estavel.",
+    "not_for": "Reforcar ciclo de restricao e compensacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "alcohol_is_not_performance_strategy",
+    "domain": "nutrition",
+    "title": "Alcool nao e estrategia de saude ou desempenho",
+    "text": "O consumo de alcool traz riscos mesmo em niveis baixos, e o risco aumenta com quantidade e frequencia. O Planner pode registrar uma escolha declarada sem moralizar, mas nao recomenda alcool como parte necessaria da dieta ou da recuperacao.",
+    "topic_ids": [
+      "alcohol",
+      "sleep_quality",
+      "meal_evaluation"
+    ],
+    "source_ids": [
+      "who_alcohol_2024",
+      "evolv_nutrition_internal_v1"
+    ],
+    "evidence_level": "official_public_health_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "vulnerable_or_clinical_context"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Comunicar risco geral e registrar preferencia sem incentivar.",
+    "not_for": "Definir quantidade individual segura ou aconselhar em gestacao e medicacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "vegetarian_patterns_need_planning",
+    "domain": "nutrition",
+    "title": "Padroes vegetarianos podem ser variados e completos",
+    "text": "Uma alimentacao vegetariana ou vegana pode usar feijoes, lentilhas, grao-de-bico, soja, cereais, castanhas, sementes, frutas e hortalisas. Variedade, quantidade e possiveis nutrientes criticos precisam de planejamento, sobretudo em restricoes amplas.",
+    "topic_ids": [
+      "vegetarian_or_vegan",
+      "protein_intake",
+      "micronutrient_intake"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "acsm_nutrition_performance_2016"
+    ],
+    "evidence_level": "official_guideline_and_position_statement",
+    "confidence": "moderate",
+    "risk_tags": [
+      "vulnerable_or_clinical_context"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Sugerir variedade geral e reconhecer necessidade de planejamento.",
+    "not_for": "Diagnosticar deficiencia ou prescrever suplementacao clinica.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "food_substitution_preserves_role",
+    "domain": "nutrition",
+    "title": "Troca de alimento deve preservar a funcao no plano",
+    "text": "Uma substituicao alimentar considera o papel do item na refeicao, porcao aproximada, preferencias, restricoes e disponibilidade. Trocar arroz por outra fonte de carboidrato ou carne por outra proteina nao exige reproduzir cada numero com perfeicao.",
+    "topic_ids": [
+      "food_substitution",
+      "food_portion",
+      "food_preference"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "evolv_nutrition_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Explicar substituicao pratica e enviar proposta ao Planner.",
+    "not_for": "Trocar alimento com alergia ou restricao clinica sem verificacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "grocery_and_meal_prep_support_adherence",
+    "domain": "nutrition",
+    "title": "Compra e preparo fazem parte do plano",
+    "text": "Lista de compras, reaproveitamento seguro de ingredientes e preparo antecipado podem reduzir custo e decisao diaria. O melhor formato e o que cabe na rotina: cozinhar tudo, preparar bases ou montar refeicoes simples no momento.",
+    "topic_ids": [
+      "grocery_planning",
+      "meal_prep",
+      "food_budget_and_access"
+    ],
+    "source_ids": [
+      "brazil_food_guide_2025",
+      "evolv_nutrition_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Ajudar organizacao alimentar pratica.",
+    "not_for": "Ignorar armazenamento e validade dos alimentos.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "sleep_duration_adults",
+    "domain": "recovery",
+    "title": "Sono suficiente e qualidade importam",
+    "text": "Para adultos de 18 a 60 anos, a referencia populacional e pelo menos sete horas de sono por dia. Duracao nao e o unico fator: regularidade, qualidade, despertares e funcionamento durante o dia ajudam a interpretar recuperacao.",
+    "topic_ids": [
+      "sleep_duration",
+      "sleep_quality"
+    ],
+    "source_ids": [
+      "cdc_sleep_2024"
+    ],
+    "evidence_level": "official_public_health",
+    "confidence": "high",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Educacao geral e contexto de recuperacao.",
+    "not_for": "Diagnosticar disturbio do sono.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "athlete_sleep_is_individual",
+    "domain": "recovery",
+    "title": "Necessidade de sono do atleta nao e um numero unico",
+    "text": "Atletas podem precisar de mais oportunidade de sono conforme carga, idade, viagem e competicao, mas uma meta identica para todos nao e adequada. Necessidade percebida, sonolencia, desempenho e qualidade ajudam a individualizar.",
+    "topic_ids": [
+      "sleep_duration",
+      "training_performance",
+      "travel_training"
+    ],
+    "source_ids": [
+      "athlete_sleep_consensus_2021"
+    ],
+    "evidence_level": "expert_consensus",
+    "confidence": "moderate",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Explicar individualizacao de sono no esporte.",
+    "not_for": "Prescrever extensao de sono como tratamento de insonia.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "sleep_habits_general",
+    "domain": "recovery",
+    "title": "Habitos consistentes podem apoiar o sono",
+    "text": "Horario relativamente regular, ambiente escuro e silencioso, rotina de desaceleracao e cuidado com cafeina, alcool e refeicoes pesadas perto de dormir podem apoiar o sono. Mudancas pequenas e sustentaveis sao preferiveis a uma lista rigida.",
+    "topic_ids": [
+      "sleep_quality",
+      "routine_and_schedule",
+      "supplement_caffeine"
+    ],
+    "source_ids": [
+      "cdc_sleep_2024",
+      "athlete_sleep_consensus_2021"
+    ],
+    "evidence_level": "official_public_health_and_consensus",
+    "confidence": "moderate",
+    "risk_tags": [],
+    "response_mode": "educate",
+    "allowed_use": "Oferecer higiene do sono geral e nao punitiva.",
+    "not_for": "Tratar insonia ou recomendar medicacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "sleep_tracker_is_estimate",
+    "domain": "recovery",
+    "title": "Relogio estima sono; nao faz diagnostico",
+    "text": "Relogios e aplicativos podem ajudar a observar tendencias, mas nao equivalem a avaliacao clinica do sono. A pessoa nao deve receber nota moral por uma noite ruim, e ansiedade causada pelo numero pode tornar o acompanhamento contraproducente.",
+    "topic_ids": [
+      "sleep_quality",
+      "body_image",
+      "motivation"
+    ],
+    "source_ids": [
+      "athlete_sleep_consensus_2021",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "expert_consensus_and_product_rule",
+    "confidence": "moderate",
+    "risk_tags": [],
+    "response_mode": "cautious",
+    "allowed_use": "Contextualizar dados de dispositivo e reduzir obsessao por metricas.",
+    "not_for": "Confirmar estagios do sono ou diagnosticar disturbio.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "training_and_recovery_balance",
+    "domain": "recovery",
+    "title": "Adaptacao exige estimulo e recuperacao",
+    "text": "Treino precisa de sobrecarga para gerar adaptacao, mas excesso de carga somado a recuperacao insuficiente pode reduzir desempenho. Planejamento deve observar semanas, nao reagir a um unico dia cansado nem insistir quando varios sinais pioram juntos.",
+    "topic_ids": [
+      "under_recovery",
+      "fatigue",
+      "training_performance"
+    ],
+    "source_ids": [
+      "acsm_ecss_overtraining_2013",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "consensus_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "under_recovery_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Explicar equilibrio entre carga e recuperacao.",
+    "not_for": "Diagnosticar overtraining.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "under_recovery_uses_combined_signals",
+    "domain": "recovery",
+    "title": "Recuperacao insuficiente aparece em conjunto",
+    "text": "Queda persistente de desempenho, fadiga elevada, sono ruim, dor muscular que nao melhora e perda de motivacao ganham importancia quando aparecem juntos e duram. O Coach pode sugerir reducao conservadora e avaliacao, mas nao nomeia uma sindrome.",
+    "topic_ids": [
+      "under_recovery",
+      "fatigue",
+      "muscle_soreness"
+    ],
+    "source_ids": [
+      "acsm_ecss_overtraining_2013",
+      "athlete_sleep_consensus_2021"
+    ],
+    "evidence_level": "consensus_statement",
+    "confidence": "high",
+    "risk_tags": [
+      "under_recovery_signal"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Reconhecer padrao e evitar progressao automatica.",
+    "not_for": "Diagnosticar overtraining ou atribuir tudo ao treino.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-10-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-10-07"
+  },
+  {
+    "id": "soreness_is_not_progress_requirement",
+    "domain": "recovery",
+    "title": "Ficar dolorido nao e requisito de progresso",
+    "text": "Dor muscular tardia pode ocorrer depois de estimulo novo ou mais exigente, mas sua ausencia nao prova que o treino falhou. Dor aguda, localizada, incapacitante ou que piora com movimento deve sair da conversa comum de recuperacao.",
+    "topic_ids": [
+      "muscle_soreness",
+      "pain_during_training",
+      "training_performance"
+    ],
+    "source_ids": [
+      "evolv_recovery_internal_v1",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [
+      "pain_or_possible_injury"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Diferenciar educacao geral de uma rota de dor.",
+    "not_for": "Diagnosticar a origem da dor.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "rest_day_is_part_of_plan",
+    "domain": "recovery",
+    "title": "Descanso faz parte do plano",
+    "text": "Dia sem musculacao nao e um dia perdido. Descanso completo ou movimento leve podem coexistir com progresso, dependendo de preferencia, fadiga e agenda. O app nao deve criar obrigacao para preencher todo dia com atividade.",
+    "topic_ids": [
+      "rest_day",
+      "routine_and_schedule",
+      "motivation"
+    ],
+    "source_ids": [
+      "brazil_physical_activity_guide_2021",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Normalizar descanso e atividade leve opcional.",
+    "not_for": "Usar descanso para ignorar sintoma persistente.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "stress_and_schedule_affect_recovery",
+    "domain": "recovery",
+    "title": "Recuperacao inclui a vida fora da academia",
+    "text": "Estresse, trabalho em turnos, viagem, estudo e falta de tempo podem afetar sono, alimentacao e desempenho. O plano deve adaptar demanda e horario quando necessario, sem concluir que toda queda de rendimento e falta de disciplina.",
+    "topic_ids": [
+      "stress",
+      "shift_work",
+      "routine_and_schedule"
+    ],
+    "source_ids": [
+      "athlete_sleep_consensus_2021",
+      "evolv_recovery_internal_v1"
+    ],
+    "evidence_level": "expert_consensus_and_product_rule",
+    "confidence": "moderate",
+    "risk_tags": [
+      "under_recovery_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Contextualizar desempenho e oferecer ajuste pequeno.",
+    "not_for": "Inferir saude mental ou rotina sem relato da pessoa.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "recovery_checkin_optional",
+    "domain": "recovery",
+    "title": "Check-in deve ajudar sem vigiar",
+    "text": "Sono, fadiga, dor, estresse e motivacao podem ser registrados de forma opcional e rapida. O Evolv usa tendencia para sugerir algo apenas quando ha sinal util; nao cobra todo dia, nao envia alertas repetidos e nao muda o plano sozinho.",
+    "topic_ids": [
+      "sleep_quality",
+      "fatigue",
+      "motivation"
+    ],
+    "source_ids": [
+      "evolv_recovery_internal_v1",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Explicar coleta opcional e uso discreto de contexto.",
+    "not_for": "Transformar autocuidado em pontuacao ou cobranca.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "recovery_change_requires_pattern",
+    "domain": "recovery",
+    "title": "Um dia ruim nao exige reconstruir o plano",
+    "text": "Cansaco ocasional pode pedir apenas ajuste do dia. Mudanca maior faz mais sentido quando queda de desempenho, sono ruim ou dificuldade de aderencia se repetem. O Coach pergunta contexto e prefere a menor alteracao que resolva o problema.",
+    "topic_ids": [
+      "fatigue",
+      "training_plateau",
+      "adherence"
+    ],
+    "source_ids": [
+      "acsm_ecss_overtraining_2013",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "consensus_and_product_rule",
+    "confidence": "moderate",
+    "risk_tags": [
+      "under_recovery_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Evitar reacao excessiva a um unico registro.",
+    "not_for": "Ignorar piora persistente ou sintoma grave.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "food_safety_five_keys",
+    "domain": "safety",
+    "title": "Cinco principios de seguranca dos alimentos",
+    "text": "As orientacoes centrais sao manter limpeza, separar crus e cozidos, cozinhar completamente, manter temperaturas seguras e usar agua e materias-primas seguras. Elas reduzem risco de contaminacao durante preparo e armazenamento.",
+    "topic_ids": [
+      "food_safety",
+      "recipe_and_preparation",
+      "food_storage"
+    ],
+    "source_ids": [
+      "who_food_safety_2006",
+      "anvisa_food_safety_2024"
+    ],
+    "evidence_level": "official_and_regulatory_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "food_safety_uncertainty"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Orientacao domestica geral de seguranca dos alimentos.",
+    "not_for": "Declarar alimento especifico seguro por aparencia ou foto.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "food_safety_temperature",
+    "domain": "safety",
+    "title": "Tempo e temperatura importam",
+    "text": "Microrganismos podem se multiplicar rapidamente em temperatura ambiente. A Anvisa orienta manter alimentos frios abaixo de 5 graus Celsius, quentes acima de 60 graus e reduzir o tempo entre preparo, consumo e refrigeracao.",
+    "topic_ids": [
+      "food_storage",
+      "food_safety",
+      "meal_prep"
+    ],
+    "source_ids": [
+      "anvisa_food_safety_2024",
+      "who_food_safety_2006"
+    ],
+    "evidence_level": "regulatory_and_official_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "food_safety_uncertainty"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Orientar conservacao geral e preparo antecipado.",
+    "not_for": "Confirmar seguranca quando tempo ou temperatura sao desconhecidos.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "food_safety_uncertainty_boundary",
+    "domain": "safety",
+    "title": "Na duvida, o Coach nao garante que esta seguro",
+    "text": "Cheiro e aparencia normais nao provam que um alimento esta seguro. Se procedencia, validade, tempo fora de refrigeracao ou contaminacao cruzada sao desconhecidos, o Coach explica a incerteza e usa orientacao conservadora.",
+    "topic_ids": [
+      "food_safety",
+      "food_storage"
+    ],
+    "source_ids": [
+      "who_food_safety_2006",
+      "anvisa_food_safety_2024"
+    ],
+    "evidence_level": "official_and_regulatory_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "food_safety_uncertainty"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Evitar garantia falsa e explicar dados necessarios.",
+    "not_for": "Autorizar consumo de alimento duvidoso.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "eating_disorder_boundary",
+    "domain": "safety",
+    "title": "Sinais de transtorno alimentar exigem cuidado",
+    "text": "Restricao intensa, medo extremo de ganhar peso, compulsao, purgacao, uso de laxantes, exercicio compensatorio e sofrimento com comida ou corpo podem indicar um problema serio. O Coach nao reforca a conduta nem diagnostica; acolhe e orienta ajuda profissional.",
+    "topic_ids": [
+      "body_image",
+      "flexible_meal",
+      "energy_balance"
+    ],
+    "source_ids": [
+      "nimh_eating_disorders_2024"
+    ],
+    "evidence_level": "official_public_health",
+    "confidence": "high",
+    "risk_tags": [
+      "eating_disorder_signal"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Reconhecer limite e responder sem julgamento.",
+    "not_for": "Diagnosticar ou conduzir tratamento.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "body_appearance_is_not_diagnosis",
+    "domain": "safety",
+    "title": "Aparencia nao revela saude mental ou alimentar",
+    "text": "Transtornos alimentares podem afetar pessoas de diferentes corpos, idades e sexos. O Coach nao conclui saude, percentual de gordura, disciplina ou transtorno pela aparencia e nao usa foto como prova clinica.",
+    "topic_ids": [
+      "body_image",
+      "image_dependency"
+    ],
+    "source_ids": [
+      "nimh_eating_disorders_2024",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "official_public_health_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "eating_disorder_signal"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Evitar inferencia corporal e linguagem estigmatizante.",
+    "not_for": "Classificar saude ou diagnostico por imagem.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "extreme_diet_and_dehydration_refusal",
+    "domain": "safety",
+    "title": "Restricao extrema e desidratacao nao viram plano",
+    "text": "Pedidos de jejum prolongado, corte alimentar severo, vomito, laxante, diuretico ou desidratacao para mudar peso rapidamente nao devem ser executados. O Coach explica o risco, recusa a estrategia e orienta ajuda qualificada.",
+    "topic_ids": [
+      "cutting",
+      "intermittent_fasting",
+      "hydration"
+    ],
+    "source_ids": [
+      "nimh_eating_disorders_2024",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "official_public_health_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "extreme_diet_or_dehydration",
+      "eating_disorder_signal"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Recusar plano perigoso e redirecionar com cuidado.",
+    "not_for": "Calcular meta extrema ou sugerir versao apenas um pouco menos perigosa.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "chest_pain_emergency",
+    "domain": "safety",
+    "title": "Dor no peito interrompe o coaching comum",
+    "text": "Dor ou desconforto no peito, especialmente com falta de ar incomum, suor, nausea, tontura ou dor espalhada, pode ser emergencia. A pessoa deve parar a atividade e acionar o SAMU 192 no Brasil ou o servico de emergencia local.",
+    "topic_ids": [
+      "pain_during_training",
+      "cardio_conditioning"
+    ],
+    "source_ids": [
+      "aha_first_aid_2024",
+      "brazil_samu_192_current"
+    ],
+    "evidence_level": "clinical_guideline_and_local_route",
+    "confidence": "high",
+    "risk_tags": [
+      "emergency_symptom"
+    ],
+    "response_mode": "emergency",
+    "allowed_use": "Orientacao conservadora e imediata para emergencia.",
+    "not_for": "Diferenciar causa ou instruir medicacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "other_emergency_signs",
+    "domain": "safety",
+    "title": "Desmaio e falta de ar incomum tambem podem ser urgentes",
+    "text": "Desmaio, convulsao, falta de ar intensa ou incomum, confusao importante e perda subita de forca ou fala exigem prioridade de seguranca. No Brasil, o Coach orienta interromper a atividade e ligar para o SAMU 192.",
+    "topic_ids": [
+      "pain_during_training",
+      "cardio_conditioning"
+    ],
+    "source_ids": [
+      "brazil_samu_192_current",
+      "aha_first_aid_2024"
+    ],
+    "evidence_level": "official_emergency_and_clinical_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "emergency_symptom"
+    ],
+    "response_mode": "emergency",
+    "allowed_use": "Acionar rota local de emergencia.",
+    "not_for": "Continuar avaliando treino ou tentar diagnosticar.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "mental_health_crisis_route_brazil",
+    "domain": "safety",
+    "title": "Crise de saude mental exige apoio humano imediato",
+    "text": "Quando ha risco imediato de autoagressao, o Coach prioriza contato com uma pessoa de confianca e com o SAMU 192 no Brasil ou emergencia local. O CVV 188 oferece apoio emocional gratuito, mas nao substitui atendimento de emergencia.",
+    "topic_ids": [
+      "motivation",
+      "body_image"
+    ],
+    "source_ids": [
+      "brazil_samu_192_current",
+      "cvv_188_current",
+      "nimh_eating_disorders_2024"
+    ],
+    "evidence_level": "local_crisis_route_and_public_health",
+    "confidence": "high",
+    "risk_tags": [
+      "mental_health_crisis"
+    ],
+    "response_mode": "emergency",
+    "allowed_use": "Priorizar seguranca e contatos brasileiros verificados.",
+    "not_for": "Responder apenas com motivacao esportiva ou deixar a pessoa isolada.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "food_allergy_and_anaphylaxis_boundary",
+    "domain": "safety",
+    "title": "Alergia alimentar nao admite teste improvisado",
+    "text": "Alergia conhecida ou suspeita exige evitar exposicao deliberada e confirmar rotulo e contaminacao cruzada. Dificuldade para respirar, inchaco de lingua ou garganta, desmaio ou reacao rapida em varios sistemas exige emergencia imediata.",
+    "topic_ids": [
+      "food_allergy",
+      "food_label",
+      "food_substitution"
+    ],
+    "source_ids": [
+      "niaid_food_allergy_2010",
+      "brazil_samu_192_current"
+    ],
+    "evidence_level": "clinical_guideline_and_local_route",
+    "confidence": "high",
+    "risk_tags": [
+      "food_allergy_or_reaction",
+      "emergency_symptom"
+    ],
+    "response_mode": "emergency",
+    "allowed_use": "Reconhecer risco, evitar teste e encaminhar.",
+    "not_for": "Garantir substituto seguro ou diagnosticar alergia.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "pregnancy_requires_clinical_context",
+    "domain": "safety",
+    "title": "Gestacao exige contexto e acompanhamento",
+    "text": "Atividade fisica pode ser segura em muitas gestacoes sem complicacao, mas historico, fase da gestacao e sinais de alerta mudam a conduta. O Coach oferece apenas educacao geral e orienta alinhamento com obstetra antes de personalizar treino ou suplemento.",
+    "topic_ids": [
+      "training_frequency",
+      "supplement_creatine",
+      "hydration"
+    ],
+    "source_ids": [
+      "acog_exercise_pregnancy_current",
+      "anvisa_supplements_2025"
+    ],
+    "evidence_level": "clinical_and_regulatory_guidance",
+    "confidence": "high",
+    "risk_tags": [
+      "vulnerable_or_clinical_context"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Reconhecer limite e orientar acompanhamento.",
+    "not_for": "Personalizar treino, dieta ou suplemento de gestante.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-04-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-04-07"
+  },
+  {
+    "id": "clinical_and_minor_context_boundary",
+    "domain": "safety",
+    "title": "Menor de idade e condicao clinica mudam o escopo",
+    "text": "Menor de idade, doenca diagnosticada, pos-operatorio ou reabilitacao exigem informacao e acompanhamento adequados ao caso. O Coach nao reaproveita automaticamente faixas e planos feitos para adultos saudaveis.",
+    "topic_ids": [
+      "training_frequency",
+      "dietary_restriction",
+      "goal_setting"
+    ],
+    "source_ids": [
+      "who_physical_activity_2020",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "official_guideline_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "vulnerable_or_clinical_context"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Limitar resposta a educacao geral e encaminhar.",
+    "not_for": "Personalizar conduta clinica ou pediatrica.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "medication_and_hormone_boundary",
+    "domain": "safety",
+    "title": "Medicamento e hormonio nao viram protocolo do Coach",
+    "text": "O Coach nao calcula dose, ciclo, desmame ou combinacao de medicamento, hormonio, diuretico ou substancia controlada. Ele pode explicar o limite de forma geral e orientar profissional habilitado, sem ensinar uma versao operacional do pedido.",
+    "topic_ids": [
+      "bodybuilding_competition",
+      "cutting",
+      "bulking"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1",
+      "nih_performance_supplements_2021"
+    ],
+    "evidence_level": "product_rule_and_official_safety_summary",
+    "confidence": "high",
+    "risk_tags": [
+      "medication_or_hormone"
+    ],
+    "response_mode": "refer",
+    "allowed_use": "Recusar prescricao e encaminhar.",
+    "not_for": "Fornecer dose, ciclo, fonte de compra ou esquema de reducao de dano operacional.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "unsafe_training_request_refusal",
+    "domain": "safety",
+    "title": "Desafio perigoso nao vira treino",
+    "text": "Pedidos de carga maxima sem preparo, volume extremo, tecnica arriscada ou treino apesar de sintoma grave nao devem ser executados. O Coach recusa a parte perigosa e oferece alternativa conservadora compativel com o objetivo.",
+    "topic_ids": [
+      "training_intensity",
+      "training_volume",
+      "pain_during_training"
+    ],
+    "source_ids": [
+      "acsm_resistance_training_2026",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "position_stand_and_product_rule",
+    "confidence": "high",
+    "risk_tags": [
+      "unsafe_training_request",
+      "pain_or_possible_injury"
+    ],
+    "response_mode": "cautious",
+    "allowed_use": "Recusar pratica perigosa e oferecer opcao segura.",
+    "not_for": "Otimizar o desafio perigoso.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "coach_does_not_write_database",
+    "domain": "safety",
+    "title": "Coach propoe; Planner valida",
+    "text": "O Coach interpreta a mensagem, explica e monta uma proposta estruturada. Ele nao executa SQL nem altera o Supabase diretamente. NestJS autentica e autoriza; o Planner valida regras e apenas uma proposta confirmada pode ser aplicada.",
+    "topic_ids": [
+      "plan_explanation",
+      "planner_confirmation"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1",
+      "evolv_planner_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Explicar arquitetura e limitar saida do modelo.",
+    "not_for": "Gerar SQL ou contornar autorizacao.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "question_is_not_action",
+    "domain": "safety",
+    "title": "Perguntar nao significa alterar",
+    "text": "Mencionar exercicio, alimento ou dia em uma duvida nao autoriza mudanca. O classificador separa pergunta de pedido; mensagem ambigua recebe um esclarecimento curto e o plano permanece igual.",
+    "topic_ids": [
+      "ambiguous_reference",
+      "planner_confirmation"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Controlar roteamento e consentimento.",
+    "not_for": "Inferir autorizacao por contexto incompleto.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "planner_preview_confirmation",
+    "domain": "safety",
+    "title": "Mudanca precisa de previa e confirmacao",
+    "text": "Uma proposta deve mostrar o que muda e o que permanece. Dados ausentes ou baixa confianca geram esclarecimento. A aplicacao exige confirmacao explicita, fica no historico e pode ser desfeita quando o contrato permitir.",
+    "topic_ids": [
+      "planner_confirmation",
+      "plan_explanation"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Definir fluxo de qualquer acao do Coach.",
+    "not_for": "Aplicar mudanca silenciosa.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "planner_local_changes",
+    "domain": "safety",
+    "title": "Alterar apenas o necessario",
+    "text": "Mover uma sessao, trocar um exercicio ou substituir um alimento deve preservar o restante do plano quando nao ha conflito. Mudancas estruturais maiores criam nova versao em vez de apagar o historico.",
+    "topic_ids": [
+      "planner_confirmation",
+      "exercise_substitution",
+      "food_substitution"
+    ],
+    "source_ids": [
+      "evolv_planner_internal_v1",
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Explicar impacto esperado de um ajuste.",
+    "not_for": "Prometer preservacao quando regras entram em conflito.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  },
+  {
+    "id": "coach_text_only_limit",
+    "domain": "safety",
+    "title": "O primeiro Coach nao interpreta imagens",
+    "text": "A primeira versao local recebe texto. Quando uma pergunta depende de foto ou video, o Coach informa que nao consegue inspecionar o arquivo e pede descricao objetiva, sem fingir que viu alimento, tecnica, rotulo ou aparencia corporal.",
+    "topic_ids": [
+      "image_dependency",
+      "app_usage"
+    ],
+    "source_ids": [
+      "evolv_coach_actions_internal_v1"
+    ],
+    "evidence_level": "product_rule",
+    "confidence": "policy",
+    "risk_tags": [],
+    "response_mode": "product_policy",
+    "allowed_use": "Roteamento de pedido multimodal ainda nao suportado.",
+    "not_for": "Inferir conteudo visual pelo nome do arquivo.",
+    "reviewed_at": "2026-10-07",
+    "review_due_at": "2027-01-07",
+    "version": "1.1.0",
+    "eligible_as_of_build": true,
+    "effective_review_due_at": "2027-01-07"
+  }
+]

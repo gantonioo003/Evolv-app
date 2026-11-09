@@ -1,0 +1,33 @@
+{
+  "phase": "7.07.7",
+  "status": "verified",
+  "tests": 96,
+  "real_api_messages": 20,
+  "real_api_messages_reaching_search": 10,
+  "real_nlp_followup_context_used": 2,
+  "nlp_versions": [
+    "1.8.0",
+    "1.9.0"
+  ],
+  "active_index": "1.1.1",
+  "knowledge": "1.2.1",
+  "rows": 107,
+  "ranking_algorithm_sha256_matches_selection": true,
+  "historical_files_unchanged": 65,
+  "classifier_or_action_policy_changes": false,
+  "reserved_heat_report_preflight": {
+    "route": "safety_information_only",
+    "risks": [
+      "emergency_symptom",
+      "heat_illness_signal"
+    ],
+    "answer": "Interrompa a atividade e procure atendimento de emergência. Não consigo avaliar a causa pela conversa."
+  },
+  "generation_evaluated": false,
+  "limits": [
+    "Authored reserved cases, not independent human gold",
+    "NLU can abstain before retrieval",
+    "Five reserved queries missed expected document",
+    "Context limited to most recent user turn; no persistent slot filling"
+  ]
+}

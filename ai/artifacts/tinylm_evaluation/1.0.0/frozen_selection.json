@@ -1,0 +1,10 @@
+{
+  "checkpoint_index_sha256": "f10e2ea63494d8143e96de976b27970f4b60f948e93dbe92d513b2add4a0a345",
+  "checkpoint_sha256": "6e2419f20ee9ed3c4ce74dc42d620aee691a8a0d02f727b79410cf32aae46af6",
+  "corpus_manifest_sha256": "51406e1484ada0f0f16263633cdd0e4aed2b8ba900fc6a226b5b920c7fc119f6",
+  "data_manifest_sha256": "b04dea5a1a2dca42f0ad6fc181aa5536d70b909a4bf4ec7f341c77dac556f609",
+  "frozen_before_test_at": "2026-11-01T14:32:02.750191+00:00",
+  "generation_not_selected_by_test": true,
+  "protocol_sha256": "8ef7097597248f793df573d8818b3b20d1e630efd9cb6aee24dbce21383aa85e",
+  "tokenizer_sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a"
+}

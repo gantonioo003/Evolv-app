@@ -16,7 +16,7 @@ export class ApiError extends Error {
 }
 
 export class ApiClient {
-  constructor(private readonly accessToken: string) {}
+  constructor(private readonly accessToken: string, private readonly timeoutMs = 12_000) {}
 
   get<T>(path: string) {
     return this.request<T>(path);
@@ -48,7 +48,7 @@ export class ApiClient {
     }
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12_000);
+    const timeout = setTimeout(() => controller.abort(), this.timeoutMs);
 
     try {
       const response = await fetch(`${env.apiUrl}${path}`, {

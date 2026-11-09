@@ -1,0 +1,18 @@
+{
+  "files": {
+    "architecture.json": {
+      "bytes": 252,
+      "sha256": "d7b90b784dd4add8151e38fc774f858fe18ef0addf1482f66a8a59126331d804"
+    },
+    "smoke_report.json": {
+      "bytes": 2896,
+      "sha256": "0cb004533b0b82313f9129055b67e2489931c932b3c1f582f979cf20ca973975"
+    }
+  },
+  "source_sha256": {
+    "scripts/inspect_tinylm_model.py": "aeafce91a6360ca805725d736c561b2763df1c8decb73a6df7a8b356e9d306b4",
+    "src/evolv_tinylm/model.py": "3c25c6e1b5fb0171f0330338f53053d0e3cd6118e013760c8d37289c24e8cbed"
+  },
+  "status": "architecture_verified_untrained",
+  "version": "1.0.0"
+}

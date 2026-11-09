@@ -1,0 +1,40 @@
+{
+  "reviewer": "Codex, qualitative AI review; not independent human annotation",
+  "method": "Leitura integral das 24 continuacoes predefinidas no protocolo: 8 prompts x greedy/sample_t1/nucleus_p09, semente 42. Coerencia: 0 = nao sustenta uma ideia consistente ou e dominada por loop; 1 = ideia local inteligivel com falhas importantes; 2 = continuacao sustentada e pertinente. Estas notas nao avaliam veracidade ou seguranca clinica.",
+  "findings": [
+    "Nenhuma das 24 continuacoes revisadas sustentou uma ideia coerente no criterio adotado; apareceram fragmentos reconheciveis de portugues, mas tambem palavras deformadas, concordancia ruim e mudancas de assunto.",
+    "Greedy apresentou forte repeticao: media de 68,0% dos pares de palavras repetidos nas 8 amostras. Sete atingiram o limite de tokens e uma terminou por EOS.",
+    "Sample_t1 e nucleus_p09 tiveram pouca repeticao de bigramas, mas isso nao se traduziu em coerencia ou pertinencia nas 16 amostras dessas duas estrategias revisadas.",
+    "As 12 continuacoes revisadas dos prompts de pergunta, alteracao de agenda, desconforto e disponibilidade de treino nao produziram resposta util ao pedido.",
+    "Os textos imitaram trechos de verbetes, listas, referencias e nomes/datas sem verificacao factual. Uma aparencia de fonte ou data nao demonstra que a informacao esteja correta.",
+    "A estrategia sample_t13 produziu tres caracteres Unicode de substituicao no conjunto de 24 amostras; as demais estrategias nao produziram esses caracteres. O decoder de bytes pode encontrar sequencias invalidas ou terminar no meio de um caractere ao atingir o limite.",
+    "Nos maiores erros de proximo token aparecem trechos tecnicos, nomes e continuacoes de subpalavras; o modelo frequentemente preferiu pontuacao ou partes comuns de palavras. O relatorio de erros guarda somente predicoes diferentes do alvo, com contexto e atribuicao locais."
+  ],
+  "samples": [
+    {"prompt_id": "p01", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "parcial", "note": "Relaciona Brasil a futebol no inicio, mas entra em loop de futebol e datas."},
+    {"prompt_id": "p01", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Mistura pagamento, filmes, museu e poemas sem relacao consistente."},
+    {"prompt_id": "p01", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Continua com pagamento e filmes e depois muda de assunto."},
+    {"prompt_id": "p02", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "nao", "note": "Palavras deformadas no inicio e longa repeticao de tenho."},
+    {"prompt_id": "p02", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Abandona a narrativa cotidiana e imita um verbete de musica com nomes sem verificacao."},
+    {"prompt_id": "p02", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Passa para uma descricao musical com palavras e ligacoes incoerentes."},
+    {"prompt_id": "p03", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "parcial", "note": "Introducao generica seguida de repeticao da mesma clausula ate o limite."},
+    {"prompt_id": "p03", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Mistura pagamentos, filmes e palavras deformadas, sem falar de exercicios."},
+    {"prompt_id": "p03", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Termina cedo por EOS, com frase incompleta e sem sentido no contexto."},
+    {"prompt_id": "p04", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "parcial", "note": "Menciona agua, mas repete a mesma expressao e nao desenvolve alimentacao variada."},
+    {"prompt_id": "p04", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Contem varias palavras deformadas e transicoes sem sentido."},
+    {"prompt_id": "p04", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Palavras ligadas a comida aparecem isoladas antes de mudar para fauna e potencia."},
+    {"prompt_id": "p05", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "nao", "note": "Nao compara os exercicios; repete uma descricao sem sentido."},
+    {"prompt_id": "p05", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Imita parenteses, referencias, premios e datas sem responder a pergunta."},
+    {"prompt_id": "p05", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Produz marcas de formatacao e fragmentos desconexos."},
+    {"prompt_id": "p06", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "nao", "note": "Fala de plano de agua e termina por EOS, sem abordar a mudanca para sexta."},
+    {"prompt_id": "p06", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Desvia para filmes e palavras deformadas depois de uma marca de limite."},
+    {"prompt_id": "p06", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Fragmentos e formatacao sem uma resposta pertinente sobre agenda."},
+    {"prompt_id": "p07", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "nao", "note": "Repete sua vida sem abordar o desconforto informado."},
+    {"prompt_id": "p07", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Inicia uma lista, mas produz palavras sem sentido e nao responde ao sintoma."},
+    {"prompt_id": "p07", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Lista desconexa e nomes sem verificacao; nao demonstra orientacao segura ou util."},
+    {"prompt_id": "p08", "strategy_id": "greedy", "coherence": 0, "addresses_prompt": "nao", "note": "Repete sua vida e nao usa a disponibilidade de duas vezes por semana."},
+    {"prompt_id": "p08", "strategy_id": "sample_t1", "coherence": 0, "addresses_prompt": "nao", "note": "Numeracao, rodada e fragmentos de nomes sem planejar ou esclarecer a rotina."},
+    {"prompt_id": "p08", "strategy_id": "nucleus_p09", "coherence": 0, "addresses_prompt": "nao", "note": "Lista de fragmentos sem resposta a restricao de frequencia de treino."}
+  ],
+  "conclusion": "O treinamento melhorou a previsao de tokens no corpus, mas as geracoes revisadas continuam fracas em coerencia, relevancia e acompanhamento de instrucoes. A amostragem reduz loops sem resolver essas limitacoes. A fase TinyLM cumpre o experimento didatico; este checkpoint nao esta demonstrado como Coach de conversa. O tamanho do modelo, a composicao do corpus e a ausencia de ajuste instrucional sao limitacoes conhecidas, sem ablacao nesta fase para atribuir uma causa isolada."
+}

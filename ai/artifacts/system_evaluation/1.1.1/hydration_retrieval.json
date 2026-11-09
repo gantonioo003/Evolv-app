@@ -1,0 +1,115 @@
+{
+  "index_rows": 107,
+  "archived_cases": 104,
+  "archived_changes": [],
+  "suite_sha256": "dfddb468801a042e7bd54730ce336658ef2708b51cd40b4833cbe9808c984e97",
+  "hydration_method_sha256": "24d71f663633db118eca0e117cfb59ef981e353be06128d55e4aced17f9ce965",
+  "rows": [
+    {
+      "text": "Todo mundo deve beber a mesma quantidade de água no treino?",
+      "hydration": true,
+      "before": [
+        "pre_workout_meal_context",
+        "concurrent_training_tradeoffs",
+        "training_goal_specificity"
+      ],
+      "after": [
+        "hydration_is_individual",
+        "pre_workout_meal_context",
+        "concurrent_training_tradeoffs"
+      ]
+    },
+    {
+      "text": "Quanto de água eu devo tomar na academia?",
+      "hydration": true,
+      "before": [],
+      "after": [
+        "hydration_is_individual"
+      ]
+    },
+    {
+      "text": "Preciso beber líquido enquanto pedalo?",
+      "hydration": true,
+      "before": [
+        "hydration_is_individual",
+        "pre_workout_meal_context"
+      ],
+      "after": [
+        "hydration_is_individual",
+        "pre_workout_meal_context"
+      ]
+    },
+    {
+      "text": "Tem uma quantidade certa de água pra levar na corrida?",
+      "hydration": true,
+      "before": [
+        "pre_workout_meal_context",
+        "hydration_is_individual"
+      ],
+      "after": [
+        "hydration_is_individual",
+        "pre_workout_meal_context"
+      ]
+    },
+    {
+      "text": "Água no treino: quanto eu tomo?",
+      "hydration": true,
+      "before": [
+        "pre_workout_meal_context"
+      ],
+      "after": [
+        "hydration_is_individual",
+        "pre_workout_meal_context",
+        "supplements_not_foundation"
+      ]
+    },
+    {
+      "text": "Quanta água coloco para cozinhar arroz antes de treinar?",
+      "hydration": false,
+      "before": [
+        "early_training_food_options",
+        "food_safety_five_keys",
+        "pre_workout_meal_context"
+      ],
+      "after": [
+        "early_training_food_options",
+        "food_safety_five_keys",
+        "pre_workout_meal_context"
+      ]
+    },
+    {
+      "text": "Posso tomar whey com água antes do treino?",
+      "hydration": false,
+      "before": [
+        "early_training_food_options",
+        "pre_workout_meal_context",
+        "protein_amino_acids_mechanism"
+      ],
+      "after": [
+        "early_training_food_options",
+        "pre_workout_meal_context",
+        "protein_amino_acids_mechanism"
+      ]
+    },
+    {
+      "text": "O que comer antes de treinar de manhã?",
+      "hydration": false,
+      "before": [
+        "early_training_food_options",
+        "late_training_meals_sleep",
+        "pre_workout_meal_context"
+      ],
+      "after": [
+        "early_training_food_options",
+        "late_training_meals_sleep",
+        "pre_workout_meal_context"
+      ]
+    },
+    {
+      "text": "Qual é a capital do Canadá?",
+      "hydration": false,
+      "before": [],
+      "after": []
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "phase": "7.07.5",
+  "version": "1.0.0",
+  "started_at": "2026-11-03T15:20:09.038Z",
+  "status": "evaluation_failed",
+  "scope": "Development suite; real NestJS, FastAPI, recognition 1.9 opt-in, real entities, RAG, Supabase and Planner; LM generation disabled",
+  "nlp_version": "1.9.0",
+  "lm_mode": "analyze",
+  "independent_quality_benchmark": false,
+  "credentials_recorded": false,
+  "existing_user_data_modified": false,
+  "native_iphone_tested": false,
+  "checks": [],
+  "cases": [],
+  "dialogues": [],
+  "actions": [],
+  "temporary_users_created": 0,
+  "temporary_users_deleted": 0,
+  "failure_type": "Error",
+  "failure_hint": "Command failed: C:\\Users\\ganto\\Documents\\Codex\\2026-09-09\\to\\tmp\\npm-cache\\_npx\\b96a6bd565c470ce\\node_modules\\@supabase\\cli-windows-x64\\bin\\supabase.exe projects api-keys --project-ref tahpuzdiyxknprt",
+  "cleanup_complete": true,
+  "completed_at": "2026-11-03T15:20:09.565Z",
+  "summary": {
+    "completed_cases": 0,
+    "requested_action_cases": 0,
+    "proposed_actions": 0,
+    "real_coach_action_cycles": 0,
+    "checks_passed": 0,
+    "checks_failed": 0
+  },
+  "service_error_observed": false
+}

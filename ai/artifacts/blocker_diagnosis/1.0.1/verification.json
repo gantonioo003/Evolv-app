@@ -1,0 +1,20 @@
+{
+  "phase": "7.07.1",
+  "status": "complete",
+  "checks": [
+    "raw_validation_counts_equal_saved_policy",
+    "saved_confidence_flags_reproduced",
+    "saved_routes_reproduced",
+    "four_payloads_parse_with_synthetic_snapshot",
+    "input_hashes_unchanged_before_after"
+  ],
+  "cases_checked": 4,
+  "production_changes": false,
+  "reserved_test_opened": false,
+  "sha256": {
+    "ai/scripts/diagnose_coach_blockers.py": "aa959e07d8e11178527e6eb60317ddc689a494afcd2db163a3fed971f7cd0b4d",
+    "docs/46-coach-blocker-diagnosis.md": "b06a0f15bee8968377c61c3608f4adbc23106907a7efcb3bd62f4dbb9980dc28",
+    "ai/artifacts/blocker_diagnosis/1.0.1/diagnosis.json": "9cfafb8c4e5b6e932905ad819e51d0f4d0f03a1d77ae96646589cd7bab1ecccd",
+    "ai/artifacts/blocker_diagnosis/1.0.1/RESULTS.md": "b06a0f15bee8968377c61c3608f4adbc23106907a7efcb3bd62f4dbb9980dc28"
+  }
+}

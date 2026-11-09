@@ -1,0 +1,23 @@
+{
+  "files": {
+    "RESULTS.md": {
+      "bytes": 7613,
+      "sha256": "44e07b1fa566edacbdb52330ae965c9869420fc4240f6ef8703f35973e9c38c9"
+    },
+    "evaluation_metrics.png": {
+      "bytes": 66652,
+      "sha256": "944a883110268ee1e66d313d2042d1128dea5dcf18ff2803d5efc5ea8faf89c0"
+    },
+    "evaluation_metrics.svg": {
+      "bytes": 60788,
+      "sha256": "ad8e2b8d151d86d14873a09e6ac295bed29920d0e565c2fb719a2950530448b9"
+    },
+    "qualitative_review.json": {
+      "bytes": 6714,
+      "sha256": "98c5dd4ec32f3e2bb8f616ecc49ee6f54139f3a1a64be9f8e2897adbc06860f3"
+    }
+  },
+  "matplotlib": "3.10.8",
+  "source_sha256": "d17bbb61599505d59854d6ddf6a36e295fb4fc5dfa5b873ef1facccc66f5164d",
+  "status": "completed"
+}

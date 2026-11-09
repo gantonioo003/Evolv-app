@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "phase": "7.04.5",
+  "test_evaluated": true,
+  "pairs_reviewed": 48,
+  "decision": "retain_research_candidate",
+  "model_promoted_to_app": false,
+  "inference_manifest_sha256": "d4f210fe30baaf2d7acf6e26d15095ba1b87bee6e46f13a075005494576e3d97",
+  "review_manifest_sha256": "b46f688a5b6334aae2f9d883d2df81be7b7a9bbe2a2d985ac3113c7104d7276c"
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "7.05.5",
+  "status": "complete",
+  "dialogues": 11,
+  "turns": 22,
+  "contract_dialogues": 10,
+  "contract_turns": 24,
+  "inference_errors": 1,
+  "postfix_regression_scenarios_passed": 4,
+  "automated_tests_passed": 30
+}

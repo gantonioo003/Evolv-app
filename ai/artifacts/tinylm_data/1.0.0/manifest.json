@@ -1,0 +1,50 @@
+{
+  "corpus_manifest_sha256": "51406e1484ada0f0f16263633cdd0e4aed2b8ba900fc6a226b5b920c7fc119f6",
+  "corpus_version": "1.2.0",
+  "created_at": "2026-11-01T13:31:55.979079+00:00",
+  "distribution": "local research; same corpus privacy, attribution and license obligations",
+  "files": {
+    "config.json": {
+      "bytes": 573,
+      "sha256": "e561eee8cc63c8316c81f003ce94449a2118df496620413319eb15810694cb86"
+    },
+    "private/test.offsets.npy": {
+      "bytes": 472,
+      "sha256": "530b44ef239d6bc793c0c4a8fdb0621dc2f020ef4cc02f19f7754c9c50e1c21c"
+    },
+    "private/test.tokens.npy": {
+      "bytes": 29972,
+      "sha256": "ca3602a46681cd423e91b0e2035dc2039685a203b6f80923f0db1602b05dd51c"
+    },
+    "private/train.offsets.npy": {
+      "bytes": 53032,
+      "sha256": "6730848ba1edccca7acea243e72447949f093fd4e0d2a5afc2925934df934a36"
+    },
+    "private/train.tokens.npy": {
+      "bytes": 5920786,
+      "sha256": "5ba75d9bbba6fc6b7daceb53186ef8d1545aaf0c1ff439a0de60f380de61c430"
+    },
+    "private/validation.offsets.npy": {
+      "bytes": 592,
+      "sha256": "1b91f3746f0084321a1890c9fbcf138ea89bb499aa787c32e4a6c734e06dacd9"
+    },
+    "private/validation.tokens.npy": {
+      "bytes": 43418,
+      "sha256": "db14780d35ee2290340812730c903d1277f92ccfcf1da7d2600b3787f3e10f5d"
+    },
+    "report.json": {
+      "bytes": 3119,
+      "sha256": "f1a83b6fb59e6a881f9e43fd5af66b448de8b4ee917f7db22b84da6698b0c4ab"
+    }
+  },
+  "runtime": {
+    "numpy": "2.4.4",
+    "python": "3.12.14",
+    "tokenizers": "0.23.3"
+  },
+  "status": "complete",
+  "tokenizer_manifest_sha256": "5765dd53a7401d5faaf4bf0581d18ae2550fadbd6408a6ac864d63727dbe9d9c",
+  "tokenizer_sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a",
+  "tokenizer_version": "1.0.0",
+  "version": "1.0.0"
+}

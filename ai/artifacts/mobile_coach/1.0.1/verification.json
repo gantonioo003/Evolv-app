@@ -1,0 +1,93 @@
+{
+  "phase": "7.06.4",
+  "version": "1.0.1",
+  "status": "implemented_and_web_verified",
+  "verified_at_utc": "2026-11-03T03:43:04.008998+00:00",
+  "checks": {
+    "typescript": {
+      "command": "npm run typecheck",
+      "exit_code": 0
+    },
+    "eslint": {
+      "command": "npm run lint",
+      "exit_code": 0
+    },
+    "mobile_unit_tests": {
+      "command": "npm test",
+      "passed": 33,
+      "failed": 0,
+      "coach_tests": 13,
+      "existing_regressions": 20
+    },
+    "web_export": {
+      "command": "npx --no-install expo export --platform web --output-dir ../ai/artifacts/mobile_coach/1.0.1/web",
+      "exit_code": 0,
+      "static_routes": 25,
+      "fixture_api_only": true
+    },
+    "browser_contract": {
+      "phase": "7.06.4",
+      "checks_passed": 16,
+      "checks": [
+        "connected_screen_loaded",
+        "retry_reuses_request_id",
+        "proposal_does_not_apply",
+        "preview_does_not_apply",
+        "apply_requires_explicit_button",
+        "background_refresh_keeps_preview",
+        "explicit_revert",
+        "history_reopens_saved_messages",
+        "historical_proposal_is_not_live",
+        "mobile_composer_visible",
+        "mobile_no_horizontal_overflow",
+        "desktop_no_horizontal_overflow",
+        "delete_not_automatic",
+        "cancel_delete_preserves_history",
+        "confirmed_delete_removes_conversation",
+        "no_browser_runtime_errors"
+      ],
+      "browser": "156.0.4314.58",
+      "scope": "real exported Mobile web UI, network/auth/Planner fixtures; no real mutations",
+      "native_iphone_tested": false
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    }
+  },
+  "scope": {
+    "native_iphone_tested": false,
+    "real_model_inference_in_this_phase": false,
+    "real_user_or_planner_mutations_in_this_phase": false,
+    "private_env_modified": false,
+    "retrained_models": false,
+    "deployed": false
+  },
+  "remaining_phase_7_06_5": [
+    "native keyboard and safe areas",
+    "real end-to-end chain",
+    "quality, safety, latency and memory measurements"
+  ],
+  "sha256": {
+    ".gitignore": "522de3c97080319de267fc2cec6942a07f940dd145303051e561bae39f5219a4",
+    "mobile/package.json": "7f9bd9ad2a016c8bb641a8faf048efddf167a1a7b1f765b777f667878bd95b19",
+    "mobile/package-lock.json": "665ff09c3c82b7eaa4be135382588c7271fd9d1668e2d6b26212c63aa3ae86a2",
+    "mobile/src/app/(tabs)/coach.tsx": "aaa6bedcb48a431de58987039ad63afcbb5a9499621dd36a3c4099662b815ea6",
+    "mobile/src/app/(tabs)/_layout.tsx": "f93fc747b7bff4982c21c205accd389b38a36d477b69bcec1d39f89f1b27a92d",
+    "mobile/src/components/coach-connected-screen.tsx": "b7018bda154e36d55425cda0e3ccdc5c4d927e0141803d3c711e891fd7a490f2",
+    "mobile/src/components/ui.tsx": "77f359dacf49f285e8cf5a793c462dfffa95d33352c6f0df6b1c685c02cbc6f7",
+    "mobile/src/services/coach-api.ts": "5628dd472b074e83015a3c413dbfcd09e18c890290dd5eb75f7200ad359172b5",
+    "mobile/src/services/api-client.ts": "7ee647cf24f9037dce12c8defd54d693d2560dbab02ba1b20565ac100a923eab",
+    "mobile/src/lib/coach-session.ts": "8b5dac986d4c6868bea44b4294f8f6f909fa0b1965ecb26f1ca508cf7d516638",
+    "mobile/src/types/coach.ts": "f65cb45a0ef2aadbe05268c68235ed4f3a51d188b6709d7c20be703e4427a678",
+    "mobile/tests/coach-session.test.cjs": "db6a6822657349e9739cf26916479e8666f8b1811e3ac89c8df708c141f5e0d3",
+    "mobile/scripts/verify-coach-ui.cjs": "04dcb809c1122aad428eabe7d1100a79dda2d2c689d8dd0edebfd22c7fa24572",
+    "mobile/README.md": "86afaefcb3e3a439949ecbaa92baaf5602ece175c1a2af2ed77341762b76ddb0",
+    "ai/README.md": "4d4d76225f5dcaccbf3fd88e56173e898e32a2ee6a553ad3b8f890d015243deb",
+    "docs/44-coach-mobile-integration.md": "e2c44ef1a1ecfff7dd9fdbb7cd7367ebbc4e378e3af32dbc479ed7ebe4f7f132"
+  },
+  "artifact_sha256": {
+    "ui-verification.json": "30a3cc527b9589b1e9eaf41cd62f528cf69c3defe9cac09c37f0ec4105627c88",
+    "coach-mobile.png": "5ffdb8b6f01e7d6cf371f9ba84d48e579fd121c89b86e49bad4f0943da3a10a6",
+    "coach-desktop.png": "e71b0e34ad44cbecf24d85f20b810fd0a842e325c435ed83f6308295411cf4fb"
+  }
+}

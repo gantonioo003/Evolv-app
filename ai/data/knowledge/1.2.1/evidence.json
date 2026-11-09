@@ -1,0 +1,484 @@
+{
+  "reviewer": "AI editorial review; no clinical professional signoff",
+  "access_limitations": [
+    {
+      "locator": "https://journals.lww.com/acsm-msse/fulltext/2026/04000/american_college_of_sports_medicine_position.21.aspx",
+      "observed": "restricted_full_paper_402",
+      "used_instead": "ACSM institutional summary; not full article verification"
+    },
+    {
+      "locator": "https://bjsm.bmj.com/content/55/7/356",
+      "observed": "direct_access_403",
+      "used_instead": "Publisher indexed passage only, explicitly labelled"
+    },
+    {
+      "locator": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+      "observed": "access_denied",
+      "used_instead": "ANPD technical PDF; not a new declaration of legal compliance"
+    },
+    {
+      "locator": "https://pmc.ncbi.nlm.nih.gov/",
+      "observed": "intermittent_recaptcha_after_successful_reads",
+      "used_instead": "Accessible publisher texts or already retrieved selected passages; never claim whole-site verification"
+    }
+  ],
+  "entries": [
+    {
+      "id": "evidence:who_physical_activity_2020",
+      "source_id": "who_physical_activity_2020",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.who.int/publications/i/item/9789240015128",
+      "notes": "Diretriz populacional, não plano clínico individual.",
+      "verified_at": "2026-11-03",
+      "section": "Overview",
+      "method": "official_publication_page"
+    },
+    {
+      "id": "evidence:brazil_physical_activity_guide_2021",
+      "source_id": "brazil_physical_activity_guide_2021",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_atividade_fisica_populacao_brasileira.pdf",
+      "notes": "Guia brasileiro: começar com o possível e reduzir inatividade.",
+      "verified_at": "2026-11-03",
+      "section": "Atividade física para adultos",
+      "method": "official_pdf"
+    },
+    {
+      "id": "evidence:acsm_resistance_training_2026",
+      "source_id": "acsm_resistance_training_2026",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://acsm.org/resistance-training-guidelines-update-2026/",
+      "notes": "Resumo institucional consultado; o artigo completo ligado retornou acesso restrito. Não é revisão integral.",
+      "verified_at": "2026-11-03",
+      "section": "Main takeaways; Individualization matters",
+      "method": "publisher_summary"
+    },
+    {
+      "id": "evidence:brazil_food_guide_2025",
+      "source_id": "brazil_food_guide_2025",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://biblioteca.saude.gov.br/TerminalWeb/acervo/detalhe/77494",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:acsm_nutrition_performance_2016",
+      "source_id": "acsm_nutrition_performance_2016",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/26891166/",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:issn_protein_exercise_2017",
+      "source_id": "issn_protein_exercise_2017",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8",
+      "notes": "Proteína e exercício estimulam síntese proteica; alimentação pode atender às necessidades.",
+      "verified_at": "2026-11-03",
+      "section": "Position stand; protein synthesis",
+      "method": "full_text"
+    },
+    {
+      "id": "evidence:issn_nutrient_timing_2017",
+      "source_id": "issn_nutrient_timing_2017",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0189-4",
+      "notes": "Demanda do exercício e ingestão diária contextualizam alimentação pré e pós-treino.",
+      "verified_at": "2026-11-03",
+      "section": "Position stand; Carbohydrates; Protein",
+      "method": "full_text"
+    },
+    {
+      "id": "evidence:issn_diets_body_composition_2017",
+      "source_id": "issn_diets_body_composition_2017",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0174-y",
+      "notes": "Composição e peso são medidas diferentes; resultados dependem de contexto e aderência.",
+      "verified_at": "2026-11-03",
+      "section": "Body composition assessment; conclusions",
+      "method": "full_text"
+    },
+    {
+      "id": "evidence:issn_creatine_2017",
+      "source_id": "issn_creatine_2017",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0173-z",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:nih_performance_supplements_2021",
+      "source_id": "nih_performance_supplements_2021",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/",
+      "notes": "Resultados variam por substância, exercício e contexto; suplemento não substitui alimentação e treino.",
+      "verified_at": "2026-11-03",
+      "section": "Introduction; safety",
+      "method": "official_fact_sheet"
+    },
+    {
+      "id": "evidence:anvisa_supplements_2025",
+      "source_id": "anvisa_supplements_2025",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.gov.br/anvisa/pt-br/assuntos/alimentos/suplementos-alimentares/perguntas-frequentes/",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:cdc_sleep_2024",
+      "source_id": "cdc_sleep_2024",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.cdc.gov/sleep/about/index.html",
+      "notes": "Necessidade varia com idade; sono ruim persistente precisa de avaliação.",
+      "verified_at": "2026-11-03",
+      "section": "Getting enough sleep; Sleep disorders",
+      "method": "official_page"
+    },
+    {
+      "id": "evidence:athlete_sleep_consensus_2021",
+      "source_id": "athlete_sleep_consensus_2021",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://bjsm.bmj.com/content/55/7/356",
+      "notes": "Agenda de treino pode limitar oportunidade de sono e recuperação. Página direta bloqueada; somente trecho indexado do autor.",
+      "verified_at": "2026-11-03",
+      "section": "Sleep inadequacy and the athlete — trecho indexado",
+      "method": "publisher_search_excerpt"
+    },
+    {
+      "id": "evidence:acsm_ecss_overtraining_2013",
+      "source_id": "acsm_ecss_overtraining_2013",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/23247672/",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:who_alcohol_2024",
+      "source_id": "who_alcohol_2024",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.who.int/news-room/fact-sheets/detail/alcohol",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:who_food_safety_2006",
+      "source_id": "who_food_safety_2006",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.who.int/publications-detail-redirect/9789241594639",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:anvisa_food_safety_2024",
+      "source_id": "anvisa_food_safety_2024",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2024/ceias-de-fim-de-ano-com-seguranca-sanitaria-e-saude-no-prato",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:nimh_eating_disorders_2024",
+      "source_id": "nimh_eating_disorders_2024",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.nimh.nih.gov/health/publications/eating-disorders",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:niaid_food_allergy_2010",
+      "source_id": "niaid_food_allergy_2010",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.niaid.nih.gov/sites/default/files/faguidelinesexecsummary.pdf",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:aha_first_aid_2024",
+      "source_id": "aha_first_aid_2024",
+      "status": "reviewed_selected_scope",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://cpr.heart.org/en/resuscitation-science/2024-first-aid-guidelines",
+      "notes": "Sinais críticos exigem atendimento; conteúdo usado só para alerta e encaminhamento, sem medicamentos ou protocolos de primeiros socorros.",
+      "verified_at": "2026-11-03",
+      "section": "Top 10 messages; Chest pain; presyncope",
+      "method": "official_guideline_selected_sections"
+    },
+    {
+      "id": "evidence:brazil_samu_192_current",
+      "source_id": "brazil_samu_192_current",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.gov.br/saude/pt-br/composicao/saes/samu-192",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:cvv_188_current",
+      "source_id": "cvv_188_current",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://cvv.org.br/",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:acog_exercise_pregnancy_current",
+      "source_id": "acog_exercise_pregnancy_current",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "https://www.acog.org/womens-health/faqs/exercise-during-pregnancy",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:evolv_planner_internal_v1",
+      "source_id": "evolv_planner_internal_v1",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "docs/10-planner.md",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:evolv_coach_actions_internal_v1",
+      "source_id": "evolv_coach_actions_internal_v1",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "docs/11-coach-planner-actions.md",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:evolv_nutrition_internal_v1",
+      "source_id": "evolv_nutrition_internal_v1",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "docs/12-nutrition-planner.md",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:evolv_recovery_internal_v1",
+      "source_id": "evolv_recovery_internal_v1",
+      "status": "inherited_not_reverified_in_this_phase",
+      "last_legacy_verification": "2026-10-07",
+      "locator": "docs/08-contexto-de-treino-dieta-e-motivacao.md",
+      "notes": "Cadastro herdado; não alegar nova leitura ou aprovação clínica."
+    },
+    {
+      "id": "evidence:nhs_strength_basics",
+      "source_id": "nhs_strength_basics",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.nhs.uk/live-well/exercise/how-to-improve-strength-flexibility/",
+      "section": "What are strength exercises?",
+      "notes": "Define repetição e série; fortalecimento pode usar peso corporal e outros equipamentos."
+    },
+    {
+      "id": "evidence:iusca_hypertrophy_2021",
+      "source_id": "iusca_hypertrophy_2021",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://journal.iusca.org/index.php/Journal/article/download/81/140/5323",
+      "section": "Rest interval; Exercise selection",
+      "notes": "Intervalos preservam trabalho nas séries; objetivo e exercício condicionam duração. Recomendações destinadas à hipertrofia em população atlética."
+    },
+    {
+      "id": "evidence:acsm_progression_2009",
+      "source_id": "acsm_progression_2009",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://pubmed.ncbi.nlm.nih.gov/19204579/",
+      "section": "Abstract",
+      "notes": "Preservar intensidade pela ordem dos exercícios; progressão considera objetivo e capacidade. Referência histórica, não superior à atualização de 2026."
+    },
+    {
+      "id": "evidence:aha_warmup_cooldown",
+      "source_id": "aha_warmup_cooldown",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.heart.org/en/healthy-living/exercise-and-physical-activity/fitness-basics/warm-up-cool-down",
+      "section": "Warm up; Cool down",
+      "notes": "Início e término graduais da atividade aeróbia; não demonstra que alongamento cure dor ou elimine lesões."
+    },
+    {
+      "id": "evidence:deload_delphi_2023",
+      "source_id": "deload_delphi_2023",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://link.springer.com/article/10.1186/s40798-023-00633-0",
+      "section": "Abstract; Designing and implementing deloading",
+      "notes": "Delphi de treinadores: reduzir estresse de treino; aplicação variável. Não é ensaio que prove um protocolo ótimo."
+    },
+    {
+      "id": "evidence:concurrent_training_review_2022",
+      "source_id": "concurrent_training_review_2022",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+      "section": "Abstract: Results and Conclusion",
+      "notes": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão."
+    },
+    {
+      "id": "evidence:who_healthy_diet_2026",
+      "source_id": "who_healthy_diet_2026",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+      "section": "Carbohydrates; Fats",
+      "notes": "Gorduras essenciais e qualidade das fontes; fibras e carboidratos de alimentos variados. Educação populacional, sem macro individual."
+    },
+    {
+      "id": "evidence:issn_weight_reduction_2026",
+      "source_id": "issn_weight_reduction_2026",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13665703/",
+      "section": "Scope; plateau discussion",
+      "notes": "Peso pode estabilizar sem provar ausência de perda de gordura. Posicionamento de outubro de 2026; não cobre desidratação aguda ou farmacoterapia."
+    },
+    {
+      "id": "evidence:menstrual_performance_review_2020",
+      "source_id": "menstrual_performance_review_2020",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://link.springer.com/article/10.1007/s40279-020-01319-3",
+      "section": "Abstract: Results and Conclusion",
+      "notes": "Efeito médio pequeno/trivial, heterogeneidade e qualidade limitada. Não sustenta calendário rígido nem generalização a todas as mulheres."
+    },
+    {
+      "id": "evidence:nhlbi_sleep_function",
+      "source_id": "nhlbi_sleep_function",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.nhlbi.nih.gov/health/sleep/why-sleep-important",
+      "section": "Respiratory and immune systems; Problems with thinking and memory",
+      "notes": "Sono apoia função imune, atenção e memória. Não quantifica ganho muscular nem permite diagnóstico individual."
+    },
+    {
+      "id": "evidence:cdc_heat_illness_2026",
+      "source_id": "cdc_heat_illness_2026",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+      "section": "Heat stroke; Heat exhaustion",
+      "notes": "Calor com confusão ou perda de consciência pode indicar emergência. Material ocupacional usado para alertas gerais, sem diagnosticar."
+    },
+    {
+      "id": "evidence:fda_caffeine_safety",
+      "source_id": "fda_caffeine_safety",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much",
+      "section": "Signs of too much caffeine; individual sensitivity",
+      "notes": "Cafeína pode causar palpitações, ansiedade e problemas de sono; sensibilidade varia. Não garante dose individual segura."
+    },
+    {
+      "id": "evidence:fda_supplement_interactions",
+      "source_id": "fda_supplement_interactions",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.fda.gov/consumers/consumer-updates/mixing-medications-and-dietary-supplements-can-endanger-your-health",
+      "section": "Dangers of mixing medications and dietary supplements",
+      "notes": "Suplementos podem modificar ação de medicamentos; avaliar com profissional. Sem ajuste de dose ou suspensão pelo app."
+    },
+    {
+      "id": "evidence:cdc_bmi_limits",
+      "source_id": "cdc_bmi_limits",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.cdc.gov/bmi/faq/index.html",
+      "section": "How is BMI calculated?; Is BMI a good indicator of body fat?",
+      "notes": "IMC relaciona massa e altura; não distingue gordura de massa magra nem substitui avaliação clínica."
+    },
+    {
+      "id": "evidence:nhs_sprains_strains",
+      "source_id": "nhs_sprains_strains",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.nhs.uk/conditions/sprains-and-strains/",
+      "section": "Urgent advice; immediate action",
+      "notes": "Trauma com deformidade, alteração de sensibilidade ou dificuldade para apoiar requer avaliação; texto não fecha diagnóstico."
+    },
+    {
+      "id": "evidence:nhs_fatigue",
+      "source_id": "nhs_fatigue",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.nhs.uk/symptoms/tiredness-and-fatigue/",
+      "section": "Causes; When to get help",
+      "notes": "Fadiga tem várias causas. Persistência sem explicação pede avaliação, não aumento automático de esforço."
+    },
+    {
+      "id": "evidence:cdc_respiratory_illness",
+      "source_id": "cdc_respiratory_illness",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html",
+      "section": "Recommendation",
+      "notes": "Sintomas respiratórios pedem cuidado com transmissão. Retorno a atividades sociais não é liberação para treino intenso."
+    },
+    {
+      "id": "evidence:anpd_anonymization_2023",
+      "source_id": "anpd_anonymization_2023",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd___analise_juridica.pdf/@@download/file",
+      "section": "Seções 2, 3.3 e 3.4; considerações finais",
+      "notes": "Anonimização considera contexto, meios razoáveis e risco de reidentificação; remover nome não demonstra anonimato."
+    },
+    {
+      "id": "evidence:brazil_food_guide_2014",
+      "source_id": "brazil_food_guide_2014",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "web_primary_source_selected_sections",
+      "locator": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf",
+      "section": "Escolha de alimentos; Dez passos",
+      "notes": "Documento acessado é de 2014: alimentos in natura/minimamente processados, preparo e contexto. Reimpressão não é diretriz nova."
+    },
+    {
+      "id": "evidence:evolv_coach_runtime_2026_11",
+      "source_id": "evolv_coach_runtime_2026_11",
+      "status": "reviewed",
+      "verified_at": "2026-11-03",
+      "method": "local_contract_and_code",
+      "locator": "docs/50-coach-real-action-validation.md",
+      "section": "Configuração; Casos e verificações; Limites",
+      "notes": "Aplicação explícita, acesso por conta e histórico sem treinamento automático. Não é fonte de eficácia clínica.",
+      "local_sha256": {
+        "docs/50-coach-real-action-validation.md": "cbcf7b2ff6c5de82b35787caef3f330e294228e77d0fcab5be3fc591e80ad1d7",
+        "backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+        "ai/src/evolv_rag/coach.py": "936f6d74959f4d5ceb91727a893bfa219fdff4bf936b8073c55a5a921f3342fa",
+        "ai/src/evolv_rag/actions.py": "2ad6d9de3c07c1ee54109a3dcdee52c767e191d0e6ad8087bb2016d688c93920"
+      },
+      "contract_refresh": {
+        "phase": "7.07.7",
+        "date": "2026-11-03",
+        "scope": "Retrieval call and loader only; AST-equivalent outside retrieval. Actions/privacy policies unchanged."
+      }
+    }
+  ]
+}

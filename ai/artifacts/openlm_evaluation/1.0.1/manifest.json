@@ -1,0 +1,23 @@
+{
+  "outputs": {
+    "adapted_generation_config.json": "a5cbd729275d5e08caa6524d9fd40027d7bc8abd446f70bebdbc94099ae6a62e",
+    "implementation_repair.json": "f9542503be836d215412ddab92ba06a0485e7e26ea0bfa5582b5076fb31a4edd",
+    "launch.json": "fcf8ae70645e99c99e86d9c44e67e30c2b941d69c5881ef8d99bc285b255747d",
+    "metrics_partial.json": "683a616bef0a96f91267917dc650815f2da071cd6485d042f251ec59e37385b5",
+    "original_generation_config.json": "a5cbd729275d5e08caa6524d9fd40027d7bc8abd446f70bebdbc94099ae6a62e",
+    "private/adapted_generations.jsonl": "51e82554b49cb4291e0ff429f0953dcc0a4a52ec69a3c642787db564ff7ff6ab",
+    "private/adapted_nll.json": "8da9dbd8ba8412fe12ec2bee617fe97eccf996ba7f96eb66f0d93a0acc745995",
+    "private/before_tf32_fix.stderr.log": "02fe2eec75993e0c9045449a61c13a3314d5ec3b11b79efc46f936a54789b9fd",
+    "private/before_tf32_fix.stdout.log": "1d21d0bd7782315e20f6a8b2cd430db1528a9c6276ee953120dc0095ad821158",
+    "private/cases.json": "4b606b11e40d565632716bd87155a3c4f6194014889f75cbf300830fc8804d26",
+    "private/compare_before_tf32_fix.py": "194bd104056841b117e76b360da6a67fbd99a5ba4deee0346c65689149fd1dd6",
+    "private/comparison.stderr.log": "8339b91092d9f0587479a3b28693ea2a372755e8806e9a84f22722821292151d",
+    "private/comparison.stdout.log": "4b573f5f27dfa1969a1d396f1ffdd989ebd729a6a90426e5383c7143ebfe6d83",
+    "private/original_generations.jsonl": "fa8d279b1d02d6752701a7998a3b76bf5cea9c5c5847221757638a916b2bc94c",
+    "private/original_nll.json": "98279e959fd0a6ce5932a8ba2f5e2efd8945dbc9f23771ad778776accdc70df7",
+    "private/original_review_draft.json": "fee3c76e711a38c8ee4273e03c0d27707d1f3df392fdba1e39c13419cfa1480c",
+    "protocol_frozen.json": "471bcea94787fecb65764ead4ed9c9e0c759aa904f907d9101f84a7ad38c1aaf",
+    "protocol_frozen_before_tf32_fix.json": "c2ac15b7a6e25a6e9b9f6c8a848a244157b19623ea367e886090a650ef14e063",
+    "results.json": "567064a64a0c458fb0b5eef4c925bd3669e7236c12513a80f39cd5bc6869db71"
+  }
+}

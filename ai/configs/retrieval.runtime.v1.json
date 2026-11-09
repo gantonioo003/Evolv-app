@@ -1,0 +1,14 @@
+{
+  "version": "1.1.1",
+  "index": "artifacts/rag/1.1.1",
+  "knowledge": "1.2.1",
+  "index_manifest_sha256": "74d2ff6466275a6b932e18e83b51d55e4a4c11c59ea58290a6caf2fdc869371d",
+  "method_code_sha256": "ac15323c0cfe8bce2a4ff104f05a0fa7ec452cde2ec930ccb6aecda03a7d27ef",
+  "selection_sha256": "7974927bbea3849a59ba2c1c0db3e92836eb963e852630a5b3e09dfdebc16331",
+  "parameters": {
+    "lexical_weight": 0.45,
+    "context_weight": 0.8,
+    "min_score": 0.3
+  },
+  "evaluation_scope": "authored development and pre-reserved authored cases, not independent human gold"
+}

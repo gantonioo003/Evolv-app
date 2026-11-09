@@ -2,6 +2,16 @@
 
 Esta pasta guarda o banco do projeto.
 
+## Coach — fase 7.06.3
+
+O histórico usa coach_conversations e coach_messages, já presentes na
+migration inicial, com RLS e trigger de propriedade existentes. Não exige
+nova migration. A gravação em lote de usuário/assistente é transacional e
+usa IDs derivados do request_id para não duplicar mensagens.
+Oito checks foram executados na Data API remota com dois usuários
+temporários, removidos ao terminar. Método e limites em
+docs/43-coach-conversations-history.md, na raiz do projeto.
+
 ## O que tem aqui
 
 ```txt

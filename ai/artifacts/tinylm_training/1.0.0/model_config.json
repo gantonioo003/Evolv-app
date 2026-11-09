@@ -1,0 +1,13 @@
+{
+  "context_length": 256,
+  "d_model": 192,
+  "dropout": 0.1,
+  "ffn_dim": 768,
+  "ignore_index": -100,
+  "layer_norm_eps": 1e-05,
+  "num_heads": 6,
+  "num_layers": 4,
+  "pad_token_id": 0,
+  "tie_embeddings": true,
+  "vocab_size": 8192
+}

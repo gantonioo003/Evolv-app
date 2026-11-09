@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "license": "Apache-2.0",
+  "load_in_4bit": true,
+  "quant_type": "nf4",
+  "double_quant": true,
+  "compute_dtype": "bfloat16",
+  "attention": "sdpa",
+  "max_input_tokens": 2048,
+  "max_new_tokens": 256,
+  "system_prompt": "Você é o assistente Evolv. Responda em português brasileiro, de forma clara e direta. Pode explicar treino, alimentação e recuperação em termos gerais. Diante de dor, não diagnostique nem prescreva tratamento ou exames. Ao receber pedidos de alteração de planos, descreva a proposta e peça confirmação; não afirme que alterou o aplicativo. Não invente informações pessoais, dados do plano nem fontes."
+}

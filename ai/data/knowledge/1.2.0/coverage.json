@@ -1,0 +1,1112 @@
+{
+  "phase": "7.07.6",
+  "knowledge_version": "1.2.0",
+  "as_of": "2026-11-03",
+  "coverage_definition": "Presence of topic/risk tags and readable scoped content, not answer quality or safety certification",
+  "before": {
+    "documents": 67,
+    "domains": {
+      "nutrition": 23,
+      "recovery": 11,
+      "safety": 19,
+      "training": 14
+    },
+    "topics": {
+      "adherence": [
+        "exercise_selection_supports_adherence",
+        "flexible_meal_without_compensation",
+        "food_pattern_over_single_meal",
+        "nutrition_variation_preferences",
+        "recovery_change_requires_pattern",
+        "training_consistency_first"
+      ],
+      "alcohol": [
+        "alcohol_is_not_performance_strategy"
+      ],
+      "ambiguous_reference": [
+        "question_is_not_action"
+      ],
+      "app_usage": [
+        "coach_text_only_limit"
+      ],
+      "body_image": [
+        "body_appearance_is_not_diagnosis",
+        "eating_disorder_boundary",
+        "mental_health_crisis_route_brazil",
+        "sleep_tracker_is_estimate"
+      ],
+      "body_measurements": [
+        "energy_balance_guides_weight_trend"
+      ],
+      "body_recomposition": [],
+      "body_weight_trend": [
+        "energy_balance_guides_weight_trend"
+      ],
+      "bodybuilding_competition": [
+        "medication_and_hormone_boundary"
+      ],
+      "bulking": [
+        "medication_and_hormone_boundary",
+        "protein_range_active_adults"
+      ],
+      "calisthenics": [
+        "training_equipment_flexibility"
+      ],
+      "carbohydrate_intake": [
+        "nutrient_timing_after_daily_totals",
+        "post_workout_meal_context",
+        "pre_workout_meal_context"
+      ],
+      "cardio_conditioning": [
+        "chest_pain_emergency",
+        "hydration_is_individual",
+        "other_emergency_signs",
+        "physical_activity_health"
+      ],
+      "concurrent_training": [],
+      "cooldown": [],
+      "cutting": [
+        "extreme_diet_and_dehydration_refusal",
+        "medication_and_hormone_boundary",
+        "protein_range_active_adults"
+      ],
+      "deload": [],
+      "dietary_restriction": [
+        "clinical_and_minor_context_boundary"
+      ],
+      "digestive_comfort": [
+        "pre_workout_meal_context"
+      ],
+      "eating_out": [
+        "flexible_meal_without_compensation"
+      ],
+      "electrolytes": [
+        "hydration_is_individual"
+      ],
+      "energy_balance": [
+        "eating_disorder_boundary",
+        "energy_balance_guides_weight_trend"
+      ],
+      "exercise_order": [],
+      "exercise_selection": [
+        "exercise_selection_supports_adherence"
+      ],
+      "exercise_substitution": [
+        "planner_local_changes",
+        "training_equipment_flexibility"
+      ],
+      "exercise_technique": [
+        "training_pain_boundary"
+      ],
+      "fat_intake": [],
+      "fatigue": [
+        "recovery_change_requires_pattern",
+        "recovery_checkin_optional",
+        "training_and_recovery_balance",
+        "training_to_failure_optional",
+        "under_recovery_uses_combined_signals"
+      ],
+      "fiber_intake": [],
+      "flexible_meal": [
+        "eating_disorder_boundary",
+        "flexible_meal_without_compensation",
+        "food_pattern_over_single_meal"
+      ],
+      "food_allergy": [
+        "food_allergy_and_anaphylaxis_boundary"
+      ],
+      "food_budget_and_access": [
+        "food_context_is_part_of_quality",
+        "food_minimally_processed_base",
+        "grocery_and_meal_prep_support_adherence"
+      ],
+      "food_label": [
+        "food_allergy_and_anaphylaxis_boundary",
+        "supplement_combinations_uncertain",
+        "supplement_label_and_regulation"
+      ],
+      "food_portion": [
+        "food_substitution_preserves_role"
+      ],
+      "food_preference": [
+        "exercise_selection_supports_adherence",
+        "food_context_is_part_of_quality",
+        "food_substitution_preserves_role",
+        "nutrition_variation_preferences"
+      ],
+      "food_safety": [
+        "food_safety_five_keys",
+        "food_safety_temperature",
+        "food_safety_uncertainty_boundary"
+      ],
+      "food_storage": [
+        "food_safety_five_keys",
+        "food_safety_temperature",
+        "food_safety_uncertainty_boundary"
+      ],
+      "food_substitution": [
+        "food_allergy_and_anaphylaxis_boundary",
+        "food_substitution_preserves_role",
+        "planner_local_changes"
+      ],
+      "goal_setting": [
+        "clinical_and_minor_context_boundary",
+        "physical_activity_health"
+      ],
+      "grocery_planning": [
+        "grocery_and_meal_prep_support_adherence"
+      ],
+      "gym_equipment_availability": [
+        "training_equipment_flexibility"
+      ],
+      "home_training": [],
+      "hydration": [
+        "extreme_diet_and_dehydration_refusal",
+        "hydration_is_individual",
+        "pregnancy_requires_clinical_context"
+      ],
+      "image_dependency": [
+        "body_appearance_is_not_diagnosis",
+        "coach_text_only_limit"
+      ],
+      "intermittent_fasting": [
+        "extreme_diet_and_dehydration_refusal",
+        "named_diets_are_strategies"
+      ],
+      "ketogenic_diet": [
+        "named_diets_are_strategies"
+      ],
+      "low_carb": [
+        "named_diets_are_strategies"
+      ],
+      "meal_evaluation": [
+        "alcohol_is_not_performance_strategy",
+        "food_minimally_processed_base",
+        "food_pattern_over_single_meal"
+      ],
+      "meal_prep": [
+        "food_context_is_part_of_quality",
+        "food_safety_temperature",
+        "grocery_and_meal_prep_support_adherence",
+        "nutrition_variation_preferences"
+      ],
+      "meal_timing": [
+        "nutrient_timing_after_daily_totals",
+        "protein_distribution_general"
+      ],
+      "menstrual_cycle_context": [],
+      "micronutrient_intake": [
+        "food_minimally_processed_base",
+        "vegetarian_patterns_need_planning"
+      ],
+      "missed_workout": [
+        "missed_workout_no_compensation"
+      ],
+      "motivation": [
+        "mental_health_crisis_route_brazil",
+        "recovery_checkin_optional",
+        "rest_day_is_part_of_plan",
+        "sleep_tracker_is_estimate"
+      ],
+      "multi_request": [],
+      "muscle_gain_plateau": [],
+      "muscle_hypertrophy": [
+        "hypertrophy_uses_sufficient_volume",
+        "protein_supports_training_adaptation",
+        "training_goal_specificity"
+      ],
+      "muscle_soreness": [
+        "soreness_is_not_progress_requirement",
+        "under_recovery_uses_combined_signals"
+      ],
+      "muscular_endurance": [
+        "training_goal_specificity"
+      ],
+      "pain_during_training": [
+        "chest_pain_emergency",
+        "other_emergency_signs",
+        "soreness_is_not_progress_requirement",
+        "training_pain_boundary",
+        "unsafe_training_request_refusal"
+      ],
+      "plan_explanation": [
+        "coach_does_not_write_database",
+        "planner_preview_confirmation"
+      ],
+      "planner_confirmation": [
+        "coach_does_not_write_database",
+        "planner_local_changes",
+        "planner_preview_confirmation",
+        "question_is_not_action"
+      ],
+      "post_workout_meal": [
+        "nutrition_training_day_context",
+        "post_workout_meal_context"
+      ],
+      "pre_workout_meal": [
+        "nutrition_training_day_context",
+        "pre_workout_meal_context"
+      ],
+      "progressive_overload": [
+        "progressive_overload_gradual",
+        "training_advanced_methods_optional"
+      ],
+      "protein_intake": [
+        "nutrient_timing_after_daily_totals",
+        "post_workout_meal_context",
+        "protein_distribution_general",
+        "protein_range_active_adults",
+        "protein_supports_training_adaptation",
+        "vegetarian_patterns_need_planning"
+      ],
+      "range_of_motion": [
+        "progressive_overload_gradual"
+      ],
+      "recipe_and_preparation": [
+        "food_safety_five_keys"
+      ],
+      "rest_between_sets": [],
+      "rest_day": [
+        "rest_day_is_part_of_plan"
+      ],
+      "routine_and_schedule": [
+        "missed_workout_no_compensation",
+        "nutrition_training_day_context",
+        "rest_day_is_part_of_plan",
+        "sleep_habits_general",
+        "stress_and_schedule_affect_recovery"
+      ],
+      "session_duration": [],
+      "sets_and_repetitions": [
+        "strength_uses_heavier_loads"
+      ],
+      "shift_work": [
+        "stress_and_schedule_affect_recovery"
+      ],
+      "sleep_duration": [
+        "athlete_sleep_is_individual",
+        "sleep_duration_adults"
+      ],
+      "sleep_quality": [
+        "alcohol_is_not_performance_strategy",
+        "recovery_checkin_optional",
+        "sleep_duration_adults",
+        "sleep_habits_general",
+        "sleep_tracker_is_estimate"
+      ],
+      "sport_specific_training": [
+        "power_intent_matters"
+      ],
+      "strength_training": [
+        "protein_supports_training_adaptation",
+        "strength_uses_heavier_loads",
+        "training_goal_specificity"
+      ],
+      "stress": [
+        "stress_and_schedule_affect_recovery"
+      ],
+      "supplement_caffeine": [
+        "sleep_habits_general",
+        "supplement_combinations_uncertain",
+        "supplement_label_and_regulation",
+        "supplements_not_foundation"
+      ],
+      "supplement_creatine": [
+        "creatine_evidence_general",
+        "pregnancy_requires_clinical_context",
+        "supplements_not_foundation"
+      ],
+      "supplement_protein": [
+        "supplement_label_and_regulation",
+        "supplements_not_foundation"
+      ],
+      "tempo_and_cadence": [
+        "power_intent_matters"
+      ],
+      "training_frequency": [
+        "clinical_and_minor_context_boundary",
+        "pregnancy_requires_clinical_context",
+        "resistance_training_frequency_general",
+        "training_consistency_first"
+      ],
+      "training_intensity": [
+        "power_intent_matters",
+        "strength_uses_heavier_loads",
+        "training_advanced_methods_optional",
+        "training_to_failure_optional",
+        "unsafe_training_request_refusal"
+      ],
+      "training_performance": [
+        "athlete_sleep_is_individual",
+        "creatine_evidence_general",
+        "progressive_overload_gradual",
+        "soreness_is_not_progress_requirement",
+        "training_and_recovery_balance"
+      ],
+      "training_plateau": [
+        "recovery_change_requires_pattern"
+      ],
+      "training_split_selection": [
+        "resistance_training_frequency_general",
+        "training_advanced_methods_optional"
+      ],
+      "training_volume": [
+        "hypertrophy_uses_sufficient_volume",
+        "missed_workout_no_compensation",
+        "unsafe_training_request_refusal"
+      ],
+      "travel_training": [
+        "athlete_sleep_is_individual"
+      ],
+      "under_recovery": [
+        "hypertrophy_uses_sufficient_volume",
+        "training_and_recovery_balance",
+        "training_to_failure_optional",
+        "under_recovery_uses_combined_signals"
+      ],
+      "vegetarian_or_vegan": [
+        "vegetarian_patterns_need_planning"
+      ],
+      "warmup": [],
+      "weight_change_plateau": []
+    },
+    "risks": {
+      "acute_illness_signal": [],
+      "clinical_measurement_request": [],
+      "eating_disorder_signal": [
+        "body_appearance_is_not_diagnosis",
+        "eating_disorder_boundary",
+        "extreme_diet_and_dehydration_refusal",
+        "flexible_meal_without_compensation",
+        "food_pattern_over_single_meal",
+        "missed_workout_no_compensation"
+      ],
+      "emergency_symptom": [
+        "chest_pain_emergency",
+        "food_allergy_and_anaphylaxis_boundary",
+        "other_emergency_signs"
+      ],
+      "extreme_diet_or_dehydration": [
+        "extreme_diet_and_dehydration_refusal",
+        "flexible_meal_without_compensation",
+        "hydration_is_individual",
+        "named_diets_are_strategies"
+      ],
+      "food_allergy_or_reaction": [
+        "food_allergy_and_anaphylaxis_boundary"
+      ],
+      "food_safety_uncertainty": [
+        "food_safety_five_keys",
+        "food_safety_temperature",
+        "food_safety_uncertainty_boundary"
+      ],
+      "heat_illness_signal": [],
+      "medication_or_hormone": [
+        "medication_and_hormone_boundary",
+        "supplement_combinations_uncertain"
+      ],
+      "medication_or_substance_context": [],
+      "mental_health_crisis": [
+        "mental_health_crisis_route_brazil"
+      ],
+      "musculoskeletal_red_flag": [],
+      "pain_or_possible_injury": [
+        "progressive_overload_gradual",
+        "soreness_is_not_progress_requirement",
+        "training_pain_boundary",
+        "unsafe_training_request_refusal"
+      ],
+      "stimulant_adverse_signal": [],
+      "substance_interaction": [],
+      "supplement_uncertainty": [
+        "creatine_evidence_general",
+        "supplement_combinations_uncertain",
+        "supplement_label_and_regulation",
+        "supplements_not_foundation"
+      ],
+      "systemic_symptom_signal": [],
+      "under_recovery_signal": [
+        "hypertrophy_uses_sufficient_volume",
+        "progressive_overload_gradual",
+        "recovery_change_requires_pattern",
+        "stress_and_schedule_affect_recovery",
+        "training_and_recovery_balance",
+        "training_to_failure_optional",
+        "under_recovery_uses_combined_signals"
+      ],
+      "unsafe_training_request": [
+        "missed_workout_no_compensation",
+        "power_intent_matters",
+        "strength_uses_heavier_loads",
+        "unsafe_training_request_refusal"
+      ],
+      "vulnerable_or_clinical_context": [
+        "alcohol_is_not_performance_strategy",
+        "clinical_and_minor_context_boundary",
+        "pregnancy_requires_clinical_context",
+        "protein_range_active_adults",
+        "vegetarian_patterns_need_planning"
+      ]
+    }
+  },
+  "after": {
+    "documents": 107,
+    "domains": {
+      "nutrition": 32,
+      "recovery": 15,
+      "safety": 35,
+      "training": 25
+    },
+    "topics": {
+      "adherence": [
+        "exercise_selection_supports_adherence",
+        "flexible_meal_without_compensation",
+        "food_pattern_over_single_meal",
+        "nutrition_variation_preferences",
+        "recovery_change_requires_pattern",
+        "session_duration_not_score",
+        "training_consistency_first"
+      ],
+      "alcohol": [
+        "alcohol_is_not_performance_strategy"
+      ],
+      "ambiguous_reference": [
+        "learning_not_automatic_edit_policy",
+        "multiple_requests_need_scope",
+        "question_is_not_action"
+      ],
+      "app_usage": [
+        "coach_text_only_limit",
+        "exam_requires_professional_policy",
+        "history_not_automatic_training_policy",
+        "redaction_not_anonymization"
+      ],
+      "body_image": [
+        "body_appearance_is_not_diagnosis",
+        "clinical_measurement_limits",
+        "eating_disorder_boundary",
+        "mental_health_crisis_route_brazil",
+        "sleep_tracker_is_estimate"
+      ],
+      "body_measurements": [
+        "bmi_formula_general",
+        "body_recomposition_context",
+        "clinical_measurement_limits",
+        "energy_balance_guides_weight_trend"
+      ],
+      "body_recomposition": [
+        "body_recomposition_context"
+      ],
+      "body_weight_trend": [
+        "bmi_formula_general",
+        "body_recomposition_context",
+        "clinical_measurement_limits",
+        "energy_balance_guides_weight_trend",
+        "weight_plateau_not_single_day"
+      ],
+      "bodybuilding_competition": [
+        "medication_and_hormone_boundary"
+      ],
+      "bulking": [
+        "medication_and_hormone_boundary",
+        "protein_range_active_adults"
+      ],
+      "calisthenics": [
+        "home_training_valid",
+        "training_equipment_flexibility"
+      ],
+      "carbohydrate_intake": [
+        "carbohydrate_fuel",
+        "nutrient_timing_after_daily_totals",
+        "post_workout_meal_context",
+        "pre_workout_meal_context"
+      ],
+      "cardio_conditioning": [
+        "acute_illness_not_training_clearance",
+        "carbohydrate_fuel",
+        "chest_pain_emergency",
+        "concurrent_training_tradeoffs",
+        "cooldown_gradual_finish",
+        "heat_illness_warning",
+        "hydration_is_individual",
+        "other_emergency_signs",
+        "physical_activity_health",
+        "warmup_gradual_start"
+      ],
+      "concurrent_training": [
+        "concurrent_training_tradeoffs"
+      ],
+      "cooldown": [
+        "cooldown_gradual_finish"
+      ],
+      "cutting": [
+        "extreme_diet_and_dehydration_refusal",
+        "medication_and_hormone_boundary",
+        "protein_range_active_adults"
+      ],
+      "deload": [
+        "deload_meaning",
+        "deload_not_fixed_calendar"
+      ],
+      "dietary_restriction": [
+        "clinical_and_minor_context_boundary",
+        "medication_context_not_dose",
+        "substance_interaction_boundary"
+      ],
+      "digestive_comfort": [
+        "early_training_food_options",
+        "fiber_food_sources",
+        "pre_workout_meal_context"
+      ],
+      "eating_out": [
+        "flexible_meal_without_compensation"
+      ],
+      "electrolytes": [
+        "heat_illness_warning",
+        "hydration_is_individual"
+      ],
+      "energy_balance": [
+        "carbohydrate_fuel",
+        "eating_disorder_boundary",
+        "energy_balance_guides_weight_trend",
+        "fat_intake_role",
+        "weight_plateau_not_single_day"
+      ],
+      "exercise_order": [
+        "exercise_order_priority"
+      ],
+      "exercise_selection": [
+        "exercise_order_priority",
+        "exercise_selection_supports_adherence"
+      ],
+      "exercise_substitution": [
+        "planner_local_changes",
+        "training_equipment_flexibility"
+      ],
+      "exercise_technique": [
+        "exercise_order_priority",
+        "musculoskeletal_red_flag_boundary",
+        "training_pain_boundary",
+        "warmup_gradual_start"
+      ],
+      "fat_intake": [
+        "fat_intake_role"
+      ],
+      "fatigue": [
+        "acute_illness_not_training_clearance",
+        "deload_not_fixed_calendar",
+        "menstrual_context_individual",
+        "recovery_change_requires_pattern",
+        "recovery_checkin_optional",
+        "sleep_persistent_difficulty",
+        "systemic_symptom_no_guess",
+        "training_and_recovery_balance",
+        "training_to_failure_optional",
+        "under_recovery_uses_combined_signals"
+      ],
+      "fiber_intake": [
+        "fiber_food_sources"
+      ],
+      "flexible_meal": [
+        "eating_disorder_boundary",
+        "flexible_meal_without_compensation",
+        "food_pattern_over_single_meal"
+      ],
+      "food_allergy": [
+        "food_allergy_and_anaphylaxis_boundary"
+      ],
+      "food_budget_and_access": [
+        "fiber_food_sources",
+        "food_context_is_part_of_quality",
+        "food_minimally_processed_base",
+        "grocery_and_meal_prep_support_adherence"
+      ],
+      "food_label": [
+        "food_allergy_and_anaphylaxis_boundary",
+        "supplement_combinations_uncertain",
+        "supplement_label_and_regulation"
+      ],
+      "food_portion": [
+        "food_substitution_preserves_role",
+        "substitution_portions_not_identical"
+      ],
+      "food_preference": [
+        "exercise_selection_supports_adherence",
+        "food_context_is_part_of_quality",
+        "food_substitution_preserves_role",
+        "nutrition_variation_preferences"
+      ],
+      "food_safety": [
+        "food_safety_five_keys",
+        "food_safety_temperature",
+        "food_safety_uncertainty_boundary"
+      ],
+      "food_storage": [
+        "food_safety_five_keys",
+        "food_safety_temperature",
+        "food_safety_uncertainty_boundary"
+      ],
+      "food_substitution": [
+        "food_allergy_and_anaphylaxis_boundary",
+        "food_substitution_preserves_role",
+        "planner_local_changes",
+        "substitution_portions_not_identical"
+      ],
+      "goal_setting": [
+        "clinical_and_minor_context_boundary",
+        "physical_activity_health"
+      ],
+      "grocery_planning": [
+        "grocery_and_meal_prep_support_adherence"
+      ],
+      "gym_equipment_availability": [
+        "home_training_valid",
+        "training_equipment_flexibility"
+      ],
+      "home_training": [
+        "home_training_valid",
+        "return_after_routine_break"
+      ],
+      "hydration": [
+        "extreme_diet_and_dehydration_refusal",
+        "heat_illness_warning",
+        "hydration_is_individual",
+        "pregnancy_requires_clinical_context"
+      ],
+      "image_dependency": [
+        "body_appearance_is_not_diagnosis",
+        "coach_text_only_limit",
+        "redaction_not_anonymization"
+      ],
+      "intermittent_fasting": [
+        "extreme_diet_and_dehydration_refusal",
+        "named_diets_are_strategies"
+      ],
+      "ketogenic_diet": [
+        "named_diets_are_strategies"
+      ],
+      "low_carb": [
+        "named_diets_are_strategies"
+      ],
+      "meal_evaluation": [
+        "alcohol_is_not_performance_strategy",
+        "food_minimally_processed_base",
+        "food_pattern_over_single_meal"
+      ],
+      "meal_prep": [
+        "food_context_is_part_of_quality",
+        "food_safety_temperature",
+        "grocery_and_meal_prep_support_adherence",
+        "nutrition_variation_preferences"
+      ],
+      "meal_timing": [
+        "early_training_food_options",
+        "late_training_meals_sleep",
+        "nutrient_timing_after_daily_totals",
+        "protein_distribution_general"
+      ],
+      "menstrual_cycle_context": [
+        "menstrual_context_individual"
+      ],
+      "micronutrient_intake": [
+        "fat_intake_role",
+        "food_minimally_processed_base",
+        "vegetarian_patterns_need_planning"
+      ],
+      "missed_workout": [
+        "missed_workout_no_compensation",
+        "return_after_routine_break"
+      ],
+      "motivation": [
+        "mental_health_crisis_route_brazil",
+        "recovery_checkin_optional",
+        "rest_day_is_part_of_plan",
+        "sleep_tracker_is_estimate"
+      ],
+      "multi_request": [
+        "multiple_requests_need_scope"
+      ],
+      "muscle_gain_plateau": [
+        "training_plateau_review_context"
+      ],
+      "muscle_hypertrophy": [
+        "hypertrophy_uses_sufficient_volume",
+        "protein_amino_acids_mechanism",
+        "protein_supports_training_adaptation",
+        "training_goal_specificity"
+      ],
+      "muscle_soreness": [
+        "cooldown_gradual_finish",
+        "soreness_is_not_progress_requirement",
+        "under_recovery_uses_combined_signals"
+      ],
+      "muscular_endurance": [
+        "training_goal_specificity"
+      ],
+      "pain_during_training": [
+        "chest_pain_emergency",
+        "exam_requires_professional_policy",
+        "musculoskeletal_red_flag_boundary",
+        "other_emergency_signs",
+        "pain_text_cannot_diagnose",
+        "performance_not_rehab_policy",
+        "soreness_is_not_progress_requirement",
+        "training_pain_boundary",
+        "unsafe_training_request_refusal"
+      ],
+      "plan_explanation": [
+        "coach_does_not_write_database",
+        "learning_not_automatic_edit_policy",
+        "planner_preview_confirmation"
+      ],
+      "planner_confirmation": [
+        "coach_does_not_write_database",
+        "history_not_automatic_training_policy",
+        "learning_not_automatic_edit_policy",
+        "multiple_requests_need_scope",
+        "planner_local_changes",
+        "planner_preview_confirmation",
+        "question_is_not_action",
+        "substitution_portions_not_identical"
+      ],
+      "post_workout_meal": [
+        "late_training_meals_sleep",
+        "nutrition_training_day_context",
+        "post_workout_meal_context"
+      ],
+      "pre_workout_meal": [
+        "early_training_food_options",
+        "nutrition_training_day_context",
+        "pre_workout_meal_context"
+      ],
+      "progressive_overload": [
+        "progressive_overload_gradual",
+        "training_advanced_methods_optional",
+        "training_plateau_review_context"
+      ],
+      "protein_intake": [
+        "nutrient_timing_after_daily_totals",
+        "post_workout_meal_context",
+        "protein_amino_acids_mechanism",
+        "protein_distribution_general",
+        "protein_range_active_adults",
+        "protein_supports_training_adaptation",
+        "vegetarian_patterns_need_planning"
+      ],
+      "range_of_motion": [
+        "progressive_overload_gradual"
+      ],
+      "recipe_and_preparation": [
+        "food_safety_five_keys"
+      ],
+      "rest_between_sets": [
+        "rest_between_sets_context",
+        "sets_repetitions_plain"
+      ],
+      "rest_day": [
+        "acute_illness_not_training_clearance",
+        "rest_day_is_part_of_plan"
+      ],
+      "routine_and_schedule": [
+        "missed_workout_no_compensation",
+        "nutrition_training_day_context",
+        "rest_day_is_part_of_plan",
+        "session_duration_not_score",
+        "sleep_habits_general",
+        "stress_and_schedule_affect_recovery"
+      ],
+      "session_duration": [
+        "session_duration_not_score"
+      ],
+      "sets_and_repetitions": [
+        "rest_between_sets_context",
+        "sets_repetitions_plain",
+        "strength_uses_heavier_loads"
+      ],
+      "shift_work": [
+        "stress_and_schedule_affect_recovery"
+      ],
+      "sleep_duration": [
+        "athlete_sleep_is_individual",
+        "sleep_duration_adults",
+        "sleep_recovery_explanation"
+      ],
+      "sleep_quality": [
+        "alcohol_is_not_performance_strategy",
+        "late_training_meals_sleep",
+        "recovery_checkin_optional",
+        "sleep_duration_adults",
+        "sleep_habits_general",
+        "sleep_persistent_difficulty",
+        "sleep_recovery_explanation",
+        "sleep_tracker_is_estimate",
+        "stimulant_adverse_caution"
+      ],
+      "sport_specific_training": [
+        "concurrent_training_tradeoffs",
+        "pain_text_cannot_diagnose",
+        "performance_not_rehab_policy",
+        "power_intent_matters"
+      ],
+      "strength_training": [
+        "concurrent_training_tradeoffs",
+        "protein_supports_training_adaptation",
+        "strength_uses_heavier_loads",
+        "training_goal_specificity"
+      ],
+      "stress": [
+        "stress_and_schedule_affect_recovery",
+        "systemic_symptom_no_guess"
+      ],
+      "supplement_caffeine": [
+        "medication_context_not_dose",
+        "sleep_habits_general",
+        "stimulant_adverse_caution",
+        "substance_interaction_boundary",
+        "supplement_combinations_uncertain",
+        "supplement_label_and_regulation",
+        "supplements_not_foundation"
+      ],
+      "supplement_creatine": [
+        "creatine_evidence_general",
+        "pregnancy_requires_clinical_context",
+        "supplements_not_foundation"
+      ],
+      "supplement_protein": [
+        "protein_amino_acids_mechanism",
+        "substance_interaction_boundary",
+        "supplement_label_and_regulation",
+        "supplements_not_foundation"
+      ],
+      "tempo_and_cadence": [
+        "power_intent_matters"
+      ],
+      "training_frequency": [
+        "clinical_and_minor_context_boundary",
+        "pregnancy_requires_clinical_context",
+        "resistance_training_frequency_general",
+        "return_after_routine_break",
+        "training_consistency_first"
+      ],
+      "training_intensity": [
+        "performance_not_rehab_policy",
+        "power_intent_matters",
+        "rest_between_sets_context",
+        "strength_uses_heavier_loads",
+        "training_advanced_methods_optional",
+        "training_to_failure_optional",
+        "unsafe_training_request_refusal"
+      ],
+      "training_performance": [
+        "athlete_sleep_is_individual",
+        "creatine_evidence_general",
+        "menstrual_context_individual",
+        "progressive_overload_gradual",
+        "sleep_recovery_explanation",
+        "soreness_is_not_progress_requirement",
+        "training_and_recovery_balance",
+        "training_plateau_review_context"
+      ],
+      "training_plateau": [
+        "deload_not_fixed_calendar",
+        "recovery_change_requires_pattern",
+        "training_plateau_review_context"
+      ],
+      "training_split_selection": [
+        "resistance_training_frequency_general",
+        "training_advanced_methods_optional"
+      ],
+      "training_volume": [
+        "deload_meaning",
+        "hypertrophy_uses_sufficient_volume",
+        "missed_workout_no_compensation",
+        "unsafe_training_request_refusal"
+      ],
+      "travel_training": [
+        "athlete_sleep_is_individual"
+      ],
+      "under_recovery": [
+        "deload_meaning",
+        "hypertrophy_uses_sufficient_volume",
+        "systemic_symptom_no_guess",
+        "training_and_recovery_balance",
+        "training_to_failure_optional",
+        "under_recovery_uses_combined_signals"
+      ],
+      "vegetarian_or_vegan": [
+        "vegetarian_patterns_need_planning"
+      ],
+      "warmup": [
+        "warmup_gradual_start"
+      ],
+      "weight_change_plateau": [
+        "weight_plateau_not_single_day"
+      ]
+    },
+    "risks": {
+      "acute_illness_signal": [
+        "acute_illness_not_training_clearance"
+      ],
+      "clinical_measurement_request": [
+        "bmi_formula_general",
+        "clinical_measurement_limits"
+      ],
+      "eating_disorder_signal": [
+        "body_appearance_is_not_diagnosis",
+        "eating_disorder_boundary",
+        "extreme_diet_and_dehydration_refusal",
+        "flexible_meal_without_compensation",
+        "food_pattern_over_single_meal",
+        "missed_workout_no_compensation"
+      ],
+      "emergency_symptom": [
+        "chest_pain_emergency",
+        "food_allergy_and_anaphylaxis_boundary",
+        "heat_illness_warning",
+        "other_emergency_signs"
+      ],
+      "extreme_diet_or_dehydration": [
+        "extreme_diet_and_dehydration_refusal",
+        "flexible_meal_without_compensation",
+        "hydration_is_individual",
+        "named_diets_are_strategies"
+      ],
+      "food_allergy_or_reaction": [
+        "food_allergy_and_anaphylaxis_boundary"
+      ],
+      "food_safety_uncertainty": [
+        "food_safety_five_keys",
+        "food_safety_temperature",
+        "food_safety_uncertainty_boundary"
+      ],
+      "heat_illness_signal": [
+        "heat_illness_warning"
+      ],
+      "medication_or_hormone": [
+        "medication_and_hormone_boundary",
+        "supplement_combinations_uncertain"
+      ],
+      "medication_or_substance_context": [
+        "medication_context_not_dose"
+      ],
+      "mental_health_crisis": [
+        "mental_health_crisis_route_brazil"
+      ],
+      "musculoskeletal_red_flag": [
+        "musculoskeletal_red_flag_boundary"
+      ],
+      "pain_or_possible_injury": [
+        "musculoskeletal_red_flag_boundary",
+        "pain_text_cannot_diagnose",
+        "progressive_overload_gradual",
+        "soreness_is_not_progress_requirement",
+        "training_pain_boundary",
+        "unsafe_training_request_refusal"
+      ],
+      "stimulant_adverse_signal": [
+        "stimulant_adverse_caution"
+      ],
+      "substance_interaction": [
+        "substance_interaction_boundary"
+      ],
+      "supplement_uncertainty": [
+        "creatine_evidence_general",
+        "stimulant_adverse_caution",
+        "substance_interaction_boundary",
+        "supplement_combinations_uncertain",
+        "supplement_label_and_regulation",
+        "supplements_not_foundation"
+      ],
+      "systemic_symptom_signal": [
+        "systemic_symptom_no_guess"
+      ],
+      "under_recovery_signal": [
+        "hypertrophy_uses_sufficient_volume",
+        "progressive_overload_gradual",
+        "recovery_change_requires_pattern",
+        "stress_and_schedule_affect_recovery",
+        "training_and_recovery_balance",
+        "training_to_failure_optional",
+        "under_recovery_uses_combined_signals"
+      ],
+      "unsafe_training_request": [
+        "missed_workout_no_compensation",
+        "power_intent_matters",
+        "strength_uses_heavier_loads",
+        "unsafe_training_request_refusal"
+      ],
+      "vulnerable_or_clinical_context": [
+        "alcohol_is_not_performance_strategy",
+        "clinical_and_minor_context_boundary",
+        "pregnancy_requires_clinical_context",
+        "protein_range_active_adults",
+        "sleep_persistent_difficulty",
+        "vegetarian_patterns_need_planning"
+      ]
+    }
+  },
+  "closed_nominal_topic_gaps": [
+    "body_recomposition",
+    "concurrent_training",
+    "cooldown",
+    "deload",
+    "exercise_order",
+    "fat_intake",
+    "fiber_intake",
+    "home_training",
+    "menstrual_cycle_context",
+    "multi_request",
+    "muscle_gain_plateau",
+    "rest_between_sets",
+    "session_duration",
+    "warmup",
+    "weight_change_plateau"
+  ],
+  "remaining_nominal_topic_gaps": [],
+  "newly_addressed_risk_tags": [
+    "acute_illness_signal",
+    "clinical_measurement_request",
+    "heat_illness_signal",
+    "medication_or_substance_context",
+    "musculoskeletal_red_flag",
+    "stimulant_adverse_signal",
+    "substance_interaction",
+    "systemic_symptom_signal"
+  ],
+  "remaining_risk_tag_gaps": [],
+  "residual_scope_gaps": [
+    {
+      "topic": "technical_execution",
+      "status": "limited",
+      "reason": "Não cobre execução detalhada de cada exercício nem correção visual."
+    },
+    {
+      "topic": "sports_programming",
+      "status": "limited",
+      "reason": "Princípios gerais não constituem periodização individual de vôlei, tênis ou competição."
+    },
+    {
+      "topic": "clinical_and_special_populations",
+      "status": "boundary_only",
+      "reason": "Sem protocolos de tratamento, exames, medicação, reabilitação ou personalização clínica."
+    },
+    {
+      "topic": "equipment_hygiene_and_maintenance",
+      "status": "not_covered",
+      "reason": "Intenções novas de higiene corporal e manutenção de equipamentos não têm conteúdo específico."
+    },
+    {
+      "topic": "local_services_events_products",
+      "status": "not_covered",
+      "reason": "Locais, preços, disponibilidade, eventos e produtos requerem fontes atualizadas fora desta base local."
+    },
+    {
+      "topic": "knowledge_vs_retrieval",
+      "status": "pending_next_phase",
+      "reason": "Ter o trecho não garante recuperá-lo; o índice de 67 trechos não é substituído nesta etapa."
+    }
+  ],
+  "classifier_metrics_recomputed": false,
+  "retrieval_metrics_recomputed": false,
+  "app_index_promoted": false
+}

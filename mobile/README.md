@@ -2,6 +2,23 @@
 
 Aplicativo React Native criado com Expo e TypeScript.
 
+## Coach conectado — 7.06.4
+
+A tela do Coach usa NestJS com a sessão autenticada: histórico persistido,
+envio de mensagens, respostas do serviço, fontes e prévias do Planner.
+Alterações exigem revisão e confirmação separadas. A tela permite renomear
+e excluir conversas, repetir falhas sem duplicar o pedido e consultar o
+histórico. Não há resposta simulada de substituição nesta tela.
+
+Configuração e limites: [integração do Coach](../docs/44-coach-mobile-integration.md).
+Passaram TypeScript, lint, 33 testes Mobile e 16 checks da interface web
+com rede fictícia. A conferência nativa no iPhone fica na avaliação final.
+
+Na 7.06.5, a interface web também foi exercitada com backend, Supabase e Coach
+reais, incluindo histórico e confirmação/desfazer pelo Planner. O link direto
+de prévia passou a aguardar a restauração do login. O iPhone físico ainda
+não foi testado. [Resultados e limites](../docs/45-coach-system-evaluation.md).
+
 ## Comandos
 
 ```bash
@@ -41,4 +58,6 @@ As imagens editoriais de treino, alimentação, Coach, conta e progresso foram g
 
 Os avisos e a licença da base aberta utilizada estão em `THIRD_PARTY_NOTICES.md`.
 
-Nesta fase, o app usa dados locais simulados. A integração com NestJS e Supabase pertence à fase seguinte.
+Os dados de exemplo em src/data continuam úteis para sugestões e composição
+visual. Mensagens do Coach são obtidas pelo backend; NestJS e FastAPI precisam
+estar configurados e em execução para responder.

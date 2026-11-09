@@ -25,6 +25,7 @@ type AuthContextValue = {
     email: string,
     password: string,
     fullName?: string,
+    birthDate?: string,
   ) => Promise<SignUpResult>;
   signOut: () => Promise<void>;
 };
@@ -87,13 +88,21 @@ export function AuthProvider({ children }: PropsWithChildren) {
   }, []);
 
   const signUp = useCallback(
-    async (email: string, password: string, fullName?: string) => {
+    async (
+      email: string,
+      password: string,
+      fullName?: string,
+      birthDate?: string,
+    ) => {
       const client = requireSupabase();
       const { data, error } = await client.auth.signUp({
         email: email.trim(),
         password,
         options: {
-          data: fullName?.trim() ? { full_name: fullName.trim() } : undefined,
+          data: {
+            ...(fullName?.trim() ? { full_name: fullName.trim() } : {}),
+            ...(birthDate ? { birth_date: birthDate } : {}),
+          },
         },
       });
       if (error) throw error;

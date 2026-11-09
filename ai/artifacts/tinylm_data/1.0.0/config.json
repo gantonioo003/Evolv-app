@@ -1,0 +1,24 @@
+{
+  "attention_mask_true_means": "real_input_token",
+  "context_length": 256,
+  "drop_tail": false,
+  "ignore_index": -100,
+  "offsets_dtype": "<i8",
+  "refit_tokenizer": false,
+  "right_padding": true,
+  "special_token_ids": {
+    "<|assistant|>": 6,
+    "<|bos|>": 1,
+    "<|eos|>": 2,
+    "<|pad|>": 0,
+    "<|system|>": 4,
+    "<|unk|>": 3,
+    "<|user|>": 5
+  },
+  "storage_dtype": "<u2",
+  "stride": 256,
+  "target_shift": 1,
+  "tensor_dtype": "torch.int64",
+  "vocab_size": 8192,
+  "window_policy": "within_document_nonoverlapping_targets"
+}

@@ -1,0 +1,23 @@
+{
+  "version": "1.1.0",
+  "phase": "7.07.6",
+  "max_words": 180,
+  "knowledge_input": "data/knowledge/1.2.0/knowledge_chunks.json",
+  "sources_input": "data/knowledge/1.2.0/sources.json",
+  "topics_input": "data/taxonomy/topics.v1.json",
+  "risks_input": "data/knowledge/1.2.0/risks.json",
+  "supplements_input": "data/knowledge/1.2.0/boundaries.json",
+  "evidence_input": "data/knowledge/1.2.0/evidence.json",
+  "inputs": [
+    "data/knowledge/1.2.0/knowledge_chunks.json",
+    "data/knowledge/1.2.0/sources.json",
+    "data/knowledge/1.2.0/risks.json",
+    "data/knowledge/1.2.0/coverage.json",
+    "data/knowledge/1.2.0/evidence.json",
+    "data/knowledge/1.2.0/boundaries.json",
+    "data/knowledge/1.2.0/changes.json",
+    "data/knowledge/1.2.0/acceptance_cases.json",
+    "data/knowledge/review_7_07_6.v1.json",
+    "data/taxonomy/topics.v1.json"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "version": "review-60-2026-10-16",
+  "risks": [
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Nao ha sinal de risco especial na mensagem.",
+      "id": "none",
+      "route": "normal",
+      "severity": "none"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Dor persistente, piora com movimento ou possivel lesao sem sinal emergencial.",
+      "id": "pain_or_possible_injury",
+      "response_rule": "Nao diagnosticar. Evitar progressao automatica e orientar avaliacao profissional quando apropriado.",
+      "route": "cautious_response",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Dor no peito, desmaio, falta de ar incomum ou outro sinal potencialmente urgente.",
+      "id": "emergency_symptom",
+      "response_rule": "Interromper a atividade e orientar atendimento de emergencia local. Nao continuar coaching.",
+      "route": "emergency_guidance",
+      "severity": "emergency"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Obsessao, culpa, compulsao, purgacao ou medo intenso relacionado a comida e corpo.",
+      "id": "eating_disorder_signal",
+      "response_rule": "Nao reforcar restricao ou compensacao. Responder sem julgamento e recomendar apoio profissional.",
+      "route": "support_and_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Pedido de jejum extremo, desidratacao, corte alimentar severo ou perda de peso acelerada.",
+      "id": "extreme_diet_or_dehydration",
+      "response_rule": "Nao montar nem executar a estrategia extrema. Explicar o limite e orientar ajuda qualificada.",
+      "route": "refuse_unsafe_plan",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Pedido de dose, ciclo ou ajuste de medicamento, hormonio ou substancia controlada.",
+      "id": "medication_or_hormone",
+      "response_rule": "Nao prescrever, calcular dose ou montar ciclo. Encaminhar a profissional de saude.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Uso de suplemento, combinacao de ingredientes ou possivel interacao.",
+      "id": "supplement_uncertainty",
+      "response_rule": "Dar apenas informacao geral apoiada por fonte e recomendar avaliacao profissional quando houver condicao ou medicacao.",
+      "route": "evidence_limited_answer",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Alergia conhecida, possivel reacao alimentar ou pedido de substituicao clinicamente sensivel.",
+      "id": "food_allergy_or_reaction",
+      "response_rule": "Nao testar exposicao nem garantir seguranca. Orientar avaliacao profissional; sinais respiratorios ou circulatorios tambem acionam emergency_symptom.",
+      "route": "allergy_caution",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Duvida sobre deterioracao, contaminacao, temperatura ou armazenamento de alimento.",
+      "id": "food_safety_uncertainty",
+      "response_rule": "Nao garantir que um alimento duvidoso esteja seguro. Aplicar orientacao conservadora apoiada por fonte de seguranca alimentar.",
+      "route": "food_safety_caution",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Pedido de desafio, carga, volume ou pratica de treino com risco evidente e desnecessario.",
+      "id": "unsafe_training_request",
+      "response_rule": "Nao montar nem incentivar a pratica perigosa. Explicar o limite e oferecer alternativa conservadora.",
+      "route": "refuse_unsafe_plan",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Conjunto de sinais como queda persistente de desempenho, sono ruim, fadiga elevada e recuperacao insuficiente.",
+      "id": "under_recovery_signal",
+      "response_rule": "Nao diagnosticar overtraining. Evitar progressao automatica, sugerir reducao conservadora e orientar avaliacao quando persistente ou intensa.",
+      "route": "recovery_caution",
+      "severity": "medium"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Gravidez, menor de idade, doenca diagnosticada ou recuperacao clinica relevante.",
+      "id": "vulnerable_or_clinical_context",
+      "response_rule": "Nao personalizar conduta clinica. Limitar-se a educacao geral e orientar acompanhamento.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "risks.v1.json",
+      "description": "Mensagem com risco imediato de autoagressao ou desesperanca extrema.",
+      "id": "mental_health_crisis",
+      "response_rule": "Priorizar seguranca, contato com emergencia e apoio humano imediato; nao responder como motivacao esportiva comum.",
+      "route": "crisis_guidance",
+      "severity": "emergency"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Relato de mal-estar com calor intenso; sinais graves acionam tambem emergency_symptom.",
+      "id": "heat_illness_signal",
+      "parent": "emergency_symptom",
+      "response_rule": "Nao diagnosticar ou continuar treino. Priorizar seguranca e avaliacao profissional.",
+      "route": "professional_referral",
+      "severity": "high",
+      "source_url": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Duvida ou relato de combinacao de alcool, estimulantes, medicamentos ou hormonios.",
+      "id": "substance_interaction",
+      "parent": "supplement_uncertainty",
+      "response_rule": "Nao garantir combinacao segura nem ajustar doses. Orientar consulta a profissional qualificado.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "expansion.v1.1.json",
+      "description": "Pedido de interpretar exame, hormonio ou medida clinica para diagnostico ou tratamento.",
+      "id": "clinical_measurement_request",
+      "parent": "vulnerable_or_clinical_context",
+      "response_rule": "Nao diagnosticar por numero isolado nem modificar medicamento; educacao geral apenas.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Relato de perda de apoio, deformidade ou inchaco importante apos trauma; nao e diagnostico.",
+      "id": "musculoskeletal_red_flag",
+      "parent": "pain_or_possible_injury",
+      "response_rule": "Priorizar avaliacao presencial; nao prescrever exercicios de reabilitacao ou exame especifico.",
+      "route": "professional_referral",
+      "severity": "high",
+      "source_url": "https://www.nhs.uk/conditions/sprains-and-strains/"
+    },
+    {
+      "definition_source": "expansion.v1.2.json",
+      "description": "Palpitacao, tremor ou mal-estar relatado em contexto de estimulante.",
+      "id": "stimulant_adverse_signal",
+      "parent": "supplement_uncertainty",
+      "response_rule": "Nao garantir seguranca nem corrigir com outra substancia; sintomas urgentes prevalecem.",
+      "route": "professional_referral",
+      "severity": "high"
+    },
+    {
+      "boundary": "Não depende de pedir dose. Excluir notícia, citação, hipótese geral, uso negado, café comum, vacina rotineira sem reação e intenção hormonal remota incidental. Suplemento alimentar usa supplement_uncertainty. Não inferir interação, evento adverso, dependência, diagnóstico ou pedido de dose. substance_interaction exige combinação explícita; medication_or_hormone exige pedido de dose, ciclo ou ajuste.",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Relata uso/exposição atual ou recente relevante, ou intenção concreta de iniciar, de fármaco, hormônio, tabaco/vape ou droga recreativa pela pessoa em foco (usuário ou familiar/pessoa sobre quem pede orientação).",
+      "finalized_date": "2026-10-16",
+      "id": "medication_or_substance_context",
+      "implementation_status": "review_only_user_requested"
+    },
+    {
+      "boundary": "Não diagnostica. Excluir hipótese, negação, suor normal, fadiga isolada, libido aumentada normal, estalo indolor e números clínicos isolados. Emergência explícita usa emergency_symptom sem duplicação deste risco pela mesma evidência. Reação alimentar, suplemento ou substância podem coexistir apenas com evidências próprias.",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Relata sintoma não musculoesquelético atual ou recorrente na pessoa em foco: tontura, náusea, vômito, cefaleia, alteração visual, constipação/distensão ou outra alteração gastrointestinal, cutânea ou sangramento, sem sinal urgente explícito.",
+      "finalized_date": "2026-10-16",
+      "id": "systemic_symptom_signal",
+      "implementation_status": "review_only_user_requested"
+    },
+    {
+      "boundary": "Doença aguda ativa ou recuperação recente não esclarecida relevante ao pedido de treinar/retomar. Não inferir infecção por mal-estar inespecífico, nem marcar doença remota resolvida. Não duplicar vulnerable_or_clinical_context pela mesma doença aguda: ambos só com vulnerabilidade clínica independente. Urgência explícita usa emergency_symptom.",
+      "definition_source": "user_requested_dataset_expansion_2026-10-15",
+      "description": "Relata febre, infecção ou doença aguda ainda ativa/recuperação recente não esclarecida ao pedir treinar ou retomar exercícios.",
+      "finalized_date": "2026-10-16",
+      "id": "acute_illness_signal",
+      "implementation_status": "review_only_user_requested"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "attention": "padding mask provided; future decoder must also apply causal masking",
+  "context_limit": "long documents are split; context does not carry between windows",
+  "coverage": "all documents and adjacent within-document pairs; no dropped tails",
+  "labels": "tokens shifted by one position; padded labels use ignore_index=-100",
+  "partitions": {
+    "test": {
+      "cross_document_sequences": 0,
+      "documents": 42,
+      "documents_split_into_multiple_sequences": 19,
+      "dropped_tokens": 0,
+      "max_document_tokens": 1731,
+      "padded_positions": 5856,
+      "prediction_of_next_document_bos": false,
+      "sequences": 81,
+      "stored_tokens": 14922,
+      "target_tokens": 14880,
+      "target_utilization": 0.717593
+    },
+    "train": {
+      "cross_document_sequences": 0,
+      "documents": 6612,
+      "documents_split_into_multiple_sequences": 2704,
+      "dropped_tokens": 0,
+      "max_document_tokens": 2849,
+      "padded_positions": 1044491,
+      "prediction_of_next_document_bos": false,
+      "sequences": 15618,
+      "stored_tokens": 2960329,
+      "target_tokens": 2953717,
+      "target_utilization": 0.73876
+    },
+    "validation": {
+      "cross_document_sequences": 0,
+      "documents": 57,
+      "documents_split_into_multiple_sequences": 20,
+      "dropped_tokens": 0,
+      "max_document_tokens": 1990,
+      "padded_positions": 8876,
+      "prediction_of_next_document_bos": false,
+      "sequences": 119,
+      "stored_tokens": 21645,
+      "target_tokens": 21588,
+      "target_utilization": 0.70864
+    }
+  },
+  "source_audit": {
+    "corpus_version": "1.2.0",
+    "documents": {
+      "test": 42,
+      "train": 6612,
+      "validation": 57
+    },
+    "group_leaks": 0,
+    "manifest_sha256": "51406e1484ada0f0f16263633cdd0e4aed2b8ba900fc6a226b5b920c7fc119f6",
+    "near_duplicate_check": "not_performed_in_this_stage",
+    "normalized_exact_text_leaks": 0,
+    "source_files": {
+      "excluded_documents.json": {
+        "bytes": 6511,
+        "sha256": "ef500028fd2c4fbaef8cd000dffafbf2a27eee35961264137a8ae8f26cb6d61d"
+      },
+      "test.jsonl": {
+        "bytes": 64971,
+        "sha256": "0930ef0c45ad32689e334f6cffb0813acd8afd9a32a095d659117035ae23c943"
+      },
+      "test.txt": {
+        "bytes": 50409,
+        "sha256": "fe6dc57e04676492228fe6af4ee4807e02118639305f1e3360a1b9b49ed6f444"
+      },
+      "train.jsonl": {
+        "bytes": 13001847,
+        "sha256": "e23db46d942b0b8d400c229a63f7ab21f36c8599e0c4f6bb5df7b38ba1f1608b"
+      },
+      "train.txt": {
+        "bytes": 10645864,
+        "sha256": "f84cb6260b858be69aa4f5441a02fd8b1a70fb5f5c72b9266544abd45a8aba0c"
+      },
+      "validation.jsonl": {
+        "bytes": 98397,
+        "sha256": "a0a22166b093782296332a5b7f5630be5bf43d5c40c66aef378955612b075b31"
+      },
+      "validation.txt": {
+        "bytes": 77819,
+        "sha256": "eff5761d24644a4504705769608dbf4bb059c33f75449191c1f39d5701ab465b"
+      }
+    }
+  },
+  "training_status": "data prepared only; no neural model trained"
+}

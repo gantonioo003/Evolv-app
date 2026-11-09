@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-02",
+  "phase": "7.04.1",
+  "status": "selected_pending_weight_download_and_gpu_smoke",
+  "selected_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "license": "Apache-2.0",
+  "quantization": "NF4, double quantization, BF16 compute",
+  "expected_weight_bytes": 8044982000,
+  "hardware_observed": {
+    "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU",
+    "vram_total_mib_from_nvidia_smi": 8151,
+    "vram_free_mib_at_first_read": 7910,
+    "driver": "596.49",
+    "ram_usable_gib": 15.707717895507812,
+    "ram_available_gib_at_first_read": 2.8436851501464844,
+    "disk_free_bytes_at_first_read": 751702282240,
+    "python": "3.12.14",
+    "torch": "2.11.0+cu128"
+  },
+  "alternatives_documented_not_run": [
+    {"model_id": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "weight_bytes": 4063515592},
+    {"model_id": "Qwen/Qwen3.5-2B", "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc", "weight_bytes": 4548221488}
+  ],
+  "selection_reason": "Modelo textual denso preparado para instruções, revisão oficial fixa, licença Apache-2.0 e caminho de integração Transformers/PEFT com quantização para GPU de 8 GB. Escolha de engenharia, não comparação de qualidade medida.",
+  "verification": {
+    "official_metadata_queried": true,
+    "dependencies_installed": true,
+    "pip_check": "No broken requirements found.",
+    "http_integrity_unit_tests_passed": 3,
+    "weights_fully_downloaded": false,
+    "gpu_model_loaded": false,
+    "generation_measured": false,
+    "lora_backward_measured": false,
+    "optimizer_steps": 0,
+    "frozen_dataset_partitions_read": []
+  },
+  "download_observation": {
+    "range_probe_bytes": 4194304,
+    "range_probe_seconds": 17.129921399988234,
+    "note": "Download completo interrompido diante de transferência lenta; parciais preservados. A conferência de carregamento e backward continua pendente."
+  },
+  "next_steps": [
+    "Completar os arquivos oficiais em cache local e executar inspect_openlm.py --check-backward.",
+    "7.04.2: preparar dados de conversas e respostas com separação de avaliação.",
+    "7.04.3: definir configuração definitiva de LoRA com memória efetivamente medida."
+  ],
+  "sources": [
+    "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+    "https://huggingface.co/Qwen/Qwen3-1.7B",
+    "https://huggingface.co/Qwen/Qwen3.5-2B",
+    "https://huggingface.co/docs/bitsandbytes/main/en/installation",
+    "https://huggingface.co/docs/peft/main/en/developer_guides/quantization"
+  ]
+}

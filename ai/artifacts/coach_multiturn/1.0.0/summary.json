@@ -1,0 +1,64 @@
+{
+  "dialogues": 10,
+  "turns": 26,
+  "checks_passed": 119,
+  "checks_failed": 8,
+  "turns_with_failures": [
+    {
+      "dialogue": "implicit_topic_switch",
+      "turn": 2,
+      "checks": [
+        "cited_topic"
+      ]
+    },
+    {
+      "dialogue": "single_exercise_reference",
+      "turn": 3,
+      "checks": [
+        "expected_proposal"
+      ]
+    },
+    {
+      "dialogue": "equipment_and_preference",
+      "turn": 2,
+      "checks": [
+        "stated_preference"
+      ]
+    },
+    {
+      "dialogue": "equipment_and_preference",
+      "turn": 4,
+      "checks": [
+        "cited_topic"
+      ]
+    },
+    {
+      "dialogue": "updated_preference",
+      "turn": 3,
+      "checks": [
+        "stated_preference"
+      ]
+    },
+    {
+      "dialogue": "proposal_and_wrong_session",
+      "turn": 1,
+      "checks": [
+        "expected_proposal"
+      ]
+    },
+    {
+      "dialogue": "proposal_and_wrong_session",
+      "turn": 2,
+      "checks": [
+        "rejects_foreign_proposal"
+      ]
+    },
+    {
+      "dialogue": "proposal_and_wrong_session",
+      "turn": 3,
+      "checks": [
+        "expected_proposal"
+      ]
+    }
+  ]
+}

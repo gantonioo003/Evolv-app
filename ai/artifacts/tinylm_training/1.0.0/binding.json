@@ -1,0 +1,50 @@
+{
+  "device": "cuda",
+  "model_config": {
+    "context_length": 256,
+    "d_model": 192,
+    "dropout": 0.1,
+    "ffn_dim": 768,
+    "ignore_index": -100,
+    "layer_norm_eps": 1e-05,
+    "num_heads": 6,
+    "num_layers": 4,
+    "pad_token_id": 0,
+    "tie_embeddings": true,
+    "vocab_size": 8192
+  },
+  "precision": "bfloat16",
+  "prepared_manifest_sha256": "b04dea5a1a2dca42f0ad6fc181aa5536d70b909a4bf4ec7f341c77dac556f609",
+  "runtime": {
+    "numpy": "2.4.4",
+    "python": "3.12.14",
+    "torch": "2.11.0+cu128"
+  },
+  "sources": {
+    "data.py": "1e51f62781bc8e81efcf2c950141da166f56e65e1e4753e99689452107af92cf",
+    "dataset.py": "03d224ec8990d8fb2af1c4078683bcd1917e4fa9690240b11514c4e38b2494bb",
+    "model.py": "3c25c6e1b5fb0171f0330338f53053d0e3cd6118e013760c8d37289c24e8cbed",
+    "tokenizer.py": "2981cda6da566af00b72e736d2b6e7dae4f50bfe42790af504f3fb64046bb158",
+    "training.py": "dfbcdf2cdd63553b1f0e393b335d45831b6a59618e5552b545b57a2e7eec0db4"
+  },
+  "tokenizer_sha256": "d63021c4caf38b781748acfd59ebaec9a6f94996cdb15b5d53ac805b13cd634a",
+  "training_config": {
+    "batch_size": 16,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "cpu_threads": 4,
+    "epochs": 8,
+    "eps": 1e-08,
+    "grad_clip_norm": 1.0,
+    "learning_rate": 0.0003,
+    "log_every": 100,
+    "min_delta": 0.005,
+    "min_lr_ratio": 0.1,
+    "num_workers": 0,
+    "patience": 3,
+    "precision": "auto",
+    "seed": 42,
+    "warmup_fraction": 0.05,
+    "weight_decay": 0.1
+  }
+}

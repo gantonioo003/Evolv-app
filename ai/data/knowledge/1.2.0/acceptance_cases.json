@@ -1,0 +1,325 @@
+{
+  "purpose": "Content scope acceptance for development; not measured retrieval or independent test",
+  "cases": [
+    {
+      "id": "kb-dev-01",
+      "question": "Quantas vezes faço o movimento em 3x10?",
+      "target_document_ids": [
+        "sets_repetitions_plain"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-02",
+      "question": "Pra que descansar entre séries?",
+      "target_document_ids": [
+        "rest_between_sets_context"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-03",
+      "question": "Muda algo começar pelos acessórios?",
+      "target_document_ids": [
+        "exercise_order_priority"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-04",
+      "question": "Só tenho meia hora: o treino não vale?",
+      "target_document_ids": [
+        "session_duration_not_score"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-05",
+      "question": "Preciso aquecer como?",
+      "target_document_ids": [
+        "warmup_gradual_start"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-06",
+      "question": "Alongar depois tira a dor do dia seguinte?",
+      "target_document_ids": [
+        "cooldown_gradual_finish"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-07",
+      "question": "Consigo fortalecer sem academia?",
+      "target_document_ids": [
+        "home_training_valid"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-08",
+      "question": "Cardio sempre faz perder músculo?",
+      "target_document_ids": [
+        "concurrent_training_tradeoffs"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-09",
+      "question": "Deload significa parar totalmente?",
+      "target_document_ids": [
+        "deload_meaning"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-10",
+      "question": "Todo mundo faz deload a cada quatro semanas?",
+      "target_document_ids": [
+        "deload_not_fixed_calendar"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-11",
+      "question": "Não subi peso hoje, aumentamos tudo?",
+      "target_document_ids": [
+        "training_plateau_review_context"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-12",
+      "question": "Pra emagrecer tiro toda gordura?",
+      "target_document_ids": [
+        "fat_intake_role"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-13",
+      "question": "Que comida tem fibras?",
+      "target_document_ids": [
+        "fiber_food_sources"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-14",
+      "question": "Pra que carboidrato no treino?",
+      "target_document_ids": [
+        "carbohydrate_fuel"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-15",
+      "question": "Como a proteína participa da adaptação?",
+      "target_document_ids": [
+        "protein_amino_acids_mechanism"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-16",
+      "question": "Peso igual quer dizer composição igual?",
+      "target_document_ids": [
+        "body_recomposition_context"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-17",
+      "question": "Meu peso parou: acabou a perda de gordura?",
+      "target_document_ids": [
+        "weight_plateau_not_single_day"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-18",
+      "question": "Treino cedo: jejum ou café reforçado sempre?",
+      "target_document_ids": [
+        "early_training_food_options"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-19",
+      "question": "Treino de noite: preciso pular a refeição?",
+      "target_document_ids": [
+        "late_training_meals_sleep"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-20",
+      "question": "Troco cem gramas por cem gramas de qualquer alimento?",
+      "target_document_ids": [
+        "substitution_portions_not_identical"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-21",
+      "question": "Tenho que montar treino por fase do ciclo?",
+      "target_document_ids": [
+        "menstrual_context_individual"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-22",
+      "question": "Depois de viagem volto no máximo?",
+      "target_document_ids": [
+        "return_after_routine_break"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-23",
+      "question": "Sono ajuda em quê na recuperação?",
+      "target_document_ids": [
+        "sleep_recovery_explanation"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-24",
+      "question": "Durmo bastante e continuo com sono todo dia.",
+      "target_document_ids": [
+        "sleep_persistent_difficulty"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-25",
+      "question": "Fiquei confuso e quase desmaiei treinando no calor.",
+      "target_document_ids": [
+        "heat_illness_warning"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-26",
+      "question": "Coração disparou depois do pré-treino, tomo mais?",
+      "target_document_ids": [
+        "stimulant_adverse_caution"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-27",
+      "question": "Posso misturar suplemento com meu remédio?",
+      "target_document_ids": [
+        "substance_interaction_boundary"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-28",
+      "question": "Tomo remédio mas não estou pedindo para mudar a dose.",
+      "target_document_ids": [
+        "medication_context_not_dose"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-29",
+      "question": "IMC mostra meu percentual de gordura?",
+      "target_document_ids": [
+        "clinical_measurement_limits"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-30",
+      "question": "Como se calcula IMC?",
+      "target_document_ids": [
+        "bmi_formula_general"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-31",
+      "question": "Torci o joelho e não consigo apoiar.",
+      "target_document_ids": [
+        "musculoskeletal_red_flag_boundary"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-32",
+      "question": "Cansaço prova que tenho anemia?",
+      "target_document_ids": [
+        "systemic_symptom_no_guess"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-33",
+      "question": "Estou gripado e com febre: já dá pra treino pesado?",
+      "target_document_ids": [
+        "acute_illness_not_training_clearance"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-34",
+      "question": "Joelho incomodou no vôlei: qual é a causa?",
+      "target_document_ids": [
+        "pain_text_cannot_diagnose"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-35",
+      "question": "Treinar explosão resolve esse desconforto?",
+      "target_document_ids": [
+        "performance_not_rehab_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-36",
+      "question": "Qual exame devo fazer pra essa dor?",
+      "target_document_ids": [
+        "exam_requires_professional_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-37",
+      "question": "Tudo que converso vira treino do modelo?",
+      "target_document_ids": [
+        "history_not_automatic_training_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-38",
+      "question": "Tirando o nome fica tudo anônimo?",
+      "target_document_ids": [
+        "redaction_not_anonymization"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-39",
+      "question": "Só perguntar sobre troca já muda minha ficha?",
+      "target_document_ids": [
+        "learning_not_automatic_edit_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-40",
+      "question": "Troca refeição, muda o treino e aumenta carga de uma vez.",
+      "target_document_ids": [
+        "multiple_requests_need_scope"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    }
+  ]
+}

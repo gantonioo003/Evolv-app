@@ -1,0 +1,115 @@
+{
+  "phase": "7.06.5",
+  "evaluation_status": "completed_with_documented_limitations",
+  "production_approved": false,
+  "completed_at_utc": "2026-11-03T09:47:58.933704+00:00",
+  "regression_checks": {
+    "backend_tests": 102,
+    "coach_fastapi_tests": 42,
+    "mobile_tests": 33,
+    "backend_build": "passed",
+    "backend_lint": "passed",
+    "mobile_typecheck": "passed",
+    "mobile_lint": "passed",
+    "web_export_routes": 25,
+    "git_diff_check": "passed_with_cr_at_eol"
+  },
+  "real_run_summaries": {
+    "1.0.0": {
+      "completed_cases": 24,
+      "total_cases": 24,
+      "generated": 4,
+      "truncated": 4,
+      "proposed_actions": 0,
+      "real_coach_action_cycles": 0,
+      "checks_passed": 21,
+      "checks_failed": 0,
+      "warm_request_p50_seconds": 4.107257700000017,
+      "warm_request_p95_seconds": 29.79019709999999
+    },
+    "1.0.1": {
+      "completed_cases": 24,
+      "total_cases": 24,
+      "generated": 4,
+      "truncated": 0,
+      "proposed_actions": 0,
+      "real_coach_action_cycles": 0,
+      "checks_passed": 24,
+      "checks_failed": 1,
+      "warm_request_p50_seconds": 3.2335162999999882,
+      "warm_request_p95_seconds": 15.244753499999991
+    },
+    "1.0.2": {
+      "completed_cases": 1,
+      "total_cases": 1,
+      "generated": 0,
+      "truncated": 0,
+      "proposed_actions": 0,
+      "real_coach_action_cycles": 0,
+      "checks_passed": 19,
+      "checks_failed": 0,
+      "warm_request_p50_seconds": 1.9309466000000028,
+      "warm_request_p95_seconds": 1.9309466000000028
+    }
+  },
+  "cleanup": {
+    "temporary_users_created": 6,
+    "temporary_users_deleted": 6,
+    "complete": true,
+    "evaluation_servers_stopped": true,
+    "gpu_used_after_shutdown_mib": 0
+  },
+  "findings": {
+    "natural_language_proposals": "0 of 4 change requests; not resolved",
+    "educational_generation": "4 of 8 educational requests",
+    "generation_truncation": "4/4 before, 0/4 after",
+    "manual_planner_real_mobile_apply_and_revert": "passed",
+    "final_ui_regression": "19/19 checks",
+    "risk_scenarios": "5/5 expected risks detected; limited development suite",
+    "unsupported_claims": "sleep mechanism and cardio comparison are not fully supported by supplied snippets"
+  },
+  "not_verified": [
+    "native physical iPhone keyboard/safe areas",
+    "sustained concurrent load",
+    "independent human quality/safety review",
+    "production privacy/legal/security audit"
+  ],
+  "no_model_training": true,
+  "no_confidence_threshold_changes": true,
+  "no_existing_user_data_modified": true,
+  "credentials_persisted": false,
+  "deployed": false,
+  "source_sha256": {
+    ".gitignore": "6ebe742e117f682906f1618e4c66f47c3d93d2b6ac84982d48eba6293f1d10e5",
+    "docs/45-coach-system-evaluation.md": "262c498362587350a707448e203ec0cc78329016e40b57e5d07e546b72d2cae5",
+    "ai/README.md": "58e15a1b184a4aef76c06dee9fd291f109ab1e0608777e537ae4713e276cae6e",
+    "backend/README.md": "1a83173b97c34d9c72fcd67d3a2583de2a995870c29ef7f972abb1669429a7ff",
+    "mobile/README.md": "76dc1176c3492524064f4aa2fb9ade0d387c2ca35efb83990385cb0d9306d78f",
+    "ai/src/evolv_rag/coach.py": "dbd915d3ed6ff3597ef9d954ff800d93734e3dc7ad881cad0eca663e916cec0b",
+    "ai/scripts/serve_coach_evaluation.py": "3d4a3ce78a9f98226bf8c428de9b28e5e4ff9f7b651971e2131f2adbee582476",
+    "ai/scripts/report_coach_system.py": "259edbab6063c4fac485dc95d250f922f127e9101c80333fead5191c57aafa9c",
+    "ai/data/evaluation/coach_system.v1.json": "85f4f39562c80da939e347fa4d4d54c3e6de8db0b30c1b96396b0a1df031970a",
+    "backend/scripts/evaluate-coach-system.mjs": "74ecc72ccaa4918e028c4a91c03a5a6941c6e89e4e6fd2959a2bb04d385ebed9",
+    "backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+    "backend/src/coach/coach.service.spec.ts": "ad81da0b362a358ad7a3c427fd4fe7290a99c0be9775981656a355c0ce4a916e",
+    "mobile/src/app/adjustments/[adjustmentId].tsx": "d1eda7435e2df747d6741d754c3ad22293befe04c70e50691f5925335a96b484"
+  },
+  "artifact_sha256": {
+    "ai/artifacts/system_evaluation/1.0.0/inputs.json": "73700082cd816733d62e8298fbed3b13c2bfc679b5b91362a56c98757f634a09",
+    "ai/artifacts/system_evaluation/1.0.0/resources.json": "21f0eb2802182317254f40c92fd5310596a4a6226fdc750274996b6e907e5ae3",
+    "ai/artifacts/system_evaluation/1.0.0/results.json": "e6810377d6138cd3ce7372943f48c1eaa88daa426094210fcfd170b4a72969c3",
+    "ai/artifacts/system_evaluation/1.0.1/inputs.json": "be6f670119129194c66ae7ca37a70582897b50a94bf67023f28b25e0e91a4eb4",
+    "ai/artifacts/system_evaluation/1.0.1/resources.json": "dc80c71d41767cd42b8cad35d6727731baf6ed69f8aad73c7a9e2477c7795547",
+    "ai/artifacts/system_evaluation/1.0.1/results.json": "07c3c43cc02b3738c2999ad396316d83b34aa840e88ced3b86d7236bc4c6a411",
+    "ai/artifacts/system_evaluation/1.0.1/summary.json": "3a4a3bd562d12a2d62a5726d1cfc52fca249ee8b631fa66fa9cbfc917d60dbef",
+    "ai/artifacts/system_evaluation/1.0.2/inputs.json": "921843acc47629fa4ee74afc29af9b364f62870b29555d51f556c37201f8ac1b",
+    "ai/artifacts/system_evaluation/1.0.2/resources.json": "79e575e2278d82c73f0d4d8bed5e2aea1947d7e80e46f2c1e6fb54011c7a0ef3",
+    "ai/artifacts/system_evaluation/1.0.2/results.json": "5f397b221c46dedd47ad25e3ee34c0dced129bdb95ecae07d9e64d665dc8ac1e",
+    "ai/artifacts/system_evaluation/1.0.1/RESULTS.md": "a47df984dcfa9292897b36b91c584b2c9084d7831f9f43147fef18db2a3be7e2",
+    "ai/artifacts/system_evaluation/1.0.0/coach-real-mobile.png": "5c6010bd2af274936b2b78a1a4f0727860541e91ca231e5098b380ed1cac6224",
+    "ai/artifacts/system_evaluation/1.0.1/coach-real-mobile.png": "f24e71d67069240620735d39c51a83226241280e542d6259e563e51c4a10970b",
+    "ai/artifacts/system_evaluation/1.0.1/planner-real-mobile-preview.png": "4b29e33662823bb37e6f4ce9c323a27d7c7dcf9f4c5af8036d46be83473bf28a",
+    "ai/artifacts/system_evaluation/1.0.2/coach-real-mobile.png": "f24e71d67069240620735d39c51a83226241280e542d6259e563e51c4a10970b",
+    "ai/artifacts/system_evaluation/1.0.2/planner-real-mobile-preview.png": "f7ca8d5ac072d65bc47d1274fc8e22586c3621c5e068190f1ae7a9a0736affcb"
+  }
+}

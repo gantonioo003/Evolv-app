@@ -1,0 +1,13 @@
+{
+  "models": {
+    "intent": {
+      "file": "private/intent_classifier.joblib",
+      "sha256": "1a2c2ade372338b349ea5c24116bd6135592a67eb3966191fcb9021805c499f3"
+    },
+    "risk": {
+      "file": "private/risk_classifier.joblib",
+      "sha256": "4cda2be65843cdfd326090faa34ab88be33f928893629c4fd13e50269ddeef46"
+    }
+  },
+  "test_opened": false
+}

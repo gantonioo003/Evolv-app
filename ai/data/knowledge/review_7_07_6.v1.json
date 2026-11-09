@@ -1,0 +1,1523 @@
+{
+  "version": "1.0.0",
+  "phase": "7.07.6",
+  "review_date": "2026-11-03",
+  "release_version": "1.2.0",
+  "new_sources": [
+    {
+      "id": "nhs_strength_basics",
+      "title": "How to improve your strength and flexibility",
+      "url": "https://www.nhs.uk/live-well/exercise/how-to-improve-strength-flexibility/",
+      "organization": "NHS",
+      "type": "official_patient_information",
+      "section": "What are strength exercises?",
+      "notes": "Define repetição e série; fortalecimento pode usar peso corporal e outros equipamentos.",
+      "publication_year": null
+    },
+    {
+      "id": "iusca_hypertrophy_2021",
+      "title": "Resistance Training Recommendations to Maximize Muscle Hypertrophy in an Athletic Population",
+      "url": "https://journal.iusca.org/index.php/Journal/article/download/81/140/5323",
+      "organization": "IUSCA",
+      "type": "position_stand",
+      "section": "Rest interval; Exercise selection",
+      "notes": "Intervalos preservam trabalho nas séries; objetivo e exercício condicionam duração. Recomendações destinadas à hipertrofia em população atlética.",
+      "publication_year": 2021
+    },
+    {
+      "id": "acsm_progression_2009",
+      "title": "Progression models in resistance training for healthy adults",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19204579/",
+      "organization": "ACSM",
+      "type": "position_stand_historical",
+      "section": "Abstract",
+      "notes": "Preservar intensidade pela ordem dos exercícios; progressão considera objetivo e capacidade. Referência histórica, não superior à atualização de 2026.",
+      "publication_year": 2009
+    },
+    {
+      "id": "aha_warmup_cooldown",
+      "title": "Warm Up, Cool Down",
+      "url": "https://www.heart.org/en/healthy-living/exercise-and-physical-activity/fitness-basics/warm-up-cool-down",
+      "organization": "American Heart Association",
+      "type": "official_patient_information",
+      "section": "Warm up; Cool down",
+      "notes": "Início e término graduais da atividade aeróbia; não demonstra que alongamento cure dor ou elimine lesões.",
+      "publication_year": null
+    },
+    {
+      "id": "deload_delphi_2023",
+      "title": "Integrating Deloading into Strength and Physique Sports Training Programmes",
+      "url": "https://link.springer.com/article/10.1186/s40798-023-00633-0",
+      "organization": "Sports Medicine - Open / Bell et al.",
+      "type": "expert_consensus_study",
+      "section": "Abstract; Designing and implementing deloading",
+      "notes": "Delphi de treinadores: reduzir estresse de treino; aplicação variável. Não é ensaio que prove um protocolo ótimo.",
+      "publication_year": 2023
+    },
+    {
+      "id": "concurrent_training_review_2022",
+      "title": "Compatibility of Concurrent Aerobic and Strength Training for Skeletal Muscle Size and Function",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/",
+      "organization": "Sports Medicine / Schumann et al.",
+      "type": "systematic_review_meta_analysis",
+      "section": "Abstract: Results and Conclusion",
+      "notes": "Combinação não reduziu em média força máxima/hipertrofia; força explosiva pode sofrer, especialmente na mesma sessão.",
+      "publication_year": 2022
+    },
+    {
+      "id": "who_healthy_diet_2026",
+      "title": "Healthy diet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+      "organization": "World Health Organization",
+      "type": "official_guideline",
+      "section": "Carbohydrates; Fats",
+      "notes": "Gorduras essenciais e qualidade das fontes; fibras e carboidratos de alimentos variados. Educação populacional, sem macro individual.",
+      "publication_year": 2026
+    },
+    {
+      "id": "issn_weight_reduction_2026",
+      "title": "International Society of Sports Nutrition position stand: diets for body weight reduction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13665703/",
+      "organization": "ISSN",
+      "type": "position_stand",
+      "section": "Scope; plateau discussion",
+      "notes": "Peso pode estabilizar sem provar ausência de perda de gordura. Posicionamento de outubro de 2026; não cobre desidratação aguda ou farmacoterapia.",
+      "publication_year": 2026
+    },
+    {
+      "id": "menstrual_performance_review_2020",
+      "title": "The Effects of Menstrual Cycle Phase on Exercise Performance in Eumenorrheic Women",
+      "url": "https://link.springer.com/article/10.1007/s40279-020-01319-3",
+      "organization": "Sports Medicine / McNulty et al.",
+      "type": "systematic_review_meta_analysis",
+      "section": "Abstract: Results and Conclusion",
+      "notes": "Efeito médio pequeno/trivial, heterogeneidade e qualidade limitada. Não sustenta calendário rígido nem generalização a todas as mulheres.",
+      "publication_year": 2020
+    },
+    {
+      "id": "nhlbi_sleep_function",
+      "title": "How Sleep Works: Why Is Sleep Important?",
+      "url": "https://www.nhlbi.nih.gov/health/sleep/why-sleep-important",
+      "organization": "NHLBI / NIH",
+      "type": "official_patient_information",
+      "section": "Respiratory and immune systems; Problems with thinking and memory",
+      "notes": "Sono apoia função imune, atenção e memória. Não quantifica ganho muscular nem permite diagnóstico individual.",
+      "publication_year": null
+    },
+    {
+      "id": "cdc_heat_illness_2026",
+      "title": "Heat-related Illnesses",
+      "url": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+      "organization": "CDC / NIOSH",
+      "type": "official_patient_information",
+      "section": "Heat stroke; Heat exhaustion",
+      "notes": "Calor com confusão ou perda de consciência pode indicar emergência. Material ocupacional usado para alertas gerais, sem diagnosticar.",
+      "publication_year": 2026
+    },
+    {
+      "id": "fda_caffeine_safety",
+      "title": "Spilling the Beans: How Much Caffeine is Too Much?",
+      "url": "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much",
+      "organization": "FDA",
+      "type": "official_patient_information",
+      "section": "Signs of too much caffeine; individual sensitivity",
+      "notes": "Cafeína pode causar palpitações, ansiedade e problemas de sono; sensibilidade varia. Não garante dose individual segura.",
+      "publication_year": null
+    },
+    {
+      "id": "fda_supplement_interactions",
+      "title": "Mixing Medications and Dietary Supplements Can Endanger Your Health",
+      "url": "https://www.fda.gov/consumers/consumer-updates/mixing-medications-and-dietary-supplements-can-endanger-your-health",
+      "organization": "FDA",
+      "type": "official_patient_information",
+      "section": "Dangers of mixing medications and dietary supplements",
+      "notes": "Suplementos podem modificar ação de medicamentos; avaliar com profissional. Sem ajuste de dose ou suspensão pelo app.",
+      "publication_year": null
+    },
+    {
+      "id": "cdc_bmi_limits",
+      "title": "BMI Frequently Asked Questions",
+      "url": "https://www.cdc.gov/bmi/faq/index.html",
+      "organization": "CDC",
+      "type": "official_patient_information",
+      "section": "How is BMI calculated?; Is BMI a good indicator of body fat?",
+      "notes": "IMC relaciona massa e altura; não distingue gordura de massa magra nem substitui avaliação clínica.",
+      "publication_year": 2024
+    },
+    {
+      "id": "nhs_sprains_strains",
+      "title": "Sprains and strains",
+      "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+      "organization": "NHS",
+      "type": "official_patient_information",
+      "section": "Urgent advice; immediate action",
+      "notes": "Trauma com deformidade, alteração de sensibilidade ou dificuldade para apoiar requer avaliação; texto não fecha diagnóstico.",
+      "publication_year": null
+    },
+    {
+      "id": "nhs_fatigue",
+      "title": "Tiredness and fatigue",
+      "url": "https://www.nhs.uk/symptoms/tiredness-and-fatigue/",
+      "organization": "NHS",
+      "type": "official_patient_information",
+      "section": "Causes; When to get help",
+      "notes": "Fadiga tem várias causas. Persistência sem explicação pede avaliação, não aumento automático de esforço.",
+      "publication_year": null
+    },
+    {
+      "id": "cdc_respiratory_illness",
+      "title": "Preventing Spread of Respiratory Viruses When You Are Sick",
+      "url": "https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html",
+      "organization": "CDC",
+      "type": "official_patient_information",
+      "section": "Recommendation",
+      "notes": "Sintomas respiratórios pedem cuidado com transmissão. Retorno a atividades sociais não é liberação para treino intenso.",
+      "publication_year": 2025
+    },
+    {
+      "id": "anpd_anonymization_2023",
+      "title": "Estudo técnico sobre a anonimização de dados na LGPD: análise jurídica",
+      "url": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd___analise_juridica.pdf/@@download/file",
+      "organization": "ANPD",
+      "type": "official_technical_guidance",
+      "section": "Seções 2, 3.3 e 3.4; considerações finais",
+      "notes": "Anonimização considera contexto, meios razoáveis e risco de reidentificação; remover nome não demonstra anonimato.",
+      "publication_year": 2023
+    },
+    {
+      "id": "brazil_food_guide_2014",
+      "title": "Guia alimentar para a população brasileira — 2ª edição, 1ª reimpressão",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf",
+      "organization": "Ministério da Saúde",
+      "type": "official_guideline",
+      "section": "Escolha de alimentos; Dez passos",
+      "notes": "Documento acessado é de 2014: alimentos in natura/minimamente processados, preparo e contexto. Reimpressão não é diretriz nova.",
+      "publication_year": 2014
+    },
+    {
+      "id": "evolv_coach_runtime_2026_11",
+      "title": "Contrato implementado do Coach e Planner — 7.07.5",
+      "path": "docs/50-coach-real-action-validation.md",
+      "organization": "Evolv",
+      "type": "internal_product_policy",
+      "section": "Configuração; Casos e verificações; Limites",
+      "notes": "Aplicação explícita, acesso por conta e histórico sem treinamento automático. Não é fonte de eficácia clínica.",
+      "code_paths": [
+        "backend/src/coach/coach.service.ts",
+        "ai/src/evolv_rag/coach.py",
+        "ai/src/evolv_rag/actions.py"
+      ]
+    }
+  ],
+  "source_reviews": {
+    "acsm_resistance_training_2026": {
+      "section": "Main takeaways; Individualization matters",
+      "notes": "Resumo institucional consultado; o artigo completo ligado retornou acesso restrito. Não é revisão integral.",
+      "method": "publisher_summary"
+    },
+    "brazil_physical_activity_guide_2021": {
+      "section": "Atividade física para adultos",
+      "notes": "Guia brasileiro: começar com o possível e reduzir inatividade.",
+      "method": "official_pdf"
+    },
+    "who_physical_activity_2020": {
+      "section": "Overview",
+      "notes": "Diretriz populacional, não plano clínico individual.",
+      "method": "official_publication_page"
+    },
+    "issn_protein_exercise_2017": {
+      "section": "Position stand; protein synthesis",
+      "notes": "Proteína e exercício estimulam síntese proteica; alimentação pode atender às necessidades.",
+      "method": "full_text"
+    },
+    "issn_nutrient_timing_2017": {
+      "section": "Position stand; Carbohydrates; Protein",
+      "notes": "Demanda do exercício e ingestão diária contextualizam alimentação pré e pós-treino.",
+      "method": "full_text"
+    },
+    "issn_diets_body_composition_2017": {
+      "section": "Body composition assessment; conclusions",
+      "notes": "Composição e peso são medidas diferentes; resultados dependem de contexto e aderência.",
+      "method": "full_text"
+    },
+    "nih_performance_supplements_2021": {
+      "section": "Introduction; safety",
+      "notes": "Resultados variam por substância, exercício e contexto; suplemento não substitui alimentação e treino.",
+      "method": "official_fact_sheet"
+    },
+    "cdc_sleep_2024": {
+      "section": "Getting enough sleep; Sleep disorders",
+      "notes": "Necessidade varia com idade; sono ruim persistente precisa de avaliação.",
+      "method": "official_page"
+    },
+    "athlete_sleep_consensus_2021": {
+      "section": "Sleep inadequacy and the athlete — trecho indexado",
+      "notes": "Agenda de treino pode limitar oportunidade de sono e recuperação. Página direta bloqueada; somente trecho indexado do autor.",
+      "method": "publisher_search_excerpt"
+    },
+    "aha_first_aid_2024": {
+      "section": "Top 10 messages; Chest pain; presyncope",
+      "notes": "Sinais críticos exigem atendimento; conteúdo usado só para alerta e encaminhamento, sem medicamentos ou protocolos de primeiros socorros.",
+      "method": "official_guideline_selected_sections"
+    }
+  },
+  "new_documents": [
+    {
+      "id": "sets_repetitions_plain",
+      "title": "Séries e repetições em linguagem simples",
+      "text": "Uma repetição é um movimento completo; uma série reúne repetições feitas antes de um intervalo. Em 3 séries de 10 repetições, são três grupos de dez movimentos, com pausas entre os grupos. Isso explica a notação, sem afirmar que 3 × 10 seja ideal para todos.",
+      "topic_ids": [
+        "sets_and_repetitions",
+        "rest_between_sets"
+      ],
+      "source_ids": [
+        "nhs_strength_basics"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "high",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "rest_between_sets_context",
+      "title": "O intervalo entre séries tem função",
+      "text": "O descanso entre séries permite recuperar parte da capacidade para o próximo esforço. Intervalos muito curtos podem reduzir as repetições ou a carga sustentada; exercícios exigentes e séries próximas da falha podem pedir mais recuperação. A duração depende do objetivo e do exercício, sem um número obrigatório para todos.",
+      "topic_ids": [
+        "rest_between_sets",
+        "training_intensity",
+        "sets_and_repetitions"
+      ],
+      "source_ids": [
+        "iusca_hypertrophy_2021"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "exercise_order_priority",
+      "title": "A ordem acompanha a prioridade do treino",
+      "text": "Exercícios feitos no começo costumam ser realizados com menos fadiga acumulada. Para priorizar força em um movimento exigente, faz sentido preservar sua execução antes de acessórios fatigantes. A ordem deve respeitar objetivo e contexto; não existe sequência única obrigatória para todas as pessoas.",
+      "topic_ids": [
+        "exercise_order",
+        "exercise_selection",
+        "exercise_technique"
+      ],
+      "source_ids": [
+        "acsm_progression_2009"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "session_duration_not_score",
+      "title": "Tempo de sessão não mede sozinho a qualidade",
+      "text": "Não há um tempo único de sessão que determine resultado. Os exercícios escolhidos, séries, pausas e tempo disponível mudam a duração; sessões viáveis e regulares podem ser úteis. Cortar todos os descansos apenas para caber no relógio pode prejudicar a execução.",
+      "topic_ids": [
+        "session_duration",
+        "adherence",
+        "routine_and_schedule"
+      ],
+      "source_ids": [
+        "acsm_resistance_training_2026",
+        "iusca_hypertrophy_2021"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Aplicação editorial de princípios de regularidade e descanso; as fontes não testam uma duração ideal universal.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "warmup_gradual_start",
+      "title": "Aquecimento é uma transição para o esforço",
+      "text": "Aquecer significa começar a atividade em intensidade menor e aumentar gradualmente. Antes de atividade aeróbia, isso permite elevação progressiva da respiração e frequência cardíaca. Aquecimento não é garantia de evitar lesões nem autorização para ignorar dor já presente.",
+      "topic_ids": [
+        "warmup",
+        "cardio_conditioning",
+        "exercise_technique"
+      ],
+      "source_ids": [
+        "aha_warmup_cooldown"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "cooldown_gradual_finish",
+      "title": "Desacelerar ao terminar é diferente de tratar dor",
+      "text": "Após atividade aeróbia, reduzir gradualmente o ritmo facilita a transição para o repouso; parar bruscamente pode causar mal-estar em algumas pessoas. Isso não prova que alongar elimine dor muscular tardia nem que um desaquecimento trate uma lesão.",
+      "topic_ids": [
+        "cooldown",
+        "muscle_soreness",
+        "cardio_conditioning"
+      ],
+      "source_ids": [
+        "aha_warmup_cooldown"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "home_training_valid",
+      "title": "Treino em casa pode produzir adaptações",
+      "text": "Peso corporal, elásticos e rotinas em casa também podem melhorar força e função. O exercício precisa oferecer esforço compatível com a capacidade e possibilidade de progressão. A ausência de aparelhos não impede treinar, mas não torna qualquer objeto ou improviso seguro.",
+      "topic_ids": [
+        "home_training",
+        "calisthenics",
+        "gym_equipment_availability"
+      ],
+      "source_ids": [
+        "acsm_resistance_training_2026"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "concurrent_training_tradeoffs",
+      "title": "Cardio e musculação podem coexistir",
+      "text": "Uma revisão não encontrou prejuízo médio à hipertrofia ou força máxima ao combinar treino aeróbio e força. Ganhos de força explosiva podem ser menores, especialmente quando ambos são feitos na mesma sessão. Isso não significa que todo cardio atrapalhe nem define sozinho a melhor agenda individual.",
+      "topic_ids": [
+        "concurrent_training",
+        "cardio_conditioning",
+        "strength_training",
+        "sport_specific_training"
+      ],
+      "source_ids": [
+        "concurrent_training_review_2022"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese de estudos, não garantia individual ou programação específica para vôlei/tênis.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "deload_meaning",
+      "title": "Deload é uma redução temporária da exigência",
+      "text": "Deload é um período de menor estresse de treino, usado para administrar fadiga e preparar o período seguinte. Pode envolver menos séries ou outras mudanças na exigência. Não é necessariamente parar de treinar, nem prova de que exista lesão ou overtraining.",
+      "topic_ids": [
+        "deload",
+        "under_recovery",
+        "training_volume"
+      ],
+      "source_ids": [
+        "deload_delphi_2023"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Definição baseada em consenso Delphi de treinadores; evidência experimental sobre protocolo ótimo é limitada.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "deload_not_fixed_calendar",
+      "title": "Deload não tem calendário universal comprovado",
+      "text": "Treinadores usam deload de maneiras variadas, considerando demanda e recuperação. O consenso não estabelece uma frequência ou redução percentual ideal para todos. Uma semana difícil não obriga deload automático; alterações do plano precisam ser discutidas e confirmadas.",
+      "topic_ids": [
+        "deload",
+        "fatigue",
+        "training_plateau"
+      ],
+      "source_ids": [
+        "deload_delphi_2023",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Prática de treinadores, não obrigação científica; confirmação é regra de produto.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "training_plateau_review_context",
+      "title": "Estagnação pede comparação antes de aumentar tudo",
+      "text": "Uma sessão sem aumentar carga não comprova estagnação. Compare desempenhos em condições semelhantes, execução, repetições e regularidade antes de concluir que é preciso mais volume. A progressão depende do nível e objetivo; aumentar tudo ao mesmo tempo dificulta entender a resposta.",
+      "topic_ids": [
+        "training_plateau",
+        "muscle_gain_plateau",
+        "progressive_overload",
+        "training_performance"
+      ],
+      "source_ids": [
+        "acsm_progression_2009"
+      ],
+      "domain": "training",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Aplicação educativa dos princípios de progressão; não diagnostica overtraining nem promete resolver um platô.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "fat_intake_role",
+      "title": "Gordura alimentar também é necessária",
+      "text": "Gorduras participam do funcionamento das células e fornecem ácidos graxos essenciais. Fontes como azeite, castanhas e peixe diferem de fontes ricas em gorduras trans e saturadas. Retirar toda gordura da dieta não é uma estratégia necessária para perder gordura corporal.",
+      "topic_ids": [
+        "fat_intake",
+        "energy_balance",
+        "micronutrient_intake"
+      ],
+      "source_ids": [
+        "who_healthy_diet_2026"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "fiber_food_sources",
+      "title": "Fibras vêm de alimentos e ajudam a compor a dieta",
+      "text": "Frutas, verduras, feijões e cereais integrais são fontes de fibras. Uma alimentação variada pode incluir esses grupos em vez de depender de um produto isolado. A referência populacional não vira meta clínica individual; desconforto gastrointestinal persistente pede avaliação.",
+      "topic_ids": [
+        "fiber_intake",
+        "digestive_comfort",
+        "food_budget_and_access"
+      ],
+      "source_ids": [
+        "who_healthy_diet_2026"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "carbohydrate_fuel",
+      "title": "Carboidratos fornecem energia para o exercício",
+      "text": "Carboidratos fornecem energia e podem apoiar esforços prolongados ou intensos; cereais, frutas e leguminosas são exemplos de fontes. Quantidade e distribuição dependem da atividade e do restante da alimentação. Não é preciso retirar todo carboidrato para reduzir gordura corporal.",
+      "topic_ids": [
+        "carbohydrate_intake",
+        "cardio_conditioning",
+        "energy_balance"
+      ],
+      "source_ids": [
+        "who_healthy_diet_2026",
+        "issn_nutrient_timing_2017"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "protein_amino_acids_mechanism",
+      "title": "Proteína fornece matéria-prima para adaptação",
+      "text": "A digestão das proteínas fornece aminoácidos utilizados na construção e renovação de proteínas do corpo, inclusive musculares. Treino e ingestão adequada de proteína atuam juntos na adaptação. Isso não significa que proteína sozinha gere músculo nem que whey seja obrigatório quando a alimentação atende às necessidades.",
+      "topic_ids": [
+        "protein_intake",
+        "muscle_hypertrophy",
+        "supplement_protein"
+      ],
+      "source_ids": [
+        "issn_protein_exercise_2017"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "body_recomposition_context",
+      "title": "Recomposição não é sinônimo de emagrecer na balança",
+      "text": "Massa gorda e massa livre de gordura podem mudar de maneiras diferentes; por isso, o peso sozinho não descreve toda a composição corporal. Treino, ingestão e experiência influenciam o processo. Não se deve prometer simultaneamente um ganho muscular e uma perda de gordura específicos para qualquer pessoa.",
+      "topic_ids": [
+        "body_recomposition",
+        "body_weight_trend",
+        "body_measurements"
+      ],
+      "source_ids": [
+        "issn_diets_body_composition_2017"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "weight_plateau_not_single_day",
+      "title": "Platô de peso não se conclui por uma pesagem",
+      "text": "Uma fase sem queda na balança não prova que a gordura parou de mudar. Composição corporal, consistência da medição e adaptações do gasto e da ingestão precisam de contexto. A resposta não deve ser cortar calorias drasticamente ou recomendar desidratação.",
+      "topic_ids": [
+        "weight_change_plateau",
+        "energy_balance",
+        "body_weight_trend"
+      ],
+      "source_ids": [
+        "issn_weight_reduction_2026"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Posicionamento de 13/10/2026; observação educativa, sem diagnóstico ou déficit individual.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "early_training_food_options",
+      "title": "Treino cedo: ajustar pela tolerância e demanda",
+      "text": "A alimentação antes de treinar depende do tempo disponível, tolerância digestiva e duração ou intensidade da atividade. Uma refeição grande imediatamente antes pode não ser confortável; o restante da ingestão diária também importa. Não há regra de que todos devam treinar em jejum ou tomar um café da manhã reforçado.",
+      "topic_ids": [
+        "pre_workout_meal",
+        "meal_timing",
+        "digestive_comfort"
+      ],
+      "source_ids": [
+        "issn_nutrient_timing_2017"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese contextual; não conclui superioridade do jejum nem libera exercício com hipoglicemia ou sintomas.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "late_training_meals_sleep",
+      "title": "Treino à noite: conciliar refeição e sono",
+      "text": "Depois de treinar à noite, a alimentação pode ser organizada junto da ingestão diária e do horário de dormir. Cafeína e refeições grandes perto de deitar podem atrapalhar o sono de algumas pessoas. Não é obrigatório pular a refeição nem comer logo antes de dormir sem considerar conforto e rotina.",
+      "topic_ids": [
+        "post_workout_meal",
+        "meal_timing",
+        "sleep_quality"
+      ],
+      "source_ids": [
+        "issn_nutrient_timing_2017",
+        "cdc_sleep_2024"
+      ],
+      "domain": "nutrition",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "substitution_portions_not_identical",
+      "title": "Trocar alimento não significa repetir o mesmo peso",
+      "text": "Uma troca depende do papel do alimento e da porção, não só de ambos pesarem cem gramas. No Evolv, a mudança do item deve usar uma substituição calculada e aprovada pelo Planner; uma explicação geral de alternativas não altera a refeição automaticamente.",
+      "topic_ids": [
+        "food_substitution",
+        "food_portion",
+        "planner_confirmation"
+      ],
+      "source_ids": [
+        "evolv_nutrition_internal_v1",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "nutrition",
+      "response_mode": "product_policy",
+      "risk_tags": [],
+      "confidence": "policy",
+      "evidence_notes": "Contrato do Planner: substituições aprovadas e confirmação, sem alegar equivalência clínica entre quaisquer alimentos.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "menstrual_context_individual",
+      "title": "Ciclo menstrual não impõe calendário rígido de treino",
+      "text": "Uma revisão encontrou diferenças médias pequenas e muita variação entre estudos sobre fase do ciclo e desempenho. Isso não sustenta uma regra igual para todas as mulheres. Sintomas e percepção individual podem ser considerados, sem inferir fase hormonal nem usar o calendário para diagnosticar ou tratar dor.",
+      "topic_ids": [
+        "menstrual_cycle_context",
+        "training_performance",
+        "fatigue"
+      ],
+      "source_ids": [
+        "menstrual_performance_review_2020"
+      ],
+      "domain": "recovery",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "População estudada: mulheres eumenorreicas; qualidade limitada. Não generalizar a contraceptivos, gestação ou irregularidade menstrual.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "return_after_routine_break",
+      "title": "Voltar após pausa de rotina é diferente de reabilitação",
+      "text": "Depois de uma pausa de rotina, a regularidade e uma exigência compatível com a capacidade atual importam mais do que recuperar de uma vez tudo que deixou de fazer. Essa orientação geral para adultos saudáveis não constitui liberação após lesão, cirurgia ou doença.",
+      "topic_ids": [
+        "missed_workout",
+        "home_training",
+        "training_frequency"
+      ],
+      "source_ids": [
+        "acsm_resistance_training_2026"
+      ],
+      "domain": "recovery",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "sleep_recovery_explanation",
+      "title": "Como o sono se relaciona à recuperação",
+      "text": "O sono apoia função imune, atenção e memória; dormir mal pode prejudicar a disposição e o desempenho. Ele faz parte da recuperação junto de treino e alimentação. Uma noite ou um número de horas não permitem prever quanto músculo alguém ganhará nem explicar sozinho uma dor.",
+      "topic_ids": [
+        "sleep_quality",
+        "sleep_duration",
+        "training_performance"
+      ],
+      "source_ids": [
+        "nhlbi_sleep_function",
+        "athlete_sleep_consensus_2021"
+      ],
+      "domain": "recovery",
+      "response_mode": "educate",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "sleep_persistent_difficulty",
+      "title": "Quando a dificuldade de sono merece avaliação",
+      "text": "Dificuldade frequente para dormir, despertares repetidos ou sonolência apesar de tempo suficiente de sono merecem atenção profissional. Hábitos podem ajudar, mas não substituem avaliar causas persistentes. O Coach não diagnostica apneia nem recomenda sedativo, melatonina ou ajuste de medicamento.",
+      "topic_ids": [
+        "sleep_quality",
+        "fatigue"
+      ],
+      "source_ids": [
+        "cdc_sleep_2024"
+      ],
+      "domain": "recovery",
+      "response_mode": "refer",
+      "risk_tags": [
+        "vulnerable_or_clinical_context"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "heat_illness_warning",
+      "title": "Calor com alteração do estado mental é sinal de alerta",
+      "text": "Tontura e fraqueza no calor pedem interromper o esforço e atenção ao contexto. Confusão, perda de consciência ou convulsão associadas ao calor podem indicar emergência e exigem atendimento imediato. O Coach não confirma insolação por texto nem recomenda continuar para testar a tolerância.",
+      "topic_ids": [
+        "hydration",
+        "electrolytes",
+        "cardio_conditioning"
+      ],
+      "source_ids": [
+        "cdc_heat_illness_2026"
+      ],
+      "domain": "safety",
+      "response_mode": "emergency",
+      "risk_tags": [
+        "heat_illness_signal",
+        "emergency_symptom"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "stimulant_adverse_caution",
+      "title": "Sintomas após pré-treino não são incentivo para insistir",
+      "text": "Cafeína pode causar palpitações, ansiedade e alteração do sono; a sensibilidade varia. Sintomas após pré-treino não devem ser minimizados nem resolvidos com uma dose maior ou combinação de estimulantes. Dor no peito, desmaio ou falta de ar importante pedem atendimento imediato.",
+      "topic_ids": [
+        "supplement_caffeine",
+        "sleep_quality"
+      ],
+      "source_ids": [
+        "fda_caffeine_safety",
+        "aha_first_aid_2024"
+      ],
+      "domain": "safety",
+      "response_mode": "refer",
+      "risk_tags": [
+        "stimulant_adverse_signal",
+        "supplement_uncertainty"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "substance_interaction_boundary",
+      "title": "Combinar suplemento e remédio pode mudar seus efeitos",
+      "text": "Alguns suplementos alteram a absorção ou ação de medicamentos, e combinações podem ser perigosas. Nome, composição e contexto precisam ser avaliados por profissional habilitado. O Coach não garante compatibilidade nem escolhe uma dose ou intervalo para tornar uma combinação segura.",
+      "topic_ids": [
+        "supplement_caffeine",
+        "supplement_protein",
+        "dietary_restriction"
+      ],
+      "source_ids": [
+        "fda_supplement_interactions"
+      ],
+      "domain": "safety",
+      "response_mode": "refer",
+      "risk_tags": [
+        "substance_interaction",
+        "supplement_uncertainty"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "medication_context_not_dose",
+      "title": "Relatar um medicamento não é pedir ajuste",
+      "text": "Uma pessoa pode mencionar um remédio como parte do contexto, sem pedir dose ou suspensão. O Coach deve considerar a cautela necessária sem atribuir automaticamente todo sintoma ao medicamento; decisões de mudar o tratamento e verificar interações ficam com profissional habilitado.",
+      "topic_ids": [
+        "dietary_restriction",
+        "supplement_caffeine"
+      ],
+      "source_ids": [
+        "fda_supplement_interactions",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "cautious",
+      "risk_tags": [
+        "medication_or_substance_context"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Risco de interação: FDA; distinção de intenção e não inferência: política do produto.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "clinical_measurement_limits",
+      "title": "Uma medida isolada não fecha diagnóstico",
+      "text": "O IMC é uma relação entre peso e altura usada como triagem; não mede gordura diretamente nem distingue músculo de gordura. Uma medida ou estimativa isolada não determina saúde, composição corporal exata ou aptidão para treinar. Interpretação clínica precisa de contexto e avaliação profissional.",
+      "topic_ids": [
+        "body_measurements",
+        "body_weight_trend",
+        "body_image"
+      ],
+      "source_ids": [
+        "cdc_bmi_limits"
+      ],
+      "domain": "safety",
+      "response_mode": "cautious",
+      "risk_tags": [
+        "clinical_measurement_request"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "bmi_formula_general",
+      "title": "Como se calcula IMC, sem transformá-lo em diagnóstico",
+      "text": "O IMC é calculado dividindo o peso em quilogramas pelo quadrado da altura em metros. A fórmula descreve um indicador de triagem, não um percentual de gordura. A interpretação em crianças e adolescentes é diferente da usada em adultos; o Coach não deve aplicar categorias adultas indiscriminadamente.",
+      "topic_ids": [
+        "body_measurements",
+        "body_weight_trend"
+      ],
+      "source_ids": [
+        "cdc_bmi_limits"
+      ],
+      "domain": "safety",
+      "response_mode": "cautious",
+      "risk_tags": [
+        "clinical_measurement_request"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "musculoskeletal_red_flag_boundary",
+      "title": "Trauma com perda de função precisa de avaliação",
+      "text": "Após trauma, deformidade, perda de sensibilidade ou dificuldade importante para apoiar ou usar o membro exigem avaliação presencial, com urgência conforme os sinais. Não é situação para sugerir fortalecimento ou testar um salto. A conversa não determina se existe fratura, entorse ou outra lesão.",
+      "topic_ids": [
+        "pain_during_training",
+        "exercise_technique"
+      ],
+      "source_ids": [
+        "nhs_sprains_strains"
+      ],
+      "domain": "safety",
+      "response_mode": "refer",
+      "risk_tags": [
+        "musculoskeletal_red_flag",
+        "pain_or_possible_injury"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "systemic_symptom_no_guess",
+      "title": "Cansaço e mal-estar podem ter várias causas",
+      "text": "Fadiga pode se relacionar a sono, estresse, doenças ou medicamentos. Um relato inespecífico não permite concluir anemia, infecção ou falta de condicionamento. Se for persistente, inexplicado ou limitar a rotina, oriente avaliação; não aumente treino ou restrição alimentar para tentar compensar.",
+      "topic_ids": [
+        "fatigue",
+        "stress",
+        "under_recovery"
+      ],
+      "source_ids": [
+        "nhs_fatigue"
+      ],
+      "domain": "safety",
+      "response_mode": "refer",
+      "risk_tags": [
+        "systemic_symptom_signal"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "acute_illness_not_training_clearance",
+      "title": "Doença aguda muda a conversa sobre treinar",
+      "text": "Sintomas de infecção respiratória exigem cuidado com transmissão; frequentar uma academia enquanto doente pode expor outras pessoas. Critérios de retorno a atividades sociais não provam aptidão para esforço intenso. No Evolv, doença ativa ou recuperação não esclarecida bloqueiam progressão automática e pedem orientação adequada ao quadro.",
+      "topic_ids": [
+        "fatigue",
+        "cardio_conditioning",
+        "rest_day"
+      ],
+      "source_ids": [
+        "cdc_respiratory_illness",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "refer",
+      "risk_tags": [
+        "acute_illness_signal"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "CDC trata prevenção de transmissão; bloqueio de progressão é limite do produto, não protocolo médico de retorno.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "pain_text_cannot_diagnose",
+      "title": "Desconforto no joelho não revela a causa pela conversa",
+      "text": "Desconforto depois do esporte pode ter diferentes explicações; localização e descrição por texto não identificam a causa individual. O Coach pode explicar limites e sinais de atenção, sem concluir que basta fortalecer ou treinar explosão. Piora, persistência ou perda de função pedem avaliação presencial.",
+      "topic_ids": [
+        "pain_during_training",
+        "sport_specific_training"
+      ],
+      "source_ids": [
+        "nhs_sprains_strains",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "cautious",
+      "risk_tags": [
+        "pain_or_possible_injury"
+      ],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "performance_not_rehab_policy",
+      "title": "Desempenho esportivo e tratamento de dor são escopos diferentes",
+      "text": "Preparação para desempenho pode discutir força, potência e organização do treino. Quando a pergunta envolve dor ou suspeita de lesão, o Coach não conclui que falta explosão nem monta reabilitação para uma lesão presumida. Uma explicação geral não é autorização para aumentar a exigência.",
+      "topic_ids": [
+        "sport_specific_training",
+        "pain_during_training",
+        "training_intensity"
+      ],
+      "source_ids": [
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "product_policy",
+      "risk_tags": [],
+      "confidence": "policy",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "exam_requires_professional_policy",
+      "title": "O Coach não escolhe exame para um desconforto individual",
+      "text": "O Coach pode reconhecer que uma dúvida necessita avaliação, mas não decide qual exame pedir nem interpreta a conversa como diagnóstico. Informações gerais sobre treino não substituem examinar a pessoa, acompanhar sua evolução ou escolher uma investigação clínica.",
+      "topic_ids": [
+        "pain_during_training",
+        "app_usage"
+      ],
+      "source_ids": [
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "product_policy",
+      "risk_tags": [],
+      "confidence": "policy",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "history_not_automatic_training_policy",
+      "title": "Histórico da conta não é treinamento automático",
+      "text": "No aplicativo, as conversas são salvas na conta para retomar o histórico, com acesso restrito ao usuário. Elas não entram automaticamente no treinamento. Pedir exclusão no chat não executa a exclusão; as funções de histórico precisam ser usadas. Não se deve confundir salvar mensagens com autorizar outra finalidade.",
+      "topic_ids": [
+        "app_usage",
+        "planner_confirmation"
+      ],
+      "source_ids": [
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "product_policy",
+      "risk_tags": [],
+      "confidence": "policy",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "redaction_not_anonymization",
+      "title": "Apagar o nome não demonstra anonimato",
+      "text": "Uma conversa pode permitir identificação por contexto e combinação de detalhes, mesmo sem nome. Anonimização envolve avaliar risco de reidentificação, meios razoáveis e cenário de uso. Remover identificadores diretos é uma precaução, sem provar anonimato ou autorizar automaticamente uso no treinamento.",
+      "topic_ids": [
+        "app_usage",
+        "image_dependency"
+      ],
+      "source_ids": [
+        "anpd_anonymization_2023"
+      ],
+      "domain": "safety",
+      "response_mode": "cautious",
+      "risk_tags": [],
+      "confidence": "moderate",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "learning_not_automatic_edit_policy",
+      "title": "Perguntar e executar são decisões diferentes",
+      "text": "Perguntar se é possível trocar algo não autoriza alteração do plano. O Coach pode esclarecer a dúvida; uma mudança exige pedido suficientemente claro, proposta, prévia e confirmação explícita. Não deve afirmar que uma alteração foi aplicada quando apenas explicou ou preparou uma proposta.",
+      "topic_ids": [
+        "planner_confirmation",
+        "ambiguous_reference",
+        "plan_explanation"
+      ],
+      "source_ids": [
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "product_policy",
+      "risk_tags": [],
+      "confidence": "policy",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    },
+    {
+      "id": "multiple_requests_need_scope",
+      "title": "Várias mudanças na mesma mensagem precisam de escopo claro",
+      "text": "Na implementação atual, o Coach propõe no máximo uma alteração por vez. Se a mensagem pede mudanças diferentes ou mistura negação e aceite, deve esclarecer qual mudança revisar primeiro. Confirmar uma proposta não autoriza outras alterações mencionadas na conversa.",
+      "topic_ids": [
+        "multi_request",
+        "ambiguous_reference",
+        "planner_confirmation"
+      ],
+      "source_ids": [
+        "evolv_coach_runtime_2026_11"
+      ],
+      "domain": "safety",
+      "response_mode": "product_policy",
+      "risk_tags": [],
+      "confidence": "policy",
+      "evidence_notes": "Síntese editorial em português; aplicar somente ao escopo das fontes.",
+      "not_for": "Não diagnosticar, tratar lesões, garantir resultados ou converter educação em alteração automática do plano."
+    }
+  ],
+  "revisions": [
+    {
+      "id": "hypertrophy_uses_sufficient_volume",
+      "text": "O volume semanal de treino influencia a hipertrofia. O resumo da ACSM cita aproximadamente dez séries por grupo muscular como referência geral, não como ponto inicial obrigatório nem garantia individual. Mais volume não é sempre melhor; tolerância e recuperação precisam ser consideradas.",
+      "source_ids": [
+        "acsm_resistance_training_2026"
+      ],
+      "evidence_notes": "Resumo institucional de 2026; referência populacional, sem transformar número em prescrição universal."
+    },
+    {
+      "id": "progressive_overload_gradual",
+      "text": "Sobrecarga progressiva ajusta a exigência à adaptação ao treino. Carga e repetições são formas de acompanhar a progressão, considerando execução, experiência e objetivo. Piora persistente da técnica ou sintomas não são autorização para acelerar; o Coach não deve prometer progressão em toda sessão.",
+      "source_ids": [
+        "acsm_progression_2009",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "evidence_notes": "Princípios históricos de progressão; decisão cautelosa e confirmação são limites do produto."
+    },
+    {
+      "id": "food_substitution_preserves_role",
+      "text": "No Evolv, trocar um item usa as alternativas calculadas e aprovadas para aquela refeição. O Planner verifica a substituição e a porção antes da aplicação. Explicar opções gerais não autoriza substituir qualquer alimento nem implica equivalência nutricional exata entre porções de mesmo peso.",
+      "source_ids": [
+        "evolv_nutrition_internal_v1",
+        "evolv_coach_runtime_2026_11"
+      ],
+      "confidence": "policy",
+      "response_mode": "product_policy",
+      "evidence_notes": "Regra implementada de substituições aprovadas; sem afirmar eficácia clínica."
+    },
+    {
+      "id": "food_minimally_processed_base",
+      "source_ids": [
+        "brazil_food_guide_2014"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    },
+    {
+      "id": "food_pattern_over_single_meal",
+      "source_ids": [
+        "brazil_food_guide_2014",
+        "evolv_recovery_internal_v1"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    },
+    {
+      "id": "food_context_is_part_of_quality",
+      "source_ids": [
+        "brazil_food_guide_2014",
+        "evolv_nutrition_internal_v1"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    },
+    {
+      "id": "nutrition_variation_preferences",
+      "source_ids": [
+        "brazil_food_guide_2014",
+        "evolv_nutrition_internal_v1"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    },
+    {
+      "id": "flexible_meal_without_compensation",
+      "source_ids": [
+        "brazil_food_guide_2014",
+        "evolv_recovery_internal_v1"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    },
+    {
+      "id": "vegetarian_patterns_need_planning",
+      "source_ids": [
+        "brazil_food_guide_2014",
+        "acsm_nutrition_performance_2016"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    },
+    {
+      "id": "grocery_and_meal_prep_support_adherence",
+      "source_ids": [
+        "brazil_food_guide_2014",
+        "evolv_nutrition_internal_v1"
+      ],
+      "evidence_notes": "Fonte conferida na edição oficial de 2014; reimpressão não é diretriz nova. Síntese anterior mantida."
+    }
+  ],
+  "boundary_migrations": {
+    "pain_is_not_a_diagnosis": "pain_text_cannot_diagnose",
+    "performance_is_not_rehab": "performance_not_rehab_policy",
+    "exam_requires_evaluation": "exam_requires_professional_policy",
+    "chat_history_not_training": "history_not_automatic_training_policy",
+    "redaction_not_anonymity": "redaction_not_anonymization",
+    "learning_not_automatic_edit": "learning_not_automatic_edit_policy"
+  },
+  "residual_gaps": [
+    {
+      "topic": "technical_execution",
+      "status": "limited",
+      "reason": "Não cobre execução detalhada de cada exercício nem correção visual."
+    },
+    {
+      "topic": "sports_programming",
+      "status": "limited",
+      "reason": "Princípios gerais não constituem periodização individual de vôlei, tênis ou competição."
+    },
+    {
+      "topic": "clinical_and_special_populations",
+      "status": "boundary_only",
+      "reason": "Sem protocolos de tratamento, exames, medicação, reabilitação ou personalização clínica."
+    },
+    {
+      "topic": "equipment_hygiene_and_maintenance",
+      "status": "not_covered",
+      "reason": "Intenções novas de higiene corporal e manutenção de equipamentos não têm conteúdo específico."
+    },
+    {
+      "topic": "local_services_events_products",
+      "status": "not_covered",
+      "reason": "Locais, preços, disponibilidade, eventos e produtos requerem fontes atualizadas fora desta base local."
+    },
+    {
+      "topic": "knowledge_vs_retrieval",
+      "status": "pending_next_phase",
+      "reason": "Ter o trecho não garante recuperá-lo; o índice de 67 trechos não é substituído nesta etapa."
+    }
+  ],
+  "acceptance_cases": [
+    {
+      "id": "kb-dev-01",
+      "question": "Quantas vezes faço o movimento em 3x10?",
+      "target_document_ids": [
+        "sets_repetitions_plain"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-02",
+      "question": "Pra que descansar entre séries?",
+      "target_document_ids": [
+        "rest_between_sets_context"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-03",
+      "question": "Muda algo começar pelos acessórios?",
+      "target_document_ids": [
+        "exercise_order_priority"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-04",
+      "question": "Só tenho meia hora: o treino não vale?",
+      "target_document_ids": [
+        "session_duration_not_score"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-05",
+      "question": "Preciso aquecer como?",
+      "target_document_ids": [
+        "warmup_gradual_start"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-06",
+      "question": "Alongar depois tira a dor do dia seguinte?",
+      "target_document_ids": [
+        "cooldown_gradual_finish"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-07",
+      "question": "Consigo fortalecer sem academia?",
+      "target_document_ids": [
+        "home_training_valid"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-08",
+      "question": "Cardio sempre faz perder músculo?",
+      "target_document_ids": [
+        "concurrent_training_tradeoffs"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-09",
+      "question": "Deload significa parar totalmente?",
+      "target_document_ids": [
+        "deload_meaning"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-10",
+      "question": "Todo mundo faz deload a cada quatro semanas?",
+      "target_document_ids": [
+        "deload_not_fixed_calendar"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-11",
+      "question": "Não subi peso hoje, aumentamos tudo?",
+      "target_document_ids": [
+        "training_plateau_review_context"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-12",
+      "question": "Pra emagrecer tiro toda gordura?",
+      "target_document_ids": [
+        "fat_intake_role"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-13",
+      "question": "Que comida tem fibras?",
+      "target_document_ids": [
+        "fiber_food_sources"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-14",
+      "question": "Pra que carboidrato no treino?",
+      "target_document_ids": [
+        "carbohydrate_fuel"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-15",
+      "question": "Como a proteína participa da adaptação?",
+      "target_document_ids": [
+        "protein_amino_acids_mechanism"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-16",
+      "question": "Peso igual quer dizer composição igual?",
+      "target_document_ids": [
+        "body_recomposition_context"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-17",
+      "question": "Meu peso parou: acabou a perda de gordura?",
+      "target_document_ids": [
+        "weight_plateau_not_single_day"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-18",
+      "question": "Treino cedo: jejum ou café reforçado sempre?",
+      "target_document_ids": [
+        "early_training_food_options"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-19",
+      "question": "Treino de noite: preciso pular a refeição?",
+      "target_document_ids": [
+        "late_training_meals_sleep"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-20",
+      "question": "Troco cem gramas por cem gramas de qualquer alimento?",
+      "target_document_ids": [
+        "substitution_portions_not_identical"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-21",
+      "question": "Tenho que montar treino por fase do ciclo?",
+      "target_document_ids": [
+        "menstrual_context_individual"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-22",
+      "question": "Depois de viagem volto no máximo?",
+      "target_document_ids": [
+        "return_after_routine_break"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-23",
+      "question": "Sono ajuda em quê na recuperação?",
+      "target_document_ids": [
+        "sleep_recovery_explanation"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-24",
+      "question": "Durmo bastante e continuo com sono todo dia.",
+      "target_document_ids": [
+        "sleep_persistent_difficulty"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-25",
+      "question": "Fiquei confuso e quase desmaiei treinando no calor.",
+      "target_document_ids": [
+        "heat_illness_warning"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-26",
+      "question": "Coração disparou depois do pré-treino, tomo mais?",
+      "target_document_ids": [
+        "stimulant_adverse_caution"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-27",
+      "question": "Posso misturar suplemento com meu remédio?",
+      "target_document_ids": [
+        "substance_interaction_boundary"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-28",
+      "question": "Tomo remédio mas não estou pedindo para mudar a dose.",
+      "target_document_ids": [
+        "medication_context_not_dose"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-29",
+      "question": "IMC mostra meu percentual de gordura?",
+      "target_document_ids": [
+        "clinical_measurement_limits"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-30",
+      "question": "Como se calcula IMC?",
+      "target_document_ids": [
+        "bmi_formula_general"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-31",
+      "question": "Torci o joelho e não consigo apoiar.",
+      "target_document_ids": [
+        "musculoskeletal_red_flag_boundary"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-32",
+      "question": "Cansaço prova que tenho anemia?",
+      "target_document_ids": [
+        "systemic_symptom_no_guess"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-33",
+      "question": "Estou gripado e com febre: já dá pra treino pesado?",
+      "target_document_ids": [
+        "acute_illness_not_training_clearance"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-34",
+      "question": "Joelho incomodou no vôlei: qual é a causa?",
+      "target_document_ids": [
+        "pain_text_cannot_diagnose"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-35",
+      "question": "Treinar explosão resolve esse desconforto?",
+      "target_document_ids": [
+        "performance_not_rehab_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-36",
+      "question": "Qual exame devo fazer pra essa dor?",
+      "target_document_ids": [
+        "exam_requires_professional_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-37",
+      "question": "Tudo que converso vira treino do modelo?",
+      "target_document_ids": [
+        "history_not_automatic_training_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-38",
+      "question": "Tirando o nome fica tudo anônimo?",
+      "target_document_ids": [
+        "redaction_not_anonymization"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-39",
+      "question": "Só perguntar sobre troca já muda minha ficha?",
+      "target_document_ids": [
+        "learning_not_automatic_edit_policy"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    },
+    {
+      "id": "kb-dev-40",
+      "question": "Troca refeição, muda o treino e aumenta carga de uma vez.",
+      "target_document_ids": [
+        "multiple_requests_need_scope"
+      ],
+      "usage": "development_content_acceptance_not_independent_retrieval_gold"
+    }
+  ],
+  "access_limitations": [
+    {
+      "locator": "https://journals.lww.com/acsm-msse/fulltext/2026/04000/american_college_of_sports_medicine_position.21.aspx",
+      "observed": "restricted_full_paper_402",
+      "used_instead": "ACSM institutional summary; not full article verification"
+    },
+    {
+      "locator": "https://bjsm.bmj.com/content/55/7/356",
+      "observed": "direct_access_403",
+      "used_instead": "Publisher indexed passage only, explicitly labelled"
+    },
+    {
+      "locator": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
+      "observed": "access_denied",
+      "used_instead": "ANPD technical PDF; not a new declaration of legal compliance"
+    },
+    {
+      "locator": "https://pmc.ncbi.nlm.nih.gov/",
+      "observed": "intermittent_recaptcha_after_successful_reads",
+      "used_instead": "Accessible publisher texts or already retrieved selected passages; never claim whole-site verification"
+    }
+  ]
+}

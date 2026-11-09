@@ -1,0 +1,1000 @@
+{
+  "actions_synthetic": {
+    "intent": {
+      "accuracy": 0.7671232876712328,
+      "adapt_training_plan": {
+        "f1-score": 0.6666666666666666,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "support": 6.0
+      },
+      "adjust_training_intensity": {
+        "f1-score": 0.2857142857142857,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "support": 6.0
+      },
+      "adjust_training_volume": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "analyze_progress": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_activity_hygiene": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_activity_location": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_activity_safety": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_app_functionality": {
+        "f1-score": 0.4,
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "support": 3.0
+      },
+      "ask_cardio_training": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_cooking_guidance": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_equipment_recommendation": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_equipment_use_or_care": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_exercise_execution": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_fitness_resources": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_fitness_services": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_food_safety": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_food_substitution_options": {
+        "f1-score": 0.3333333333333333,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "support": 3.0
+      },
+      "ask_health_guidance": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_hydration": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_meal_feedback": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_medication_or_hormone": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_nutrition_concept": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_pain_guidance": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_recovery": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_return_to_training": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_sleep_habits": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_sport_event_guidance": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_sports_conditioning": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_supplements": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_training_concept": {
+        "f1-score": 0.4,
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "support": 3.0
+      },
+      "ask_training_meal_timing": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_training_program_feedback": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_weight_management": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "calculate_body_metric": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "change_diet_structure": {
+        "f1-score": 0.7692307692307693,
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "change_training_split": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "clarification": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "compare_options": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "confirm_planner_action": {
+        "f1-score": 0.8,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 6.0
+      },
+      "create_diet_plan": {
+        "f1-score": 0.9090909090909091,
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "create_training_plan": {
+        "f1-score": 0.8,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 6.0
+      },
+      "defer_planner_action": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "explain_current_plan": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "greeting": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "image_context_request": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "macro avg": {
+        "f1-score": 0.32714979464979466,
+        "precision": 0.35191798941798946,
+        "recall": 0.3222222222222222,
+        "support": 146.0
+      },
+      "motivation_support": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "move_workout_day": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "out_of_scope": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "preserve_plan_constraint": {
+        "f1-score": 0.8,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 6.0
+      },
+      "record_body_measurement": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "record_food_intake": {
+        "f1-score": 0.9230769230769231,
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "record_training_load": {
+        "f1-score": 0.9230769230769231,
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "reject_planner_action": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "remember_preference": {
+        "f1-score": 0.6666666666666666,
+        "precision": 0.5555555555555556,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "replace_exercise": {
+        "f1-score": 0.7692307692307693,
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "replace_meal_item": {
+        "f1-score": 0.25,
+        "precision": 0.5,
+        "recall": 0.16666666666666666,
+        "support": 6.0
+      },
+      "set_day_activity": {
+        "f1-score": 0.9090909090909091,
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "support": 6.0
+      },
+      "share_fitness_content": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "undo_planner_action": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "update_goal": {
+        "f1-score": 0.8571428571428571,
+        "precision": 0.75,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "weighted avg": {
+        "f1-score": 0.7765337402323703,
+        "precision": 0.8334964122635355,
+        "recall": 0.7671232876712328,
+        "support": 146.0
+      }
+    },
+    "risk": {
+      "acute_illness_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "clinical_measurement_request": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "eating_disorder_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "emergency_symptom": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "extreme_diet_or_dehydration": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "food_allergy_or_reaction": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "food_safety_uncertainty": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "heat_illness_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "medication_or_hormone": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "medication_or_substance_context": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "mental_health_crisis": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "musculoskeletal_red_flag": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "pain_or_possible_injury": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "stimulant_adverse_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "substance_interaction": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "supplement_uncertainty": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "systemic_symptom_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "under_recovery_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "unsafe_training_request": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "vulnerable_or_clinical_context": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      }
+    }
+  },
+  "legacy": {
+    "intent": {
+      "accuracy": 0.6549835706462213,
+      "adapt_training_plan": {
+        "f1-score": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "support": 2.0
+      },
+      "adjust_training_intensity": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "adjust_training_volume": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "analyze_progress": {
+        "f1-score": 0.5416666666666666,
+        "precision": 0.5909090909090909,
+        "recall": 0.5,
+        "support": 26.0
+      },
+      "ask_activity_hygiene": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 2.0
+      },
+      "ask_activity_location": {
+        "f1-score": 0.8,
+        "precision": 0.8,
+        "recall": 0.8,
+        "support": 5.0
+      },
+      "ask_activity_safety": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 2.0
+      },
+      "ask_app_functionality": {
+        "f1-score": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "support": 2.0
+      },
+      "ask_cardio_training": {
+        "f1-score": 0.62,
+        "precision": 0.543859649122807,
+        "recall": 0.7209302325581395,
+        "support": 43.0
+      },
+      "ask_cooking_guidance": {
+        "f1-score": 0.6666666666666666,
+        "precision": 0.8333333333333334,
+        "recall": 0.5555555555555556,
+        "support": 9.0
+      },
+      "ask_equipment_recommendation": {
+        "f1-score": 0.9298245614035088,
+        "precision": 0.9298245614035088,
+        "recall": 0.9298245614035088,
+        "support": 57.0
+      },
+      "ask_equipment_use_or_care": {
+        "f1-score": 0.4,
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "support": 2.0
+      },
+      "ask_exercise_execution": {
+        "f1-score": 0.48484848484848486,
+        "precision": 0.47058823529411764,
+        "recall": 0.5,
+        "support": 16.0
+      },
+      "ask_fitness_resources": {
+        "f1-score": 0.6896551724137931,
+        "precision": 0.7142857142857143,
+        "recall": 0.6666666666666666,
+        "support": 15.0
+      },
+      "ask_fitness_services": {
+        "f1-score": 0.5555555555555556,
+        "precision": 0.5,
+        "recall": 0.625,
+        "support": 16.0
+      },
+      "ask_food_safety": {
+        "f1-score": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "support": 2.0
+      },
+      "ask_food_substitution_options": {
+        "f1-score": 0.2222222222222222,
+        "precision": 0.2,
+        "recall": 0.25,
+        "support": 4.0
+      },
+      "ask_health_guidance": {
+        "f1-score": 0.5679012345679012,
+        "precision": 0.6052631578947368,
+        "recall": 0.5348837209302325,
+        "support": 43.0
+      },
+      "ask_hydration": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "ask_meal_feedback": {
+        "f1-score": 0.5,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "support": 1.0
+      },
+      "ask_medication_or_hormone": {
+        "f1-score": 0.6060606060606061,
+        "precision": 0.625,
+        "recall": 0.5882352941176471,
+        "support": 17.0
+      },
+      "ask_nutrition_concept": {
+        "f1-score": 0.2962962962962963,
+        "precision": 0.3076923076923077,
+        "recall": 0.2857142857142857,
+        "support": 14.0
+      },
+      "ask_pain_guidance": {
+        "f1-score": 0.8809523809523809,
+        "precision": 0.8604651162790697,
+        "recall": 0.9024390243902439,
+        "support": 41.0
+      },
+      "ask_recovery": {
+        "f1-score": 0.4,
+        "precision": 0.42857142857142855,
+        "recall": 0.375,
+        "support": 8.0
+      },
+      "ask_return_to_training": {
+        "f1-score": 0.46153846153846156,
+        "precision": 0.46153846153846156,
+        "recall": 0.46153846153846156,
+        "support": 13.0
+      },
+      "ask_sleep_habits": {
+        "f1-score": 0.8064516129032258,
+        "precision": 0.7352941176470589,
+        "recall": 0.8928571428571429,
+        "support": 28.0
+      },
+      "ask_sport_event_guidance": {
+        "f1-score": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "support": 1.0
+      },
+      "ask_sports_conditioning": {
+        "f1-score": 0.3333333333333333,
+        "precision": 0.25,
+        "recall": 0.5,
+        "support": 6.0
+      },
+      "ask_supplements": {
+        "f1-score": 0.8409090909090909,
+        "precision": 0.8409090909090909,
+        "recall": 0.8409090909090909,
+        "support": 44.0
+      },
+      "ask_training_concept": {
+        "f1-score": 0.5378151260504201,
+        "precision": 0.5333333333333333,
+        "recall": 0.5423728813559322,
+        "support": 59.0
+      },
+      "ask_training_meal_timing": {
+        "f1-score": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "support": 4.0
+      },
+      "ask_training_program_feedback": {
+        "f1-score": 0.7246376811594203,
+        "precision": 0.6756756756756757,
+        "recall": 0.78125,
+        "support": 32.0
+      },
+      "ask_weight_management": {
+        "f1-score": 0.5915492957746479,
+        "precision": 0.5753424657534246,
+        "recall": 0.6086956521739131,
+        "support": 69.0
+      },
+      "calculate_body_metric": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "change_diet_structure": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "change_training_split": {
+        "f1-score": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "support": 2.0
+      },
+      "clarification": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "compare_options": {
+        "f1-score": 0.6956521739130435,
+        "precision": 0.7272727272727273,
+        "recall": 0.6666666666666666,
+        "support": 12.0
+      },
+      "confirm_planner_action": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "create_diet_plan": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 1.0
+      },
+      "create_training_plan": {
+        "f1-score": 0.3157894736842105,
+        "precision": 0.75,
+        "recall": 0.2,
+        "support": 15.0
+      },
+      "defer_planner_action": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "explain_current_plan": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "greeting": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "image_context_request": {
+        "f1-score": 0.7339449541284404,
+        "precision": 0.6896551724137931,
+        "recall": 0.7843137254901961,
+        "support": 51.0
+      },
+      "macro avg": {
+        "f1-score": 0.36627132487039277,
+        "precision": 0.3727215059126025,
+        "recall": 0.3894703148445515,
+        "support": 913.0
+      },
+      "motivation_support": {
+        "f1-score": 0.6407766990291263,
+        "precision": 0.6226415094339622,
+        "recall": 0.66,
+        "support": 50.0
+      },
+      "move_workout_day": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "out_of_scope": {
+        "f1-score": 0.8105263157894737,
+        "precision": 0.8651685393258427,
+        "recall": 0.7623762376237624,
+        "support": 101.0
+      },
+      "preserve_plan_constraint": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "record_body_measurement": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "record_food_intake": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "record_training_load": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "reject_planner_action": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "remember_preference": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "replace_exercise": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 1.0
+      },
+      "replace_meal_item": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "set_day_activity": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "share_fitness_content": {
+        "f1-score": 0.4883720930232558,
+        "precision": 0.56,
+        "recall": 0.4329896907216495,
+        "support": 97.0
+      },
+      "undo_planner_action": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "update_goal": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0.0
+      },
+      "weighted avg": {
+        "f1-score": 0.6530344853642672,
+        "precision": 0.6651904558942658,
+        "recall": 0.6549835706462213,
+        "support": 913.0
+      }
+    },
+    "risk": {
+      "acute_illness_signal": {
+        "f1": 0.4444444444444444,
+        "precision": 0.4,
+        "recall": 0.5,
+        "support": 4
+      },
+      "clinical_measurement_request": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 1
+      },
+      "eating_disorder_signal": {
+        "f1": 0.5964912280701754,
+        "precision": 0.7727272727272727,
+        "recall": 0.4857142857142857,
+        "support": 35
+      },
+      "emergency_symptom": {
+        "f1": 0.5555555555555556,
+        "precision": 0.625,
+        "recall": 0.5,
+        "support": 10
+      },
+      "extreme_diet_or_dehydration": {
+        "f1": 0.5555555555555556,
+        "precision": 0.7142857142857143,
+        "recall": 0.45454545454545453,
+        "support": 11
+      },
+      "food_allergy_or_reaction": {
+        "f1": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "support": 2
+      },
+      "food_safety_uncertainty": {
+        "f1": 0.5,
+        "precision": 0.4,
+        "recall": 0.6666666666666666,
+        "support": 3
+      },
+      "heat_illness_signal": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 1
+      },
+      "medication_or_hormone": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 3
+      },
+      "medication_or_substance_context": {
+        "f1": 0.5591397849462365,
+        "precision": 0.6190476190476191,
+        "recall": 0.5098039215686274,
+        "support": 51
+      },
+      "mental_health_crisis": {
+        "f1": 0.6153846153846154,
+        "precision": 0.8,
+        "recall": 0.5,
+        "support": 8
+      },
+      "musculoskeletal_red_flag": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0
+      },
+      "pain_or_possible_injury": {
+        "f1": 0.7801418439716312,
+        "precision": 0.7534246575342466,
+        "recall": 0.8088235294117647,
+        "support": 68
+      },
+      "stimulant_adverse_signal": {
+        "f1": 0.6666666666666666,
+        "precision": 1.0,
+        "recall": 0.5,
+        "support": 2
+      },
+      "substance_interaction": {
+        "f1": 0.37037037037037035,
+        "precision": 0.35714285714285715,
+        "recall": 0.38461538461538464,
+        "support": 13
+      },
+      "supplement_uncertainty": {
+        "f1": 0.7671232876712328,
+        "precision": 0.875,
+        "recall": 0.6829268292682927,
+        "support": 82
+      },
+      "systemic_symptom_signal": {
+        "f1": 0.43636363636363634,
+        "precision": 0.3582089552238806,
+        "recall": 0.5581395348837209,
+        "support": 43
+      },
+      "under_recovery_signal": {
+        "f1": 0.29411764705882354,
+        "precision": 0.21739130434782608,
+        "recall": 0.45454545454545453,
+        "support": 11
+      },
+      "unsafe_training_request": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 4
+      },
+      "vulnerable_or_clinical_context": {
+        "f1": 0.579185520361991,
+        "precision": 0.5517241379310345,
+        "recall": 0.6095238095238096,
+        "support": 105
+      }
+    }
+  }
+}

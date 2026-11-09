@@ -1,0 +1,34 @@
+{
+  "phase": "7.05.5",
+  "files": {
+    "binding.json": "19c8fec0670039f574032a2b8a3366098be603be83cd789a5927a69f10eb098b",
+    "code_at_run\\scripts\\evaluate_coach_dialogues.py": "393d1745cfd07b8d5e90729fa8e6f3f087093feae527a5b9965bdd6db0abeb71",
+    "code_at_run\\src\\evolv_rag\\actions.py": "76834ae12102f90e327fec43ce95042c5853c7dd88c1a5a1f768dc0e4e2afec8",
+    "code_at_run\\src\\evolv_rag\\coach.py": "f04ed56e71c2a11c37555ca2ceea813eb8fd75275c3086ae1ffe3848d21000d1",
+    "code_at_run\\src\\evolv_rag\\integrated_evaluation.py": "6f115c460fdf45b3d273f75468a60cdb360340f1ab4d77843dd22584ee1bce68",
+    "code_at_run\\src\\evolv_rag\\safety.py": "641f44e35640ffdd58d01da3432f68c1676931dfa5e57756b0be7e8c030cba99",
+    "code_at_run\\src\\evolv_rag\\search.py": "42201175038369cddd33a44738a7bb3b7139b659b3d15cc2896a31090864f9ad",
+    "completion.json": "5c178d0874288761f8d2f65f1730e275e72db27621cf9ce86f965227145e5c7b",
+    "conversations.html": "9aae1333827798394d918b32c3a3346b6e23a708f005b1d06014516a979ea0cc",
+    "decision.json": "324b8606b87bcf24728f0d7634a9f2e6ad2aabc58d586f823a483cb6ee5db40a",
+    "manifest.json": "56fea36843938a7c09090300b99ff226c3e5f6469e9b3222f242d46a887fa288",
+    "progress.json": "dda2abd694738e7ea1bcb1753f56489adbbf9a793ce3f8aa7f4f31ba0d469c47",
+    "protocol.json": "c94d0fcb264958de8e7059c936d41cb03082cedbcaaa6525b61a10b9577e4b5a",
+    "regressions\\manifest.json": "0ca27c547ddf171cca32333143723a77d60827c3e0f10f6f50b2e44ba61c4070",
+    "regressions\\results.json": "4b33f8632b4c3aa4f960abddda0c2a838e9151ef0f8abc4e1e461fbedc666dcc",
+    "RESULTS.md": "9f9d760e00f0b4bc15255e3067faf64b6565f085b5c0cd29e4bd76e7deec4ef3",
+    "review.json": "7b93260e61bafcafd7c7a09b49b9af194b40787a78f957166667bbba1b8467e6",
+    "review_manifest.json": "15ea19e815c6488d241e8fb56b6f06b2ca46853f69a8b982167665e82d06aa1a",
+    "summary.json": "8e82cd9aa0d0e5be7c8129186392add1e50cb2561e0be60772d096c81fabcef8",
+    "turns.jsonl": "e861af537e9a5ca9a4eb2943543fa55113092c6ecaf159ba3035c5b5717f46c5",
+    "verification.json": "847dd1cdcba456428dd3aecf9c9ce2a7a0fcd0728c81890813b1680351a69e61"
+  },
+  "documentation_sha256": "6651312d96fdba22782bce27e5822cfdc18e93cc4d081efd77f7774ba6d0098f",
+  "current_code": {
+    "src/evolv_rag/coach.py": "ffa281f7fe6ef22ddb932eadf8e98d12ee03b8421c58538b6ba4a570efa08f3a",
+    "src/evolv_rag/safety.py": "2856d8417ab825a12de35b85a474c8e24ad1cec9e9885b13ec6b94d999227994",
+    "src/evolv_rag/actions.py": "76834ae12102f90e327fec43ce95042c5853c7dd88c1a5a1f768dc0e4e2afec8",
+    "src/evolv_rag/integrated_evaluation.py": "6f115c460fdf45b3d273f75468a60cdb360340f1ab4d77843dd22584ee1bce68",
+    "scripts/report_coach_dialogues.py": "7fabdf8352716b28ebef71db06c4576f5e284c8794da4e8873d2ae57848b8cca"
+  }
+}

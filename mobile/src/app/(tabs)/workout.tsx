@@ -1,12 +1,5 @@
 import { useMemo, useState } from "react";
-import {
-  Alert,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import {
   CalendarRange,
@@ -19,6 +12,7 @@ import {
 } from "lucide-react-native";
 
 import { LoadStepper } from "@/components/load-stepper";
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 import {
   AppScreen,
   CinematicHero,
@@ -178,15 +172,17 @@ export default function WorkoutScreen() {
   }
 
   return (
-    <AppScreen>
-      <PageHeader
-        eyebrow={workoutPlan ? "Plano ativo" : "Sem plano ativo"}
-        title="Treino"
-        actionIcon={CalendarRange}
-        actionLabel="Gerenciar planos"
-        onAction={() => router.push("/plans")}
-      />
-
+    <AppScreen
+      header={
+        <PageHeader
+          eyebrow={workoutPlan ? "Plano ativo" : "Sem plano ativo"}
+          title="Treino"
+          actionIcon={CalendarRange}
+          actionLabel="Gerenciar planos"
+          onAction={() => router.push("/plans")}
+        />
+      }
+    >
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}

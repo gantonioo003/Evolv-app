@@ -1,0 +1,108 @@
+{
+  "calibration": "selected intent config, three group-disjoint train folds; refit vocabulary per fold; frozen MiniLM",
+  "confidence": "target .90 accuracy, >=30 OOF accepted, >=5 validation references per class; no four-case tuning",
+  "dataset_version": "1.9.0",
+  "input_sha256": {
+    "artifacts/baseline/1.8.0/candidate_selection.json": "af677318912365954c873962ec3dcd8a8d0fae57aec8dc238049ce00b45bba82",
+    "artifacts/baseline/1.8.0/manifest.json": "c3feb81719fce041b86bd4ff8988aadd1a2ace1996973bf55d8f0c3ac78032ef",
+    "artifacts/baseline/1.8.0/selection_frozen.json": "11012b4327bf67ffe8c699cf807619bc259cd1972fd9b1851c1cb7df011e39af",
+    "data/releases/1.9.0/manifest.json": "b2c7fdf11dffbb354f8066815e5247462d6c5b0e5dc08e382e288b88f59fc5d3",
+    "data/releases/1.9.0/private/train.jsonl": "6aca5fe37b939b51c0cfae0ca014a1edbc9ecb27a520d00477c94bc88a4e6d37",
+    "data/releases/1.9.0/private/validation.jsonl": "2ad0cd5a1c5e5e8a91349c33bc2d878b3ad35c1ef6ad3c7f81e7dadfeb0af9fd",
+    "data/releases/1.9.0/private/validation_actions_synthetic.jsonl": "a2d7f2c0333678984802aaa06e12431812d160b003efc32db2625452d395f064",
+    "data/releases/1.9.0/private/validation_legacy.jsonl": "5ba6642dfae8acca14583679511f37f690ea62dfbd0e116b52b2ad8cbd60c7ce"
+  },
+  "intent_configs": [
+    {
+      "C": 0.5,
+      "kind": "svm",
+      "new_weight": 1.0,
+      "view": "full"
+    },
+    {
+      "C": 2.0,
+      "kind": "svm",
+      "new_weight": 1.0,
+      "view": "full"
+    },
+    {
+      "C": 0.5,
+      "kind": "svm",
+      "new_weight": 1.0,
+      "view": "focus"
+    },
+    {
+      "C": 2.0,
+      "kind": "svm",
+      "new_weight": 1.0,
+      "view": "focus"
+    },
+    {
+      "C": 0.5,
+      "kind": "svm",
+      "new_weight": 1.0,
+      "view": "hybrid"
+    },
+    {
+      "C": 2.0,
+      "kind": "svm",
+      "new_weight": 1.0,
+      "view": "hybrid"
+    },
+    {
+      "C": 1.0,
+      "kind": "lr",
+      "new_weight": 1.0,
+      "view": "full"
+    },
+    {
+      "C": 1.0,
+      "kind": "lr",
+      "new_weight": 1.0,
+      "view": "focus"
+    },
+    {
+      "C": 1.0,
+      "kind": "lr",
+      "new_weight": 1.0,
+      "view": "hybrid"
+    },
+    {
+      "C": 1.0,
+      "kind": "svm",
+      "new_weight": 3.0,
+      "view": "focus"
+    },
+    {
+      "C": 1.0,
+      "kind": "svm",
+      "new_weight": 3.0,
+      "view": "hybrid"
+    }
+  ],
+  "live_promotion": false,
+  "phase": "7.07.3",
+  "risk_configs": [
+    {
+      "C": 0.5,
+      "balanced": false
+    },
+    {
+      "C": 0.5,
+      "balanced": true
+    },
+    {
+      "C": 2.0,
+      "balanced": false
+    },
+    {
+      "C": 2.0,
+      "balanced": true
+    }
+  ],
+  "risk_selection": "legacy positive-label macro F1 must not decrease; rank .9 legacy macro F1 + .1 synthetic exact match",
+  "selection": "intent: legacy macro F1 loss <= .02 and accuracy loss <= .01; maximize .65 legacy F1 + .35 synthetic F1; otherwise keep baseline",
+  "test_opened": false,
+  "validation_not_independent_gold": true,
+  "version": "1.9.0"
+}

@@ -1,0 +1,25 @@
+{
+  "phase": "7.06.4",
+  "checks_passed": 16,
+  "checks": [
+    "connected_screen_loaded",
+    "retry_reuses_request_id",
+    "proposal_does_not_apply",
+    "preview_does_not_apply",
+    "apply_requires_explicit_button",
+    "background_refresh_keeps_preview",
+    "explicit_revert",
+    "history_reopens_saved_messages",
+    "historical_proposal_is_not_live",
+    "mobile_composer_visible",
+    "mobile_no_horizontal_overflow",
+    "desktop_no_horizontal_overflow",
+    "delete_not_automatic",
+    "cancel_delete_preserves_history",
+    "confirmed_delete_removes_conversation",
+    "no_browser_runtime_errors"
+  ],
+  "browser": "156.0.4314.58",
+  "scope": "real exported Mobile web UI, network/auth/Planner fixtures; no real mutations",
+  "native_iphone_tested": false
+}

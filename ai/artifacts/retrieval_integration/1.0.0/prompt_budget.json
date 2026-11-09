@@ -1,0 +1,438 @@
+{
+  "scope": "One evidence chunk, short authored question, no history; not all possible user prompts or generation quality",
+  "max_input_tokens": 2048,
+  "max_observed_tokens": 1954,
+  "over_budget": [],
+  "generation_used": false,
+  "token_count_method": "input_ids.shape[-1] as used by LocalLM.count",
+  "cases": [
+    {
+      "document_id": "training_consistency_first",
+      "tokens": 1433
+    },
+    {
+      "document_id": "physical_activity_health",
+      "tokens": 1384
+    },
+    {
+      "document_id": "resistance_training_frequency_general",
+      "tokens": 990
+    },
+    {
+      "document_id": "training_goal_specificity",
+      "tokens": 1327
+    },
+    {
+      "document_id": "strength_uses_heavier_loads",
+      "tokens": 1013
+    },
+    {
+      "document_id": "hypertrophy_uses_sufficient_volume",
+      "tokens": 1048
+    },
+    {
+      "document_id": "power_intent_matters",
+      "tokens": 1014
+    },
+    {
+      "document_id": "training_equipment_flexibility",
+      "tokens": 1322
+    },
+    {
+      "document_id": "training_to_failure_optional",
+      "tokens": 1019
+    },
+    {
+      "document_id": "training_advanced_methods_optional",
+      "tokens": 998
+    },
+    {
+      "document_id": "progressive_overload_gradual",
+      "tokens": 1903
+    },
+    {
+      "document_id": "exercise_selection_supports_adherence",
+      "tokens": 1315
+    },
+    {
+      "document_id": "missed_workout_no_compensation",
+      "tokens": 1219
+    },
+    {
+      "document_id": "training_pain_boundary",
+      "tokens": 1300
+    },
+    {
+      "document_id": "food_minimally_processed_base",
+      "tokens": 1087
+    },
+    {
+      "document_id": "food_pattern_over_single_meal",
+      "tokens": 1435
+    },
+    {
+      "document_id": "food_context_is_part_of_quality",
+      "tokens": 1406
+    },
+    {
+      "document_id": "energy_balance_guides_weight_trend",
+      "tokens": 1349
+    },
+    {
+      "document_id": "named_diets_are_strategies",
+      "tokens": 1055
+    },
+    {
+      "document_id": "protein_supports_training_adaptation",
+      "tokens": 1414
+    },
+    {
+      "document_id": "protein_range_active_adults",
+      "tokens": 1047
+    },
+    {
+      "document_id": "protein_distribution_general",
+      "tokens": 1456
+    },
+    {
+      "document_id": "nutrient_timing_after_daily_totals",
+      "tokens": 1411
+    },
+    {
+      "document_id": "pre_workout_meal_context",
+      "tokens": 1431
+    },
+    {
+      "document_id": "post_workout_meal_context",
+      "tokens": 1417
+    },
+    {
+      "document_id": "hydration_is_individual",
+      "tokens": 982
+    },
+    {
+      "document_id": "creatine_evidence_general",
+      "tokens": 1383
+    },
+    {
+      "document_id": "supplements_not_foundation",
+      "tokens": 1384
+    },
+    {
+      "document_id": "supplement_label_and_regulation",
+      "tokens": 977
+    },
+    {
+      "document_id": "supplement_combinations_uncertain",
+      "tokens": 1384
+    },
+    {
+      "document_id": "nutrition_variation_preferences",
+      "tokens": 1409
+    },
+    {
+      "document_id": "nutrition_training_day_context",
+      "tokens": 1222
+    },
+    {
+      "document_id": "flexible_meal_without_compensation",
+      "tokens": 1443
+    },
+    {
+      "document_id": "alcohol_is_not_performance_strategy",
+      "tokens": 1252
+    },
+    {
+      "document_id": "vegetarian_patterns_need_planning",
+      "tokens": 1528
+    },
+    {
+      "document_id": "food_substitution_preserves_role",
+      "tokens": 1759
+    },
+    {
+      "document_id": "grocery_and_meal_prep_support_adherence",
+      "tokens": 1404
+    },
+    {
+      "document_id": "sleep_duration_adults",
+      "tokens": 908
+    },
+    {
+      "document_id": "athlete_sleep_is_individual",
+      "tokens": 1001
+    },
+    {
+      "document_id": "sleep_habits_general",
+      "tokens": 1362
+    },
+    {
+      "document_id": "sleep_tracker_is_estimate",
+      "tokens": 1339
+    },
+    {
+      "document_id": "training_and_recovery_balance",
+      "tokens": 1299
+    },
+    {
+      "document_id": "under_recovery_uses_combined_signals",
+      "tokens": 1390
+    },
+    {
+      "document_id": "soreness_is_not_progress_requirement",
+      "tokens": 1249
+    },
+    {
+      "document_id": "rest_day_is_part_of_plan",
+      "tokens": 1334
+    },
+    {
+      "document_id": "stress_and_schedule_affect_recovery",
+      "tokens": 1342
+    },
+    {
+      "document_id": "recovery_checkin_optional",
+      "tokens": 1221
+    },
+    {
+      "document_id": "recovery_change_requires_pattern",
+      "tokens": 1302
+    },
+    {
+      "document_id": "food_safety_five_keys",
+      "tokens": 1400
+    },
+    {
+      "document_id": "food_safety_temperature",
+      "tokens": 1388
+    },
+    {
+      "document_id": "food_safety_uncertainty_boundary",
+      "tokens": 1388
+    },
+    {
+      "document_id": "eating_disorder_boundary",
+      "tokens": 975
+    },
+    {
+      "document_id": "body_appearance_is_not_diagnosis",
+      "tokens": 1288
+    },
+    {
+      "document_id": "extreme_diet_and_dehydration_refusal",
+      "tokens": 1329
+    },
+    {
+      "document_id": "chest_pain_emergency",
+      "tokens": 1393
+    },
+    {
+      "document_id": "other_emergency_signs",
+      "tokens": 1398
+    },
+    {
+      "document_id": "mental_health_crisis_route_brazil",
+      "tokens": 1678
+    },
+    {
+      "document_id": "food_allergy_and_anaphylaxis_boundary",
+      "tokens": 1349
+    },
+    {
+      "document_id": "pregnancy_requires_clinical_context",
+      "tokens": 1331
+    },
+    {
+      "document_id": "clinical_and_minor_context_boundary",
+      "tokens": 1294
+    },
+    {
+      "document_id": "medication_and_hormone_boundary",
+      "tokens": 1337
+    },
+    {
+      "document_id": "unsafe_training_request_refusal",
+      "tokens": 1347
+    },
+    {
+      "document_id": "coach_does_not_write_database",
+      "tokens": 1201
+    },
+    {
+      "document_id": "question_is_not_action",
+      "tokens": 875
+    },
+    {
+      "document_id": "planner_preview_confirmation",
+      "tokens": 892
+    },
+    {
+      "document_id": "planner_local_changes",
+      "tokens": 1200
+    },
+    {
+      "document_id": "coach_text_only_limit",
+      "tokens": 890
+    },
+    {
+      "document_id": "sets_repetitions_plain",
+      "tokens": 995
+    },
+    {
+      "document_id": "rest_between_sets_context",
+      "tokens": 1107
+    },
+    {
+      "document_id": "exercise_order_priority",
+      "tokens": 1067
+    },
+    {
+      "document_id": "session_duration_not_score",
+      "tokens": 1536
+    },
+    {
+      "document_id": "warmup_gradual_start",
+      "tokens": 1039
+    },
+    {
+      "document_id": "cooldown_gradual_finish",
+      "tokens": 1041
+    },
+    {
+      "document_id": "home_training_valid",
+      "tokens": 1038
+    },
+    {
+      "document_id": "concurrent_training_tradeoffs",
+      "tokens": 1085
+    },
+    {
+      "document_id": "deload_meaning",
+      "tokens": 1122
+    },
+    {
+      "document_id": "deload_not_fixed_calendar",
+      "tokens": 1954
+    },
+    {
+      "document_id": "training_plateau_review_context",
+      "tokens": 1081
+    },
+    {
+      "document_id": "fat_intake_role",
+      "tokens": 1057
+    },
+    {
+      "document_id": "fiber_food_sources",
+      "tokens": 1061
+    },
+    {
+      "document_id": "carbohydrate_fuel",
+      "tokens": 1506
+    },
+    {
+      "document_id": "protein_amino_acids_mechanism",
+      "tokens": 1079
+    },
+    {
+      "document_id": "body_recomposition_context",
+      "tokens": 1064
+    },
+    {
+      "document_id": "weight_plateau_not_single_day",
+      "tokens": 1127
+    },
+    {
+      "document_id": "early_training_food_options",
+      "tokens": 1078
+    },
+    {
+      "document_id": "late_training_meals_sleep",
+      "tokens": 1419
+    },
+    {
+      "document_id": "substitution_portions_not_identical",
+      "tokens": 1768
+    },
+    {
+      "document_id": "menstrual_context_individual",
+      "tokens": 1136
+    },
+    {
+      "document_id": "return_after_routine_break",
+      "tokens": 1042
+    },
+    {
+      "document_id": "sleep_recovery_explanation",
+      "tokens": 1450
+    },
+    {
+      "document_id": "sleep_persistent_difficulty",
+      "tokens": 971
+    },
+    {
+      "document_id": "heat_illness_warning",
+      "tokens": 1089
+    },
+    {
+      "document_id": "stimulant_adverse_caution",
+      "tokens": 1527
+    },
+    {
+      "document_id": "substance_interaction_boundary",
+      "tokens": 1088
+    },
+    {
+      "document_id": "medication_context_not_dose",
+      "tokens": 1908
+    },
+    {
+      "document_id": "clinical_measurement_limits",
+      "tokens": 1030
+    },
+    {
+      "document_id": "bmi_formula_general",
+      "tokens": 1037
+    },
+    {
+      "document_id": "musculoskeletal_red_flag_boundary",
+      "tokens": 1039
+    },
+    {
+      "document_id": "systemic_symptom_no_guess",
+      "tokens": 1024
+    },
+    {
+      "document_id": "acute_illness_not_training_clearance",
+      "tokens": 1915
+    },
+    {
+      "document_id": "pain_text_cannot_diagnose",
+      "tokens": 1882
+    },
+    {
+      "document_id": "performance_not_rehab_policy",
+      "tokens": 1466
+    },
+    {
+      "document_id": "exam_requires_professional_policy",
+      "tokens": 1441
+    },
+    {
+      "document_id": "history_not_automatic_training_policy",
+      "tokens": 1454
+    },
+    {
+      "document_id": "redaction_not_anonymization",
+      "tokens": 1189
+    },
+    {
+      "document_id": "learning_not_automatic_edit_policy",
+      "tokens": 1451
+    },
+    {
+      "document_id": "multiple_requests_need_scope",
+      "tokens": 1448
+    }
+  ]
+}

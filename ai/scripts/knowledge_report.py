@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -16,10 +17,12 @@ def load_json(path: Path) -> dict[str, object]:
 
 
 def main() -> None:
-    sources = load_json(DATA_ROOT / "metadata" / "sources.v1.json")["sources"]
-    chunks = load_json(
-        DATA_ROOT / "knowledge" / "knowledge_chunks.v1.json"
-    )["chunks"]
+    parser = argparse.ArgumentParser(description="Resumo do conhecimento; não mede a qualidade do RAG.")
+    parser.add_argument("--release", type=Path, help="Pasta da versão, por exemplo data/knowledge/1.2.0")
+    args = parser.parse_args()
+    sources = load_json(args.release / "sources.json" if args.release else DATA_ROOT / "metadata" / "sources.v1.json")["sources"]
+    knowledge = load_json(args.release / "knowledge_chunks.json" if args.release else DATA_ROOT / "knowledge" / "knowledge_chunks.v1.json")
+    chunks = knowledge["chunks"]
 
     domain_counts = Counter(chunk["domain"] for chunk in chunks)
     mode_counts = Counter(chunk["response_mode"] for chunk in chunks)
@@ -28,7 +31,7 @@ def main() -> None:
     )
     internal_count = sum("path" in source for source in sources)
 
-    print("Base de conhecimento Evolv 1.1.0")
+    print(f"Base de conhecimento Evolv {knowledge['version']}")
     print(f"Fontes: {len(sources)} ({internal_count} internas)")
     print(f"Trechos: {len(chunks)}")
     print("Dominios:")

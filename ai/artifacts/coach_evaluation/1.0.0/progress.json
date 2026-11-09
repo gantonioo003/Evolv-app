@@ -1,0 +1,98 @@
+{
+  "status": "complete",
+  "phase": "7.05.5",
+  "initial_summary": {
+    "turns": 22,
+    "errors": 1,
+    "generated_answers": 3,
+    "generated_answers_with_inline_citation": 1,
+    "budget_cuts": 0,
+    "requested_proposals": 4,
+    "created_proposals": 0,
+    "requested_transitions": 4,
+    "completed_transitions": 0,
+    "failed_expectations": [
+      {
+        "dialogue": "failure",
+        "turn": 1,
+        "failed": [
+          "answer_generated",
+          "expected_document_retrieved"
+        ]
+      },
+      {
+        "dialogue": "move",
+        "turn": 1,
+        "failed": [
+          "requested_proposal_created"
+        ]
+      },
+      {
+        "dialogue": "move",
+        "turn": 2,
+        "failed": [
+          "requested_transition_completed"
+        ]
+      },
+      {
+        "dialogue": "exercise",
+        "turn": 1,
+        "failed": [
+          "requested_proposal_created"
+        ]
+      },
+      {
+        "dialogue": "exercise",
+        "turn": 2,
+        "failed": [
+          "requested_transition_completed"
+        ]
+      },
+      {
+        "dialogue": "food",
+        "turn": 1,
+        "failed": [
+          "requested_proposal_created"
+        ]
+      },
+      {
+        "dialogue": "food",
+        "turn": 2,
+        "failed": [
+          "requested_transition_completed"
+        ]
+      },
+      {
+        "dialogue": "rest",
+        "turn": 1,
+        "failed": [
+          "requested_proposal_created"
+        ]
+      },
+      {
+        "dialogue": "rest",
+        "turn": 2,
+        "failed": [
+          "requested_transition_completed"
+        ]
+      },
+      {
+        "dialogue": "allergy",
+        "turn": 2,
+        "failed": [
+          "controlled_response_no_generation_or_action"
+        ]
+      },
+      {
+        "dialogue": "privacy",
+        "turn": 1,
+        "failed": [
+          "controlled_response_no_generation_or_action",
+          "privacy_route"
+        ]
+      }
+    ],
+    "score_is_accuracy_or_safety_certification": false
+  },
+  "postfix_regressions_passed": 4
+}

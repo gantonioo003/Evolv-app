@@ -1,0 +1,22 @@
+{
+  "automatic_promotion": false,
+  "candidate": "1.8.0",
+  "deltas": {
+    "intent": {
+      "external_macro_f1_change": 0.04224770283854834,
+      "test_macro_f1_change": -0.012257966324447422
+    },
+    "risk": {
+      "external_macro_f1_change": 0.045958898857449526,
+      "test_macro_f1_change": -0.04310970158794164
+    }
+  },
+  "disposition": "retain_experimental_candidate_and_previous_baseline; no overall test-F1 improvement",
+  "further_human_review_required_for_this_learning_step": false,
+  "next_educational_phase": "7.03.1 TinyLM tokenizer",
+  "previous_comparison_baseline": "1.6.0",
+  "production_approved": false,
+  "selection_unchanged_after_test": true,
+  "test_used_as_release_diagnostic_not_for_retraining": true,
+  "validation_reference_is_ai_not_independent_human_gold": true
+}

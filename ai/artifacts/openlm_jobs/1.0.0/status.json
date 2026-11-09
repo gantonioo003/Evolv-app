@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "training_started": true,
+  "selected_epoch": 3,
+  "optimizer_steps": 63,
+  "validation_nll": 1.8846803056225132,
+  "test_evaluated": false
+}

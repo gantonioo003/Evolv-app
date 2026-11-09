@@ -1,0 +1,3 @@
+# Optional: export the recorded learning curves; not needed to train.
+-r requirements.tinylm.txt
+matplotlib==3.10.8

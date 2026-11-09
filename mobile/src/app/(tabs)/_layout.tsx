@@ -10,14 +10,14 @@ import { useEffect, useState, type ComponentProps } from "react";
 import {
   ActivityIndicator,
   Animated,
-  Easing,
   Platform,
-  Pressable,
   StyleSheet,
   Text,
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
+import { useReducedMotion } from "@/context/motion-context";
 
 import { colors, shadows, typography } from "@/constants/theme";
 import { useAuth } from "@/context/auth-context";
@@ -25,13 +25,14 @@ import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 
 export default function TabsLayout() {
+  const reducedMotion = useReducedMotion();
   const { palette } = useAppTheme();
   const { isLoading, session } = useAuth();
-  const { hasLoaded, isLoading: isDataLoading, profile } = useEvolvData();
+  const { hasLoaded, profile } = useEvolvData();
 
   if (isLoading) return null;
   if (!session) return <Redirect href="/login" />;
-  if (!hasLoaded || isDataLoading) {
+  if (!hasLoaded) {
     return (
       <View style={[styles.loadingScreen, { backgroundColor: palette.page }]}>
         <Text style={[styles.loadingBrand, { color: palette.text }]}>
@@ -53,7 +54,7 @@ export default function TabsLayout() {
     <Tabs
       tabBar={(props) => <AppTabBar {...props} />}
       screenOptions={{
-        animation: "shift",
+        animation: reducedMotion ? "none" : "shift",
         headerShown: false,
         sceneStyle: { backgroundColor: palette.page },
       }}
@@ -81,7 +82,27 @@ type AppTabBarProps = Parameters<
 
 function AppTabBar({ state, descriptors, navigation }: AppTabBarProps) {
   const { palette } = useAppTheme();
+  const reducedMotion = useReducedMotion();
   const insets = useSafeAreaInsets();
+  const [width, setWidth] = useState(0);
+  const [selection] = useState(() => new Animated.Value(state.index));
+  const itemWidth = Math.max(0, width - 12) / state.routes.length;
+
+  useEffect(() => {
+    if (reducedMotion) {
+      selection.setValue(state.index);
+      return;
+    }
+    const animation = Animated.spring(selection, {
+      toValue: state.index,
+      damping: 24,
+      stiffness: 260,
+      mass: 0.8,
+      useNativeDriver: Platform.OS !== "web",
+    });
+    animation.start();
+    return () => animation.stop();
+  }, [reducedMotion, selection, state.index]);
 
   return (
     <View
@@ -89,11 +110,29 @@ function AppTabBar({ state, descriptors, navigation }: AppTabBarProps) {
       style={[styles.tabBarPosition, { bottom: Math.max(insets.bottom, 8) }]}
     >
       <View
+        accessibilityRole="tablist"
+        onLayout={(event) => setWidth(event.nativeEvent.layout.width)}
         style={[
           styles.tabBar,
           { backgroundColor: palette.tabBar, borderColor: palette.border },
         ]}
       >
+        <Animated.View
+          pointerEvents="none"
+          testID="tab-selection"
+          style={[
+            styles.tabSelection,
+            {
+              width: itemWidth,
+              backgroundColor: palette.elevated,
+              borderColor: palette.border,
+              opacity: width ? 1 : 0,
+              transform: [
+                { translateX: Animated.multiply(selection, itemWidth) },
+              ],
+            },
+          ]}
+        />
         {state.routes.map((route, index) => {
           const focused = state.index === index;
           const Icon =
@@ -109,6 +148,8 @@ function AppTabBar({ state, descriptors, navigation }: AppTabBarProps) {
             if (!focused && !event.defaultPrevented)
               navigation.navigate(route.name, route.params);
           };
+          const onLongPress = () =>
+            navigation.emit({ type: "tabLongPress", target: route.key });
 
           return (
             <AppTabItem
@@ -117,6 +158,7 @@ function AppTabBar({ state, descriptors, navigation }: AppTabBarProps) {
               key={route.key}
               label={String(label)}
               onPress={onPress}
+              onLongPress={onLongPress}
               palette={palette}
             />
           );
@@ -131,25 +173,35 @@ function AppTabItem({
   icon: Icon,
   label,
   onPress,
+  onLongPress,
   palette,
 }: {
   focused: boolean;
   icon: typeof CalendarDays;
   label: string;
   onPress: () => void;
+  onLongPress: () => void;
   palette: AppThemePalette;
 }) {
   const [focusProgress] = useState(() => new Animated.Value(focused ? 1 : 0));
+  const reducedMotion = useReducedMotion();
   const color = focused ? palette.text : palette.faint;
 
   useEffect(() => {
-    Animated.timing(focusProgress, {
+    if (reducedMotion) {
+      focusProgress.setValue(focused ? 1 : 0);
+      return;
+    }
+    const animation = Animated.spring(focusProgress, {
       toValue: focused ? 1 : 0,
-      duration: 180,
-      easing: Easing.out(Easing.cubic),
+      damping: 22,
+      stiffness: 300,
+      mass: 0.7,
       useNativeDriver: Platform.OS !== "web",
-    }).start();
-  }, [focusProgress, focused]);
+    });
+    animation.start();
+    return () => animation.stop();
+  }, [focusProgress, focused, reducedMotion]);
 
   const scale = focusProgress.interpolate({
     inputRange: [0, 1],
@@ -163,9 +215,13 @@ function AppTabItem({
   return (
     <Pressable
       accessibilityRole="tab"
+      accessibilityLabel={label}
+      aria-selected={focused}
       accessibilityState={focused ? { selected: true } : {}}
       hitSlop={6}
       onPress={onPress}
+      onLongPress={onLongPress}
+      pressScale={0.94}
       style={({ pressed }) => [
         styles.tabItem,
         pressed && styles.tabItemPressed,
@@ -175,9 +231,6 @@ function AppTabItem({
         style={[
           styles.tabItemContent,
           {
-            backgroundColor: focused ? palette.elevated : "transparent",
-            borderColor: focused ? palette.border : "transparent",
-            borderWidth: focused ? StyleSheet.hairlineWidth : 0,
             opacity: focused ? 1 : 0.72,
             transform: [{ translateY }, { scale }],
           },
@@ -217,19 +270,28 @@ const styles = StyleSheet.create({
   },
   tabItem: {
     flex: 1,
-    minWidth: 58,
+    minWidth: 0,
     alignItems: "center",
     justifyContent: "center",
   },
   tabItemContent: {
-    minWidth: 60,
+    width: "100%",
+    height: 56,
     alignItems: "center",
     justifyContent: "center",
     gap: 3,
     borderRadius: 22,
-    paddingHorizontal: 10,
+    paddingHorizontal: 2,
     paddingVertical: 7,
   },
-  tabItemPressed: { opacity: 0.58 },
+  tabSelection: {
+    position: "absolute",
+    left: 6,
+    top: 4,
+    bottom: 4,
+    borderRadius: 24,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  tabItemPressed: { opacity: 0.8 },
   tabLabel: { fontFamily: typography.body, fontSize: 11, fontWeight: "500" },
 });

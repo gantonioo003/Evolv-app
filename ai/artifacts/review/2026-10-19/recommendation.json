@@ -1,0 +1,9 @@
+{
+  "automatic_app_promotion": false,
+  "models": {
+    "intent": "1.6.0",
+    "risk": "1.6.0"
+  },
+  "records_preserved": 12179,
+  "selected_by": "validation_macro_f1_supported_only"
+}

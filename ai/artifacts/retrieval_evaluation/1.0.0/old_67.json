@@ -1,0 +1,2282 @@
+{
+  "validation": {
+    "metrics": {
+      "positive_queries": 52,
+      "negative_queries": 10,
+      "hit_at_1": 0.038461538461538464,
+      "hit_at_3": 0.057692307692307696,
+      "mrr_at_3": 0.04807692307692308,
+      "rejection_rate": 1.0,
+      "by_category": {
+        "followup": {
+          "positive_queries": 10,
+          "negative_queries": 0,
+          "hit_at_1": 0.2,
+          "hit_at_3": 0.3,
+          "mrr_at_3": 0.25,
+          "rejection_rate": null
+        },
+        "negative": {
+          "positive_queries": 0,
+          "negative_queries": 10,
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "mrr_at_3": null,
+          "rejection_rate": 1.0
+        },
+        "single": {
+          "positive_queries": 40,
+          "negative_queries": 0,
+          "hit_at_1": 0.0,
+          "hit_at_3": 0.0,
+          "mrr_at_3": 0.0,
+          "rejection_rate": null
+        },
+        "switch": {
+          "positive_queries": 2,
+          "negative_queries": 0,
+          "hit_at_1": 0.0,
+          "hit_at_3": 0.0,
+          "mrr_at_3": 0.0,
+          "rejection_rate": null
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "kb-dev-01",
+        "category": "single",
+        "question": "Quantas vezes faço o movimento em 3x10?",
+        "history": [],
+        "expected": [
+          "sets_repetitions_plain"
+        ],
+        "rank": null,
+        "seconds": 0.0001919999485835433,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-02",
+        "category": "single",
+        "question": "Pra que descansar entre séries?",
+        "history": [],
+        "expected": [
+          "rest_between_sets_context"
+        ],
+        "rank": null,
+        "seconds": 0.00011060002725571394,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.4920256733894348
+          },
+          {
+            "document_id": "recovery_change_requires_pattern",
+            "score": 0.47595179080963135
+          },
+          {
+            "document_id": "training_consistency_first",
+            "score": 0.46843963861465454
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-03",
+        "category": "single",
+        "question": "Muda algo começar pelos acessórios?",
+        "history": [],
+        "expected": [
+          "exercise_order_priority"
+        ],
+        "rank": null,
+        "seconds": 8.399994112551212e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "grocery_and_meal_prep_support_adherence",
+            "score": 0.4800555408000946
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-04",
+        "category": "single",
+        "question": "Só tenho meia hora: o treino não vale?",
+        "history": [],
+        "expected": [
+          "session_duration_not_score"
+        ],
+        "rank": null,
+        "seconds": 8.140003774315119e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.5985709428787231
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5098401308059692
+          },
+          {
+            "document_id": "unsafe_training_request_refusal",
+            "score": 0.5097984671592712
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-05",
+        "category": "single",
+        "question": "Preciso aquecer como?",
+        "history": [],
+        "expected": [
+          "warmup_gradual_start"
+        ],
+        "rank": null,
+        "seconds": 8.299993351101875e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_safety_temperature",
+            "score": 0.4712822735309601
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-06",
+        "category": "single",
+        "question": "Alongar depois tira a dor do dia seguinte?",
+        "history": [],
+        "expected": [
+          "cooldown_gradual_finish"
+        ],
+        "rank": null,
+        "seconds": 0.00011470005847513676,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-07",
+        "category": "single",
+        "question": "Consigo fortalecer sem academia?",
+        "history": [],
+        "expected": [
+          "home_training_valid"
+        ],
+        "rank": null,
+        "seconds": 8.569995407015085e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "stress_and_schedule_affect_recovery",
+            "score": 0.48899394273757935
+          },
+          {
+            "document_id": "training_consistency_first",
+            "score": 0.45591026544570923
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-08",
+        "category": "single",
+        "question": "Cardio sempre faz perder músculo?",
+        "history": [],
+        "expected": [
+          "concurrent_training_tradeoffs"
+        ],
+        "rank": null,
+        "seconds": 7.810001261532307e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.5220069885253906
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-09",
+        "category": "single",
+        "question": "Deload significa parar totalmente?",
+        "history": [],
+        "expected": [
+          "deload_meaning"
+        ],
+        "rank": null,
+        "seconds": 8.279993198812008e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-10",
+        "category": "single",
+        "question": "Todo mundo faz deload a cada quatro semanas?",
+        "history": [],
+        "expected": [
+          "deload_not_fixed_calendar"
+        ],
+        "rank": null,
+        "seconds": 7.579999510198832e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-11",
+        "category": "single",
+        "question": "Não subi peso hoje, aumentamos tudo?",
+        "history": [],
+        "expected": [
+          "training_plateau_review_context"
+        ],
+        "rank": null,
+        "seconds": 9.270000737160444e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "energy_balance_guides_weight_trend",
+            "score": 0.4619772136211395
+          },
+          {
+            "document_id": "named_diets_are_strategies",
+            "score": 0.45857685804367065
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-12",
+        "category": "single",
+        "question": "Pra emagrecer tiro toda gordura?",
+        "history": [],
+        "expected": [
+          "fat_intake_role"
+        ],
+        "rank": null,
+        "seconds": 7.700000423938036e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "energy_balance_guides_weight_trend",
+            "score": 0.46044039726257324
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-13",
+        "category": "single",
+        "question": "Que comida tem fibras?",
+        "history": [],
+        "expected": [
+          "fiber_food_sources"
+        ],
+        "rank": null,
+        "seconds": 7.569999434053898e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "vegetarian_patterns_need_planning",
+            "score": 0.48747366666793823
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-14",
+        "category": "single",
+        "question": "Pra que carboidrato no treino?",
+        "history": [],
+        "expected": [
+          "carbohydrate_fuel"
+        ],
+        "rank": null,
+        "seconds": 8.180004078894854e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.5950479507446289
+          },
+          {
+            "document_id": "post_workout_meal_context",
+            "score": 0.5861861109733582
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5694257020950317
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-15",
+        "category": "single",
+        "question": "Como a proteína participa da adaptação?",
+        "history": [],
+        "expected": [
+          "protein_amino_acids_mechanism"
+        ],
+        "rank": null,
+        "seconds": 8.029991295188665e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.7415468692779541
+          },
+          {
+            "document_id": "protein_distribution_general",
+            "score": 0.5061967968940735
+          },
+          {
+            "document_id": "post_workout_meal_context",
+            "score": 0.4503462016582489
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-16",
+        "category": "single",
+        "question": "Peso igual quer dizer composição igual?",
+        "history": [],
+        "expected": [
+          "body_recomposition_context"
+        ],
+        "rank": null,
+        "seconds": 7.589999586343765e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-17",
+        "category": "single",
+        "question": "Meu peso parou: acabou a perda de gordura?",
+        "history": [],
+        "expected": [
+          "weight_plateau_not_single_day"
+        ],
+        "rank": null,
+        "seconds": 7.660000119358301e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "energy_balance_guides_weight_trend",
+            "score": 0.4694023132324219
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-18",
+        "category": "single",
+        "question": "Treino cedo: jejum ou café reforçado sempre?",
+        "history": [],
+        "expected": [
+          "early_training_food_options"
+        ],
+        "rank": null,
+        "seconds": 7.790001109242439e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.48240137100219727
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-19",
+        "category": "single",
+        "question": "Treino de noite: preciso pular a refeição?",
+        "history": [],
+        "expected": [
+          "late_training_meals_sleep"
+        ],
+        "rank": null,
+        "seconds": 7.51999905332923e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-20",
+        "category": "single",
+        "question": "Troco cem gramas por cem gramas de qualquer alimento?",
+        "history": [],
+        "expected": [
+          "substitution_portions_not_identical"
+        ],
+        "rank": null,
+        "seconds": 7.589999586343765e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_substitution_preserves_role",
+            "score": 0.4686921238899231
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-21",
+        "category": "single",
+        "question": "Tenho que montar treino por fase do ciclo?",
+        "history": [],
+        "expected": [
+          "menstrual_context_individual"
+        ],
+        "rank": null,
+        "seconds": 7.780001033097506e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.5366306304931641
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5348137617111206
+          },
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.4559990167617798
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-22",
+        "category": "single",
+        "question": "Depois de viagem volto no máximo?",
+        "history": [],
+        "expected": [
+          "return_after_routine_break"
+        ],
+        "rank": null,
+        "seconds": 7.54999928176403e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-23",
+        "category": "single",
+        "question": "Sono ajuda em quê na recuperação?",
+        "history": [],
+        "expected": [
+          "sleep_recovery_explanation"
+        ],
+        "rank": null,
+        "seconds": 8.430005982518196e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "under_recovery_uses_combined_signals",
+            "score": 0.5498059988021851
+          },
+          {
+            "document_id": "stress_and_schedule_affect_recovery",
+            "score": 0.5224846005439758
+          },
+          {
+            "document_id": "training_to_failure_optional",
+            "score": 0.46916306018829346
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-24",
+        "category": "single",
+        "question": "Durmo bastante e continuo com sono todo dia.",
+        "history": [],
+        "expected": [
+          "sleep_persistent_difficulty"
+        ],
+        "rank": null,
+        "seconds": 7.850001566112041e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.5822365880012512
+          },
+          {
+            "document_id": "sleep_duration_adults",
+            "score": 0.5389527678489685
+          },
+          {
+            "document_id": "athlete_sleep_is_individual",
+            "score": 0.48783186078071594
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-25",
+        "category": "single",
+        "question": "Fiquei confuso e quase desmaiei treinando no calor.",
+        "history": [],
+        "expected": [
+          "heat_illness_warning"
+        ],
+        "rank": null,
+        "seconds": 7.509998977184296e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-26",
+        "category": "single",
+        "question": "Coração disparou depois do pré-treino, tomo mais?",
+        "history": [],
+        "expected": [
+          "stimulant_adverse_caution"
+        ],
+        "rank": null,
+        "seconds": 7.489998824894428e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-27",
+        "category": "single",
+        "question": "Posso misturar suplemento com meu remédio?",
+        "history": [],
+        "expected": [
+          "substance_interaction_boundary"
+        ],
+        "rank": null,
+        "seconds": 7.670000195503235e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "supplement_combinations_uncertain",
+            "score": 0.53156578540802
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-28",
+        "category": "single",
+        "question": "Tomo remédio mas não estou pedindo para mudar a dose.",
+        "history": [],
+        "expected": [
+          "medication_context_not_dose"
+        ],
+        "rank": null,
+        "seconds": 7.569999434053898e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-29",
+        "category": "single",
+        "question": "IMC mostra meu percentual de gordura?",
+        "history": [],
+        "expected": [
+          "clinical_measurement_limits"
+        ],
+        "rank": null,
+        "seconds": 7.51999905332923e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-30",
+        "category": "single",
+        "question": "Como se calcula IMC?",
+        "history": [],
+        "expected": [
+          "bmi_formula_general"
+        ],
+        "rank": null,
+        "seconds": 7.479998748749495e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-31",
+        "category": "single",
+        "question": "Torci o joelho e não consigo apoiar.",
+        "history": [],
+        "expected": [
+          "musculoskeletal_red_flag_boundary"
+        ],
+        "rank": null,
+        "seconds": 7.579999510198832e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-32",
+        "category": "single",
+        "question": "Cansaço prova que tenho anemia?",
+        "history": [],
+        "expected": [
+          "systemic_symptom_no_guess"
+        ],
+        "rank": null,
+        "seconds": 7.499998901039362e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-33",
+        "category": "single",
+        "question": "Estou gripado e com febre: já dá pra treino pesado?",
+        "history": [],
+        "expected": [
+          "acute_illness_not_training_clearance"
+        ],
+        "rank": null,
+        "seconds": 7.579999510198832e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "chest_pain_emergency",
+            "score": 0.4732613265514374
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-34",
+        "category": "single",
+        "question": "Joelho incomodou no vôlei: qual é a causa?",
+        "history": [],
+        "expected": [
+          "pain_text_cannot_diagnose"
+        ],
+        "rank": null,
+        "seconds": 7.599999662488699e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-35",
+        "category": "single",
+        "question": "Treinar explosão resolve esse desconforto?",
+        "history": [],
+        "expected": [
+          "performance_not_rehab_policy"
+        ],
+        "rank": null,
+        "seconds": 7.589999586343765e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-36",
+        "category": "single",
+        "question": "Qual exame devo fazer pra essa dor?",
+        "history": [],
+        "expected": [
+          "exam_requires_professional_policy"
+        ],
+        "rank": null,
+        "seconds": 7.449998520314693e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-37",
+        "category": "single",
+        "question": "Tudo que converso vira treino do modelo?",
+        "history": [],
+        "expected": [
+          "history_not_automatic_training_policy"
+        ],
+        "rank": null,
+        "seconds": 7.700000423938036e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.6006029844284058
+          },
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.4729430079460144
+          },
+          {
+            "document_id": "unsafe_training_request_refusal",
+            "score": 0.45837101340293884
+          }
+        ]
+      },
+      {
+        "id": "kb-dev-38",
+        "category": "single",
+        "question": "Tirando o nome fica tudo anônimo?",
+        "history": [],
+        "expected": [
+          "redaction_not_anonymization"
+        ],
+        "rank": null,
+        "seconds": 7.529999129474163e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-39",
+        "category": "single",
+        "question": "Só perguntar sobre troca já muda minha ficha?",
+        "history": [],
+        "expected": [
+          "learning_not_automatic_edit_policy"
+        ],
+        "rank": null,
+        "seconds": 7.429998368024826e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "kb-dev-40",
+        "category": "single",
+        "question": "Troca refeição, muda o treino e aumenta carga de uma vez.",
+        "history": [],
+        "expected": [
+          "multiple_requests_need_scope"
+        ],
+        "rank": null,
+        "seconds": 7.700000423938036e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.6229109764099121
+          },
+          {
+            "document_id": "nutrient_timing_after_daily_totals",
+            "score": 0.6094173192977905
+          },
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.5829150080680847
+          }
+        ]
+      },
+      {
+        "id": "val-f01",
+        "category": "followup",
+        "question": "E se for à noite e eu for dormir logo depois?",
+        "history": [
+          {
+            "role": "user",
+            "content": "O que comer antes de treinar de manhã?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "late_training_meals_sleep"
+        ],
+        "rank": null,
+        "seconds": 7.690000347793102e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-f02",
+        "category": "followup",
+        "question": "E quando chego perto da falha?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Quanto descansar entre as séries?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "rest_between_sets_context"
+        ],
+        "rank": null,
+        "seconds": 7.740000728517771e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-f03",
+        "category": "followup",
+        "question": "E se fizer os dois na mesma sessão?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Como organizo cardio junto com musculação?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "concurrent_training_tradeoffs"
+        ],
+        "rank": null,
+        "seconds": 7.499998901039362e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-f04",
+        "category": "followup",
+        "question": "Mas precisa ser a cada quatro semanas?",
+        "history": [
+          {
+            "role": "user",
+            "content": "O que é uma semana de deload?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "deload_not_fixed_calendar"
+        ],
+        "rank": null,
+        "seconds": 7.639999967068434e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.4622088372707367
+          }
+        ]
+      },
+      {
+        "id": "val-f05",
+        "category": "followup",
+        "question": "E isso é um diagnóstico preciso do meu sono?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Meu relógio diz que dormi mal."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "sleep_tracker_is_estimate"
+        ],
+        "rank": 1,
+        "seconds": 7.949990686029196e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_tracker_is_estimate",
+            "score": 0.481280654668808
+          },
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.47182703018188477
+          }
+        ]
+      },
+      {
+        "id": "val-f06",
+        "category": "followup",
+        "question": "E só um pouquinho antes de treinar?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Tenho alergia a amendoim."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "food_allergy_and_anaphylaxis_boundary"
+        ],
+        "rank": 1,
+        "seconds": 7.82000133767724e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_allergy_and_anaphylaxis_boundary",
+            "score": 0.5099728107452393
+          }
+        ]
+      },
+      {
+        "id": "val-f07",
+        "category": "followup",
+        "question": "E se eu não conseguir aumentar hoje?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Como progredir a carga no treino?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "training_plateau_review_context",
+          "progressive_overload_gradual"
+        ],
+        "rank": null,
+        "seconds": 8.020002860575914e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.6537601947784424
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5919218063354492
+          },
+          {
+            "document_id": "unsafe_training_request_refusal",
+            "score": 0.5623159408569336
+          }
+        ]
+      },
+      {
+        "id": "val-f08",
+        "category": "followup",
+        "question": "Então isso mostra quanta gordura tenho?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Meu IMC está alto mas tenho bastante músculo."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "clinical_measurement_limits",
+          "bmi_formula_general"
+        ],
+        "rank": null,
+        "seconds": 8.649996016174555e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-f09",
+        "category": "followup",
+        "question": "E usando só meu próprio peso?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Consigo treinar força sem academia?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "home_training_valid",
+          "training_equipment_flexibility"
+        ],
+        "rank": 2,
+        "seconds": 8.380005601793528e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5871870517730713
+          },
+          {
+            "document_id": "training_equipment_flexibility",
+            "score": 0.5064412951469421
+          },
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.4994124174118042
+          }
+        ]
+      },
+      {
+        "id": "val-f10",
+        "category": "switch",
+        "question": "Mudando de assunto: como aquecer antes de correr?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Fale sobre alimentação e peso corporal."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "warmup_gradual_start"
+        ],
+        "rank": null,
+        "seconds": 7.6299998909235e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-f11",
+        "category": "switch",
+        "question": "Outra dúvida: o que significa uma série de exercício?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Quero saber sobre fibras na alimentação."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "sets_repetitions_plain"
+        ],
+        "rank": null,
+        "seconds": 7.720000576227903e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.6440954208374023
+          },
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.6433738470077515
+          },
+          {
+            "document_id": "rest_day_is_part_of_plan",
+            "score": 0.5744152069091797
+          }
+        ]
+      },
+      {
+        "id": "val-f12",
+        "category": "followup",
+        "question": "E aumentar explosão resolve essa dor?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Depois do vôlei meu joelho incomoda."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "performance_not_rehab_policy",
+          "pain_text_cannot_diagnose"
+        ],
+        "rank": null,
+        "seconds": 7.670000195503235e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n01",
+        "category": "negative",
+        "question": "Qual é a taxa Selic hoje?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.54999928176403e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n02",
+        "category": "negative",
+        "question": "Quem ganhou a eleição de prefeito?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.54001084715128e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n03",
+        "category": "negative",
+        "question": "Qual ônibus passa no aeroporto?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.530010771006346e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n04",
+        "category": "negative",
+        "question": "Faça um poema sobre o oceano.",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.429998368024826e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n05",
+        "category": "negative",
+        "question": "Qual o saldo da minha conta bancária?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.459998596459627e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n06",
+        "category": "negative",
+        "question": "Como trocar a placa-mãe do computador?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.539999205619097e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n07",
+        "category": "negative",
+        "question": "Quanto custa um voo para Paris?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.43999844416976e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n08",
+        "category": "negative",
+        "question": "Qual filme ganhou o festival ontem?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.43999844416976e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n09",
+        "category": "negative",
+        "question": "Explique herança em Java.",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.429998368024826e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "val-n10",
+        "category": "negative",
+        "question": "Qual a previsão do dólar amanhã?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.51999905332923e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      }
+    ]
+  },
+  "reserved": {
+    "metrics": {
+      "positive_queries": 32,
+      "negative_queries": 10,
+      "hit_at_1": 0.0625,
+      "hit_at_3": 0.0625,
+      "mrr_at_3": 0.0625,
+      "rejection_rate": 0.9,
+      "by_category": {
+        "ambiguous": {
+          "positive_queries": 0,
+          "negative_queries": 2,
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "mrr_at_3": null,
+          "rejection_rate": 0.5
+        },
+        "followup": {
+          "positive_queries": 12,
+          "negative_queries": 0,
+          "hit_at_1": 0.0,
+          "hit_at_3": 0.0,
+          "mrr_at_3": 0.0,
+          "rejection_rate": null
+        },
+        "negative": {
+          "positive_queries": 0,
+          "negative_queries": 8,
+          "hit_at_1": null,
+          "hit_at_3": null,
+          "mrr_at_3": null,
+          "rejection_rate": 1.0
+        },
+        "single": {
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "hit_at_1": 0.0625,
+          "hit_at_3": 0.0625,
+          "mrr_at_3": 0.0625,
+          "rejection_rate": null
+        },
+        "switch": {
+          "positive_queries": 4,
+          "negative_queries": 0,
+          "hit_at_1": 0.25,
+          "hit_at_3": 0.25,
+          "mrr_at_3": 0.25,
+          "rejection_rate": null
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "held-s01",
+        "category": "single",
+        "question": "O que significam os números de uma ficha tipo quatro blocos de oito movimentos?",
+        "history": [],
+        "expected": [
+          "sets_repetitions_plain"
+        ],
+        "rank": null,
+        "seconds": 8.210004307329655e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-s02",
+        "category": "single",
+        "question": "Se eu sair correndo forte sem preparar nada, o que o aquecimento deveria fazer?",
+        "history": [],
+        "expected": [
+          "warmup_gradual_start"
+        ],
+        "rank": null,
+        "seconds": 7.810001261532307e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_safety_temperature",
+            "score": 0.4724072217941284
+          }
+        ]
+      },
+      {
+        "id": "held-s03",
+        "category": "single",
+        "question": "Posso substituir a academia por exercícios com elástico em casa?",
+        "history": [],
+        "expected": [
+          "home_training_valid",
+          "training_equipment_flexibility"
+        ],
+        "rank": null,
+        "seconds": 7.830001413822174e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.5838526487350464
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5549294948577881
+          },
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.4994502067565918
+          }
+        ]
+      },
+      {
+        "id": "held-s04",
+        "category": "single",
+        "question": "Menos séries numa semana para aliviar a fadiga tem algum nome?",
+        "history": [],
+        "expected": [
+          "deload_meaning"
+        ],
+        "rank": null,
+        "seconds": 7.940002251416445e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.5203436017036438
+          },
+          {
+            "document_id": "flexible_meal_without_compensation",
+            "score": 0.5133261680603027
+          },
+          {
+            "document_id": "resistance_training_frequency_general",
+            "score": 0.49081888794898987
+          }
+        ]
+      },
+      {
+        "id": "held-s05",
+        "category": "single",
+        "question": "Musculação e bicicleta na mesma rotina acabam com a hipertrofia?",
+        "history": [],
+        "expected": [
+          "concurrent_training_tradeoffs"
+        ],
+        "rank": null,
+        "seconds": 8.210004307329655e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5791811347007751
+          },
+          {
+            "document_id": "soreness_is_not_progress_requirement",
+            "score": 0.5694782733917236
+          },
+          {
+            "document_id": "physical_activity_health",
+            "score": 0.5399149656295776
+          }
+        ]
+      },
+      {
+        "id": "held-s06",
+        "category": "single",
+        "question": "Preciso tirar azeite e todas as gorduras para emagrecer?",
+        "history": [],
+        "expected": [
+          "fat_intake_role"
+        ],
+        "rank": null,
+        "seconds": 7.660000119358301e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-s07",
+        "category": "single",
+        "question": "Feijão e aveia podem ajudar a colocar mais fibra no meu dia?",
+        "history": [],
+        "expected": [
+          "fiber_food_sources"
+        ],
+        "rank": null,
+        "seconds": 7.569999434053898e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-s08",
+        "category": "single",
+        "question": "Como a proteína ajuda a renovar tecido muscular?",
+        "history": [],
+        "expected": [
+          "protein_amino_acids_mechanism",
+          "protein_supports_training_adaptation"
+        ],
+        "rank": 1,
+        "seconds": 7.700000423938036e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.6912198066711426
+          },
+          {
+            "document_id": "protein_distribution_general",
+            "score": 0.5865153074264526
+          },
+          {
+            "document_id": "creatine_evidence_general",
+            "score": 0.5485255122184753
+          }
+        ]
+      },
+      {
+        "id": "held-s09",
+        "category": "single",
+        "question": "Minha balança não mudou mas minhas medidas mudaram. É possível?",
+        "history": [],
+        "expected": [
+          "body_recomposition_context",
+          "clinical_measurement_limits"
+        ],
+        "rank": null,
+        "seconds": 7.54999928176403e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-s10",
+        "category": "single",
+        "question": "Tenho que adaptar meu treino a cada fase menstrual de forma obrigatória?",
+        "history": [],
+        "expected": [
+          "menstrual_context_individual"
+        ],
+        "rank": null,
+        "seconds": 7.87999015301466e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5285540223121643
+          },
+          {
+            "document_id": "nutrient_timing_after_daily_totals",
+            "score": 0.5050905346870422
+          },
+          {
+            "document_id": "missed_workout_no_compensation",
+            "score": 0.4701334834098816
+          }
+        ]
+      },
+      {
+        "id": "held-s11",
+        "category": "single",
+        "question": "Quem já dorme bastante mas fica sonolento constantemente deve só treinar mais?",
+        "history": [],
+        "expected": [
+          "sleep_persistent_difficulty",
+          "systemic_symptom_no_guess"
+        ],
+        "rank": null,
+        "seconds": 0.00011450005695223808,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "athlete_sleep_is_individual",
+            "score": 0.6995750665664673
+          },
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.6158344745635986
+          },
+          {
+            "document_id": "sleep_duration_adults",
+            "score": 0.5702450275421143
+          }
+        ]
+      },
+      {
+        "id": "held-s12",
+        "category": "single",
+        "question": "Suplemento pode interferir com um medicamento prescrito?",
+        "history": [],
+        "expected": [
+          "substance_interaction_boundary"
+        ],
+        "rank": null,
+        "seconds": 8.719996549189091e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "supplement_combinations_uncertain",
+            "score": 0.6360713839530945
+          },
+          {
+            "document_id": "medication_and_hormone_boundary",
+            "score": 0.45364588499069214
+          }
+        ]
+      },
+      {
+        "id": "held-s13",
+        "category": "single",
+        "question": "Treinei no sol, fiquei confuso e desmaiei.",
+        "history": [],
+        "expected": [
+          "heat_illness_warning"
+        ],
+        "rank": null,
+        "seconds": 7.51999905332923e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-s14",
+        "category": "single",
+        "question": "Tirar meu nome da conversa impede qualquer identificação?",
+        "history": [],
+        "expected": [
+          "redaction_not_anonymization"
+        ],
+        "rank": null,
+        "seconds": 7.469998672604561e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-s15",
+        "category": "single",
+        "question": "Eu estava só perguntando sobre trocar um alimento, isso já altera minha dieta?",
+        "history": [],
+        "expected": [
+          "learning_not_automatic_edit_policy",
+          "question_is_not_action"
+        ],
+        "rank": null,
+        "seconds": 7.660000119358301e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_pattern_over_single_meal",
+            "score": 0.45421934127807617
+          }
+        ]
+      },
+      {
+        "id": "held-s16",
+        "category": "single",
+        "question": "Posso mudar treino e dieta de uma vez sem analisar cada proposta?",
+        "history": [],
+        "expected": [
+          "multiple_requests_need_scope"
+        ],
+        "rank": null,
+        "seconds": 7.860001642256975e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "nutrition_variation_preferences",
+            "score": 0.6262394189834595
+          },
+          {
+            "document_id": "nutrition_training_day_context",
+            "score": 0.5707216262817383
+          },
+          {
+            "document_id": "flexible_meal_without_compensation",
+            "score": 0.5687602162361145
+          }
+        ]
+      },
+      {
+        "id": "held-f01",
+        "category": "followup",
+        "question": "E se eu mudar para depois das nove da noite e deitar em seguida?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Meu treino começa às seis da manhã; como pensar na comida?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "late_training_meals_sleep"
+        ],
+        "rank": null,
+        "seconds": 7.589999586343765e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-f02",
+        "category": "followup",
+        "question": "E para potência, tem diferença fazer ambos no mesmo dia?",
+        "history": [
+          {
+            "role": "user",
+            "content": "O que muda ao juntar corrida e treino de força?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "concurrent_training_tradeoffs"
+        ],
+        "rank": null,
+        "seconds": 7.429998368024826e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-f03",
+        "category": "followup",
+        "question": "Mas e quando as repetições caem muito na série seguinte?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Eu devo descansar entre séries de agachamento?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "rest_between_sets_context"
+        ],
+        "rank": null,
+        "seconds": 7.54999928176403e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-f04",
+        "category": "followup",
+        "question": "Então sou obrigado a fazer toda vez que tiver uma semana difícil?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Quero saber o que é deload."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "deload_not_fixed_calendar"
+        ],
+        "rank": null,
+        "seconds": 7.479998748749495e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-f05",
+        "category": "followup",
+        "question": "E ele separa músculo de gordura?",
+        "history": [
+          {
+            "role": "user",
+            "content": "O IMC pode ser usado para avaliar peso?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "clinical_measurement_limits"
+        ],
+        "rank": null,
+        "seconds": 7.810001261532307e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.5609720349311829
+          },
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.4826260209083557
+          },
+          {
+            "document_id": "creatine_evidence_general",
+            "score": 0.4800158739089966
+          }
+        ]
+      },
+      {
+        "id": "held-f06",
+        "category": "followup",
+        "question": "E dá para saber que falta explosão só por isso?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Apareceu desconforto no meu joelho depois da areia."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "performance_not_rehab_policy",
+          "pain_text_cannot_diagnose"
+        ],
+        "rank": null,
+        "seconds": 7.539999205619097e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-f07",
+        "category": "followup",
+        "question": "Mas comer bem pouquinho seria uma experiência segura?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Eu sou alérgico a amendoim."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "food_allergy_and_anaphylaxis_boundary"
+        ],
+        "rank": null,
+        "seconds": 7.740000728517771e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "food_pattern_over_single_meal",
+            "score": 0.568473219871521
+          },
+          {
+            "document_id": "pre_workout_meal_context",
+            "score": 0.5609052777290344
+          },
+          {
+            "document_id": "body_appearance_is_not_diagnosis",
+            "score": 0.5593268871307373
+          }
+        ]
+      },
+      {
+        "id": "held-f08",
+        "category": "followup",
+        "question": "E isso significa treinar automaticamente com elas?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Você salva nossas conversas na conta?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "history_not_automatic_training_policy"
+        ],
+        "rank": null,
+        "seconds": 7.680000271648169e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-f09",
+        "category": "followup",
+        "question": "E se eu tiver apenas elástico?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Como usar treino com peso corporal em casa?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "home_training_valid",
+          "training_equipment_flexibility"
+        ],
+        "rank": null,
+        "seconds": 7.740000728517771e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.6163126230239868
+          },
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.5599675178527832
+          },
+          {
+            "document_id": "exercise_selection_supports_adherence",
+            "score": 0.5314479470252991
+          }
+        ]
+      },
+      {
+        "id": "held-f10",
+        "category": "followup",
+        "question": "E preciso comprar whey mesmo comendo proteína suficiente?",
+        "history": [
+          {
+            "role": "user",
+            "content": "O que comer depois de um treino?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "protein_amino_acids_mechanism",
+          "supplements_not_foundation"
+        ],
+        "rank": null,
+        "seconds": 7.760000880807638e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_distribution_general",
+            "score": 0.6404181122779846
+          },
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.5371707677841187
+          },
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.4635951519012451
+          }
+        ]
+      },
+      {
+        "id": "held-f11",
+        "category": "followup",
+        "question": "Então preciso parar de beber água para continuar baixando?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Meu peso ficou igual na última semana."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "extreme_diet_and_dehydration_refusal",
+          "weight_plateau_not_single_day"
+        ],
+        "rank": null,
+        "seconds": 7.770000956952572e-05,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "hydration_is_individual",
+            "score": 0.5028563141822815
+          }
+        ]
+      },
+      {
+        "id": "held-f12",
+        "category": "followup",
+        "question": "E se eu tiver perdido só um dia, faço o dobro?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Como organizar o descanso nos treinos?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "missed_workout_no_compensation"
+        ],
+        "rank": null,
+        "seconds": 7.609999738633633e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-x01",
+        "category": "switch",
+        "question": "Mudando de assunto: como funciona o deload?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Estou perguntando sobre proteína."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "deload_meaning"
+        ],
+        "rank": null,
+        "seconds": 0.007771900040097535,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.606378436088562
+          },
+          {
+            "document_id": "protein_distribution_general",
+            "score": 0.5996028184890747
+          },
+          {
+            "document_id": "post_workout_meal_context",
+            "score": 0.4816843569278717
+          }
+        ]
+      },
+      {
+        "id": "held-x02",
+        "category": "switch",
+        "question": "Outra dúvida: por que descansar entre as séries?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Queria ajustar horário da refeição."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "rest_between_sets_context"
+        ],
+        "rank": null,
+        "seconds": 0.00014030002057552338,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "recovery_change_requires_pattern",
+            "score": 0.47432321310043335
+          },
+          {
+            "document_id": "sleep_tracker_is_estimate",
+            "score": 0.4671633243560791
+          }
+        ]
+      },
+      {
+        "id": "held-x03",
+        "category": "switch",
+        "question": "Agora sobre sono: quanto um adulto precisa dormir?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Qual o papel da creatina?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "sleep_duration_adults"
+        ],
+        "rank": 1,
+        "seconds": 0.0001550000160932541,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "sleep_duration_adults",
+            "score": 0.7136827707290649
+          },
+          {
+            "document_id": "sleep_habits_general",
+            "score": 0.6299303770065308
+          },
+          {
+            "document_id": "athlete_sleep_is_individual",
+            "score": 0.5979588627815247
+          }
+        ]
+      },
+      {
+        "id": "held-x04",
+        "category": "switch",
+        "question": "E o que são fibras alimentares?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Fale sobre músculos e força."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [
+          "fiber_food_sources"
+        ],
+        "rank": null,
+        "seconds": 0.00012360000982880592,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "protein_supports_training_adaptation",
+            "score": 0.516905665397644
+          },
+          {
+            "document_id": "training_goal_specificity",
+            "score": 0.5007961988449097
+          },
+          {
+            "document_id": "protein_range_active_adults",
+            "score": 0.48346298933029175
+          }
+        ]
+      },
+      {
+        "id": "held-n01",
+        "category": "negative",
+        "question": "E qual foi o vencedor do Oscar no ano passado?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Quanto um adulto deve dormir?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [],
+        "rank": null,
+        "seconds": 8.17000400274992e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n02",
+        "category": "negative",
+        "question": "Mudando de assunto, qual meu saldo no banco?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Eu queria saber sobre musculação."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.849989924579859e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n03",
+        "category": "negative",
+        "question": "Outra dúvida: qual computador comprar para programar?",
+        "history": [
+          {
+            "role": "user",
+            "content": "O que é proteína?"
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.006664600106887519,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n04",
+        "category": "negative",
+        "question": "Qual é a capital da Finlândia?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.00011440005619078875,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n05",
+        "category": "negative",
+        "question": "Resolva uma equação quadrática.",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 8.100003469735384e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n06",
+        "category": "negative",
+        "question": "Qual foi o placar do jogo de ontem?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.769989315420389e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n07",
+        "category": "negative",
+        "question": "Como preencher declaração do imposto de renda?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.740000728517771e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-n08",
+        "category": "negative",
+        "question": "Me diga a cotação atual de criptomoedas.",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 7.609999738633633e-05,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-a01",
+        "category": "ambiguous",
+        "question": "E nesse caso?",
+        "history": [],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.003877100069075823,
+        "status": "no_evidence",
+        "context": null,
+        "retrieved": []
+      },
+      {
+        "id": "held-a02",
+        "category": "ambiguous",
+        "question": "E isso?",
+        "history": [
+          {
+            "role": "user",
+            "content": "Quero saber sobre descanso."
+          },
+          {
+            "role": "assistant",
+            "content": "Resposta anterior não é fonte de evidência."
+          }
+        ],
+        "expected": [],
+        "rank": null,
+        "seconds": 0.00479429995175451,
+        "status": "found",
+        "context": null,
+        "retrieved": [
+          {
+            "document_id": "rest_day_is_part_of_plan",
+            "score": 0.4690406918525696
+          }
+        ]
+      }
+    ]
+  }
+}

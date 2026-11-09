@@ -1,0 +1,10 @@
+{
+  "prior_protocol": "protocol_frozen_before_tf32_fix.json",
+  "adapted_test_observed_before_fix": false,
+  "prompts_changed": false,
+  "adapter_validation_tf32_true": 1.8846803056225132,
+  "weights_changed": false,
+  "reason": "Historical validation precision reproduction only: trainer measured original before TF32, adapter after enabling TF32. All scored test inference/generation uses TF32 disabled in both variants.",
+  "original_generations_preserved": true,
+  "adapter_validation_tf32_false": 1.884629862779848
+}

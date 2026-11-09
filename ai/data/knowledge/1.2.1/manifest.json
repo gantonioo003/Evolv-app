@@ -1,0 +1,18 @@
+{
+  "version": "1.2.1",
+  "phase": "7.07.7",
+  "metadata_only": true,
+  "parent_manifest_sha256": "941078a9a42d77e80e19d4874fe3f6c8c5c8d969162dca5c0fd1ad8405ef3688",
+  "before_coach_sha256": "f185f4f7871a51c0bc893e65817c03446edc66a714df54671274b3c1a2c811b1",
+  "after_coach_sha256": "936f6d74959f4d5ceb91727a893bfa219fdff4bf936b8073c55a5a921f3342fa",
+  "outputs": {
+    "acceptance_cases.json": "a50fabad22b2cb7d9b2192b4e01fc89f0c758824bbbd052428cff163594f629d",
+    "boundaries.json": "c165043d80fcf7c2524cc1df5cb3204b67ee949d9b7a68f429d38846f8201806",
+    "changes.json": "9e32cb6365e36e9db5a1c26ea61936e7a861db99bfece64f2c28c90461cba3ff",
+    "coverage.json": "1dc927d55e8496a837683b14640a6ec9a2a7f14d7edd0d30d663daa24288c85f",
+    "evidence.json": "671a155f4feac389a852c1aa408476215a912b531fb86fb51f9c143e5c5cd38a",
+    "knowledge_chunks.json": "1d9b22fbbfe63d2f410a9a7daa561e3f84f90ec2085d1869ce4691e8921ee57f",
+    "risks.json": "97f7f3bf1dfaf8b67b0db3b7f06e6c9989a92a921436e61ce28715154fbe31d0",
+    "sources.json": "72a639b885f75e8c6d6ade1426ab78ec3bb5b1c9c5f16f4ab288e2a93ba3b6be"
+  }
+}

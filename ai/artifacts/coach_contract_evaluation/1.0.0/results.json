@@ -1,0 +1,1694 @@
+{
+  "protocol": {
+    "mode": "explicit_known_intent_fixtures_not_real_nlp_accuracy",
+    "real_entity_extractor": true,
+    "real_lm": false,
+    "real_backend": false,
+    "cases": [
+      [
+        "move_workout_day",
+        "Mova o treino de 03/11/2026 para 05/11/2026"
+      ],
+      [
+        "replace_exercise",
+        "Troque supino reto por flexao"
+      ],
+      [
+        "replace_meal_item",
+        "Troque arroz por feijao"
+      ],
+      [
+        "set_day_activity",
+        "Hoje quero descansar"
+      ]
+    ],
+    "adversarial": [
+      "reject",
+      "expired",
+      "stale",
+      "wrong_id",
+      "clear",
+      "risk_before_confirm"
+    ]
+  },
+  "dialogues": 10,
+  "passed": 10,
+  "turns": 24,
+  "records": [
+    {
+      "case": "move_workout_day",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "e1391e1d-ec7d-4611-8121-721181512429",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Autorização registrada para pedir a prévia ao Planner. O plano ainda não foi alterado.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "e1391e1d-ec7d-4611-8121-721181512429",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "confirmed_for_planner_preview"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta já resolvida; não repetir o envio.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "replace_exercise",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "replace_exercise",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Troque supino reto por flexao",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "exercise",
+                  "text": "supino reto",
+                  "value": "supino reto",
+                  "start": 7,
+                  "end": 18,
+                  "source": "catalog",
+                  "attributes": {
+                    "matched_alias": "supino reto"
+                  }
+                },
+                {
+                  "entity_type": "replacement_exercise",
+                  "text": "flexao",
+                  "value": "flexao de bracos",
+                  "start": 23,
+                  "end": 29,
+                  "source": "context_rule",
+                  "attributes": {
+                    "matched_alias": "flexao",
+                    "relation": "replace_with"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: replace_exercise. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "0b5668e0-f118-4a30-a09a-3a5527cc6443",
+              "payload": {
+                "kind": "replace_exercise",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_exercise_id": "00000000-0000-0000-0000-000000000005",
+                "replacement_exercise_id": "00000000-0000-0000-0000-000000000006"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "replace_exercise",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Autorização registrada para pedir a prévia ao Planner. O plano ainda não foi alterado.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "0b5668e0-f118-4a30-a09a-3a5527cc6443",
+              "payload": {
+                "kind": "replace_exercise",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_exercise_id": "00000000-0000-0000-0000-000000000005",
+                "replacement_exercise_id": "00000000-0000-0000-0000-000000000006"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "confirmed_for_planner_preview"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "replace_exercise",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta já resolvida; não repetir o envio.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "replace_meal_item",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "replace_meal_item",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Troque arroz por feijao",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "food",
+                  "text": "arroz",
+                  "value": "arroz branco cozido",
+                  "start": 7,
+                  "end": 12,
+                  "source": "catalog",
+                  "attributes": {
+                    "matched_alias": "arroz"
+                  }
+                },
+                {
+                  "entity_type": "replacement_food",
+                  "text": "feijao",
+                  "value": "feijao preto cozido",
+                  "start": 17,
+                  "end": 23,
+                  "source": "context_rule",
+                  "attributes": {
+                    "matched_alias": "feijao",
+                    "relation": "replace_with"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: replace_meal_item. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "eaaae777-bf31-4615-9042-6269aee98bc8",
+              "payload": {
+                "kind": "replace_meal_item",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "diet_plan_id": "00000000-0000-0000-0000-000000000003",
+                "meal_item_id": "00000000-0000-0000-0000-000000000007",
+                "replacement_food_id": "00000000-0000-0000-0000-000000000008"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "replace_meal_item",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Autorização registrada para pedir a prévia ao Planner. O plano ainda não foi alterado.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "eaaae777-bf31-4615-9042-6269aee98bc8",
+              "payload": {
+                "kind": "replace_meal_item",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "diet_plan_id": "00000000-0000-0000-0000-000000000003",
+                "meal_item_id": "00000000-0000-0000-0000-000000000007",
+                "replacement_food_id": "00000000-0000-0000-0000-000000000008"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "confirmed_for_planner_preview"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "replace_meal_item",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta já resolvida; não repetir o envio.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "set_day_activity",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "set_day_activity",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Hoje quero descansar",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "target_date",
+                  "text": "Hoje",
+                  "value": "2026-11-02",
+                  "start": 0,
+                  "end": 4,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "relative_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: set_day_activity. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "ea5736d7-b66a-4f65-93d5-84ec386240d7",
+              "payload": {
+                "kind": "set_day_activity",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "activity_date": "2026-11-02",
+                "activity_type": "rest"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "set_day_activity",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Autorização registrada para pedir a prévia ao Planner. O plano ainda não foi alterado.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "ea5736d7-b66a-4f65-93d5-84ec386240d7",
+              "payload": {
+                "kind": "set_day_activity",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "activity_date": "2026-11-02",
+                "activity_type": "rest"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "confirmed_for_planner_preview"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "set_day_activity",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta já resolvida; não repetir o envio.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "reject",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "c2dc800b-cecc-4e18-aa21-4faa265afd53",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "rejeito",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta rejeitada. O plano não foi alterado.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "c2dc800b-cecc-4e18-aa21-4faa265afd53",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "rejected"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "expired",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "b01bf0da-cea8-4d7b-9f8b-0705fc83b817",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta vencida. Solicite uma nova prévia.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "stale",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "dda4da30-18fd-46bd-a816-19cd166796a2",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Plano alterado. Solicite uma nova prévia.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "wrong_id",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "d16c147f-82e2-4db3-ba5e-56d392d049ef",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta não pertence a esta sessão.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "clear",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "fd34a867-140c-44d2-a5fa-688c9eb9a0ba",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta não pertence a esta sessão.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "case": "risk_before_confirm",
+      "passed": true,
+      "turns": [
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "draft_for_confirmation",
+            "intent": {
+              "label": "move_workout_day",
+              "confident": true
+            },
+            "risk": {
+              "labels": []
+            },
+            "entities": {
+              "text": "Mova o treino de 03/11/2026 para 05/11/2026",
+              "reference_date": "2026-11-02",
+              "extractor_version": "1.3.0",
+              "catalog_version": "1.3.0",
+              "entities": [
+                {
+                  "entity_type": "source_date",
+                  "text": "03/11/2026",
+                  "value": "2026-11-03",
+                  "start": 17,
+                  "end": 27,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                },
+                {
+                  "entity_type": "target_date",
+                  "text": "05/11/2026",
+                  "value": "2026-11-05",
+                  "start": 33,
+                  "end": 43,
+                  "source": "date_rule",
+                  "attributes": {
+                    "kind": "absolute_date"
+                  }
+                }
+              ]
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Proposta preparada para a prévia do Planner: move_workout_day. Confirme pelo identificador da proposta; nenhuma mudança foi aplicada.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "4597f561-bff5-46bd-9f98-f39af017dce4",
+              "payload": {
+                "kind": "move_workout_day",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "workout_plan_id": "00000000-0000-0000-0000-000000000002",
+                "workout_day_id": "00000000-0000-0000-0000-000000000004",
+                "target_weekday": "thursday"
+              },
+              "snapshot_fingerprint": "10a6462e6c975038b4c3c06a1d3426999a5aff59f5dd43fa2b549ff3ee03fa4a",
+              "expires_at": "2026-11-02T00:10:00+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        {
+          "schema_version": "coach.1.1.0",
+          "mode": "local_research",
+          "analysis": {
+            "route": "safety_information_only",
+            "intent": {
+              "label": "guarded",
+              "confident": false
+            },
+            "risk": {
+              "labels": [
+                "emergency_symptom"
+              ]
+            },
+            "entities": {
+              "entities": []
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Interrompa a atividade e procure atendimento de emergência. Não consigo avaliar a causa pela conversa.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": "safety_information_only",
+            "generated_output_blocked": false
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        }
+      ]
+    }
+  ],
+  "these_are_contract_checks_not_model_quality": true
+}

@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "model_config": "ai/configs/openlm.v1.json",
+  "seed": 42,
+  "split_ratios": {"train": 0.8, "validation": 0.1, "test": 0.1},
+  "max_sequence_length": 1024,
+  "loss_target": "last_assistant_message_and_template_ending",
+  "truncation": "reject_entire_example",
+  "near_duplicate_word_ngram": 5,
+  "near_duplicate_jaccard_threshold": 0.8,
+  "training_language": "pt-BR"
+}

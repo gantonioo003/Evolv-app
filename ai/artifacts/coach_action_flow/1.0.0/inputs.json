@@ -1,0 +1,16 @@
+{
+  "sha256": {
+    "backend/scripts/evaluate-coach-action-flow.mjs": "621c90c3738599606f1c1fe82ae7ad2c1bc18a3c4d1cc38877ab5c5c9c7af8c2",
+    "ai/scripts/serve_coach_evaluation.py": "3d4a3ce78a9f98226bf8c428de9b28e5e4ff9f7b651971e2131f2adbee582476",
+    "ai/src/evolv_nlp/recognition_pipeline.py": "e338e9dc288a6241a6f41aa90dd86464a29ab77f1633e269cdbfdd718174b03c",
+    "ai/src/evolv_rag/coach.py": "f185f4f7871a51c0bc893e65817c03446edc66a714df54671274b3c1a2c811b1",
+    "ai/src/evolv_rag/safety.py": "92e164d1f5e45e516febe8b5141e378714aafff6f9d6e6b6cbbe17daa9084c2d",
+    "ai/artifacts/baseline/1.9.0/manifest.json": "09a55cd1bae38b215e2fd9a1d6d5bf48db796f4ef152ce47e6efeeba2100fd72",
+    "ai/artifacts/baseline/1.8.0/selection_frozen.json": "11012b4327bf67ffe8c699cf807619bc259cd1972fd9b1851c1cb7df011e39af",
+    "backend/src/coach/coach.service.ts": "34e5a6ae1de374273bb366502a0c9d1aaff2bca447079012c383b3b4e53f34b9",
+    "backend/src/coach/coach-context.service.ts": "593937e9134fe879b7f563ab4b0020c1d66bbc44d312e12b135c2ef1aea9b912",
+    "backend/src/planner/planner-adjustments.service.ts": "46ebce98068dd31c65f474e6481c915e50c3fcaeb2da35023fb80b25d2f36f58",
+    "mobile/src/components/coach-connected-screen.tsx": "b7018bda154e36d55425cda0e3ccdc5c4d927e0141803d3c711e891fd7a490f2",
+    "mobile/src/app/adjustments/[adjustmentId].tsx": "d1eda7435e2df747d6741d754c3ad22293befe04c70e50691f5925335a96b484"
+  }
+}
