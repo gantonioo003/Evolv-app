@@ -80,7 +80,7 @@ type AppTabBarProps = Parameters<
   NonNullable<ComponentProps<typeof Tabs>["tabBar"]>
 >[0];
 
-function AppTabBar({ state, descriptors, navigation }: AppTabBarProps) {
+function AppTabBar({ state, descriptors, emitter, navigateToTab }: AppTabBarProps) {
   const { palette } = useAppTheme();
   const reducedMotion = useReducedMotion();
   const insets = useSafeAreaInsets();
@@ -140,16 +140,16 @@ function AppTabBar({ state, descriptors, navigation }: AppTabBarProps) {
           const label = descriptors[route.key].options.title ?? route.name;
 
           const onPress = () => {
-            const event = navigation.emit({
+            const event = emitter.emit({
               type: "tabPress",
               target: route.key,
               canPreventDefault: true,
             });
             if (!focused && !event.defaultPrevented)
-              navigation.navigate(route.name, route.params);
+              navigateToTab(route.key);
           };
           const onLongPress = () =>
-            navigation.emit({ type: "tabLongPress", target: route.key });
+            emitter.emit({ type: "tabLongPress", target: route.key });
 
           return (
             <AppTabItem

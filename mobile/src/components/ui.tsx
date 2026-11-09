@@ -16,7 +16,7 @@ import {
   Easing,
   Image,
   Platform,
-  ScrollView,
+  type ScrollViewInstance,
   StyleSheet,
   Text,
   View,
@@ -120,7 +120,7 @@ export function AppScreen({
   const palette = useTonePalette(tone);
   const reducedMotion = useReducedMotion();
   const insets = useSafeAreaInsets();
-  const scrollRef = useRef<ScrollView>(null);
+  const scrollRef = useRef<ScrollViewInstance>(null);
   useEffect(()=>{
     if(!scrollToEndKey)return;
     const frame=requestAnimationFrame(()=>scrollRef.current?.scrollToEnd({animated:false}));

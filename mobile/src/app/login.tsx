@@ -21,6 +21,7 @@ import {
   TextInput,
   View,
   useWindowDimensions,
+  type TextInputInstance,
   type TextInputProps,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -71,7 +72,7 @@ function AuthField({
 }: TextInputProps & {
   label: string;
   optional?: boolean;
-  inputRef: RefObject<TextInput | null>;
+  inputRef: RefObject<TextInputInstance | null>;
   palette: AuthPalette;
   trailing?: ReactNode;
 }) {
@@ -149,10 +150,10 @@ export default function LoginScreen() {
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [keyboardVisible, setKeyboardVisible] = useState(false);
-  const nameRef = useRef<TextInput>(null);
-  const emailRef = useRef<TextInput>(null);
-  const birthDateRef = useRef<TextInput>(null);
-  const passwordRef = useRef<TextInput>(null);
+  const nameRef = useRef<TextInputInstance>(null);
+  const emailRef = useRef<TextInputInstance>(null);
+  const birthDateRef = useRef<TextInputInstance>(null);
+  const passwordRef = useRef<TextInputInstance>(null);
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
   const photoSelected = useRef(false);
 

@@ -1,20 +1,17 @@
-import { useState, type Ref } from "react";
+import { useState, type ComponentPropsWithRef } from "react";
 import {
   Animated,
   Platform,
   Pressable,
   StyleSheet,
-  type PressableProps,
-  type View,
 } from "react-native";
 
 import { useReducedMotion } from "@/context/motion-context";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-type TouchFeedbackProps = PressableProps & {
+type TouchFeedbackProps = ComponentPropsWithRef<typeof Pressable> & {
   pressScale?: number;
-  ref?: Ref<View>;
 };
 
 export function TouchFeedback({
