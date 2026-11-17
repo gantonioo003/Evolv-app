@@ -13,6 +13,7 @@ import type { Enums } from '../../database/database.types.js';
 
 export const plannerAdjustmentKinds = [
   'move_workout_day',
+  'move_workout_occurrence',
   'replace_exercise',
   'replace_meal_item',
   'set_day_activity',
@@ -75,6 +76,14 @@ export class CreatePlannerAdjustmentDto {
   @IsOptional()
   @Matches(/^\d{4}-\d{2}-\d{2}$/)
   activity_date?: string;
+
+  @IsOptional()
+  @Matches(/^\d{4}-\d{2}-\d{2}$/)
+  source_date?: string;
+
+  @IsOptional()
+  @Matches(/^\d{4}-\d{2}-\d{2}$/)
+  target_date?: string;
 
   @IsOptional()
   @IsIn(['rest', 'resistance', 'cardio', 'mixed'])

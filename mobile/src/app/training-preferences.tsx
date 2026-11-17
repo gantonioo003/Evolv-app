@@ -2,8 +2,9 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { ArrowLeft, Check } from "lucide-react-native";
 
-import { AppScreen, Divider, SectionTitle, Surface } from "@/components/ui";
-import { colors, radius, spacing, typography } from "@/constants/theme";
+import { IllustrationThumbnail, AppScreen, Divider, SectionTitle, Surface } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
+import { radius, spacing, typography } from "@/constants/theme";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import { useTrainingPreferences } from "@/context/training-preferences-context";
 import {
@@ -40,6 +41,7 @@ export default function TrainingPreferencesScreen() {
       </View>
 
       <View style={styles.summary}>
+        <IllustrationThumbnail source={artwork.trainingPreferences} />
         <Text style={styles.summaryValue}>{selectedModalityIds.length}</Text>
         <Text style={styles.summaryLabel}>modalidades ativas</Text>
         <View style={styles.summaryDivider} />
@@ -107,7 +109,7 @@ function OptionList({
               </View>
               <View style={[styles.check, selected && styles.checkSelected]}>
                 {selected ? (
-                  <Check color={colors.text} size={15} strokeWidth={2.5} />
+                  <Check color={palette.onPrimary} size={15} strokeWidth={2.5} />
                 ) : null}
               </View>
             </Pressable>
@@ -164,6 +166,7 @@ const createStyles = (palette: AppThemePalette) =>
     summaryValue: { color: palette.text, fontSize: 22, fontWeight: "600" },
     summaryLabel: {
       maxWidth: 110,
+      flexShrink: 1,
       color: palette.muted,
       fontSize: 11,
       lineHeight: 15,
@@ -198,6 +201,6 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
     },
-    checkSelected: { borderColor: colors.red, backgroundColor: colors.red },
+    checkSelected: { borderColor: palette.primary, backgroundColor: palette.primary },
     pressed: { opacity: 0.66 },
   });

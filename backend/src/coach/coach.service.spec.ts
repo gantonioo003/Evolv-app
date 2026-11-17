@@ -1,9 +1,10 @@
 import { randomUUID } from 'node:crypto';
 import type { CoachAiClient } from './coach-ai.client.js';
 import type { CoachContextService } from './coach-context.service.js';
+import type { CoachAccountService } from './coach-account.service.js';
 import type { PlannerAdjustmentsService } from '../planner/planner-adjustments.service.js';
 import { CoachService } from './coach.service.js';
-import { CoachHistoryService } from './coach-history.service.js';
+import { CoachHistoryService, coachContextBudget, contextUnits } from './coach-history.service.js';
 import { NotFoundException } from '@nestjs/common';
 
 describe('CoachService', () => {
@@ -44,15 +45,18 @@ describe('CoachService', () => {
         return { snapshot_fingerprint: fp };
       return response;
     });
+    const links = new Map<string, string>();
     const planner = {
-      preview: vi.fn().mockResolvedValue({ id: adjustment }),
+      preview: vi.fn(async (_u: string, _t: string, _d: unknown, scope: { proposalId: string }) => {
+        links.set(scope.proposalId, adjustment);
+        return { id: adjustment };
+      }),
       get: vi.fn().mockResolvedValue({ id: adjustment }),
       apply: vi.fn().mockResolvedValue({ id: adjustment, status: 'applied' }),
       reject: vi.fn(),
       revert: vi.fn(),
     };
     const saved = new Map<string, Record<string, unknown>>();
-    const links = new Map<string, string>();
     const history = {
       create: vi.fn().mockResolvedValue({ id: sid }),
       get: vi.fn(async (owner: string) => {
@@ -60,6 +64,8 @@ describe('CoachService', () => {
         return { id: sid, selected: {} };
       }),
       recent: vi.fn().mockResolvedValue([]),
+      contextUsed: vi.fn().mockResolvedValue(0),
+      recall: vi.fn().mockResolvedValue(null),
       cached: vi.fn(
         async (_u: string, _t: string, _s: string, r: string) =>
           saved.get(r) ?? null,
@@ -81,17 +87,13 @@ describe('CoachService', () => {
       linked: vi.fn(async (_u: string, _t: string, _s: string, p: string) =>
         links.has(p) ? { id: links.get(p) } : null,
       ),
-      link: vi.fn(
-        async (_u: string, _t: string, _s: string, p: string, a: string) => {
-          links.set(p, a);
-        },
-      ),
       adjustment: vi.fn(
         async (_u: string, _t: string, _s: string, a: string) => {
           if (![...links.values()].includes(a)) throw new NotFoundException();
         },
       ),
     };
+    const account = { context: vi.fn().mockResolvedValue({ memory_enabled: false }), save: vi.fn() };
     const service = new CoachService(
       { request } as unknown as CoachAiClient,
       {
@@ -99,9 +101,64 @@ describe('CoachService', () => {
       } as unknown as CoachContextService,
       planner as unknown as PlannerAdjustmentsService,
       history as unknown as CoachHistoryService,
+      account as unknown as CoachAccountService,
     );
-    return { service, planner, action, message, response, request, history };
+    return { service, planner, action, message, response, request, history, account };
   }
+  it('busca registros só quando a mensagem pede histórico e usa a data do dispositivo', async () => {
+    const t = setup();
+    t.response.result.actions = [];
+    const request = { request_id: t.message.request_id, text: 'Qual a última carga que registrei?', local_date: '2026-11-10' };
+    await t.service.message(user, 'jwt', sid, request);
+    expect(t.account.context).toHaveBeenCalledWith(user, 'jwt', '2026-11-10', true);
+    expect(t.request).toHaveBeenCalledWith(user, '/v1/sessions/' + sid + '/messages', 'POST', {
+      request_id: request.request_id, text: request.text,
+      account_context: { memory_enabled: false }, recalled_messages: null,
+    });
+    const nextId = randomUUID();
+    t.response.request_id = nextId;
+    await t.service.message(user, 'jwt', sid, { request_id: nextId, text: 'Oi' });
+    expect(t.account.context).toHaveBeenLastCalledWith(user, 'jwt', undefined, false);
+    expect(t.request.mock.calls.filter(([, path]) => path.endsWith('/planner-context'))).toHaveLength(2);
+  });
+  it('interrompe novas mensagens quando a conversa chega ao limite', async () => {
+    const t = setup();
+    t.history.contextUsed.mockResolvedValue(8_999);
+    await expect(t.service.message(user, 'jwt', sid, t.message)).rejects.toMatchObject({
+      response: { code: 'COACH_CONVERSATION_LIMIT' },
+    });
+    expect(t.request).not.toHaveBeenCalled();
+  });
+  it('informa consumo acima de 80 por cento antes de recusar mensagens', async () => {
+    const t = setup();
+    const used = Math.ceil(coachContextBudget * 0.8);
+    t.history.contextUsed.mockResolvedValue(used);
+    const response = await t.service.message(user, 'jwt', sid, t.message);
+    expect(response.result).toMatchObject({
+      conversation_memory: { used: used + contextUnits(t.message.text), limit: coachContextBudget },
+    });
+  });
+  it.each([
+    [false, 'Lembre que prefiro treinar cedo', false],
+    [true, 'Prefiro treinar cedo', false],
+    [true, 'Lembre que prefiro treinar cedo', true],
+  ])('salva preferência entre chats só com opção ativa e pedido explícito', async (enabled, text, saves) => {
+    const t = setup();
+    t.account.context.mockResolvedValue({ memory_enabled: enabled });
+    t.account.save.mockResolvedValue('Preferência guardada.');
+    Object.assign(t.response.result, {
+      actions: [],
+      analysis: { route: 'conversation' },
+      memory_item: 'prefiro treinar cedo',
+    });
+    const result = await t.service.message(user, 'jwt', sid, { request_id: t.message.request_id, text });
+    expect(t.account.save).toHaveBeenCalledTimes(saves ? 1 : 0);
+    expect(result.result).not.toHaveProperty('memory_item');
+  });
+  it('estima espaço pelo tamanho da mensagem, sem fixar a quantidade de mensagens', () => {
+    expect(80 * contextUnits('Oi! Tudo bem?')).toBeLessThan(coachContextBudget * 0.1);
+    expect(30 * contextUnits('contexto detalhado '.repeat(70))).toBeGreaterThan(coachContextBudget);
+  });
   it('previa e aplicacao sao operacoes distintas, deduplica previa', async () => {
     const t = setup();
     await t.service.create(user, 'jwt', {});
@@ -110,7 +167,7 @@ describe('CoachService', () => {
     expect(t.planner.preview).toHaveBeenCalledTimes(1);
     expect(t.planner.apply).not.toHaveBeenCalled();
     await t.service.decide(user, 'jwt', sid, adjustment, 'apply');
-    expect(t.planner.apply).toHaveBeenCalledWith(user, 'jwt', adjustment);
+    expect(t.planner.apply).toHaveBeenCalledWith(user, 'jwt', adjustment, sid);
   });
   it('rejeita sessao de outra pessoa e ajuste nao associado', async () => {
     const t = setup();
@@ -154,7 +211,7 @@ describe('CoachService', () => {
         a.payload.kind = 'toString';
       },
       (a: ReturnType<typeof setup>['action']) => {
-        a.payload.workout_day_id = 'invalid';
+        Object.assign(a.payload, { workout_day_id: 'invalid' });
       },
     ]) {
       const t = setup();
@@ -178,16 +235,21 @@ describe('CoachService', () => {
       expect(t.planner.preview).not.toHaveBeenCalled();
     }
   });
-  it('recupera falha temporaria ao vincular previa sem criar outra', async () => {
+  it('reutiliza a prévia vinculada se falhar ao salvar a mensagem', async () => {
     const t = setup();
     await t.service.create(user, 'jwt', {});
-    t.history.link.mockRejectedValueOnce(new Error('temporary'));
-    await expect(
-      t.service.message(user, 'jwt', sid, t.message),
-    ).rejects.toThrow('temporary');
+    t.history.commit.mockRejectedValueOnce(new Error('temporary'));
+    await expect(t.service.message(user, 'jwt', sid, t.message)).rejects.toThrow('temporary');
     await t.service.message(user, 'jwt', sid, t.message);
     expect(t.planner.preview).toHaveBeenCalledTimes(1);
-    expect(t.history.link).toHaveBeenCalledTimes(2);
+    expect(t.planner.preview).toHaveBeenCalledWith(user, 'jwt', expect.any(Object),
+      expect.objectContaining({ conversationId: sid, proposalId: proposal, expiresAt: t.action.expires_at }));
+  });
+  it('exige texto explícito além do identificador para criar prévia', async () => {
+    const t = setup();
+    await expect(t.service.message(user, 'jwt', sid, { ...t.message, text: 'Talvez, vou pensar.' }))
+      .rejects.toMatchObject({ status: 502 });
+    expect(t.planner.preview).not.toHaveBeenCalled();
   });
   it('repeticao apos reinicio usa resposta persistida e dispensa runtime', async () => {
     const t = setup();
@@ -199,6 +261,7 @@ describe('CoachService', () => {
       { build: vi.fn() } as unknown as CoachContextService,
       t.planner as unknown as PlannerAdjustmentsService,
       t.history as unknown as CoachHistoryService,
+      t.account as unknown as CoachAccountService,
     );
     await restarted.message(user, 'jwt', sid, t.message);
     expect(t.request).not.toHaveBeenCalled();

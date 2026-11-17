@@ -34,7 +34,8 @@ export const spacing = {
 export const radius = {
   sm: 4,
   md: 6,
-  lg: 8,
+  lg: 16,
+  card: 24,
 } as const;
 
 export const typography = {
@@ -55,13 +56,13 @@ export const typography = {
 export const shadows = {
   card:
     Platform.select({
-      web: { boxShadow: "0 3px 10px rgba(5, 6, 8, 0.12)" },
-      android: { elevation: 3 },
+      web: { boxShadow: "0 8px 26px rgba(33, 42, 33, 0.10)" },
+      android: { elevation: 2 },
       default: {
         shadowColor: colors.black,
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.12,
-        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.10,
+        shadowRadius: 14,
       },
     }) ?? {},
 } as const;

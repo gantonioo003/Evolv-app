@@ -5,6 +5,7 @@ import unittest
 AI_ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(AI_ROOT/"src"))
 from evolv_rag.coach import Coach, LocalLM
+from evolv_rag.dialogue import ConversationMemory
 from evolv_rag.safety import preflight
 
 class RegressionTests(unittest.TestCase):
@@ -65,5 +66,57 @@ class RegressionTests(unittest.TestCase):
         self.assertNotIn("Cidade Fictícia", str(coach.history))
         followup = coach.respond("Posso voltar a treinar?")
         self.assertIn("emergency_symptom", followup["analysis"]["risk"]["labels"])
+
+    def test_informal_greeting_does_not_go_to_the_classifier(self):
+        coach = Coach(None, None)
+        for text in ("Ooi", "Ooooi, tudo bem?", "Oii Coach!"):
+            with self.subTest(text=text):
+                result = coach.respond(text)
+                self.assertEqual("greeting", result["analysis"]["intent"]["label"])
+                self.assertFalse(result["actions"])
+
+    def test_sleep_followup_uses_the_reported_hours_with_a_reviewed_source(self):
+        class UncertainNlp:
+            def analyze(self, text, **kwargs):
+                return {"route": "clarify", "intent": {"label": "clarification", "confident": False},
+                        "risk": {"labels": []}, "entities": {"text": text, "entities": []}}
+
+        class Search:
+            def reviewed_document(self, document, **kwargs):
+                return {"id": f"kb:{document}", "document_id": document,
+                        "generation_context": {"text": "Trecho de teste."}}
+
+        coach = Coach(UncertainNlp(), Search())
+        first = coach.respond("Sabe me dizer se todas pessoas no mundo precisam dormir a mesma quantidade de horas?")
+        self.assertIn("varia entre pessoas", first["answer"])
+        scenario = coach.respond(
+            "Entendi, por exemplo se em certa semana eu estou com muita correria do trabalho e acabar dormindo "
+            "por uma semana 3/4h por dia, o quanto isso esta impactando meu progresso?"
+        )
+        self.assertIn("3 a 4 horas de sono por noite durante uma semana", scenario["answer"])
+        self.assertIn("não dá para estimar", scenario["answer"])
+        self.assertEqual(["kb:sleep_recovery_explanation"], scenario["citations"]["cited_chunk_ids"])
+        self.assertFalse(scenario["actions"])
+        question = ("Pode me explicar o por que o sono é tao importante para meu progresso na academia, "
+                    "tente explicar com uma forma de falar leiga que todos entendam")
+        followup = coach.respond(question)["answer"]
+        self.assertIn("3 a 4 horas", followup)
+        self.assertIn("recuperação entre treinos", followup)
+
+        reopened = Coach(UncertainNlp(), Search())
+        reopened.memory = ConversationMemory.model_validate(scenario["dialogue_context"])
+        self.assertIn("3 a 4 horas", reopened.respond("E como isso afeta meu treino?")["answer"])
+        self.assertIn("5 horas", reopened.respond("Na verdade, 5h por noite.")["answer"])
+        corrected = reopened.respond(question)["answer"]
+        self.assertIn("5 horas", corrected)
+        self.assertIn("uma semana", corrected)
+        reopened.respond("Dormi 6h.")
+        updated = reopened.respond(question)["answer"]
+        self.assertIn("6 horas", updated)
+        self.assertNotIn("uma semana", updated)
+        fresh = Coach(UncertainNlp(), Search())
+        self.assertNotIn("3 a 4 horas", fresh.respond(question)["answer"])
+        urgent = reopened.respond("Dormi 4 horas e estou com dor no peito agora. Isso afeta meu treino?")
+        self.assertIn("emergency_symptom", urgent["analysis"]["risk"]["labels"])
 
 if __name__=="__main__":unittest.main()

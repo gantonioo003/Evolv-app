@@ -10,8 +10,6 @@ import {
 } from "react";
 import { Platform } from "react-native";
 
-import { colors } from "@/constants/theme";
-
 export type ResolvedTheme = "light" | "dark";
 export type ThemePreference = ResolvedTheme;
 
@@ -29,40 +27,67 @@ export type AppThemePalette = {
   accentText: string;
   successSoft: string;
   tabBar: string;
+  primary: string;
+  onPrimary: string;
+  artworkSurface: string;
+  sage: string;
+  atmosphere: string;
+  atmosphereWarm: string;
+  macroCarbs: string;
+  macroProtein: string;
+  macroFat: string;
 };
 
 const STORAGE_KEY = "@evolv/theme-preference";
 
 export const themePalettes: Record<ResolvedTheme, AppThemePalette> = {
   dark: {
-    page: colors.background,
-    elevated: colors.backgroundElevated,
-    surface: colors.surface,
-    raised: colors.surfaceRaised,
-    text: colors.text,
-    muted: colors.textMuted,
-    faint: colors.textFaint,
-    border: colors.border,
-    iconSurface: colors.background,
-    accentSoft: colors.redDark,
-    accentText: "#EEA19A",
-    successSoft: "#18351F",
-    tabBar: "#101112F5",
+    page: "#0D1118",
+    elevated: "#182230",
+    surface: "#151D29",
+    raised: "#1D293A",
+    text: "#F3F6FC",
+    muted: "#BDC9DD",
+    faint: "#A4B4CF",
+    border: "#33445E",
+    iconSurface: "#1C2C47",
+    accentSoft: "#1B3159",
+    accentText: "#9DBEFF",
+    successSoft: "#203758",
+    tabBar: "#111925",
+    primary: "#2756D7",
+    onPrimary: "#FFFFFF",
+    artworkSurface: "#0E1522",
+    sage: "#1F304E",
+    atmosphere: "#111E35",
+    atmosphereWarm: "#151C27",
+    macroCarbs: "#83B3FF",
+    macroProtein: "#B6AAF4",
+    macroFat: "#5EC8E8",
   },
   light: {
-    page: colors.paper,
-    elevated: "#F1F2F4",
-    surface: colors.paperRaised,
-    raised: colors.white,
-    text: colors.ink,
-    muted: "#696C71",
-    faint: "#696C71",
-    border: colors.paperBorder,
-    iconSurface: "#F1F2F4",
-    accentSoft: "#FAEAE8",
-    accentText: "#9D2823",
-    successSoft: "#E4EEE5",
-    tabBar: "#FFFFFFF5",
+    page: "#F2F4F8",
+    elevated: "#E5EBF6",
+    surface: "#FFFFFF",
+    raised: "#FFFFFF",
+    text: "#111A2A",
+    muted: "#44546D",
+    faint: "#506079",
+    border: "#BCC9DF",
+    iconSurface: "#E4EBFA",
+    accentSoft: "#DCE7FF",
+    accentText: "#1745A4",
+    successSoft: "#DEE9FC",
+    tabBar: "#F5F8FE",
+    primary: "#2756D7",
+    onPrimary: "#FFFFFF",
+    artworkSurface: "#E6EDF7",
+    sage: "#E2EBFC",
+    atmosphere: "#E5ECF9",
+    atmosphereWarm: "#E5E9F0",
+    macroCarbs: "#235AC7",
+    macroProtein: "#634DA8",
+    macroFat: "#106C8F",
   },
 };
 

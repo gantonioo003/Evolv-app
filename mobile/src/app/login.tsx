@@ -6,7 +6,6 @@ import {
   type RefObject,
 } from "react";
 import { useRouter } from "expo-router";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react-native";
 import {
   ActivityIndicator,
@@ -26,14 +25,11 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { CoverImage } from "@/components/ui";
-import { colors, typography } from "@/constants/theme";
+import { typography } from "@/constants/theme";
 import { useAuth } from "@/context/auth-context";
 import { useAppTheme } from "@/context/theme-context";
-import { authPhotos, nextAuthPhotoIndex } from "@/data/auth-photos";
+import { artwork } from "@/data/illustrations";
 import { formatBirthDate, validateSignup } from "@/lib/signup";
-
-const AUTH_PHOTO_KEY = "@evolv/auth-photo-index";
 
 type AuthMode = "login" | "signup";
 type AuthPalette = {
@@ -114,29 +110,20 @@ function AuthField({
 }
 
 export default function LoginScreen() {
-  const { isDark } = useAppTheme();
+  const { isDark, resolvedTheme, palette: theme } = useAppTheme();
   const { width, height } = useWindowDimensions();
-  const [viewportHeight, setViewportHeight] = useState(height);
+  const [viewportHeight, setViewportHeight] = useState(Platform.OS === "web" ? 0 : height);
   const [contentHeight, setContentHeight] = useState(0);
-  const wide = width >= 980;
+  const showArt = Platform.OS === "web" || width >= 980;
   const compact = viewportHeight < 760;
-  const palette: AuthPalette = isDark
-    ? {
-        page: "#101112",
-        text: "#F5F5F5",
-        muted: "#A0A1A3",
-        border: "#393B3D",
-        input: "#18191B",
-        focus: "#B6B8BB",
-      }
-    : {
-        page: "#FFFFFF",
-        text: "#1B1C1E",
-        muted: "#696C71",
-        border: "#D5D7DA",
-        input: "#F8F9FA",
-        focus: "#777B82",
-      };
+  const palette: AuthPalette = {
+    page: theme.page,
+    text: theme.text,
+    muted: theme.muted,
+    border: theme.border,
+    input: theme.surface,
+    focus: theme.accentText,
+  };
   const router = useRouter();
   const { isConfigured, signIn, signUp } = useAuth();
   const [mode, setMode] = useState<AuthMode>("login");
@@ -154,31 +141,6 @@ export default function LoginScreen() {
   const emailRef = useRef<TextInputInstance>(null);
   const birthDateRef = useRef<TextInputInstance>(null);
   const passwordRef = useRef<TextInputInstance>(null);
-  const [photoIndex, setPhotoIndex] = useState<number | null>(null);
-  const photoSelected = useRef(false);
-
-  useEffect(() => {
-    if (!wide || photoSelected.current) return;
-    let active = true;
-
-    async function selectPhoto() {
-      const saved = await AsyncStorage.getItem(AUTH_PHOTO_KEY).catch(
-        () => null,
-      );
-      if (!active || photoSelected.current) return;
-      const next = nextAuthPhotoIndex(saved);
-      photoSelected.current = true;
-      setPhotoIndex(next);
-      await AsyncStorage.setItem(AUTH_PHOTO_KEY, String(next)).catch(
-        () => undefined,
-      );
-    }
-
-    void selectPhoto();
-    return () => {
-      active = false;
-    };
-  }, [wide]);
 
   useEffect(() => {
     const show = Keyboard.addListener("keyboardDidShow", () =>
@@ -275,6 +237,9 @@ export default function LoginScreen() {
     >
       {Platform.OS === "web" ? (
         <style>{`
+          @media (max-width: 979px) {
+            [data-testid="auth-illustration"] { display: none; }
+          }
           #evolv-auth input {
             color-scheme: ${isDark ? "dark" : "light"};
             outline: none;
@@ -288,18 +253,14 @@ export default function LoginScreen() {
           }
         `}</style>
       ) : null}
-      {wide ? (
-        <View style={styles.photograph} testID="auth-photograph">
-          {photoIndex !== null ? (
-            <CoverImage
-              source={authPhotos[photoIndex]}
-              style={StyleSheet.absoluteFill}
-            />
-          ) : null}
-          <View style={styles.photoCaption}>
-            <Text style={styles.photoBrand}>Evolv</Text>
-            <Text style={styles.photoText}>Seu ritmo. Sua evolução.</Text>
-          </View>
+      {showArt ? (
+        <View style={[styles.artPane, { backgroundColor: theme.artworkSurface }]} testID="auth-illustration" accessible={false}>
+          <Image
+            source={artwork.login[resolvedTheme]}
+            resizeMode="cover"
+            style={styles.artImage}
+            fadeDuration={0}
+          />
         </View>
       ) : null}
       <SafeAreaView style={styles.authPane}>
@@ -329,7 +290,7 @@ export default function LoginScreen() {
             <View style={[styles.form, compactForm && styles.compactForm]}>
               <View style={styles.brandRow}>
                 <Text style={[styles.brand, { color: palette.text }]}>
-                  Evolv<Text style={styles.brandDot}>.</Text>
+                  Evolv<Text style={{ color: theme.accentText }}>.</Text>
                 </Text>
                 {mode === "signup" ? (
                   <Pressable
@@ -508,6 +469,7 @@ export default function LoginScreen() {
                 onPress={() => void submit()}
                 style={({ pressed }) => [
                   styles.primaryButton,
+                  { backgroundColor: theme.primary },
                   (isSubmitting || !isConfigured) && styles.disabled,
                   pressed && styles.pressed,
                 ]}
@@ -612,30 +574,8 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1, flexDirection: "row" },
-  photograph: { flex: 1, backgroundColor: "#222526", overflow: "hidden" },
-  photoCaption: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingHorizontal: 40,
-    paddingVertical: 32,
-    backgroundColor: "#101112DD",
-    gap: 6,
-  },
-  photoBrand: {
-    fontFamily: typography.body,
-    fontSize: 36,
-    fontWeight: "600",
-    color: "#FFFFFF",
-    letterSpacing: 0,
-  },
-  photoText: {
-    fontFamily: typography.body,
-    fontSize: 17,
-    lineHeight: 25,
-    color: "#E0E2E4",
-  },
+  artPane: { flex: 1, overflow: "hidden" },
+  artImage: { ...StyleSheet.absoluteFill, width: "100%", height: "100%" },
   authPane: { flex: 1, minWidth: 0 },
   keyboardView: { flex: 1 },
   scrollContent: {
@@ -660,7 +600,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     letterSpacing: 0,
   },
-  brandDot: { color: colors.red },
+
   backButton: {
     width: 44,
     height: 44,
@@ -712,7 +652,6 @@ const styles = StyleSheet.create({
   primaryButton: {
     height: 48,
     borderRadius: 24,
-    backgroundColor: colors.red,
     flexDirection: "row",
     gap: 10,
     alignItems: "center",

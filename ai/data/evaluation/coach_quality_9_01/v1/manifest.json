@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "phase": "9.01",
+  "language": "pt-BR",
+  "status": "frozen_before_first_coach_run",
+  "sources": {
+    "autoral": {
+      "type": "evolv_authored"
+    },
+    "evolv_iphone_deload": {
+      "type": "anonymized_evolv_regression"
+    },
+    "evolv_iphone_remada": {
+      "type": "anonymized_evolv_regression"
+    },
+    "evolv_iphone_agua": {
+      "type": "anonymized_evolv_regression",
+      "note": "Medidas e rotina originais substituídas por dados fictícios."
+    },
+    "evolv_roteiro": {
+      "type": "evolv_authored_from_reported_use_cases"
+    },
+    "wildchat_pattern": {
+      "type": "authored_from_public_dialogue_patterns",
+      "url": "https://huggingface.co/datasets/allenai/WildChat-1M",
+      "paper": "https://arxiv.org/abs/2405.01470",
+      "patterns": [
+        "respostas curtas com continuidade",
+        "mudança de assunto e retomada",
+        "pedidos reformulados"
+      ]
+    },
+    "you_tell_me_pattern": {
+      "type": "authored_from_public_dialogue_patterns",
+      "url": "https://arxiv.org/abs/2401.16167",
+      "data": "https://osf.io/c9nvm/",
+      "patterns": [
+        "relatos antes do objetivo",
+        "barreiras e contexto",
+        "negociação de um próximo passo"
+      ]
+    },
+    "treino_publico_pattern": {
+      "type": "authored_from_public_workout_usage_description",
+      "url": "https://www.tredict.com/blog/tredict_chatgpt_app/",
+      "additional_source": "https://www.reddit.com/r/indianrunners/comments/1r2myhn/chatgpt_use_for_training/",
+      "patterns": [
+        "informar o treino executado",
+        "separar análise de alteração do plano",
+        "ajustar interpretação ao receber mais contexto"
+      ]
+    }
+  },
+  "counts": {
+    "ajuste": {
+      "dialogues": 14,
+      "user_messages": 59,
+      "events": 2,
+      "long_dialogues": 2,
+      "max_user_messages": 12
+    },
+    "verificacao": {
+      "dialogues": 14,
+      "user_messages": 79,
+      "events": 5,
+      "long_dialogues": 3,
+      "max_user_messages": 21
+    }
+  },
+  "sha256": {
+    "ajuste.json": "b98dedb809dfcc2e4d1ec05561946ede1e53bcb2b7233702cdde0fa2339b1910",
+    "verificacao.json": "2670b43715724115be82bc76c71f2e517299c346361bd357a98fc0e1c6a6e606",
+    "fixtures.json": "9f777b9159296fcd4700dd0d3ce5f1b7fd4cc2a114cd7e58f13cabeb06d16f46"
+  }
+}

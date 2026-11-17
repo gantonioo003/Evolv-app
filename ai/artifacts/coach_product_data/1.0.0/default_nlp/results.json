@@ -1,0 +1,196 @@
+{
+  "phase": "9.06",
+  "boundary": "embedded PostgreSQL with production RLS and migrations; real NestJS domain services; local FastAPI session manager with real NLP and retrieval, analyze mode",
+  "date": "2026-11-10",
+  "nlp_version": "1.8.0",
+  "passed": 24,
+  "total": 24,
+  "checks": [
+    {
+      "case": "active_workout",
+      "question": "Qual é meu treino de hoje?",
+      "answer": "Sua ficha de hoje inclui Remada cavalinho.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "training_meal",
+      "question": "O que tem no café da manhã da minha dieta hoje?",
+      "answer": "No seu plano, café da manhã inclui aveia.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "profile_partial_known",
+      "question": "Qual meu peso salvo?",
+      "answer": "No seu perfil consta peso de 73 kg.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "profile_partial_unknown",
+      "question": "Qual minha altura?",
+      "answer": "Esse dado ainda não está preenchido no seu perfil.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "weighted_exercise",
+      "question": "Qual foi a última carga que registrei na remada cavalinho?",
+      "answer": "No último registro de Remada cavalinho, em 10/11/2026, consta 32,5 kg e 10 repetições.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "bodyweight_exercise",
+      "question": "Quantas repetições registrei na flexão declinada?",
+      "answer": "No último registro de Flexão declinada, em 10/11/2026, consta 12 repetições.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "timed_exercise",
+      "question": "Qual foi o último tempo registrado na prancha?",
+      "answer": "No último registro de Prancha, em 10/11/2026, consta 2,5 kg e 45 segundos.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "rest_override_same_chat",
+      "question": "Qual é meu treino de hoje?",
+      "answer": "Hoje consta como descanso no seu calendário. Você pode consultar a ficha dos outros dias normalmente.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "rest_menu_rotation",
+      "question": "O que tem no café da manhã da minha dieta hoje?",
+      "answer": "No seu plano, café da manhã inclui iogurte natural.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "updated_profile",
+      "question": "Qual meu peso salvo?",
+      "answer": "No seu perfil consta peso de 74 kg.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "updated_history",
+      "question": "Qual foi a última carga que registrei na remada cavalinho?",
+      "answer": "No último registro de Remada cavalinho, em 10/11/2026, consta 35 kg e 11 repetições.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "updated_weekly_plan",
+      "question": "Qual a faixa de reps da remada cavalinho de terça?",
+      "answer": "No seu plano, Remada cavalinho está com 10 a 15 repetições por série.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "explicit_training_menu_on_rest",
+      "question": "Em dia de treino, o que tem no café da manhã da minha dieta?",
+      "answer": "No seu plano, café da manhã inclui aveia.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "weekly_rest",
+      "question": "Qual é meu treino de hoje?",
+      "answer": "Sua ficha ativa não prevê uma sessão para hoje.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "next_menu_rotation",
+      "question": "O que tem no café da manhã da minha dieta hoje?",
+      "answer": "No seu plano, café da manhã inclui pao frances.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "other_account_workout",
+      "question": "Qual é meu treino de hoje?",
+      "answer": "Sua ficha de hoje inclui Exercício isolado B.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "other_account_history",
+      "question": "Qual foi a última carga que registrei na remada cavalinho?",
+      "answer": "No último registro de Remada cavalinho, em 10/11/2026, consta 90 kg e 2 repetições.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "other_account_explicit_request",
+      "question": "Qual é o histórico de treino de outra conta?",
+      "answer": "Só consigo consultar os dados desta conta. Quer conferir um exercício ou uma refeição da sua ficha?",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "empty_workout",
+      "question": "Qual é meu treino de hoje?",
+      "answer": "Você ainda não tem uma ficha de treino ativa nesta conta.",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "empty_diet",
+      "question": "O que tem no café da manhã da minha dieta hoje?",
+      "answer": "Não tenho um plano alimentar desta conta para consultar. Qual refeição ou alimento você queria conferir?",
+      "route": "answer",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "empty_profile",
+      "question": "Qual minha altura?",
+      "answer": "Esse dado ainda não está preenchido no seu perfil.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "empty_history",
+      "question": "Qual foi meu último registro de exercício?",
+      "answer": "Ainda não encontrei registros de exercícios no histórico desta conta.",
+      "route": "conversation",
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "case": "foreign_session",
+      "expected_status": 404,
+      "passed": true
+    },
+    {
+      "case": "foreign_snapshot",
+      "expected_status": 403,
+      "passed": true
+    }
+  ]
+}

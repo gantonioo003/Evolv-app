@@ -5,8 +5,12 @@ from .retrieval import HybridSearch
 from .retrieval_hydration import HydrationSearch
 
 
-DEFAULT_VERSION = "1.1.2"
-SUPPORTED_VERSIONS = ("1.0.0", "1.1.1", DEFAULT_VERSION)
+EXPANSION_RELEASES = {
+    "1.2.0": "international_guidance.v1.json",
+    "1.2.1": "answer_guidance.v1.json",
+}
+DEFAULT_VERSION = "1.2.1"
+SUPPORTED_VERSIONS = ("1.0.0", "1.1.1", "1.1.2", *EXPANSION_RELEASES)
 
 
 def load_search(ai_root, version=DEFAULT_VERSION):
@@ -28,5 +32,16 @@ def load_search(ai_root, version=DEFAULT_VERSION):
     selection = ai_root / "artifacts/retrieval_evaluation/1.0.0/selection.json"
     if digest(selection) != config["selection_sha256"] or read(selection)["config"] != config["parameters"]:
         raise ValueError("Retrieval parameters differ from the selected experiment")
-    search_class = HydrationSearch if version == "1.1.2" else HybridSearch
+    if version in EXPANSION_RELEASES:
+        for release, source_name in EXPANSION_RELEASES.items():
+            expanded = ai_root / "artifacts/rag" / release
+            manifest = read(expanded / "manifest.json")
+            if (manifest["version"] != release
+                    or manifest["parent_manifest_sha256"] != digest(index / "manifest.json")
+                    or manifest["source_sha256"] != digest(ai_root / "data/knowledge" / source_name)):
+                raise ValueError(f"Knowledge release changed: {release}")
+            index = expanded
+            if release == version:
+                break
+    search_class = HydrationSearch if version == "1.1.2" or version in EXPANSION_RELEASES else HybridSearch
     return search_class(index, encoder, config["parameters"])

@@ -4,11 +4,17 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type PropsWithChildren,
 } from "react";
 
+import { AppState } from "react-native";
+
 import { useAuth } from "@/context/auth-context";
+import { mapWorkoutPlanToDays } from "@/data/api-mappers";
+import { getDailyDiet } from "@/data/daily-diet";
+import { localDateOnly, mondayWeekDates, mondayWeekIndex, weekdaysFromSunday } from "@/lib/local-date";
 import { EvolvApi } from "@/services/evolv-api";
 import type {
   DietPlanApi,
@@ -19,10 +25,10 @@ import type {
   GenerateWorkoutPlanInput,
   GoalApi,
   GoalType,
-  MealApi,
   NutritionSummaryApi,
   PlannerAdjustmentApi,
   PlannerDayContextApi,
+  PlannerWeekOverridesApi,
   CreatePlannerAdjustmentInput,
   ProfileApi,
   ProgressEntryApi,
@@ -43,7 +49,10 @@ type EvolvDataContextValue = {
   progressionSuggestions: ProgressionSuggestionApi[];
   todayFoodLogs: FoodLogApi[];
   nutritionSummary: NutritionSummaryApi | null;
-  todayContext: PlannerDayContextApi | null;
+  today: Date;
+  workoutWeek: ReturnType<typeof mapWorkoutPlanToDays>;
+  nutritionDayType: PlannerDayContextApi["nutrition_day_type"];
+  dailyDiet: ReturnType<typeof getDailyDiet>;
   isLoading: boolean;
   hasLoaded: boolean;
   isMutating: boolean;
@@ -87,12 +96,14 @@ type EvolvDataContextValue = {
   recordExerciseLoad: (
     exerciseId: string,
     input: {
-      load_kg: number;
+      load_kg?: number;
       sets_completed?: number;
+      repetitions?: number;
+      duration_seconds?: number;
       reps_summary?: string;
     },
   ) => Promise<void>;
-  toggleMealRegistration: (meal: MealApi) => Promise<void>;
+  setMealRegistration: (mealId: string, registered: boolean) => Promise<void>;
   addProgressEntry: (input: {
     weight_kg?: number;
     waist_cm?: number;
@@ -104,6 +115,8 @@ type EvolvDataContextValue = {
 };
 
 const EvolvDataContext = createContext<EvolvDataContextValue | null>(null);
+
+const emptyFoodLogs: FoodLogApi[] = [];
 
 const emptySummary: NutritionSummaryApi = {
   calories_kcal: 0,
@@ -205,11 +218,30 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
   const [progressionSuggestions, setProgressionSuggestions] = useState<
     ProgressionSuggestionApi[]
   >([]);
-  const [todayFoodLogs, setTodayFoodLogs] = useState<FoodLogApi[]>([]);
-  const [nutritionSummary, setNutritionSummary] =
-    useState<NutritionSummaryApi | null>(null);
+  const [todayDate, setTodayDate] = useState(() => localDateOnly(new Date()));
+  const today = useMemo(() => new Date(`${todayDate}T00:00:00`), [todayDate]);
+  const [foodLogDay, setFoodLogDay] = useState<{ date: string; logs: FoodLogApi[] } | null>(null);
+  const todayFoodLogs = foodLogDay?.date === todayDate ? foodLogDay.logs : emptyFoodLogs;
+  const refreshRequest = useRef(0);
+  const foodLogRequest = useRef(0);
+  const registeringMeal = useRef(false);
+  const nutritionSummary = useMemo(
+    () =>
+      todayFoodLogs.flatMap((log) => log.food_log_items).reduce(
+        (sum, item) => ({
+          calories_kcal: sum.calories_kcal + Number(item.calories_kcal),
+          protein_g: sum.protein_g + Number(item.protein_g),
+          carbohydrate_g: sum.carbohydrate_g + Number(item.carbohydrate_g),
+          fat_g: sum.fat_g + Number(item.fat_g),
+          fiber_g: sum.fiber_g + Number(item.fiber_g),
+        }),
+        emptySummary,
+      ),
+    [todayFoodLogs],
+  );
   const [todayContext, setTodayContext] =
     useState<PlannerDayContextApi | null>(null);
+  const [weekOverrides, setWeekOverrides] = useState<PlannerWeekOverridesApi | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [loadedAccessToken, setLoadedAccessToken] = useState<string | null>(
     null,
@@ -224,8 +256,30 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
   const accessToken = session?.access_token ?? null;
   const hasLoaded = Boolean(accessToken && loadedAccessToken === accessToken);
 
+  const workoutWeek = useMemo(() => {
+    if (!workoutPlan) return [];
+    const calendar = weekOverrides?.dates.includes(todayDate)
+      ? weekOverrides
+      : { dates: mondayWeekDates(today), overrides: [] };
+    return mapWorkoutPlanToDays(workoutPlan, calendar);
+  }, [today, todayDate, weekOverrides, workoutPlan]);
+  const scheduledTraining =
+    workoutWeek[mondayWeekIndex(today)]?.status === "planned" ||
+    profile?.available_training_days.includes(weekdaysFromSunday[today.getDay()]);
+  const nutritionDayType = todayContext?.activity_date === todayDate
+    ? todayContext.nutrition_day_type
+    : scheduledTraining ? "training_day" : "rest_day";
+  const dailyDiet = useMemo(
+    () => getDailyDiet(dietPlan, nutritionDayType, today),
+    [dietPlan, nutritionDayType, today],
+  );
+
   const refresh = useCallback(async () => {
     if (!api) return;
+    const request = ++refreshRequest.current;
+    const now = new Date();
+    const date = localDateOnly(now);
+    const foodLogRead = ++foodLogRequest.current;
     setIsLoading(true);
     setError(null);
 
@@ -240,8 +294,8 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
         nextProgress,
         nextSuggestions,
         nextFoodLogs,
-        nextSummary,
         nextTodayContext,
+        nextWeekOverrides,
       ] = await Promise.all([
         api.getProfile(),
         api.getActiveGoal(),
@@ -251,11 +305,12 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
         api.listDietPlans(),
         api.getProgress(),
         api.getProgressionSuggestions(),
-        api.getTodayFoodLogs(),
-        api.getTodayNutritionSummary(),
-        api.getPlannerDayContext(),
+        api.getTodayFoodLogs(now),
+        api.getPlannerDayContext(date),
+        api.getPlannerWeekOverrides(date).catch(() => null),
       ]);
 
+      if (request !== refreshRequest.current) return;
       setProfile(nextProfile);
       setActiveGoal(nextGoal);
       setWorkoutPlan(nextWorkoutPlan);
@@ -264,22 +319,55 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
       setDietPlans(nextDietPlans);
       setProgressEntries(nextProgress);
       setProgressionSuggestions(nextSuggestions);
-      setTodayFoodLogs(nextFoodLogs);
-      setNutritionSummary(nextSummary ?? emptySummary);
+      if (foodLogRead === foodLogRequest.current) {
+        setFoodLogDay({ date, logs: nextFoodLogs });
+      }
       setTodayContext(nextTodayContext);
+      setWeekOverrides(nextWeekOverrides);
     } catch (caught) {
-      setError(messageFromError(caught));
+      if (request === refreshRequest.current) setError(messageFromError(caught));
     } finally {
-      setIsLoading(false);
-      setLoadedAccessToken(accessToken);
+      if (request === refreshRequest.current) {
+        setIsLoading(false);
+        setLoadedAccessToken(accessToken);
+      }
     }
   }, [accessToken, api]);
 
   useEffect(() => {
+    let midnightTimer: ReturnType<typeof setTimeout>;
+    const syncDate = () => {
+      const now = new Date();
+      const midnight = new Date(now);
+      midnight.setHours(24, 0, 0, 0);
+      setTodayDate(localDateOnly(now));
+      clearTimeout(midnightTimer);
+      midnightTimer = setTimeout(syncDate, midnight.getTime() - now.getTime());
+    };
+
+    syncDate();
+    const subscription = AppState.addEventListener("change", (state) => {
+      if (state === "active") syncDate();
+    });
+    return () => {
+      clearTimeout(midnightTimer);
+      subscription.remove();
+    };
+  }, []);
+
+  const invalidatePendingReads = useCallback(() => {
+    refreshRequest.current++;
+    foodLogRequest.current++;
+  }, []);
+
+  useEffect(() => {
     if (!api) return;
     const refreshTimer = setTimeout(() => void refresh(), 0);
-    return () => clearTimeout(refreshTimer);
-  }, [api, refresh]);
+    return () => {
+      clearTimeout(refreshTimer);
+      invalidatePendingReads();
+    };
+  }, [api, invalidatePendingReads, refresh, todayDate]);
 
   const mutate = useCallback(async <T,>(operation: () => Promise<T>) => {
     setIsMutating(true);
@@ -301,10 +389,11 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
       return mutate(async () => {
         const nextProfile = await api.updateProfile(input);
         setProfile(nextProfile);
+        if (input.available_training_days !== undefined) await refresh();
         return nextProfile;
       });
     },
-    [api, mutate],
+    [api, mutate, refresh],
   );
 
   const createGoal = useCallback(
@@ -327,11 +416,14 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
       return mutate(async () => {
         const nextPlan = await api.generateWorkoutPlan(input);
         setWorkoutPlans((current) => replacePlanSummary(current, nextPlan));
-        if (nextPlan.status === "active") setWorkoutPlan(nextPlan);
+        if (nextPlan.status === "active") {
+          setWorkoutPlan(nextPlan);
+          await refresh();
+        }
         return nextPlan;
       });
     },
-    [api, mutate],
+    [api, mutate, refresh],
   );
 
   const loadWorkoutPlan = useCallback(
@@ -351,10 +443,11 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
         const nextPlan = await api.activateWorkoutPlan(planId);
         setWorkoutPlan(nextPlan);
         setWorkoutPlans((current) => replacePlanSummary(current, nextPlan));
+        await refresh();
         return nextPlan;
       });
     },
-    [api, mutate],
+    [api, mutate, refresh],
   );
 
   const archiveWorkoutPlan = useCallback(
@@ -365,10 +458,11 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
         const nextPlan = await api.archiveWorkoutPlan(planId);
         setWorkoutPlan((current) => (current?.id === planId ? null : current));
         setWorkoutPlans((current) => replacePlanSummary(current, nextPlan));
+        await refresh();
         return nextPlan;
       });
     },
-    [api, mutate],
+    [api, mutate, refresh],
   );
 
   const generateDietPlan = useCallback(
@@ -493,8 +587,10 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
     (
       exerciseId: string,
       input: {
-        load_kg: number;
+        load_kg?: number;
         sets_completed?: number;
+        repetitions?: number;
+        duration_seconds?: number;
         reps_summary?: string;
       },
     ) => {
@@ -507,32 +603,27 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
     [api, mutate],
   );
 
-  const toggleMealRegistration = useCallback(
-    (meal: MealApi) => {
-      if (!api)
-        return Promise.reject(new Error("Entre na sua conta primeiro."));
-      return mutate(async () => {
-        const existing = todayFoodLogs.find(
-          (log) => log.meal_name === meal.name,
-        );
-        if (existing) {
-          await api.removeFoodLog(existing.id);
-          setTodayFoodLogs((current) =>
-            current.filter((log) => log.id !== existing.id),
-          );
-          return;
-        }
-
-        const created = await api.createFoodLog({
-          meal_name: meal.name,
-          description:
-            meal.description ||
-            meal.meal_items.map((item) => item.name).join(", "),
+  const setMealRegistration = useCallback(
+    async (mealId: string, registered: boolean) => {
+      if (!api) throw new Error("Entre na sua conta primeiro.");
+      if (registeringMeal.current) return;
+      const now = new Date();
+      const date = localDateOnly(now);
+      if (date !== todayDate) throw new Error("O dia mudou. Confira o cardápio de hoje.");
+      registeringMeal.current = true;
+      try {
+        await mutate(async () => {
+          await api.setPlannedMealRegistration(mealId, registered, now);
+          if (date !== localDateOnly(new Date())) return;
+          const foodLogRead = ++foodLogRequest.current;
+          const logs = await api.getTodayFoodLogs(now);
+          if (foodLogRead === foodLogRequest.current) setFoodLogDay({ date, logs });
         });
-        setTodayFoodLogs((current) => [created, ...current]);
-      });
+      } finally {
+        registeringMeal.current = false;
+      }
     },
-    [api, mutate, todayFoodLogs],
+    [api, mutate, todayDate],
   );
 
   const addProgressEntry = useCallback(
@@ -572,9 +663,12 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
       dietPlans: api ? dietPlans : [],
       progressEntries: api ? progressEntries : [],
       progressionSuggestions: api ? progressionSuggestions : [],
-      todayFoodLogs: api ? todayFoodLogs : [],
-      nutritionSummary: api ? nutritionSummary : null,
-      todayContext: api ? todayContext : null,
+      todayFoodLogs: hasLoaded ? todayFoodLogs : emptyFoodLogs,
+      nutritionSummary: hasLoaded ? nutritionSummary : null,
+      today,
+      workoutWeek: hasLoaded ? workoutWeek : [],
+      nutritionDayType,
+      dailyDiet: hasLoaded ? dailyDiet : null,
       isLoading,
       hasLoaded,
       isMutating,
@@ -598,7 +692,7 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
       rejectPlannerAdjustment,
       revertPlannerAdjustment,
       recordExerciseLoad,
-      toggleMealRegistration,
+      setMealRegistration,
       addProgressEntry,
     }),
     [
@@ -633,9 +727,12 @@ export function EvolvDataProvider({ children }: PropsWithChildren) {
       refresh,
       loadWorkoutPlan,
       loadDietPlan,
+      today,
       todayFoodLogs,
-      todayContext,
-      toggleMealRegistration,
+      workoutWeek,
+      nutritionDayType,
+      dailyDiet,
+      setMealRegistration,
       updateProfile,
       workoutPlan,
       workoutPlans,

@@ -10,7 +10,8 @@ import { CreatePlannerAdjustmentDto } from '../planner/dto/create-planner-adjust
 import { PlannerAdjustmentsService } from '../planner/planner-adjustments.service.js';
 import { CoachAiClient } from './coach-ai.client.js';
 import { CoachContextService } from './coach-context.service.js';
-import { CoachHistoryService } from './coach-history.service.js';
+import { CoachHistoryService, coachContextBudget, contextUnits, messageId } from './coach-history.service.js';
+import { CoachAccountService } from './coach-account.service.js';
 import { createHash } from 'node:crypto';
 import type {
   CoachMessageDto,
@@ -26,11 +27,14 @@ type Session = {
   owner: string;
   selected: CreateCoachSessionDto;
   touched: number;
-  previews: Map<string, string>;
+  previews: Set<string>;
   runtimeId: string;
 };
+const confirmations = new Set(['sim', 'confirmo', 'pode confirmar', 'confirmar', 'confirmo a proposta', 'confirmo essa proposta']);
+
 const required: Record<string, string[]> = {
   move_workout_day: ['workout_plan_id', 'workout_day_id', 'target_weekday'],
+  move_workout_occurrence: ['workout_plan_id', 'workout_day_id', 'source_date', 'target_date'],
   replace_exercise: [
     'workout_plan_id',
     'workout_day_exercise_id',
@@ -39,6 +43,37 @@ const required: Record<string, string[]> = {
   replace_meal_item: ['diet_plan_id', 'meal_item_id', 'replacement_food_id'],
   set_day_activity: ['activity_date', 'activity_type'],
 };
+
+const plannerAlternatives: Record<string, string> = {
+  INCOMPATIBLE_EXERCISE_REPLACEMENT: 'O substituto não cumpre o mesmo papel nesse treino. Qual equipamento você tem disponível? Posso procurar outra opção.',
+  DUPLICATE_EXERCISE_IN_DAY: 'O substituto já está nesse treino. Quer escolher outro exercício?',
+  FOOD_NOT_APPROVED_SUBSTITUTION: 'Essa troca não está entre as opções equivalentes dessa refeição. Quer conferir o que o cardápio oferece?',
+  WORKOUT_DAY_ALREADY_SCHEDULED: 'Esse treino já está no dia escolhido. Quer conferir a programação?',
+  COACH_WORKOUT_DESTINATION_OCCUPIED: 'O dia de destino já tem um treino. Posso conferir quais dias estão livres.',
+  ADJUSTMENT_EXPIRED: 'O prazo para aplicar a mudança passou. Peça a troca novamente para eu conferir o plano atual.',
+  ADJUSTMENT_STALE: 'Seu plano mudou enquanto eu conferia a troca. Quer que eu consulte a versão atual?',
+  ADJUSTMENT_TARGET_NOT_FOUND: 'O item já não está disponível no plano. Quer conferir a ficha atual comigo?',
+};
+
+function plannerReply(error: unknown) {
+  if (!(error instanceof HttpException) || ![400, 404, 409].includes(error.getStatus())) {
+    throw error;
+  }
+  const details = error.getResponse();
+  const code = typeof details === 'object' && details && 'code' in details
+    ? String(details.code) : '';
+  if (code === 'INCOMPATIBLE_EXERCISE_REPLACEMENT' && typeof details === 'object'
+      && details && 'alternatives' in details && Array.isArray(details.alternatives)) {
+    const names = details.alternatives.filter((name): name is string => typeof name === 'string');
+    if (names.length)
+      return 'Esse substituto não cumpre o mesmo papel no treino. Posso trocar por ' +
+        names.join(', ') + '. Algum desses funciona para você?';
+  }
+  if (Object.hasOwn(plannerAlternatives, code)) return plannerAlternatives[code]!;
+  return error.getStatus() === 409
+    ? 'O calendário mudou ou o dia de destino está ocupado. Quer conferir os próximos dias livres?'
+    : 'A troca não passou na validação do plano. Quer que eu procure uma alternativa para esse dia ou item?';
+}
 
 @Injectable()
 export class CoachService {
@@ -49,6 +84,7 @@ export class CoachService {
     private readonly context: CoachContextService,
     private readonly planner: PlannerAdjustmentsService,
     private readonly history: CoachHistoryService,
+    private readonly account: CoachAccountService,
   ) {}
   async onModuleDestroy() {
     for (const [id, s] of this.sessions) {
@@ -94,7 +130,7 @@ export class CoachService {
       owner: user,
       selected: conversation.selected,
       touched: Date.now(),
-      previews: new Map(),
+      previews: new Set(),
       runtimeId,
     };
     this.sessions.set(sid, session);
@@ -149,8 +185,22 @@ export class CoachService {
         inputHash,
       );
       if (saved) return saved;
+      const used = await this.history.contextUsed(user, token, sid);
+      const nextUsage = used + contextUnits(dto.text);
+      if (nextUsage > coachContextBudget)
+        throw new ConflictException({
+          code: 'COACH_CONVERSATION_LIMIT',
+          message: 'Esta conversa chegou ao limite. Abra uma nova para continuar.',
+        });
+      const { local_date, ...message } = dto;
+      const normalized = dto.text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+      const asksAboutHistory = !dto.proposal_id && /\b(?:historico|registr\w*|ultim[oa])\b/.test(normalized);
+      const [accountContext, recalled] = await Promise.all([
+        this.account.context(user, token, local_date, asksAboutHistory),
+        dto.proposal_id ? null : this.history.recall(user, token, sid, dto.text),
+      ]);
       let session = await this.runtime(user, token, sid);
-      const snapshot = await this.context.build(user, token, session.selected);
+      const snapshot = await this.context.build(user, token, session.selected, accountContext.day?.date ?? local_date);
       let refreshed: Record<string, unknown>;
       try {
         refreshed = record(
@@ -180,7 +230,7 @@ export class CoachService {
           user,
           '/v1/sessions/' + session.runtimeId + '/messages',
           'POST',
-          dto,
+          { ...message, account_context: accountContext, recalled_messages: recalled },
         ),
       );
       if (
@@ -201,6 +251,20 @@ export class CoachService {
         history: 'supabase_user_scoped',
         automatic_training: false,
       };
+      result.conversation_memory = { used: nextUsage, limit: coachContextBudget };
+      if (coachContextBudget - nextUsage < contextUnits('confirmo') &&
+          result.actions.some((action) => record(action).status === 'pending_user_confirmation')) {
+        result.actions.length = 0;
+        result.answer = 'Esta conversa chegou ao limite. Faça esse pedido em uma nova conversa para poder revisar e confirmar a proposta.';
+      }
+      const memoryItem = result.memory_item;
+      delete result.memory_item;
+      if (typeof memoryItem === 'string' && accountContext.memory_enabled &&
+          !dto.proposal_id && result.actions.length === 0 &&
+          record(result.analysis).route === 'conversation' &&
+          /^\s*(?:lembre|lembra|guarde|guarda|salve|salva|anote|anota)(?: na mem[oó]ria)? que /i.test(dto.text)) {
+        result.answer = await this.account.save(user, token, memoryItem);
+      }
       result.planner = { connected: true, writes_allowed: false };
       if (
         result.analysis &&
@@ -210,18 +274,25 @@ export class CoachService {
         result.answer =
           'No aplicativo, suas conversas são salvas na sua conta para você retomar o histórico. ' +
           'Elas não entram automaticamente no treinamento do modelo. ' +
-          'Você pode excluir conversas pelo histórico; pedir exclusão no chat não apaga dados nem confirma consentimento.';
+          'Pedir exclusão no chat não apaga dados. Use o histórico para excluir conversas e Conta → Memória do Coach para remover preferências.';
       }
       const previews: unknown[] = [];
       for (const raw of result.actions) {
         const action = record(raw);
+        if (action.status === 'apply_requested_change') {
+          result.actions = [];
+          result.answer = 'Para mudar sua ficha, primeiro peça uma prévia para conferir o item e confirmar.';
+          break;
+        }
         if (action.status !== 'confirmed_for_planner_preview') continue;
         if (
           typeof action.id !== 'string' ||
           !isUUID(action.id) ||
-          action.id !== dto.proposal_id
-        )
+          action.id !== dto.proposal_id ||
+          !confirmations.has(normalized.replace(/[^\w]+/g, ' ').trim())
+        ) {
           throw new BadGatewayException('COACH_INVALID_PROPOSAL');
+        }
         if (
           typeof refreshed.snapshot_fingerprint !== 'string' ||
           !/^[a-f0-9]{64}$/.test(refreshed.snapshot_fingerprint) ||
@@ -263,35 +334,23 @@ export class CoachService {
           ).length
         )
           throw new BadGatewayException('COACH_INVALID_ACTION');
-        const durable = await this.history.linked(user, token, sid, action.id);
-        const existing = durable?.id ?? session.previews.get(action.id);
+        const proposalId = action.id as string;
+        const existing = await this.history.linked(user, token, sid, proposalId);
         if (existing) {
-          if (!durable)
-            await this.history.link(
-              user,
-              token,
-              sid,
-              action.id,
-              existing,
-              payload,
-            );
-          previews.push(await this.planner.get(user, token, existing));
+          previews.push(existing);
           continue;
         }
         if (session.previews.size >= 32)
           throw new HttpException('COACH_PREVIEW_CAPACITY', 429);
-        const preview = await this.planner.preview(user, token, typed);
+        const preview = await this.planner.preview(user, token, typed, {
+          adjustmentId: messageId(user, sid, proposalId, 'planner-preview'),
+          conversationId: sid,
+          proposalId,
+          expiresAt: action.expires_at,
+        });
         if (!preview || typeof preview.id !== 'string' || !isUUID(preview.id))
           throw new BadGatewayException('COACH_INVALID_PREVIEW');
-        session.previews.set(action.id, preview.id);
-        await this.history.link(
-          user,
-          token,
-          sid,
-          action.id,
-          preview.id,
-          payload,
-        );
+        session.previews.add(proposalId);
         previews.push(preview);
       }
       session.touched = Date.now();
@@ -320,8 +379,20 @@ export class CoachService {
   ) {
     await this.history.get(user, token, sid);
     await this.history.adjustment(user, token, sid, adjustment);
-    return this.serial(sid, () =>
-      this.planner[operation](user, token, adjustment),
-    );
+    return this.serial(sid, async () => {
+      try {
+        return await this.planner[operation](user, token, adjustment, sid);
+      } catch (error) {
+        if (!(error instanceof HttpException) || error.getStatus() !== 400) throw error;
+        const details = error.getResponse();
+        if (!details || typeof details !== 'object' || !('code' in details)
+            || details.code !== 'ADJUSTMENT_NOT_ALLOWED') throw error;
+        const stored = await this.planner.get(user, token, adjustment);
+        if ((operation === 'apply' && stored.status === 'applied' && !stored.reverted_at) ||
+            (operation === 'reject' && stored.status === 'rejected') ||
+            (operation === 'revert' && stored.reverted_at)) return stored;
+        throw error;
+      }
+    });
   }
 }

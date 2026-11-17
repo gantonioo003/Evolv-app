@@ -1,5 +1,17 @@
 # Politica da base de conhecimento do Coach
 
+## Ampliação internacional
+
+O índice `ai/artifacts/rag/1.2.0` acrescenta 31 trechos em português ao índice
+anterior. `international_guidance.v1.json` registra os textos, a seção de cada
+fonte e as datas de conferência e revisão. As referências incluem diretrizes
+de saúde pública, consensos esportivos e estudos usados com o escopo descrito
+em cada trecho.
+
+O comando `python ai/scripts/build_international_knowledge.py` gera essa versão
+quando ela ainda não existe. A busca usa o índice local e mantém os filtros de
+segurança, revisão e validade da fonte.
+
 ## Preparacao para busca — 7.05.1
 
 O snapshot preparado fica em ai/data/rag/1.0.0/. Preserva os textos

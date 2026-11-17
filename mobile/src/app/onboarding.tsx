@@ -8,8 +8,9 @@ import {
 } from "lucide-react-native";
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 
-import { AppScreen } from "@/components/ui";
-import { colors, radius, spacing } from "@/constants/theme";
+import { IllustratedHero, AppScreen } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
+import { radius, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type { GoalType } from "@/types/api";
@@ -131,11 +132,21 @@ export default function OnboardingScreen() {
         ))}
       </View>
 
-      <View style={styles.heading}>
-        <Text style={styles.progressLabel}>{progressLabel}</Text>
-        <Text style={styles.title}>{current.title}</Text>
-        <Text style={styles.description}>{current.description}</Text>
-      </View>
+      {step === 0 ? (
+        <IllustratedHero
+          source={artwork.onboarding}
+          eyebrow={progressLabel}
+          title={current.title}
+          description={current.description}
+          height={132}
+        />
+      ) : (
+        <View style={styles.heading}>
+          <Text style={styles.progressLabel}>{progressLabel}</Text>
+          <Text style={styles.title}>{current.title}</Text>
+          <Text style={styles.description}>{current.description}</Text>
+        </View>
+      )}
 
       <View style={styles.options}>
         {current.options.map((option) => {
@@ -171,7 +182,7 @@ export default function OnboardingScreen() {
                 </Text>
               </View>
               {active ? (
-                <Check color={colors.text} size={18} />
+                <Check color={palette.onPrimary} size={18} />
               ) : (
                 <ChevronRight color={palette.faint} size={18} />
               )}
@@ -197,7 +208,7 @@ export default function OnboardingScreen() {
               ? "Entrar no Evolv"
               : "Continuar"}
         </Text>
-        <ArrowRight color={colors.text} size={18} />
+        <ArrowRight color={palette.onPrimary} size={18} />
       </Pressable>
       <Text style={styles.optional}>
         Todas as respostas desta etapa são opcionais.
@@ -236,10 +247,10 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
     },
-    skipText: { color: colors.red, fontSize: 12, fontWeight: "600" },
+    skipText: { color: palette.accentText, fontSize: 12, fontWeight: "600" },
     stepper: { height: 4, flexDirection: "row", gap: 5 },
     step: { flex: 1, borderRadius: 2, backgroundColor: palette.border },
-    stepActive: { backgroundColor: colors.red },
+    stepActive: { backgroundColor: palette.primary },
     heading: { marginTop: spacing.lg, gap: 8 },
     progressLabel: {
       color: palette.muted,
@@ -272,10 +283,10 @@ const createStyles = (palette: AppThemePalette) =>
       backgroundColor: palette.surface,
       padding: 16,
     },
-    optionActive: { borderColor: colors.red, backgroundColor: colors.red },
+    optionActive: { borderColor: palette.primary, backgroundColor: palette.primary },
     optionText: { flex: 1 },
     optionTitle: { color: palette.text, fontSize: 15, fontWeight: "600" },
-    optionTitleActive: { color: colors.text },
+    optionTitleActive: { color: palette.onPrimary },
     optionMeta: { marginTop: 4, color: palette.muted, fontSize: 11.5 },
     continueButton: {
       height: 52,
@@ -284,9 +295,9 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
       gap: 8,
       borderRadius: 24,
-      backgroundColor: colors.red,
+      backgroundColor: palette.primary,
     },
-    continueText: { color: colors.text, fontSize: 14, fontWeight: "600" },
+    continueText: { color: palette.onPrimary, fontSize: 14, fontWeight: "600" },
     optional: { color: palette.faint, fontSize: 11, textAlign: "center" },
     disabled: { opacity: 0.45 },
     pressed: { opacity: 0.66 },

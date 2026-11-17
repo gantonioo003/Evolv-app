@@ -1,0 +1,86 @@
+[
+  {
+    "turn": "agua-dados-solicitados/3",
+    "query": "Como ajustar a hidratação no exercício em um dia quente à tarde?",
+    "matches": [
+      {
+        "document": "hydration_is_individual",
+        "score": 0.44663995158678593,
+        "text": "Necessidade de liquido varia com clima, duracao, intensidade, suor, alimentacao e pessoa. A orientacao geral e chegar hidratado, ter acesso a liquido e repor perdas sem transformar um numero fixo em regra universal."
+      },
+      {
+        "document": "strength_priority_early",
+        "score": 0.37077633435280477,
+        "text": "Quando o objetivo é ganhar força em um exercício específico, o ACSM aponta benefício em colocá-lo no início da sessão. Para hipertrofia, a mesma revisão não encontrou efeito consistente da ordem em si."
+      },
+      {
+        "document": "early_training_food_options",
+        "score": 0.36876543425559744,
+        "text": "A alimentação antes de treinar depende do tempo disponível, tolerância digestiva e duração ou intensidade da atividade. Uma refeição grande imediatamente antes pode não ser confortável; o restante da ingestão diária também importa. Não há regra de que todos devam treinar em jejum ou tomar um café da manhã reforçado."
+      }
+    ]
+  },
+  {
+    "turn": "rotina-e-atualizacao-de-horario/6",
+    "query": "O que considerar sobre refeição após o treino noturno perto de dormir?",
+    "matches": [
+      {
+        "document": "late_training_meals_sleep",
+        "score": 0.7386837430627935,
+        "text": "Depois de treinar à noite, a alimentação pode ser organizada junto da ingestão diária e do horário de dormir. Cafeína e refeições grandes perto de deitar podem atrapalhar o sono de algumas pessoas. Não é obrigatório pular a refeição nem comer logo antes de dormir sem considerar conforto e rotina."
+      },
+      {
+        "document": "early_training_food_options",
+        "score": 0.5093540364349782,
+        "text": "A alimentação antes de treinar depende do tempo disponível, tolerância digestiva e duração ou intensidade da atividade. Uma refeição grande imediatamente antes pode não ser confortável; o restante da ingestão diária também importa. Não há regra de que todos devam treinar em jejum ou tomar um café da manhã reforçado."
+      },
+      {
+        "document": "sleep_habits_general",
+        "score": 0.49600614980964125,
+        "text": "Horario relativamente regular, ambiente escuro e silencioso, rotina de desaceleracao e cuidado com cafeina, alcool e refeicoes pesadas perto de dormir podem apoiar o sono. Mudancas pequenas e sustentaveis sao preferiveis a uma lista rigida."
+      }
+    ]
+  },
+  {
+    "turn": "conversa-cozinha-e-turnos/8",
+    "query": "Como planejar o preparo de refeições com antecedência e guardar com segurança?",
+    "matches": [
+      {
+        "document": "grocery_and_meal_prep_support_adherence",
+        "score": 0.5895470055203338,
+        "text": "Lista de compras, reaproveitamento seguro de ingredientes e preparo antecipado podem reduzir custo e decisao diaria. O melhor formato e o que cabe na rotina: cozinhar tudo, preparar bases ou montar refeicoes simples no momento."
+      },
+      {
+        "document": "food_safety_five_keys",
+        "score": 0.5504913515028096,
+        "text": "As orientacoes centrais sao manter limpeza, separar crus e cozidos, cozinhar completamente, manter temperaturas seguras e usar agua e materias-primas seguras. Elas reduzem risco de contaminacao durante preparo e armazenamento."
+      },
+      {
+        "document": "pre_workout_meal_context",
+        "score": 0.4540532294666051,
+        "text": "Uma refeicao antes do treino pode combinar carboidrato, proteina, liquido e alimentos ja tolerados. Quantidade e antecedencia dependem do horario, duracao, intensidade e conforto digestivo; nao existe um unico pre-treino correto."
+      }
+    ]
+  },
+  {
+    "turn": "rotina-e-atualizacao-de-horario/8",
+    "query": "Qual a diferença de carga e repetição?",
+    "matches": [
+      {
+        "document": "reference_strength_load",
+        "score": 0.5312374880857462,
+        "text": "Para adultos saudáveis, o ACSM apresenta cargas próximas de 80% da repetição máxima como referência para priorizar força, com 2 a 3 séries por exercício. É uma referência geral de programação, e a carga de partida depende da experiência e da execução."
+      },
+      {
+        "document": "sets_repetitions_plain",
+        "score": 0.46590857207282343,
+        "text": "Uma repetição é um movimento completo; uma série reúne repetições feitas antes de um intervalo. Em 3 séries de 10 repetições, são três grupos de dez movimentos, com pausas entre os grupos. Isso explica a notação, sem afirmar que 3 × 10 seja ideal para todos."
+      },
+      {
+        "document": "training_plateau_review_context",
+        "score": 0.452901867339389,
+        "text": "Uma sessão sem aumentar carga não comprova estagnação. Compare desempenhos em condições semelhantes, execução, repetições e regularidade antes de concluir que é preciso mais volume. A progressão depende do nível e objetivo; aumentar tudo ao mesmo tempo dificulta entender a resposta."
+      }
+    ]
+  }
+]

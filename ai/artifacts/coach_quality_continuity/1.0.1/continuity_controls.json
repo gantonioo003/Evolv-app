@@ -1,0 +1,9 @@
+{
+  "memory_after_60_short_turns": true,
+  "same_chat_restored": true,
+  "new_chat_no_session_facts": true,
+  "other_account_denied": true,
+  "no_opt_in_no_global_save": true,
+  "explicit_opt_in_requests_save": true,
+  "saved_preference_supplied_to_separate_chat": true
+}

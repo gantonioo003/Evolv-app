@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
 import { ArrowLeft, ChevronRight, History } from "lucide-react-native";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import {
+  IllustrationThumbnail,
   AppScreen,
   InfoRow,
   LabelIcon,
@@ -11,7 +12,9 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
 import { colors, spacing } from "@/constants/theme";
+import { useAuth } from "@/context/auth-context";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type { PlannerAdjustmentApi } from "@/types/api";
@@ -20,21 +23,28 @@ export default function PlannerAdjustmentsScreen() {
   const router = useRouter();
   const { palette } = useAppTheme();
   const styles = createStyles(palette);
+  const { isLoading } = useAuth();
   const { listPlannerAdjustments } = useEvolvData();
-  const [items, setItems] = useState<PlannerAdjustmentApi[]>([]);
+  const [items, setItems] = useState<PlannerAdjustmentApi[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const load = useCallback(() => {
+  useEffect(() => {
+    if (isLoading) return;
+    let active = true;
     void listPlannerAdjustments()
-      .then(setItems)
-      .catch((caught: unknown) =>
-        setError(
-          caught instanceof Error ? caught.message : "Histórico indisponível.",
-        ),
-      );
-  }, [listPlannerAdjustments]);
-
-  useEffect(load, [load]);
+      .then((result) => {
+        if (!active) return;
+        setItems(result);
+        setError(null);
+      })
+      .catch((caught: unknown) => {
+        if (!active) return;
+        setError(caught instanceof Error ? caught.message : "Histórico indisponível.");
+      });
+    return () => {
+      active = false;
+    };
+  }, [isLoading, listPlannerAdjustments]);
 
   return (
     <AppScreen>
@@ -58,7 +68,7 @@ export default function PlannerAdjustmentsScreen() {
       {error ? <Text style={styles.error}>{error}</Text> : null}
 
       <View style={styles.list}>
-        {items.map((item) => (
+        {items?.map((item) => (
           <Surface key={item.id}>
             <InfoRow
               leading={<LabelIcon icon={History} />}
@@ -74,10 +84,10 @@ export default function PlannerAdjustmentsScreen() {
             />
           </Surface>
         ))}
-        {!items.length && !error ? (
+        {items?.length === 0 && !error ? (
           <Surface>
             <InfoRow
-              leading={<LabelIcon icon={History} />}
+              leading={<IllustrationThumbnail source={artwork.adjustments} />}
               title="Nenhum ajuste ainda"
               description="As mudanças só aparecem aqui depois que você cria uma prévia."
             />
@@ -91,6 +101,7 @@ export default function PlannerAdjustmentsScreen() {
 function adjustmentLabel(item: PlannerAdjustmentApi) {
   const labels = {
     move_workout_day: "Mudança de dia",
+    move_workout_occurrence: "Mudança só nesta semana",
     replace_exercise: "Troca de exercício",
     replace_meal_item: "Troca de alimento",
     set_day_activity: "Atividade do dia",

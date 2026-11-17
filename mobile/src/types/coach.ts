@@ -6,10 +6,12 @@ export type CoachProposal = {
 };
 export type CoachResult = {
   answer:string; actions:CoachProposal[];
+  planner?:{applied?:boolean};
   citations?:{supplied_chunk_ids:string[];cited_chunk_ids:string[]};
   retrieval?:{matches:{id:string;title:string;citations?:{title:string;url?:string}[]}[]};
   generation?:{stopped_at_eos?:boolean}|null;
   grounding?:{status:string};
+  conversation_memory?:{used:number;limit:number};
 };
 export type CoachReply = {session_id:string;request_id:string;result:CoachResult;planner_previews?:PlannerAdjustmentApi[]};
 export type HistoryMessage = {id:string;role:"user"|"assistant";content:string;created_at:string;

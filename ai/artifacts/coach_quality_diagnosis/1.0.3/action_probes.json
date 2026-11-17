@@ -1,0 +1,645 @@
+{
+  "mode": "analyze",
+  "counted_in_baseline": false,
+  "cases": [
+    [
+      {
+        "case": "replace_meal_item",
+        "turn": 1,
+        "input": "Troque Ovo por Tofu.",
+        "expect": {
+          "behavior": "propose",
+          "proposal": {
+            "kind": "replace_meal_item",
+            "from": "cafe_manha:ovo",
+            "to": "tofu"
+          }
+        },
+        "seconds": 1.1023,
+        "execution": "completed",
+        "result": {
+          "schema_version": "coach.1.2.0",
+          "mode": "local_research",
+          "analysis": {
+            "schema_version": "1.6.0",
+            "model_version": "1.9.0",
+            "dataset_version": "1.9.0",
+            "status": "development_opt_in_not_promoted",
+            "intent": {
+              "label": "update_goal",
+              "margin": 0.001971066198568898,
+              "is_calibrated_probability": false,
+              "confident": false,
+              "alternatives": [
+                {
+                  "label": "update_goal",
+                  "score": 0.04206518858785865
+                },
+                {
+                  "label": "replace_exercise",
+                  "score": 0.04009412238928975
+                },
+                {
+                  "label": "greeting",
+                  "score": 0.032439533620385576
+                }
+              ],
+              "validation_support_includes_synthetic": true
+            },
+            "risk": {
+              "labels": [],
+              "model_labels": [],
+              "rules": {
+                "risks": [],
+                "evidence": [],
+                "status": "unmatched",
+                "ambiguity_flag": false,
+                "rules_version": "1.4.0",
+                "safety_assessment": "unknown",
+                "requires_review": true,
+                "is_diagnosis": false
+              },
+              "safety_assessment": "unknown",
+              "none_is_not_medical_clearance": true
+            },
+            "entities": {
+              "text": "Troque Ovo por Tofu.",
+              "reference_date": "2026-11-10",
+              "extractor_version": "1.3.1",
+              "catalog_version": "1.3.1",
+              "entities": [
+                {
+                  "entity_type": "food",
+                  "text": "Ovo",
+                  "value": "ovo",
+                  "start": 7,
+                  "end": 10,
+                  "source": "catalog",
+                  "attributes": {
+                    "matched_alias": "ovo"
+                  }
+                },
+                {
+                  "entity_type": "replacement_food",
+                  "text": "Tofu",
+                  "value": "tofu",
+                  "start": 15,
+                  "end": 19,
+                  "source": "context_rule",
+                  "attributes": {
+                    "matched_alias": "tofu",
+                    "relation": "replace_with"
+                  }
+                }
+              ]
+            },
+            "route": "draft_for_confirmation",
+            "missing_required_entities": [
+              "goal"
+            ],
+            "topics": [
+              {
+                "id": "food_substitution",
+                "domain": "nutrition",
+                "sources": [
+                  "entity_hint"
+                ]
+              },
+              {
+                "id": "goal_setting",
+                "domain": "progress",
+                "sources": [
+                  "intent_hint"
+                ]
+              }
+            ],
+            "response_constraints": {
+              "no_diagnosis": true,
+              "no_exam_selection": true,
+              "no_medication_dose_or_hormone_cycle": true,
+              "no_injury_treatment_prescription": true,
+              "pain_not_inferred_to_need_explosive_training": true
+            },
+            "planner": {
+              "writes_allowed": false,
+              "requires_confirmation": true,
+              "pending_action_resolved_from_text": false
+            },
+            "privacy": {
+              "automatic_training": false,
+              "conversation_persistence": false,
+              "direct_identifiers_minimized_before_features": true
+            },
+            "proposal_basis": "explicit_approved_food_swap"
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Encontrei essa troca no seu plano. Abra a prévia para conferir antes de confirmar.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "28a4ccd3-3566-4c0e-a2de-a3f13ee91bbc",
+              "payload": {
+                "kind": "replace_meal_item",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "diet_plan_id": "92d899a1-418b-4e88-abf3-44b48850e19d",
+                "meal_item_id": "6e94c3c8-65b5-4f79-a556-028e31f4f8de",
+                "replacement_food_id": "e4aefcd5-a656-45e0-8a8a-1b6be1b79463"
+              },
+              "snapshot_fingerprint": "26ede5f106f4b3be68665e0ec9b08126e258e0f308de17be41e86bfc26a6defa",
+              "expires_at": "2026-11-09T22:09:01.619521+00:00",
+              "status": "pending_user_confirmation"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "clarification": null,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "dialogue_context": {
+            "topics": []
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        "expected_payload": {
+          "kind": "replace_meal_item",
+          "diet_plan_id": "92d899a1-418b-4e88-abf3-44b48850e19d",
+          "meal_item_id": "6e94c3c8-65b5-4f79-a556-028e31f4f8de",
+          "replacement_food_id": "e4aefcd5-a656-45e0-8a8a-1b6be1b79463"
+        },
+        "correct_pending_proposal": true
+      },
+      {
+        "case": "replace_meal_item",
+        "turn": 2,
+        "input": "confirmo",
+        "expect": {
+          "behavior": "preview"
+        },
+        "has_correct_pending_proposal": true,
+        "seconds": 1.0113,
+        "execution": "completed",
+        "result": {
+          "schema_version": "coach.1.2.0",
+          "mode": "local_research",
+          "analysis": {
+            "schema_version": "1.6.0",
+            "model_version": "1.9.0",
+            "dataset_version": "1.9.0",
+            "status": "development_opt_in_not_promoted",
+            "intent": {
+              "label": "confirm_planner_action",
+              "margin": 0.18540603880007261,
+              "is_calibrated_probability": false,
+              "confident": true,
+              "alternatives": [
+                {
+                  "label": "confirm_planner_action",
+                  "score": 0.2140640490733424
+                },
+                {
+                  "label": "explain_current_plan",
+                  "score": 0.028658010273269773
+                },
+                {
+                  "label": "record_food_intake",
+                  "score": 0.022736350001649894
+                }
+              ],
+              "validation_support_includes_synthetic": true
+            },
+            "risk": {
+              "labels": [],
+              "model_labels": [],
+              "rules": {
+                "risks": [],
+                "evidence": [],
+                "status": "unmatched",
+                "ambiguity_flag": false,
+                "rules_version": "1.4.0",
+                "safety_assessment": "unknown",
+                "requires_review": true,
+                "is_diagnosis": false
+              },
+              "safety_assessment": "unknown",
+              "none_is_not_medical_clearance": true
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-10",
+              "extractor_version": "1.3.1",
+              "catalog_version": "1.3.1",
+              "entities": []
+            },
+            "route": "clarify_pending_action",
+            "missing_required_entities": [
+              "pending_action"
+            ],
+            "topics": [
+              {
+                "id": "planner_confirmation",
+                "domain": "product",
+                "sources": [
+                  "intent_hint"
+                ]
+              }
+            ],
+            "response_constraints": {
+              "no_diagnosis": true,
+              "no_exam_selection": true,
+              "no_medication_dose_or_hormone_cycle": true,
+              "no_injury_treatment_prescription": true,
+              "pain_not_inferred_to_need_explosive_training": true
+            },
+            "planner": {
+              "writes_allowed": false,
+              "requires_confirmation": true,
+              "pending_action_resolved_from_text": false
+            },
+            "privacy": {
+              "automatic_training": false,
+              "conversation_persistence": false,
+              "direct_identifiers_minimized_before_features": true
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Autorização registrada para pedir a prévia ao Planner. O plano ainda não foi alterado.",
+          "generation": null,
+          "actions": [
+            {
+              "id": "28a4ccd3-3566-4c0e-a2de-a3f13ee91bbc",
+              "payload": {
+                "kind": "replace_meal_item",
+                "source": "coach",
+                "reason": "Alteração solicitada pelo usuário; sujeita à prévia do Planner.",
+                "diet_plan_id": "92d899a1-418b-4e88-abf3-44b48850e19d",
+                "meal_item_id": "6e94c3c8-65b5-4f79-a556-028e31f4f8de",
+                "replacement_food_id": "e4aefcd5-a656-45e0-8a8a-1b6be1b79463"
+              },
+              "snapshot_fingerprint": "26ede5f106f4b3be68665e0ec9b08126e258e0f308de17be41e86bfc26a6defa",
+              "expires_at": "2026-11-09T22:09:01.619521+00:00",
+              "status": "confirmed_for_planner_preview"
+            }
+          ],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "clarification": null,
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "dialogue_context": {
+            "topics": []
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        "forwardable_to_planner": true
+      }
+    ],
+    [
+      {
+        "case": "replace_exercise",
+        "turn": 1,
+        "input": "Troque o supino reto por flexão de braços.",
+        "expect": {
+          "behavior": "propose",
+          "proposal": {
+            "kind": "replace_exercise",
+            "from": "supino reto",
+            "to": "flexao de bracos"
+          }
+        },
+        "seconds": 0.98,
+        "execution": "completed",
+        "result": {
+          "schema_version": "coach.1.2.0",
+          "mode": "local_research",
+          "analysis": {
+            "schema_version": "1.6.0",
+            "model_version": "1.9.0",
+            "dataset_version": "1.9.0",
+            "status": "development_opt_in_not_promoted",
+            "intent": {
+              "label": "replace_exercise",
+              "margin": 0.038761455801908845,
+              "is_calibrated_probability": false,
+              "confident": false,
+              "alternatives": [
+                {
+                  "label": "replace_exercise",
+                  "score": 0.06669213478341703
+                },
+                {
+                  "label": "greeting",
+                  "score": 0.02793067898150818
+                },
+                {
+                  "label": "record_food_intake",
+                  "score": 0.024410082930793418
+                }
+              ],
+              "validation_support_includes_synthetic": true
+            },
+            "risk": {
+              "labels": [],
+              "model_labels": [],
+              "rules": {
+                "risks": [],
+                "evidence": [],
+                "status": "unmatched",
+                "ambiguity_flag": false,
+                "rules_version": "1.4.0",
+                "safety_assessment": "unknown",
+                "requires_review": true,
+                "is_diagnosis": false
+              },
+              "safety_assessment": "unknown",
+              "none_is_not_medical_clearance": true
+            },
+            "entities": {
+              "text": "Troque o supino reto por flexão de braços.",
+              "reference_date": "2026-11-10",
+              "extractor_version": "1.3.1",
+              "catalog_version": "1.3.1",
+              "entities": [
+                {
+                  "entity_type": "exercise",
+                  "text": "supino reto",
+                  "value": "supino reto",
+                  "start": 9,
+                  "end": 20,
+                  "source": "catalog",
+                  "attributes": {
+                    "matched_alias": "supino reto"
+                  }
+                },
+                {
+                  "entity_type": "replacement_exercise",
+                  "text": "flexão de braços",
+                  "value": "flexao de bracos",
+                  "start": 25,
+                  "end": 41,
+                  "source": "context_rule",
+                  "attributes": {
+                    "matched_alias": "flexao de bracos",
+                    "relation": "replace_with"
+                  }
+                }
+              ]
+            },
+            "route": "clarify",
+            "missing_required_entities": [],
+            "topics": [
+              {
+                "id": "exercise_substitution",
+                "domain": "training",
+                "sources": [
+                  "entity_hint",
+                  "intent_hint"
+                ]
+              }
+            ],
+            "response_constraints": {
+              "no_diagnosis": true,
+              "no_exam_selection": true,
+              "no_medication_dose_or_hormone_cycle": true,
+              "no_injury_treatment_prescription": true,
+              "pain_not_inferred_to_need_explosive_training": true
+            },
+            "planner": {
+              "writes_allowed": false,
+              "requires_confirmation": true,
+              "pending_action_resolved_from_text": false
+            },
+            "privacy": {
+              "automatic_training": false,
+              "conversation_persistence": false,
+              "direct_identifiers_minimized_before_features": true
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Você quer substituir um exercício na ficha ou só conhecer alternativas?",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "clarification": {
+            "schema_version": "clarification.1.0.0",
+            "reason": "intent_uncertain",
+            "candidate_intent": "replace_exercise",
+            "missing_fields": [],
+            "question": "Você quer substituir um exercício na ficha ou só conhecer alternativas?",
+            "requires_complete_request": false,
+            "authorizes_action": false,
+            "answer": "Você quer substituir um exercício na ficha ou só conhecer alternativas?",
+            "model_intent": "replace_exercise",
+            "candidate_source": "classifier",
+            "original_route": "clarify"
+          },
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "dialogue_context": {
+            "topics": []
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        "expected_payload": {
+          "kind": "replace_exercise",
+          "workout_plan_id": "2b0718ea-cbe3-4c97-887c-b930edab8408",
+          "workout_day_exercise_id": "78d6ff6f-a95b-4202-9dda-dc107be39f98",
+          "replacement_exercise_id": "8cfd8e85-a726-450b-a3ca-7ee376eb6412"
+        },
+        "correct_pending_proposal": false
+      },
+      {
+        "case": "replace_exercise",
+        "turn": 2,
+        "input": "confirmo",
+        "expect": {
+          "behavior": "preview"
+        },
+        "has_correct_pending_proposal": false,
+        "seconds": 1.005,
+        "execution": "completed",
+        "result": {
+          "schema_version": "coach.1.2.0",
+          "mode": "local_research",
+          "analysis": {
+            "schema_version": "1.6.0",
+            "model_version": "1.9.0",
+            "dataset_version": "1.9.0",
+            "status": "development_opt_in_not_promoted",
+            "intent": {
+              "label": "confirm_planner_action",
+              "margin": 0.11259429036434516,
+              "is_calibrated_probability": false,
+              "confident": true,
+              "alternatives": [
+                {
+                  "label": "confirm_planner_action",
+                  "score": 0.14838267066605645
+                },
+                {
+                  "label": "clarification",
+                  "score": 0.03578838030171129
+                },
+                {
+                  "label": "ask_exercise_execution",
+                  "score": 0.026664836953826404
+                }
+              ],
+              "validation_support_includes_synthetic": true
+            },
+            "risk": {
+              "labels": [],
+              "model_labels": [],
+              "rules": {
+                "risks": [],
+                "evidence": [],
+                "status": "unmatched",
+                "ambiguity_flag": false,
+                "rules_version": "1.4.0",
+                "safety_assessment": "unknown",
+                "requires_review": true,
+                "is_diagnosis": false
+              },
+              "safety_assessment": "unknown",
+              "none_is_not_medical_clearance": true
+            },
+            "entities": {
+              "text": "confirmo",
+              "reference_date": "2026-11-10",
+              "extractor_version": "1.3.1",
+              "catalog_version": "1.3.1",
+              "entities": []
+            },
+            "route": "clarify_pending_action",
+            "missing_required_entities": [
+              "pending_action"
+            ],
+            "topics": [
+              {
+                "id": "planner_confirmation",
+                "domain": "product",
+                "sources": [
+                  "intent_hint"
+                ]
+              }
+            ],
+            "response_constraints": {
+              "no_diagnosis": true,
+              "no_exam_selection": true,
+              "no_medication_dose_or_hormone_cycle": true,
+              "no_injury_treatment_prescription": true,
+              "pain_not_inferred_to_need_explosive_training": true
+            },
+            "planner": {
+              "writes_allowed": false,
+              "requires_confirmation": true,
+              "pending_action_resolved_from_text": false
+            },
+            "privacy": {
+              "automatic_training": false,
+              "conversation_persistence": false,
+              "direct_identifiers_minimized_before_features": true
+            }
+          },
+          "retrieval": {
+            "status": "not_requested",
+            "matches": []
+          },
+          "answer": "Para confirmar ou recusar, use os botões da proposta nesta conversa. Se não houver uma proposta válida, peça uma nova alteração.",
+          "generation": null,
+          "actions": [],
+          "planner": {
+            "writes_allowed": false,
+            "connected": false
+          },
+          "privacy": {
+            "history": "session_memory_only",
+            "automatic_training": false
+          },
+          "history_turns_dropped": 0,
+          "clarification": {
+            "schema_version": "clarification.1.0.0",
+            "reason": "proposal_id_required",
+            "candidate_intent": "confirm_planner_action",
+            "missing_fields": [],
+            "question": "Para confirmar ou recusar, use os botões da proposta nesta conversa. Se não houver uma proposta válida, peça uma nova alteração.",
+            "requires_complete_request": false,
+            "authorizes_action": false,
+            "answer": "Para confirmar ou recusar, use os botões da proposta nesta conversa. Se não houver uma proposta válida, peça uma nova alteração.",
+            "original_route": "clarify_pending_action"
+          },
+          "knowledge_only_fallback": false,
+          "safety": {
+            "preflight_route": null,
+            "generated_output_blocked": false
+          },
+          "dialogue_context": {
+            "topics": []
+          },
+          "citations": {
+            "supplied_chunk_ids": [],
+            "cited_chunk_ids": [],
+            "unknown_chunk_ids": [],
+            "claim_faithfulness_verified": false
+          }
+        },
+        "forwardable_to_planner": false
+      }
+    ]
+  ]
+}

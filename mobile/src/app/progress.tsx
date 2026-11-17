@@ -20,7 +20,7 @@ import {
 
 import {
   AppScreen,
-  CinematicHero,
+  IllustratedHero,
   Divider,
   InfoRow,
   LabelIcon,
@@ -30,9 +30,11 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
 import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
+import { addCalendarDays, localDateOnly } from "@/lib/local-date";
 
 export default function ProgressScreen() {
   const { palette } = useAppTheme();
@@ -42,6 +44,7 @@ export default function ProgressScreen() {
     profile,
     progressEntries,
     progressionSuggestions,
+    today,
   } = useEvolvData();
   const styles = createStyles(palette);
   const router = useRouter();
@@ -58,12 +61,12 @@ export default function ProgressScreen() {
       ? currentWeight - previous.weight_kg
       : null;
   const recentEntries = useMemo(() => {
-    const threshold = new Date();
-    threshold.setDate(threshold.getDate() - 30);
+    const firstDay = localDateOnly(addCalendarDays(today, -29));
+    const lastDay = localDateOnly(today);
     return progressEntries.filter(
-      (entry) => new Date(`${entry.measured_at}T00:00:00`) >= threshold,
+      (entry) => entry.measured_at >= firstDay && entry.measured_at <= lastDay,
     );
-  }, [progressEntries]);
+  }, [progressEntries, today]);
 
   async function saveWeight() {
     const value = Number(weight.replace(",", "."));
@@ -106,23 +109,24 @@ export default function ProgressScreen() {
         </View>
       </View>
 
-      <CinematicHero
-        source={require("@/assets/images/progress-history.png")}
+      <IllustratedHero
+        source={artwork.progress}
         eyebrow="Últimos 30 dias"
-        title={"Evolução\nconsistente"}
-        description="Cargas, medidas e fotos opcionais organizadas sem transformar progresso em cobrança."
-        height={240}
-        overlayOpacity={0.18}
+        title="Sua evolução"
+        description="Acompanhe cargas, medidas e registros ao longo do tempo."
+        height={188}
       />
 
       <View style={styles.metrics}>
         <Metric
           value={currentWeight === null ? "--" : `${currentWeight} kg`}
           label="peso atual"
+          icon={Scale}
         />
         <Metric
           value={String(recentEntries.length)}
           label="registros em 30 dias"
+          icon={TrendingUp}
         />
       </View>
 
@@ -152,7 +156,7 @@ export default function ProgressScreen() {
               pressed && styles.pressed,
             ]}
           >
-            <Save color={colors.text} size={18} />
+            <Save color={palette.onPrimary} size={18} />
           </Pressable>
         </View>
       </Surface>
@@ -195,7 +199,7 @@ export default function ProgressScreen() {
             <View style={styles.loadRow}>
               <View style={styles.loadTitleRow}>
                 <View style={styles.loadName}>
-                  <Dumbbell color={colors.red} size={17} />
+                  <Dumbbell color={palette.accentText} size={17} />
                   <Text style={styles.loadLabel}>{item.exercises.name}</Text>
                 </View>
                 <Text style={styles.loadValue}>
@@ -208,7 +212,7 @@ export default function ProgressScreen() {
                     ? item.current_load_kg / item.suggested_load_kg
                     : 0
                 }
-                color={colors.red}
+                color={palette.macroFat}
               />
             </View>
           </View>
@@ -254,7 +258,7 @@ const createStyles = (palette: AppThemePalette) =>
     },
     headerText: { flex: 1 },
     eyebrow: {
-      color: colors.red,
+      color: palette.accentText,
       fontSize: 11,
       fontWeight: "600",
       textTransform: "none",
@@ -291,7 +295,7 @@ const createStyles = (palette: AppThemePalette) =>
       gap: 8,
       borderWidth: 1,
       borderColor: palette.border,
-      borderRadius: 8,
+      borderRadius: 16,
       paddingHorizontal: 12,
     },
     weightInput: {
@@ -306,8 +310,8 @@ const createStyles = (palette: AppThemePalette) =>
       height: 48,
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: 8,
-      backgroundColor: colors.red,
+      borderRadius: 16,
+      backgroundColor: palette.primary,
     },
     disabled: { opacity: 0.45 },
     pressed: { opacity: 0.65 },

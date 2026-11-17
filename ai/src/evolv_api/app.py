@@ -3,6 +3,7 @@ from collections import OrderedDict
 from contextlib import asynccontextmanager, contextmanager
 from copy import deepcopy
 from dataclasses import dataclass
+from datetime import date
 import hashlib
 import json
 import os
@@ -18,6 +19,9 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from starlette.concurrency import run_in_threadpool
+from evolv_rag.account_context import AccountContext
+from evolv_rag.dialogue import ConversationMemory
+from evolv_rag.retrieval_runtime import DEFAULT_VERSION, SUPPORTED_VERSIONS
 
 AI_ROOT = Path(__file__).resolve().parents[2]
 
@@ -31,7 +35,8 @@ class Settings:
     max_sessions_per_user: int = 8
     idle_seconds: int = 1800
     nlp_version: str = "1.8.0"
-    retrieval_version: str = "1.1.2"
+    retrieval_version: str = DEFAULT_VERSION
+    interpreter: str = "nlp"
 
     def __post_init__(self):
         if len(self.service_key) < 32:
@@ -42,7 +47,9 @@ class Settings:
             raise ValueError("Invalid session limits")
         if self.nlp_version not in {"1.8.0", "1.9.0"}:
             raise ValueError("Invalid NLP version")
-        if self.retrieval_version not in {"1.0.0", "1.1.1", "1.1.2"}:
+        if self.interpreter not in {"nlp", "qwen"} or (self.interpreter == "qwen" and self.mode != "generate"):
+            raise ValueError("Invalid interpreter configuration")
+        if self.retrieval_version not in SUPPORTED_VERSIONS:
             raise ValueError("Invalid retrieval version")
 
     @classmethod
@@ -51,7 +58,8 @@ class Settings:
                    os.environ.get("EVOLV_AI_VARIANT", "original"),
                    os.environ.get("EVOLV_AI_MODE", "generate"),
                    nlp_version=os.environ.get("EVOLV_AI_NLP_VERSION", "1.8.0"),
-                   retrieval_version=os.environ.get("EVOLV_AI_RETRIEVAL_VERSION", "1.1.2"))
+                   retrieval_version=os.environ.get("EVOLV_AI_RETRIEVAL_VERSION", DEFAULT_VERSION),
+                   interpreter=os.environ.get("EVOLV_AI_INTERPRETER", "nlp"))
 
 
 class Message(BaseModel):
@@ -59,6 +67,15 @@ class Message(BaseModel):
     request_id: UUID
     text: str = Field(strict=True, min_length=1, max_length=8000)
     proposal_id: UUID | None = None
+    account_context: AccountContext | None = None
+    recalled_messages: list[str] | None = Field(default=None, max_length=3)
+
+    @field_validator("recalled_messages")
+    @classmethod
+    def short_excerpts(cls, value):
+        if value is not None and any(len(excerpt) > 300 for excerpt in value):
+            raise ValueError("History excerpts are too long")
+        return value
 
     @field_validator("text")
     @classmethod
@@ -76,16 +93,18 @@ class HistoryMessage(BaseModel):
     model_config = ConfigDict(extra="forbid")
     role: Literal["user", "assistant"]
     content: str = Field(strict=True, min_length=1, max_length=8000)
+    dialogue_context: ConversationMemory | None = None
 
 
 class SessionHistory(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    messages: list[HistoryMessage] = Field(default_factory=list, max_length=8)
+    messages: list[HistoryMessage] = Field(default_factory=list, max_length=64)
 
     @field_validator("messages")
     @classmethod
     def complete_pairs(cls, messages):
         if len(messages) % 2 or any(m.role != ("user" if i % 2 == 0 else "assistant")
+                                    or (m.role == "user" and m.dialogue_context is not None)
                                     for i, m in enumerate(messages)):
             raise ValueError("Only complete user/assistant pairs may be restored")
         return messages
@@ -99,12 +118,45 @@ class NamedItem(BaseModel):
 
 class WorkoutItem(NamedItem):
     workout_day_id: UUID
+    muscle_group: str | None = Field(default=None, max_length=100)
+    sets: int | None = Field(default=None, ge=0)
+    rest_seconds: int | None = Field(default=None, ge=0)
+    min_reps: int | None = Field(default=None, ge=0)
+    max_reps: int | None = Field(default=None, ge=0)
+    display_name: str | None = Field(default=None, max_length=200)
+    equipment: str | None = Field(default=None, max_length=120)
+    instructions: str | None = Field(default=None, max_length=500)
+
+
+class ReplacementPortion(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    food_id: UUID
+    amount: str = Field(min_length=1, max_length=120)
+
+
+class MealItem(NamedItem):
+    meal_name: str | None = Field(default=None, min_length=1, max_length=200)
+    meal_position: int | None = Field(default=None, ge=0)
+    day_type: Literal["every_day", "training_day", "rest_day"] = "every_day"
+    rotation_index: int = Field(default=0, ge=0)
+    approved_replacement_ids: list[UUID] | None = Field(default=None, max_length=100)
+    amount: str | None = Field(default=None, min_length=1, max_length=120)
+    approved_replacement_portions: list[ReplacementPortion] = Field(default_factory=list, max_length=100)
 
 
 class Day(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: UUID
     weekday: Literal["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    title: str | None = Field(default=None, max_length=200)
+
+
+class WeekDay(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    date: date
+    activity_type: Literal["rest", "resistance", "cardio", "mixed"]
+    workout_day_id: UUID | None = None
+    title: str | None = Field(default=None, max_length=200)
 
 
 class PlannerContext(BaseModel):
@@ -113,10 +165,15 @@ class PlannerContext(BaseModel):
     revision: str = Field(min_length=1, max_length=128)
     workout_plan_id: UUID | None = None
     diet_plan_id: UUID | None = None
+    workout_start: date | None = None
+    workout_end: date | None = None
+    diet_variants: bool = False
+    diet_rotation_size: int = Field(default=1, ge=1)
     days: list[Day] = Field(default_factory=list, max_length=100)
+    week: list[WeekDay] = Field(default_factory=list, max_length=8)
     workout_exercises: list[WorkoutItem] = Field(default_factory=list, max_length=1000)
     exercises: list[NamedItem] = Field(default_factory=list, max_length=1000)
-    meal_items: list[NamedItem] = Field(default_factory=list, max_length=1000)
+    meal_items: list[MealItem] = Field(default_factory=list, max_length=1000)
     foods: list[NamedItem] = Field(default_factory=list, max_length=1000)
 
 
@@ -149,7 +206,8 @@ class Manager:
             self.prototype = load_coach(AI_ROOT, generate=self.settings.mode == "generate",
                                         adapted=self.settings.variant == "adapted",
                                         nlp_version=self.settings.nlp_version,
-                                        retrieval_version=self.settings.retrieval_version)
+                                        retrieval_version=self.settings.retrieval_version,
+                                        interpreter=self.settings.interpreter)
         self.status = "ready"
 
     def close(self):
@@ -232,6 +290,7 @@ class Manager:
             entry = self.owned(sid, user)
             from evolv_nlp.privacy import review_text
             from evolv_rag.safety import critical_risks
+            from evolv_rag.conversation_facts import observe_report
             restored = []
             for message in history.messages:
                 turn = {"role": message.role, "content": review_text(message.content).minimized_text[:8000]}
@@ -241,6 +300,20 @@ class Manager:
             entry["coach"].clear()
             entry["requests"].clear()
             entry["coach"].history = restored
+            if history.messages:
+                context = history.messages[-1].dialogue_context
+                if context:
+                    entry["coach"].memory = context.minimized()
+                if not context:
+                    # Older saved messages have no structured context yet.
+                    for turn in restored[::2]:
+                        hydration = entry["coach"]._continue_hydration(turn["content"])
+                        if hydration:
+                            entry["coach"].memory = entry["coach"].memory.remembering(hydration)
+                if not context or not any(topic.facts for topic in context.topics):
+                    for turn in restored[::2]:
+                        if not turn["critical_risks"]:
+                            entry["coach"].memory = observe_report(entry["coach"].memory, turn["content"])
             entry["last_used"] = self.clock()
             return {"restored_messages": len(history.messages), "pending_actions_restored": False}
 
@@ -257,12 +330,18 @@ class Manager:
                 entry["last_used"] = self.clock()
                 return deepcopy(cached[1])
             coach = entry["coach"]
-            history, pending = deepcopy(coach.history), deepcopy(coach.action_session.pending)
+            history, pending, incomplete_swap, memory, draft = deepcopy((
+                coach.history, coach.action_session.pending, coach.action_session.incomplete_swap, coach.memory,
+                coach.router_draft,
+            ))
             try:
                 result = coach.respond(message.text,
-                    proposal_id=str(message.proposal_id) if message.proposal_id else None)
+                    proposal_id=str(message.proposal_id) if message.proposal_id else None,
+                    account=message.account_context, recalled=message.recalled_messages)
             except Exception as exc:
-                coach.history, coach.action_session.pending = history, pending
+                coach.history, coach.action_session.pending, coach.memory = history, pending, memory
+                coach.action_session.incomplete_swap = incomplete_swap
+                coach.router_draft = draft
                 # No prompts, paths, tokens, identifiers or tracebacks in HTTP errors.
                 if isinstance(exc, ValueError):
                     raise HTTPException(422, "coach_could_not_process_message") from None
@@ -348,7 +427,8 @@ def create_app(settings=None, loader=None, clock=None):
         if manager.status != "ready":
             raise HTTPException(503, "models_unavailable")
         return {"status": "ready", "mode": settings.mode, "variant": settings.variant,
-                "nlp_version": settings.nlp_version, "retrieval_version": settings.retrieval_version}
+                "nlp_version": settings.nlp_version if settings.interpreter == "nlp" else None,
+                "retrieval_version": settings.retrieval_version, "interpreter": settings.interpreter}
 
     @app.post("/v1/sessions", response_model=SessionCreated, status_code=201)
     def create_session(body: EmptyBody, user=Depends(actor)):

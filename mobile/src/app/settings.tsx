@@ -8,15 +8,14 @@ import {
   CircleHelp,
   Goal,
   Info,
-  Images,
   Languages,
-  LockKeyhole,
   LogOut,
   Palette,
   UserRound,
 } from "lucide-react-native";
 
 import {
+  IllustrationThumbnail,
   AppScreen,
   Divider,
   InfoRow,
@@ -24,6 +23,7 @@ import {
   SectionTitle,
   Surface,
 } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
 import { radius, spacing, typography } from "@/constants/theme";
 import { useAuth } from "@/context/auth-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
@@ -32,7 +32,7 @@ export default function SettingsScreen() {
   const { palette, resolvedTheme } = useAppTheme();
   const styles = createStyles(palette);
   const router = useRouter();
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
   const showPlaceholder = (title: string) =>
     Alert.alert(title, "Esta configuração será conectada nas próximas fases.");
 
@@ -90,13 +90,6 @@ export default function SettingsScreen() {
         />
         <Divider />
         <SettingRow
-          icon={Images}
-          title="Imagens do app"
-          description="Variação de pessoas e estilo físico"
-          onPress={() => router.push("/image-preferences")}
-        />
-        <Divider />
-        <SettingRow
           icon={Languages}
           title="Idioma e região"
           description="Português (Brasil)"
@@ -109,12 +102,12 @@ export default function SettingsScreen() {
         <SettingRow
           icon={BrainCircuit}
           title="Memória do Coach"
-          description="Conversas e contexto salvos com sua permissão"
-          onPress={() => showPlaceholder("Memória do Coach")}
+          description="Preferências e hábitos salvos entre conversas"
+          onPress={() => router.push("/coach-memory")}
         />
         <Divider />
         <SettingRow
-          icon={LockKeyhole}
+          illustration={artwork.privacy}
           title="Privacidade e dados"
           description="Fotos, histórico, exportação e exclusão"
           onPress={() => showPlaceholder("Privacidade e dados")}
@@ -142,7 +135,7 @@ export default function SettingsScreen() {
         <SettingRow
           icon={LogOut}
           title="Sair da conta"
-          description="Encerrar a sessão neste aparelho"
+          description={user?.email ?? "Encerrar a sessão neste aparelho"}
           onPress={() => {
             void signOut().then(() => router.replace("/login"));
           }}
@@ -156,11 +149,13 @@ export default function SettingsScreen() {
 
 function SettingRow({
   icon,
+  illustration,
   title,
   description,
   onPress,
 }: {
-  icon: typeof Bell;
+  icon?: typeof Bell;
+  illustration?: React.ComponentProps<typeof IllustrationThumbnail>["source"];
   title: string;
   description: string;
   onPress: () => void;
@@ -169,7 +164,7 @@ function SettingRow({
 
   return (
     <InfoRow
-      leading={<LabelIcon icon={icon} />}
+      leading={illustration ? <IllustrationThumbnail source={illustration} /> : icon ? <LabelIcon icon={icon} /> : undefined}
       title={title}
       description={description}
       trailing={<ChevronRight color={palette.faint} size={18} />}

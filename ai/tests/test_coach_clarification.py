@@ -117,6 +117,11 @@ class ClarificationTests(unittest.TestCase):
         r=self.ask("replace_exercise","Supino reto e flexão.")
         self.assertEqual("ambiguous_direction",r["clarification"]["reason"])
 
+    def test_context_fragment_with_one_command_is_not_a_compound_request(self):
+        result = self.ask("replace_exercise", "O agachamento livre. Quero trocar ele pelo goblet mesmo.")
+        self.assertEqual([], result["actions"])
+        self.assertIn("replacement_exercise", result["clarification"]["missing_fields"])
+
     def test_duplicate_plan_item_asks_day(self):
         plan=snapshot();plan.workout_exercises.append(deepcopy(plan.workout_exercises[0]))
         r=self.ask("replace_exercise","Troque supino reto por flexão.",True,plan)

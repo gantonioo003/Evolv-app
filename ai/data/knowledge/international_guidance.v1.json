@@ -1,0 +1,490 @@
+{
+  "version": "1.0.0",
+  "verified_at": "2026-11-09",
+  "review_due_at": "2027-11-09",
+  "sources": {
+    "acsm26": {
+      "organization": "ACSM",
+      "title": "Infográfico oficial da diretriz de treino resistido de 2026",
+      "url": "https://www.acsm.org/wp-content/uploads/2026/03/Resistance-Training-Position-Stand-infographic.pdf"
+    },
+    "acsm26_paper": {
+      "organization": "ACSM",
+      "title": "Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults",
+      "url": "https://doi.org/10.1249/mss.0000000000003897"
+    },
+    "iusca_hypertrophy": {
+      "organization": "International Universities Strength and Conditioning Association",
+      "title": "Resistance Training Recommendations to Maximize Muscle Hypertrophy in an Athletic Population",
+      "url": "https://journal.iusca.org/index.php/Journal/article/download/81/140/"
+    },
+    "concurrent_schumann": {
+      "organization": "Schumann et al. — Sports Medicine",
+      "title": "Compatibility of Concurrent Aerobic and Strength Training for Skeletal Muscle Size and Function",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891239/"
+    },
+    "rir_refalo": {
+      "organization": "Refalo et al. — Journal of Sports Sciences",
+      "title": "Similar muscle hypertrophy following eight weeks of resistance training to momentary muscular failure or with repetitions-in-reserve",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38393985/"
+    },
+    "who_activity": {
+      "organization": "OMS",
+      "title": "Diretrizes de atividade física e comportamento sedentário",
+      "url": "https://www.who.int/europe/news-room/fact-sheets/item/physical-activity"
+    },
+    "cdc_intensity": {
+      "organization": "CDC",
+      "title": "Measuring Physical Activity Intensity",
+      "url": "https://www.cdc.gov/physical-activity-basics/measuring/index.html"
+    },
+    "who_diet": {
+      "organization": "OMS",
+      "title": "Healthy diet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet"
+    },
+    "who_sodium": {
+      "organization": "OMS",
+      "title": "Sodium reduction",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/sodium-reduction"
+    },
+    "canada_plate": {
+      "organization": "Health Canada",
+      "title": "Make healthy meals with Canada’s food guide plate",
+      "url": "https://www.canada.ca/en/health-canada/services/food-guide/eating-support/cooking/make-healthy-meals-plate.html"
+    },
+    "nhs_vegetarian": {
+      "organization": "NHS",
+      "title": "The vegetarian diet",
+      "url": "https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegetarian-diet/"
+    },
+    "ais_drink": {
+      "organization": "Australian Institute of Sport",
+      "title": "Sports drinks — How and when do I use it?",
+      "url": "https://www.ausport.gov.au/ais/nutrition/supplements/group_a/sports-foods2/sports-drink/how-and-when-do-i-use-it"
+    },
+    "ais_gel": {
+      "organization": "Australian Institute of Sport",
+      "title": "Sports gels — How and when do I use it?",
+      "url": "https://www.ausport.gov.au/ais/nutrition/supplements/group_a/sports-foods2/sports-gels/how-and-when-do-i-use-it"
+    },
+    "ais_gel_water": {
+      "organization": "Australian Institute of Sport",
+      "title": "Sports gels — Product characteristics",
+      "url": "https://www.ausport.gov.au/ais/nutrition/supplements/group_a/sports-foods2/sports-gels"
+    },
+    "nih_performance": {
+      "organization": "NIH Office of Dietary Supplements",
+      "title": "Dietary Supplements for Exercise and Athletic Performance",
+      "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+    },
+    "ioc_reds": {
+      "organization": "Comitê Olímpico Internacional",
+      "title": "IOC consensus statement on Relative Energy Deficiency in Sport",
+      "url": "https://bjsm.bmj.com/content/57/17/1073"
+    },
+    "cdc_food_safety": {
+      "organization": "CDC",
+      "title": "Preventing Food Poisoning",
+      "url": "https://www.cdc.gov/food-safety/prevention/"
+    },
+    "fda_allergy": {
+      "organization": "FDA",
+      "title": "Food Allergies",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies"
+    },
+    "aasm_sleep": {
+      "organization": "American Academy of Sleep Medicine e Sleep Research Society",
+      "title": "Recommended Amount of Sleep for a Healthy Adult",
+      "url": "https://www.aasm.org/resources/pdf/adultsleepdurationconsensus.pdf"
+    }
+  },
+  "passages": [
+    {
+      "id": "hypertrophy_frequency_same_volume",
+      "title": "Frequência para hipertrofia com volume semanal igual",
+      "domain": "training",
+      "topics": ["muscle_hypertrophy", "training_frequency", "training_split_selection"],
+      "source": "acsm26_paper",
+      "section": "Muscle Hypertrophy / Table 6",
+      "text": "Para hipertrofia em adultos saudáveis, a revisão do ACSM não encontrou vantagem consistente de treinar o músculo mais vezes na semana quando o volume total era igual. Dividir as séries em mais dias pode ajudar a organizar o treino conforme o tempo e a recuperação.",
+      "terms": "frequência hipertrofia volume igual mesmas séries treino músculo duas ou três vezes"
+    },
+    {
+      "id": "strength_priority_early",
+      "title": "Em que ordem colocar o exercício prioritário",
+      "domain": "training",
+      "topics": ["exercise_order", "strength_training"],
+      "source": "acsm26_paper",
+      "section": "Strength / Table 3",
+      "text": "Quando o objetivo é ganhar força em um exercício específico, o ACSM aponta benefício em colocá-lo no início da sessão. Para hipertrofia, a mesma revisão não encontrou efeito consistente da ordem em si.",
+      "terms": "exercício prioridade primeiro força agachamento supino ordem sessão início"
+    },
+    {
+      "id": "strength_range_of_motion",
+      "title": "Amplitude de movimento no treino de força",
+      "domain": "training",
+      "topics": ["range_of_motion", "strength_training", "exercise_technique"],
+      "source": "acsm26_paper",
+      "section": "Strength / Range of motion",
+      "text": "Na revisão do ACSM com adultos saudáveis, treinar com amplitude completa favoreceu ganhos de força em relação a amplitudes parciais nos estudos disponíveis. A amplitude precisa ser executável com controle e respeitar as características do exercício e da pessoa.",
+      "terms": "amplitude completa parcial alcance movimento treino de força"
+    },
+    {
+      "id": "rest_multijoint_hypertrophy",
+      "title": "Descanso entre séries de exercícios multiarticulares",
+      "domain": "training",
+      "topics": ["rest_between_sets", "muscle_hypertrophy"],
+      "source": "iusca_hypertrophy",
+      "section": "Rest interval / Consensus recommendation",
+      "text": "O consenso da IUSCA para hipertrofia em atletas usa pelo menos dois minutos como referência geral de descanso para exercícios multiarticulares. Exercícios isolados podem admitir intervalos menores. Ajuste o intervalo conforme a capacidade de repetir a série com boa execução.",
+      "terms": "descanso dois minutos intervalo séries multiarticular agachamento hipertrofia"
+    },
+    {
+      "id": "repetitions_in_reserve_example",
+      "title": "O que é RIR e como se relaciona com falha",
+      "domain": "training",
+      "topics": ["training_intensity", "muscle_hypertrophy"],
+      "source": "rir_refalo",
+      "section": "Abstract / Results",
+      "text": "RIR é a estimativa de quantas repetições ainda seriam possíveis ao parar uma série. Em um estudo de oito semanas com pessoas já treinadas, parar com uma a duas repetições em reserva produziu crescimento de quadríceps semelhante a ir até a falha. O resultado é desse contexto, e não uma regra para todo exercício.",
+      "terms": "rir repetições em reserva 1 2 falha treino quadríceps"
+    },
+    {
+      "id": "concurrent_power_same_session",
+      "title": "Cardio e musculação quando a prioridade é potência",
+      "domain": "training",
+      "topics": ["concurrent_training", "sport_specific_training"],
+      "source": "concurrent_schumann",
+      "section": "Abstract / Conclusions",
+      "text": "Uma revisão encontrou que combinar aeróbico e musculação, em média, preservou ganhos de força máxima e massa muscular. Ganhos de força explosiva foram mais sensíveis quando ambos ocorreram na mesma sessão. Para quem prioriza potência, separar as sessões é uma opção a considerar.",
+      "terms": "cardio musculação mesmo dia treino concorrente explosão potência separar sessão"
+    },
+    {
+      "id": "reference_strength_load",
+      "title": "Força máxima e carga de referência",
+      "domain": "training",
+      "topics": [
+        "strength_training",
+        "training_intensity"
+      ],
+      "source": "acsm26",
+      "section": "Match Your Training to Your Goal",
+      "text": "Para adultos saudáveis, o ACSM apresenta cargas próximas de 80% da repetição máxima como referência para priorizar força, com 2 a 3 séries por exercício. É uma referência geral de programação, e a carga de partida depende da experiência e da execução.",
+      "terms": "80 por cento 1RM força carga pesada quantas séries referência"
+    },
+    {
+      "id": "reference_weekly_sets",
+      "title": "Como interpretar séries por músculo na semana",
+      "domain": "training",
+      "topics": [
+        "muscle_hypertrophy",
+        "training_volume"
+      ],
+      "source": "acsm26",
+      "section": "Match Your Training to Your Goal",
+      "text": "Para hipertrofia, o ACSM usa cerca de 10 séries semanais por grupo muscular como referência geral de volume. Esse número é por músculo ao longo da semana. É um ponto de partida para pensar a programação, com ajustes conforme o nível e a rotina.",
+      "terms": "10 séries por músculo por semana hipertrofia volume semanal referência ACSM"
+    },
+    {
+      "id": "power_concentric_intent",
+      "title": "Potência e velocidade na fase de subida",
+      "domain": "training",
+      "topics": [
+        "sport_specific_training",
+        "training_intensity"
+      ],
+      "source": "acsm26",
+      "section": "Match Your Training to Your Goal",
+      "text": "No treino de potência para adultos saudáveis, o ACSM destaca mover a carga com intenção de velocidade na fase de subida, usando cargas moderadas. A execução e a experiência orientam a escolha do exercício.",
+      "terms": "potência velocidade explosão concêntrica carga moderada"
+    },
+    {
+      "id": "beginner_equipment_cost",
+      "title": "Começar força em casa com pouco equipamento",
+      "domain": "training",
+      "topics": [
+        "home_training",
+        "gym_equipment_availability"
+      ],
+      "source": "acsm26",
+      "section": "You Don’t Need a Gym",
+      "text": "Elásticos, exercícios com o próprio peso e treinos em casa são opções para começar a desenvolver força. O mais importante para iniciar é escolher movimentos que você consiga repetir com regularidade e aumentar a dificuldade de forma gradual.",
+      "terms": "treinar em casa barato elástico peso corporal sem academia"
+    },
+    {
+      "id": "adult_weekly_activity_mix",
+      "title": "Quanto cardio e força por semana para saúde geral",
+      "domain": "training",
+      "topics": [
+        "cardio_conditioning",
+        "training_frequency"
+      ],
+      "source": "who_activity",
+      "section": "Adults (aged 18–64 years)",
+      "text": "Para adultos, a OMS orienta de 150 a 300 minutos semanais de atividade aeróbica moderada, de 75 a 150 minutos vigorosos ou uma combinação equivalente. A orientação inclui fortalecer os grandes grupos musculares em dois ou mais dias da semana.",
+      "terms": "150 minutos cardio por semana atividade moderada vigorosa quantidade força"
+    },
+    {
+      "id": "older_adults_balance",
+      "title": "Equilíbrio e força na atividade física de idosos",
+      "domain": "training",
+      "topics": [
+        "strength_training",
+        "cardio_conditioning"
+      ],
+      "source": "who_activity",
+      "section": "Older adults (aged 65 years and older)",
+      "text": "Para pessoas com 65 anos ou mais, a OMS inclui atividades variadas com ênfase em equilíbrio funcional e força em pelo menos três dias por semana. O objetivo inclui preservar a capacidade funcional e ajudar a prevenir quedas.",
+      "terms": "65 anos idoso equilíbrio força quedas atividade funcional"
+    },
+    {
+      "id": "cardio_talk_test",
+      "title": "Teste da fala para identificar cardio moderado ou intenso",
+      "domain": "training",
+      "topics": [
+        "cardio_conditioning",
+        "training_intensity"
+      ],
+      "source": "cdc_intensity",
+      "section": "Talk test",
+      "text": "No cardio moderado, normalmente dá para falar, mas cantar fica difícil. Em intensidade vigorosa, costuma ser preciso parar para respirar depois de poucas palavras. O teste da fala é uma referência prática de intensidade relativa.",
+      "terms": "teste da fala falar cantar cardio caminhada corrida intensidade moderada vigorosa"
+    },
+    {
+      "id": "canada_plate_general",
+      "title": "Prato equilibrado com uma referência visual",
+      "domain": "nutrition",
+      "topics": [
+        "meal_evaluation",
+        "food_portion"
+      ],
+      "source": "canada_plate",
+      "section": "How to make a healthy meal",
+      "text": "O guia canadense sugere usar metade do prato para hortaliças e frutas, um quarto para grãos integrais e um quarto para alimentos proteicos. Essas proporções ajudam a montar a refeição e servem como referência visual, com a quantidade ajustada à pessoa.",
+      "terms": "metade do prato legumes um quarto arroz integral proteína prato equilibrado"
+    },
+    {
+      "id": "canada_plate_mixed",
+      "title": "Como usar o prato equilibrado em refeições misturadas",
+      "domain": "nutrition",
+      "topics": [
+        "meal_evaluation",
+        "meal_prep"
+      ],
+      "source": "canada_plate",
+      "section": "Mixed dishes",
+      "text": "Uma sopa, marmita ou refogado pode ter todos os componentes misturados. Para avaliar a variedade, olhe a proporção dos ingredientes usados: hortaliças e frutas, um grão integral e uma fonte de proteína, como tofu, frango ou feijão.",
+      "terms": "marmita misturada sopa refogado prato misto legumes proteína grãos"
+    },
+    {
+      "id": "canada_frozen_fresh",
+      "title": "Legumes congelados, enlatados e frescos",
+      "domain": "nutrition",
+      "topics": [
+        "food_budget_and_access",
+        "grocery_planning"
+      ],
+      "source": "canada_plate",
+      "section": "How to make a healthy meal / Make a healthy choice",
+      "text": "Alimentos frescos, congelados, enlatados ou secos podem compor refeições variadas. Nos produtos com rótulo, compare ingredientes e teores de sódio, açúcar e gordura saturada ao escolher.",
+      "terms": "legumes congelados servem vegetais frutas enlatados congelado vs fresco"
+    },
+    {
+      "id": "who_fruit_veg_adults",
+      "title": "Referência da OMS para frutas e hortaliças",
+      "domain": "nutrition",
+      "topics": [
+        "food_portion",
+        "fiber_intake"
+      ],
+      "source": "who_diet",
+      "section": "Carbohydrates",
+      "text": "Para adultos, a OMS orienta pelo menos 400 gramas diários de frutas e hortaliças como referência populacional. Dá para distribuir o consumo em diferentes refeições e variar as escolhas ao longo da semana.",
+      "terms": "400 g frutas verduras legumes por dia quanto OMS hortaliças"
+    },
+    {
+      "id": "who_fiber_reference",
+      "title": "Referência da OMS para fibra alimentar",
+      "domain": "nutrition",
+      "topics": [
+        "fiber_intake",
+        "food_portion"
+      ],
+      "source": "who_diet",
+      "section": "Carbohydrates",
+      "text": "A OMS orienta, para adultos, pelo menos 25 gramas diários de fibras naturalmente presentes nos alimentos. Grãos integrais, legumes, frutas e leguminosas são formas de variar as fontes ao longo do dia.",
+      "terms": "25 gramas fibra por dia adulto referência OMS"
+    },
+    {
+      "id": "who_free_sugars",
+      "title": "Açúcar livre e açúcar da fruta inteira",
+      "domain": "nutrition",
+      "topics": [
+        "food_label",
+        "carbohydrate_intake"
+      ],
+      "source": "who_diet",
+      "section": "Sugars",
+      "text": "Açúcares livres incluem os adicionados e os presentes no mel, em xaropes e em sucos de fruta. Os açúcares que fazem parte da fruta inteira ficam fora dessa categoria. A OMS recomenda limitar o consumo de açúcares livres como parte do padrão alimentar.",
+      "terms": "mel suco natural fruta inteira açúcar livre adicionado OMS"
+    },
+    {
+      "id": "who_sodium_vs_salt",
+      "title": "Diferença entre sal e sódio no rótulo",
+      "domain": "nutrition",
+      "topics": [
+        "food_label",
+        "micronutrient_intake"
+      ],
+      "source": "who_sodium",
+      "section": "Key facts / Overview",
+      "text": "Sódio é um componente do sal de cozinha. Pela equivalência usada pela OMS, 1 grama de sal contém cerca de 400 miligramas de sódio. Compare os produtos na mesma base de porção ao usar o rótulo.",
+      "terms": "sal sódio conversão 1 grama 400 mg rótulo"
+    },
+    {
+      "id": "vegetarian_iron_c",
+      "title": "Ferro vegetal e vitamina C na mesma refeição",
+      "domain": "nutrition",
+      "topics": [
+        "vegetarian_or_vegan",
+        "micronutrient_intake"
+      ],
+      "source": "nhs_vegetarian",
+      "section": "Vegetarian sources of iron",
+      "text": "Feijões e lentilhas fornecem ferro de origem vegetal. Consumir junto uma fonte de vitamina C, como frutas ou hortaliças, ajuda a absorção desse ferro. Essa combinação é uma orientação alimentar geral.",
+      "terms": "ferro vegetal feijão lentilha vitamina C absorção dieta vegetariana"
+    },
+    {
+      "id": "plant_diet_b12_source",
+      "title": "Fonte confiável de vitamina B12 em dieta vegana",
+      "domain": "nutrition",
+      "topics": [
+        "vegetarian_or_vegan",
+        "micronutrient_intake"
+      ],
+      "source": "nhs_vegetarian",
+      "section": "Vegetarian sources of vitamin B12",
+      "text": "Quem evita todos os produtos de origem animal precisa planejar uma fonte confiável de vitamina B12. Alimentos enriquecidos com B12 podem contribuir, e a necessidade de suplementação merece avaliação individual.",
+      "terms": "vegano vitamina B12 alimento fortificado fontes confiáveis"
+    },
+    {
+      "id": "short_session_sport_drink",
+      "title": "Quando isotônico costuma ser dispensável",
+      "domain": "nutrition",
+      "topics": [
+        "hydration",
+        "electrolytes"
+      ],
+      "source": "ais_drink",
+      "section": "Table 1: Brief exercise",
+      "text": "O Australian Institute of Sport indica que exercícios breves, abaixo de 45 minutos, geralmente dispensam carboidrato durante a sessão. Para decidir sobre líquidos, considere o ambiente, a duração e a oportunidade de beber. Isotônicos também fornecem carboidratos e eletrólitos.",
+      "terms": "isotônico gatorade treino curto 30 minutos precisa bebida esportiva"
+    },
+    {
+      "id": "sports_drink_endurance_role",
+      "title": "Isotônico durante um treino longo",
+      "domain": "nutrition",
+      "topics": [
+        "hydration",
+        "electrolytes",
+        "carbohydrate_intake"
+      ],
+      "source": "ais_drink",
+      "section": "Use during exercise / Table 1",
+      "text": "Em exercícios prolongados, bebidas esportivas podem fornecer líquido, carboidrato e eletrólitos juntos. A utilidade depende da duração, intensidade, calor, perdas de suor e tolerância da pessoa.",
+      "terms": "treino longo corrida calor isotônico eletrólitos bebida esportiva endurance"
+    },
+    {
+      "id": "sports_gels_practice",
+      "title": "Testar gel de carboidrato antes da prova",
+      "domain": "nutrition",
+      "topics": [
+        "carbohydrate_intake",
+        "sport_specific_training"
+      ],
+      "source": "ais_gel",
+      "section": "Table 1: Endurance exercise",
+      "text": "Em provas longas, gel é uma opção prática para fornecer carboidrato. Testar a estratégia em treinos ajuda a avaliar a tolerância digestiva, o acesso à água e as oportunidades de consumo antes de usar na competição.",
+      "terms": "gel prova corrida endurance praticar treino testar antes tolerância gastrointestinal"
+    },
+    {
+      "id": "sports_gels_water",
+      "title": "Por que geralmente se toma gel com água",
+      "domain": "nutrition",
+      "topics": [
+        "hydration",
+        "carbohydrate_intake"
+      ],
+      "source": "ais_gel_water",
+      "section": "Characteristics",
+      "text": "A maioria dos géis é uma fonte concentrada de carboidrato e deve ser usada com água ou líquido diluído conforme o rótulo. Alguns géis classificados como isotônicos foram formulados para ser consumidos sem água junto ao gel. A hidratação do exercício continua sendo uma decisão à parte.",
+      "terms": "gel com água gel isotônico concentração desconforto intestinal"
+    },
+    {
+      "id": "supplement_beta_alanine_limits",
+      "title": "Para que serve beta-alanina no esporte",
+      "domain": "nutrition",
+      "topics": [
+        "training_performance"
+      ],
+      "source": "nih_performance",
+      "section": "Beta-alanine",
+      "text": "A pesquisa sobre beta-alanina avalia principalmente esforços intensos mantidos por algum tempo, com resultados que variam conforme a tarefa. O NIH aponta resultados mistos na literatura. Formigamento é um efeito conhecido; uma dose pessoal exige avaliação adequada.",
+      "terms": "beta alanina para que serve formigamento suplemento esforço intenso"
+    },
+    {
+      "id": "red_s_underfueling",
+      "title": "Baixa disponibilidade energética no esporte",
+      "domain": "recovery",
+      "topics": [
+        "under_recovery",
+        "training_performance",
+        "fatigue"
+      ],
+      "source": "ioc_reds",
+      "section": "Definition and clinical assessment",
+      "text": "Baixa disponibilidade energética pode ocorrer quando a energia disponível após o exercício é insuficiente para as funções do corpo. Quando problemática e persistente, pode comprometer saúde e desempenho. REDs é uma condição que exige avaliação profissional.",
+      "terms": "RED S REDs baixa disponibilidade energética atleta cansaço desempenho"
+    },
+    {
+      "id": "leftovers_overnight",
+      "title": "Marmita perecível esquecida fora da geladeira",
+      "domain": "safety",
+      "topics": [
+        "food_storage",
+        "food_safety"
+      ],
+      "source": "cdc_food_safety",
+      "section": "Refrigerate food promptly",
+      "text": "O CDC orienta refrigerar alimentos perecíveis em até duas horas, ou uma hora acima de 32 °C. Uma marmita perecível que passou a noite fora da geladeira deve ser descartada.",
+      "terms": "marmita arroz carne comida passou a noite fora geladeira quanto tempo duas horas"
+    },
+    {
+      "id": "allergy_label_cross_contact",
+      "title": "Alergia alimentar, rótulos e contato cruzado",
+      "domain": "safety",
+      "topics": [
+        "food_allergy",
+        "food_label"
+      ],
+      "source": "fda_allergy",
+      "section": "Food labels and cross-contact",
+      "text": "Se você tem alergia alimentar conhecida, confira os ingredientes e os alertas de alergênicos. Contato cruzado durante o preparo também pode expor ao alimento. Na dúvida sobre o preparo ou os ingredientes, evite consumir o item até confirmar.",
+      "terms": "alergia camarão crustáceos ingrediente rótulo contaminação cruzada contato cruzado"
+    },
+    {
+      "id": "adult_sleep_regular",
+      "title": "Sono regular de pelo menos sete horas em adultos",
+      "domain": "recovery",
+      "topics": [
+        "sleep_duration",
+        "sleep_quality"
+      ],
+      "source": "aasm_sleep",
+      "section": "Consensus statement",
+      "text": "A AASM e a Sleep Research Society orientam adultos a dormir regularmente pelo menos sete horas. A duração varia entre pessoas, e regularidade, qualidade do sono e funcionamento durante o dia também importam.",
+      "terms": "mínimo horas de sono adulto sete horas por noite regularmente"
+    }
+  ]
+}

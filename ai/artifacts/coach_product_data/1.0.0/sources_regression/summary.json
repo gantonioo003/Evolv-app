@@ -1,0 +1,30 @@
+{
+  "treino": {
+    "passed": 4,
+    "total": 4
+  },
+  "deload": {
+    "passed": 3,
+    "total": 3
+  },
+  "lacuna": {
+    "passed": 4,
+    "total": 4
+  },
+  "dieta": {
+    "passed": 4,
+    "total": 4
+  },
+  "recuperação": {
+    "passed": 3,
+    "total": 3
+  },
+  "ficha": {
+    "passed": 5,
+    "total": 5
+  },
+  "segurança": {
+    "passed": 1,
+    "total": 1
+  }
+}

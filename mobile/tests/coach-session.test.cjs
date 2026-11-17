@@ -9,7 +9,7 @@ function setup(){
     messages:async()=>history,
     send:async(id,body)=>{sendCalls.push(body);return{session_id:id,request_id:body.request_id,result:{answer:"Resposta real do servidor",actions:[]}};},
     rename:async(id,title)=>({id,title}),remove:async()=>{},
-    preview:async()=>({id:"p1",status:"pending",preview:{title:"Mover",summary:"Resumo",changes:[],preserved:[],warnings:[]}}),
+    preview:async()=>({id:"p1",status:"pending",expires_at:"2099-01-01",preview:{title:"Mover",summary:"Resumo",changes:[],preserved:[],warnings:[]}}),
     decide:async(c,id,op)=>{decisions.push(op);return{id,status:op==="apply"?"applied":"rejected",preview:{title:"Mover"}};},
   };
   return {api,store:new CoachSession(api,()=>"request-"+(++count)),sendCalls,decisions,setHistory(rows){history=rows;}};
@@ -56,6 +56,32 @@ test("proposta so pede previa e aplicacao exige metodo separado",async()=>{
 test("proposta expirada nao e enviada e previa consultada nao aplica sozinha",async()=>{
   const t=setup();await t.store.proposal({id:"p",status:"pending_user_confirmation",expires_at:"2000-01-01"},true);
   assert.equal(t.sendCalls.length,0);await t.store.review("p1");assert.equal(t.decisions.length,0);
+});
+test("reenvia a mesma confirmação se a resposta chegar depois da perda de conexão", async()=>{
+  const t=setup();
+  const calls=[];
+  let committed=false;
+  t.api.decide=async(conversation,id,operation)=>{
+    calls.push({conversation,id,operation});
+    if(!committed){committed=true;throw {code:"API_TIMEOUT"};}
+    return {id,status:"applied",preview:{title:"Mover"}};
+  };
+  await t.store.select("c1");
+  await t.store.review("p1");
+  await t.store.decide("apply");
+  assert.equal(t.store.getSnapshot().preview.status,"pending");
+  assert.ok(t.store.getSnapshot().error);
+  await t.store.decide("apply");
+  assert.deepEqual(calls,[{conversation:"c1",id:"p1",operation:"apply"},{conversation:"c1",id:"p1",operation:"apply"}]);
+  assert.equal(t.store.getSnapshot().preview.status,"applied");
+  assert.equal(t.store.getSnapshot().error,null);
+});
+test("prévia vencida pode ser descartada e não é enviada para aplicação",async()=>{
+  const t=setup(); const original=t.api.preview;
+  t.api.preview=async()=>({...await original(),expires_at:"2000-01-01"});
+  await t.store.select("c1");await t.store.review("p1");
+  await t.store.decide("apply");assert.deepEqual(t.decisions,[]);
+  await t.store.decide("reject");assert.deepEqual(t.decisions,["reject"]);
 });
 test("resposta de conta anterior e ignorada apos descarte do controlador",async()=>{
   const t=setup();let finish;

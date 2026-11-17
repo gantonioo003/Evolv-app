@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "verified_at": "2026-11-10",
+  "review_due_at": "2027-11-10",
+  "sources": {
+    "vic_resistance_basics": {
+      "organization": "Better Health Channel — Governo de Victoria",
+      "title": "Resistance training — health benefits",
+      "url": "https://www.betterhealth.vic.gov.au/health/healthyliving/resistance-training-health-benefits"
+    },
+    "sda_pre_exercise_fuel": {
+      "organization": "Sports Dietitians Australia",
+      "title": "Pre-exercise Fuelling",
+      "url": "https://www.sportsdietitians.com.au/wp-content/uploads/2020/07/Pre-exercise-Fuelling.pdf"
+    }
+  },
+  "passages": [
+    {
+      "id": "sets_reps_load_basics",
+      "title": "Séries, repetições e carga",
+      "domain": "training",
+      "topics": [
+        "sets_and_repetitions",
+        "training_intensity"
+      ],
+      "source": "vic_resistance_basics",
+      "section": "Basic principles of resistance training",
+      "terms": "diferença série rep reps repetição peso carga resistência halter elástico musculação iniciante",
+      "text": "Uma repetição é um movimento completo. Uma série é um grupo de repetições feito antes de uma pausa. A carga é a resistência do exercício, que pode vir de halteres, elásticos ou do próprio peso corporal. Em 3 séries de 8 repetições com um halter de 5 kg, você faz três grupos de oito movimentos. Os 5 kg são a carga do exemplo."
+    },
+    {
+      "id": "pre_workout_snack_examples",
+      "title": "Exemplos de lanche antes do treino",
+      "domain": "nutrition",
+      "topics": [
+        "pre_workout_meal"
+      ],
+      "source": "sda_pre_exercise_fuel",
+      "section": "How long before exercise should I be eating? / What should I be eating before exercise?",
+      "terms": "comida pré-treino comer antes de treinar cedo café da manhã exemplos lanche opções banana torrada fruta",
+      "text": "Se você quer comer algo antes de treinar e tem pouco tempo, uma opção é um lanche pequeno que você já sabe que tolera. Torrada com geleia ou uma porção pequena de cereal com fruta são exemplos. A escolha depende do tempo até o treino e da sua tolerância digestiva. Uma refeição maior costuma pedir mais antecedência."
+    }
+  ]
+}

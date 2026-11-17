@@ -1,0 +1,167 @@
+{
+  "reference_date": "2026-11-10",
+  "timezone": "America/Fortaleza",
+  "defaults": {
+    "separate_test_account_per_case": true,
+    "global_memory_enabled": false
+  },
+  "fixtures": {
+    "sem_plano": {},
+    "remada": {
+      "workout": {
+        "tuesday": [
+          {
+            "exercise": "remada cavalinho",
+            "reps": "6–10"
+          },
+          {
+            "exercise": "flexao declinada",
+            "reps": "6–10"
+          }
+        ]
+      }
+    },
+    "supino": {
+      "workout": {
+        "tuesday": [
+          {
+            "exercise": "supino reto",
+            "reps": "8–10"
+          }
+        ]
+      },
+      "allowed_exercise_replacements": {
+        "supino reto": [
+          "flexao de bracos"
+        ]
+      }
+    },
+    "ovo": {
+      "meals": {
+        "cafe_manha": [
+          "ovo",
+          "banana"
+        ]
+      },
+      "allowed_meal_replacements": {
+        "cafe_manha:ovo": [
+          "tofu"
+        ]
+      }
+    },
+    "dois_exercicios": {
+      "workout": {
+        "tuesday": [
+          {
+            "exercise": "agachamento livre",
+            "reps": "6–10"
+          },
+          {
+            "exercise": "leg press",
+            "reps": "10–12"
+          }
+        ]
+      },
+      "allowed_exercise_replacements": {
+        "agachamento livre": [
+          "agachamento goblet"
+        ],
+        "leg press": [
+          "agachamento goblet"
+        ]
+      }
+    },
+    "bracos": {
+      "workout": {
+        "tuesday": [
+          {
+            "exercise": "rosca direta",
+            "reps": "10–12"
+          },
+          {
+            "exercise": "remada cavalinho",
+            "reps": "6–10"
+          }
+        ],
+        "friday": [
+          {
+            "exercise": "rosca martelo",
+            "reps": "10–12"
+          }
+        ]
+      }
+    },
+    "camarao": {
+      "meals": {
+        "almoco": [
+          "camarao",
+          "arroz"
+        ],
+        "jantar": [
+          "risoto de camarao"
+        ]
+      }
+    },
+    "terca": {
+      "workout": {
+        "tuesday": [
+          {
+            "exercise": "remada baixa",
+            "reps": "10–12"
+          }
+        ],
+        "friday": [
+          {
+            "exercise": "supino inclinado",
+            "reps": "8–10"
+          }
+        ]
+      },
+      "day_activity": {
+        "2026-11-10": "resistance"
+      }
+    },
+    "iogurte_duplicado": {
+      "meals": {
+        "cafe_manha": [
+          "iogurte natural"
+        ],
+        "lanche_tarde": [
+          "iogurte natural",
+          "banana"
+        ]
+      },
+      "allowed_meal_replacements": {
+        "cafe_manha:iogurte natural": [
+          "iogurte sem lactose"
+        ],
+        "lanche_tarde:iogurte natural": [
+          "iogurte sem lactose"
+        ]
+      }
+    },
+    "leg_press": {
+      "workout": {
+        "tuesday": [
+          {
+            "exercise": "leg press",
+            "reps": "10–12"
+          }
+        ]
+      }
+    },
+    "lentilha": {
+      "meals": {
+        "almoco": [
+          "lentilha",
+          "arroz"
+        ]
+      }
+    },
+    "perfil": {
+      "profile": {
+        "preferred_training_time": "night"
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ import {
 import type { PostgrestError } from '@supabase/supabase-js';
 import type { Json, Tables, TablesInsert } from '../database/database.types.js';
 import { throwDatabaseError } from '../common/errors/database.error.js';
+import { PlannerDayContextService, weekDates } from './planner-day-context.service.js';
 import { SupabaseService } from '../supabase/supabase.service.js';
 import type { CreatePlannerAdjustmentDto } from './dto/create-planner-adjustment.dto.js';
 
@@ -19,6 +20,16 @@ type ExerciseSummary = Pick<
   | 'training_kind'
   | 'equipment'
 >;
+
+type AdjustmentOperation = 'apply' | 'reject' | 'revert';
+
+type CoachPreviewScope = {
+  adjustmentId: string;
+  conversationId: string;
+  proposalId: string;
+  expiresAt: string;
+  requestHash?: string;
+};
 
 type Substitution = {
   food_id: string;
@@ -44,7 +55,11 @@ export class PlannerAdjustmentsService {
     userId: string,
     accessToken: string,
     dto: CreatePlannerAdjustmentDto,
+    coach?: CoachPreviewScope,
   ) {
+    if ((dto.source === 'coach') !== Boolean(coach)) {
+      throw new BadRequestException('COACH_CONVERSATION_REQUIRED');
+    }
     const reason = dto.reason.trim();
     if (!reason) {
       throw new BadRequestException({
@@ -54,14 +69,18 @@ export class PlannerAdjustmentsService {
     }
 
     switch (dto.kind) {
+      case 'move_workout_occurrence':
+        if (!coach) throw new BadRequestException('COACH_CONVERSATION_REQUIRED');
+        return this.previewWorkoutOccurrence(userId, accessToken, dto, reason, coach);
       case 'move_workout_day':
-        return this.previewWorkoutDayMove(userId, accessToken, dto, reason);
+        return this.previewWorkoutDayMove(userId, accessToken, dto, reason, coach);
       case 'replace_exercise':
         return this.previewExerciseReplacement(
           userId,
           accessToken,
           dto,
           reason,
+          coach,
         );
       case 'replace_meal_item':
         return this.previewMealItemReplacement(
@@ -69,9 +88,10 @@ export class PlannerAdjustmentsService {
           accessToken,
           dto,
           reason,
+          coach,
         );
       case 'set_day_activity':
-        return this.previewDayActivity(userId, accessToken, dto, reason);
+        return this.previewDayActivity(userId, accessToken, dto, reason, coach);
     }
   }
 
@@ -114,36 +134,38 @@ export class PlannerAdjustmentsService {
     return data;
   }
 
-  async apply(userId: string, accessToken: string, adjustmentId: string) {
-    const adjustment = await this.get(userId, accessToken, adjustmentId);
-    await this.runMutation(
-      accessToken,
-      adjustment.adjustment_kind === 'set_day_activity'
-        ? 'apply_day_activity_adjustment'
-        : 'apply_planner_adjustment',
-      adjustmentId,
-    );
-    return this.get(userId, accessToken, adjustmentId);
+  apply(userId: string, accessToken: string, adjustmentId: string, conversationId?: string) {
+    return this.decide(userId, accessToken, adjustmentId, 'apply', conversationId);
   }
 
-  async reject(userId: string, accessToken: string, adjustmentId: string) {
-    await this.runMutation(
-      accessToken,
-      'reject_planner_adjustment',
-      adjustmentId,
-    );
-    return this.get(userId, accessToken, adjustmentId);
+  reject(userId: string, accessToken: string, adjustmentId: string, conversationId?: string) {
+    return this.decide(userId, accessToken, adjustmentId, 'reject', conversationId);
   }
 
-  async revert(userId: string, accessToken: string, adjustmentId: string) {
+  revert(userId: string, accessToken: string, adjustmentId: string, conversationId?: string) {
+    return this.decide(userId, accessToken, adjustmentId, 'revert', conversationId);
+  }
+
+  private async decide(
+    userId: string,
+    accessToken: string,
+    adjustmentId: string,
+    operation: AdjustmentOperation,
+    conversationId?: string,
+  ) {
     const adjustment = await this.get(userId, accessToken, adjustmentId);
-    await this.runMutation(
-      accessToken,
-      adjustment.adjustment_kind === 'set_day_activity'
-        ? 'revert_day_activity_adjustment'
-        : 'revert_planner_adjustment',
-      adjustmentId,
-    );
+    if (adjustment.source === 'coach' && !conversationId) {
+      throw new BadRequestException('COACH_CONVERSATION_REQUIRED');
+    }
+    if (conversationId && (adjustment.source !== 'coach' || adjustment.conversation_id !== conversationId)) {
+      throwAdjustmentNotFound();
+    }
+    const daily = adjustment.adjustment_kind === 'set_day_activity';
+    const functionName = operation === 'reject' ? 'reject_planner_adjustment'
+      : operation === 'apply' ? (daily ? 'apply_day_activity_adjustment' : 'apply_planner_adjustment')
+      : (daily ? 'revert_day_activity_adjustment' : 'revert_planner_adjustment');
+    await this.runMutation(accessToken, functionName, adjustmentId,
+      conversationId ? { id: conversationId, operation } : undefined);
     return this.get(userId, accessToken, adjustmentId);
   }
 
@@ -152,6 +174,7 @@ export class PlannerAdjustmentsService {
     accessToken: string,
     dto: CreatePlannerAdjustmentDto,
     reason: string,
+    coach?: CoachPreviewScope,
   ) {
     requireFields(dto, ['activity_date', 'activity_type']);
     const client = this.supabase.forUser(accessToken);
@@ -208,6 +231,7 @@ export class PlannerAdjustmentsService {
     return this.createAdjustment(userId, accessToken, {
       dto,
       reason,
+      coach,
       targetType: 'daily_activity_override',
       targetId: current?.id,
       preview,
@@ -216,11 +240,56 @@ export class PlannerAdjustmentsService {
     });
   }
 
+  private async previewWorkoutOccurrence(
+    userId: string,
+    token: string,
+    dto: CreatePlannerAdjustmentDto,
+    reason: string,
+    coach: CoachPreviewScope,
+  ) {
+    requireFields(dto, ['workout_plan_id', 'workout_day_id', 'source_date', 'target_date']);
+    const sourceDate = dto.source_date!;
+    const targetDate = dto.target_date!;
+    if (sourceDate === targetDate || !weekDates(sourceDate).includes(targetDate))
+      throw new BadRequestException('Escolha dois dias diferentes da mesma semana.');
+    const client = this.supabase.forUser(token);
+    const dayContext = new PlannerDayContextService(this.supabase);
+    const [{ data: day, error }, origin, destination] = await Promise.all([
+      client.from('workout_days').select('id, title, workout_plan_id')
+        .eq('id', dto.workout_day_id!).eq('workout_plan_id', dto.workout_plan_id!).maybeSingle(),
+      dayContext.get(token, sourceDate),
+      dayContext.get(token, targetDate),
+    ]);
+    if (error) throwAdjustmentDatabaseError(error);
+    if (!day || origin.source !== 'workout_plan' || origin.workout_day_id !== day.id)
+      throw new ConflictException('O treino de origem mudou. Confira o calendário.');
+    if (destination.source === 'override' || destination.source === 'workout_plan')
+      throw new ConflictException('O dia de destino tem outra atividade. Escolha um dia livre.');
+    const source = { activity_date: sourceDate, activity_type: 'rest', estimated_minutes: 0,
+      intensity: null, workout_day_id: null, nutrition_day_type: 'rest_day', source: 'coach', note: null };
+    const target = { activity_date: targetDate, activity_type: origin.activity_type,
+      estimated_minutes: origin.estimated_minutes, intensity: origin.intensity, workout_day_id: day.id,
+      nutrition_day_type: origin.nutrition_day_type, source: 'coach', note: null };
+    return this.createAdjustment(userId, token, {
+      dto, reason, coach, targetType: 'daily_activity_override', targetId: day.id, workoutPlanId: day.workout_plan_id,
+      before: { source_date: sourceDate, target_date: targetDate },
+      after: { source, target },
+      preview: {
+        title: 'Mover treino só nesta semana',
+        summary: `${day.title}: ${sourceDate} → ${targetDate}.`,
+        changes: [`${sourceDate}: descanso`, `${targetDate}: ${day.title}`],
+        preserved: ['Ficha semanal, exercícios, séries, repetições e cargas'],
+        warnings: ['Se o cardápio varia por atividade, os menus dessas duas datas acompanham o calendário.'],
+      },
+    });
+  }
+
   private async previewWorkoutDayMove(
     userId: string,
     accessToken: string,
     dto: CreatePlannerAdjustmentDto,
     reason: string,
+    coach?: CoachPreviewScope,
   ) {
     requireFields(dto, ['workout_plan_id', 'workout_day_id', 'target_weekday']);
     const targetWeekday =
@@ -256,6 +325,12 @@ export class PlannerAdjustmentsService {
       .limit(1)
       .maybeSingle();
     if (swapError) throwAdjustmentDatabaseError(swapError);
+    if (swapDay && coach?.requestHash) {
+      throw new ConflictException({
+        code: 'COACH_WORKOUT_DESTINATION_OCCUPIED',
+        message: 'O dia de destino já tem um treino.',
+      });
+    }
 
     const before = {
       day_id: day.id,
@@ -289,6 +364,7 @@ export class PlannerAdjustmentsService {
     return this.createAdjustment(userId, accessToken, {
       dto,
       reason,
+      coach,
       targetType: 'workout_day',
       targetId: day.id,
       workoutPlanId: day.workout_plan_id,
@@ -303,6 +379,7 @@ export class PlannerAdjustmentsService {
     accessToken: string,
     dto: CreatePlannerAdjustmentDto,
     reason: string,
+    coach?: CoachPreviewScope,
   ) {
     requireFields(dto, [
       'workout_plan_id',
@@ -341,8 +418,26 @@ export class PlannerAdjustmentsService {
 
     const current = item.exercises as ExerciseSummary;
     if (!isCompatibleExerciseReplacement(current, replacement)) {
+      let alternatives: string[] = [];
+      if (coach?.requestHash) {
+        const [catalog, scheduled] = await Promise.all([
+          client.from('exercises')
+            .select('id, name, muscle_group, movement_pattern, training_kind, equipment')
+            .eq('training_kind', current.training_kind)
+            .order('name').limit(1000),
+          client.from('workout_day_exercises').select('exercise_id')
+            .eq('workout_day_id', item.workout_day_id),
+        ]);
+        if (!catalog.error && !scheduled.error) {
+          const used = new Set(scheduled.data.map((entry) => entry.exercise_id));
+          alternatives = catalog.data
+            .filter((candidate) => !used.has(candidate.id) && isCompatibleExerciseReplacement(current, candidate))
+            .slice(0, 3).map((candidate) => candidate.name);
+        }
+      }
       throw new BadRequestException({
         code: 'INCOMPATIBLE_EXERCISE_REPLACEMENT',
+        alternatives,
         message:
           'Escolha um exercicio do mesmo tipo, musculo ou padrao de movimento.',
       });
@@ -390,6 +485,7 @@ export class PlannerAdjustmentsService {
     return this.createAdjustment(userId, accessToken, {
       dto,
       reason,
+      coach,
       targetType: 'workout_day_exercise',
       targetId: item.id,
       workoutPlanId: dto.workout_plan_id as string,
@@ -404,6 +500,7 @@ export class PlannerAdjustmentsService {
     accessToken: string,
     dto: CreatePlannerAdjustmentDto,
     reason: string,
+    coach?: CoachPreviewScope,
   ) {
     requireFields(dto, ['diet_plan_id', 'meal_item_id', 'replacement_food_id']);
     const client = this.supabase.forUser(accessToken);
@@ -450,6 +547,7 @@ export class PlannerAdjustmentsService {
     return this.createAdjustment(userId, accessToken, {
       dto,
       reason,
+      coach,
       targetType: 'meal_item',
       targetId: item.id,
       dietPlanId: dto.diet_plan_id as string,
@@ -465,6 +563,7 @@ export class PlannerAdjustmentsService {
     input: {
       dto: CreatePlannerAdjustmentDto;
       reason: string;
+      coach?: CoachPreviewScope;
       targetType:
         | 'workout_day'
         | 'workout_day_exercise'
@@ -487,7 +586,14 @@ export class PlannerAdjustmentsService {
       diet_plan_id: input.dietPlanId,
       target_type: input.targetType,
       target_id: input.targetId,
-      requested_change: input.dto as unknown as Json,
+      requested_change: {
+        ...input.dto,
+        ...(input.coach ? { coach_proposal_id: input.coach.proposalId } : {}),
+        ...(input.coach?.requestHash ? { coach_request_hash: input.coach.requestHash } : {}),
+      } as unknown as Json,
+      id: input.coach?.adjustmentId,
+      conversation_id: input.coach?.conversationId,
+      expires_at: input.coach?.expiresAt,
       preview: input.preview,
       before_snapshot: input.before,
       after_snapshot: input.after,
@@ -498,6 +604,14 @@ export class PlannerAdjustmentsService {
       .insert(row)
       .select('*')
       .single();
+    if (error?.code === '23505' && input.coach) {
+      const existing = await this.get(userId, accessToken, input.coach.adjustmentId);
+      const request = existing.requested_change;
+      if (existing.source !== 'coach' || existing.conversation_id !== input.coach.conversationId
+          || !request || typeof request !== 'object' || Array.isArray(request)
+          || request.coach_proposal_id !== input.coach.proposalId) throwAdjustmentNotFound();
+      return existing;
+    }
     if (error) throwAdjustmentDatabaseError(error);
     return data;
   }
@@ -543,14 +657,23 @@ export class PlannerAdjustmentsService {
       | 'revert_planner_adjustment'
       | 'revert_day_activity_adjustment',
     adjustmentId: string,
+    coach?: { id: string; operation: AdjustmentOperation },
   ) {
-    const { error } = await this.supabase
-      .forUser(accessToken)
-      .rpc(functionName, {
-        p_adjustment_id: adjustmentId,
-      });
+    const client = this.supabase.forUser(accessToken);
+    const { error } = coach
+      ? await client.rpc('mutate_coach_adjustment', {
+          p_adjustment_id: adjustmentId, p_conversation_id: coach.id,
+          p_operation: coach.operation, p_confirmed: true,
+        })
+      : await client.rpc(functionName, { p_adjustment_id: adjustmentId });
     if (!error) return;
     if (error.code === 'P0002') throwAdjustmentNotFound();
+    if (error.code === '40001' && error.message === 'Planner adjustment expired') {
+      throw new ConflictException({
+        code: 'ADJUSTMENT_EXPIRED',
+        message: 'A prévia venceu. Solicite uma nova antes de confirmar.',
+      });
+    }
     if (error.code === '40001') {
       throw new ConflictException({
         code: 'ADJUSTMENT_STALE',
@@ -646,6 +769,7 @@ export function buildMealReplacementSnapshot(
     quantity: replacement.amount,
     unit: replacement.unit,
     nutrition_role: replacement.role,
+    substitution_group: replacement.role,
     calories_kcal: replacement.nutrition.calories,
     protein_g: replacement.nutrition.proteinG,
     carbohydrate_g: replacement.nutrition.carbohydrateG,
@@ -664,6 +788,7 @@ function mealItemSnapshot(item: Tables<'meal_items'>) {
     quantity: item.quantity,
     unit: item.unit,
     nutrition_role: item.nutrition_role,
+    substitution_group: item.substitution_group,
     calories_kcal: item.calories_kcal,
     protein_g: item.protein_g,
     carbohydrate_g: item.carbohydrate_g,
@@ -673,7 +798,7 @@ function mealItemSnapshot(item: Tables<'meal_items'>) {
   };
 }
 
-function parseSubstitutions(value: Json): Substitution[] {
+export function parseSubstitutions(value: Json): Substitution[] {
   if (!Array.isArray(value)) return [];
   return value.filter(isSubstitution) as unknown as Substitution[];
 }

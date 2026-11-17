@@ -1,6 +1,5 @@
 import {
   cloneElement,
-  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -10,28 +9,26 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react";
-import { Asset } from "expo-asset";
+import { ArrowUpRight } from "lucide-react-native";
 import {
   Animated,
-  Easing,
   Image,
   Platform,
   type ScrollViewInstance,
+  useWindowDimensions,
   StyleSheet,
   Text,
   View,
-  type ImageStyle,
-  type ImageSourcePropType,
-  type StyleProp,
   type ViewStyle,
 } from "react-native";
-import { useFocusEffect, useScrollToTop } from "expo-router";
+import { useScrollToTop } from "expo-router";
 import {
   SafeAreaView,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 
 import { TouchFeedback as Pressable } from "@/components/touch-feedback";
+import type { ThemeArtwork } from "@/data/illustrations";
 import { useReducedMotion } from "@/context/motion-context";
 import {
   COMPACT_HEADER_HEIGHT,
@@ -44,7 +41,6 @@ import {
 import {
   colors,
   radius,
-  shadows,
   spacing,
   typography,
 } from "@/constants/theme";
@@ -68,39 +64,9 @@ function useTonePalette(tone?: ThemeTone) {
   return forcedTheme ? themePalettes[forcedTheme] : theme.palette;
 }
 
-export function CoverImage({
-  source,
-  style,
-}: {
-  source: ImageSourcePropType;
-  style: StyleProp<ImageStyle | ViewStyle>;
-}) {
-  if (Platform.OS === "web") {
-    const uri = Asset.fromModule(
-      source as
-        number | string | { uri: string; width: number; height: number },
-    ).uri;
-    const webBackground = {
-      backgroundImage: `url("${uri}")`,
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-    } as ViewStyle;
-
-    return <View style={[style, webBackground]} />;
-  }
-
-  return (
-    <Image
-      source={source}
-      resizeMode="cover"
-      style={style as StyleProp<ImageStyle>}
-    />
-  );
-}
-
 type AppScreenProps = PropsWithChildren<{
   header?: ReactElement<PageHeaderProps>;
+  fixedHeader?: ReactNode;
   tone?: ThemeTone;
   contentStyle?: ViewStyle;
   scroll?: boolean;
@@ -111,6 +77,7 @@ type AppScreenProps = PropsWithChildren<{
 export function AppScreen({
   children,
   header,
+  fixedHeader,
   tone,
   contentStyle,
   scroll = true,
@@ -129,7 +96,6 @@ export function AppScreen({
   const [scrollY] = useState(() => new Animated.Value(0));
   const [headerHeight, setHeaderHeight] = useState(72);
   const [compactVisible, setCompactVisible] = useState(false);
-  const [entrance] = useState(() => new Animated.Value(0));
   const collapseRange = headerCollapseRange(headerHeight);
   const collapseProgress = scrollY.interpolate({
     inputRange: [0, collapseRange.end],
@@ -152,43 +118,8 @@ export function AppScreen({
   );
   useScrollToTop(scrollToTop);
 
-  useFocusEffect(
-    useCallback(() => {
-      if (reducedMotion) {
-        entrance.setValue(1);
-        return;
-      }
-      entrance.setValue(0);
-      const animation = Animated.timing(entrance, {
-        toValue: 1,
-        duration: 200,
-        easing: Easing.out(Easing.cubic),
-        useNativeDriver: Platform.OS !== "web",
-      });
-      animation.start();
-      return () => animation.stop();
-    }, [entrance, reducedMotion]),
-  );
-
   const content = (
-    <Animated.View
-      style={[
-        styles.content,
-        { paddingBottom: 120 + insets.bottom },
-        contentStyle,
-        {
-          opacity: entrance,
-          transform: [
-            {
-              translateY: entrance.interpolate({
-                inputRange: [0, 1],
-                outputRange: [8, 0],
-              }),
-            },
-          ],
-        },
-      ]}
-    >
+    <View style={[styles.content, { paddingBottom: 120 + insets.bottom }, contentStyle]}>
       {header ? (
         <View
           aria-hidden={compactVisible}
@@ -207,7 +138,7 @@ export function AppScreen({
         </View>
       ) : null}
       {children}
-    </Animated.View>
+    </View>
   );
 
   return (
@@ -215,6 +146,11 @@ export function AppScreen({
       edges={["top", "left", "right"]}
       style={[styles.safeArea, { backgroundColor: palette.page }]}
     >
+      <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+        <View style={[styles.atmosphereWarm, { backgroundColor: palette.atmosphereWarm }]} />
+        <View style={[styles.atmosphere, { backgroundColor: palette.atmosphere }]} />
+      </View>
+      {fixedHeader}
       {scroll ? (
         <Animated.ScrollView
           ref={scrollRef}
@@ -333,7 +269,7 @@ export function PageHeader({
           <Text style={[styles.brand, { color: palette.text }]}>
             {brand.toLowerCase() === "evolv" ? (
               <>
-                Evolv<Text style={{ color: colors.red }}>.</Text>
+                Evolv<Text style={{ color: palette.accentText }}>.</Text>
               </>
             ) : (
               brand
@@ -387,58 +323,91 @@ export function PageHeader({
   );
 }
 
-export function CinematicHero({
+export function IllustratedHero({
   source,
   eyebrow,
   title,
   description,
-  height = 240,
-  overlayOpacity = 0.38,
+  height = 152,
+  action,
 }: {
-  source: ImageSourcePropType;
+  source: ThemeArtwork;
   eyebrow: string;
   title: string;
   description: string;
   height?: number;
-  overlayOpacity?: number;
+  action?: { label: string; onPress: () => void };
 }) {
-  const compact = height <= 260;
+  const { palette, resolvedTheme } = useAppTheme();
+  const stacked = useWindowDimensions().fontScale >= 1.35;
 
   return (
-    <View style={[styles.cinematicHero, { height }]}>
-      <CoverImage source={source} style={styles.cinematicImage} />
-      <View
-        style={[
-          styles.cinematicWash,
-          { backgroundColor: `rgba(5, 6, 8, ${overlayOpacity})` },
-        ]}
-      />
-      <View style={styles.cinematicContent}>
-        <Text style={styles.cinematicEyebrow}>{eyebrow}</Text>
-        <View style={styles.cinematicCopy}>
-          <View style={styles.cinematicRule} />
-          <Text
-            adjustsFontSizeToFit
-            minimumFontScale={0.76}
-            numberOfLines={compact ? 3 : 4}
-            style={[
-              styles.cinematicTitle,
-              compact && styles.cinematicTitleCompact,
-            ]}
-          >
-            {title}
-          </Text>
-          <Text
-            style={[
-              styles.cinematicDescription,
-              compact && styles.cinematicDescriptionCompact,
-            ]}
-          >
-            {description}
-          </Text>
+    <View
+      testID="illustrated-hero"
+      style={[styles.illustratedHero, { backgroundColor: palette.surface, borderColor: palette.border }]}
+    >
+      <View style={[styles.illustratedBody, stacked && styles.illustratedBodyStacked, { minHeight: height }]}>
+        <View style={styles.illustratedCopy}>
+          <Text style={[styles.illustratedEyebrow, { color: palette.accentText }]}>{eyebrow}</Text>
+          <Text style={[styles.illustratedTitle, { color: palette.text }]}>{title}</Text>
+          <Text style={[styles.illustratedDescription, { color: palette.muted }]}>{description}</Text>
+        </View>
+        <View style={[styles.illustratedArt, stacked && styles.illustratedArtStacked, { backgroundColor: palette.artworkSurface }]} pointerEvents="none" accessible={false}>
+          <Image source={source[resolvedTheme]} resizeMode="contain" style={styles.illustratedImage} fadeDuration={0} />
         </View>
       </View>
+      {action ? <ActionButton {...action} icon={ArrowUpRight} align="start" /> : null}
     </View>
+  );
+}
+
+export function ActionButton({
+  label,
+  icon: Icon,
+  onPress,
+  disabled = false,
+  align = "center",
+}: {
+  label: string;
+  icon?: IconComponent;
+  onPress: () => void;
+  disabled?: boolean;
+  align?: "center" | "start";
+}) {
+  const { palette } = useAppTheme();
+
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ disabled }}
+      disabled={disabled}
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.actionButton,
+        { backgroundColor: disabled ? palette.elevated : palette.primary },
+        pressed && styles.actionButtonPressed,
+      ]}
+    >
+      <Text style={[styles.actionButtonText, align === "start" && styles.actionButtonLabelStart,
+        { color: disabled ? palette.faint : palette.onPrimary }]}>
+        {label}
+      </Text>
+      {Icon ? <Icon color={disabled ? palette.faint : palette.onPrimary} size={18} /> : null}
+    </Pressable>
+  );
+}
+
+export function IllustrationThumbnail({ source }: { source: ThemeArtwork }) {
+  const { palette, resolvedTheme } = useAppTheme();
+
+  return (
+    <Image
+      source={source[resolvedTheme]}
+      accessible={false}
+      resizeMode="cover"
+      fadeDuration={0}
+      style={[styles.illustrationThumbnail, { backgroundColor: palette.artworkSurface }]}
+    />
   );
 }
 
@@ -545,19 +514,22 @@ export function Metric({
   value,
   label,
   tone,
+  icon,
 }: {
   value: string;
   label: string;
   tone?: ThemeTone;
+  icon?: IconComponent;
 }) {
   const palette = useTonePalette(tone);
   return (
     <View
       style={[
         styles.metric,
-        { backgroundColor: palette.elevated, borderColor: palette.border },
+        { backgroundColor: palette.surface, borderColor: palette.border },
       ]}
     >
+      {icon ? <LabelIcon icon={icon} tone={tone} /> : null}
       <Text style={[styles.metricValue, { color: palette.text }]}>{value}</Text>
       <Text style={[styles.metricLabel, { color: palette.muted }]}>
         {label}
@@ -628,13 +600,10 @@ export function Tag({
   children,
   color,
 }: PropsWithChildren<{ color?: string }>) {
-  const { palette, isDark } = useAppTheme();
-  const resolvedColor =
-    !isDark && color === colors.green
-      ? "#376443"
-      : !isDark && color === colors.gold
-        ? "#87630D"
-        : (color ?? palette.muted);
+  const { palette } = useAppTheme();
+  const resolvedColor = color === colors.green
+    ? palette.accentText
+    : color === colors.gold ? palette.macroCarbs : (color ?? palette.muted);
   return (
     <View style={[styles.tag, { borderColor: resolvedColor }]}>
       <Text style={[styles.tagText, { color: resolvedColor }]}>{children}</Text>
@@ -644,7 +613,7 @@ export function Tag({
 
 export function ProgressBar({
   value,
-  color = colors.red,
+  color,
   trackColor,
 }: {
   value: number;
@@ -663,7 +632,7 @@ export function ProgressBar({
       <View
         style={[
           styles.progressFill,
-          { backgroundColor: color, width: `${normalized * 100}%` },
+          { backgroundColor: color ?? palette.accentText, width: `${normalized * 100}%` },
         ]}
       />
     </View>
@@ -679,14 +648,32 @@ export function LabelIcon({
 }) {
   const palette = useTonePalette(tone);
   return (
-    <View style={[styles.labelIcon, { backgroundColor: palette.iconSurface }]}>
+    <View style={[styles.labelIcon, { backgroundColor: palette.sage }]}>
       <Icon color={palette.accentText} size={18} strokeWidth={1.8} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1 },
+  safeArea: { flex: 1, overflow: "hidden" },
+  atmosphereWarm: {
+    position: "absolute",
+    top: -290,
+    left: "-34%",
+    width: "105%",
+    height: 590,
+    borderRadius: 320,
+    opacity: 0.7,
+  },
+  atmosphere: {
+    position: "absolute",
+    top: -210,
+    right: "-45%",
+    width: "105%",
+    height: 610,
+    borderRadius: 320,
+    opacity: 0.7,
+  },
   scroller: { flex: 1 },
   scrollContent: { flexGrow: 1 },
   compactHeader: {
@@ -739,10 +726,10 @@ const styles = StyleSheet.create({
   pageTitle: {
     marginTop: 5,
     fontFamily: typography.display,
-    fontSize: 28,
-    lineHeight: 34,
-    fontWeight: "600",
-    letterSpacing: 0,
+    fontSize: 34,
+    lineHeight: 40,
+    fontWeight: "700",
+    letterSpacing: -0.8,
   },
   iconButton: {
     width: 46,
@@ -759,63 +746,46 @@ const styles = StyleSheet.create({
     borderColor: colors.paperBorder,
   },
   pressed: { opacity: 0.68, transform: [{ scale: 0.98 }] },
-  cinematicHero: {
-    height: 370,
-    overflow: "hidden",
-    borderRadius: 14,
-    backgroundColor: colors.black,
-    ...shadows.card,
+  illustratedHero: {
+    borderRadius: radius.card,
+    borderWidth: StyleSheet.hairlineWidth,
+    padding: spacing.sm,
+    gap: spacing.sm,
   },
-  cinematicImage: {
-    position: "absolute",
-    inset: 0,
-    width: "100%",
-    height: "100%",
-    borderRadius: 14,
-  },
-  cinematicWash: { position: "absolute", inset: 0, zIndex: 1 },
-  cinematicContent: {
-    zIndex: 2,
+  illustratedBody: { flexDirection: "row", alignItems: "stretch" },
+  illustratedBodyStacked: { flexDirection: "column-reverse" },
+  illustratedCopy: {
     flex: 1,
-    justifyContent: "space-between",
-    padding: spacing.xl,
+    minWidth: 0,
+    alignSelf: "center",
+    padding: spacing.md,
+    gap: spacing.sm,
   },
-  cinematicEyebrow: {
-    color: "#E5E5E5",
-    fontFamily: typography.body,
-    fontSize: 12,
-    fontWeight: "500",
+  illustratedEyebrow: { fontSize: 12, lineHeight: 16, fontFamily: typography.body, fontWeight: "700" },
+  illustratedTitle: { fontSize: 25, lineHeight: 29, fontFamily: typography.display, fontWeight: "700" },
+  illustratedDescription: { fontSize: 13, lineHeight: 19, fontFamily: typography.body },
+  illustratedArt: {
+    width: "44%",
+    minHeight: 116,
+    borderRadius: radius.lg,
+    overflow: "hidden",
   },
-  cinematicCopy: { maxWidth: 430 },
-  cinematicRule: {
-    width: 38,
-    height: 4,
-    marginBottom: spacing.md,
-    backgroundColor: colors.red,
+  illustratedArtStacked: { width: "100%", height: 148 },
+  illustrationThumbnail: { width: 44, height: 44, borderRadius: 12 },
+  illustratedImage: { ...StyleSheet.absoluteFill, width: "100%", height: "100%" },
+  actionButton: {
+    minHeight: 48,
+    borderRadius: radius.lg,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
   },
-  cinematicTitle: {
-    color: colors.text,
-    fontFamily: typography.display,
-    fontSize: 34,
-    lineHeight: 40,
-    fontWeight: "600",
-    letterSpacing: 0,
-  },
-  cinematicTitleCompact: { fontSize: 28, lineHeight: 34 },
-  cinematicDescription: {
-    maxWidth: 340,
-    marginTop: spacing.md,
-    color: "#E5E5E5",
-    fontFamily: typography.body,
-    fontSize: 14,
-    lineHeight: 21,
-  },
-  cinematicDescriptionCompact: {
-    maxWidth: 300,
-    marginTop: spacing.sm,
-    fontSize: 13,
-    lineHeight: 19,
-  },
+  actionButtonText: { flexShrink: 1, fontSize: 14, fontWeight: "700" },
+  actionButtonLabelStart: { flex: 1 },
+  actionButtonPressed: { opacity: 0.86 },
   sectionHeader: {
     minHeight: 30,
     marginTop: spacing.md,
@@ -828,8 +798,8 @@ const styles = StyleSheet.create({
     flex: 1,
     color: colors.text,
     fontFamily: typography.body,
-    fontSize: 19,
-    fontWeight: "600",
+    fontSize: 21,
+    fontWeight: "700",
   },
   sectionTitlePaper: { color: colors.ink },
   sectionMeta: {
@@ -842,7 +812,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   surface: {
-    borderRadius: radius.lg,
+    borderRadius: radius.card,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: colors.border,
     backgroundColor: colors.surface,
@@ -921,8 +891,10 @@ const styles = StyleSheet.create({
   },
   metric: {
     flex: 1,
-    minHeight: 88,
-    borderRadius: radius.lg,
+    minWidth: 0,
+    minHeight: 100,
+    gap: spacing.xs,
+    borderRadius: radius.card,
     borderWidth: 1,
     borderColor: colors.border,
     backgroundColor: colors.backgroundElevated,
@@ -993,10 +965,9 @@ const styles = StyleSheet.create({
   labelIcon: {
     width: 40,
     height: 40,
-    borderRadius: 12,
+    borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.background,
   },
-  labelIconPaper: { backgroundColor: "#E7DED0" },
 });

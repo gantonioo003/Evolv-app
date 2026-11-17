@@ -1,10 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 import type { Tables, TablesInsert } from '../database/database.types.js';
 import { throwDatabaseError } from '../common/errors/database.error.js';
 import { SupabaseService } from '../supabase/supabase.service.js';
 import type { CreateFoodLogDto } from './dto/create-food-log.dto.js';
 import type { CreateFoodLogItemDto } from './dto/create-food-log-item.dto.js';
 import type { NutritionLogsQueryDto } from './dto/nutrition-logs-query.dto.js';
+import type { SetPlannedMealRegistrationDto } from './dto/set-planned-meal-registration.dto.js';
 import { calculateNutritionSummary } from './nutrition-summary.js';
 
 type FoodLog = Tables<'food_logs'>;
@@ -155,6 +161,40 @@ export class NutritionService {
       );
     }
     return data;
+  }
+
+  async setPlannedMealRegistration(
+    accessToken: string,
+    mealId: string,
+    dto: SetPlannedMealRegistrationDto,
+  ) {
+    const { data, error } = await this.supabase
+      .forUser(accessToken)
+      .rpc('set_planned_meal_registration', {
+        p_meal_id: mealId,
+        p_local_date: dto.local_date,
+        p_logged_at: dto.logged_at,
+        p_registered: dto.registered,
+      });
+    if (error?.message === 'PLANNED_MEAL_NOT_FOUND') {
+      throw new NotFoundException('Esta refeição não está no seu plano ativo.');
+    }
+    if (error?.message === 'MEAL_PORTIONS_UNAVAILABLE') {
+      throw new UnprocessableEntityException(
+        'Esta refeição ainda não tem porções e macros completos para o balanço.',
+      );
+    }
+    if (error?.message === 'INVALID_MEAL_REGISTRATION') {
+      throw new BadRequestException('Não consegui identificar a data do registro.');
+    }
+    if (error) {
+      throwDatabaseError(
+        'NutritionService.setPlannedMealRegistration',
+        error,
+        'Não foi possível atualizar a refeição.',
+      );
+    }
+    return { registered: data };
   }
 
   async removeLog(

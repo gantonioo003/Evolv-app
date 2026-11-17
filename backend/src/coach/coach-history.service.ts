@@ -11,6 +11,16 @@ import type { Json, TablesInsert } from '../database/database.types.js';
 import { SupabaseService } from '../supabase/supabase.service.js';
 import type { CreateCoachSessionDto } from './dto/coach.dto.js';
 
+export const coachContextBudget = 9_000;
+
+export function contextUnits(text: string) {
+  return Math.max(1, Math.ceil(text.trim().length / 4));
+}
+
+function words(text: string) {
+  return text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+}
+
 export function messageId(
   user: string,
   conversation: string,
@@ -61,7 +71,6 @@ export class CoachHistoryService {
       .from('coach_conversations')
       .insert({
         user_id: user,
-        title: 'Nova conversa',
         entry_context: 'general',
       })
       .select('*')
@@ -155,7 +164,7 @@ export class CoachHistoryService {
     return data ?? [];
   }
   async recent(user: string, token: string, id: string) {
-    const rows = await this.messages(user, token, id, 16);
+    const rows = await this.messages(user, token, id, 64);
     // Reconstruct complete pairs; never pass system config or executable proposals into the LM.
     const groups = new Map<string, typeof rows>();
     for (const row of rows) {
@@ -163,20 +172,96 @@ export class CoachHistoryService {
       if (typeof request === 'string')
         groups.set(request, [...(groups.get(request) ?? []), row]);
     }
+    let remaining = 24000;
     return [...groups.values()]
       .filter(
         (g) =>
           g.some((r) => r.role === 'user') &&
           g.some((r) => r.role === 'assistant'),
       )
-      .slice(0, 4)
+      .filter((group) => {
+        const size = group.reduce((total, row) => total + Math.min(row.content.length, 8000), 0);
+        if (size > remaining) {
+          remaining = 0;
+          return false;
+        }
+        remaining -= size;
+        return true;
+      })
       .reverse()
-      .flatMap((g) =>
-        ['user', 'assistant'].map((role) => ({
-          role,
-          content: g.find((r) => r.role === role)!.content.slice(0, 8000),
-        })),
+      .flatMap((g, index, pairs) =>
+        ['user', 'assistant'].map((role) => {
+          const row = g.find((r) => r.role === role)!;
+          const result = object(object(object(row.metadata).response).result);
+          return {
+            role,
+            content: row.content.slice(0, 8000),
+            ...(role === 'assistant' && index === pairs.length - 1
+              ? { dialogue_context: result.dialogue_context }
+              : {}),
+          };
+        }),
       );
+  }
+
+  async contextUsed(user: string, token: string, id: string) {
+    const { data, error } = await this.supabase.forUser(token).from('coach_messages')
+      .select('metadata').eq('user_id', user).eq('conversation_id', id).eq('role', 'assistant')
+      .order('created_at', { ascending: false }).order('id', { ascending: false }).limit(1).maybeSingle();
+    db(error);
+    const result = object(object(object(data?.metadata).response).result);
+    const usage = object(result.conversation_memory);
+    if (usage.limit === coachContextBudget && typeof usage.used === 'number' &&
+        Number.isSafeInteger(usage.used) && usage.used >= 0 && usage.used <= coachContextBudget)
+      return usage.used;
+    let used = 0;
+    for await (const content of this.userTexts(user, token, id)) {
+      used += contextUnits(content);
+      if (used >= coachContextBudget) return coachContextBudget;
+    }
+    return used;
+  }
+
+  private async *userTexts(user: string, token: string, id: string) {
+    const pageSize = 200;
+    for (let offset = 0; ; offset += pageSize) {
+      const { data, error } = await this.supabase.forUser(token).from('coach_messages')
+        .select('content').eq('user_id', user).eq('conversation_id', id).eq('role', 'user')
+        .order('created_at').order('id').range(offset, offset + pageSize - 1);
+      db(error);
+      for (const row of data ?? []) yield row.content;
+      if ((data?.length ?? 0) < pageSize) return;
+    }
+  }
+
+  async recall(user: string, token: string, id: string, text: string) {
+    const normalized = words(text);
+    const explicitRecall = /^(?:(?:lembra|lembre|me diga|me diz) )?o que (?:eu )?(?:te )?(?:falei|disse|comentei)\b/.test(normalized)
+      || /^(?:me lembra|o que (?:voce )?lembra)\b.{0,60}\b(?:no|do) comeco d[oa] (?:chat|conversa)\b/.test(normalized);
+    const factQuestion = /^(?:qual|quais|que dia|me lembra)\b.{0,85}\b(?:falei|disse|comentei)\b/.test(normalized);
+    const field = factQuestion
+      ? [
+          [/\b(?:volto|voltar|retorno)\b/, /\b(?:volto|voltar|retorno)\b/],
+          [/\b(?:equipamento|equipamentos)\b/, /\b(?:halter\w*|elastico\w*|faixa|esteira|barra)\b/],
+          [/\b(?:horario|horarios|dias de treino|dias de academia)\b/, /\b(?:treino|academia)\b/],
+        ].find(([question]) => question!.test(normalized))?.[1]
+      : undefined;
+    if (!explicitRecall && !field) return null;
+    const subject = normalized.match(/\bsobre\s+(.+)/)?.[1] ?? '';
+    const keywords = subject.match(/[a-z0-9]{3,}/g)?.filter((word) =>
+      !['que', 'meu', 'minha', 'nosso', 'para', 'mesmo', 'essa', 'esse'].includes(word)) ?? [];
+    const fromStart = !keywords.length && /\b(?:no|do) comeco\b/.test(normalized);
+    const relevant: string[] = [];
+    for await (const row of this.userTexts(user, token, id)) {
+      const content = words(row);
+      if (field ? field.test(content) : (!keywords.length || keywords.some((word) => content.includes(word)) ||
+          (keywords.includes('objetivo') && /\b(?:meu objetivo|minha meta|quero (?:ganhar|perder|melhorar))\b/.test(content)))) {
+        relevant.push(minimizeHistoryText(row).slice(0, 300));
+        if (fromStart && relevant.length === 3) break;
+        if (relevant.length > 3) relevant.shift();
+      }
+    }
+    return relevant;
   }
   async cached(
     user: string,
@@ -287,35 +372,13 @@ export class CoachHistoryService {
       .select('*')
       .eq('user_id', user)
       .eq('conversation_id', id)
+      .eq('source', 'coach')
       .contains('requested_change', { coach_proposal_id: proposal })
       .limit(2);
     db(error);
     if ((data?.length ?? 0) > 1)
       throw new ConflictException('COACH_DUPLICATE_PREVIEWS');
     return data?.[0] ?? null;
-  }
-  async link(
-    user: string,
-    token: string,
-    id: string,
-    proposal: string,
-    adjustment: string,
-    payload: Record<string, unknown>,
-  ) {
-    const { data, error } = await this.supabase
-      .forUser(token)
-      .from('planner_adjustments')
-      .update({
-        conversation_id: id,
-        requested_change: { ...payload, coach_proposal_id: proposal } as Json,
-      })
-      .eq('id', adjustment)
-      .eq('user_id', user)
-      .eq('source', 'coach')
-      .select('*')
-      .single();
-    db(error);
-    return data;
   }
   async adjustment(
     user: string,
@@ -330,6 +393,7 @@ export class CoachHistoryService {
       .eq('id', adjustment)
       .eq('user_id', user)
       .eq('conversation_id', id)
+      .eq('source', 'coach')
       .maybeSingle();
     db(error);
     if (!data) throw new NotFoundException('COACH_ADJUSTMENT_NOT_FOUND');

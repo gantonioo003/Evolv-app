@@ -10,7 +10,21 @@ import {
   Min,
 } from 'class-validator';
 
-export class CreateExerciseLogDto {
+class ExerciseMeasurementsDto {
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  @Max(1000)
+  repetitions?: number;
+
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  @Max(86400)
+  duration_seconds?: number;
+}
+
+export class CreateExerciseLogDto extends ExerciseMeasurementsDto {
   @IsOptional()
   @IsUUID()
   workout_log_id?: string;
@@ -42,7 +56,7 @@ export class CreateExerciseLogDto {
   notes?: string;
 }
 
-export class UpdateExerciseLogDto {
+export class UpdateExerciseLogDto extends ExerciseMeasurementsDto {
   @IsOptional()
   @IsDateString()
   performed_at?: string;

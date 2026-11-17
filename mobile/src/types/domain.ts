@@ -1,5 +1,9 @@
 export type Exercise = {
   id: string;
+  planItemId?: string;
+  logMetric?: "load" | "reps" | "time";
+  canAddLoad?: boolean;
+  loadIsAdded?: boolean;
   name: string;
   sets: number;
   reps: string;

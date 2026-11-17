@@ -6,6 +6,7 @@ import { CoachService } from './coach.service.js';
 import { CoachAiClient } from './coach-ai.client.js';
 import { CoachContextService } from './coach-context.service.js';
 import { CoachHistoryService } from './coach-history.service.js';
+import { CoachAccountService } from './coach-account.service.js';
 @Module({
   imports: [AuthModule, PlannerModule],
   controllers: [CoachController],
@@ -14,6 +15,7 @@ import { CoachHistoryService } from './coach-history.service.js';
     CoachAiClient,
     CoachContextService,
     CoachHistoryService,
+    CoachAccountService,
   ],
 })
 export class CoachModule {}

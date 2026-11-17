@@ -40,11 +40,11 @@ export type ExerciseApi = {
   muscle_group: string;
   equipment: string | null;
   instructions: string | null;
+  movement_pattern?: string | null;
 };
 
 export type ExerciseCatalogApi = ExerciseApi & {
   aliases?: string[];
-  movement_pattern?: string | null;
   difficulty?: string | null;
   is_compound?: boolean | null;
 };
@@ -191,6 +191,7 @@ export type GenerateNutritionPlanInput = {
 
 export type PlannerAdjustmentKind =
   | "move_workout_day"
+  | "move_workout_occurrence"
   | "replace_exercise"
   | "replace_meal_item"
   | "set_day_activity";
@@ -227,6 +228,11 @@ export type PlannerDayContextApi = {
   note: string | null;
 };
 
+export type PlannerWeekOverridesApi = {
+  dates: string[];
+  overrides: Pick<PlannerDayContextApi, "activity_date" | "activity_type" | "workout_day_id">[];
+};
+
 export type PlannerAdjustmentPreviewApi = {
   title: string;
   summary: string;
@@ -240,6 +246,7 @@ export type PlannerAdjustmentApi = {
   status: "pending" | "applied" | "rejected";
   adjustment_kind: PlannerAdjustmentKind | null;
   source: "manual" | "coach" | "planner";
+  conversation_id?: string | null;
   reason: string;
   workout_plan_id: string | null;
   diet_plan_id: string | null;
@@ -378,8 +385,10 @@ export type ProgressionSuggestionApi = {
 export type FoodLogApi = {
   id: string;
   logged_at: string;
-  description: string;
+  description: string | null;
   meal_name: string | null;
+  planned_meal_id: string | null;
+  food_log_items: NutritionSummaryApi[];
 };
 
 export type NutritionSummaryApi = {

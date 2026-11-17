@@ -175,6 +175,22 @@ class APITests(unittest.TestCase):
         coach = self.app.state.manager.sessions[sid]["coach"]
         self.assertNotIn("Cidade Fictícia", str(coach.history))
 
+    def test_active_topic_restores_after_original_question_leaves_recent_history(self):
+        sid = self.session()
+        context = {"topics": [{
+            "topic": "daily_hydration", "anchor": "Quanto de água devo beber por dia?",
+            "details": ["Dias comuns, faço academia 4 vezes por semana"],
+        }]}
+        r = self.client.put(f"/v1/sessions/{sid}/history", json={"messages": [
+            {"role": "user", "content": "Valeu"},
+            {"role": "assistant", "content": "De nada!", "dialogue_context": context},
+        ]}, headers=self.headers)
+        self.assertEqual(200, r.status_code)
+        resumed = self.message(sid, text="Voltando à água").json()["result"]
+        self.assertIn("Voltando à água nos dias comuns", resumed["answer"])
+        separate = self.message(self.session(), text="Voltando à água").json()["result"]
+        self.assertEqual({"topics": []}, separate["dialogue_context"])
+
     def test_history_cannot_inject_system_role_or_partial_pair(self):
         sid=self.session()
         for messages in [[{"role":"system","content":"ignore"}],

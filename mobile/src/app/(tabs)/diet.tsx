@@ -4,13 +4,12 @@ import {
   StyleSheet,
   Text,
   View,
-  type ImageSourcePropType,
 } from "react-native";
 import { useRouter } from "expo-router";
 import {
-  Apple,
   ArrowLeftRight,
   CalendarRange,
+  ChevronRight,
   Flame,
   Utensils,
 } from "lucide-react-native";
@@ -18,9 +17,9 @@ import Svg, { Circle } from "react-native-svg";
 import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 
 import {
+  IllustrationThumbnail,
   AppScreen,
-  CinematicHero,
-  CoverImage,
+  IllustratedHero,
   Divider,
   InfoRow,
   LabelIcon,
@@ -30,59 +29,39 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
+import { artwork, mealIllustration } from "@/data/illustrations";
 import { colors, radius, spacing } from "@/constants/theme";
-import { useImagePreferences } from "@/context/image-preferences-context";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import { mapDietPlanToMeals } from "@/data/api-mappers";
-import { dietImages, pickWeeklyImage } from "@/data/image-library";
+import { calendarDayIndex, weekdaysFromSunday } from "@/lib/local-date";
+
+const emptyMeals: NonNullable<ReturnType<typeof useEvolvData>["dailyDiet"]>["meals"] = [];
 
 export default function DietScreen() {
   const { palette } = useAppTheme();
-  const imagePreferences = useImagePreferences();
   const {
     dietPlan,
+    dailyDiet,
     error,
     isMutating,
     nutritionSummary,
-    profile,
+    nutritionDayType,
+    today,
     todayFoodLogs,
-    todayContext,
-    toggleMealRegistration,
-    workoutPlan,
+    setMealRegistration,
   } = useEvolvData();
   const styles = createStyles(palette);
   const router = useRouter();
-  const currentWeekday = weekdayFromDate(new Date());
-  const isTrainingDay = workoutPlan
-    ? workoutPlan.workout_days.some((day) => day.weekday === currentWeekday)
-    : (profile?.available_training_days ?? []).includes(currentWeekday);
-  const currentDayType =
-    todayContext?.nutrition_day_type ??
-    (isTrainingDay ? "training_day" : "rest_day");
-  const rotationIndex = dietPlan?.menu_rotation_enabled
-    ? dayRotationIndex(new Date(), dietPlan.menu_rotation_size)
-    : 0;
-  const visibleMeals = useMemo(
-    () =>
-      dietPlan?.meals.filter(
-        (meal) =>
-          (!dietPlan.uses_day_variants || meal.day_type === currentDayType) &&
-          meal.rotation_index === rotationIndex,
-      ) ?? [],
-    [currentDayType, dietPlan, rotationIndex],
-  );
+  const visibleMeals = dailyDiet?.meals ?? emptyMeals;
   const meals = useMemo(
     () =>
       dietPlan ? mapDietPlanToMeals({ ...dietPlan, meals: visibleMeals }) : [],
     [dietPlan, visibleMeals],
   );
   const consumedCalories = nutritionSummary?.calories_kcal ?? 0;
-  const calorieTarget = dietPlan?.uses_day_variants
-    ? currentDayType === "training_day"
-      ? (dietPlan.training_day_calories_target ?? 0)
-      : (dietPlan.rest_day_calories_target ?? 0)
-    : (dietPlan?.daily_calories_target ?? 0);
+  const hasUndetailedLogs = todayFoodLogs.some((log) => log.food_log_items.length === 0);
+  const calorieTarget = dailyDiet?.calorieTarget ?? 0;
   const mealTarget = (
     field: "protein_target_g" | "carbohydrate_target_g" | "fat_target_g",
   ) =>
@@ -93,11 +72,9 @@ export default function DietScreen() {
     {
       label: "Proteína",
       current: nutritionSummary?.protein_g ?? 0,
-      target: dietPlan?.uses_day_variants
-        ? mealTarget("protein_target_g")
-        : (dietPlan?.daily_protein_target_g ?? 0),
+      target: dailyDiet?.proteinTarget ?? 0,
       unit: "g",
-      color: colors.red,
+      color: palette.macroProtein,
     },
     {
       label: "Carboidratos",
@@ -106,7 +83,7 @@ export default function DietScreen() {
         ? mealTarget("carbohydrate_target_g")
         : (dietPlan?.daily_carbohydrate_target_g ?? 0),
       unit: "g",
-      color: colors.gold,
+      color: palette.macroCarbs,
     },
     {
       label: "Gorduras",
@@ -115,13 +92,13 @@ export default function DietScreen() {
         ? mealTarget("fat_target_g")
         : (dietPlan?.daily_fat_target_g ?? 0),
       unit: "g",
-      color: colors.green,
+      color: palette.macroFat,
     },
   ];
   const flexibleMealToday = Boolean(
     dietPlan &&
     isPlannedForToday(
-      new Date(),
+      today,
       dietPlan.created_at,
       dietPlan.flexible_meal_weekday,
       dietPlan.flexible_meal_frequency,
@@ -130,18 +107,16 @@ export default function DietScreen() {
   const alcoholToday = Boolean(
     dietPlan &&
     isPlannedForToday(
-      new Date(),
+      today,
       dietPlan.created_at,
       dietPlan.alcohol_preferred_weekday,
       dietPlan.alcohol_frequency,
     ),
   );
 
-  async function toggleMeal(index: number) {
-    const meal = visibleMeals[index];
-    if (!meal) return;
+  async function toggleMeal(mealId: string, registered: boolean) {
     try {
-      await toggleMealRegistration(meal);
+      await setMealRegistration(mealId, !registered);
     } catch (caught) {
       Alert.alert(
         "Nao foi possivel atualizar",
@@ -162,16 +137,15 @@ export default function DietScreen() {
         />
       }
     >
-      <CinematicHero
-        source={pickWeeklyImage(dietImages, imagePreferences, "diet", 0)}
+      <IllustratedHero
+        source={dietPlan ? artwork.diet : artwork.mealPlan}
         eyebrow="Plano de hoje"
         title={dietPlan?.name ?? "Seu plano alimentar"}
         description={
           dietPlan
-            ? `${visibleMeals.length} refeições para hoje. Uma de cada vez.`
+            ? `${visibleMeals.length} refeições para hoje.`
             : "Sem plano ativo para hoje."
         }
-        height={220}
       />
 
       <View style={styles.nutritionFacts}>
@@ -194,52 +168,56 @@ export default function DietScreen() {
       </View>
 
       <SectionTitle title="Balanço do dia" meta="estimativa" />
-      <View style={styles.balancePanel}>
-        <NutritionDial consumed={consumedCalories} target={calorieTarget} />
-        <View style={styles.balanceSummary}>
-          <View style={styles.balanceIcon}>
-            <Flame color={colors.red} size={19} strokeWidth={2} />
-          </View>
-          <Text style={styles.balanceTitle}>
-            {todayFoodLogs.length ? "Registros de hoje" : "Registro opcional"}
-          </Text>
-          <Text style={styles.balanceDescription}>
-            {dietPlan
-              ? `Foram calculadas ${Math.round(consumedCalories)} kcal nos alimentos detalhados. Restam aproximadamente ${Math.max(0, Math.round(calorieTarget - consumedCalories))} kcal.`
-              : "Nenhum plano alimentar ativo. Você pode usar somente as outras áreas do Evolv."}
-          </Text>
-          <Tag color={colors.green}>
-            {dietPlan ? "Plano sincronizado" : "Sem cobrança"}
-          </Tag>
-        </View>
-      </View>
-
-      <View style={styles.macroPanel}>
-        <View style={styles.macroList}>
-          {macroData.map((macro) => (
-            <View key={macro.label} style={styles.macroRow}>
-              <View style={styles.macroLabels}>
-                <Text style={styles.macroName}>{macro.label}</Text>
-                <Text style={styles.macroValue}>
-                  {macro.current}/{macro.target}
-                  {macro.unit}
-                </Text>
-              </View>
-              <ProgressBar
-                value={macro.target ? macro.current / macro.target : 0}
-                color={macro.color}
-              />
+      <Surface style={styles.nutritionCard}>
+        <View style={styles.balancePanel}>
+          <NutritionDial consumed={consumedCalories} target={calorieTarget} />
+          <View style={styles.balanceSummary}>
+            <View style={styles.balanceIcon}>
+              <LabelIcon icon={Flame} />
             </View>
-          ))}
+            <Text style={styles.balanceTitle}>
+              {todayFoodLogs.length ? "Registros de hoje" : "Registro opcional"}
+            </Text>
+            <Text style={styles.balanceDescription}>
+              {dietPlan
+                ? `${Math.round(consumedCalories)} kcal nos registros com porção. Restam aproximadamente ${Math.max(0, Math.round(calorieTarget - consumedCalories))} kcal.${hasUndetailedLogs ? " Registros sem porção ficam fora do total." : ""}`
+                : "Nenhum plano alimentar ativo. Você pode usar somente as outras áreas do Evolv."}
+            </Text>
+            <Tag color={colors.green}>
+              {dietPlan ? "Plano sincronizado" : "Sem cobrança"}
+            </Tag>
+          </View>
         </View>
-      </View>
+
+        <View style={styles.macroPanel}>
+          <View style={styles.macroList}>
+            {macroData.map((macro) => (
+              <View key={macro.label} style={styles.macroRow}>
+                <View style={styles.macroLabels}>
+                  <Text style={styles.macroName}>{macro.label}</Text>
+                  <Text style={styles.macroValue}>
+                    {macro.current.toLocaleString("pt-BR", { maximumFractionDigits: 1 })}/{macro.target}
+                    {macro.unit}
+                  </Text>
+                </View>
+                <ProgressBar
+                  value={macro.target ? macro.current / macro.target : 0}
+                  color={macro.color}
+                />
+              </View>
+            ))}
+          </View>
+        </View>
+      </Surface>
 
       {flexibleMealToday || alcoholToday ? (
         <>
           <SectionTitle title="Flexibilidade de hoje" meta="já planejada" />
           <Surface>
             <InfoRow
-              leading={<LabelIcon icon={CalendarRange} />}
+              leading={flexibleMealToday
+                ? <IllustrationThumbnail source={artwork.flexibleMeal} />
+                : <LabelIcon icon={CalendarRange} />}
               title={
                 flexibleMealToday
                   ? "Refeição flexível prevista"
@@ -259,7 +237,7 @@ export default function DietScreen() {
         title="Hoje"
         meta={
           dietPlan?.uses_day_variants
-            ? isTrainingDay
+            ? nutritionDayType === "training_day"
               ? "dia de treino"
               : "dia de descanso"
             : "registro opcional"
@@ -267,14 +245,15 @@ export default function DietScreen() {
       />
       <Surface>
         {meals.map((meal, index) => {
+          const illustration = mealIllustration(meal.title);
           const registered = todayFoodLogs.some(
-            (log) => log.meal_name === meal.title,
+            (log) => log.planned_meal_id === meal.id,
           );
           return (
             <View key={meal.id}>
               {index > 0 ? <Divider /> : null}
               <InfoRow
-                leading={
+                leading={illustration ? <IllustrationThumbnail source={illustration} /> : (
                   <View
                     style={[
                       styles.mealNumber,
@@ -290,15 +269,16 @@ export default function DietScreen() {
                       {index + 1}
                     </Text>
                   </View>
-                }
+                )}
                 title={meal.title}
                 description={`${meal.label} - ${meal.description} - ${meal.protein}g proteína`}
                 trailing={
                   <Pressable
                     accessibilityRole="checkbox"
+                    accessibilityLabel={`${registered ? "Desmarcar" : "Registrar como planejada"}: ${meal.title}`}
                     accessibilityState={{ checked: registered }}
                     disabled={isMutating}
-                    onPress={() => void toggleMeal(index)}
+                    onPress={() => void toggleMeal(meal.id, registered)}
                     style={({ pressed }) => [
                       styles.calorieButton,
                       registered && styles.calorieButtonRegistered,
@@ -312,7 +292,7 @@ export default function DietScreen() {
                         registered && styles.calorieTextRegistered,
                       ]}
                     >
-                      {registered ? "Registrado" : `${meal.calories} kcal`}
+                      {registered ? "Registrado" : "Registrar"}
                     </Text>
                   </Pressable>
                 }
@@ -322,7 +302,7 @@ export default function DietScreen() {
         })}
         {!meals.length ? (
           <InfoRow
-            leading={<LabelIcon icon={Utensils} />}
+            leading={<IllustrationThumbnail source={artwork.mealPlan} />}
             title="Nenhum plano alimentar ativo"
             description="A aba continua disponível e receberá as refeições quando um plano for criado."
           />
@@ -331,33 +311,33 @@ export default function DietScreen() {
 
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-      <SectionTitle title="Ações rápidas" meta="sem complicar" />
-      <View style={styles.editorialGrid}>
-        <EditorialAction
-          source={pickWeeklyImage(dietImages, imagePreferences, "diet", 1)}
-          eyebrow="Semana"
-          title="Preparar refeições"
-          onPress={() =>
-            Alert.alert(
-              "Preparo semanal",
-              "O organizador de refeições será conectado ao Planner nas próximas fases.",
-            )
-          }
+      <SectionTitle title="Ações rápidas" />
+      <Surface>
+        <InfoRow
+          leading={<LabelIcon icon={Utensils} />}
+          title={dietPlan ? "Ver e editar dieta" : "Criar plano alimentar"}
+          description="Refeições e alimentos"
+          trailing={<ChevronRight color={palette.faint} size={18} />}
+          onPress={() => dietPlan
+            ? router.push({ pathname: "/diet-plans/[planId]", params: { planId: dietPlan.id } })
+            : router.push("/diet-plans")}
         />
-        <EditorialAction
-          source={pickWeeklyImage(dietImages, imagePreferences, "diet", 2)}
-          eyebrow="Substituição"
-          title="Trocar alimento"
-          onPress={() => router.push("/coach")}
+        <Divider />
+        <InfoRow
+          leading={<LabelIcon icon={CalendarRange} />}
+          title="Gerenciar planos"
+          description="Planos ativos e salvos"
+          trailing={<ChevronRight color={palette.faint} size={18} />}
+          onPress={() => router.push("/diet-plans")}
         />
-      </View>
+      </Surface>
 
       <Pressable
         accessibilityRole="button"
         onPress={() => router.push("/coach")}
         style={({ pressed }) => [styles.coachAction, pressed && styles.pressed]}
       >
-        <ArrowLeftRight color={colors.text} size={20} strokeWidth={2} />
+        <ArrowLeftRight color={palette.onPrimary} size={20} strokeWidth={2} />
         <View style={styles.coachActionText}>
           <Text style={styles.coachActionTitle}>
             Pedir uma substituição ao Coach
@@ -368,45 +348,8 @@ export default function DietScreen() {
         </View>
       </Pressable>
 
-      <SectionTitle title="Base da semana" meta="lista principal" />
-      <Surface>
-        <InfoRow
-          leading={<LabelIcon icon={Apple} />}
-          title="Alimentos principais"
-          description="Arroz, feijão, ovos, frango, carne magra, aveia, frutas, legumes e iogurte."
-        />
-        <Divider />
-        <InfoRow
-          leading={<LabelIcon icon={Utensils} />}
-          title="Regra do plano"
-          description="Ajustes pequenos preservam a rotina e tornam a dieta mais fácil de manter."
-        />
-      </Surface>
     </AppScreen>
   );
-}
-
-function weekdayFromDate(date: Date) {
-  const weekdays = [
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-  ];
-  return weekdays[date.getDay()];
-}
-
-function dayRotationIndex(date: Date, rotationSize: number) {
-  if (rotationSize <= 1) return 0;
-  const localDay = Date.UTC(
-    date.getFullYear(),
-    date.getMonth(),
-    date.getDate(),
-  );
-  return Math.floor(localDay / 86_400_000) % rotationSize;
 }
 
 function isPlannedForToday(
@@ -415,7 +358,7 @@ function isPlannedForToday(
   weekday: string | null,
   frequency: string,
 ) {
-  if (!weekday || frequency === "none" || weekdayFromDate(date) !== weekday) {
+  if (!weekday || frequency === "none" || weekdaysFromSunday[date.getDay()] !== weekday) {
     return false;
   }
   if (frequency === "weekly") return true;
@@ -423,7 +366,7 @@ function isPlannedForToday(
   const created = new Date(planCreatedAt);
   const elapsedDays = Math.max(
     0,
-    Math.floor((date.getTime() - created.getTime()) / 86_400_000),
+    calendarDayIndex(date) - calendarDayIndex(created),
   );
   return Math.floor(elapsedDays / 7) % 2 === 0;
 }
@@ -460,7 +403,7 @@ function NutritionDial({
           r={radiusValue}
           fill="none"
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          stroke={colors.red}
+          stroke={palette.macroFat}
           strokeDasharray={`${circumference} ${circumference}`}
           strokeDashoffset={circumference * (1 - progress)}
           strokeLinecap="round"
@@ -480,50 +423,16 @@ function NutritionDial({
   );
 }
 
-function EditorialAction({
-  source,
-  eyebrow,
-  title,
-  onPress,
-}: {
-  source: ImageSourcePropType;
-  eyebrow: string;
-  title: string;
-  onPress: () => void;
-}) {
-  const { palette } = useAppTheme();
-  const styles = createStyles(palette);
-
-  return (
-    <Pressable
-      accessibilityRole="button"
-      onPress={onPress}
-      style={({ pressed }) => [
-        styles.editorialAction,
-        pressed && styles.pressed,
-      ]}
-    >
-      <View style={styles.editorialBackground}>
-        <CoverImage source={source} style={styles.editorialImage} />
-        <View style={styles.editorialWash} />
-        <View style={styles.editorialCopy}>
-          <Text style={styles.editorialEyebrow}>{eyebrow}</Text>
-          <Text style={styles.editorialTitle}>{title}</Text>
-        </View>
-      </View>
-    </Pressable>
-  );
-}
-
 const createStyles = (palette: AppThemePalette) =>
   StyleSheet.create({
     nutritionFacts: {
       minHeight: 84,
       flexDirection: "row",
       alignItems: "center",
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
+      borderRadius: radius.card,
+      borderWidth: StyleSheet.hairlineWidth,
       borderColor: palette.border,
+      backgroundColor: palette.surface,
     },
     nutritionFact: { flex: 1, alignItems: "center" },
     nutritionDivider: { width: 1, height: 34, backgroundColor: palette.border },
@@ -535,15 +444,12 @@ const createStyles = (palette: AppThemePalette) =>
       fontWeight: "600",
       textTransform: "none",
     },
+    nutritionCard: { gap: spacing.lg, padding: spacing.lg },
     balancePanel: {
-      minHeight: 178,
+      minHeight: 156,
       flexDirection: "row",
       alignItems: "center",
-      gap: spacing.lg,
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
-      borderColor: palette.border,
-      paddingVertical: spacing.md,
+      gap: spacing.md,
     },
     dial: { alignItems: "center", justifyContent: "center" },
     dialCopy: {
@@ -562,20 +468,12 @@ const createStyles = (palette: AppThemePalette) =>
     },
     dialMeta: {
       marginTop: 5,
-      color: colors.red,
+      color: palette.accentText,
       fontSize: 10,
       fontWeight: "600",
     },
     balanceSummary: { flex: 1, alignItems: "flex-start" },
-    balanceIcon: {
-      width: 38,
-      height: 38,
-      marginBottom: 9,
-      borderRadius: 19,
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: palette.iconSurface,
-    },
+    balanceIcon: { marginBottom: 9 },
     balanceTitle: { color: palette.text, fontSize: 16, fontWeight: "600" },
     balanceDescription: {
       marginTop: 5,
@@ -585,9 +483,9 @@ const createStyles = (palette: AppThemePalette) =>
       lineHeight: 17,
     },
     macroPanel: {
-      borderBottomWidth: 1,
+      borderTopWidth: StyleSheet.hairlineWidth,
       borderColor: palette.border,
-      paddingBottom: spacing.lg,
+      paddingTop: spacing.lg,
     },
     macroList: { gap: 14 },
     macroRow: { gap: 7 },
@@ -602,7 +500,7 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
       backgroundColor: palette.iconSurface,
     },
-    mealNumberRegistered: { backgroundColor: colors.green },
+    mealNumberRegistered: { backgroundColor: palette.primary },
     mealNumberText: { color: palette.text, fontSize: 11, fontWeight: "600" },
     mealNumberTextRegistered: { color: colors.text },
     calorieButton: {
@@ -616,59 +514,23 @@ const createStyles = (palette: AppThemePalette) =>
       paddingHorizontal: 9,
     },
     calorieButtonRegistered: {
-      borderColor: colors.green,
+      borderColor: palette.accentSoft,
       backgroundColor: palette.successSoft,
     },
     calorieText: { color: palette.faint, fontSize: 10, fontWeight: "600" },
-    calorieTextRegistered: { color: colors.green },
-    editorialGrid: { gap: spacing.sm },
-    editorialAction: {
-      width: "100%",
-      height: 150,
-      overflow: "hidden",
-      borderRadius: radius.lg,
-      backgroundColor: colors.ink,
-    },
-    editorialBackground: { flex: 1, justifyContent: "flex-end" },
-    editorialImage: {
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      borderRadius: radius.lg,
-    },
-    editorialWash: {
-      position: "absolute",
-      inset: 0,
-      zIndex: 1,
-      backgroundColor: "rgba(5, 6, 8, 0.38)",
-    },
-    editorialCopy: { zIndex: 2, padding: spacing.md },
-    editorialEyebrow: {
-      color: colors.text,
-      fontSize: 9,
-      fontWeight: "600",
-      textTransform: "none",
-    },
-    editorialTitle: {
-      marginTop: 3,
-      color: colors.text,
-      fontSize: 14,
-      lineHeight: 17,
-      fontWeight: "600",
-    },
+    calorieTextRegistered: { color: palette.accentText },
     coachAction: {
       minHeight: 72,
       flexDirection: "row",
       alignItems: "center",
       gap: 12,
       borderRadius: radius.lg,
-      backgroundColor: colors.red,
+      backgroundColor: palette.primary,
       padding: spacing.lg,
     },
     coachActionText: { flex: 1 },
-    coachActionTitle: { color: colors.text, fontSize: 14, fontWeight: "600" },
-    coachActionDescription: { marginTop: 3, color: "#EBC7C2", fontSize: 12 },
+    coachActionTitle: { color: palette.onPrimary, fontSize: 14, fontWeight: "600" },
+    coachActionDescription: { marginTop: 3, color: "#ECF2FF", fontSize: 12 },
     pressed: { opacity: 0.65 },
     disabled: { opacity: 0.45 },
     errorText: {

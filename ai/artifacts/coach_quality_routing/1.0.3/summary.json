@@ -1,0 +1,42 @@
+{
+  "phase": "9.03",
+  "baseline": "coach_quality_diagnosis/1.0.3",
+  "run": "coach_quality_routing/1.0.3",
+  "before": {
+    "dialogues": 14,
+    "processed_messages": 59,
+    "social_expected": 26,
+    "social_routed_as_conversation": 3,
+    "correct_proposals": 0,
+    "expected_proposals": 3,
+    "unexpected_proposals": [
+      "duvida-e-ordem-exercicio/1"
+    ],
+    "correct_refusals": 0,
+    "authorizations_for_planner_preview": 0,
+    "guard_turns_without_actions": 5,
+    "core_results_allowing_plan_writes": 0,
+    "app_events_outside_scope": 0
+  },
+  "after": {
+    "dialogues": 14,
+    "processed_messages": 59,
+    "social_expected": 26,
+    "social_routed_as_conversation": 24,
+    "correct_proposals": 2,
+    "expected_proposals": 3,
+    "unexpected_proposals": [],
+    "correct_refusals": 1,
+    "authorizations_for_planner_preview": 1,
+    "guard_turns_without_actions": 5,
+    "core_results_allowing_plan_writes": 0,
+    "app_events_outside_scope": 2
+  },
+  "safety_controls": {
+    "passed": 28,
+    "total": 28
+  },
+  "verification_messages_sent": 0,
+  "frozen_suite_hashes_match": true,
+  "persistent_planner_writes_tested": false
+}

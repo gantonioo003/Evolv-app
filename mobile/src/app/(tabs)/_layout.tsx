@@ -19,7 +19,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 import { useReducedMotion } from "@/context/motion-context";
 
-import { colors, shadows, typography } from "@/constants/theme";
+import { shadows, typography } from "@/constants/theme";
 import { useAuth } from "@/context/auth-context";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
@@ -38,7 +38,7 @@ export default function TabsLayout() {
         <Text style={[styles.loadingBrand, { color: palette.text }]}>
           Evolv.
         </Text>
-        <ActivityIndicator color={colors.red} />
+        <ActivityIndicator color={palette.accentText} />
       </View>
     );
   }
@@ -54,7 +54,7 @@ export default function TabsLayout() {
     <Tabs
       tabBar={(props) => <AppTabBar {...props} />}
       screenOptions={{
-        animation: reducedMotion ? "none" : "shift",
+        animation: reducedMotion ? "none" : "fade",
         headerShown: false,
         sceneStyle: { backgroundColor: palette.page },
       }}
@@ -95,9 +95,9 @@ function AppTabBar({ state, descriptors, emitter, navigateToTab }: AppTabBarProp
     }
     const animation = Animated.spring(selection, {
       toValue: state.index,
-      damping: 24,
-      stiffness: 260,
-      mass: 0.8,
+      damping: 25,
+      stiffness: 360,
+      mass: 0.6,
       useNativeDriver: Platform.OS !== "web",
     });
     animation.start();
@@ -124,8 +124,8 @@ function AppTabBar({ state, descriptors, emitter, navigateToTab }: AppTabBarProp
             styles.tabSelection,
             {
               width: itemWidth,
-              backgroundColor: palette.elevated,
-              borderColor: palette.border,
+              backgroundColor: palette.accentSoft,
+              borderColor: palette.accentSoft,
               opacity: width ? 1 : 0,
               transform: [
                 { translateX: Animated.multiply(selection, itemWidth) },
@@ -185,7 +185,7 @@ function AppTabItem({
 }) {
   const [focusProgress] = useState(() => new Animated.Value(focused ? 1 : 0));
   const reducedMotion = useReducedMotion();
-  const color = focused ? palette.text : palette.faint;
+  const color = focused ? palette.accentText : palette.faint;
 
   useEffect(() => {
     if (reducedMotion) {

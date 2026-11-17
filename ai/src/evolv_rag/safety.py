@@ -74,7 +74,10 @@ def preflight(text, prior_user_text=""):
         elif "mental_health_crisis" in risks:
             reply = "Procure ajuda imediata e alguém de confiança para ficar com você. Se houver risco imediato, procure atendimento de emergência."
         elif "food_allergy_or_reaction" in risks:
-            reply = "Não vou sugerir consumir um alimento ao qual você informou alergia. Se houver reação importante ou dificuldade para respirar, procure atendimento de emergência."
+            reply = ("Evite o alimento ao qual você tem alergia e confira os ingredientes e o preparo "
+                     "dos pratos que podem conter esse alimento. Retirar os pedaços não torna o prato seguro, "
+                     "pois pode ter ocorrido contato durante o preparo. Seu plano não foi alterado. "
+                     "Se houver reação importante ou dificuldade para respirar, procure atendimento de emergência.")
         else:
             reply = "Posso explicar informações gerais, mas não diagnosticar ou prescrever tratamento para esse caso. Procure avaliação profissional para orientação individual."
         return {"route": "safety_information_only", "risks": sorted(risks), "answer": reply,
@@ -82,12 +85,24 @@ def preflight(text, prior_user_text=""):
     return None
 
 
+def execution_boundary_reply(text):
+    folded = normalize_text(text)
+    if re.search(r"\b(?:finge|finja|simule)\b.{0,48}\b(?:alterou|mudou|trocou|aplicou)\b", folded):
+        return "Nenhuma alteração foi aplicada. Posso explicar como revisar uma proposta no app."
+    if re.search(r"\b(?:aplique|execute|rode)\s+sql\b", folded):
+        return ("Esse texto pede um comando direto ao banco. As mudanças no app passam por "
+                "uma proposta e pela confirmação no Planner. Nenhuma alteração foi aplicada.")
+    return None
+
+
 def output_guard(text, supplied_ids):
     folded = normalize_text(text)
     unknown = set(re.findall(r"\[(kb:[^\]\s]+)\]", text)) - set(supplied_ids)
     false_execution = bool(re.search(
-        r"\b(?:ja (?:alterei|troquei|mudei|salvei|apaguei|exclui)|"
-        r"(?:seu|sua) (?:treino|plano|dieta).{0,20}(?:foi alterad|foi atualizad))", folded))
+        r"(?<!nao )(?<!nunca )\b(?:alterei|troquei|mudei|salvei|apaguei|exclui|apliquei|registrei|agendei)\b|"
+        r"(?<!nao )(?<!nunca )\b(?:foi|foram) (?:alterad|atualizad|trocad|salv|aplicad|registrad|agendad|ajustad|movid|reprogramad)[oa]s?\b",
+        folded,
+    ))
     clinical_claim = bool(re.search(
         r"\b(?:voce tem (?:tendinite|lesao|fratura|artrite)|"
         r"tome \d+.{0,10}(?:mg|comprimido)|"

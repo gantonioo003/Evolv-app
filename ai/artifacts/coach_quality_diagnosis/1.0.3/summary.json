@@ -1,0 +1,72 @@
+{
+  "dialogues": 14,
+  "messages_processed": 59,
+  "reviewed_steps": 57,
+  "turns_by_verdict": {
+    "pass": 10,
+    "partial": 8,
+    "fail": 39,
+    "blocked": 4
+  },
+  "by_expected_behavior": {
+    "social": {
+      "pass": 3,
+      "fail": 21,
+      "partial": 2
+    },
+    "answer": {
+      "pass": 4,
+      "partial": 3,
+      "fail": 13
+    },
+    "propose": {
+      "fail": 3
+    },
+    "reject": {
+      "blocked": 1
+    },
+    "preview": {
+      "blocked": 1
+    },
+    "applied": {
+      "blocked": 1
+    },
+    "undone": {
+      "blocked": 1
+    },
+    "clarify": {
+      "pass": 2,
+      "fail": 1
+    },
+    "guard": {
+      "partial": 3,
+      "pass": 1,
+      "fail": 1
+    }
+  },
+  "primary_stage_on_failed_or_partial": {
+    "intencao": 13,
+    "contexto": 24,
+    "busca": 0,
+    "resposta": 5,
+    "acao": 1,
+    "seguranca": 4
+  },
+  "severity_on_failed_or_partial": {
+    "P2": 39,
+    "P1": 5,
+    "P3": 3
+  },
+  "fully_passed_dialogues": 0,
+  "qwen_used_on_turns": 3,
+  "safety_turns_without_proposals": 5,
+  "expected_proposals": 3,
+  "correct_proposals": 0,
+  "unexpected_proposal_refs": [
+    "duvida-e-ordem-exercicio/1"
+  ],
+  "core_results_allowing_plan_writes": 0,
+  "persistent_planner_writes_tested": false,
+  "verification_messages_sent": 0,
+  "frozen_suite_hashes_match": true
+}

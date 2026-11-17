@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import type {
   Tables,
   TablesInsert,
@@ -20,6 +20,20 @@ import type {
 type WorkoutLog = Tables<'workout_logs'>;
 type ExerciseLog = Tables<'exercise_logs'>;
 type ProgressionSuggestion = Tables<'exercise_progression_suggestions'>;
+
+function normalizeMeasurements<T extends CreateExerciseLogDto | UpdateExerciseLogDto>(dto: T) {
+  const { repetitions, duration_seconds, ...stored } = dto;
+  if ((repetitions != null && duration_seconds != null) ||
+      (stored.reps_summary != null && (repetitions != null || duration_seconds != null))) {
+    throw new BadRequestException({
+      code: 'EXERCISE_MEASUREMENTS_CONFLICT',
+      message: 'Use repetições ou tempo para o mesmo registro.',
+    });
+  }
+  if (repetitions != null) stored.reps_summary = `${repetitions} reps`;
+  if (duration_seconds != null) stored.reps_summary = `${duration_seconds} s`;
+  return stored;
+}
 
 @Injectable()
 export class WorkoutsService {
@@ -152,6 +166,8 @@ export class WorkoutsService {
       .eq('user_id', userId)
       .eq('exercise_id', exerciseId)
       .order('performed_at', { ascending: false })
+      .order('created_at', { ascending: false })
+      .order('id', { ascending: false })
       .limit(limit);
 
     if (error) {
@@ -176,7 +192,7 @@ export class WorkoutsService {
       workout_log_id: dto.workout_log_id,
       performed_at: dto.performed_at,
       sets_completed: dto.sets_completed,
-      reps_summary: dto.reps_summary,
+      reps_summary: normalizeMeasurements(dto).reps_summary,
       load_kg: dto.load_kg,
       notes: dto.notes,
     };
@@ -191,7 +207,7 @@ export class WorkoutsService {
       throwDatabaseError(
         'WorkoutsService.createExerciseLog',
         error,
-        'Nao foi possivel registrar a carga.',
+        'Nao foi possivel salvar o registro do exercicio.',
       );
     }
     return data;
@@ -203,7 +219,7 @@ export class WorkoutsService {
     logId: string,
     dto: UpdateExerciseLogDto,
   ): Promise<ExerciseLog> {
-    const changes: TablesUpdate<'exercise_logs'> = dto;
+    const changes: TablesUpdate<'exercise_logs'> = normalizeMeasurements(dto);
     const { data, error } = await this.supabase
       .forUser(accessToken)
       .from('exercise_logs')

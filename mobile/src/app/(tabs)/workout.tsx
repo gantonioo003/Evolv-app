@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
-import { useRouter } from "expo-router";
+import { useFocusEffect, useRouter } from "expo-router";
 import {
   CalendarRange,
   ChevronRight,
@@ -14,8 +14,9 @@ import {
 import { LoadStepper } from "@/components/load-stepper";
 import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 import {
+  ActionButton,
   AppScreen,
-  CinematicHero,
+  IllustratedHero,
   Divider,
   InfoRow,
   LabelIcon,
@@ -25,19 +26,19 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
+import { artwork, workoutIllustration } from "@/data/illustrations";
 import { colors, radius, spacing } from "@/constants/theme";
-import { useImagePreferences } from "@/context/image-preferences-context";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import { useTrainingPreferences } from "@/context/training-preferences-context";
-import {
-  mapWorkoutPlanToDays,
-  workoutImageCategoryFromText,
-} from "@/data/api-mappers";
 import { workoutDays } from "@/data/mock-data";
-import { pickWeeklyImage, workoutImageLibrary } from "@/data/image-library";
 import { trainingFocuses, trainingModalities } from "@/data/training-options";
+import { mondayWeekIndex } from "@/lib/local-date";
 import type { PlannerModality } from "@/types/api";
+import type { Exercise } from "@/types/domain";
+
+type ExerciseEntry = { load_kg?: number; repetitions?: number; duration_seconds?: number };
+const exerciseKey = (exercise: Exercise) => exercise.planItemId ?? exercise.id;
 
 const emptyWorkoutDays = workoutDays.map((day) => ({
   ...day,
@@ -49,7 +50,6 @@ const emptyWorkoutDays = workoutDays.map((day) => ({
 
 export default function WorkoutScreen() {
   const { palette } = useAppTheme();
-  const imagePreferences = useImagePreferences();
   const {
     error,
     generateWorkoutPlan,
@@ -57,29 +57,27 @@ export default function WorkoutScreen() {
     profile,
     progressionSuggestions,
     recordExerciseLoad,
+    today,
     workoutPlan,
+    workoutWeek,
   } = useEvolvData();
   const { selectedFocusIds, selectedModalityIds } = useTrainingPreferences();
   const styles = createStyles(palette);
   const router = useRouter();
-  const displayedWorkoutDays = useMemo(
-    () => (workoutPlan ? mapWorkoutPlanToDays(workoutPlan) : emptyWorkoutDays),
-    [workoutPlan],
+  const displayedWorkoutDays = workoutPlan ? workoutWeek : emptyWorkoutDays;
+  const todayLabel = emptyWorkoutDays[mondayWeekIndex(today)].shortLabel;
+  const [selectedWeekday, setSelectedWeekday] = useState(todayLabel);
+  const [entries, setEntries] = useState<Record<string, ExerciseEntry>>({});
+  const [savedEntries, setSavedEntries] = useState<Record<string, ExerciseEntry>>({});
+  useFocusEffect(
+    useCallback(() => {
+      setSelectedWeekday(todayLabel);
+    }, [todayLabel]),
   );
-  const [selectedDayId, setSelectedDayId] = useState("");
-  const [loads, setLoads] = useState<Record<string, number>>({});
-  const effectiveSelectedDayId = displayedWorkoutDays.some(
-    (day) => day.id === selectedDayId,
-  )
-    ? selectedDayId
-    : (displayedWorkoutDays.find((day) => day.status === "planned")?.id ??
-      displayedWorkoutDays[0].id);
-  const selectedDay = useMemo(
-    () =>
-      displayedWorkoutDays.find((day) => day.id === effectiveSelectedDayId) ??
-      displayedWorkoutDays[0],
-    [displayedWorkoutDays, effectiveSelectedDayId],
-  );
+
+  const selectedDay =
+    displayedWorkoutDays.find((day) => day.shortLabel === selectedWeekday) ??
+    emptyWorkoutDays[mondayWeekIndex(today)];
 
   const firstExercise = selectedDay.exercises[0];
   const activeModalities = trainingModalities.filter((option) =>
@@ -104,41 +102,33 @@ export default function WorkoutScreen() {
       ? "Recuperar também faz parte do plano. Hoje não há treino obrigatório."
       : selectedDay.status === "free"
         ? "Dia flexível para reorganizar a semana sem alterar todo o programa."
-        : `${selectedDay.exercises.length} exercícios, ${selectedDay.durationMinutes} minutos e cargas prontas para consultar.`;
-  const imageCategory =
-    selectedDay.status === "rest" || selectedDay.status === "free"
-      ? "recovery"
-      : workoutImageCategoryFromText(
-          `${selectedDay.title} ${workoutPlan?.workout_days.find((day) => day.id === selectedDay.id)?.focus ?? ""}`,
-        );
-  const heroImage = pickWeeklyImage(
-    workoutImageLibrary[imageCategory],
-    imagePreferences,
-    `workout-${imageCategory}`,
-    1,
-  );
-  const changedExercises = selectedDay.exercises.filter(
-    (exercise) =>
-      !exercise.durationMinutes &&
-      (loads[exercise.id] ?? exercise.load) !== exercise.load,
-  );
+        : `${selectedDay.exercises.length} exercícios e ${selectedDay.durationMinutes} minutos planejados.`;
+  const changedExercises = selectedDay.exercises.filter((exercise) => entries[exerciseKey(exercise)]);
   const firstSuggestion = progressionSuggestions.find(
     (suggestion) => suggestion.exercises.id === firstExercise?.id,
   );
 
-  async function saveLoads() {
+  function editEntry(exercise: Exercise, change: ExerciseEntry) {
+    const key = exerciseKey(exercise);
+    setEntries((current) => ({ ...current, [key]: { ...savedEntries[key], ...current[key], ...change } }));
+  }
+
+  async function saveEntries() {
     try {
-      await Promise.all(
-        changedExercises.map((exercise) =>
-          recordExerciseLoad(exercise.id, {
-            load_kg: loads[exercise.id] ?? exercise.load,
-            sets_completed: exercise.sets,
-            reps_summary: exercise.reps,
-          }),
-        ),
-      );
+      for (const exercise of changedExercises) {
+        const key = exerciseKey(exercise);
+        const entry = entries[key];
+        await recordExerciseLoad(exercise.id, entry);
+        setSavedEntries((current) => ({ ...current, [key]: entry }));
+        setEntries((current) => {
+          if (current[key] !== entry) return current;
+          const next = { ...current };
+          delete next[key];
+          return next;
+        });
+      }
       Alert.alert(
-        "Cargas salvas",
+        "Registros salvos",
         "O histórico foi atualizado sem marcar o treino como concluído.",
       );
     } catch (caught) {
@@ -189,13 +179,13 @@ export default function WorkoutScreen() {
         contentContainerStyle={styles.weekContent}
       >
         {displayedWorkoutDays.map((day) => {
-          const active = day.id === selectedDay.id;
+          const active = day.shortLabel === selectedDay.shortLabel;
           return (
             <Pressable
               accessibilityRole="button"
               accessibilityState={{ selected: active }}
-              key={day.id}
-              onPress={() => setSelectedDayId(day.id)}
+              key={day.shortLabel}
+              onPress={() => setSelectedWeekday(day.shortLabel)}
               style={({ pressed }) => [
                 styles.day,
                 active && styles.dayActive,
@@ -216,58 +206,24 @@ export default function WorkoutScreen() {
         })}
       </ScrollView>
 
-      <CinematicHero
-        source={heroImage}
+      <IllustratedHero
+        source={workoutPlan ? workoutIllustration(
+          selectedDay,
+          workoutPlan?.workout_days.find((day) => day.id === selectedDay.id)?.focus,
+        ) : artwork.workoutPlan}
         eyebrow={selectedDay.weekday}
         title={selectedDay.title}
         description={heroDescription}
-        height={220}
-        overlayOpacity={0.2}
       />
 
-      <View style={styles.programBand}>
-        <InfoRow
-          leading={<LabelIcon icon={Dumbbell} />}
-          title={workoutPlan?.name ?? "Nenhum plano criado"}
-          description={
-            workoutPlan
-              ? `${workoutPlan.weekly_frequency} treinos por semana - ${workoutPlan.split_label ?? "divisão personalizada"}`
-              : "O Planner poderá criar um plano quando você decidir."
-          }
-          trailing={
-            workoutPlan ? <Tag color={colors.green}>Ativo</Tag> : undefined
-          }
-        />
-      </View>
-
       {!workoutPlan ? (
-        <Pressable
-          accessibilityRole="button"
+        <ActionButton
+          icon={Sparkles}
           disabled={isMutating}
           onPress={() => void createPlan()}
-          style={({ pressed }) => [
-            styles.plannerButton,
-            isMutating && styles.disabled,
-            pressed && styles.pressed,
-          ]}
-        >
-          <Sparkles color={colors.text} size={18} />
-          <Text style={styles.plannerButtonText}>
-            {isMutating ? "Montando plano..." : "Criar plano com o Planner"}
-          </Text>
-        </Pressable>
-      ) : null}
-
-      <SectionTitle title="Modalidades do plano" meta="combináveis" />
-      <Surface>
-        <InfoRow
-          leading={<LabelIcon icon={SlidersHorizontal} />}
-          title={modalitySummary}
-          description={focusSummary}
-          trailing={<ChevronRight color={palette.faint} size={18} />}
-          onPress={() => router.push("/training-preferences")}
+          label={isMutating ? "Montando plano..." : "Criar plano com o Planner"}
         />
-      </Surface>
+      ) : null}
 
       <SectionTitle
         title={
@@ -284,8 +240,12 @@ export default function WorkoutScreen() {
 
       {selectedDay.exercises.length ? (
         <View style={styles.exerciseList}>
-          {selectedDay.exercises.map((exercise, index) => (
-            <View key={exercise.id}>
+          {selectedDay.exercises.map((exercise, index) => {
+            const key = exerciseKey(exercise);
+            const entry = entries[key] ?? savedEntries[key];
+            const metric = exercise.logMetric ?? "load";
+            const measurement = metric === "time" ? entry?.duration_seconds : entry?.repetitions;
+            return <View key={key}>
               {index > 0 ? <Divider /> : null}
               <View style={styles.exerciseRow}>
                 <View style={styles.exerciseNumber}>
@@ -296,24 +256,46 @@ export default function WorkoutScreen() {
                   <Text style={styles.exerciseMeta}>
                     {exercise.durationMinutes
                       ? `${exercise.durationMinutes} minutos`
-                      : `${exercise.sets} séries - ${exercise.reps} reps - ${exercise.restSeconds}s`}
+                      : metric === "time"
+                        ? "Sustentação por tempo"
+                        : `${exercise.sets} séries - ${exercise.reps} reps - ${exercise.restSeconds}s`}
+                    {metric === "load" && exercise.load > 0 ? ` · Meta de ${exercise.load} kg` : ""}
                     {exercise.note ? ` - ${exercise.note}` : ""}
                   </Text>
                 </View>
-                {!exercise.durationMinutes ? (
+                <View style={styles.exerciseActions}>
                   <LoadStepper
-                    value={loads[exercise.id] ?? exercise.load}
-                    onChange={(value) =>
-                      setLoads((current) => ({
-                        ...current,
-                        [exercise.id]: value,
-                      }))
-                    }
+                    exerciseName={exercise.name}
+                    metric={metric}
+                    addedLoad={exercise.loadIsAdded}
+                    value={metric === "load" ? entry?.load_kg : measurement}
+                    onChange={(value) => editEntry(exercise, metric === "load"
+                      ? { load_kg: value }
+                      : metric === "time" ? { duration_seconds: value } : { repetitions: value })}
                   />
-                ) : null}
+                  <View style={styles.exerciseExtra}>
+                    {metric === "load" ? (
+                      <LoadStepper
+                        exerciseName={exercise.name}
+                        secondary
+                        metric="reps"
+                        value={entry?.repetitions}
+                        onChange={(value) => editEntry(exercise, { repetitions: value })}
+                      />
+                    ) : null}
+                    {metric !== "load" && exercise.canAddLoad ? (
+                      <LoadStepper
+                        exerciseName={exercise.name}
+                        secondary
+                        value={entry?.load_kg}
+                        onChange={(value) => editEntry(exercise, { load_kg: value })}
+                      />
+                    ) : null}
+                  </View>
+                </View>
               </View>
-            </View>
-          ))}
+            </View>;
+          })}
         </View>
       ) : (
         <Surface>
@@ -330,33 +312,62 @@ export default function WorkoutScreen() {
       )}
 
       {changedExercises.length ? (
-        <Pressable
-          accessibilityRole="button"
+        <ActionButton
           disabled={isMutating}
-          onPress={() => void saveLoads()}
-          style={({ pressed }) => [
-            styles.saveButton,
-            isMutating && styles.disabled,
-            pressed && styles.pressed,
-          ]}
-        >
-          <Text style={styles.saveButtonText}>
-            {isMutating
-              ? "Salvando..."
-              : `Salvar ${changedExercises.length} ${changedExercises.length === 1 ? "carga" : "cargas"}`}
-          </Text>
-        </Pressable>
+          onPress={() => void saveEntries()}
+          label={isMutating
+            ? "Salvando..."
+            : `Salvar ${changedExercises.length} ${changedExercises.length === 1 ? "registro" : "registros"}`}
+        />
       ) : null}
 
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-      <View style={styles.coachBand}>
-        <Text style={styles.coachTitle}>Ajustes ficam no Coach</Text>
-        <Text style={styles.coachText}>
-          Troca de dia, dor, falta de tempo ou foco em um músculo específico
-          podem ser conversados sem refazer o plano inteiro.
-        </Text>
+      {workoutPlan ? (
+        <Surface>
+          <InfoRow
+            leading={<LabelIcon icon={SlidersHorizontal} />}
+            title="Ver e editar treino"
+            description="Mude o dia ou troque um exercício da ficha."
+            trailing={<ChevronRight color={palette.faint} size={18} />}
+            onPress={() => router.push({ pathname: "/plans/[planId]", params: { planId: workoutPlan.id } })}
+          />
+          <Divider />
+          <InfoRow
+            leading={<LabelIcon icon={Sparkles} />}
+            title="Conversar com o Coach"
+            description="Peça uma troca ou remarcação pelo chat."
+            trailing={<ChevronRight color={palette.faint} size={18} />}
+            onPress={() => router.push("/coach")}
+          />
+        </Surface>
+      ) : null}
+
+      <View style={styles.programBand}>
+        <InfoRow
+          leading={<LabelIcon icon={Dumbbell} />}
+          title={workoutPlan?.name ?? "Nenhum plano criado"}
+          description={
+            workoutPlan
+              ? `${workoutPlan.weekly_frequency} treinos por semana - ${workoutPlan.split_label ?? "divisão personalizada"}`
+              : "O Planner poderá criar um plano quando você decidir."
+          }
+          trailing={
+            workoutPlan ? <Tag color={colors.green}>Ativo</Tag> : undefined
+          }
+        />
       </View>
+
+      <SectionTitle title="Modalidades do plano" />
+      <Surface>
+        <InfoRow
+          leading={<LabelIcon icon={SlidersHorizontal} />}
+          title={modalitySummary}
+          description={focusSummary}
+          trailing={<ChevronRight color={palette.faint} size={18} />}
+          onPress={() => router.push("/training-preferences")}
+        />
+      </Surface>
 
       {firstExercise ? (
         <>
@@ -403,9 +414,9 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
     },
-    dayActive: { borderColor: colors.red, backgroundColor: colors.red },
+    dayActive: { borderColor: palette.primary, backgroundColor: palette.primary },
     dayLabel: { color: palette.muted, fontSize: 10, fontWeight: "600" },
-    dayLabelActive: { color: colors.text },
+    dayLabelActive: { color: palette.onPrimary },
     dayTitle: {
       width: 54,
       marginTop: 4,
@@ -413,19 +424,21 @@ const createStyles = (palette: AppThemePalette) =>
       fontSize: 10,
       textAlign: "center",
     },
-    dayTitleActive: { color: "#F3CBC7" },
+    dayTitleActive: { color: palette.onPrimary },
     pressed: { opacity: 0.66 },
     programBand: {
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
+      borderRadius: radius.card,
+      backgroundColor: palette.surface,
+      borderWidth: StyleSheet.hairlineWidth,
       borderColor: palette.border,
-      paddingHorizontal: spacing.xs,
+      paddingHorizontal: spacing.lg,
     },
     exerciseList: {
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
+      borderRadius: radius.card,
+      backgroundColor: palette.surface,
+      borderWidth: StyleSheet.hairlineWidth,
       borderColor: palette.border,
-      paddingHorizontal: spacing.xs,
+      paddingHorizontal: spacing.md,
     },
     exerciseRow: {
       minHeight: 82,
@@ -440,10 +453,12 @@ const createStyles = (palette: AppThemePalette) =>
       borderRadius: 14,
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: colors.redDark,
+      backgroundColor: palette.sage,
     },
-    exerciseNumberText: { color: colors.text, fontSize: 11, fontWeight: "600" },
+    exerciseNumberText: { color: palette.accentText, fontSize: 11, fontWeight: "600" },
     exerciseBody: { flex: 1, minWidth: 0 },
+    exerciseActions: { flexDirection: "row", alignItems: "center", flexShrink: 0 },
+    exerciseExtra: { width: 44 },
     exerciseName: { color: palette.text, fontSize: 14, fontWeight: "600" },
     exerciseMeta: {
       marginTop: 4,
@@ -451,48 +466,12 @@ const createStyles = (palette: AppThemePalette) =>
       fontSize: 11.5,
       lineHeight: 16,
     },
-    coachBand: {
-      borderLeftWidth: 4,
-      borderLeftColor: colors.red,
-      backgroundColor: palette.accentSoft,
-      padding: spacing.lg,
-    },
-    coachTitle: { color: palette.text, fontSize: 16, fontWeight: "600" },
-    coachText: {
-      marginTop: 6,
-      color: palette.accentText,
-      fontSize: 13,
-      lineHeight: 19,
-    },
     progressArea: { marginTop: spacing.md, gap: 8 },
     progressText: { color: palette.muted, fontSize: 11, textAlign: "right" },
-    saveButton: {
-      height: 50,
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: 25,
-      backgroundColor: colors.red,
-    },
-    saveButtonText: { color: colors.text, fontSize: 13, fontWeight: "600" },
-    plannerButton: {
-      minHeight: 52,
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 8,
-      borderRadius: 26,
-      backgroundColor: colors.red,
-    },
-    plannerButtonText: {
-      color: colors.text,
-      fontSize: 13,
-      fontWeight: "600",
-    },
     errorText: {
       color: colors.red,
       fontSize: 12,
       lineHeight: 18,
       textAlign: "center",
     },
-    disabled: { opacity: 0.45 },
   });

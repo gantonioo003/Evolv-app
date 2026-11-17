@@ -2,9 +2,41 @@
 import re
 from evolv_nlp.entities import normalize_text
 from evolv_nlp.corrected_pipeline import negated_plan_request
-from .actions import KINDS
+from .actions import KINDS, meal_targets, usable_entities
+_BULK_TRAINING_CHANGE = re.compile(
+    r"^(?:(?:quero|pode) )?(?:tir[ae]|tirar|remov[ae]|remover|cort[ae]|cortar|retir[ae]|retirar) "
+    r"(?:(?:todos|todas) (?:os |as )?|todo (?:o )?)"
+    r"(?:exercicios?|treinos?|trabalho)\b"
+)
+_AVOID_FOOD = re.compile(r"^(?:eu )?nao (?:como|quero comer)\s+([^,.;!?]+)")
 
-BLOCKED_FLAGS = ("negated", "requires_context", "hypothetical", "third_party")
+
+def plan_preference_reply(text, snapshot):
+    normalized = normalize_text(text).strip()
+    if _BULK_TRAINING_CHANGE.match(normalized):
+        return ("Tirar um grupo inteiro de exercícios pode mudar a distribuição do treino. "
+                "O que está motivando isso: desconforto, falta de tempo ou preferência? "
+                "Com esse contexto, posso avaliar o que vale ajustar.")
+    if not snapshot:
+        return None
+    match = _AVOID_FOOD.match(normalized)
+    if not match:
+        return None
+    # A plain preference is context. It does not authorize a bulk edit.
+    for item in snapshot.meal_items:
+        food = normalize_text(item["canonical"])
+        if not re.match(rf"^(?:[oa] )?{re.escape(food)}\b", match[1]):
+            continue
+        approved = set(item.get("approved_replacement_ids") or [])
+        names = [row["canonical"] for row in snapshot.foods if row["id"] in approved][:3]
+        if names:
+            return ("Entendi que você evita esse alimento. Para o item do seu plano, "
+                    "já temos opções de troca como " + ", ".join(names) + ". "
+                    "Diga qual prefere e eu preparo a prévia.")
+        return ("Entendi que você evita esse alimento. Vou considerar isso aqui. "
+                "Para rever a dieta, precisamos escolher uma substituição equivalente para a refeição.")
+    return None
+
 QUESTIONS = {
     "source_date":"Em qual dia está o treino que você quer mover?",
     "target_date":"Para qual dia você quer levar esse treino?",
@@ -38,11 +70,6 @@ INTENT_CHOICES = {
 }
 
 
-def usable(analysis):
-    return [e for e in analysis.get("entities",{}).get("entities",[])
-            if not any(e.get("attributes",{}).get(k) for k in BLOCKED_FLAGS)]
-
-
 def frame(reason, intent, missing, question, *, restate=False):
     return {"schema_version":"clarification.1.0.0","reason":reason,"candidate_intent":intent,
             "missing_fields":missing,"question":question,"requires_complete_request":restate,
@@ -50,12 +77,12 @@ def frame(reason, intent, missing, question, *, restate=False):
             "answer":question+(" Na próxima mensagem, junte esse detalhe ao pedido completo." if restate else "")}
 
 
-def clarify(analysis, text, snapshot=None):
+def clarify(analysis, text, snapshot=None, *, default_question=None):
     """A lexical hint can guide a question, never change the classifier or authorize."""
     candidate=None
     if not analysis.get("intent",{}).get("confident") and re.search(
             r"\b(?:troca|troque|trocar|substitua|substitui|substituir)\b",normalize_text(text)):
-        types={e["entity_type"] for e in usable(analysis)}
+        types={e["entity_type"] for e in usable_entities(analysis)}
         exercise=bool(types & {"exercise","replacement_exercise"}) or bool(re.search(r"\bexercicio\b",normalize_text(text)))
         food=bool(types & {"food","replacement_food"}) or bool(re.search(r"\balimento\b",normalize_text(text)))
         if exercise!=food:candidate="replace_exercise" if exercise else "replace_meal_item"
@@ -63,17 +90,17 @@ def clarify(analysis, text, snapshot=None):
     question_analysis=analysis
     if candidate and candidate!=original:
         question_analysis={**analysis,"intent":{**analysis["intent"],"label":candidate}}
-    result=_clarify(question_analysis,text,snapshot)
+    result=_clarify(question_analysis,text,snapshot,default_question)
     if result:
         result["model_intent"]=original
         result["candidate_source"]="explicit_change_mention_for_question_only" if candidate and candidate!=original else "classifier"
     return result
 
 
-def _clarify(analysis, text, snapshot=None):
+def _clarify(analysis, text, snapshot, default_question):
     intent = analysis.get("intent",{}).get("label","")
     confident = analysis.get("intent",{}).get("confident",False)
-    entities = usable(analysis)
+    entities = usable_entities(analysis)
     values = lambda name:[e for e in entities if e["entity_type"]==name]
     missing = []
     prefix = "" if confident else "Se você quer alterar o plano: "
@@ -111,8 +138,10 @@ def _clarify(analysis, text, snapshot=None):
         elif not re.search(r"\b(?:por|para|pelo|pela)\b",text[mentions[0]["end"]:mentions[1]["start"]].lower()):
             return frame("ambiguous_direction",intent,[noun,"replacement_"+noun],"Qual dos itens deve sair e qual deve entrar no lugar?")
         elif snapshot is not None:
-            source=snapshot.workout_exercises if noun=="exercise" else snapshot.meal_items
-            if sum(r["canonical"]==mentions[0]["value"] for r in source)>1:
+            old = mentions[0]["value"]
+            targets = ([item for item in snapshot.workout_exercises if item["canonical"] == old]
+                       if noun == "exercise" else meal_targets(snapshot, old, entities, text))
+            if len(targets)>1:
                 return frame("ambiguous_plan_item",intent,["workout_day" if noun=="exercise" else "meal"],
                     "Em qual dia da ficha está o exercício que você quer trocar?" if noun=="exercise" else "Em qual refeição está o alimento que você quer trocar?")
     else:
@@ -125,8 +154,8 @@ def _clarify(analysis, text, snapshot=None):
     if missing:
         return frame("missing_fields",intent,missing,prefix+question,restate=True)
     if not confident:
-        return frame("intent_uncertain",intent,[],INTENT_CHOICES.get(intent,
-            "Você quer tirar uma dúvida de treino, alimentação ou recuperação, registrar algo que já fez ou pedir uma mudança no plano?"))
+        return frame("intent_uncertain",intent,[],INTENT_CHOICES.get(intent, default_question or
+            "Me conta um pouco mais sobre o que você quer entender ou ajustar na sua rotina."))
     return None
 
 
@@ -135,7 +164,7 @@ def proposal_failure(analysis, error):
     message=str(error)
     if intent not in KINDS:
         return frame("unsupported_action",intent,[],"Essa alteração ainda não está disponível pelo Coach. Posso explicar as opções, mas não preparar essa mudança no app.")
-    if "negado, hipotético ou composto" in message:
+    if "Pedido sem uma alteração única e explícita" in message:
         return frame("scope_or_negation",intent,[],"Não preparei alteração: há uma negação, hipótese ou mais de uma mudança no pedido. Reescreva uma mudança afirmativa por vez, se desejar prosseguir.")
     if "contexto autenticado" in message:
         return frame("plan_context_missing",intent,[],"Preciso de um plano ativo e disponível na sua conta para localizar os itens dessa mudança.")
@@ -143,6 +172,8 @@ def proposal_failure(analysis, error):
         return frame("weekly_scope",intent,[],"Você quer mudar o dia fixo da semana ou apenas uma ocorrência em outra semana?")
     if "destino já tem treino" in message:
         return frame("destination_conflict",intent,[],"O dia de destino já tem treino. Você quer escolher outro dia livre? Não substituí nem troquei as sessões.")
+    if "substituição aprovada" in message:
+        return frame("unapproved_food",intent,[],"Esse alimento não está entre as opções de troca calculadas para essa refeição. Você quer escolher outra opção?")
     if "Origem e destino são iguais" in message:
         return frame("same_day",intent,["target_date"],"A origem e o destino indicam o mesmo dia. Para qual outro dia você deseja mover o treino?")
     return frame("plan_item_unresolved",intent,[],"Não consegui localizar uma única troca no plano disponível. Indique o dia ou a refeição e os itens que devem sair e entrar.")

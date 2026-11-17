@@ -19,6 +19,7 @@ import { AccessToken } from '../common/decorators/access-token.decorator.js';
 import { CurrentUser } from '../common/decorators/current-user.decorator.js';
 import { CoachService } from './coach.service.js';
 import { CoachHistoryService } from './coach-history.service.js';
+import { CoachAccountService } from './coach-account.service.js';
 import {
   CoachMessageDto,
   ConfirmCoachAdjustmentDto,
@@ -36,7 +37,16 @@ export class CoachController {
   constructor(
     private readonly coach: CoachService,
     private readonly history: CoachHistoryService,
+    private readonly account: CoachAccountService,
   ) {}
+  @Get('memory')
+  memory(@CurrentUser() user: User, @AccessToken() token: string) {
+    return this.account.list(user.id, token);
+  }
+  @Delete('memory/:id')
+  removeMemory(@CurrentUser() user: User, @AccessToken() token: string, @Param('id', ParseUUIDPipe) id: string) {
+    return this.account.remove(user.id, token, id);
+  }
   @Get('sessions')
   list(
     @CurrentUser() user: User,

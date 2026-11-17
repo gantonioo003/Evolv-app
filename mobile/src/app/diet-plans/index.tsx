@@ -11,6 +11,7 @@ import {
 } from "react-native";
 
 import {
+  IllustrationThumbnail,
   AppScreen,
   InfoRow,
   LabelIcon,
@@ -19,6 +20,7 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
 import { colors, radius, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
@@ -327,7 +329,7 @@ export default function DietPlansScreen() {
           pressed && styles.pressed,
         ]}
       >
-        <Sparkles color={colors.text} size={18} />
+        <Sparkles color={palette.onPrimary} size={18} />
         <Text style={styles.primaryButtonText}>
           {isMutating ? "Montando refeições..." : "Gerar e ativar plano"}
         </Text>
@@ -360,7 +362,7 @@ export default function DietPlansScreen() {
         {!dietPlans.length ? (
           <Surface>
             <InfoRow
-              leading={<LabelIcon icon={Salad} />}
+              leading={<IllustrationThumbnail source={artwork.mealPlan} />}
               title="Nenhum plano criado"
               description="Seu primeiro plano aparecerá aqui sem apagar o histórico futuro."
             />
@@ -427,9 +429,9 @@ const createStyles = (palette: AppThemePalette) =>
       borderColor: palette.border,
       paddingHorizontal: 12,
     },
-    optionActive: { borderColor: colors.red, backgroundColor: colors.red },
+    optionActive: { borderColor: palette.primary, backgroundColor: palette.primary },
     optionText: { color: palette.muted, fontSize: 11, fontWeight: "600" },
-    optionTextActive: { color: colors.text },
+    optionTextActive: { color: palette.onPrimary },
     targetRow: {
       flexDirection: "row",
       alignItems: "center",
@@ -456,9 +458,9 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
       gap: 8,
       borderRadius: 24,
-      backgroundColor: colors.red,
+      backgroundColor: palette.primary,
     },
-    primaryButtonText: { color: colors.text, fontSize: 13, fontWeight: "600" },
+    primaryButtonText: { color: palette.onPrimary, fontSize: 13, fontWeight: "600" },
     list: { gap: spacing.sm },
     trailing: { flexDirection: "row", alignItems: "center", gap: 8 },
     disabled: { opacity: 0.45 },

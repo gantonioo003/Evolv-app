@@ -85,6 +85,20 @@ class Search:
             raise ValueError("Unnormalized index")
         self.encoder = encoder
 
+    def reviewed_document(self, document_id, *, as_of=None):
+        """Resolve a named reviewed document directly, applying the same review dates."""
+        today = (as_of or date.today()).isoformat()
+        passages = [row for row in self.rows if row["document_id"] == document_id
+                    and self._eligible(row, today)]
+        # Named answers are reviewed as a single passage. Do not silently drop later chunks.
+        return passages[0] if len(passages) == 1 else None
+
+    @staticmethod
+    def _eligible(row, today):
+        return (row["reviewed_at"] <= today < row["effective_review_due_at"]
+                and all(s["status"] == "approved" and s["last_verified_at"] <= today < s["review_due_at"]
+                        for s in row["citations"]))
+
     def query(self, text, *, k=3, min_score=0.45, as_of=None, domain=None, topics=None):
         if not isinstance(text, str) or not text.strip():
             raise ValueError("Query must be nonempty text")
@@ -92,10 +106,7 @@ class Search:
             raise ValueError("Invalid query limits")
         today = (as_of or date.today()).isoformat()
         candidates = [i for i, row in enumerate(self.rows)
-                      if row["effective_review_due_at"] > today
-                      and row["reviewed_at"] <= today
-                      and all(s["status"] == "approved" and s["last_verified_at"] <= today
-                              and s["review_due_at"] > today for s in row["citations"])
+                      if self._eligible(row, today)
                       and (domain is None or row["domain"] == domain)
                       and (not topics or set(topics) & set(row["topic_ids"]))]
         if not candidates:

@@ -1,0 +1,270 @@
+{
+  "phase": "9.04",
+  "version": "1.0.5",
+  "frozen_suite_verified": true,
+  "runtime": {
+    "status": "ready",
+    "mode": "generate",
+    "variant": "original",
+    "nlp_version": "1.9.0",
+    "retrieval_version": "1.2.0"
+  },
+  "verification_is_regression": true,
+  "baseline_9_03_adjustment": {
+    "dialogues": 14,
+    "user_messages": 59,
+    "app_events": 2,
+    "execution": {
+      "completed": 59,
+      "outside_fastapi": 2
+    },
+    "social_routed_as_conversation": {
+      "actual": 24,
+      "expected": 26
+    },
+    "correct_pending_proposals": {
+      "actual": 2,
+      "expected": 3
+    },
+    "unexpected_pending_proposals": 0,
+    "guard_turns_without_actions": {
+      "actual": 5,
+      "expected": 5
+    },
+    "writes_allowed": 0
+  },
+  "final_adjustment": {
+    "dialogues": 14,
+    "user_messages": 59,
+    "app_events": 2,
+    "execution": {
+      "completed": 59,
+      "outside_fastapi": 2
+    },
+    "social_routed_as_conversation": {
+      "actual": 23,
+      "expected": 26
+    },
+    "correct_pending_proposals": {
+      "actual": 3,
+      "expected": 3
+    },
+    "unexpected_pending_proposals": 0,
+    "guard_turns_without_actions": {
+      "actual": 5,
+      "expected": 5
+    },
+    "writes_allowed": 0
+  },
+  "first_verification_9_04": {
+    "dialogues": 14,
+    "user_messages": 79,
+    "app_events": 5,
+    "execution": {
+      "completed": 81,
+      "blocked_by_missing_preview": 2,
+      "outside_fastapi": 1
+    },
+    "social_routed_as_conversation": {
+      "actual": 11,
+      "expected": 43
+    },
+    "correct_pending_proposals": {
+      "actual": 0,
+      "expected": 3
+    },
+    "unexpected_pending_proposals": 0,
+    "guard_turns_without_actions": {
+      "actual": 4,
+      "expected": 4
+    },
+    "writes_allowed": 0
+  },
+  "final_verification_regression": {
+    "dialogues": 14,
+    "user_messages": 79,
+    "app_events": 5,
+    "execution": {
+      "completed": 81,
+      "blocked_by_missing_preview": 2,
+      "outside_fastapi": 1
+    },
+    "social_routed_as_conversation": {
+      "actual": 29,
+      "expected": 43
+    },
+    "correct_pending_proposals": {
+      "actual": 0,
+      "expected": 3
+    },
+    "unexpected_pending_proposals": 0,
+    "guard_turns_without_actions": {
+      "actual": 4,
+      "expected": 4
+    },
+    "writes_allowed": 0
+  },
+  "selected_continuity_checks": [
+    {
+      "split": "ajuste",
+      "case": "deload-e-estagnacao",
+      "turn": 4,
+      "markers": [
+        "fadiga",
+        "training_plateau_review_context"
+      ],
+      "passed": true
+    },
+    {
+      "split": "ajuste",
+      "case": "remada-no-treino-de-hoje",
+      "turn": 3,
+      "markers": [
+        "Remada cavalinho",
+        "costas"
+      ],
+      "passed": true
+    },
+    {
+      "split": "ajuste",
+      "case": "agua-dados-solicitados",
+      "turn": 3,
+      "markers": [
+        "hydration_is_individual"
+      ],
+      "passed": true
+    },
+    {
+      "split": "ajuste",
+      "case": "conversa-cozinha-e-turnos",
+      "turn": 11,
+      "markers": [
+        "30 minutos",
+        "fogão pequeno",
+        "feijão"
+      ],
+      "passed": true
+    },
+    {
+      "split": "ajuste",
+      "case": "rotina-e-atualizacao-de-horario",
+      "turn": 12,
+      "markers": [
+        "segunda e quinta"
+      ],
+      "passed": true
+    },
+    {
+      "split": "ajuste",
+      "case": "registrar-ou-alterar-carga",
+      "turn": 3,
+      "markers": [
+        "8 repetições",
+        "30 kg"
+      ],
+      "passed": true
+    },
+    {
+      "split": "ajuste",
+      "case": "revisar-treino-executado",
+      "turn": 4,
+      "markers": [
+        "4 subidas de 90 s"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "viagem-e-semana-cheia",
+      "turn": 11,
+      "markers": [
+        "esteira indisponível",
+        "Sua ficha continua como está"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "viagem-e-semana-cheia",
+      "turn": 12,
+      "markers": [
+        "domingo de noite"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "lanche-entre-dois-turnos",
+      "turn": 10,
+      "markers": [
+        "10 minutos",
+        "sem geladeira"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "lanche-entre-dois-turnos",
+      "turn": 12,
+      "markers": [
+        "quarta"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "ficha-e-limite-da-conta",
+      "turn": 2,
+      "markers": [
+        "Leg press",
+        "10 a 12 repetições"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "preferencia-reabertura",
+      "turn": 4,
+      "markers": [
+        "faixa elástica"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "papo-longo-ate-a-primeira-duvida",
+      "turn": 18,
+      "markers": [
+        "sets_repetitions_plain"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "papo-longo-ate-a-primeira-duvida",
+      "turn": 19,
+      "markers": [
+        "intervalo"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "papo-longo-ate-a-primeira-duvida",
+      "turn": 20,
+      "markers": [
+        "sábado de manhã"
+      ],
+      "passed": true
+    },
+    {
+      "split": "verificacao",
+      "case": "usar-dados-ja-cadastrados",
+      "turn": 3,
+      "markers": [
+        "à noite"
+      ],
+      "passed": true
+    }
+  ]
+}

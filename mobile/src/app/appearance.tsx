@@ -1,6 +1,7 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { ArrowLeft, Check, Moon, Sun } from "lucide-react-native";
+import { TouchFeedback as Pressable } from "@/components/touch-feedback";
 
 import {
   AppScreen,
@@ -20,13 +21,13 @@ const themeOptions = [
   {
     value: "dark",
     label: "Escuro",
-    description: "Visual cinematográfico com fundos escuros.",
+    description: "Fundo preto com detalhes em azul.",
     icon: Moon,
   },
   {
     value: "light",
     label: "Claro",
-    description: "Fundos claros e contraste suave para o dia.",
+    description: "Cinza frio com detalhes em azul.",
     icon: Sun,
   },
 ] satisfies {
@@ -76,7 +77,7 @@ export default function AppearanceScreen() {
                 {index > 0 ? <Divider /> : null}
                 <Pressable
                   accessibilityRole="radio"
-                  accessibilityState={{ checked: selected }}
+                  aria-checked={selected}
                   onPress={() => setPreference(option.value)}
                   style={({ pressed }) => [
                     styles.option,
@@ -168,7 +169,7 @@ const createStyles = (palette: AppThemePalette) =>
       alignItems: "center",
       justifyContent: "center",
     },
-    checkSelected: { borderColor: colors.red, backgroundColor: colors.red },
+    checkSelected: { borderColor: palette.primary, backgroundColor: palette.primary },
     note: {
       maxWidth: 440,
       alignSelf: "center",

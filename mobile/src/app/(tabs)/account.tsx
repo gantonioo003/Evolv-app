@@ -18,7 +18,7 @@ import {
 
 import {
   AppScreen,
-  CinematicHero,
+  IllustratedHero,
   Divider,
   InfoRow,
   LabelIcon,
@@ -27,17 +27,15 @@ import {
   SectionTitle,
   Surface,
 } from "@/components/ui";
-import { colors, spacing } from "@/constants/theme";
-import { useImagePreferences } from "@/context/image-preferences-context";
+import { artwork } from "@/data/illustrations";
+import { spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import { useTrainingPreferences } from "@/context/training-preferences-context";
 import { trainingModalities } from "@/data/training-options";
-import { accountImages, pickWeeklyImage } from "@/data/image-library";
 
 export default function AccountScreen() {
   const { palette } = useAppTheme();
-  const imagePreferences = useImagePreferences();
   const {
     activeGoal,
     dietPlan,
@@ -89,13 +87,11 @@ export default function AccountScreen() {
         />
       }
     >
-      <CinematicHero
-        source={pickWeeklyImage(accountImages, imagePreferences, "account", 0)}
+      <IllustratedHero
+        source={artwork.account}
         eyebrow="Seu perfil"
         title={displayName}
-        description={activeGoal?.title ?? "Um passo de cada vez."}
-        height={220}
-        overlayOpacity={0.08}
+        description={activeGoal?.title ?? "Seu perfil e preferências."}
       />
 
       <View style={styles.goalBand}>
@@ -128,7 +124,7 @@ export default function AccountScreen() {
               {error ?? "Peso, medidas e cargas em um só histórico."}
             </Text>
           </View>
-          <ChartNoAxesCombined color={colors.green} size={22} strokeWidth={2} />
+          <ChartNoAxesCombined color={palette.accentText} size={22} strokeWidth={2} />
         </View>
         <View style={styles.progressMetrics}>
           <View>
@@ -153,7 +149,7 @@ export default function AccountScreen() {
         </View>
         <ProgressBar
           value={Math.min(progressEntries.length / 12, 1)}
-          color={colors.green}
+          color={palette.accentText}
         />
       </Pressable>
 
@@ -235,8 +231,8 @@ export default function AccountScreen() {
         <SettingRow
           icon={BrainCircuit}
           title="Memória do Coach"
-          description="Conversas salvas e informações lembradas"
-          onPress={() => showPlaceholder("Memória do Coach")}
+          description="Preferências e hábitos lembrados entre conversas"
+          onPress={() => router.push("/coach-memory")}
         />
       </Surface>
 

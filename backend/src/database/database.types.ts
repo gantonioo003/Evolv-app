@@ -727,6 +727,8 @@ export type Database = {
           logged_at: string
           meal_name: string | null
           notes: string | null
+          planned_meal_date: string | null
+          planned_meal_id: string | null
           user_id: string
         }
         Insert: {
@@ -736,6 +738,8 @@ export type Database = {
           logged_at?: string
           meal_name?: string | null
           notes?: string | null
+          planned_meal_date?: string | null
+          planned_meal_id?: string | null
           user_id: string
         }
         Update: {
@@ -745,6 +749,8 @@ export type Database = {
           logged_at?: string
           meal_name?: string | null
           notes?: string | null
+          planned_meal_date?: string | null
+          planned_meal_id?: string | null
           user_id?: string
         }
         Relationships: []
@@ -1893,6 +1899,10 @@ export type Database = {
         Args: { p_adjustment_id: string }
         Returns: string
       }
+      mutate_coach_adjustment: {
+        Args: { p_adjustment_id: string; p_conversation_id: string; p_operation: string; p_confirmed: boolean }
+        Returns: string
+      }
       revert_planner_adjustment: {
         Args: { p_adjustment_id: string }
         Returns: string
@@ -1903,6 +1913,15 @@ export type Database = {
           p_status: Database["public"]["Enums"]["plan_status"]
         }
         Returns: string
+      }
+      set_planned_meal_registration: {
+        Args: {
+          p_local_date: string
+          p_logged_at: string
+          p_meal_id: string
+          p_registered: boolean
+        }
+        Returns: boolean
       }
       set_workout_plan_status: {
         Args: {

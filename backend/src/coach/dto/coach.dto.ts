@@ -1,6 +1,7 @@
 import {
   Equals,
   IsBoolean,
+  IsDateString,
   IsOptional,
   IsString,
   IsUUID,
@@ -18,6 +19,7 @@ export class CoachMessageDto {
   @IsUUID() request_id: string;
   @IsString() @MinLength(1) @MaxLength(8000) @Matches(/\S/) text: string;
   @IsOptional() @IsUUID() proposal_id?: string;
+  @IsOptional() @IsDateString({ strict: true }) @Matches(/^\d{4}-\d{2}-\d{2}$/) local_date?: string;
 }
 export class ConfirmCoachAdjustmentDto {
   @IsBoolean() @Equals(true) confirmed: boolean;

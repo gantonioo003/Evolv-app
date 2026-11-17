@@ -1893,6 +1893,10 @@ export type Database = {
         Args: { p_adjustment_id: string }
         Returns: string
       }
+      mutate_coach_adjustment: {
+        Args: { p_adjustment_id: string; p_conversation_id: string; p_operation: string; p_confirmed: boolean }
+        Returns: string
+      }
       revert_planner_adjustment: {
         Args: { p_adjustment_id: string }
         Returns: string

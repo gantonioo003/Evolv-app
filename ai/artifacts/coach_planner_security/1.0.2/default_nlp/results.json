@@ -1,0 +1,392 @@
+{
+  "phase": "9.07",
+  "nlp": "1.8.0",
+  "passed": 78,
+  "total": 78,
+  "authorized_writes": 8,
+  "unintended_writes": 0,
+  "checks": [
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "confirmar sem identificador",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "identificador incorreto",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "texto ambíguo com identificador",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "proposta em outra conversa da mesma conta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "proposta em sessão alheia",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "recusar proposta por texto",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "proposta recusada fica inutilizável",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "proposta vencida antes da prévia",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "plano alterado antes de criar prévia",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise confirmação indevida false",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise confirmação indevida undefined",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise confirmação indevida true",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise prévia em outra conversa",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise prévia de outra conta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise atalho HTTP do Planner",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise atalho SQL antigo",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise RPC sem confirmação",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise RPC em outra conversa",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise bloqueio de mudança do vínculo",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise rejeição da prévia",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise confirmar prévia rejeitada",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise confirmar prévia vencida",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise confirmações simultâneas aplicam uma vez",
+      "passed": true
+    },
+    {
+      "name": "replace_exercise aplica apenas os campos da prévia",
+      "passed": true
+    },
+    {
+      "name": "replace_exercise confirmação repetida",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise desfazer pela rota geral",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise desfazer pelo RPC antigo",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise desfazer em outro chat",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise desfazer restaura a linha inteira",
+      "passed": true
+    },
+    {
+      "name": "replace_exercise desfazer repetido",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item confirmação indevida false",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item confirmação indevida undefined",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item confirmação indevida true",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia em outra conversa",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia de outra conta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item atalho HTTP do Planner",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item atalho SQL antigo",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item RPC sem confirmação",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item RPC em outra conversa",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item bloqueio de mudança do vínculo",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item rejeição da prévia",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item confirmar prévia rejeitada",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item confirmar prévia vencida",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item confirmações simultâneas aplicam uma vez",
+      "passed": true
+    },
+    {
+      "name": "replace_meal_item aplica apenas os campos da prévia",
+      "passed": true
+    },
+    {
+      "name": "replace_meal_item confirmação repetida",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item desfazer pela rota geral",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item desfazer pelo RPC antigo",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item desfazer em outro chat",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item desfazer restaura a linha inteira",
+      "passed": true
+    },
+    {
+      "name": "replace_meal_item desfazer repetido",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "porção alterada entre prévia e confirmação",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_meal_item prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "desfazer preserva edição posterior de porção",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise proposta",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "replace_exercise prévia e reenvio",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "apagar conversa não altera o plano",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "prévia de conversa apagada não pode ser aplicada",
+      "passed": true,
+      "unchanged": true
+    },
+    {
+      "name": "ajuste manual mantém sua rota e aplica",
+      "passed": true
+    },
+    {
+      "name": "desfazer ajuste manual restaura o plano",
+      "passed": true
+    }
+  ]
+}

@@ -3,6 +3,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import Mock
 from uuid import UUID
 AI_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(AI_ROOT / "src"))
@@ -44,6 +45,160 @@ class ActionTests(unittest.TestCase):
                         {**p, "target_weekday":"holiday"}]:
             with self.assertRaises(ValueError):
                 validate_payload(changed)
+
+    def test_explicit_food_swap_only_creates_proposal_when_approved_and_unambiguous(self):
+        self.s.meal_items[0]["approved_replacement_ids"] = [uid(8)]
+        session = ActionSession(self.s, lambda: self.now)
+        for text in ("Posso trocar arroz por feijao?", "Não troque arroz por feijao",
+                     "Troque arroz por feijao e mude o treino"):
+            with self.subTest(text=text):
+                analysis = self.analysis("replace_meal_item", text)
+                analysis["intent"]["confident"] = False
+                self.assertIsNone(session.propose_explicit_swap(analysis))
+        analysis = self.analysis("replace_meal_item", "Troque arroz por feijao.")
+        analysis["intent"]["confident"] = False
+        self.assertIsNone(ActionSession().propose_explicit_swap(analysis))
+        proposal = session.propose_explicit_swap(analysis)
+        self.assertEqual("pending_user_confirmation", proposal["status"])
+        self.assertEqual(uid(8), proposal["payload"]["replacement_food_id"])
+        self.assertFalse(analysis["intent"]["confident"])
+        self.s.meal_items[0]["approved_replacement_ids"] = []
+        self.assertIsNone(ActionSession(self.s).propose_explicit_swap(analysis))
+    def test_questions_and_mixed_commands_never_open_a_proposal(self):
+        for text in (
+            "Posso trocar supino reto por flexão?",
+            "Pode trocar supino reto por flexão?",
+            "Se der, troque supino reto por flexão.",
+            "Não troque supino reto por flexão.",
+            "Troque supino reto por flexão. Mude o treino também.",
+            "Troque supino reto por flexão e me explica como treinar.",
+            "Troca supino reto por flexão, mas n mude o dia.",
+            "Meu amigo quer trocar supino reto por flexão.",
+        ):
+            with self.subTest(text=text):
+                analysis = self.analysis("replace_exercise", text)
+                with self.assertRaises(ValueError):
+                    self.session.propose(analysis)
+                analysis["intent"]["confident"] = False
+                self.assertIsNone(self.session.propose_explicit_swap(analysis))
+                self.assertIsNone(self.session.pending)
+
+    def test_low_confidence_recovery_uses_exact_targets_and_keeps_confirmation(self):
+        analysis = self.analysis("replace_exercise", "Tá, agora troque o supino reto por flexão de braços.")
+        analysis["intent"]["confident"] = False
+        proposal = self.session.propose_explicit_swap(analysis)
+        self.assertEqual("pending_user_confirmation", proposal["status"])
+        self.assertEqual(uid(5), proposal["payload"]["workout_day_exercise_id"])
+        self.assertEqual(uid(6), proposal["payload"]["replacement_exercise_id"])
+        self.assertFalse(analysis["intent"]["confident"])
+
+    def test_meal_name_must_match_and_disambiguates_duplicate_food(self):
+        breakfast = {"id": uid(7), "canonical": "ovo", "meal_name": "Café da manhã",
+                     "approved_replacement_ids": [uid(8)]}
+        lunch = {**breakfast, "id": uid(9), "meal_name": "Almoço"}
+        self.s.meal_items = [breakfast, lunch]
+        self.s.foods = [{"id": uid(8), "canonical": "tofu"}]
+        session = ActionSession(self.s)
+        for text in ("Troque ovo por tofu.", "Troque ovo do jantar por tofu."):
+            with self.subTest(text=text):
+                analysis = self.analysis("replace_meal_item", text)
+                analysis["intent"]["confident"] = False
+                self.assertIsNone(session.propose_explicit_swap(analysis))
+        analysis = self.analysis("replace_meal_item", "Troque o ovo do café da manhã por tofu.")
+        analysis["intent"]["confident"] = False
+        proposal = session.propose_explicit_swap(analysis)
+        self.assertEqual(uid(7), proposal["payload"]["meal_item_id"])
+        analysis["entities"]["entities"] = [e for e in analysis["entities"]["entities"] if e["entity_type"] != "meal"]
+        self.assertEqual(uid(7), session.propose_explicit_swap(analysis)["payload"]["meal_item_id"])
+
+    def test_new_exact_swap_is_not_mistaken_for_confirming_an_older_proposal(self):
+        self.s.meal_items = [{"id": uid(7), "canonical": "ovo", "meal_name": "Café da manhã",
+                              "approved_replacement_ids": [uid(8)]}]
+        self.s.foods = [{"id": uid(8), "canonical": "tofu"}]
+        text = "Troque o ovo do café da manhã por tofu."
+        analysis = self.analysis("confirm_planner_action", text)
+        analysis["intent"]["confident"] = False
+        analysis["route"] = "clarify_pending_action"
+        nlp = Mock()
+        nlp.analyze.return_value = analysis
+        coach = Coach(nlp, Mock(), planner_snapshot=self.s)
+        proposal, = coach.respond(text)["actions"]
+        self.assertEqual("pending_user_confirmation", proposal["status"])
+        self.assertEqual("replace_meal_item", proposal["payload"]["kind"])
+        self.assertEqual(uid(8), proposal["payload"]["replacement_food_id"])
+
+    def test_natural_meal_swap_from_iphone_uses_position_and_requires_confirmation(self):
+        self.s.meal_items = [
+            {"id": uid(7), "canonical": "arroz branco cozido", "meal_name": "Primeira refeição",
+             "meal_position": 0, "approved_replacement_ids": [uid(8)]},
+            {"id": uid(9), "canonical": "arroz branco cozido", "meal_name": "Refeição principal",
+             "meal_position": 1, "approved_replacement_ids": [uid(8)]},
+        ]
+        self.s.foods = [{"id": uid(8), "canonical": "Macarrão cozido"}]
+        nlp = Mock()
+        def analyze(text, **kwargs):
+            result = self.analysis("replace_meal_item", text)
+            result["intent"]["confident"] = False
+            result["route"] = "clarify"
+            return result
+        nlp.analyze.side_effect = analyze
+        coach = Coach(nlp, Mock(), planner_snapshot=self.s)
+        for text in (
+            "Hoje tenho 3 refeições só mas não vou conseguir comer arroz branco poderia trocar por macarrão simples tipo spaghetti?",
+            "Mas macarrão por arroz não vai mudar tanta coisa, não acha? Não tenho arroz em casa só macarrão entendeu?!",
+        ):
+            reply = coach.respond(text)
+            self.assertFalse(reply["actions"])
+            self.assertIn("refeição", reply["answer"])
+            self.assertNotIn("vou manter", reply["answer"])
+        request = "Eu quero que você mude pegue o arroz tire e coloque macarrão na refeição 2"
+        proposal, = coach.respond(request)["actions"]
+        self.assertEqual("pending_user_confirmation", proposal["status"])
+        self.assertEqual(uid(9), proposal["payload"]["meal_item_id"])
+        self.assertEqual(uid(8), proposal["payload"]["replacement_food_id"])
+        followup = coach.respond("Faça a troca")
+        self.assertFalse(followup["actions"])
+        self.assertIn("já está pronta", followup["answer"])
+        self.assertFalse(coach.respond("confirmo")["actions"])
+        confirmed = coach.respond("confirmo", proposal_id=proposal["id"])
+        self.assertEqual("confirmed_for_planner_preview", confirmed["actions"][0]["status"])
+        self.assertFalse(confirmed["planner"]["writes_allowed"])
+
+        continuation = Coach(nlp, Mock(), planner_snapshot=self.s)
+        self.assertFalse(continuation.respond("Posso trocar arroz da segunda refeição por macarrão?")["actions"])
+        drafted, = continuation.respond("Faça a troca")["actions"]
+        self.assertEqual(uid(9), drafted["payload"]["meal_item_id"])
+        self.assertEqual("pending_user_confirmation", drafted["status"])
+        fresh = Coach(nlp, Mock(), planner_snapshot=self.s)
+        self.assertFalse(fresh.respond("Faça a troca")["actions"])
+        self.s.meal_items[1]["approved_replacement_ids"] = []
+        fresh = Coach(nlp, Mock(), planner_snapshot=self.s)
+        reply = fresh.respond("Arroz branco cozido deve sair da segunda refeição e deve entrar macarrão")
+        self.assertFalse(reply["actions"])
+        self.assertIn("não está aprovada", reply["answer"])
+
+    def test_contextual_swap_requires_fresh_snapshot_and_clear_slot_reply(self):
+        first = self.analysis("replace_exercise", "Troca esse por flexão.")
+        question = {"reason": "missing_fields", "missing_fields": ["exercise"], "candidate_intent": "replace_exercise"}
+        second = self.analysis("replace_exercise", "Supino reto. Quero trocar ele pela flexão mesmo.")
+        self.session.remember_incomplete_swap(first, question)
+        proposal = self.session.complete_swap(second)
+        self.assertEqual("pending_user_confirmation", proposal["status"])
+        self.assertEqual(uid(5), proposal["payload"]["workout_day_exercise_id"])
+        self.assertEqual(uid(6), proposal["payload"]["replacement_exercise_id"])
+        self.assertIsNone(self.session.complete_swap(second))
+        self.session.remember_incomplete_swap(first, question)
+        self.session.snapshot.revision = "new-revision"
+        self.assertIsNone(self.session.complete_swap(second))
+
+        self.session.remember_incomplete_swap(first, question)
+        self.assertIsNone(self.session.complete_swap(
+            self.analysis("replace_exercise", "Supino reto. Quero trocar ele pela remada mesmo.")
+        ))
+        self.session.remember_incomplete_swap(first, question)
+        self.now += timedelta(minutes=10)
+        self.assertIsNone(self.session.complete_swap(second))
+
     def test_missing_context_uncertainty_risk_and_unsupported_action(self):
         with self.assertRaises(ValueError):
             proposed_payload(self.analysis(), None)

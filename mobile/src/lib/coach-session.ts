@@ -13,11 +13,13 @@ function historyReply(value:unknown){
   const r=value as import("../types/coach").CoachReply;
   return r.result&&typeof r.result.answer==="string"&&Array.isArray(r.result.actions)?r:undefined;
 }
+export const coachLimitMessage = "Esta conversa chegou ao limite. Abra uma nova para continuar.";
 export function coachError(error:unknown){
   const e=error as {status?:number;code?:string;message?:string};
   if(e.status===401)return "Sua sessão expirou. Entre novamente.";
   if(e.status===429)return "O Coach está ocupado. Aguarde um pouco e tente novamente.";
   if(e.status===404)return "Esta conversa ou proposta não está mais disponível. Atualize o histórico.";
+  if(e.code==="COACH_CONVERSATION_LIMIT")return coachLimitMessage;
   if(e.status===409)return "O plano ou a proposta mudou. Atualize a conversa antes de continuar.";
   if(e.status===503)return "O Coach está indisponível agora. Seu histórico continua disponível.";
   if(e.code==="API_TIMEOUT"||e.status===408||e.status===504)return "A resposta demorou. Tente novamente para consultar o mesmo pedido.";
@@ -119,6 +121,7 @@ export class CoachSession {
   decide(operation:"apply"|"reject"|"revert"){return this.run(async()=>{
     const id=this.state.conversationId,preview=this.state.preview;if(!id||!preview)return;
     if(operation!=="revert"&&preview.status!=="pending")return;
+    if(operation==="apply"&&!(Date.parse(preview.expires_at)>Date.now()))return;
     if(operation==="revert"&&(!preview.reversible||!preview.applied_at||preview.reverted_at))return;
     const next=await this.api.decide(id,preview.id,operation);
     this.set({preview:next,messages:this.state.messages.map(m=>m.reply?{...m,reply:{...m.reply,

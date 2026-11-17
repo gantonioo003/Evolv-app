@@ -113,7 +113,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const signOut = useCallback(async () => {
     const client = requireSupabase();
-    const { error } = await client.auth.signOut();
+    const { error } = await client.auth.signOut({ scope: "local" });
     if (error) throw error;
   }, []);
 

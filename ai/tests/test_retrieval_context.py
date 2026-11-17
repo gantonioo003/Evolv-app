@@ -93,6 +93,14 @@ class ContextRetrievalTests(unittest.TestCase):
         self.assertFalse(any(r["document_id"] == "0" for r in result["matches"]))
         self.assertEqual("no_evidence", self.s.query("series", topics=["missing"], as_of=date(2026, 11, 3))["status"])
 
+    def test_named_reviewed_passage_is_checked_without_semantic_ranking(self):
+        today = date(2026, 11, 3)
+        self.assertEqual("0", self.s.reviewed_document("0", as_of=today)["document_id"])
+        self.assertEqual([], self.encoder.calls)
+        self.s.rows[0]["citations"][0]["review_due_at"] = today.isoformat()
+        self.assertIsNone(self.s.reviewed_document("0", as_of=today))
+        self.assertIsNone(self.s.reviewed_document("unknown", as_of=today))
+
     def test_shared_search_does_not_share_coach_history(self):
         first, second = Coach(NLP(), self.s), Coach(NLP(), self.s)
         first.respond("noite?", reference_date=date(2026, 11, 3))
@@ -127,7 +135,7 @@ class ContextRetrievalTests(unittest.TestCase):
         with self.assertRaises(ValueError): self.s.query("noite", k=4)
         with self.assertRaises(ValueError): load_search(AI, "latest")
         with self.assertRaises(ValueError): Settings("x" * 32, retrieval_version="latest")
-        self.assertEqual("1.1.2", Settings("x" * 32).retrieval_version)
+        self.assertEqual("1.2.1", Settings("x" * 32).retrieval_version)
 
     def test_runtime_refuses_modified_index_manifest(self):
         config = {"version": "1.1.1", "index": "artifacts/rag/1.1.1", "index_manifest_sha256": "0" * 64}

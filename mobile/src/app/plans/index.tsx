@@ -8,6 +8,7 @@ import {
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 
 import {
+  IllustrationThumbnail,
   AppScreen,
   InfoRow,
   LabelIcon,
@@ -16,6 +17,7 @@ import {
   Surface,
   Tag,
 } from "@/components/ui";
+import { artwork } from "@/data/illustrations";
 import { colors, spacing } from "@/constants/theme";
 import { useEvolvData } from "@/context/evolv-data-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
@@ -114,7 +116,7 @@ export default function PlansScreen() {
       ) : (
         <Surface>
           <InfoRow
-            leading={<LabelIcon icon={CalendarDays} />}
+            leading={<IllustrationThumbnail source={artwork.workoutPlan} />}
             title="Nenhum plano criado"
             description="O primeiro plano será montado com suas preferências atuais."
           />
@@ -131,7 +133,7 @@ export default function PlansScreen() {
           pressed && styles.pressed,
         ]}
       >
-        <Plus color={colors.text} size={18} />
+        <Plus color={palette.onPrimary} size={18} />
         <Text style={styles.primaryButtonText}>
           {isMutating ? "Gerando..." : "Gerar novo plano"}
         </Text>
@@ -163,10 +165,10 @@ const createStyles = (palette: AppThemePalette) =>
       justifyContent: "center",
       gap: 8,
       borderRadius: 24,
-      backgroundColor: colors.red,
+      backgroundColor: palette.primary,
     },
     primaryButtonText: {
-      color: colors.text,
+      color: palette.onPrimary,
       fontSize: 13,
       fontWeight: "600",
     },

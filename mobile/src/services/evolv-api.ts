@@ -1,3 +1,4 @@
+import { localDateOnly } from "@/lib/local-date";
 import { ApiClient } from "@/services/api-client";
 import type {
   DietPlanApi,
@@ -8,9 +9,9 @@ import type {
   GenerateWorkoutPlanInput,
   GoalApi,
   GoalType,
-  NutritionSummaryApi,
   PlannerAdjustmentApi,
   PlannerDayContextApi,
+  PlannerWeekOverridesApi,
   CreatePlannerAdjustmentInput,
   ProfileApi,
   ProgressEntryApi,
@@ -19,8 +20,6 @@ import type {
   WorkoutPlanApi,
   WorkoutPlanSummaryApi,
 } from "@/types/api";
-
-const dateOnly = (date: Date) => date.toISOString().slice(0, 10);
 
 export class EvolvApi {
   private readonly client: ApiClient;
@@ -74,6 +73,12 @@ export class EvolvApi {
   getPlannerDayContext(date = localDateOnly(new Date())) {
     return this.client.get<PlannerDayContextApi>(
       `/planner/day-context?date=${encodeURIComponent(date)}`,
+    );
+  }
+
+  getPlannerWeekOverrides(date = localDateOnly(new Date())) {
+    return this.client.get<PlannerWeekOverridesApi>(
+      `/planner/week-overrides?date=${encodeURIComponent(date)}`,
     );
   }
 
@@ -132,8 +137,10 @@ export class EvolvApi {
   recordExerciseLoad(
     exerciseId: string,
     input: {
-      load_kg: number;
+      load_kg?: number;
       sets_completed?: number;
+      repetitions?: number;
+      duration_seconds?: number;
       reps_summary?: string;
       notes?: string;
     },
@@ -174,8 +181,8 @@ export class EvolvApi {
     );
   }
 
-  getTodayFoodLogs() {
-    const from = new Date();
+  getTodayFoodLogs(date = new Date()) {
+    const from = new Date(date);
     from.setHours(0, 0, 0, 0);
     const to = new Date(from);
     to.setDate(to.getDate() + 1);
@@ -184,22 +191,11 @@ export class EvolvApi {
     );
   }
 
-  getTodayNutritionSummary() {
-    const from = new Date();
-    from.setHours(0, 0, 0, 0);
-    const to = new Date(from);
-    to.setDate(to.getDate() + 1);
-    return this.client.get<NutritionSummaryApi>(
-      `/nutrition/summary?from=${encodeURIComponent(from.toISOString())}&to=${encodeURIComponent(to.toISOString())}&limit=100`,
+  setPlannedMealRegistration(mealId: string, registered: boolean, now = new Date()) {
+    return this.client.post<{ registered: boolean }>(
+      `/nutrition/planned-meals/${mealId}/registration`,
+      { registered, local_date: localDateOnly(now), logged_at: now.toISOString() },
     );
-  }
-
-  createFoodLog(input: { description: string; meal_name?: string }) {
-    return this.client.post<FoodLogApi>("/nutrition/logs", input);
-  }
-
-  removeFoodLog(foodLogId: string) {
-    return this.client.delete<{ id: string }>(`/nutrition/logs/${foodLogId}`);
   }
 
   getProgress() {
@@ -216,15 +212,8 @@ export class EvolvApi {
     notes?: string;
   }) {
     return this.client.post<ProgressEntryApi>("/progress", {
-      measured_at: input.measured_at ?? dateOnly(new Date()),
       ...input,
+      measured_at: input.measured_at ?? localDateOnly(new Date()),
     });
   }
-}
-
-function localDateOnly(date: Date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
 }

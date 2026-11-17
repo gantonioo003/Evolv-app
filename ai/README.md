@@ -6,6 +6,32 @@ regras de negocio continuam no NestJS.
 
 ## Status
 
+**Task 04 — contexto autenticado conectado ao redator local (2026-11-11):**
+o `LocalLM.write()` usa a ficha enviada pelo backend, as preferências autorizadas
+e os pares recentes da sessão para redigir cumprimentos, relatos e continuações
+elegíveis. A ficha de treino/refeições é incluída nas referências explícitas ao
+plano. Perguntas fundamentadas e propostas continuam nos fluxos de busca e Planner.
+O redator não grava perfil nem aplica alterações. Correções na conversa não alteram
+automaticamente o cadastro. Memórias entre conversas só entram quando habilitadas.
+
+A reabertura deixou de cortar o histórico em quatro pares: o backend busca até
+64 mensagens e envia pares completos dentro de 24 mil caracteres; a IA ajusta a
+janela pelo tokenizador do modelo. Esses são limites de transporte/contexto, não
+uma promessa de memória integral ou ilimitada. O histórico persistido continua
+separado por usuário e conversa. Turnos descartados da janela são contabilizados
+em `history_turns_dropped`; a recuperação histórica existente permanece disponível.
+
+Validação direcionada: 44 testes Python, 28 testes de backend e a bateria integrada
+do Planner passaram; o backend foi compilado. Verificação adicional com Qwen real
+e contas fictícias: correção de disponibilidade, reabertura, peso cadastrado e
+sessão nova, sem propostas ou gravações reais. Evidências locais em
+`outputs/Evolv-Coach-Task-04/` no workspace de desenvolvimento.
+Uma rodada ampliada encontrou dois testes históricos incompatíveis com o estado
+atual: o artefato antigo exige Python 3.14.3 (ambiente 3.12.14) e o manifesto
+congelado 1.5.0 diverge do inventário atual. Não foram alterados para fazê-los passar.
+O teste de iPhone e a prova final inédita seguem pendentes; esta entrega não atesta
+qualidade de lançamento. Reiniciar IA e backend para carregar o código novo.
+
 **7.07.11 — avaliação no computador concluída:** Expo Web, NestJS,
 FastAPI, Qwen e Supabase foram exercitados no Edge. Houve 46 mensagens,
 50 verificações operacionais aprovadas e três de quatro pedidos de mudança

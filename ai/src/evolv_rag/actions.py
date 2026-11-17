@@ -7,13 +7,18 @@ import json
 import re
 from uuid import UUID, uuid4
 
+from .request_intent import change_scope, exact_swap, explicit_change, meal_qualifiers
+from .retrieval import fold
+
 KINDS = {
     "move_workout_day": {"workout_plan_id", "workout_day_id", "target_weekday"},
+    "move_workout_occurrence": {"workout_plan_id", "workout_day_id", "source_date", "target_date"},
     "replace_exercise": {"workout_plan_id", "workout_day_exercise_id", "replacement_exercise_id"},
     "replace_meal_item": {"diet_plan_id", "meal_item_id", "replacement_food_id"},
     "set_day_activity": {"activity_date", "activity_type"},
 }
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+ORDINAL_MEALS = ("primeira", "segunda", "terceira", "quarta", "quinta", "sexta")
 
 
 def validate_payload(payload):
@@ -31,7 +36,7 @@ def validate_payload(payload):
             raise ValueError("Invalid weekday")
         elif key == "activity_type" and value not in {"rest", "resistance", "cardio", "mixed"}:
             raise ValueError("Invalid activity type")
-        elif key == "activity_date" and date.fromisoformat(value).isoformat() != value:
+        elif key in {"activity_date", "source_date", "target_date"} and date.fromisoformat(value).isoformat() != value:
             raise ValueError("Invalid date")
     return deepcopy(payload)
 
@@ -47,6 +52,11 @@ class PlannerSnapshot:
     exercises: list = field(default_factory=list)
     meal_items: list = field(default_factory=list)
     foods: list = field(default_factory=list)
+    workout_start: str | None = None
+    workout_end: str | None = None
+    diet_variants: bool = False
+    diet_rotation_size: int = 1
+    week: list = field(default_factory=list)
 
     def fingerprint(self):
         UUID(self.actor_id)
@@ -61,15 +71,50 @@ def unique(rows):
     return rows[0]
 
 
+def usable_entities(analysis):
+    return [e for e in analysis.get("entities", {}).get("entities", [])
+            if not any(e.get("attributes", {}).get(k) for k in
+                       ("negated", "requires_context", "hypothetical", "third_party"))]
+
+
+def meal_targets(snapshot, food, entities, text):
+    meals = meal_qualifiers(text) or {fold(e["value"]) for e in entities if e["entity_type"] == "meal"}
+    return [item for item in snapshot.meal_items if item["canonical"] == food
+            and (not meals or (len(meals) == 1 and fold(item.get("meal_name") or "") in meals))]
+
+
+def food_matches(rows, name):
+    exact = [row for row in rows if fold(row["canonical"]) == name]
+    if exact:
+        return exact
+    if name in {"macarrao", "espaguete", "spaghetti", "macarrao simples tipo spaghetti",
+                "macarrao simples tipo espaguete"}:
+        heads = (("macarrao", "espaguete", "spaghetti") if name == "macarrao"
+                 else ("espaguete", "spaghetti", "macarrao espaguete", "macarrao spaghetti"))
+    else:
+        heads = (name,)
+    return [row for row in rows if any(
+        fold(row["canonical"]) == head or fold(row["canonical"]).startswith(head + " ") for head in heads)]
+
+
+def requested_meal(row, name):
+    label = fold(row.get("meal_name") or "")
+    if label == name:
+        return True
+    position = row.get("meal_position")
+    if position is None:
+        return False
+    return (name == f"refeicao {position + 1}"
+            or (position < len(ORDINAL_MEALS) and name == f"{ORDINAL_MEALS[position]} refeicao"))
+
+
 def proposed_payload(analysis, snapshot):
     if not snapshot:
         raise ValueError("Preciso do contexto autenticado do seu plano para identificar os itens.")
     kind = analysis["intent"]["label"]
     if kind not in KINDS:
         raise ValueError("Esta alteração ainda não tem contrato implementado no Planner.")
-    entities = [e for e in analysis["entities"]["entities"]
-                if not any(e.get("attributes", {}).get(k) for k in
-                           ("negated", "requires_context", "hypothetical", "third_party"))]
+    entities = usable_entities(analysis)
     def values(name):
         return sorted([e for e in entities if e["entity_type"] == name], key=lambda e: e.get("start", 0))
     def one(name):
@@ -108,8 +153,11 @@ def proposed_payload(analysis, snapshot):
             payload.update(workout_plan_id=snapshot.workout_plan_id,
                            workout_day_exercise_id=item["id"], replacement_exercise_id=replacement["id"])
         else:
-            item = unique([r for r in snapshot.meal_items if r["canonical"] == old])
+            item = unique(meal_targets(snapshot, old, entities, text))
             replacement = unique([r for r in snapshot.foods if r["canonical"] == new])
+            allowed = item.get("approved_replacement_ids")
+            if allowed is not None and replacement["id"] not in allowed:
+                raise ValueError("O alimento não é uma substituição aprovada para este item.")
             payload.update(diet_plan_id=snapshot.diet_plan_id, meal_item_id=item["id"],
                            replacement_food_id=replacement["id"])
     else:
@@ -126,20 +174,179 @@ class ActionSession:
         self.snapshot = deepcopy(snapshot)
         self.now = now or (lambda: datetime.now(timezone.utc))
         self.pending = None
+        self.incomplete_swap = None
 
     def clear(self):
         self.pending = None
+        self.incomplete_swap = None
+
+    def resolve_food_swap(self, swap, today, account_day, *, requested):
+        """Resolve the authenticated plan item and only use approved replacement IDs."""
+        snapshot = self.snapshot
+        if not snapshot:
+            return None
+        old_known = food_matches(snapshot.foods + snapshot.meal_items, swap.old)
+        new_known = food_matches(snapshot.foods, swap.new)
+        if not (old_known or new_known or swap.meals):
+            return None
+        if not snapshot.diet_plan_id:
+            return "Preciso de um plano alimentar ativo para conferir essa troca.", None
+        rotation = (today - date(1970, 1, 1)).days % snapshot.diet_rotation_size
+        if snapshot.diet_variants and not account_day:
+            return "Você quer revisar o cardápio de treino ou o de descanso?", None
+        rows = [row for row in snapshot.meal_items if row.get("rotation_index", 0) == rotation
+                and (not snapshot.diet_variants or row.get("day_type", "every_day")
+                     in {"every_day", account_day.nutrition_day_type})]
+        if swap.meals:
+            rows = [row for row in rows if all(requested_meal(row, meal) for meal in swap.meals)]
+        targets = food_matches(rows, swap.old)
+        if not targets:
+            location = " na refeição indicada" if swap.meals else " no cardápio de hoje"
+            return f"Não encontrei {swap.old}{location}. Em qual refeição esse alimento aparece?", None
+        if len(targets) != 1:
+            return f"Encontrei mais de um item que pode ser {swap.old}. Qual é o nome dele na ficha e em qual refeição está?", None
+        item = targets[0]
+        approved = [row for row in snapshot.foods if row["id"] in (item.get("approved_replacement_ids") or [])]
+        alternatives = food_matches(approved, swap.new)
+        label = item.get("meal_name") or "essa refeição"
+        if not alternatives:
+            options = ", ".join(sorted({row["canonical"] for row in approved})[:3])
+            message = f"Entendi a troca de {item['canonical']} por {swap.new} em {label}. Essa opção não está aprovada para o item no seu plano."
+            return (f"{message} Entre as alternativas estão {options}." if options else message), None
+        if len(alternatives) != 1:
+            names = ", ".join(sorted({row["canonical"] for row in alternatives})[:4])
+            return f"Qual dessas opções você tem em casa? {names}.", None
+        replacement = alternatives[0]
+        if not requested:
+            return (f"Para {label}, {replacement['canonical']} é uma alternativa aprovada para {item['canonical']}. "
+                    "A porção fica na prévia se você quiser fazer a troca."), None
+        payload = validate_payload({
+            "kind": "replace_meal_item", "source": "coach",
+            "reason": "Troca de alimento solicitada pelo usuário; sujeita à prévia do Planner.",
+            "diet_plan_id": snapshot.diet_plan_id, "meal_item_id": item["id"],
+            "replacement_food_id": replacement["id"],
+        })
+        pending = self.pending
+        if (pending and pending["status"] == "pending_user_confirmation"
+                and pending["payload"] == payload and self.now() < datetime.fromisoformat(pending["expires_at"])
+                and pending["snapshot_fingerprint"] == snapshot.fingerprint()):
+            return "A proposta já está pronta. Abra a prévia para revisar a porção e confirmar.", None
+        proposal = self._prepare(payload)
+        return (f"Preparei a troca de {item['canonical']} por {replacement['canonical']} em {label}. "
+                "Abra a prévia para revisar a porção e confirmar."), proposal
 
     def propose(self, analysis):
         # An uncertain intent never authorizes a change.
         if not analysis["intent"].get("confident") or analysis["risk"]["labels"]:
             raise ValueError("Confirme os detalhes do pedido antes de propor uma alteração.")
-        from evolv_nlp.entities import normalize_text
-        text = normalize_text(analysis["entities"]["text"])
-        if re.search(r"\b(?:nao|nunca|talvez|hipoteticamente)\b|\bse eu\b|"
-                     r"\be\s+(?:troque|mude|mova|altere|registre|crie)\b", text):
-            raise ValueError("Pedido negado, hipotético ou composto: esclareça uma mudança por vez.")
-        payload = proposed_payload(analysis, self.snapshot)
+        text = analysis["entities"]["text"]
+        if change_scope(text) or not explicit_change(text):
+            raise ValueError("Pedido sem uma alteração única e explícita.")
+        return self._prepare(proposed_payload(analysis, self.snapshot))
+
+    def propose_explicit_swap(self, analysis):
+        """Prepare only a single grounded swap when the model is unsure."""
+        if not self.snapshot or analysis["risk"]["labels"] or analysis["intent"].get("confident"):
+            return None
+        text = analysis["entities"].get("text", "")
+        if change_scope(text):
+            return None
+        entities = usable_entities(analysis)
+        for entity_type, kind in (("food", "replace_meal_item"), ("exercise", "replace_exercise")):
+            mentions = sorted([e for e in entities if e["entity_type"] in
+                               {entity_type, "replacement_" + entity_type}], key=lambda e: e["start"])
+            if len(mentions) != 2:
+                continue
+            meal = entity_type == "food"
+            if not exact_swap(text, *mentions, meal=meal):
+                continue
+            if meal:
+                targets = meal_targets(self.snapshot, mentions[0]["value"], entities, text)
+                if len(targets) != 1 or not targets[0].get("approved_replacement_ids"):
+                    return None
+            candidate = {**analysis, "intent": {**analysis["intent"], "label": kind}}
+            try:
+                return self._prepare(proposed_payload(candidate, self.snapshot))
+            except ValueError:
+                return None
+        return None
+
+    def remember_incomplete_swap(self, analysis, clarification):
+        """Keep the destination for one reply to an explicit request for a swap."""
+        if not self.snapshot or not clarification or clarification["reason"] != "missing_fields":
+            return
+        text = analysis.get("entities", {}).get("text", "")
+        if change_scope(text) or not explicit_change(text):
+            return
+        missing = clarification["missing_fields"]
+        if missing not in (["exercise"], ["food"]):
+            return
+        [noun] = missing
+        kind = "replace_exercise" if noun == "exercise" else "replace_meal_item"
+        targets = self.snapshot.exercises if noun == "exercise" else self.snapshot.foods
+        if clarification["candidate_intent"] != kind:
+            return
+        match = re.search(r"\b(?:por|para|pelo|pela)\s+(?:(?:um|uma|o|a)\s+)?(.+)$", fold(text).strip(" .!"))
+        if match is None:
+            return
+        destination = match[1]
+        names = {item["canonical"] for item in targets}
+        if destination not in names:
+            aliases = {e["value"] for e in usable_entities(analysis)
+                       if e["entity_type"] in {noun, "replacement_" + noun}
+                       and e["value"] in names and fold(text[e["start"]:e["end"]]) == destination}
+            if len(aliases) != 1:
+                return
+            destination = aliases.pop()
+        self.incomplete_swap = (noun, destination, self.snapshot.fingerprint(),
+                                self.now() + timedelta(minutes=10))
+
+    def complete_swap(self, analysis):
+        pending, self.incomplete_swap = self.incomplete_swap, None
+        if not pending or not self.snapshot or analysis["risk"]["labels"]:
+            return None
+        noun, destination, fingerprint, expires = pending
+        text = analysis["entities"].get("text", "")
+        if ("?" in text or change_scope(text) or self.now() >= expires
+                or self.snapshot.fingerprint() != fingerprint):
+            return None
+        source_items = self.snapshot.workout_exercises if noun == "exercise" else self.snapshot.meal_items
+        names = {r["canonical"] for r in source_items}
+        entities = usable_entities(analysis)
+        mentions = [e for e in entities if e["entity_type"] == noun and e["value"] in names
+                    and e["value"] != destination]
+        if len(mentions) != 1:
+            return None
+        old = mentions[0]
+        if fold(text[:old["start"]]).strip(" ,") not in {"", "o", "a", "esse", "essa"}:
+            return None
+        tail = fold(text[old["end"]:]).strip(" .,!").strip()
+        if tail:
+            aliases = {fold(text[e["start"]:e["end"]]) for e in entities
+                       if e["entity_type"] in {noun, "replacement_" + noun} and e["value"] == destination}
+            targets = "|".join(re.escape(name) for name in sorted(aliases | {destination, destination.split()[-1]}))
+            if not re.fullmatch(rf"(?:quero )?troc(?:ar|a|e) (?:ele|ela|esse|essa) "
+                                rf"(?:por|pelo|pela) (?:{targets})(?: mesmo)?", tail):
+                return None
+
+        old_name = old["value"]
+        kind = "replace_exercise" if noun == "exercise" else "replace_meal_item"
+        phrase = f"Troque {old_name} por {destination}"
+        source_start = len("Troque ")
+        destination_start = len(phrase) - len(destination)
+        candidate = {
+            "intent": {"label": kind, "confident": False},
+            "risk": {"labels": []},
+            "entities": {"text": phrase, "entities": [
+                {"entity_type": noun, "value": old_name, "start": source_start,
+                 "end": source_start + len(old_name)},
+                {"entity_type": "replacement_" + noun, "value": destination,
+                 "start": destination_start, "end": len(phrase)},
+            ]},
+        }
+        return self.propose_explicit_swap(candidate)
+
+    def _prepare(self, payload):
         self.pending = {"id": str(uuid4()), "payload": payload,
                         "snapshot_fingerprint": self.snapshot.fingerprint(),
                         "expires_at": (self.now() + timedelta(minutes=10)).isoformat(),

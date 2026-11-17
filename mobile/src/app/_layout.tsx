@@ -6,9 +6,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { AppThemeProvider, useAppTheme } from "@/context/theme-context";
 import { AuthProvider } from "@/context/auth-context";
 import { EvolvDataProvider } from "@/context/evolv-data-context";
-import { ImagePreferencesProvider } from "@/context/image-preferences-context";
 import { TrainingPreferencesProvider } from "@/context/training-preferences-context";
-import { MotionProvider } from "@/context/motion-context";
+import { MotionProvider, useReducedMotion } from "@/context/motion-context";
 import { colors } from "@/constants/theme";
 
 export default function RootLayout() {
@@ -16,13 +15,11 @@ export default function RootLayout() {
     <AuthProvider>
       <EvolvDataProvider>
         <AppThemeProvider>
-          <ImagePreferencesProvider>
-            <TrainingPreferencesProvider>
-              <MotionProvider>
-                <ThemedRoot />
-              </MotionProvider>
-            </TrainingPreferencesProvider>
-          </ImagePreferencesProvider>
+          <TrainingPreferencesProvider>
+            <MotionProvider>
+              <ThemedRoot />
+            </MotionProvider>
+          </TrainingPreferencesProvider>
         </AppThemeProvider>
       </EvolvDataProvider>
     </AuthProvider>
@@ -31,6 +28,7 @@ export default function RootLayout() {
 
 function ThemedRoot() {
   const { isDark, palette } = useAppTheme();
+  const reducedMotion = useReducedMotion();
   const baseTheme = isDark ? DarkTheme : DefaultTheme;
   const navigationTheme = {
     ...baseTheme,
@@ -40,7 +38,7 @@ function ThemedRoot() {
       card: palette.surface,
       text: palette.text,
       border: palette.border,
-      primary: colors.red,
+      primary: palette.primary,
       notification: colors.red,
     },
   };
@@ -55,6 +53,8 @@ function ThemedRoot() {
           <Stack
             screenOptions={{
               headerShown: false,
+              animation: reducedMotion ? "none" : "fade",
+              animationDuration: 170,
               contentStyle: { backgroundColor: palette.page },
             }}
           >

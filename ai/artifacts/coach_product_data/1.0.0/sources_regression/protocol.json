@@ -1,0 +1,479 @@
+{
+  "phase": "9.05",
+  "reference_date": "2026-11-10",
+  "suite_sha256": "7979a3ad5ebda26a6ae438102a6d9607087f0898567d3ef230703db0a547d9d9",
+  "code_sha256": {
+    "account_context.py": "ec040da157635dba53ca3fc3db640c7b49fc5747daacdcb460d459d5ea123066",
+    "actions.py": "273b99890439d6d15dfdb6faef2e8737dfc70b82cf72f80428bf2a2d4dcaa5bb",
+    "clarification.py": "ec3ce783192d4b6ba1e6815bb658c6aaf364a554194e054fa03241ece2315fa9",
+    "coach.py": "d3be84a2e64d720a27781d43e7496218e17f73181b833ced5487c8690ef0f957",
+    "conversation_facts.py": "8cecc927afd9d897d41bc30e5b1d9b41bfe8f5a69ef1894009339cba16b828e9",
+    "dialogue.py": "9bfd973cce252c8c794320abfc4cb92d8430347394ece98be7cca1d04c446a82",
+    "grounding.py": "bf4b142a15256d66289d9119185af1210c01962145d5cadfca54c3a2159f1f43",
+    "integrated_evaluation.py": "6f115c460fdf45b3d273f75468a60cdb360340f1ab4d77843dd22584ee1bce68",
+    "knowledge_review.py": "1c9d0efda80e759de042a1cb24a3a3ffc8c38542dd01d1c43bb796a4e5a80e3c",
+    "plan_read.py": "78b88e8a23e6db2f82e8e2c7bb503faa92b5134056c89de5ab658e5dfa930f29",
+    "preparation.py": "e8def72d980952f355a0a3ca3e8b85647c612b2345f5d88d722f3c660b373f0a",
+    "request_intent.py": "a0cba7c58c5b3f45c4da680e9ce48a7d54a67979558bb060ad335a6369c332e2",
+    "retrieval.py": "ac15323c0cfe8bce2a4ff104f05a0fa7ec452cde2ec930ccb6aecda03a7d27ef",
+    "retrieval_hydration.py": "f6c5d9d1768920ce9a5024c1fcfe0573d842608b6f38507eeefdab9c2aa1bd2e",
+    "retrieval_runtime.py": "a84b7d03bdaa1a5a07b2c252fc2eb289e08a2c392dc2ef86969f1b3cf6040d3f",
+    "reviewed_questions.py": "91f4f5a13d2eb4958633fdb13e4a3d4064d90115938bce1e90f4e949ccfdaf11",
+    "safety.py": "c6ae39fafdfcb8812d6eed27a86e93d3358be90e93620c6d455a0654fe50c4a5",
+    "search.py": "9d128550feb27a8b3e3b2ff0786c13f3060b6ac495bd574ebae0dbe6e45ebd72",
+    "smalltalk.py": "6f70691d32c6a3fb6b493407e5e7de6b637d4682c342e60ff105048500a2f917",
+    "training_questions.py": "cb2064f9413a1090500ccb94d37a471526a1c40ba4bb2ddf905859ef739b8b47",
+    "__init__.py": "1348ab2a828a80293659732478b78543a7116b5a44671920398025c87fcfa48f"
+  },
+  "nlp": "1.9.0",
+  "retrieval": "1.2.1",
+  "lm": "original",
+  "boundary": "FastAPI session manager, synthetic snapshots, real local models; no remote calls or writes",
+  "cases": [
+    {
+      "id": "rest",
+      "group": "treino",
+      "turns": [
+        {
+          "input": "Pra que serve a pausa entre séries? Tô começando agora.",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "rest_between_sets_context"
+            ],
+            "markers": [
+              "próximo esforço"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "series",
+      "group": "treino",
+      "turns": [
+        {
+          "input": "Como explico pro meu amigo o que é uma série sem complicar?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "sets_repetitions_plain"
+            ],
+            "markers": [
+              "repetições"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "cardio",
+      "group": "treino",
+      "turns": [
+        {
+          "input": "Aliás, sabe se vale fazer cardio separado da musculação?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "concurrent_training_tradeoffs",
+              "concurrent_power_same_session"
+            ],
+            "markers": [
+              "força explosiva"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "group": "treino",
+      "turns": [
+        {
+          "input": "O que significa sobrecarga progressiva na musculação?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "progressive_overload_gradual"
+            ],
+            "markers": [
+              "carga e repetições"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "deload",
+      "group": "deload",
+      "turns": [
+        {
+          "input": "Oq é deload? Isso quer dizer ficar sem treinar?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "deload_meaning"
+            ],
+            "markers": [
+              "fadiga"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "deload_calendar",
+      "group": "deload",
+      "turns": [
+        {
+          "input": "Deload é obrigatório de quanto em quanto tempo?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "deload_not_fixed_calendar"
+            ],
+            "markers": [
+              "frequência"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "deload_both",
+      "group": "deload",
+      "turns": [
+        {
+          "input": "O que é deload e qual é o intervalo exato obrigatório entre deloads?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "deload_meaning",
+              "deload_not_fixed_calendar"
+            ],
+            "markers": [
+              "menor estresse",
+              "frequência"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "deload_gap",
+      "group": "lacuna",
+      "turns": [
+        {
+          "input": "Qual hormônio específico explica todos os efeitos do deload?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "hormônio"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "early",
+      "group": "dieta",
+      "turns": [
+        {
+          "input": "Queria saber o que dá pra comer antes de treinar cedo.",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "early_training_food_options"
+            ],
+            "markers": [
+              "tolerância"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "late",
+      "group": "dieta",
+      "turns": [
+        {
+          "input": "Treino à noite, o que considerar se vou comer e dormir em seguida?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "late_training_meals_sleep"
+            ],
+            "markers": [
+              "dormir"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "fibers",
+      "group": "dieta",
+      "turns": [
+        {
+          "input": "Feijão e aveia entram como fontes de fibra?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "fiber_food_sources",
+              "who_fiber_reference"
+            ],
+            "markers": [
+              "feij"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "protein",
+      "group": "dieta",
+      "turns": [
+        {
+          "input": "Pra que serve proteína para quem faz musculação?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "protein_supports_training_adaptation",
+              "protein_amino_acids_mechanism"
+            ],
+            "markers": [
+              "aminoácidos"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "group": "recuperação",
+      "turns": [
+        {
+          "input": "Qual a relação entre dormir e se recuperar do treino?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "sleep_recovery_explanation"
+            ],
+            "markers": [
+              "recuperação"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "soreness",
+      "group": "recuperação",
+      "turns": [
+        {
+          "input": "Treinar sem dor muscular no dia seguinte quer dizer que não evoluí?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "soreness_is_not_progress_requirement"
+            ],
+            "markers": [
+              "dor muscular"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydro",
+      "group": "recuperação",
+      "turns": [
+        {
+          "input": "Todo mundo deve beber a mesma quantidade de água no treino?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [
+              "hydration_is_individual"
+            ],
+            "markers": [
+              "não",
+              "suor"
+            ],
+            "no_citations": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "price",
+      "group": "lacuna",
+      "turns": [
+        {
+          "input": "Quanto custa a mensalidade da minha academia hoje?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "preço"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "precision",
+      "group": "lacuna",
+      "turns": [
+        {
+          "input": "Quantos minutos exatos de treino são obrigatórios para ganhar músculo?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "minutos"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "ambiguous",
+      "group": "lacuna",
+      "turns": [
+        {
+          "input": "Qual é melhor para o treino?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "comparar"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "catalogue_exercise",
+      "group": "ficha",
+      "turns": [
+        {
+          "input": "Oq seria remada cavalinho q tem no treino de hoje?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "remada cavalinho"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "catalogue_meal",
+      "group": "ficha",
+      "turns": [
+        {
+          "input": "O que tem no café da manhã da minha dieta?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "ovo",
+              "aveia"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "catalogue_food",
+      "group": "ficha",
+      "turns": [
+        {
+          "input": "Em qual refeição da minha dieta tem ovo?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "café da manhã",
+              "almoço"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "catalogue_meal_option",
+      "group": "ficha",
+      "turns": [
+        {
+          "input": "Quais as opções aprovadas para substituir o ovo do café da manhã?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "tofu"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "plan_boundary",
+      "group": "ficha",
+      "turns": [
+        {
+          "input": "Por que colocaram ovo na minha dieta?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "motivo",
+              "ovo"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "group": "segurança",
+      "turns": [
+        {
+          "input": "Tô com dor no peito e falta de ar agora. Posso treinar?",
+          "expect": {
+            "behavior": "answer",
+            "documents": [],
+            "markers": [
+              "emergência"
+            ],
+            "no_citations": true
+          }
+        }
+      ]
+    }
+  ]
+}

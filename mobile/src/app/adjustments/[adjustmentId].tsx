@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import {
   ArrowLeft,
@@ -21,6 +21,7 @@ import { useEvolvData } from "@/context/evolv-data-context";
 import { useAuth } from "@/context/auth-context";
 import { useAppTheme, type AppThemePalette } from "@/context/theme-context";
 import type { PlannerAdjustmentApi } from "@/types/api";
+import { CoachApi } from "@/services/coach-api";
 
 export default function PlannerAdjustmentDetailsScreen() {
   const { adjustmentId } = useLocalSearchParams<{ adjustmentId: string }>();
@@ -34,11 +35,14 @@ export default function PlannerAdjustmentDetailsScreen() {
     loadPlannerAdjustment,
     rejectPlannerAdjustment,
     revertPlannerAdjustment,
+    refresh,
   } = useEvolvData();
   const [adjustment, setAdjustment] = useState<PlannerAdjustmentApi | null>(
     null,
   );
   const [error, setError] = useState<string | null>(null);
+  const [deciding, setDeciding] = useState(false);
+  const inFlight = useRef(false);
 
   useEffect(() => {
     if (!adjustmentId || isAuthLoading || !session?.access_token) return;
@@ -63,15 +67,28 @@ export default function PlannerAdjustmentDetailsScreen() {
   }, [adjustmentId, loadPlannerAdjustment, isAuthLoading, session?.access_token]);
 
   async function mutate(action: "apply" | "reject" | "revert") {
-    if (!adjustment) return;
+    if (!adjustment || inFlight.current) return;
+    if (action === "apply" && !(Date.parse(adjustment.expires_at) > Date.now())) {
+      Alert.alert("Prévia vencida", "Solicite uma nova prévia antes de confirmar.");
+      return;
+    }
+    const conversation = adjustment.conversation_id;
+    const token = session?.access_token;
+    if (adjustment.source === "coach" && (!conversation || !token)) return;
+    inFlight.current = true;
+    setDeciding(true);
     try {
-      const next =
-        action === "apply"
+      const next = adjustment.source === "coach" && conversation && token
+        ? await new CoachApi(token).decide(conversation, adjustment.id, action)
+        : action === "apply"
           ? await applyPlannerAdjustment(adjustment.id)
           : action === "reject"
             ? await rejectPlannerAdjustment(adjustment.id)
             : await revertPlannerAdjustment(adjustment.id);
       setAdjustment(next);
+      if (adjustment.source === "coach" && action !== "reject") {
+        await refresh().catch(() => undefined);
+      }
       Alert.alert(
         action === "apply"
           ? "Alteração aplicada"
@@ -85,13 +102,19 @@ export default function PlannerAdjustmentDetailsScreen() {
         "Nao foi possivel concluir",
         caught instanceof Error ? caught.message : "Tente novamente.",
       );
+    } finally {
+      inFlight.current = false;
+      setDeciding(false);
     }
   }
 
   const preview = adjustment ? normalizePreview(adjustment) : null;
   const pending = adjustment?.status === "pending";
+  const expired = adjustment?.status === "pending" && !(Date.parse(adjustment.expires_at) > Date.now());
+  const linked = adjustment?.source !== "coach" || Boolean(adjustment.conversation_id);
+  const busy = isMutating || deciding;
   const canRevert = Boolean(
-    adjustment?.status === "applied" &&
+    linked && adjustment?.status === "applied" &&
     adjustment.reversible &&
     !adjustment.reverted_at,
   );
@@ -139,12 +162,14 @@ export default function PlannerAdjustmentDetailsScreen() {
             <PreviewList title="Observações" items={preview.warnings} />
           ) : null}
 
+          {!linked ? <Text style={styles.error}>A conversa desta prévia não está mais disponível.</Text> : null}
+          {expired ? <Text style={styles.error}>A prévia venceu. Solicite uma nova antes de confirmar.</Text> : null}
           <View style={styles.actions}>
-            {pending ? (
+            {pending && linked ? (
               <>
                 <Pressable
                   accessibilityRole="button"
-                  disabled={isMutating}
+                  disabled={busy}
                   onPress={() => void mutate("reject")}
                   style={({ pressed }) => [
                     styles.secondaryButton,
@@ -156,7 +181,7 @@ export default function PlannerAdjustmentDetailsScreen() {
                 </Pressable>
                 <Pressable
                   accessibilityRole="button"
-                  disabled={isMutating}
+                  disabled={busy || expired}
                   onPress={() => void mutate("apply")}
                   style={({ pressed }) => [
                     styles.primaryButton,
@@ -171,7 +196,7 @@ export default function PlannerAdjustmentDetailsScreen() {
             {canRevert ? (
               <Pressable
                 accessibilityRole="button"
-                disabled={isMutating}
+                disabled={busy}
                 onPress={() => void mutate("revert")}
                 style={({ pressed }) => [
                   styles.secondaryButton,

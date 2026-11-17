@@ -53,6 +53,15 @@ export class PlannerController {
     return this.dayContext.get(token, query.date);
   }
 
+  @Get('week-overrides')
+  getWeekOverrides(
+    @CurrentUser() user: User,
+    @AccessToken() token: string,
+    @Query() query: GetDayContextQueryDto,
+  ) {
+    return this.dayContext.overrides(user.id, token, query.date);
+  }
+
   @Post('plans/generate')
   @ApiOperation({ summary: 'Gera e salva um plano de treino' })
   generate(

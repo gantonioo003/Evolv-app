@@ -22,6 +22,7 @@ import { CurrentUser } from '../common/decorators/current-user.decorator.js';
 import { CreateFoodLogDto } from './dto/create-food-log.dto.js';
 import { CreateFoodLogItemDto } from './dto/create-food-log-item.dto.js';
 import { NutritionLogsQueryDto } from './dto/nutrition-logs-query.dto.js';
+import { SetPlannedMealRegistrationDto } from './dto/set-planned-meal-registration.dto.js';
 import { NutritionService } from './nutrition.service.js';
 
 @ApiTags('Nutrition')
@@ -68,6 +69,16 @@ export class NutritionController {
     @Body() dto: CreateFoodLogDto,
   ) {
     return this.nutrition.createLog(user.id, token, dto);
+  }
+
+  @Post('planned-meals/:mealId/registration')
+  @ApiOperation({ summary: 'Marca ou desmarca uma refeição consumida como planejada' })
+  setPlannedMealRegistration(
+    @AccessToken() token: string,
+    @Param('mealId', ParseUUIDPipe) mealId: string,
+    @Body() dto: SetPlannedMealRegistrationDto,
+  ) {
+    return this.nutrition.setPlannedMealRegistration(token, mealId, dto);
   }
 
   @Post('logs/:foodLogId/items')
